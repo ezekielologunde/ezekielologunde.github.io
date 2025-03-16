@@ -200,9 +200,7 @@ Welcome to my curated collection of cybersecurity resources. This repository is 
 ---
 
 <div align="center">
-  <p>📍 Syracuse, NY | 📱 (410) 588-9558 | 📧 ologundeomotola@gmail.com</p>
-  <p>💻 Last updated: March 2025</p>
-</div>
+ 
 
 <style>
   body {
