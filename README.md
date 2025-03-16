@@ -1,4 +1,4 @@
-# EZEKIEL O. OLOGUNDE
+# EZEKIEL OLOGUNDE
 
 <div align="center">
   
