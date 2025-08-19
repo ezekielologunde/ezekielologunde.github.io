@@ -1,128 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cybersecurity & AI Portfolio</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0a0f1f, #141e30, #243b55);
-      color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .hero img {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #00f2fe;
-      box-shadow: 0 0 25px rgba(0, 242, 254, 0.7);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 1rem;
-      color: #00f2fe;
-      text-shadow: 0 0 10px #00f2fe;
-    }
-
-    h2 {
-      color: #ff4081;
-      text-shadow: 0 0 10px #ff4081;
-      margin-top: 2rem;
-    }
-
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #d6d6d6;
-    }
-
-    .highlight {
-      color: #00f2fe;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.4);
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #999;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezekiel O. Ologunde - Cybersecurity & AI/ML Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* GitHub dark theme background */
+            color: #c9d1d9; /* GitHub text color */
+        }
+        .header-bg {
+            background: linear-gradient(135deg, #161b22, #0d1117);
+        }
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .highlight {
+            color: #58a6ff; /* GitHub link blue */
+        }
+        .icon-pulse {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, #30363d, #58a6ff, #30363d);
+        }
+    </style>
 </head>
-<body>
-  <!-- Hero / Home -->
-  <section id="home" class="hero">
-    <img src="IMG_8794.JPG" alt="Profile Photo">
-    <h1>Dr. Ezekiel Ologunde</h1>
-    <p class="highlight">Cybersecurity Educator | Digital Forensics Expert | AI & ML Enthusiast</p>
-  </section>
+<body class="p-6 md:p-12">
+    <!-- Header Section -->
+    <header class="header-bg p-8 rounded-xl shadow-lg text-center mb-12">
+        <!-- Profile Picture -->
+        <div class="flex justify-center mb-4">
+            <img src="IMG_8794.jpg" alt="Ezekiel  Ologunde Profile" class="w-32 h-32 rounded-full border-4 border-gray-700 shadow-lg object-cover">
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold highlight">Ezekiel O. Ologunde</h1>
+        <p class="text-lg md:text-xl mt-2 font-light">Cybersecurity Analyst & AI/ML Enthusiast</p>
+        <div class="flex justify-center space-x-6 mt-4">
+            <a href="https://linkedin.com/in/ezekiel-ologunde" target="_blank" class="text-xl highlight hover:text-white transition duration-300">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/ezekielologunde" target="_blank" class="text-xl highlight hover:text-white transition duration-300">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:ologundeomotola@gmail.com" class="text-xl highlight hover:text-white transition duration-300">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </header>
 
-  <!-- About -->
-  <section id="about">
-    <h2>🔐 About Me</h2>
-    <p>
-      I am a <span class="highlight">cybersecurity educator and digital forensics expert</span> with extensive experience in teaching, research, and practical implementation of security solutions. Currently, I am pursuing a <span class="highlight">Doctor of Engineering in Cybersecurity Analytics</span> at George Washington University, while serving as a Computer Science Instructor at Lawson State Community College.
-    </p>
-    <p>
-      My passion lies in <span class="highlight">bridging the gap between theory and real-world application</span>, empowering the next generation of cybersecurity professionals through <span class="highlight">innovative teaching methodologies</span>, hands-on labs, and applied AI/ML solutions for modern security challenges.
-    </p>
-  </section>
+    <!-- Profile Section -->
+    <section class="max-w-4xl mx-auto mb-12">
+        <div class="card p-8 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold mb-4">About Me <i class="fas fa-user-circle highlight ml-2"></i></h2>
+            <p class="text-md leading-relaxed">
+                As a continuous Learner in Information Technology, I am at the forefront of combining advanced AI/ML techniques with robust cybersecurity protocols. My passion lies in fortifying digital infrastructures and leveraging machine learning for proactive threat detection, incident response, and forensic analysis.
+            </p>
+            <p class="text-md leading-relaxed mt-4">
+                With a strong background as a Computer Science Instructor and extensive experience in Cyber Forensics, I possess a unique blend of academic knowledge and hands-on, practical expertise. I am a lifelong learner, dedicated to exploring innovative solutions in cybersecurity and contributing to a safer digital world.
+            </p>
+        </div>
+    </section>
 
-  <!-- Research & Interests -->
-  <section id="research">
-    <h2>🧠 Research & Interests</h2>
-    <p>
-      My work explores the intersection of <span class="highlight">Artificial Intelligence, Machine Learning, and Cybersecurity</span>.  
-      Areas of focus include:
-    </p>
-    <ul>
-      <li>AI-driven threat detection and cyber defense automation</li>
-      <li>Digital forensics and incident response</li>
-      <li>Malware analysis and reverse engineering</li>
-      <li>Cybersecurity education and workforce development</li>
-    </ul>
-  </section>
+    <!-- Skills Section -->
+    <div class="section-divider my-12 mx-auto max-w-4xl rounded-full"></div>
+    <section class="max-w-4xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-center">Skills & Expertise <i class="fas fa-microchip highlight ml-2 icon-pulse"></i></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Programming Languages -->
+            <div class="card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-3 highlight">Programming</h3>
+                <ul class="list-disc list-inside space-y-2 text-sm">
+                    <li>Python, C++, Java, Javascript</li>
+                    <li>HTML, CSS for front-end development</li>
+                </ul>
+            </div>
+            <!-- Cybersecurity Tools -->
+            <div class="card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-3 highlight">Cybersecurity Tools</h3>
+                <ul class="list-disc list-inside space-y-2 text-sm">
+                    <li>Wireshark, Autopsy, Splunk, NMAP</li>
+                    <li>Kali Linux, Windows, Mac OS</li>
+                    <li>Mobile Forensics: Cellebrite, Magnet Axiom</li>
+                </ul>
+            </div>
+            <!-- AI/ML & Analytics -->
+            <div class="card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-3 highlight">AI/ML & Analytics</h3>
+                <ul class="list-disc list-inside space-y-2 text-sm">
+                    <li>Artificial Engineering, Machine Engineering</li>
+                    <li>Data Analysis & Visualization</li>
+                    <li>Zero Trust Architecture principles</li>
+                </ul>
+            </div>
+            <!-- Networking & Systems -->
+            <div class="card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-3 highlight">Networking & Systems</h3>
+                <ul class="list-disc list-inside space-y-2 text-sm">
+                    <li>TCP/IP, DNS, DHCP, SMTP</li>
+                    <li>Active Directory & Group Policy</li>
+                    <li>Network Miner, Vulnerability Analysis</li>
+                </ul>
+            </div>
+            <!-- Certifications & Affiliations -->
+            <div class="card p-6 rounded-xl shadow-lg col-span-1 md:col-span-2 lg:col-span-1">
+                <h3 class="text-xl font-semibold mb-3 highlight">Certifications & Affiliations</h3>
+                <ul class="list-disc list-inside space-y-2 text-sm">
+                    <li>Google Cybersecurity & IT Support</li>
+                    <li>ISSA, CAMI, ISACA Member</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>💻 Featured Projects</h2>
-    <ul>
-      <li><span class="highlight">ThreatVision:</span> AI-powered threat detection system using anomaly detection models.</li>
-      <li><span class="highlight">ForensicLab:</span> Virtual forensic investigation toolkit for students and professionals.</li>
-      <li><span class="highlight">CyberEdu Hub:</span> Interactive cybersecurity teaching platform with gamified learning modules.</li>
-    </ul>
-  </section>
+    <!-- Projects Section -->
+    <div class="section-divider my-12 mx-auto max-w-4xl rounded-full"></div>
+    <section class="max-w-4xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-center">Featured Projects <i class="fas fa-folder-open highlight ml-2"></i></h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Project 1 -->
+            <div class="card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-2">Cryptographic Protocols for E-Voting</h3>
+                <p class="text-sm font-light mb-4">University of Baltimore</p>
+                <p class="text-sm leading-relaxed">
+                    Independent paper focusing on the implementation and analysis of secure cryptographic protocols to enhance the integrity and confidentiality of electronic voting systems.
+                </p>
+            </div>
+            <!-- Project 2 -->
+            <div class="card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-2">Email Analysis & Forensics</h3>
+                <p class="text-sm font-light mb-4">Personal Project (2024)</p>
+                <p class="text-sm leading-relaxed">
+                    A deep dive into email forensics, including header analysis, tracing origins, and identifying malicious attachments. This project highlights proficiency in digital investigation.
+                </p>
+            </div>
+            <!-- Project 3 -->
+            <div class="card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-2">Ransomware & Social Engineering</h3>
+                <p class="text-sm font-light mb-4">University of Baltimore</p>
+                <p class="text-sm leading-relaxed">
+                    Conference paper exploring the evolving landscape of ransomware attacks and the role of social engineering, offering insights into prevention and mitigation strategies.
+                </p>
+            </div>
+            <!-- Project 4 -->
+            <div class="card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-2">Mobile Device Forensics</h3>
+                <p class="text-sm font-light mb-4">Personal Project (2023)</p>
+                <p class="text-sm leading-relaxed">
+                    Practical project involving the extraction and analysis of data from mobile devices to uncover digital evidence, demonstrating skills in tools like Cellebrite and Magnet Axiom.
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>📬 Get in Touch</h2>
-    <p>
-      Connect with me on <a href="https://www.linkedin.com/" style="color:#00f2fe;">LinkedIn</a>,  
-      explore my research on <a href="https://scholar.google.com/" style="color:#00f2fe;">Google Scholar</a>,  
-      or check out my repositories right here on <span class="highlight">GitHub</span>.
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    © 2025 Ezekiel Ologunde | Cybersecurity & AI Portfolio
-  </footer>
+    <!-- Footer Section -->
+    <footer class="text-center text-sm font-light mt-12 pt-6 border-t border-gray-700">
+        <p>&copy; 2024 Ezekiel O. Ologunde. Built with <span class="highlight">❤️</span> and expertise.</p>
+    </footer>
 </body>
 </html>
