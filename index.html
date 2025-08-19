@@ -1,108 +1,282 @@
-<div align="center">
-  <img src="https://example.com/cyber-header-banner.gif" alt="A cool animated banner showing a neural network or matrix code." />
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezekiel Ologunde - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+        }
+        .header {
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #58a6ff, #8b949e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .project-card {
+            background: #161b22;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(88, 166, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-800 selection:text-white">
 
-<div align="center">
-  <h1>Ezekiel Ologunde</h1>
-  <p>Cybersecurity Cyberforensic Analyst & AI/ML Enthusiast</p>
-</div>
+    <!-- Interactive Background Animation -->
+    <canvas id="bg-canvas" class="bg-animation"></canvas>
 
----
+    <!-- Main Content Wrapper -->
+    <div class="content min-h-screen p-8 lg:p-12">
+        <!-- Header Section -->
+        <header class="header rounded-xl p-6 lg:p-8 flex flex-col md:flex-row items-center justify-between mb-12 border border-gray-700">
+            <div class="flex items-center space-x-6">
+                <!-- Profile Picture -->
+                <div class="flex-shrink-0">
+                    <img src="IMG_8794.JPG" alt="Ezekiel Ologunde" class="w-24 h-24 lg:w-32 lg:h-32 rounded-full border-4 border-gray-600 object-cover">
+                </div>
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl lg:text-5xl font-bold gradient-text">Ezekiel Ologunde</h1>
+                    <p class="text-xl lg:text-2xl mt-2 text-gray-400">Cybersecurity & AI/ML Enthusiast</p>
+                </div>
+            </div>
+            <nav class="mt-4 md:mt-0">
+                <ul class="flex space-x-4 lg:space-x-6">
+                    <li><a href="#about" class="text-gray-300 hover:text-blue-400 transition-colors">About</a></li>
+                    <li><a href="#skills" class="text-gray-300 hover:text-blue-400 transition-colors">Skills</a></li>
+                    <li><a href="#projects" class="text-gray-300 hover:text-blue-400 transition-colors">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
 
-<div align="center">
-  <img src="https://example.com/cyber-divider.svg" alt="A digital line divider." width="100%" />
-</div>
+        <!-- About Me Section -->
+        <section id="about" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
+            <h2 class="text-3xl font-semibold mb-6">About Me</h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+                As a continuous Learner in Information Technology, I am at the forefront of combining advanced AI/ML techniques with robust cybersecurity protocols. My passion lies in fortifying digital infrastructures and leveraging machine learning for proactive threat detection, incident response, and forensic analysis.
+            </p>
+            <p class="text-lg leading-relaxed mt-4 text-gray-300">
+                With a strong background as a Computer Science Instructor and extensive experience in Cyber Forensics, I possess a unique blend of academic knowledge and hands-on, practical expertise. I am a lifelong learner, dedicated to exploring innovative solutions in cybersecurity and contributing to a safer digital world.
+            </p>
+        </section>
 
-## // About Me
+        <!-- Skills & Expertise Section -->
+        <section id="skills" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
+            <h2 class="text-3xl font-semibold mb-6">Skills & Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Skills Category Card -->
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3 gradient-text">Programming</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Python, C++, Java, Javascript</li>
+                        <li>HTML, CSS for front-end development</li>
+                    </ul>
+                </div>
+                <!-- Skills Category Card -->
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3 gradient-text">Cybersecurity Tools</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Wireshark, Autopsy, Splunk, NMAP</li>
+                        <li>Kali Linux, Windows, Mac OS</li>
+                        <li>Mobile Forensics: Cellebrite, Magnet Axiom</li>
+                    </ul>
+                </div>
+                <!-- Skills Category Card -->
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3 gradient-text">AI/ML & Analytics</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Artificial Engineering, Machine Engineering</li>
+                        <li>Data Analysis & Visualization</li>
+                        <li>Zero Trust Architecture principles</li>
+                    </ul>
+                </div>
+                <!-- Skills Category Card -->
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3 gradient-text">Networking & Systems</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>TCP/IP, DNS, DHCP, SMTP</li>
+                        <li>Active Directory & Group Policy</li>
+                        <li>Network Miner, Vulnerability Analysis</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Certifications & Affiliations -->
+            <div class="mt-8">
+                <h3 class="text-xl font-bold mb-3 gradient-text">Certifications & Affiliations</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Google Cybersecurity & IT Support</li>
+                    <li>ISSA, CAMI, ISACA Member</li>
+                </ul>
+            </div>
+        </section>
 
-<div align="center">
-  <p>As a continuous learner in Information Technology, I am at the forefront of combining advanced <b>AI/ML</b> techniques with robust <b>cybersecurity</b> protocols. My passion lies in fortifying digital infrastructures and leveraging machine learning for proactive threat detection, incident response, and forensic analysis.</p>
+        <!-- Featured Projects Section -->
+        <section id="projects" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
+            <h2 class="text-3xl font-semibold mb-6">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project Card -->
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-2">Cryptographic Protocols for E-Voting</h3>
+                    <p class="text-gray-400 text-sm mb-3">University of Baltimore</p>
+                    <p class="text-gray-300">Independent paper focusing on the implementation and analysis of secure cryptographic protocols to enhance the integrity and confidentiality of electronic voting systems.</p>
+                </div>
+                <!-- Project Card -->
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-2">Email Analysis & Forensics</h3>
+                    <p class="text-gray-400 text-sm mb-3">Personal Project (2024)</p>
+                    <p class="text-gray-300">A deep dive into email forensics, including header analysis, tracing origins, and identifying malicious attachments. This project highlights proficiency in digital investigation.</p>
+                </div>
+                <!-- Project Card -->
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-2">Ransomware & Social Engineering</h3>
+                    <p class="text-gray-400 text-sm mb-3">University of Baltimore</p>
+                    <p class="text-gray-300">Conference paper exploring the evolving landscape of ransomware attacks and the role of social engineering, offering insights into prevention and mitigation strategies.</p>
+                </div>
+                <!-- Project Card -->
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-2">Mobile Device Forensics</h3>
+                    <p class="text-gray-400 text-sm mb-3">Personal Project (2023)</p>
+                    <p class="text-gray-300">Practical project involving the extraction and analysis of data from mobile devices to uncover digital evidence, demonstrating skills in tools like Cellebrite and Magnet Axiom.</p>
+                </div>
+            </div>
+        </section>
 
-  <p>With a strong background as a Computer Science Instructor and extensive experience in Cyber Forensics, I possess a unique blend of academic knowledge and hands-on, practical expertise. I am a lifelong learner, dedicated to exploring innovative solutions in cybersecurity and contributing to a safer digital world.</p>
-</div>
+        <!-- Footer Section -->
+        <footer class="text-center text-gray-500 text-sm mt-12 pb-4">
+            <p>&copy; 2024 Ezekiel O. Ologunde. Built with ❤️ and expertise.</p>
+        </footer>
+    </div>
 
----
+    <!-- JavaScript for Interactive Background -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d');
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
 
-## // Skills & Expertise
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge" />
-        <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++ Badge" />
-        <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" alt="Java Badge" />
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="Javascript Badge" />
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://img.shields.io/badge/Wireshark-1679A8?style=for-the-badge&logo=wireshark&logoColor=white" alt="Wireshark Badge" />
-        <img src="https://img.shields.io/badge/Splunk-000000?style=for-the-badge&logo=splunk&logoColor=white" alt="Splunk Badge" />
-        <img src="https://img.shields.io/badge/Nmap-898989?style=for-the-badge&logo=nmap&logoColor=white" alt="Nmap Badge" />
-        <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white" alt="Kali Linux Badge" />
-      </td>
-    </tr>
-    <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="https://img.shields.io/badge/AI_&_ML-FF69B4?style=for-the-badge&logo=tensorflow&logoColor=white" alt="AI & ML Badge" />
-        <img src="https://img.shields.io/badge/Data_Analysis-34B7C9?style=for-the-badge&logo=pandas&logoColor=white" alt="Data Analysis Badge" />
-        <img src="https://img.shields.io/badge/Zero_Trust-000000?style=for-the-badge&logo=zerotier&logoColor=white" alt="Zero Trust Badge" />
-      </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://img.shields.io/badge/TCP%2FIP-000000?style=for-the-badge&logo=networkmanager&logoColor=white" alt="TCP/IP Badge" />
-        <img src="https://img.shields.io/badge/Active_Directory-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Active Directory Badge" />
-      </td>
-    </tr>
-  </table>
-</div>
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
 
----
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
 
-## // Featured Projects
+            // Particle Class for the network effect
+            class Particle {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.vx = Math.random() * 2 - 1;
+                    this.vy = Math.random() * 2 - 1;
+                    this.size = Math.random() * 2 + 1;
+                    this.color = '#58a6ff';
+                }
 
-<div align="center">
-  <a href="https://github.com/YourUsername/Project-Repo-1">
-    <h3>Cryptographic Protocols for E-Voting</h3>
-    <p><i>University of Baltimore</i></p>
-    <p>Independent paper on secure cryptographic protocols to enhance the integrity and confidentiality of electronic voting systems.</p>
-  </a>
-  <img src="https://img.shields.io/badge/Research-Paper-blue" alt="Research Paper" />
-</div>
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
 
-<br>
+                    // Bounce off edges
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
 
-<div align="center">
-  <a href="https://github.com/YourUsername/Project-Repo-2">
-    <h3>Email Analysis & Forensics</h3>
-    <p><i>Personal Project (2024)</i></p>
-    <p>A deep dive into email forensics, including header analysis, tracing origins, and identifying malicious attachments.</p>
-  </a>
-  <img src="https://img.shields.io/badge/Digital-Forensics-purple" alt="Digital Forensics" />
-</div>
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
 
-<br>
+            let particles = [];
+            const numParticles = 100;
 
-<div align="center">
-  <a href="https://github.com/YourUsername/Project-Repo-3">
-    <h3>Ransomware & Social Engineering</h3>
-    <p><i>University of Baltimore</i></p>
-    <p>Conference paper exploring the evolving landscape of ransomware attacks, offering insights into prevention and mitigation.</p>
-  </a>
-  <img src="https://img.shields.io/badge/Threat-Analysis-red" alt="Threat Analysis" />
-</div>
+            function init() {
+                particles = [];
+                for (let i = 0; i < numParticles; i++) {
+                    particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
+                }
+            }
 
----
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
 
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=YourUsername&theme=matrix&no-frame=true" alt="GitHub Profile Trophy" />
-</div>
+                    // Draw lines between particles that are close
+                    for (let j = i; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YourUsername&show_icons=true&theme=matrix" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YourUsername&layout=compact&theme=matrix" alt="Top Languages" />
-</div>
+                        if (distance < 100) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(88, 166, 255, ${1 - distance / 100})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
 
-<br>
+                    // Draw a line from mouse to nearby particles
+                    const dx = particles[i].x - mouseX;
+                    const dy = particles[i].y - mouseY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(88, 166, 255, ${1 - distance / 150})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouseX, mouseY);
+                        ctx.stroke();
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
 
-<div align="center">
-  © 2024 Ezekiel O. Ologunde. Built with ❤️ and expertise.
-</div>
+            init();
+            animate();
+        });
+    </script>
+
+</body>
+</html>
