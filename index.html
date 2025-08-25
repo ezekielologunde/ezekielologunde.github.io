@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Base styles for the body and content */
+        /* Base styles */
         body {
             font-family: 'Inter', sans-serif;
             background: #0d1117;
@@ -19,7 +19,7 @@
             overflow-x: hidden;
         }
 
-        /* Fixed background with animation for visual depth */
+        /* Fixed background animation for visual depth */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -27,16 +27,16 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.15; /* Subtle opacity for a non-distracting background */
+            opacity: 0.15;
         }
 
-        /* Container for all main content, placed above the background animation */
+        /* Main content container */
         .content {
             position: relative;
             z-index: 10;
         }
 
-        /* Header styling with a blurred background for a frosted glass effect */
+        /* Header styling with frosted glass effect */
         .header {
             background: rgba(13, 17, 23, 0.8);
             backdrop-filter: blur(10px);
@@ -49,7 +49,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Card and project hover effects for interactivity */
+        /* Interactive card and project hover effects */
         .project-card {
             background: #161b22;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -62,12 +62,9 @@
 </head>
 <body class="selection:bg-blue-800 selection:text-white">
 
-    <!-- Canvas for the background particle animation -->
     <canvas id="bg-canvas" class="bg-animation"></canvas>
 
-    <!-- Main content container -->
     <div class="content min-h-screen p-8 lg:p-12">
-        <!-- Header with profile picture and navigation -->
         <header class="header rounded-xl p-6 lg:p-8 flex flex-col md:flex-row items-center justify-between mb-12 border border-gray-700">
             <div class="flex items-center space-x-6">
                 <div class="flex-shrink-0">
@@ -75,7 +72,7 @@
                 </div>
                 <div class="text-center md:text-left">
                     <h1 class="text-4xl lg:text-5xl font-bold gradient-text">Ezekiel Ologunde</h1>
-                    <p class="text-xl lg:text-2xl mt-2 text-gray-400">Cybersecurity & AI/ML Enthusiast</p>
+                    <p class="text-xl lg:text-2xl mt-2 text-gray-400">Cybersecurity & AI/ML Specialist</p>
                     <div class="flex items-center mt-2 text-gray-400">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
                             <path d="M12 17.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
@@ -90,127 +87,149 @@
                     <li><a href="#about" class="text-gray-300 hover:text-blue-400 transition-colors">About</a></li>
                     <li><a href="#education" class="text-gray-300 hover:text-blue-400 transition-colors">Education</a></li>
                     <li><a href="#skills" class="text-gray-300 hover:text-blue-400 transition-colors">Skills</a></li>
+                    <li><a href="#certifications" class="text-gray-300 hover:text-blue-400 transition-colors">Certifications</a></li>
                     <li><a href="#projects" class="text-gray-300 hover:text-blue-400 transition-colors">Projects</a></li>
-                    <li><a href="#resources" class="text-gray-300 hover:text-blue-400 transition-colors">Resources</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- About Me Section -->
         <section id="about" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
             <h2 class="text-3xl font-semibold mb-6">About Me</h2>
             <p class="text-lg leading-relaxed text-gray-300">
-                As a continuous Learner in Information Technology, I am at the forefront of combining advanced AI/ML techniques with robust cybersecurity protocols. My passion lies in fortifying digital infrastructures and leveraging machine learning for proactive threat detection, incident response, and forensic analysis.
+                A highly motivated and results-oriented professional with a unique blend of expertise in **cybersecurity** and **Artificial Intelligence/Machine Learning**. I am passionate about leveraging **data-driven insights** and **advanced algorithms** to develop proactive solutions for a safer digital landscape. My background spans from robust **network defense** and **incident response** to cutting-edge **digital forensics**, making me a versatile asset in complex technical environments.
             </p>
             <p class="text-lg leading-relaxed mt-4 text-gray-300">
-                With a strong background as a Computer Science Instructor and extensive experience in Cyber Forensics, I possess a unique blend of academic knowledge and hands-on, practical expertise. I am a lifelong learner, dedicated to exploring innovative solutions in cybersecurity and contributing to a safer digital world.
+                As a Computer Science Instructor, I've honed my ability to explain complex concepts clearly, while my extensive experience in cyber forensics has provided me with practical, hands-on skills in **evidence acquisition**, **analysis**, and **threat hunting**. I am a **continuous learner**, dedicated to staying ahead of emerging threats and contributing innovative, ethical solutions to the cybersecurity community.
             </p>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
-            <h2 class="text-3xl font-semibold mb-6">Education</h2>
-            <div class="space-y-6">
+            <h2 class="text-3xl font-semibold mb-6">Education 🎓</h2>
+            <div class="space-y-8">
                 <div>
                     <h3 class="text-xl font-bold mb-1">University of Baltimore</h3>
                     <p class="text-gray-400">Master of Science in Cyber Forensics, Digital Investigation Specialty</p>
-                    <p class="text-sm text-gray-500">May 2024</p>
+                    <p class="text-sm text-gray-500">Graduated: May 2024</p>
                     <ul class="list-disc list-inside mt-2 text-gray-300">
-                        <li>Relevant Coursework: Cryptography, Mobile Forensics, Incident Threats, Vulnerability and Detection Analysis, NIST Standards, Evidence Acquisition, FTK</li>
+                        <li>**Relevant Coursework:** Advanced Cryptography, Mobile Forensics & E-Discovery, Cybercrime & Incident Response, Vulnerability & Detection Analysis, NIST Standards, Digital Evidence Acquisition.</li>
+                        <li>**Thesis Project:** Developed a framework for AI-powered threat detection using machine learning models to identify anomalies in network traffic.</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold mb-1">University of Ilorin</h3>
                     <p class="text-gray-400">Bachelor of Science in Computer Science and Education</p>
-                    <p class="text-sm text-gray-500">October 2019</p>
+                    <p class="text-sm text-gray-500">Graduated: October 2019</p>
                     <ul class="list-disc list-inside mt-2 text-gray-300">
-                        <li>Relevant Coursework: Data Structure and Algorithm, Networking Concept, C++, Software Engineering, JAVA, O.S</li>
+                        <li>**Relevant Coursework:** Data Structures & Algorithms, Operating Systems, Network Concepts, Software Engineering, Object-Oriented Programming (Java, C++).</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold mb-1">Kwara State Polytechnic, Ilorin</h3>
                     <p class="text-gray-400">National Diploma: Computer Science</p>
+                    <p class="text-sm text-gray-500">Completed: 2017</p>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
-            <h2 class="text-3xl font-semibold mb-6">Skills & Expertise</h2>
+            <h2 class="text-3xl font-semibold mb-6">Skills & Expertise 🛠️</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="project-card rounded-xl p-6 border border-gray-700">
-                    <h3 class="text-xl font-bold mb-3 gradient-text">Programming</h3>
+                    <h3 class="text-xl font-bold mb-3 gradient-text">Cybersecurity</h3>
                     <ul class="list-disc list-inside space-y-1">
-                        <li>Python, C++, Java, Javascript</li>
-                        <li>HTML, CSS for front-end development</li>
+                        <li>**Digital Forensics:** Mobile, Network, and Host Forensics, Data Recovery.</li>
+                        <li>**Threat Analysis:** Vulnerability Analysis, Threat Intelligence, Malware Analysis.</li>
+                        <li>**Compliance:** NIST Standards, ISO 27001, GDPR.</li>
+                        <li>**Defense:** Endpoint Protection, Firewalls, IDS/IPS, SIEM.</li>
                     </ul>
                 </div>
                 <div class="project-card rounded-xl p-6 border border-gray-700">
-                    <h3 class="text-xl font-bold mb-3 gradient-text">Cybersecurity Tools</h3>
+                    <h3 class="text-xl font-bold mb-3 gradient-text">AI/ML & Data Science</h3>
                     <ul class="list-disc list-inside space-y-1">
-                        <li>Wireshark, Autopsy, Splunk, NMAP</li>
-                        <li>Kali Linux, Windows, Mac OS</li>
-                        <li>Mobile Forensics: Cellebrite, Magnet Axiom</li>
+                        <li>**Machine Learning:** Supervised/Unsupervised Learning, Deep Learning, NLP.</li>
+                        <li>**Frameworks:** TensorFlow, Scikit-learn, Pandas, NumPy.</li>
+                        <li>**Data:** Data Analysis, Data Visualization (Matplotlib, Seaborn).</li>
+                        <li>**Methodologies:** Zero Trust Architecture, Adversarial Machine Learning.</li>
                     </ul>
                 </div>
                 <div class="project-card rounded-xl p-6 border border-gray-700">
-                    <h3 class="text-xl font-bold mb-3 gradient-text">AI/ML & Analytics</h3>
+                    <h3 class="text-xl font-bold mb-3 gradient-text">Tools & Platforms</h3>
                     <ul class="list-disc list-inside space-y-1">
-                        <li>Artificial Engineering, Machine Engineering</li>
-                        <li>Data Analysis & Visualization</li>
-                        <li>Zero Trust Architecture principles</li>
+                        <li>**Forensic Tools:** EnCase, FTK (Forensic Toolkit), Cellebrite, Magnet AXIOM.</li>
+                        <li>**Network Tools:** Wireshark, Splunk, Nmap, Metasploit, Nessus.</li>
+                        <li>**Operating Systems:** Kali Linux, Windows, macOS, Ubuntu, Virtual Machines.</li>
+                        <li>**Cloud:** Basic understanding of AWS & Azure Security Services.</li>
                     </ul>
                 </div>
                 <div class="project-card rounded-xl p-6 border border-gray-700">
-                    <h3 class="text-xl font-bold mb-3 gradient-text">Networking & Systems</h3>
+                    <h3 class="text-xl font-bold mb-3 gradient-text">Programming & Scripting</h3>
                     <ul class="list-disc list-inside space-y-1">
-                        <li>TCP/IP, DNS, DHCP, SMTP</li>
-                        <li>Active Directory & Group Policy</li>
-                        <li>Network Miner, Vulnerability Analysis</li>
+                        <li>**Languages:** Python (Proficient), C++, Java, JavaScript.</li>
+                        <li>**Scripting:** Bash, PowerShell for automation and system administration.</li>
+                        <li>**Web:** HTML5, CSS3, Tailwind CSS.</li>
                     </ul>
                 </div>
             </div>
-            <div class="mt-8">
-                <h3 class="text-xl font-bold mb-3 gradient-text">Certifications & Affiliations</h3>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Google Cybersecurity & IT Support</li>
-                    <li>ISSA, CAMI, ISACA Member</li>
-                </ul>
+        </section>
+        
+        <section id="certifications" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
+            <h2 class="text-3xl font-semibold mb-6">Certifications 🏆 & Professional Affiliations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-2">Google Cybersecurity Professional Certificate</h3>
+                    <p class="text-gray-400 text-sm mb-3">Issued by Google</p>
+                    <p class="text-gray-300">Demonstrates a comprehensive understanding of cybersecurity principles, tools, and best practices, including threat detection, incident response, and security operations.</p>
+                </div>
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-2">Google IT Support Professional Certificate</h3>
+                    <p class="text-gray-400 text-sm mb-3">Issued by Google</p>
+                    <p class="text-gray-300">Validates foundational IT knowledge across networking, operating systems, system administration, and troubleshooting.</p>
+                </div>
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-2">Professional Affiliations</h3>
+                    <ul class="list-disc list-inside space-y-1 mt-2 text-gray-300">
+                        <li>**ISSA (Information Systems Security Association):** Member.</li>
+                        <li>**ISACA (Information Systems Audit and Control Association):** Member.</li>
+                        <li>**CAMI (Certified Analytics and Machine Intelligence):** Member.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
-            <h2 class="text-3xl font-semibold mb-6">Featured Projects</h2>
+            <h2 class="text-3xl font-semibold mb-6">Featured Projects 📂</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="project-card rounded-xl p-6 border border-gray-700">
-                    <h3 class="text-xl font-bold mb-2">Cryptographic Protocols for E-Voting</h3>
-                    <p class="text-gray-400 text-sm mb-3">University of Baltimore</p>
-                    <p class="text-gray-300">Independent paper focusing on the implementation and analysis of secure cryptographic protocols to enhance the integrity and confidentiality of electronic voting systems.</p>
+                    <h3 class="text-xl font-bold mb-2">AI-Powered Intrusion Detection System (IDS)</h3>
+                    <p class="text-gray-400 text-sm mb-3">**Capstone Project** | University of Baltimore</p>
+                    <p class="text-gray-300">Developed a machine learning model to classify network traffic as normal or malicious. The project involved data preprocessing of network packets, feature engineering, and the implementation of a classification algorithm to proactively detect cyber threats.</p>
+                </div>
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-2">Cryptographic Protocols for E-Voting Security</h3>
+                    <p class="text-gray-400 text-sm mb-3">**Independent Research Paper** | University of Baltimore</p>
+                    <p class="text-gray-300">Authored a detailed research paper on the application of zero-knowledge proofs and homomorphic encryption to enhance the privacy and integrity of electronic voting systems. The work outlines a secure and verifiable cryptographic framework.</p>
                 </div>
                 <div class="project-card rounded-xl p-6 border border-gray-700">
                     <h3 class="text-xl font-bold mb-2">Email Analysis & Forensics</h3>
-                    <p class="text-gray-400 text-sm mb-3">Personal Project (2024)</p>
-                    <p class="text-gray-300">A deep dive into email forensics, including header analysis, tracing origins, and identifying malicious attachments. This project highlights proficiency in digital investigation.</p>
+                    <p class="text-gray-400 text-sm mb-3">**Personal Project** (2024)</p>
+                    <p class="text-gray-300">Conducted a comprehensive forensic investigation of email data. This included analyzing email headers to trace the sender's origin, extracting metadata, and identifying indicators of compromise (IOCs) such as phishing links and malicious attachments.</p>
                 </div>
                 <div class="project-card rounded-xl p-6 border border-gray-700">
-                    <h3 class="text-xl font-bold mb-2">Ransomware & Social Engineering</h3>
-                    <p class="text-gray-400 text-sm mb-3">University of Baltimore</p>
-                    <p class="text-300">Conference paper exploring the evolving landscape of ransomware attacks and the role of social engineering, offering insights into prevention and mitigation strategies.</p>
+                    <h3 class="text-xl font-bold mb-2">Ransomware & Social Engineering: A Mitigation Study</h3>
+                    <p class="text-gray-400 text-sm mb-3">**Conference Paper** | University of Baltimore</p>
+                    <p class="text-gray-300">Co-authored a conference paper that analyzes the synergy between ransomware attacks and social engineering techniques. The paper provides a tactical guide on implementing a multi-layered defense strategy and a human-centric security awareness program.</p>
                 </div>
                 <div class="project-card rounded-xl p-6 border border-gray-700">
-                    <h3 class="text-xl font-bold mb-2">Mobile Device Forensics</h3>
-                    <p class="text-gray-400 text-sm mb-3">Personal Project (2023)</p>
-                    <p class="text-gray-300">Practical project involving the extraction and analysis of data from mobile devices to uncover digital evidence, demonstrating skills in tools like Cellebrite and Magnet Axiom.</p>
+                    <h3 class="text-xl font-bold mb-2">Mobile Device Forensics Case Simulation</h3>
+                    <p class="text-gray-400 text-sm mb-3">**Practical Application** (2023)</p>
+                    <p class="text-gray-300">Simulated a digital crime scenario involving a mobile device. The project involved a full-disk acquisition, data extraction (SMS, call logs, GPS data), and a timeline analysis using industry-standard tools like Cellebrite and Magnet AXIOM to reconstruct events and find critical digital evidence.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Resources Section - now simplified with just the Hub link -->
         <section id="resources" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
             <h2 class="text-3xl font-semibold mb-6">Resources for Students 🎓</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- The single card linking to the main resource hub -->
                 <div class="project-card rounded-xl p-6 border border-gray-700">
                     <h3 class="text-xl font-bold mb-3">📚 Cybersecurity Resources Hub</h3>
                     <p class="text-gray-300 mb-4">A comprehensive guide for students and professionals looking for free trainings, certifications, and community resources.</p>
@@ -221,13 +240,11 @@
             </div>
         </section>
         
-        <!-- Footer -->
         <footer class="text-center text-gray-500 text-sm mt-12 pb-4">
             <p>&copy; 2024 Ezekiel O. Ologunde. Built with ❤️ and expertise.</p>
         </footer>
     </div>
 
-    <!-- JavaScript for the interactive background animation -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const canvas = document.getElementById('bg-canvas');
@@ -238,19 +255,16 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
 
-            // Update canvas dimensions on window resize for responsiveness
             window.addEventListener('resize', () => {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
             });
 
-            // Track mouse movement to create an interactive connection effect
             document.addEventListener('mousemove', (e) => {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
             });
 
-            // Particle Class for the network effect
             class Particle {
                 constructor(x, y) {
                     this.x = x;
@@ -258,14 +272,12 @@
                     this.vx = Math.random() * 2 - 1;
                     this.vy = Math.random() * 2 - 1;
                     this.size = Math.random() * 2 + 1;
-                    this.color = '#58a6ff'; // Blue color for the particles
+                    this.color = '#58a6ff';
                 }
 
                 update() {
                     this.x += this.vx;
                     this.y += this.vy;
-
-                    // Bounce off edges of the canvas
                     if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                     if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
                 }
@@ -283,20 +295,17 @@
 
             function init() {
                 particles = [];
-                // Create a number of particles at random positions
                 for (let i = 0; i < numParticles; i++) {
                     particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
                 }
             }
 
-            // The main animation loop
             function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas each frame
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
                 for (let i = 0; i < particles.length; i++) {
                     particles[i].update();
                     particles[i].draw();
 
-                    // Draw lines between nearby particles to create a network effect
                     for (let j = i; j < particles.length; j++) {
                         const dx = particles[i].x - particles[j].x;
                         const dy = particles[i].y - particles[j].y;
@@ -304,7 +313,7 @@
 
                         if (distance < 100) {
                             ctx.beginPath();
-                            ctx.strokeStyle = `rgba(88, 166, 255, ${1 - distance / 100})`; // Fade the line based on distance
+                            ctx.strokeStyle = `rgba(88, 166, 255, ${1 - distance / 100})`;
                             ctx.lineWidth = 0.5;
                             ctx.moveTo(particles[i].x, particles[i].y);
                             ctx.lineTo(particles[j].x, particles[j].y);
@@ -312,7 +321,6 @@
                         }
                     }
 
-                    // Draw a line from the mouse cursor to nearby particles
                     const dx = particles[i].x - mouseX;
                     const dy = particles[i].y - mouseY;
                     const distance = Math.sqrt(dx * dx + dy * dy);
@@ -325,10 +333,9 @@
                         ctx.stroke();
                     }
                 }
-                requestAnimationFrame(animate); // Loop the animation
+                requestAnimationFrame(animate);
             }
 
-            // Start the animation on page load
             init();
             animate();
         });
