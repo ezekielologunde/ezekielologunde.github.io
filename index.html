@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ezekiel Ologunde - Portfolio</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons for location icon -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
@@ -54,15 +51,11 @@
 </head>
 <body class="selection:bg-blue-800 selection:text-white">
 
-    <!-- Interactive Background Animation -->
     <canvas id="bg-canvas" class="bg-animation"></canvas>
 
-    <!-- Main Content Wrapper -->
     <div class="content min-h-screen p-8 lg:p-12">
-        <!-- Header Section -->
         <header class="header rounded-xl p-6 lg:p-8 flex flex-col md:flex-row items-center justify-between mb-12 border border-gray-700">
             <div class="flex items-center space-x-6">
-                <!-- Profile Picture -->
                 <div class="flex-shrink-0">
                     <img src="IMG_8794.JPG" alt="Ezekiel Ologunde" class="w-24 h-24 lg:w-32 lg:h-32 rounded-full border-4 border-gray-600 object-cover">
                 </div>
@@ -70,7 +63,6 @@
                     <h1 class="text-4xl lg:text-5xl font-bold gradient-text">Ezekiel Ologunde</h1>
                     <p class="text-xl lg:text-2xl mt-2 text-gray-400">Cybersecurity & AI/ML Enthusiast</p>
                     <div class="flex items-center mt-2 text-gray-400">
-                        <!-- Location Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
                             <path d="M12 17.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                             <path d="M12 2a9 9 0 0 1 9 9c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 9-9z"/>
@@ -85,11 +77,11 @@
                     <li><a href="#education" class="text-gray-300 hover:text-blue-400 transition-colors">Education</a></li>
                     <li><a href="#skills" class="text-gray-300 hover:text-blue-400 transition-colors">Skills</a></li>
                     <li><a href="#projects" class="text-gray-300 hover:text-blue-400 transition-colors">Projects</a></li>
+                    <li><a href="#resources" class="text-gray-300 hover:text-blue-400 transition-colors">Resources</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- About Me Section -->
         <section id="about" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
             <h2 class="text-3xl font-semibold mb-6">About Me</h2>
             <p class="text-lg leading-relaxed text-gray-300">
@@ -100,7 +92,6 @@
             </p>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
             <h2 class="text-3xl font-semibold mb-6">Education</h2>
             <div class="space-y-6">
@@ -127,11 +118,9 @@
             </div>
         </section>
 
-        <!-- Skills & Expertise Section -->
         <section id="skills" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
             <h2 class="text-3xl font-semibold mb-6">Skills & Expertise</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Skills Category Card -->
                 <div class="project-card rounded-xl p-6 border border-gray-700">
                     <h3 class="text-xl font-bold mb-3 gradient-text">Programming</h3>
                     <ul class="list-disc list-inside space-y-1">
@@ -139,7 +128,6 @@
                         <li>HTML, CSS for front-end development</li>
                     </ul>
                 </div>
-                <!-- Skills Category Card -->
                 <div class="project-card rounded-xl p-6 border border-gray-700">
                     <h3 class="text-xl font-bold mb-3 gradient-text">Cybersecurity Tools</h3>
                     <ul class="list-disc list-inside space-y-1">
@@ -148,7 +136,6 @@
                         <li>Mobile Forensics: Cellebrite, Magnet Axiom</li>
                     </ul>
                 </div>
-                <!-- Skills Category Card -->
                 <div class="project-card rounded-xl p-6 border border-gray-700">
                     <h3 class="text-xl font-bold mb-3 gradient-text">AI/ML & Analytics</h3>
                     <ul class="list-disc list-inside space-y-1">
@@ -157,7 +144,6 @@
                         <li>Zero Trust Architecture principles</li>
                     </ul>
                 </div>
-                <!-- Skills Category Card -->
                 <div class="project-card rounded-xl p-6 border border-gray-700">
                     <h3 class="text-xl font-bold mb-3 gradient-text">Networking & Systems</h3>
                     <ul class="list-disc list-inside space-y-1">
@@ -167,7 +153,6 @@
                     </ul>
                 </div>
             </div>
-            <!-- Certifications & Affiliations -->
             <div class="mt-8">
                 <h3 class="text-xl font-bold mb-3 gradient-text">Certifications & Affiliations</h3>
                 <ul class="list-disc list-inside space-y-1">
@@ -177,29 +162,24 @@
             </div>
         </section>
 
-        <!-- Featured Projects Section -->
         <section id="projects" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
             <h2 class="text-3xl font-semibold mb-6">Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project Card -->
                 <div class="project-card rounded-xl p-6 border border-gray-700">
                     <h3 class="text-xl font-bold mb-2">Cryptographic Protocols for E-Voting</h3>
                     <p class="text-gray-400 text-sm mb-3">University of Baltimore</p>
                     <p class="text-gray-300">Independent paper focusing on the implementation and analysis of secure cryptographic protocols to enhance the integrity and confidentiality of electronic voting systems.</p>
                 </div>
-                <!-- Project Card -->
                 <div class="project-card rounded-xl p-6 border border-gray-700">
                     <h3 class="text-xl font-bold mb-2">Email Analysis & Forensics</h3>
                     <p class="text-gray-400 text-sm mb-3">Personal Project (2024)</p>
                     <p class="text-gray-300">A deep dive into email forensics, including header analysis, tracing origins, and identifying malicious attachments. This project highlights proficiency in digital investigation.</p>
                 </div>
-                <!-- Project Card -->
                 <div class="project-card rounded-xl p-6 border border-gray-700">
                     <h3 class="text-xl font-bold mb-2">Ransomware & Social Engineering</h3>
                     <p class="text-gray-400 text-sm mb-3">University of Baltimore</p>
                     <p class="text-gray-300">Conference paper exploring the evolving landscape of ransomware attacks and the role of social engineering, offering insights into prevention and mitigation strategies.</p>
                 </div>
-                <!-- Project Card -->
                 <div class="project-card rounded-xl p-6 border border-gray-700">
                     <h3 class="text-xl font-bold mb-2">Mobile Device Forensics</h3>
                     <p class="text-gray-400 text-sm mb-3">Personal Project (2023)</p>
@@ -208,13 +188,52 @@
             </div>
         </section>
 
-        <!-- Footer Section -->
+        <section id="resources" class="bg-gray-800 bg-opacity-30 rounded-xl p-8 lg:p-10 mb-12 border border-gray-700">
+            <h2 class="text-3xl font-semibold mb-6">Resources for Students 🎓</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3">Free & Entry-Level Certifications</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li><a href="https://www.isc2.org/certifications/cc" class="text-blue-400 hover:underline" target="_blank">ISC² Certified in Cybersecurity (CC)</a> - Complete certification included.</li>
+                        <li><a href="https://www.fortinet.com/training/cybersecurity-training/training-institute" class="text-blue-400 hover:underline" target="_blank">Fortinet NSE 1 & 2</a> - Foundation level security certification.</li>
+                        <li><a href="https://www.coursera.org/professional-certificates/google-cybersecurity" class="text-blue-400 hover:underline" target="_blank">Google Cybersecurity Certificate</a> - Available for free with Coursera financial aid or trial.</li>
+                        <li><a href="https://www.comptia.org/certifications/security" class="text-blue-400 hover:underline" target="_blank">CompTIA Security+</a> - Foundation for a cybersecurity career.</li>
+                    </ul>
+                </div>
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3">Hands-on Learning Platforms</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li><a href="https://tryhackme.com/" class="text-blue-400 hover:underline" target="_blank">TryHackMe</a> - Practical, beginner-friendly learning environment with a strong community.</li>
+                        <li><a href="https://academy.hackthebox.com/" class="text-blue-400 hover:underline" target="_blank">HackTheBox Academy</a> - Real-world scenarios and advanced challenges.</li>
+                        <li><a href="https://portswigger.net/web-security" class="text-blue-400 hover:underline" target="_blank">PortSwigger Web Security Academy</a> - Interactive labs focused on web security.</li>
+                        <li><a href="https://www.npower.org/" class="text-blue-400 hover:underline" target="_blank">NPower Tech Training</a> - Free programs with job placement assistance for underserved communities.</li>
+                    </ul>
+                </div>
+                <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3">Communities & Forums</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li><a href="https://www.skool.com/cybersec" class="text-blue-400 hover:underline" target="_blank">Skool Cybersecurity Community</a> - A free community for networking and mentorship.</li>
+                        <li><a href="https://www.reddit.com/r/cybersecurity/" class="text-blue-400 hover:underline" target="_blank">Reddit Communities</a> - Active discussions on r/cybersecurity, r/netsec, and others.</li>
+                        <li><a href="https://www.linkedin.com/groups/95952/" class="text-blue-400 hover:underline" target="_blank">LinkedIn Groups</a> - Professional networking and job postings.</li>
+                    </ul>
+                </div>
+                 <div class="project-card rounded-xl p-6 border border-gray-700">
+                    <h3 class="text-xl font-bold mb-3">Conferences & Events</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li><a href="https://www.rsaconference.com/" class="text-blue-400 hover:underline" target="_blank">RSA Conference</a> - One of the largest global cybersecurity conferences.</li>
+                        <li><a href="https://www.blackhat.com/" class="text-blue-400 hover:underline" target="_blank">Black Hat USA</a> - A premier technical security conference.</li>
+                        <li><a href="https://www.defcon.org/" class="text-blue-400 hover:underline" target="_blank">DEF CON</a> - The world's largest hacker convention.</li>
+                        <li><a href="https://www.sans.org/cyber-security-summits/" class="text-blue-400 hover:underline" target="_blank">SANS Institute Summits</a> - Focus on technical training and certification.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
         <footer class="text-center text-gray-500 text-sm mt-12 pb-4">
             <p>&copy; 2024 Ezekiel O. Ologunde. Built with ❤️ and expertise.</p>
         </footer>
     </div>
 
-    <!-- JavaScript for Interactive Background -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const canvas = document.getElementById('bg-canvas');
