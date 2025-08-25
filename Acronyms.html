@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔤 Cybersecurity Acronyms Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            padding: 2rem;
+        }
+        .section-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        h1, h2 {
+            font-weight: 700;
+        }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #79c0ff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-top: 1rem;
+        }
+        th, td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+        thead {
+            background-color: #1f242c;
+        }
+        tbody tr:hover {
+            background-color: #242932;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto">
+        <!-- Navigation to Main Page -->
+        <div class="text-left py-4">
+            <a href="index.html" class="text-lg inline-flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Back to Main
+            </a>
+        </div>
+
+        <!-- Header -->
+        <header class="text-center py-10 md:py-16">
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
+                🔤 Cybersecurity Acronyms Guide
+            </h1>
+            <p class="text-md md:text-lg text-gray-400">A comprehensive guide to common cybersecurity terminology.</p>
+        </header>
+
+        <!-- Main Content Sections -->
+        <main class="space-y-8">
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">📚 Introduction</h2>
+                <p>Welcome to the comprehensive guide to cybersecurity acronyms! This resource helps you understand the common terminology used in the cybersecurity field. Whether you're a student, professional, or enthusiast, this guide will help you navigate the complex world of cybersecurity terminology.</p>
+            </div>
+
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">🔒 Access & Authentication</h2>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>Full Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ACL</td>
+                                <td>Access Control List</td>
+                                <td>List defining permissions for accessing resources</td>
+                            </tr>
+                            <tr>
+                                <td>IAM</td>
+                                <td>Identity and Access Management</td>
+                                <td>Controls user access and identity verification</td>
+                            </tr>
+                            <tr>
+                                <td>MFA</td>
+                                <td>Multi-Factor Authentication</td>
+                                <td>Requires multiple forms of verification to access systems</td>
+                            </tr>
+                            <tr>
+                                <td>SSO</td>
+                                <td>Single Sign-On</td>
+                                <td>Allows users to access multiple applications with one login</td>
+                            </tr>
+                            <tr>
+                                <td>U2F</td>
+                                <td>Universal 2nd Factor</td>
+                                <td>Standard for two-factor authentication using hardware tokens</td>
+                            </tr>
+                            <tr>
+                                <td>PAM</td>
+                                <td>Privileged Access Management</td>
+                                <td>Controls and monitors access to critical systems and data</td>
+                            </tr>
+                            <tr>
+                                <td>DAC</td>
+                                <td>Discretionary Access Control</td>
+                                <td>Access control where owners decide permissions</td>
+                            </tr>
+                            <tr>
+                                <td>MAC</td>
+                                <td>Mandatory Access Control</td>
+                                <td>Access control based on policies and classifications</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">🛡️ Security Systems & Tools</h2>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>Full Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>IDS</td>
+                                <td>Intrusion Detection System</td>
+                                <td>Monitors network traffic for suspicious activity</td>
+                            </tr>
+                            <tr>
+                                <td>IPS</td>
+                                <td>Intrusion Prevention System</td>
+                                <td>Blocks or prevents detected threats from causing harm</td>
+                            </tr>
+                            <tr>
+                                <td>SIEM</td>
+                                <td>Security Information and Event Management</td>
+                                <td>System for managing and analyzing security alerts</td>
+                            </tr>
+                            <tr>
+                                <td>WAF</td>
+                                <td>Web Application Firewall</td>
+                                <td>Protects web applications by filtering and monitoring HTTP traffic</td>
+                            </tr>
+                            <tr>
+                                <td>EDR</td>
+                                <td>Endpoint Detection and Response</td>
+                                <td>Monitors and responds to threats on end-user devices</td>
+                            </tr>
+                            <tr>
+                                <td>DLP</td>
+                                <td>Data Loss Prevention</td>
+                                <td>Measures to protect data from being lost or stolen</td>
+                            </tr>
+                            <tr>
+                                <td>FIM</td>
+                                <td>File Integrity Monitoring</td>
+                                <td>Monitors files to detect unauthorized changes</td>
+                            </tr>
+                            <tr>
+                                <td>HIDS</td>
+                                <td>Host-based Intrusion Detection System</td>
+                                <td>Monitors individual hosts for malicious activity</td>
+                            </tr>
+                            <tr>
+                                <td>NIDS</td>
+                                <td>Network-based Intrusion Detection System</td>
+                                <td>Monitors network traffic for malicious activity</td>
+                            </tr>
+                            <tr>
+                                <td>HIPS</td>
+                                <td>Host-based Intrusion Prevention System</td>
+                                <td>Prevents malicious activity on individual hosts</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">🌐 Network & Infrastructure</h2>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>Full Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>VPN</td>
+                                <td>Virtual Private Network</td>
+                                <td>Securely connects to a remote network over the internet</td>
+                            </tr>
+                            <tr>
+                                <td>SSL</td>
+                                <td>Secure Sockets Layer</td>
+                                <td>Encrypts data transmitted over the internet</td>
+                            </tr>
+                            <tr>
+                                <td>TLS</td>
+                                <td>Transport Layer Security</td>
+                                <td>Updated version of SSL for secure internet communication</td>
+                            </tr>
+                            <tr>
+                                <td>DMZ</td>
+                                <td>Demilitarized Zone</td>
+                                <td>Network segment that separates external and internal networks</td>
+                            </tr>
+                            <tr>
+                                <td>VLAN</td>
+                                <td>Virtual Local Area Network</td>
+                                <td>Subnetwork within a network that isolates traffic</td>
+                            </tr>
+                            <tr>
+                                <td>NAC</td>
+                                <td>Network Access Control</td>
+                                <td>Controls access to a network based on policies</td>
+                            </tr>
+                            <tr>
+                                <td>BPF</td>
+                                <td>Berkeley Packet Filter</td>
+                                <td>Framework for packet filtering and network analysis</td>
+                            </tr>
+                            <tr>
+                                <td>L2TP</td>
+                                <td>Layer 2 Tunneling Protocol</td>
+                                <td>Protocol for creating secure VPN connections</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">☁️ Cloud Security</h2>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>Full Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SaaS</td>
+                                <td>Software as a Service</td>
+                                <td>Software delivery model where applications are hosted by a third-party provider</td>
+                            </tr>
+                            <tr>
+                                <td>IaaS</td>
+                                <td>Infrastructure as a Service</td>
+                                <td>Cloud computing model that provides virtualized computing resources</td>
+                            </tr>
+                            <tr>
+                                <td>PaaS</td>
+                                <td>Platform as a Service</td>
+                                <td>Cloud computing model that provides a platform for application development</td>
+                            </tr>
+                            <tr>
+                                <td>CSPM</td>
+                                <td>Cloud Security Posture Management</td>
+                                <td>Tools for managing and securing cloud infrastructure</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">🏢 Organization & Management</h2>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>Full Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SOC</td>
+                                <td>Security Operations Center</td>
+                                <td>Centralized unit monitoring and managing security events</td>
+                            </tr>
+                            <tr>
+                                <td>GRC</td>
+                                <td>Governance, Risk, and Compliance</td>
+                                <td>Framework for managing organizational governance, risks, and compliance</td>
+                            </tr>
+                            <tr>
+                                <td>CISO</td>
+                                <td>Chief Information Security Officer</td>
+                                <td>Senior executive responsible for organization's information security</td>
+                            </tr>
+                            <tr>
+                                <td>MSSP</td>
+                                <td>Managed Security Service Provider</td>
+                                <td>Company providing outsourced security services</td>
+                            </tr>
+                            <tr>
+                                <td>BIA</td>
+                                <td>Business Impact Analysis</td>
+                                <td>Evaluates the effects of disruptions on business operations</td>
+                            </tr>
+                            <tr>
+                                <td>RPO</td>
+                                <td>Recovery Point Objective</td>
+                                <td>Maximum acceptable amount of data loss measured in time</td>
+                            </tr>
+                            <tr>
+                                <td>RTO</td>
+                                <td>Recovery Time Objective</td>
+                                <td>Maximum acceptable amount of time to restore a system</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">🐞 Threats & Vulnerabilities</h2>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>Full Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DDoS</td>
+                                <td>Distributed Denial of Service</td>
+                                <td>Attack that floods a network or service to disrupt availability</td>
+                            </tr>
+                            <tr>
+                                <td>RAT</td>
+                                <td>Remote Access Trojan</td>
+                                <td>Malware that provides remote control over an infected device</td>
+                            </tr>
+                            <tr>
+                                <td>XSS</td>
+                                <td>Cross-Site Scripting</td>
+                                <td>Vulnerability allowing attackers to inject scripts into webpages</td>
+                            </tr>
+                            <tr>
+                                <td>SQLi</td>
+                                <td>SQL Injection</td>
+                                <td>Attack that exploits vulnerabilities in a web application's database query</td>
+                            </tr>
+                            <tr>
+                                <td>PUP</td>
+                                <td>Potentially Unwanted Program</td>
+                                <td>Software that may be unwanted or harmful</td>
+                            </tr>
+                            <tr>
+                                <td>CVE</td>
+                                <td>Common Vulnerabilities and Exposures</td>
+                                <td>List of publicly known security vulnerabilities</td>
+                            </tr>
+                            <tr>
+                                <td>TTP</td>
+                                <td>Tactics, Techniques, and Procedures</td>
+                                <td>Methods used by attackers to achieve their objectives</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">🔐 Cryptography & Authentication</h2>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>Full Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PKI</td>
+                                <td>Public Key Infrastructure</td>
+                                <td>Framework for managing digital certificates and encryption keys</td>
+                            </tr>
+                            <tr>
+                                <td>GPG</td>
+                                <td>GNU Privacy Guard</td>
+                                <td>Encryption tool for securing communications and data</td>
+                            </tr>
+                            <tr>
+                                <td>HMAC</td>
+                                <td>Hash-based Message Authentication Code</td>
+                                <td>Uses a hash function and a secret key to verify data integrity</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">📊 Analytics & Monitoring</h2>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>Full Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>UEBA</td>
+                                <td>User and Entity Behavior Analytics</td>
+                                <td>Analyzes behavior to detect anomalies and potential threats</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">🏛️ Standards & Frameworks</h2>
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>Full Term</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NIST</td>
+                                <td>National Institute of Standards and Technology</td>
+                                <td>U.S. agency that develops standards for technology and security</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">🔄 Contributing</h2>
+                <p>Feel free to contribute to this guide by:</p>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>Suggesting new acronyms</li>
+                    <li>Updating definitions</li>
+                    <li>Adding related terms</li>
+                    <li>Improving categorization</li>
+                </ul>
+            </div>
+            
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">📝 Note</h2>
+                <ul class="list-disc list-inside ml-4 space-y-1">
+                    <li>Acronyms may have different meanings in different contexts</li>
+                    <li>Some terms may overlap multiple categories</li>
+                    <li>Definitions are simplified for general understanding</li>
+                </ul>
+            </div>
+
+            <div class="text-center text-gray-500 text-sm mt-8">
+                <p>Last updated: November 2024</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

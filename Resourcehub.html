@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ Cybersecurity Resources Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles from the original file, slightly updated for cohesion */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* GitHub-like dark background */
+            color: #c9d1d9; /* Light gray text for contrast */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            padding: 2rem;
+        }
+        
+        /* New custom styling for animated cards */
+        .card-link {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            border-radius: 12px;
+            text-decoration: none;
+            overflow: hidden; /* To contain the glow animation */
+            position: relative;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Hover effects for the cards */
+        .card-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation for the card glow effect on hover */
+        .card-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, #58a6ff40 0%, transparent 70%);
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.5);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 0;
+        }
+        .card-link:hover::before {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Ensure content is above the glow animation */
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Styles for the "Contributing" and "Disclaimer" cards to keep original look */
+        .section-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto">
+        <!-- Header Section -->
+        <header class="text-center py-10 md:py-16">
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
+                🛡️ Cybersecurity Resources Hub
+            </h1>
+            <p class="text-md md:text-lg text-gray-400">
+                Your one-stop guide to a safer digital world. Explore a curated collection of learning paths, community forums, and professional resources.
+            </p>
+        </header>
+
+        <!-- Main Content Grid - Links to all other files -->
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+
+            <!-- Card for Cybersecurity Basics (original content) -->
+            <a href="index.html" class="card-link">
+                <div class="card-content p-6 flex flex-col items-start h-full">
+                    <div class="text-2xl mb-3">📚</div>
+                    <h2 class="text-xl font-bold text-white mb-2">Cybersecurity Basics</h2>
+                    <p class="text-sm text-gray-400">
+                        A quick introduction to the core concepts, importance, and career paths in cybersecurity.
+                    </p>
+                </div>
+            </a>
+            
+            <!-- Card for Free Learning Resources -->
+            <a href="Resources.html" class="card-link">
+                <div class="card-content p-6 flex flex-col items-start h-full">
+                    <div class="text-2xl mb-3">🎓</div>
+                    <h2 class="text-xl font-bold text-white mb-2">Free Learning Resources</h2>
+                    <p class="text-sm text-gray-400">
+                        Discover free online courses, hands-on labs, and academic materials to start your journey.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card for Paid Trainings -->
+            <a href="Paid Trainings.html" class="card-link">
+                <div class="card-content p-6 flex flex-col items-start h-full">
+                    <div class="text-2xl mb-3">💰</div>
+                    <h2 class="text-xl font-bold text-white mb-2">Paid Trainings</h2>
+                    <p class="text-sm text-gray-400">
+                        A guide to professional cybersecurity bootcamps and advanced training programs.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card for Certifications -->
+            <a href="Certifications.html" class="card-link">
+                <div class="card-content p-6 flex flex-col items-start h-full">
+                    <div class="text-2xl mb-3">📜</div>
+                    <h2 class="text-xl font-bold text-white mb-2">Certifications</h2>
+                    <p class="text-sm text-gray-400">
+                        Information on major certifications, costs, and career paths for different roles.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card for Forums & Community -->
+            <a href="Forums & Community.html" class="card-link">
+                <div class="card-content p-6 flex flex-col items-start h-full">
+                    <div class="text-2xl mb-3">🗣️</div>
+                    <h2 class="text-xl font-bold text-white mb-2">Forums & Community</h2>
+                    <p class="text-sm text-gray-400">
+                        Connect with the community through forums, social media, and professional groups.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card for Conferences -->
+            <a href="Conferences.html" class="card-link">
+                <div class="card-content p-6 flex flex-col items-start h-full">
+                    <div class="text-2xl mb-3">🗓️</div>
+                    <h2 class="text-xl font-bold text-white mb-2">Conferences & Events</h2>
+                    <p class="text-sm text-gray-400">
+                        Find a list of cybersecurity conferences to attend, both virtual and in-person.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card for Acronyms -->
+            <a href="Acronyms.html" class="card-link">
+                <div class="card-content p-6 flex flex-col items-start h-full">
+                    <div class="text-2xl mb-3">🔤</div>
+                    <h2 class="text-xl font-bold text-white mb-2">Acronyms Guide</h2>
+                    <p class="text-sm text-gray-400">
+                        A comprehensive guide to common cybersecurity acronyms and their meanings.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card for Leading Companies -->
+            <a href="Leading Cybersecurity Companies.html" class="card-link">
+                <div class="card-content p-6 flex flex-col items-start h-full">
+                    <div class="text-2xl mb-3">🏢</div>
+                    <h2 class="text-xl font-bold text-white mb-2">Leading Companies</h2>
+                    <p class="text-sm text-gray-400">
+                        A list of top companies in the industry, from large corporations to startups.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Card for the word document -->
+            <a href="FULL Cybersecurity Resources.docx" download class="card-link">
+                <div class="card-content p-6 flex flex-col items-start h-full">
+                    <div class="text-2xl mb-3">📄</div>
+                    <h2 class="text-xl font-bold text-white mb-2">Full Resource Document</h2>
+                    <p class="text-sm text-gray-400">
+                        Download the comprehensive resource document in Word format.
+                    </p>
+                </div>
+            </a>
+
+        </main>
+
+        <!-- Contributing and Disclaimer Sections -->
+        <div class="space-y-8 mt-12">
+            <section id="contributing" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">🤝 Contributing</h2>
+                <p>Feel free to contribute to this repository by:</p>
+                <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
+                    <li>Suggesting new resources</li>
+                    <li>Reporting broken links</li>
+                    <li>Adding learning materials</li>
+                    <li>Sharing your experiences</li>
+                </ul>
+            </section>
+            
+            <section id="disclaimer" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 text-white">⚠️ Disclaimer</h2>
+                <p>This repository is for educational purposes only. The knowledge gained should be used ethically and legally.</p>
+            </section>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="text-center py-8 text-gray-500 text-sm mt-8">
+            <p>Remember: Cybersecurity is a journey, not a destination. Keep learning, stay curious, and help build a safer digital world! 🌐</p>
+        </footer>
+    </div>
+</body>
+</html>
