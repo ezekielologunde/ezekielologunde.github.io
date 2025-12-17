@@ -82,7 +82,6 @@
             display: flex;
             gap: 2rem;
             list-style: none;
-            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -90,7 +89,6 @@
             text-decoration: none;
             font-size: 0.875rem;
             transition: color 0.3s;
-            white-space: nowrap;
         }
 
         .nav-links a:hover,
@@ -108,24 +106,6 @@
             z-index: -1;
             opacity: 0.2;
             pointer-events: none;
-        }
-
-        /* Profile Picture */
-        .profile-picture {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid hsl(var(--primary));
-            box-shadow: 0 0 30px rgba(88, 166, 255, 0.4);
-            object-fit: cover;
-            margin: 0 auto 2rem;
-            display: block;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
         }
 
         /* Terminal Hero */
@@ -464,39 +444,6 @@
             line-height: 1.6;
         }
 
-        /* Resource Links Section */
-        .resource-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .resource-link {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: hsl(var(--card));
-            border: 1px solid hsl(var(--border));
-            border-radius: var(--radius);
-            text-decoration: none;
-            color: hsl(var(--foreground));
-            transition: all 0.3s;
-        }
-
-        .resource-link:hover {
-            border-color: hsl(var(--primary));
-            transform: translateX(5px);
-        }
-
-        .resource-link svg {
-            width: 1.5rem;
-            height: 1.5rem;
-            color: hsl(var(--primary));
-            flex-shrink: 0;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -511,11 +458,6 @@
             .terminal-body {
                 padding: 1rem;
                 font-size: 0.75rem;
-            }
-
-            .profile-picture {
-                width: 120px;
-                height: 120px;
             }
         }
 
@@ -538,7 +480,6 @@
                     <li><a href="#education" class="nav-link">Education</a></li>
                     <li><a href="#certifications" class="nav-link">Certifications</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#resources" class="nav-link">Resources</a></li>
                 </ul>
             </div>
         </div>
@@ -546,8 +487,6 @@
 
     <section class="terminal-hero">
         <div>
-            <img src="IMG_8794.JPG" alt="Ezekiel Ologunde" class="profile-picture">
-            
             <div class="terminal-window">
                 <div class="terminal-header">
                     <span class="terminal-title">ezekiel@cybersec:~</span>
@@ -721,4 +660,358 @@
                                 <span>95%</span>
                             </div>
                             <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-level="95
+                                <div class="skill-bar-fill" data-level="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-header">
+                                <span>C++</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-level="82"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-header">
+                                <span>JavaScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-level="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-header">
+                                <span>Bash/PowerShell</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-level="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card skill-category">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+                        Tools & Platforms
+                    </h3>
+                    <div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-header">
+                                <span>Kali Linux</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-level="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-header">
+                                <span>Wireshark</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-level="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-header">
+                                <span>Metasploit</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-header">
+                                <span>EnCase/FTK</span>
+                                <span>87%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-level="87"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" style="background: hsl(var(--muted) / 0.3);">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="prompt">$</span> cat /education.log
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </h2>
+            
+            <div class="grid grid-3">
+                <div class="card timeline-item">
+                    <h3>George Washington University</h3>
+                    <p class="subtitle">Doctor of Engineering (D.Eng.) in Cybersecurity Analytics</p>
+                    <p class="date">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        Expected 2027
+                    </p>
+                    <ul>
+                        <li>Advanced Cyber Analytics, Machine Learning for Cybersecurity</li>
+                        <li>Dissertation: Predictive model for APT detection using anomaly-based ML</li>
+                    </ul>
+                </div>
+
+                <div class="card timeline-item">
+                    <h3>University of Baltimore</h3>
+                    <p class="subtitle">Master of Science in Cyber Forensics, Digital Investigation Specialty</p>
+                    <p class="date">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        May 2024
+                    </p>
+                    <ul>
+                        <li>Advanced Cryptography, Mobile Forensics, Incident Response</li>
+                        <li>Thesis: AI-powered threat detection framework using ML models</li>
+                    </ul>
+                </div>
+
+                <div class="card timeline-item">
+                    <h3>University of Ilorin</h3>
+                    <p class="subtitle">Bachelor of Science in Computer Science and Education</p>
+                    <p class="date">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        October 2019
+                    </p>
+                    <ul>
+                        <li>Data Structures, Algorithms, Network Concepts, Software Engineering</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title"><span class="prompt">$</span> ls /certifications</h2>
+            
+            <div class="grid grid-3">
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>CompTIA Security+ (SY0-601)</h3>
+                        <p class="project-meta">CompTIA</p>
+                        <p>Core skills for cybersecurity roles including threat management, risk assessment, and security architecture.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>Certified Ethical Hacker (CEH)</h3>
+                        <p class="project-meta">EC-Council</p>
+                        <p>Proficiency in ethical hacking techniques to assess security postures of systems and networks.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>Google Cybersecurity Professional</h3>
+                        <p class="project-meta">Google</p>
+                        <p>Comprehensive understanding of threat detection, incident response, and security operations.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>Google IT Support Professional</h3>
+                        <p class="project-meta">Google</p>
+                        <p>Foundational IT knowledge across networking, operating systems, and troubleshooting.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>Professional Affiliations</h3>
+                        <p class="project-meta">Multiple Organizations</p>
+                        <p>Active member of ISSA, ISACA, CAMI, and ISC² - contributing to the cybersecurity community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title"><span class="prompt">$</span> cat /projects/*</h2>
+            
+            <div class="grid grid-2">
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>Predictive Threat Intelligence with AI</h3>
+                        <p class="project-meta">Doctoral Research | George Washington University</p>
+                        <p>Developing a predictive model for cyber threats using historical data and machine learning to forecast future attacks and enable proactive defense strategies.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>AI-Powered Intrusion Detection System</h3>
+                        <p class="project-meta">Capstone Project | University of Baltimore</p>
+                        <p>Machine learning model to classify network traffic as normal or malicious, implementing classification algorithms for proactive threat detection.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>Cryptographic Protocols for E-Voting</h3>
+                        <p class="project-meta">Independent Research | University of Baltimore</p>
+                        <p>Research on zero-knowledge proofs and homomorphic encryption to enhance privacy and integrity of electronic voting systems.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>Email Analysis & Forensics</h3>
+                        <p class="project-meta">Personal Project (2024)</p>
+                        <p>Comprehensive forensic investigation analyzing email headers, extracting metadata, and identifying IOCs such as phishing links.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>Ransomware & Social Engineering Study</h3>
+                        <p class="project-meta">Conference Paper | University of Baltimore</p>
+                        <p>Analysis of the synergy between ransomware and social engineering with tactical defense strategies and security awareness programs.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-card-content">
+                        <h3>Mobile Device Forensics Simulation</h3>
+                        <p class="project-meta">Practical Application (2023)</p>
+                        <p>Digital crime scenario involving full-disk acquisition, data extraction, and timeline analysis using Cellebrite and Magnet AXIOM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = '0123456789ABCDEFアイウエオカキクケコサシスセソタチツテト';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = 'hsl(195, 100%, 60%)';
+            ctx.font = `${fontSize}px monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 50);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Terminal Typing Effect
+        const lines = [
+            '> whoami',
+            '$ Ezekiel Ologunde',
+            '> ls -la /skills',
+            '$ Cybersecurity • AI/ML • Digital Forensics',
+            '> cat /location.txt',
+            '$ Birmingham, AL',
+            '> sudo access --level=expert',
+            '$ Access Granted. Welcome to the portfolio.'
+        ];
+
+        let currentLine = 0;
+        let currentChar = 0;
+        let displayText = '';
+
+        function typeTerminal() {
+            if (currentLine < lines.length) {
+                if (currentChar < lines[currentLine].length) {
+                    displayText += lines[currentLine][currentChar];
+                    document.getElementById('terminal-text').innerHTML = displayText + '<span class="cursor"></span>';
+                    currentChar++;
+                    setTimeout(typeTerminal, 50);
+                } else {
+                    displayText += '\n';
+                    currentLine++;
+                    currentChar = 0;
+                    setTimeout(typeTerminal, 500);
+                }
+            } else {
+                document.getElementById('terminal-text').innerHTML = displayText + '<span class="cursor"></span>';
+            }
+        }
+
+        typeTerminal();
+
+        // Skill Bar Animation
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.skill-bar-fill');
+                    fills.forEach(fill => {
+                        fill.style.width = fill.dataset.level + '%';
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-category').forEach(category => {
+            observer.observe(category);
+        });
+
+        // Active Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        function setActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', setActiveNav);
+    </script>
+</body>
+</html>
