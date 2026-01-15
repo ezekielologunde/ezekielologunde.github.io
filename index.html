@@ -1,625 +1,1091 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ezekiel Ologunde | Cybersecurity Specialist</title>
+  <title>Ezekiel Ologunde</title>
   <meta name="description" content="Cybersecurity Expert | AI/ML Specialist | Digital Forensics Analyst" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  
+  <link rel="icon" href="client/public/favicon.png" />
   <style>
     :root {
-      --bg: #030712;
-      --card-bg: rgba(17, 24, 39, 0.7);
-      --border: rgba(56, 189, 248, 0.2);
-      --border-hover: rgba(56, 189, 248, 0.5);
-      --primary: #38bdf8; /* Cyber Blue */
-      --secondary: #10b981; /* Hacker Green */
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --accent-glow: rgba(56, 189, 248, 0.15);
-      --font-sans: 'Inter', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --bg: #060812;
+      --panel: rgba(12, 16, 30, 0.85);
+      --panel-2: rgba(12, 16, 30, 0.55);
+      --border: rgba(148, 163, 184, 0.18);
+      --text: #e5e7eb;
+      --muted: rgba(229, 231, 235, 0.72);
+      --primary: #38bdf8;
+      --success: #34d399;
+      --warn: #fbbf24;
+      --shadow: 0 20px 60px rgba(0,0,0,0.55);
+      --radius: 18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
-      background-color: var(--bg);
-      color: var(--text-main);
-      font-family: var(--font-sans);
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(56,189,248,0.12), transparent 60%),
+                  radial-gradient(1000px 700px at 90% 25%, rgba(52,211,153,0.10), transparent 55%),
+                  var(--bg);
       overflow-x: hidden;
-      line-height: 1.6;
     }
 
-    /* Background FX */
+    a { color: inherit; text-decoration: none; }
+    .muted { color: var(--muted); }
+
+    /* Matrix background */
     #matrix {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.55;
+    }
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    /* Layout */
+    .wrap {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    section {
+      padding: 92px 0;
+    }
+    h1, h2, h3 {
+      margin: 0 0 14px 0;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 28px;
+      font-family: var(--mono);
+    }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .section-head .prompt {
+      font-family: var(--mono);
+      color: var(--success);
+    }
+
+    /* Nav */
+    .nav {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: -1;
-      opacity: 0.35;
-    }
-
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at 50% 50%, transparent 0%, var(--bg) 90%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Scanline Animation */
-    body::after {
-      content: " ";
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
-                  linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-      background-size: 100% 3px, 3px 100%;
-      pointer-events: none;
-      z-index: 100;
-      opacity: 0.1;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
+      right: 0;
+      z-index: 3;
       backdrop-filter: blur(12px);
+      background: rgba(6, 8, 18, 0.55);
       border-bottom: 1px solid var(--border);
-      background: rgba(3, 7, 18, 0.8);
     }
-
-    nav .container {
-      height: 70px;
+    .nav .container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      gap: 16px;
     }
-
-    .logo {
-      font-family: var(--font-mono);
-      font-weight: 700;
-      color: var(--primary);
+    .brand {
       display: flex;
       align-items: center;
       gap: 10px;
+      font-family: var(--mono);
+      font-weight: 700;
+    }
+    .brand .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--success);
+      box-shadow: 0 0 18px rgba(52,211,153,0.6);
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .links a:hover {
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(12, 16, 30, 0.45);
     }
 
-    .logo-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--secondary);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--secondary);
-      animation: pulse 2s infinite;
-    }
-
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: 0.3s;
-      text-transform: lowercase;
-    }
-    .nav-links a:hover { color: var(--primary); }
-
-    /* Hero Section */
+    /* Hero */
     .hero {
-      padding: 160px 0 80px;
+      padding-top: 120px;
+      padding-bottom: 70px;
+    }
+    .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 3rem;
+      gap: 22px;
       align-items: center;
     }
-
-    .terminal-window {
-      background: var(--card-bg);
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+    .terminal {
+      background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-      backdrop-filter: blur(10px);
     }
-
-    .terminal-header {
-      background: rgba(255,255,255,0.05);
-      padding: 12px 20px;
+    .terminal-top {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
       border-bottom: 1px solid var(--border);
+      background: rgba(2, 6, 23, 0.7);
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
     }
-
-    .terminal-dots { display: flex; gap: 8px; }
-    .dot { width: 12px; height: 12px; border-radius: 50%; }
-    .dot-r { background: #ff5f56; }
-    .dot-y { background: #ffbd2e; }
-    .dot-g { background: #27c93f; }
+    .dots {
+      display: inline-flex;
+      gap: 7px;
+      align-items: center;
+    }
+    .dots span {
+      width: 10px; height: 10px; border-radius: 999px; display: inline-block;
+      background: rgba(148,163,184,0.35);
+    }
+    .dots span:nth-child(1) { background: rgba(239,68,68,0.75); }
+    .dots span:nth-child(2) { background: rgba(245,158,11,0.75); }
+    .dots span:nth-child(3) { background: rgba(34,197,94,0.75); }
 
     .terminal-body {
-      padding: 25px;
-      font-family: var(--font-mono);
-      font-size: 0.95rem;
-      min-height: 280px;
+      padding: 18px 18px 22px 18px;
+      font-family: var(--mono);
+      font-size: 14px;
+      line-height: 1.7;
     }
-
-    .command { color: var(--secondary); }
-    .response { color: var(--text-main); margin-bottom: 15px; }
-    .cursor {
-      display: inline-block;
-      width: 8px;
-      height: 18px;
-      background: var(--primary);
-      animation: blink 1s infinite;
-      vertical-align: middle;
+    .line { white-space: pre-wrap; }
+    .line .prompt { color: var(--success); margin-right: 8px; }
+    .line.out { color: var(--text); }
+    .line.blank { opacity: 0.4; }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
     }
-
-    .profile-card {
-      background: var(--card-bg);
+    .badge {
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 40px;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      background: rgba(12, 16, 30, 0.55);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
     }
 
-    .profile-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-5px);
+    .profile {
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
     }
-
-    .avatar-wrapper {
-      position: relative;
-      width: 160px;
-      height: 160px;
-      margin: 0 auto 25px;
-    }
-
-    .avatar-wrapper::after {
-      content: '';
-      position: absolute;
-      inset: -10px;
-      border: 2px dashed var(--primary);
-      border-radius: 50%;
-      animation: spin 10s linear infinite;
-    }
-
     .avatar {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--bg);
-    }
-
-    /* Bento Grid Sections */
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .section-title span { color: var(--primary); font-family: var(--font-mono); font-size: 1.2rem; }
-
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 4rem;
-    }
-
-    .bento-card {
-      background: var(--card-bg);
+      width: 140px;
+      height: 140px;
+      border-radius: 999px;
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      display: block;
+      margin: 4px auto 14px auto;
+      object-fit: cover;
     }
-
-    .bento-card:hover {
-      background: rgba(56, 189, 248, 0.05);
-      border-color: var(--primary);
-      box-shadow: 0 0 20px var(--accent-glow);
+    .name {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
-
-    .bento-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-      font-family: var(--font-mono);
+    .sub {
+      text-align: center;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 13px;
+      margin-top: 6px;
     }
-
-    .bento-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
+    .cta {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
     }
-
-    /* Custom sizing for bento items */
-    .col-2 { grid-column: span 2; }
-    .row-2 { grid-row: span 2; }
-
-    /* Skills Progress */
-    .skill-row { margin-bottom: 1.2rem; }
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5px;
-      font-size: 0.85rem;
-      font-family: var(--font-mono);
-    }
-    .skill-bar {
-      height: 6px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .skill-progress {
-      height: 100%;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      width: 0;
-      transition: width 1.5s cubic-bezier(0.1, 0, 0.2, 1);
-    }
-
-    /* Buttons */
     .btn {
       display: inline-flex;
-      align-items: center;
       justify-content: center;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-family: var(--font-mono);
-      font-weight: 700;
-      text-decoration: none;
-      transition: 0.3s;
-      cursor: pointer;
-      border: none;
-      width: 100%;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(12, 16, 30, 0.65);
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text);
+    }
+    .btn:hover {
+      border-color: rgba(56,189,248,0.45);
+      box-shadow: 0 0 0 3px rgba(56,189,248,0.12);
+    }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card {
+      grid-column: span 6;
+      background: rgba(12, 16, 30, 0.62);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+    @media (max-width: 920px) {
+      .card { grid-column: span 12; }
+    }
+    .card-title {
+      font-family: var(--mono);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Skills */
+    .skills .skill { margin-top: 12px; }
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.20);
+      background: rgba(2, 6, 23, 0.5);
+      overflow: hidden;
+    }
+    .fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, rgba(56,189,248,0.95), rgba(52,211,153,0.95));
+      border-radius: 999px;
+      transition: width 1000ms ease;
+    }
+
+    /* Projects */
+    .project { grid-column: span 4; }
+    @media (max-width: 920px) {
+      .project { grid-column: span 12; }
+    }
+    .project-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
       margin-bottom: 10px;
     }
-
-    .btn-primary {
-      background: var(--primary);
-      color: var(--bg);
+    .project h3 {
+      font-size: 16px;
+      font-family: var(--mono);
+      margin: 0;
     }
-
-    .btn-primary:hover {
-      box-shadow: 0 0 20px var(--primary);
-      transform: scale(1.02);
-    }
-
-    .btn-outline {
-      background: transparent;
+    .status {
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
       border: 1px solid var(--border);
-      color: var(--text-main);
+      color: var(--muted);
+      background: rgba(2, 6, 23, 0.35);
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.18);
+      color: rgba(229,231,235,0.8);
+      background: rgba(2, 6, 23, 0.35);
     }
 
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.05);
-      border-color: var(--primary);
+    /* Lists */
+    .bullets {
+      margin: 12px 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
     }
 
-    /* Contact Form */
+    /* Resources */
+    .resource {
+      grid-column: span 4;
+      display: block;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+    .resource:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56,189,248,0.35);
+    }
+
+    /* Contact */
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
-
+    @media (max-width: 920px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
     input, textarea {
       width: 100%;
-      background: rgba(0,0,0,0.3);
+      padding: 10px 12px;
+      border-radius: 12px;
       border: 1px solid var(--border);
-      padding: 12px;
-      border-radius: 8px;
-      color: white;
-      font-family: var(--font-sans);
-      margin-bottom: 1rem;
+      background: rgba(2, 6, 23, 0.45);
+      color: var(--text);
+      outline: none;
+      font-family: var(--sans);
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    input:focus, textarea:focus {
+      border-color: rgba(56,189,248,0.55);
+      box-shadow: 0 0 0 3px rgba(56,189,248,0.12);
     }
 
-    input:focus { border-color: var(--primary); outline: none; }
-
-    /* Animations */
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-    @media (max-width: 968px) {
-      .hero, .contact-grid { grid-template-columns: 1fr; }
-      .bento-grid { grid-template-columns: repeat(2, 1fr); }
-      .col-2 { grid-column: span 2; }
+    .send {
+      margin-top: 12px;
+      width: 100%;
+      cursor: pointer;
     }
 
-    @media (max-width: 480px) {
-      .bento-grid { grid-template-columns: 1fr; }
-      .col-2 { grid-column: span 1; }
-      .nav-links { display: none; }
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
     }
   </style>
 </head>
 <body>
   <canvas id="matrix"></canvas>
-  <div class="overlay"></div>
+  <div class="noise"></div>
 
-  <nav>
+  <div class="nav">
     <div class="container">
-      <div class="logo">
-        <div class="logo-dot"></div>
-        EZ_OLOGUNDE.SYS
+      <div class="brand">
+        <span class="dot"></span>
+        <span>ezekiel@cybersec:~$</span>
       </div>
-      <div class="nav-links">
-        <a href="#about">/about</a>
-        <a href="#skills">/skills</a>
-        <a href="#projects">/projects</a>
-        <a href="#resources">/resources</a>
-        <a href="#contact">/contact</a>
+      <div class="links">
+        <a href="#about">about</a>
+        <a href="#skills">skills</a>
+        <a href="#projects">projects</a>
+        <a href="#education">education</a>
+        <a href="#certifications">certifications</a>
+        <a href="#students">students</a>
+        <a href="#contact">contact</a>
       </div>
     </div>
-  </nav>
+  </div>
 
-  <div class="container">
-    <header class="hero">
-      <div class="terminal-window">
-        <div class="terminal-header">
-          <div class="terminal-dots">
-            <div class="dot dot-r"></div>
-            <div class="dot dot-y"></div>
-            <div class="dot dot-g"></div>
+  <div class="wrap">
+    <header class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="terminal" aria-label="Terminal hero">
+          <div class="terminal-top">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div>terminal</div>
+            <div class="muted">secure shell</div>
           </div>
-          <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">zsh — 80x24</div>
+          <div class="terminal-body" id="terminalLines">
+            <div class="line"><span class="prompt">$ </span>whoami</div>
+<div class="line out">Ezekiel Ologunde</div>
+<div class="line blank">&nbsp;</div>
+<div class="line"><span class="prompt">$ </span>cat role.txt</div>
+<div class="line out">Cybersecurity Expert | AI/ML Specialist | Digital Forensics Analyst</div>
+<div class="line blank">&nbsp;</div>
+<div class="line"><span class="prompt">$ </span>cat status.txt</div>
+<div class="line out">D.Eng. Candidate in Cybersecurity Analytics</div>
+<div class="line out">Specializing in Predictive Threat Detection</div>
+<div class="line blank">&nbsp;</div>
+<div class="line"><span class="prompt">$ </span>echo &quot;Ready to secure your digital future.&quot;</div>
+            <div class="badges">
+              <span class="badge">CISSP</span>
+              <span class="badge">AI/ML</span>
+              <span class="badge">CEH</span>
+              <span class="badge">Forensics</span>
+            </div>
+          </div>
         </div>
-        <div class="terminal-body" id="typewriter">
+
+        <aside class="profile">
+          <img class="avatar" src="https://raw.githubusercontent.com/ezekielologunde/ezekielologunde/main/IMG_8794.JPG" alt="Ezekiel Ologunde" loading="lazy" />
+          <div class="name">Ezekiel Ologunde</div>
+          <div class="sub">Cybersecurity Expert • AI/ML Specialist • Digital Forensics Analyst</div>
+          <div class="cta">
+            <a class="btn" href="#contact">Contact</a>
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn" href="mailto:ezekiel@cybersec.io">ezekiel@cybersec.io</a>
           </div>
+        </aside>
       </div>
-
-      <aside class="profile-card">
-        <div class="avatar-wrapper">
-          <img class="avatar" src="https://raw.githubusercontent.com/ezekielologunde/ezekielologunde/main/IMG_8794.JPG" alt="Ezekiel Ologunde">
-        </div>
-        <h1 style="margin-bottom: 5px;">Ezekiel Ologunde</h1>
-        <p style="color: var(--primary); font-family: var(--font-mono); font-size: 0.9rem; margin-bottom: 25px;">
-          D.Eng. Candidate | Cybersecurity Analytics
-        </p>
-        <a href="#contact" class="btn btn-primary">INITIALIZE CONTACT</a>
-        <a href="#projects" class="btn btn-outline">VIEW REPOS</a>
-      </aside>
     </header>
 
-    <section id="about">
-      <h2 class="section-title"><span>01.</span> EXECUTE about.me</h2>
-      <div class="bento-grid">
-        <div class="bento-card col-2">
-          <h3>The Mission</h3>
-          <p>Cybersecurity professional and AI/ML specialist dedicated to protecting digital infrastructure. Currently pursuing a Doctorate in Engineering (D.Eng.) at George Washington University, focusing on predictive threat detection.</p>
-        </div>
-        <div class="bento-card">
-          <h3>Expertise</h3>
-          <p>CISSP & CEH Certified. Specializing in SIEM platforms and incident response.</p>
-        </div>
-        <div class="bento-card">
-          <h3>GPA</h3>
-          <p style="font-size: 2rem; color: var(--secondary); font-weight: 800;">4.0/4.0</p>
-        </div>
-      </div>
-    </section>
+    <main>
+      <section id="about">
+        <div class="container">
+          <div class="section-head">
+            <div class="prompt"><span class="prompt">$</span> cat</div>
+            <h2>about.md</h2>
+          </div>
 
-    <section id="skills">
-      <h2 class="section-title"><span>02.</span> LOAD tech_stack.lib</h2>
-      <div class="bento-grid">
-        <div class="bento-card col-2 row-2">
-          <h3>Cybersecurity Core</h3>
-          <div class="skill-row">
-            <div class="skill-info"><span>Threat Intelligence</span><span>95%</span></div>
-            <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-info"><span>Incident Response</span><span>92%</span></div>
-            <div class="skill-bar"><div class="skill-progress" data-width="92%"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-info"><span>Digital Forensics</span><span>90%</span></div>
-            <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-info"><span>Penetration Testing</span><span>88%</span></div>
-            <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
-          </div>
-        </div>
-        
-        <div class="bento-card col-2">
-          <h3>AI/ML Integration</h3>
-          <p>Deep Learning, NLP, and Predictive Analytics using Python & TensorFlow.</p>
-        </div>
+          <div class="grid">
+            <div class="card">
+              <div class="card-title">Focus Areas</div>
+              <div class="grid" style="margin-top: 12px;">
+                
+  <div class="card">
+    <div class="card-title">Cybersecurity</div>
+    <div class="card-desc">Advanced threat detection and incident response</div>
+  </div>
 
-        <div class="bento-card">
-          <h3>SIEM/SOAR</h3>
-          <p>Splunk & ELK Stack</p>
-        </div>
-        <div class="bento-card">
-          <h3>Cloud</h3>
-          <p>AWS Security Specialty</p>
-        </div>
-      </div>
-    </section>
 
-    <section id="projects">
-      <h2 class="section-title"><span>03.</span> FETCH active_projects</h2>
-      <div class="bento-grid">
-        <div class="bento-card col-2">
-          <div style="display: flex; justify-content: space-between;">
-            <h3>AI Threat Detector</h3>
-            <span style="color: var(--secondary); font-size: 0.7rem; font-family: var(--font-mono);">[STABLE]</span>
+  <div class="card">
+    <div class="card-title">AI/ML</div>
+    <div class="card-desc">Machine learning for predictive security analytics</div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-title">Development</div>
+    <div class="card-desc">Secure application development and code review</div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-title">Digital Forensics</div>
+    <div class="card-desc">Evidence analysis and investigation procedures</div>
+  </div>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Profile</div>
+              <p class="muted" style="margin: 10px 0 0 0;">
+                I am a dedicated <span style="color: var(--primary); font-weight: 700;">cybersecurity professional</span> and
+                <span style="color: var(--success); font-weight: 700;"> AI/ML specialist</span> with extensive experience in
+                protecting digital infrastructure and leveraging machine learning for advanced threat detection.
+              </p>
+              <p class="muted" style="margin: 12px 0 0 0;">
+                Currently pursuing a <span style="color: var(--primary); font-weight: 700;">Doctorate in Engineering (D.Eng.)</span>
+                in Cybersecurity Analytics, my research focuses on developing predictive models for identifying and
+                mitigating cyber threats before they materialize.
+              </p>
+              <p class="muted" style="margin: 12px 0 0 0;">
+                With certifications including CISSP, CEH, and expertise in SIEM platforms, I bring a comprehensive
+                approach to securing organizations against evolving digital threats while maintaining operational efficiency.
+              </p>
+            </div>
           </div>
-          <p>Deep learning pipeline for real-time network anomaly detection.</p>
-        </div>
-        <div class="bento-card">
-          <h3>Phishing NLP</h3>
-          <p>BERT-based model achieving 98.5% detection accuracy.</p>
-        </div>
-        <div class="bento-card">
-          <h3>Forensics Kit</h3>
-          <p>Python/C++ suite for memory and disk analysis.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="resources">
-        <h2 class="section-title"><span>04.</span> OPEN student_hub</h2>
-        <div class="bento-grid">
-          <a href="https://ezekielologunde.github.io/ezekielologunde/basics.html" class="bento-card">
-            <h3>Cyber Basics</h3>
-            <p>Start your journey here.</p>
-          </a>
-          <a href="https://ezekielologunde.github.io/ezekielologunde/Certification%20Guide.html" class="bento-card">
-            <h3>Cert Roadmap</h3>
-            <p>How to get certified fast.</p>
-          </a>
-          <a href="https://ezekielologunde.github.io/ezekielologunde/Resourcehub.html" class="bento-card col-2">
-            <h3>The Resource Hub</h3>
-            <p>A centralized database of tools, labs, and documentation for aspiring analysts.</p>
-          </a>
         </div>
       </section>
 
-    <section id="contact" style="padding-bottom: 100px;">
-      <h2 class="section-title"><span>05.</span> SEND secure_msg</h2>
-      <div class="contact-grid">
-        <div class="bento-card">
-            <h3>Contact Info</h3>
-            <p style="margin-bottom: 20px;">Available for consulting, research collaborations, and speaking engagements.</p>
-            <p style="font-family: var(--font-mono); color: var(--primary);">ezekiel@cybersec.io</p>
-            <div style="margin-top: 30px; display: flex; gap: 15px;">
-                <span style="color: var(--text-muted); font-size: 0.8rem; font-family: var(--font-mono);">LINKEDIN</span>
-                <span style="color: var(--text-muted); font-size: 0.8rem; font-family: var(--font-mono);">GITHUB</span>
-            </div>
-        </div>
-        <div class="bento-card">
-            <form id="contactForm">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                    <input type="text" id="name" placeholder="IDENT_NAME" required>
-                    <input type="email" id="email" placeholder="CONTACT_EMAIL" required>
-                </div>
-                <input type="text" id="subject" placeholder="SUBJECT_LINE" required>
-                <textarea id="message" rows="5" placeholder="ENCRYPT_MESSAGE_HERE..."></textarea>
-                <button type="submit" class="btn btn-primary">TRANSMIT PACKET</button>
-            </form>
-        </div>
+      <section id="skills">
+        <div class="container">
+          <div class="section-head">
+            <div class="prompt"><span class="prompt">$</span> cat</div>
+            <h2>skills.json</h2>
+          </div>
+          <div class="grid">
+            
+    <div class="card">
+      <div class="card-title">Cybersecurity</div>
+      <div class="skills">
+      <div class="skill">
+        <div class="skill-top"><span>Threat Intelligence</span><span class="pct">95%</span></div>
+        <div class="bar"><div class="fill" data-level="95"></div></div>
       </div>
-    </section>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>Incident Response</span><span class="pct">92%</span></div>
+        <div class="bar"><div class="fill" data-level="92"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>Digital Forensics</span><span class="pct">90%</span></div>
+        <div class="bar"><div class="fill" data-level="90"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>Penetration Testing</span><span class="pct">88%</span></div>
+        <div class="bar"><div class="fill" data-level="88"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>SIEM/SOAR</span><span class="pct">85%</span></div>
+        <div class="bar"><div class="fill" data-level="85"></div></div>
+      </div>
+    </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-title">AI/ML</div>
+      <div class="skills">
+      <div class="skill">
+        <div class="skill-top"><span>Machine Learning</span><span class="pct">90%</span></div>
+        <div class="bar"><div class="fill" data-level="90"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>Deep Learning</span><span class="pct">85%</span></div>
+        <div class="bar"><div class="fill" data-level="85"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>NLP</span><span class="pct">82%</span></div>
+        <div class="bar"><div class="fill" data-level="82"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>Python/TensorFlow</span><span class="pct">88%</span></div>
+        <div class="bar"><div class="fill" data-level="88"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>Data Analytics</span><span class="pct">92%</span></div>
+        <div class="bar"><div class="fill" data-level="92"></div></div>
+      </div>
+    </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-title">Tools &amp; Technologies</div>
+      <div class="skills">
+      <div class="skill">
+        <div class="skill-top"><span>Splunk/ELK Stack</span><span class="pct">90%</span></div>
+        <div class="bar"><div class="fill" data-level="90"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>Wireshark/tcpdump</span><span class="pct">88%</span></div>
+        <div class="bar"><div class="fill" data-level="88"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>Metasploit/Burp Suite</span><span class="pct">85%</span></div>
+        <div class="bar"><div class="fill" data-level="85"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>Cloud Security (AWS/Azure)</span><span class="pct">82%</span></div>
+        <div class="bar"><div class="fill" data-level="82"></div></div>
+      </div>
+    
+
+      <div class="skill">
+        <div class="skill-top"><span>Docker/Kubernetes</span><span class="pct">78%</span></div>
+        <div class="bar"><div class="fill" data-level="78"></div></div>
+      </div>
+    </div>
+    </div>
+    
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container">
+          <div class="section-head">
+            <div class="prompt"><span class="prompt">$</span> ls</div>
+            <h2>projects</h2>
+          </div>
+          <div class="grid">
+            
+  <article class="card project">
+    <div class="project-head">
+      <h3>AI-Powered Threat Detection System</h3>
+      <span class="status">Completed</span>
+    </div>
+    <p class="muted">Machine learning pipeline for real-time identification of network anomalies and potential security breaches using deep learning models.</p>
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Elasticsearch</span><span class="tag">Kafka</span>
+    </div>
+  </article>
+
+
+  <article class="card project">
+    <div class="project-head">
+      <h3>Digital Forensics Toolkit</h3>
+      <span class="status">Active</span>
+    </div>
+    <p class="muted">Comprehensive forensic analysis suite for disk imaging, memory analysis, and evidence preservation with chain of custody tracking.</p>
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">C++</span><span class="tag">Volatility</span><span class="tag">FTK</span>
+    </div>
+  </article>
+
+
+  <article class="card project">
+    <div class="project-head">
+      <h3>SIEM Dashboard Enhancement</h3>
+      <span class="status">Completed</span>
+    </div>
+    <p class="muted">Custom Splunk dashboards and automated alert correlation engine for improved threat visibility and faster incident response.</p>
+    <div class="tags">
+      <span class="tag">Splunk SPL</span><span class="tag">Python</span><span class="tag">REST API</span>
+    </div>
+  </article>
+
+
+  <article class="card project">
+    <div class="project-head">
+      <h3>Phishing Detection with NLP</h3>
+      <span class="status">Completed</span>
+    </div>
+    <p class="muted">Natural language processing model for identifying phishing emails and malicious URLs with 98.5% accuracy.</p>
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">BERT</span><span class="tag">FastAPI</span><span class="tag">React</span>
+    </div>
+  </article>
+
+
+  <article class="card project">
+    <div class="project-head">
+      <h3>Vulnerability Assessment Platform</h3>
+      <span class="status">In Progress</span>
+    </div>
+    <p class="muted">Automated vulnerability scanning and reporting system integrated with NIST CVE database for continuous security monitoring.</p>
+    <div class="tags">
+      <span class="tag">Go</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Nmap</span>
+    </div>
+  </article>
+
+
+  <article class="card project">
+    <div class="project-head">
+      <h3>Malware Behavior Analysis</h3>
+      <span class="status">Active</span>
+    </div>
+    <p class="muted">Sandbox environment for dynamic malware analysis with behavioral pattern recognition and threat classification.</p>
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">Cuckoo</span><span class="tag">YARA</span><span class="tag">Machine Learning</span>
+    </div>
+  </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="container">
+          <div class="section-head">
+            <div class="prompt"><span class="prompt">$</span> cat</div>
+            <h2>education.log</h2>
+          </div>
+          <div class="grid">
+            
+  <article class="card">
+    <div class="project-head">
+      <h3>Doctor of Engineering (D.Eng.) in Cybersecurity Analytics</h3>
+      <span class="status">2022 - Present</span>
+    </div>
+    <div class="muted">George Washington University</div>
+    <ul class="bullets">
+      <li>Research focus: Predictive threat detection using machine learning</li><li>Dissertation: AI-driven approaches to zero-day vulnerability identification</li><li>GPA: 4.0/4.0</li>
+    </ul>
+  </article>
+
+
+  <article class="card">
+    <div class="project-head">
+      <h3>Master of Science in Information Security</h3>
+      <span class="status">2018 - 2020</span>
+    </div>
+    <div class="muted">Johns Hopkins University</div>
+    <ul class="bullets">
+      <li>Concentration: Network Security and Digital Forensics</li><li>Thesis: Behavioral analysis of advanced persistent threats</li><li>Dean&#x27;s List - All Semesters</li>
+    </ul>
+  </article>
+
+
+  <article class="card">
+    <div class="project-head">
+      <h3>Bachelor of Science in Computer Science</h3>
+      <span class="status">2014 - 2018</span>
+    </div>
+    <div class="muted">University of Maryland</div>
+    <ul class="bullets">
+      <li>Minor: Mathematics</li><li>Capstone: Intrusion detection system using neural networks</li><li>Graduated Magna Cum Laude</li>
+    </ul>
+  </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <div class="container">
+          <div class="section-head">
+            <div class="prompt"><span class="prompt">$</span> cat</div>
+            <h2>certifications.txt</h2>
+          </div>
+          <div class="grid">
+            
+  <article class="card cert">
+    <div class="cert-top">
+      <div class="cert-badge">CISSP</div>
+      <div class="cert-meta">
+        <div class="cert-full">Certified Information Systems Security Professional</div>
+        <div class="muted">(ISC)² • 2021</div>
+      </div>
+    </div>
+  </article>
+
+
+  <article class="card cert">
+    <div class="cert-top">
+      <div class="cert-badge">CEH</div>
+      <div class="cert-meta">
+        <div class="cert-full">Certified Ethical Hacker</div>
+        <div class="muted">EC-Council • 2020</div>
+      </div>
+    </div>
+  </article>
+
+
+  <article class="card cert">
+    <div class="cert-top">
+      <div class="cert-badge">GCFE</div>
+      <div class="cert-meta">
+        <div class="cert-full">GIAC Certified Forensic Examiner</div>
+        <div class="muted">SANS/GIAC • 2021</div>
+      </div>
+    </div>
+  </article>
+
+
+  <article class="card cert">
+    <div class="cert-top">
+      <div class="cert-badge">AWS Security</div>
+      <div class="cert-meta">
+        <div class="cert-full">AWS Certified Security - Specialty</div>
+        <div class="muted">Amazon Web Services • 2022</div>
+      </div>
+    </div>
+  </article>
+
+
+  <article class="card cert">
+    <div class="cert-top">
+      <div class="cert-badge">OSCP</div>
+      <div class="cert-meta">
+        <div class="cert-full">Offensive Security Certified Professional</div>
+        <div class="muted">Offensive Security • 2020</div>
+      </div>
+    </div>
+  </article>
+
+
+  <article class="card cert">
+    <div class="cert-top">
+      <div class="cert-badge">CompTIA Security+</div>
+      <div class="cert-meta">
+        <div class="cert-full">CompTIA Security+</div>
+        <div class="muted">CompTIA • 2019</div>
+      </div>
+    </div>
+  </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="students">
+        <div class="container">
+          <div class="section-head">
+            <div class="prompt"><span class="prompt">$</span> open</div>
+            <h2>student-resources</h2>
+          </div>
+          <div class="grid">
+            
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/basics.html" target="_blank" rel="noopener">
+    <div class="card-title">Basics</div>
+    <div class="muted">Fundamental concepts and getting started</div>
+  </a>
+
+
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/Acronyms.html" target="_blank" rel="noopener">
+    <div class="card-title">Acronyms</div>
+    <div class="muted">Common cybersecurity terminology</div>
+  </a>
+
+
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/Certification%20Guide.html" target="_blank" rel="noopener">
+    <div class="card-title">Certification Guide</div>
+    <div class="muted">How to get certified in cybersecurity</div>
+  </a>
+
+
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/Certifications.html" target="_blank" rel="noopener">
+    <div class="card-title">Certifications</div>
+    <div class="muted">Available certifications overview</div>
+  </a>
+
+
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/Resources.html" target="_blank" rel="noopener">
+    <div class="card-title">Resources</div>
+    <div class="muted">Learning materials and guides</div>
+  </a>
+
+
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/Resourcehub.html" target="_blank" rel="noopener">
+    <div class="card-title">Resource Hub</div>
+    <div class="muted">Centralized resource collection</div>
+  </a>
+
+
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/Paid%20Trainings.html" target="_blank" rel="noopener">
+    <div class="card-title">Paid Trainings</div>
+    <div class="muted">Premium training programs</div>
+  </a>
+
+
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/Conferences.html" target="_blank" rel="noopener">
+    <div class="card-title">Conferences</div>
+    <div class="muted">Industry events and conferences</div>
+  </a>
+
+
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/Forums%20%26%20Community.html" target="_blank" rel="noopener">
+    <div class="card-title">Forums &amp; Community</div>
+    <div class="muted">Join the cybersecurity community</div>
+  </a>
+
+
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/Leading%20Cybersecurity%20Companies.html" target="_blank" rel="noopener">
+    <div class="card-title">Leading Companies</div>
+    <div class="muted">Top companies in cybersecurity</div>
+  </a>
+
+
+  <a class="card resource" href="https://ezekielologunde.github.io/ezekielologunde/Tiktok.html" target="_blank" rel="noopener">
+    <div class="card-title">TikTok</div>
+    <div class="muted">Video content and tutorials</div>
+  </a>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-head">
+            <div class="prompt"><span class="prompt">$</span> mail</div>
+            <h2>contact</h2>
+          </div>
+
+          <div class="contact-grid">
+            <div class="card">
+              <div class="card-title">Direct</div>
+              <p class="muted" style="margin-top: 10px;">Email</p>
+              <p style="margin: 6px 0 0 0; font-family: var(--mono);">
+                <a href="mailto:ezekiel@cybersec.io" style="color: var(--primary);">ezekiel@cybersec.io</a>
+              </p>
+
+              <div style="margin-top: 18px;">
+                <div class="card-title">Social</div>
+                <p class="muted" style="margin-top: 10px;">Links in the original project are placeholders (#). Replace them when ready.</p>
+                <div class="tags" style="margin-top: 12px;">
+                  <span class="tag">LinkedIn</span>
+                  <span class="tag">GitHub</span>
+                  <span class="tag">Twitter</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Send a message</div>
+              <form id="contactForm">
+                <div style="display:grid; gap: 12px; margin-top: 12px;">
+                  <div>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" autocomplete="name" required />
+                  </div>
+                  <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required />
+                  </div>
+                  <div>
+                    <label for="subject">Subject</label>
+                    <input id="subject" name="subject" required />
+                  </div>
+                  <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                  </div>
+                  <button class="btn send" type="submit">Send</button>
+                </div>
+              </form>
+              <p class="muted" style="margin-top: 12px; font-size: 13px;">
+                This static page uses an email compose link. Submitting opens your email client.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div>
+          <span style="color: var(--primary);">ezekiel@cybersec</span>
+          <span>:~$ </span>
+          <span style="color: var(--success);">echo</span> "Built with security in mind"
+        </div>
+        <div style="margin-top: 6px;">© <span id="year"></span> Ezekiel Ologunde</div>
+      </div>
+    </footer>
   </div>
 
-  <footer style="padding: 40px 0; text-align: center; border-top: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
-    &copy; <span id="year"></span> E_OLOGUNDE // SYSTEM_STATUS: OPERATIONAL
-  </footer>
-
   <script>
-    // Footer Year
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Typewriter Effect
-    const terminal = document.getElementById('typewriter');
-    const lines = [
-      { cmd: "whoami", resp: "Ezekiel Ologunde" },
-      { cmd: "cat role.txt", resp: "Cybersecurity Expert | AI/ML Specialist" },
-      { cmd: "ls status/", resp: "D.Eng Candidate @ GWU | GPA: 4.0" },
-      { cmd: "echo $GREETING", resp: "Ready to secure your digital future." }
-    ];
-
-    async function typeEffect() {
-      for (let line of lines) {
-        let cmdLine = document.createElement('div');
-        cmdLine.innerHTML = `<span class="command">$ </span><span class="cmd-text"></span>`;
-        terminal.appendChild(cmdLine);
-        
-        let cmdText = cmdLine.querySelector('.cmd-text');
-        for (let char of line.cmd) {
-          cmdText.textContent += char;
-          await new Promise(r => setTimeout(r, 40));
-        }
-        
-        await new Promise(r => setTimeout(r, 400));
-        let respLine = document.createElement('div');
-        respLine.className = 'response';
-        respLine.textContent = line.resp;
-        terminal.appendChild(respLine);
-        await new Promise(r => setTimeout(r, 600));
-      }
-      terminal.innerHTML += `<span class="command">$ </span><span class="cursor"></span>`;
-    }
-
-    typeEffect();
-
-    // Intersection Observer for Skill Bars
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.width = entry.target.getAttribute('data-width');
-        }
+    // Animate skill bars when visible
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('.fill').forEach((el) => {
+          const lvl = el.getAttribute('data-level') || '0';
+          el.style.width = lvl + '%';
+        });
+        skillObserver.unobserve(entry.target);
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.25 });
 
-    document.querySelectorAll('.skill-progress').forEach(bar => observer.observe(bar));
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) skillObserver.observe(skillsSection);
 
-    // Matrix Rain
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const chars = "0123456789ABCDEFHIJKLMNOPQRSTUVWXYZ@#$%^&*()";
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
-
-    function drawMatrix() {
-      ctx.fillStyle = "rgba(3, 7, 18, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#0f172a"; 
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = chars.charAt(Math.floor(Math.random() * chars.length));
-        ctx.fillStyle = i % 2 === 0 ? "#38bdf8" : "#10b981";
-        ctx.globalAlpha = 0.3;
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-    setInterval(drawMatrix, 50);
-
-    // Form logic
+    // Contact: open mail client with populated subject/body
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('name').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      window.location.href = `mailto:ezekiel@cybersec.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: "+name+"\n\n"+message)}`;
+      const name = document.getElementById('name').value.trim();
+      const from = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const body = `From: ${name}\nEmail: ${from}\n\n${message}`;
+      const mailto = `mailto:ezekiel@cybersec.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
     });
+
+    // Matrix rain background (simple, lightweight)
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resize();
+    window.addEventListener('resize', resize);
+
+    const letters = 'アァカサタナハマヤャラワン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ$+-*/=<>#';
+    const fontSize = 14;
+    let columns = Math.floor(canvas.width / fontSize);
+    let drops = new Array(columns).fill(1);
+
+    const draw = () => {
+      ctx.fillStyle = 'rgba(6, 8, 18, 0.08)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = fontSize + 'px monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
+
+        ctx.fillStyle = 'rgba(52, 211, 153, 0.55)';
+        ctx.fillText(text, x, y);
+
+        if (y > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+      requestAnimationFrame(draw);
+    };
+    draw();
   </script>
 </body>
 </html>
