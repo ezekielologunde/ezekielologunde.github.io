@@ -1,184 +1,884 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ezekiel Ologunde - Cybersecurity & AI/ML Specialist</title>
-    
-    <meta name="description" content="Cybersecurity expert and AI/ML specialist with expertise in digital forensics, threat analysis, and incident response.">
-    <meta name="author" content="Ezekiel Ologunde">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            DEFAULT: "#ef4444",
-                            foreground: "#ffffff",
-                        },
-                        background: "#09090b",
-                        card: {
-                            DEFAULT: "#111113",
-                            border: "#27272a"
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Space Mono', 'monospace'],
-                        hero: ['Architects Daughter', 'cursive']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { background-color: #09090b; color: #fafafa; overflow-x: hidden; }
-        .matrix-bg { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.1; pointer-events: none; }
-        .nav-blur { backdrop-filter: blur(12px); background: rgba(9, 9, 11, 0.8); border-bottom: 1px solid #27272a; }
-        .hover-elevate { transition: all 0.3s ease; }
-        .hover-elevate:hover { transform: translateY(-4px); border-color: #ef4444; }
-        .student-card img { filter: grayscale(100%); transition: filter 0.3s ease; }
-        .student-card:hover img { filter: grayscale(0%); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ezekiel - Cybersecurity Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0a0e17;
+      --bg-secondary: #0f1419;
+      --bg-tertiary: #1a1f2e;
+      --text-primary: #e6f1ff;
+      --text-secondary: #8892b0;
+      --accent-cyan: #00d9ff;
+      --accent-cyan-glow: rgba(0, 217, 255, 0.3);
+      --border-color: rgba(0, 217, 255, 0.2);
+      --font-sans: 'Inter', sans-serif;
+      --font-mono: 'Fira Code', monospace;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Canvas Background */
+    #matrix-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(10, 14, 23, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+      z-index: 100;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--accent-cyan);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Hero Section - Terminal */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 0;
+    }
+
+    .terminal {
+      max-width: 800px;
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      box-shadow: 0 0 40px var(--accent-cyan-glow);
+    }
+
+    .terminal-header {
+      background: var(--bg-tertiary);
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    .terminal-body {
+      padding: 2rem;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+    }
+
+    .terminal-line {
+      margin-bottom: 0.5rem;
+    }
+
+    .prompt {
+      color: var(--accent-cyan);
+    }
+
+    .output {
+      color: var(--text-primary);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 18px;
+      background: var(--accent-cyan);
+      animation: blink 1s infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .badge {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: var(--accent-cyan);
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::before {
+      content: ">";
+      margin-right: 0.5rem;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .stat-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px var(--accent-cyan-glow);
+    }
+
+    .stat-card svg {
+      width: 40px;
+      height: 40px;
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+    }
+
+    .stat-title {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .about-text strong {
+      color: var(--text-primary);
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .skill-category h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .skill-bar {
+      height: 8px;
+      background: var(--bg-tertiary);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-cyan), #00a8cc);
+      border-radius: 4px;
+      transition: width 1s ease-in-out;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent-cyan);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 30px var(--accent-cyan-glow);
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .tag {
+      background: var(--bg-tertiary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+    }
+
+    .project-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .status-active {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+    }
+
+    /* Education Section */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 2rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -2.5rem;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      border: 2px solid var(--bg-primary);
+    }
+
+    .timeline-title {
+      font-size: 1.125rem;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-subtitle {
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .timeline-date {
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    label {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    input, textarea {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      background: var(--accent-cyan);
+      color: var(--bg-primary);
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      align-self: flex-start;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px var(--accent-cyan-glow);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .contact-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      color: var(--accent-cyan);
+    }
+
+    .contact-card p {
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      color: var(--accent-cyan);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px var(--accent-cyan-glow);
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-content,
+      .skills-grid,
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 3rem 0;
+      }
+    }
+  </style>
 </head>
-<body class="font-sans">
+<body>
+  <canvas id="matrix-canvas"></canvas>
 
-    <canvas id="matrix" class="matrix-bg"></canvas>
+  <nav>
+    <div class="container">
+      <div class="logo">ezekiel@cybersec:~$</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <nav class="fixed top-0 w-full z-50 nav-blur">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-primary flex items-center justify-center rounded font-bold text-white font-mono">EO</div>
-                <span class="font-bold hidden md:block">Ezekiel Ologunde</span>
-            </div>
-            <div class="flex gap-8 text-sm font-medium">
-                <a href="#about" class="hover:text-primary transition-colors">About</a>
-                <a href="#students" class="hover:text-primary transition-colors">Students</a>
-                <a href="#contact" class="bg-primary px-5 py-2 rounded text-white font-bold hover:opacity-90 transition-all">Connect</a>
-            </div>
+  <section class="hero">
+    <div class="container">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-dot dot-red"></div>
+          <div class="terminal-dot dot-yellow"></div>
+          <div class="terminal-dot dot-green"></div>
         </div>
-    </nav>
-
-    <header class="pt-40 pb-24 px-6 text-center max-w-5xl mx-auto">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-            Predictive Threat <br><span class="text-primary font-hero">Intelligence</span>
-        </h1>
-        <p class="text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
-            D.Eng Candidate in Cybersecurity Analytics. Specializing in AI-driven forensics and proactive incident response strategies.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4 font-mono text-sm">
-            <span class="px-3 py-1 border border-zinc-800 rounded bg-zinc-900">CISSP Candidate</span>
-            <span class="px-3 py-1 border border-zinc-800 rounded bg-zinc-900">CEH v12</span>
-            <span class="px-3 py-1 border border-zinc-800 rounded bg-zinc-900">Python/AI</span>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="prompt">ezekiel@cybersec:~$</span> <span class="output">whoami</span>
+          </div>
+          <div class="terminal-line output">Ezekiel Thompson</div>
+          <div class="terminal-line">
+            <span class="prompt">ezekiel@cybersec:~$</span> <span class="output">cat role.txt</span>
+          </div>
+          <div class="terminal-line output">Cybersecurity Specialist | Threat Hunter | AI Security Researcher</div>
+          <div class="terminal-line">
+            <span class="prompt">ezekiel@cybersec:~$</span> <span class="output">grep -i expertise skills.db</span>
+          </div>
+          <div class="terminal-line output">▸ Penetration Testing & Vulnerability Assessment</div>
+          <div class="terminal-line output">▸ Security Operations & Incident Response</div>
+          <div class="terminal-line output">▸ AI/ML Security & Adversarial Defense</div>
+          <div class="terminal-line">
+            <span class="prompt">ezekiel@cybersec:~$</span><span class="cursor"></span>
+          </div>
         </div>
-    </header>
+      </div>
+      <div class="badges">
+        <span class="badge">OSCP</span>
+        <span class="badge">CEH</span>
+        <span class="badge">CISSP</span>
+        <span class="badge">GIAC GPEN</span>
+        <span class="badge">CompTIA Security+</span>
+      </div>
+    </div>
+  </section>
 
-    <section id="students" class="py-24 px-6 border-t border-zinc-900">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-16">
-                <h2 class="text-4xl font-bold mb-4">Student Success & Mentorship</h2>
-                <div class="h-1 w-20 bg-primary mb-6"></div>
-                <p class="text-zinc-400">Direct impact and professional milestones achieved by students under my guidance.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
-                    <img src="student1.png" alt="SOC Analyst Result" class="w-full aspect-video object-cover border-b border-zinc-800">
-                    <div class="p-6">
-                        <div class="text-primary font-mono text-xs uppercase mb-2">Professional Placement</div>
-                        <h3 class="text-lg font-bold mb-2">SOC Analyst Level 1</h3>
-                        <p class="text-sm text-zinc-400">Student successfully transitioned from helpdesk to a Tier 1 SOC role at a major FinTech firm after completing the Incident Response bootcamp.</p>
-                    </div>
-                </div>
-
-                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
-                    <img src="student2.png" alt="Security+ Achievement" class="w-full aspect-video object-cover border-b border-zinc-800">
-                    <div class="p-6">
-                        <div class="text-primary font-mono text-xs uppercase mb-2">Certification Pass</div>
-                        <h3 class="text-lg font-bold mb-2">CompTIA Security+ SY0-701</h3>
-                        <p class="text-sm text-zinc-400">Guided study plan and hands-on labs resulting in a first-attempt pass for this core cybersecurity certification.</p>
-                    </div>
-                </div>
-
-                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
-                    <img src="student3.png" alt="Forensics Success" class="w-full aspect-video object-cover border-b border-zinc-800">
-                    <div class="p-6">
-                        <div class="text-primary font-mono text-xs uppercase mb-2">Career Pivot</div>
-                        <h3 class="text-lg font-bold mb-2">Digital Forensics Analyst</h3>
-                        <p class="text-sm text-zinc-400">Mentored on EnCase and FTK Imager toolsets, leading to a specialized role in a Digital Forensics and Incident Response (DFIR) team.</p>
-                    </div>
-                </div>
-
-                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
-                    <img src="student4.png" alt="CEH Achievement" class="w-full aspect-video object-cover border-b border-zinc-800">
-                    <div class="p-6">
-                        <div class="text-primary font-mono text-xs uppercase mb-2">Ethical Hacking</div>
-                        <h3 class="text-lg font-bold mb-2">Certified Ethical Hacker</h3>
-                        <p class="text-sm text-zinc-400">Successful CEH v12 certification through targeted penetration testing simulations and vulnerability assessment training.</p>
-                    </div>
-                </div>
-
-                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
-                    <img src="student5.png" alt="GRC Success" class="w-full aspect-video object-cover border-b border-zinc-800">
-                    <div class="p-6">
-                        <div class="text-primary font-mono text-xs uppercase mb-2">Compliance</div>
-                        <h3 class="text-lg font-bold mb-2">GRC Specialist</h3>
-                        <p class="text-sm text-zinc-400">Transitioned a student into Governance, Risk, and Compliance, focusing on NIST frameworks and risk assessment methodology.</p>
-                    </div>
-                </div>
-
-                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
-                    <img src="student6.png" alt="Infrastructure Success" class="w-full aspect-video object-cover border-b border-zinc-800">
-                    <div class="p-6">
-                        <div class="text-primary font-mono text-xs uppercase mb-2">Network Security</div>
-                        <h3 class="text-lg font-bold mb-2">Network Security Engineer</h3>
-                        <p class="text-sm text-zinc-400">Mentored on firewall implementation and secure network architecture, leading to a promotion from Network Admin.</p>
-                    </div>
-                </div>
-
-            </div>
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="stat-cards">
+          <div class="stat-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <div class="stat-title">Security Focus</div>
+            <div class="stat-value">Enterprise</div>
+          </div>
+          <div class="stat-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div class="stat-title">Specialization</div>
+            <div class="stat-value">AI Security</div>
+          </div>
+          <div class="stat-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <div class="stat-title">Primary Stack</div>
+            <div class="stat-value">Python/C++</div>
+          </div>
+          <div class="stat-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            <div class="stat-title">Experience</div>
+            <div class="stat-value">5+ Years</div>
+          </div>
         </div>
-    </section>
+        <div class="about-text">
+          <p>
+            I'm a passionate <strong>cybersecurity professional</strong> specializing in penetration testing, 
+            threat intelligence, and AI security research. With over 5 years of experience defending enterprise 
+            systems, I combine deep technical knowledge with strategic thinking to protect organizations from 
+            evolving threats.
+          </p>
+          <p>
+            My expertise spans <strong>red team operations</strong>, security automation, and adversarial machine 
+            learning. I've helped organizations identify critical vulnerabilities, respond to sophisticated attacks, 
+            and build resilient security architectures.
+          </p>
+          <p>
+            Currently focused on the intersection of <strong>artificial intelligence and cybersecurity</strong>, 
+            researching adversarial attacks, model security, and AI-powered threat detection systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="py-12 border-t border-zinc-900 text-center text-xs font-mono text-zinc-600">
-        <p>© 2024 Ezekiel Ologunde • Built with Resilience • Secure Session</p>
-    </footer>
+  <section id="skills">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>🛡️ Security</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Penetration Testing</span>
+              <span>95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Network Security</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Incident Response</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Threat Intelligence</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
 
-    <script>
-        // Matrix Rain
-        const canvas = document.getElementById('matrix');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        const chars = "010101ABCDEF";
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
-        const drops = Array(Math.floor(columns)).fill(1);
-        function draw() {
-            ctx.fillStyle = 'rgba(9, 9, 11, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#ef4444';
-            ctx.font = fontSize + 'px monospace';
-            for (let i = 0; i < drops.length; i++) {
-                const text = chars.charAt(Math.floor(Math.random() * chars.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-                drops[i]++;
-            }
-        }
-        setInterval(draw, 35);
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
-</body>
-</html>
+        <div class="skill-category">
+          <h3>🤖 AI/ML Security</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Adversarial ML</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Model Security</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>PyTorch/TensorFlow</span>
+              <span>82%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 82%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>AI Threat Detection</span>
+              <span>78%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 78%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>🔧 Tools & Tech</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Python/C++</span>
+              <span>92%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 92%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Metasploit/Burp Suite</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>SIEM/Splunk</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Cloud Security (AWS/Azure)</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3 class="project-title">AI Threat Detection Platform</h3>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">ML</span>
+            <span class="tag">SIEM</span>
+          </div>
+          <p class="project-description">
+            Developed an ML-powered threat detection system using behavioral analysis and anomaly 
+            detection. Achieved 94% accuracy in identifying zero-day attacks with reduced false positives.
+          </p>
+          <span class="status status-active">Active Development</span>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">Adversarial ML Defense Framework</h3>
+          <div class="project-tags">
+            <span class="tag">PyTorch</span>
+            <span class="tag">Security</span>
+            <span class="tag">Research</span>
+          </div>
+          <p class="project-description">
+            Research project exploring defensive techniques against adversarial attacks on ML models. 
+            Implemented novel defense mechanisms for image classification and NLP models.
+          </p>
+          <span class="status status-active">Active</span>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">Automated Penetration Testing Suite</h3>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Security</span>
+          </div>
+          <p class="project-description">
+            Built automated reconnaissance and vulnerability scanning tool for web applications. 
+            Integrates OWASP testing methodologies with custom exploit modules for comprehensive assessment.
+          </p>
+          <span class="status status-active">Production</span>
+        </div>
+
+        <div class="project-card">
+          <h3 class="project-title">Secure DevOps Pipeline</h3>
+          <div class="project-tags">
+            <span class="tag">CI/CD</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Security</span>
+          </div>
+          <p class="project-description">
+            Implemented security-first CI/CD pipeline with automated vulnerability scanning, 
+            secret detection, and compliance checks. Reduced security incidents by 60%.
+          </p>
+          <span class="status status-active">Active</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2>Education & Certifications</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3 class="timeline-title">Master of Science in Cybersecurity</h3>
+          <div class="timeline-subtitle">Georgia Institute of Technology</div>
+          <div class="timeline-date">2019 - 2021</div>
+          <p class="timeline-description">
+            Specialized in network security, cryptography, and machine learning security. 
+            Thesis: "Adversarial Attacks on Deep Learning-Based Intrusion Detection Systems"
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3 class="timeline-title">Offensive Security Certifie
