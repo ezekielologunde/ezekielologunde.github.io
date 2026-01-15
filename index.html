@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ezekiel Ologunde - Cybersecurity & AI/ML Specialist</title>
     
+    <meta name="description" content="Cybersecurity expert and AI/ML specialist with expertise in digital forensics, threat analysis, and incident response.">
+    <meta name="author" content="Ezekiel Ologunde">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@400;600;700&family=JetBrains+Mono&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -16,21 +19,19 @@
             theme: {
                 extend: {
                     colors: {
-                        border: "hsl(240 3.7% 15.9%)",
-                        background: "#09090b",
-                        foreground: "#fafafa",
                         primary: {
                             DEFAULT: "#ef4444",
                             foreground: "#ffffff",
                         },
-                        muted: {
-                            DEFAULT: "#27272a",
-                            foreground: "#a1a1aa",
+                        background: "#09090b",
+                        card: {
+                            DEFAULT: "#111113",
+                            border: "#27272a"
                         }
                     },
                     fontFamily: {
-                        mono: ['Space Mono', 'monospace'],
                         sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
                         hero: ['Architects Daughter', 'cursive']
                     }
                 }
@@ -38,153 +39,134 @@
         }
     </script>
     <style>
-        body { background-color: #09090b; color: #fafafa; font-family: 'Inter', sans-serif; }
-        .matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.12; pointer-events: none; }
+        body { background-color: #09090b; color: #fafafa; overflow-x: hidden; }
+        .matrix-bg { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.1; pointer-events: none; }
         .nav-blur { backdrop-filter: blur(12px); background: rgba(9, 9, 11, 0.8); border-bottom: 1px solid #27272a; }
-        .card-gradient { background: linear-gradient(145deg, #09090b, #111113); border: 1px solid #27272a; }
-        .student-img { filter: grayscale(20%); transition: all 0.4s ease; border-bottom: 1px solid #27272a; }
-        .student-img:hover { filter: grayscale(0%); transform: scale(1.02); }
+        .hover-elevate { transition: all 0.3s ease; }
+        .hover-elevate:hover { transform: translateY(-4px); border-color: #ef4444; }
+        .student-card img { filter: grayscale(100%); transition: filter 0.3s ease; }
+        .student-card:hover img { filter: grayscale(0%); }
     </style>
 </head>
-<body class="selection:bg-red-500/30">
+<body class="font-sans">
 
-    <canvas id="matrixCanvas" class="matrix-bg"></canvas>
+    <canvas id="matrix" class="matrix-bg"></canvas>
 
     <nav class="fixed top-0 w-full z-50 nav-blur">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-primary flex items-center justify-center rounded font-bold text-white font-mono">EO</div>
-                <span class="font-bold tracking-tight text-xl hidden sm:block">Ezekiel Ologunde</span>
+                <span class="font-bold hidden md:block">Ezekiel Ologunde</span>
             </div>
-            <div class="flex items-center gap-6 text-sm font-medium">
+            <div class="flex gap-8 text-sm font-medium">
                 <a href="#about" class="hover:text-primary transition-colors">About</a>
-                <a href="#certifications" class="hover:text-primary transition-colors">Certs</a>
                 <a href="#students" class="hover:text-primary transition-colors">Students</a>
-                <a href="#contact" class="bg-primary px-4 py-2 rounded text-white font-bold hover:bg-red-600 transition-all">Hire Me</a>
+                <a href="#contact" class="bg-primary px-5 py-2 rounded text-white font-bold hover:opacity-90 transition-all">Connect</a>
             </div>
         </div>
     </nav>
 
-    <header class="pt-32 pb-20 px-6 max-w-7xl mx-auto text-center">
-        <div class="inline-block px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary font-mono text-xs mb-8 uppercase tracking-widest">
-            System Status: Protected
-        </div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-none">
-            Cybersecurity & <br><span class="text-primary">AI/ML Specialist</span>
+    <header class="pt-40 pb-24 px-6 text-center max-w-5xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+            Predictive Threat <br><span class="text-primary font-hero">Intelligence</span>
         </h1>
-        <p class="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            D.Eng Candidate in Cybersecurity Analytics. I leverage Machine Learning to predict threats and secure critical infrastructure.
+        <p class="text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
+            D.Eng Candidate in Cybersecurity Analytics. Specializing in AI-driven forensics and proactive incident response strategies.
         </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#students" class="px-8 py-3 bg-white text-black font-bold rounded hover:bg-primary hover:text-white transition-all">Success Stories</a>
-            <a href="#projects" class="px-8 py-3 border border-muted rounded font-bold hover:bg-muted transition-all">View Research</a>
+        <div class="flex flex-wrap justify-center gap-4 font-mono text-sm">
+            <span class="px-3 py-1 border border-zinc-800 rounded bg-zinc-900">CISSP Candidate</span>
+            <span class="px-3 py-1 border border-zinc-800 rounded bg-zinc-900">CEH v12</span>
+            <span class="px-3 py-1 border border-zinc-800 rounded bg-zinc-900">Python/AI</span>
         </div>
     </header>
 
-    <section class="py-12 border-y border-muted bg-black/40">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="text-center">
-                <div class="text-3xl font-bold text-primary mb-1">CISSP</div>
-                <p class="text-xs font-mono uppercase text-muted-foreground">Certified Professional</p>
-            </div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-primary mb-1">CEH</div>
-                <p class="text-xs font-mono uppercase text-muted-foreground">Ethical Hacker</p>
-            </div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-primary mb-1">D.Eng(c)</div>
-                <p class="text-xs font-mono uppercase text-muted-foreground">Cyber Analytics</p>
-            </div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-primary mb-1">AI/ML</div>
-                <p class="text-xs font-mono uppercase text-muted-foreground">Predictive Security</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="students" class="py-24 px-6 bg-zinc-950/50">
+    <section id="students" class="py-24 px-6 border-t border-zinc-900">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16">
                 <h2 class="text-4xl font-bold mb-4">Student Success & Mentorship</h2>
-                <div class="h-1.5 w-24 bg-primary mb-6"></div>
-                <p class="text-muted-foreground max-w-xl">Screenshots of professional placements, certification passes, and career transitions from students I have mentored.</p>
+                <div class="h-1 w-20 bg-primary mb-6"></div>
+                <p class="text-zinc-400">Direct impact and professional milestones achieved by students under my guidance.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-gradient rounded-xl overflow-hidden group">
-                    <img src="student1.png" alt="Student Result 1" class="student-img w-full">
+                
+                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
+                    <img src="student1.png" alt="SOC Analyst Result" class="w-full aspect-video object-cover border-b border-zinc-800">
                     <div class="p-6">
-                        <span class="text-primary font-mono text-xs uppercase">Career Pivot</span>
-                        <h3 class="font-bold text-lg mt-1">SOC Analyst Level 1</h3>
+                        <div class="text-primary font-mono text-xs uppercase mb-2">Professional Placement</div>
+                        <h3 class="text-lg font-bold mb-2">SOC Analyst Level 1</h3>
+                        <p class="text-sm text-zinc-400">Student successfully transitioned from helpdesk to a Tier 1 SOC role at a major FinTech firm after completing the Incident Response bootcamp.</p>
                     </div>
                 </div>
-                <div class="card-gradient rounded-xl overflow-hidden group">
-                    <img src="student2.png" alt="Student Result 2" class="student-img w-full">
+
+                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
+                    <img src="student2.png" alt="Security+ Achievement" class="w-full aspect-video object-cover border-b border-zinc-800">
                     <div class="p-6">
-                        <span class="text-primary font-mono text-xs uppercase">Certification</span>
-                        <h3 class="font-bold text-lg mt-1">Security+ Success</h3>
+                        <div class="text-primary font-mono text-xs uppercase mb-2">Certification Pass</div>
+                        <h3 class="text-lg font-bold mb-2">CompTIA Security+ SY0-701</h3>
+                        <p class="text-sm text-zinc-400">Guided study plan and hands-on labs resulting in a first-attempt pass for this core cybersecurity certification.</p>
                     </div>
                 </div>
-                <div class="card-gradient rounded-xl overflow-hidden group">
-                    <img src="student3.png" alt="Student Result 3" class="student-img w-full">
+
+                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
+                    <img src="student3.png" alt="Forensics Success" class="w-full aspect-video object-cover border-b border-zinc-800">
                     <div class="p-6">
-                        <span class="text-primary font-mono text-xs uppercase">Placement</span>
-                        <h3 class="font-bold text-lg mt-1">Network Security Eng.</h3>
+                        <div class="text-primary font-mono text-xs uppercase mb-2">Career Pivot</div>
+                        <h3 class="text-lg font-bold mb-2">Digital Forensics Analyst</h3>
+                        <p class="text-sm text-zinc-400">Mentored on EnCase and FTK Imager toolsets, leading to a specialized role in a Digital Forensics and Incident Response (DFIR) team.</p>
                     </div>
                 </div>
-                <div class="card-gradient rounded-xl overflow-hidden group">
-                    <img src="student4.png" alt="Student Result 4" class="student-img w-full">
+
+                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
+                    <img src="student4.png" alt="CEH Achievement" class="w-full aspect-video object-cover border-b border-zinc-800">
                     <div class="p-6">
-                        <span class="text-primary font-mono text-xs uppercase">Certification</span>
-                        <h3 class="font-bold text-lg mt-1">CEH v12 Passed</h3>
+                        <div class="text-primary font-mono text-xs uppercase mb-2">Ethical Hacking</div>
+                        <h3 class="text-lg font-bold mb-2">Certified Ethical Hacker</h3>
+                        <p class="text-sm text-zinc-400">Successful CEH v12 certification through targeted penetration testing simulations and vulnerability assessment training.</p>
                     </div>
                 </div>
-                <div class="card-gradient rounded-xl overflow-hidden group">
-                    <img src="student5.png" alt="Student Result 5" class="student-img w-full">
+
+                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
+                    <img src="student5.png" alt="GRC Success" class="w-full aspect-video object-cover border-b border-zinc-800">
                     <div class="p-6">
-                        <span class="text-primary font-mono text-xs uppercase">Advancement</span>
-                        <h3 class="font-bold text-lg mt-1">Security Consultant</h3>
+                        <div class="text-primary font-mono text-xs uppercase mb-2">Compliance</div>
+                        <h3 class="text-lg font-bold mb-2">GRC Specialist</h3>
+                        <p class="text-sm text-zinc-400">Transitioned a student into Governance, Risk, and Compliance, focusing on NIST frameworks and risk assessment methodology.</p>
                     </div>
                 </div>
-                <div class="card-gradient rounded-xl overflow-hidden group">
-                    <img src="student6.png" alt="Student Result 6" class="student-img w-full">
+
+                <div class="student-card hover-elevate border border-zinc-800 bg-zinc-950 rounded-xl overflow-hidden">
+                    <img src="student6.png" alt="Infrastructure Success" class="w-full aspect-video object-cover border-b border-zinc-800">
                     <div class="p-6">
-                        <span class="text-primary font-mono text-xs uppercase">Success</span>
-                        <h3 class="font-bold text-lg mt-1">Incident Responder</h3>
+                        <div class="text-primary font-mono text-xs uppercase mb-2">Network Security</div>
+                        <h3 class="text-lg font-bold mb-2">Network Security Engineer</h3>
+                        <p class="text-sm text-zinc-400">Mentored on firewall implementation and secure network architecture, leading to a promotion from Network Admin.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-muted px-6 text-center">
-        <p class="font-mono text-sm text-muted-foreground">
-            &copy; 2024 Ezekiel Ologunde • <span class="text-primary">Encrypted Access</span>
-        </p>
+    <footer class="py-12 border-t border-zinc-900 text-center text-xs font-mono text-zinc-600">
+        <p>© 2024 Ezekiel Ologunde • Built with Resilience • Secure Session</p>
     </footer>
 
     <script>
-        const canvas = document.getElementById('matrixCanvas');
+        // Matrix Rain
+        const canvas = document.getElementById('matrix');
         const ctx = canvas.getContext('2d');
-
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.onresize = resize;
-        resize();
-
-        const chars = "010101ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$";
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const chars = "010101ABCDEF";
         const fontSize = 14;
         const columns = canvas.width / fontSize;
         const drops = Array(Math.floor(columns)).fill(1);
-
         function draw() {
             ctx.fillStyle = 'rgba(9, 9, 11, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = '#ef4444';
             ctx.font = fontSize + 'px monospace';
-
             for (let i = 0; i < drops.length; i++) {
                 const text = chars.charAt(Math.floor(Math.random() * chars.length));
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
@@ -193,6 +175,10 @@
             }
         }
         setInterval(draw, 35);
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
     </script>
 </body>
 </html>
