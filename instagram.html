@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Tech & Cybersecurity Accounts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            padding: 2rem;
+        }
+        .section-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        h1, h2, h3, h4 {
+            font-weight: 700;
+        }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #79c0ff;
+        }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .profile-card {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 1.25rem;
+            transition: all 0.2s ease-in-out;
+            display: block;
+            height: 100%;
+        }
+        .profile-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.1);
+        }
+        .search-box {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            color: #c9d1d9;
+            margin-bottom: 1.5rem;
+        }
+        .search-box:focus {
+            outline: none;
+            border-color: #58a6ff;
+        }
+        .insta-icon {
+            color: #e4405f;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto">
+        <div class="text-left py-4">
+            <a href="Resourcehub.html" class="text-lg inline-flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Back to Main
+            </a>
+        </div>
+
+        <header class="text-center py-10 md:py-16">
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
+                📸 Instagram Tech & Cybersecurity Directory
+            </h1>
+            <p class="text-md md:text-lg text-gray-400">A curated collection of industry leaders, cybersecurity experts, and AI innovators on Instagram.</p>
+        </header>
+
+        <div class="section-card">
+            <input type="text" id="searchBox" class="search-box" placeholder="Search by name, category, or username...">
+        </div>
+
+        <main class="space-y-8">
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-6 text-white">🛡️ Featured Accounts</h2>
+                <div class="profile-grid" id="instaProfiles">
+                    </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="text-2xl font-semibold mb-6 text-white">🔄 Updates</h2>
+                <p>Last updated: January 2026</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const profiles = [
+            { name: "God Of Prompt", username: "godofprompt" },
+            { name: "Tranquess", username: "tranquess_" },
+            { name: "NVIDIA Robotics", username: "nvidiarobotics" },
+            { name: "HoWz", username: "howzstudios" },
+            { name: "GDIT", username: "generaldynamicsit" },
+            { name: "Kevin Nanns", username: "adjacentnode" },
+            { name: "Empirical Training | Cybersecurity Mentorship", username: "empiricaltraining" },
+            { name: "Caitlin Sarian | Cybersecurity Girl", username: "cybersecuritygirl" },
+            { name: "Android", username: "android" },
+            { name: "ScienceLogic", username: "sciencelogichq" },
+            { name: "Fanta-Marie", username: "fantamariet" },
+            { name: "CISA | Cybersecurity Agency", username: "cisagov" },
+            { name: "Mariana Antaya", username: "mar_antaya" },
+            { name: "Startups | Entrepreneurs | VCs", username: "startupstealth" },
+            { name: "GuidingCyber", username: "guidingcyber" },
+            { name: "Ai | ainews | futurewalt.ai", username: "futurewalt.ai" },
+            { name: "Hacker | Hacking | Cybersecurity", username: "hackverine" },
+            { name: "BENA | 🇳🇬", username: "rubenagalore" },
+            { name: "Wali", username: "itwithwali" },
+            { name: "Perisai - Cybersecurity", username: "perisai.cybersecurity" },
+            { name: "Evan Lutz | BowTiedCyber", username: "bowtiedcyber_" },
+            { name: "Big Tech This Week", username: "bigtechthisweek" },
+            { name: "AI | Technology", username: "artificialzone" },
+            { name: "Rohit Khatri", username: "rohitkhatri.ai" },
+            { name: "Manthan Patel | Lead Gen Man", username: "leadgenman" },
+            { name: "Kevin Roberts", username: "srhoe" },
+            { name: "Google Gemini app", username: "googlegemini" },
+            { name: "Networkyy", username: "networkyy" },
+            { name: "Symoné Berry", username: "symonebeez" },
+            { name: "Ai / Artificial Intelligence", username: "artificialintelligence.co" },
+            { name: "Maddy 🐝 | Cyber Education", username: "cyb3rmaddy" },
+            { name: "Rishika Desai", username: "rish.sec" },
+            { name: "Luise Ammerschuber", username: "luise_ammerschuber" },
+            { name: "Sakshi Pandey | Cyber Security", username: "cyberwalididi" },
+            { name: "Mukesh Kumar Rao", username: "cyber_mukesh" },
+            { name: "Technology", username: "technology" },
+            { name: "Kali Linux", username: "kalilinux" },
+            { name: "Suruchi garg | Book Reviewer", username: "booklyreads" },
+            { name: "David Bombal", username: "davidbombal" },
+            { name: "AFROTECH", username: "afro.tech" },
+            { name: "Teresa | Cybersecurity Creator", username: "cybersecuritee" },
+            { name: "Google", username: "google" },
+            { name: "Hackie Henry | Cyber Security", username: "hackiehenry" }
+        ];
+
+        const container = document.getElementById('instaProfiles');
+        const searchBox = document.getElementById('searchBox');
+
+        function renderProfiles(filter = "") {
+            container.innerHTML = "";
+            const filtered = profiles.filter(p => 
+                p.name.toLowerCase().includes(filter.toLowerCase()) || 
+                p.username.toLowerCase().includes(filter.toLowerCase())
+            );
+
+            filtered.forEach(profile => {
+                const card = document.createElement('a');
+                card.href = `https://www.instagram.com/${profile.username}/`;
+                card.target = "_blank";
+                card.className = "profile-card";
+                card.innerHTML = `
+                    <div class="insta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                        </svg>
+                    </div>
+                    <div class="font-semibold text-white truncate">${profile.name}</div>
+                    <div class="text-sm text-gray-400">@${profile.username}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        searchBox.addEventListener('input', (e) => renderProfiles(e.target.value));
+
+        // Initial render
+        renderProfiles();
+    </script>
+</body>
+</html>
