@@ -1,78 +1,213 @@
-<section id="students">
-        <div class="container">
-          <div class="section-head">
-            <div class="prompt"><span class="prompt">$</span> ls -la</div>
-            <h2>/student-resources</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ezekiel Ologunde | Cybersecurity & AI Portfolio</title>
+  <meta name="description" content="Cybersecurity Educator | AI/ML Specialist | Digital Forensics Analyst" />
+  <link rel="icon" href="client/public/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg: #060812;
+      --panel: rgba(12, 16, 30, 0.85);
+      --panel-2: rgba(12, 16, 30, 0.55);
+      --border: rgba(148, 163, 184, 0.18);
+      --text: #e5e7eb;
+      --muted: rgba(229, 231, 235, 0.72);
+      --primary: #38bdf8;
+      --success: #34d399;
+      --radius: 18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(56,189,248,0.12), transparent 60%),
+                  radial-gradient(1000px 700px at 90% 25%, rgba(52,211,153,0.10), transparent 55%),
+                  var(--bg);
+      overflow-x: hidden;
+    }
+
+    #matrix {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    .wrap { position: relative; z-index: 2; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 80px 0; }
+    
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+      backdrop-filter: blur(12px); background: rgba(6, 8, 18, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .terminal {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+    }
+
+    .card {
+      background: rgba(12, 16, 30, 0.62);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .resource:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: 0 10px 30px rgba(56,189,248,0.15);
+    }
+
+    .prompt { font-family: var(--mono); color: var(--success); margin-right: 8px; }
+    .muted { color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+
+  <nav class="nav">
+    <div class="container flex justify-between items-center py-4">
+      <div class="font-mono font-bold flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-[#34d399] shadow-[0_0_15px_#34d399]"></span>
+        ezekiel@cyntraix:~$
+      </div>
+      <div class="hidden md:flex gap-6 font-mono text-sm text-gray-400">
+        <a href="#about" class="hover:text-white">about</a>
+        <a href="#projects" class="hover:text-white">projects</a>
+        <a href="#students" class="hover:text-white">students</a>
+        <a href="#contact" class="hover:text-white">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <header class="pt-32 pb-16">
+      <div class="container grid md:grid-cols-2 gap-8 items-center">
+        <div class="terminal overflow-hidden">
+          <div class="bg-[#020617b3] p-3 border-b border-[var(--border)] flex justify-between items-center">
+            <div class="flex gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
+            </div>
+            <span class="text-xs font-mono opacity-50">bash — 80x24</span>
           </div>
-          <div class="grid">
-            
-            <a class="card resource" href="basics.html">
-              <div class="card-title">Fundamental Concepts</div>
-              <div class="muted">Getting started with core cybersecurity principles.</div>
-            </a>
-
-            <a class="card resource" href="acronym.html">
-              <div class="card-title">Acronyms Guide</div>
-              <div class="muted">A comprehensive breakdown of industry terminology.</div>
-            </a>
-
-            <a class="card resource" href="Certification Guide.html">
-              <div class="card-title">Certification Roadmap</div>
-              <div class="muted">Strategic paths for various security career tracks.</div>
-            </a>
-
-            <a class="card resource" href="Resourcehub.html">
-              <div class="card-title">The Resource Hub</div>
-              <div class="muted">A centralized collection of learning materials and tools.</div>
-            </a>
-
-            <a class="card resource" href="Tiktok.html">
-              <div class="card-title">Content Creators</div>
-              <div class="muted">Leading voices and educators in the social space.</div>
-            </a>
-
-            <a class="card resource" href="Paid Trainings.html">
-              <div class="card-title">Professional Training</div>
-              <div class="muted">Recommended bootcamps and premium certifications.</div>
-            </a>
-
-            <a class="card resource" href="Conferences.html">
-              <div class="card-title">Industry Events</div>
-              <div class="muted">Networking and learning at global security conferences.</div>
-            </a>
-
-            <a class="card resource" href="Forums & Community.html">
-              <div class="card-title">Community & Forums</div>
-              <div class="muted">Connect with other researchers and professionals.</div>
-            </a>
-
-            <a class="card resource" href="Leading Cybersecurity 20Companies.html">
-              <div class="card-title">Top Employers</div>
-              <div class="muted">Researching the world's leading security firms.</div>
-            </a>
-
+          <div class="p-6 font-mono text-sm leading-relaxed">
+            <div><span class="prompt">$</span>whoami</div>
+            <div class="mb-4">Ezekiel Ologunde</div>
+            <div><span class="prompt">$</span>cat expertise.json</div>
+            <div class="text-blue-400">{
+              "role": "Cybersecurity Expert",
+              "specialization": ["AI/ML", "Digital Forensics"],
+              "status": "D.Eng Candidate"
+            }</div>
           </div>
         </div>
-      </section>
 
-<script>
-    // Footer year
+        <div class="bg-[var(--panel-2)] border border-[var(--border)] p-8 rounded-[var(--radius)] text-center">
+          <img src="IMG_8794.JPG" alt="Profile" class="w-32 h-32 rounded-full mx-auto border-2 border-[var(--border)] mb-4 object-cover" />
+          <h1 class="text-2xl font-bold">Ezekiel Ologunde</h1>
+          <p class="muted mb-6">Securing the future through Predictive Analytics</p>
+          <div class="flex flex-col gap-3">
+            <a href="#contact" class="bg-white/5 border border-[var(--border)] py-2 rounded-xl hover:bg-white/10 transition">Contact Me</a>
+            <a href="#students" class="bg-blue-500/20 border border-blue-500/30 py-2 rounded-xl text-blue-400 hover:bg-blue-500/30 transition">Student Resources</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="students" class="bg-black/20">
+      <div class="container">
+        <div class="flex items-baseline gap-3 mb-8">
+          <span class="prompt text-2xl">$</span>
+          <h2 class="text-3xl font-mono font-bold">ls /resources</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-4">
+          <a href="basics.html" class="card resource">
+            <h3 class="font-bold text-white mb-2">Cyber Basics</h3>
+            <p class="muted">Start here for fundamental principles and security concepts.</p>
+          </a>
+
+          <a href="acronym.html" class="card resource">
+            <h3 class="font-bold text-white mb-2">Acronym Guide</h3>
+            <p class="muted">Updated guide featuring Cloud, GRC, and Technical terms.</p>
+          </a>
+
+          <a href="Certification Guide.html" class="card resource">
+            <h3 class="font-bold text-white mb-2">Certification Roadmap</h3>
+            <p class="muted">Guide to CISSP, CEH, and AWS Security pathways.</p>
+          </a>
+
+          <a href="Resourcehub.html" class="card resource border-blue-500/30">
+            <h3 class="font-bold text-blue-400 mb-2">Resource Hub</h3>
+            <p class="muted">Centralized library of tools, labs, and documentation.</p>
+          </a>
+
+          <a href="Tiktok.html" class="card resource">
+            <h3 class="font-bold text-white mb-2">Cyber Creators</h3>
+            [cite_start]<p class="muted">Featuring 100+ creators including Let’s Cyber, Symoné Beez, and Tech Woke[cite: 1, 2, 6, 16].</p>
+          </a>
+
+          <a href="Leading Cybersecurity 20Companies.html" class="card resource">
+            <h3 class="font-bold text-white mb-2">Top Companies</h3>
+            <p class="muted">Researching major industry players and potential employers.</p>
+          </a>
+
+          <a href="Conferences.html" class="card resource">
+            <h3 class="font-bold text-white mb-2">Conferences</h3>
+            [cite_start]<p class="muted">Industry events to network and learn from experts like Josh Madakor and Ashish Rajan[cite: 9, 10, 18].</p>
+          </a>
+
+          <a href="Forums & Community.html" class="card resource">
+            <h3 class="font-bold text-white mb-2">Community</h3>
+            <p class="muted">Connect with the global cybersecurity ecosystem.</p>
+          </a>
+
+          <a href="Paid Trainings.html" class="card resource">
+            <h3 class="font-bold text-white mb-2">Paid Trainings</h3>
+            [cite_start]<p class="muted">Premium pathways including SANS Institute and Infosec Institute[cite: 7, 16].</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-[var(--border)] py-12">
+      <div class="container text-center font-mono text-sm text-gray-500">
+        <p class="mb-2"><span class="text-[var(--success)]">echo</span> "Built with security in mind"</p>
+        <p>&copy; <span id="year"></span> Ezekiel Ologunde</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Matrix Background Animation
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
     let columns = Math.floor(width / 20);
-    const characters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const characters = "010101SECURE";
     const drops = [];
     for (let i = 0; i < columns; i++) drops[i] = 1;
 
     function draw() {
       ctx.fillStyle = 'rgba(6, 8, 18, 0.05)';
       ctx.fillRect(0, 0, width, height);
-      ctx.fillStyle = '#34d39933';
+      ctx.fillStyle = '#34d39922';
       ctx.font = '15px monospace';
       for (let i = 0; i < drops.length; i++) {
         const text = characters.charAt(Math.floor(Math.random() * characters.length));
@@ -81,28 +216,13 @@
         drops[i]++;
       }
     }
-    setInterval(draw, 33);
+    setInterval(draw, 50);
 
-    // Skill Bar Animation on Scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const fill = entry.target.querySelector('.fill');
-          if (fill) fill.style.width = fill.getAttribute('data-level') + '%';
-        }
-      });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.skill').forEach(s => observer.observe(s));
-
-    // Handle Contact Form
-    document.getElementById('contactForm').onsubmit = function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const subject = document.getElementById('subject').value;
-      const body = document.getElementById('message').value;
-      window.location.href = `mailto:ezekiel@cyntraix.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + "\n\n" + body)}`;
-    };
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      columns = Math.floor(width / 20);
+    });
   </script>
 </body>
 </html>
