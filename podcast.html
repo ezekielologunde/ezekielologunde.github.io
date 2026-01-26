@@ -33,119 +33,41 @@
     <script>
         const podcasts = [
             {
+                name: "The Dr. Zero Trust Podcast",
+                description: "Hosted by Dr. Chase Cunningham (Dr. Zero Trust), this podcast breaks down the complexities of Zero Trust architecture and the future of cybersecurity strategy.",
+                apple: "https://podcasts.apple.com/us/podcast/drzerotrust/id1570251081",
+                spotify: "googleusercontent.com/spotify.com/X",
+                tags: ["Zero Trust", "Strategy", "Dr. Chase Cunningham"]
+            },
+            {
                 name: "Data Security Decoded",
                 description: "Actionable, vendor-agnostic insights to reduce data security risk and improve resilience, featuring leaders from Rubrik Zero Labs.",
                 apple: "https://podcasts.apple.com/us/podcast/data-security-decoded/id1738264274",
-                spotify: "https://open.spotify.com/show/0O7I78x2Vl2e2e7o1u3S7G",
+                spotify: "open.spotify.com/show/ID",
                 tags: ["Data Security", "Rubrik", "Resilience"]
             },
             {
                 name: "#CyberChats",
                 description: "Focused on educating all ages about personal data care and highlighting positive figures in the cybersecurity community.",
                 apple: "https://podcasts.apple.com/us/podcast/cyberchats/id1671622288",
-                spotify: "https://open.spotify.com/show/6eYF5Q0qO7y7X1A2",
+                spotify: "https://open.spotify.com/show/0O7I78x2Vl2e2e7o1u3S7G",
                 tags: ["Education", "Careers", "Awareness"]
             },
             {
                 name: "Threat Vector",
                 description: "Presented by Palo Alto Networks, diving into real threats, smart defenses, and future trends with top industry leaders.",
                 apple: "https://podcasts.apple.com/us/podcast/threat-vector-by-palo-alto-networks/id1725324656",
-                spotify: "https://open.spotify.com/show/4N9vI7f6XJ7z8E",
+                spotify: "https://open.spotify.com/show/6eYF5Q0qO7y7X1A2",
                 tags: ["Palo Alto Networks", "Threat Intel", "Defense"]
             },
             {
                 name: "Zero Trust Thirty",
                 description: "A podcast offering unique perspectives on the trends and technologies shaping the world of Zero Trust security.",
                 apple: "https://podcasts.apple.com/us/podcast/zero-trust-thirty/id1597779601",
-                spotify: "https://open.spotify.com/show/2F9P5r1XJ7k8V",
+                spotify: "https://open.spotify.com/show/4N9vI7f6XJ7z8E",
                 tags: ["Zero Trust", "Infrastructure", "Appgate"]
             },
             {
                 name: "The FAIK Files",
                 description: "Explores the intersection of AI, technology, and humanity, focusing on deepfakes and digital deception.",
-                apple: "https://podcasts.apple.com/us/podcast/the-faik-files/id1771521321",
-                spotify: "https://open.spotify.com/show/3D9wI7k5XJ9y",
-                tags: ["AI", "Deepfakes", "Cognitive Warfare"]
-            },
-            {
-                name: "Only Malware in the Building",
-                description: "Solving monthly cyber mysteries with intelligence analysts and former FBI investigators.",
-                apple: "https://podcasts.apple.com/us/podcast/only-malware-in-the-building/id1749644761",
-                spotify: "https://open.spotify.com/show/5P9N7m4XJ8Z2",
-                tags: ["Malware", "FBI", "Forensics"]
-            },
-            {
-                name: "UnixGuy Cyber Security Career",
-                description: "Real insights into what it's like to work in cybersecurity, featuring guests from across the industry.",
-                apple: "https://podcasts.apple.com/au/podcast/unixguy-cyber-security-career/id1830928775",
-                spotify: "https://open.spotify.com/show/1k9W7m5XJ7Y3",
-                tags: ["Career Advice", "Mentorship", "UnixGuy"]
-            },
-            {
-                name: "WT 360: The Market From All Angles",
-                description: "Conversations on what's driving the federal government market, focusing on cybersecurity and GovCon trends.",
-                apple: "https://podcasts.apple.com/us/podcast/wt-360-the-market-from-all-angles/id1449676413",
-                spotify: "https://open.spotify.com/show/6U9X7m5YJ7V4",
-                tags: ["Federal IT", "GovCon", "GovCIO"]
-            },
-            {
-                name: "Tech Career Blueprint",
-                description: "Roadmaps for moving from entry-level to senior positions in tech and cybersecurity.",
-                apple: "https://podcasts.apple.com/us/podcast/tech-career-blueprint-podcast-presented-by-master-i/id1690081331",
-                spotify: "https://open.spotify.com/show/4R9Z7m5XJ7S5",
-                tags: ["Career Roadmap", "Certifications", "IT Pro"]
-            },
-            {
-                name: "Darknet Diaries",
-                description: "True stories from the dark side of the internet. Hackers, breaches, shadow government operations, and hacktivism.",
-                apple: "https://podcasts.apple.com/us/podcast/darknet-diaries/id1296350485",
-                spotify: "https://open.spotify.com/show/4X7CijNeo9tU66GZ7mYp9D",
-                tags: ["True Crime", "Hacking Stories", "Top Pick"]
-            },
-            {
-                name: "The CyberWire Daily",
-                description: "A weekday briefing on the latest global cybersecurity news, featuring expert analysis and policy updates.",
-                apple: "https://podcasts.apple.com/us/podcast/the-cyberwire-daily/id1071831015",
-                spotify: "https://open.spotify.com/show/3H9R7m5XJ7W3",
-                tags: ["Daily News", "Analysis", "Policy"]
-            }
-        ];
-
-        function renderPodcasts(filter = "") {
-            const grid = document.getElementById('podcastGrid');
-            grid.innerHTML = '';
-            
-            const filtered = podcasts.filter(p => 
-                p.name.toLowerCase().includes(filter.toLowerCase()) || 
-                p.tags.some(t => t.toLowerCase().includes(filter.toLowerCase()))
-            );
-
-            filtered.forEach(p => {
-                const card = `
-                    <div class="podcast-card bg-slate-800 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                ${p.tags.map(t => `<span class="bg-blue-500/10 text-blue-400 text-xs px-2 py-1 rounded-full border border-blue-500/20">${t}</span>`).join('')}
-                            </div>
-                            <h3 class="text-xl font-bold mb-3">${p.name}</h3>
-                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">${p.description}</p>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="${p.apple}" target="_blank" class="flex-1 text-center bg-white text-slate-900 py-2 rounded-lg font-semibold hover:bg-slate-200 transition flex items-center justify-center gap-2">
-                                <i class="fab fa-apple"></i> Apple
-                            </a>
-                            <a href="${p.spotify}" target="_blank" class="flex-1 text-center bg-[#1DB954] text-white py-2 rounded-lg font-semibold hover:bg-[#1ed760] transition flex items-center justify-center gap-2">
-                                <i class="fab fa-spotify"></i> Spotify
-                            </a>
-                        </div>
-                    </div>
-                `;
-                grid.innerHTML += card;
-            });
-        }
-
-        document.getElementById('searchInput').addEventListener('input', (e) => renderPodcasts(e.target.value));
-        renderPodcasts();
-    </script>
-</body>
-</html>
+                apple: "
