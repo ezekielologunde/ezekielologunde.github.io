@@ -14,7 +14,7 @@
             line-height: 1.6;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             padding: 2rem;
         }
         .section-card {
@@ -23,169 +23,144 @@
             border-radius: 12px;
             padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        h1, h2, h3 {
-            font-weight: 700;
+        .influencer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
         }
-        a {
-            color: #58a6ff;
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
+        .tag {
+            background: #21262d;
+            border: 1px solid #30363d;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 2px;
         }
-        a:hover {
-            color: #79c0ff;
-        }
-        ul.list-disc, ul.list-none {
-            list-style-type: none;
-            padding-left: 1.5rem;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            margin-top: 1rem;
-        }
-        th, td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid #30363d;
-        }
-        thead {
-            background-color: #1f242c;
-        }
-        tbody tr:hover {
-            background-color: #242932;
-        }
+        h1, h2, h3 { font-weight: 700; color: white; }
+        a { color: #58a6ff; text-decoration: none; transition: 0.2s; }
+        a:hover { color: #79c0ff; text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 0.75rem 1rem; border-bottom: 1px solid #30363d; text-align: left; }
+        thead { background-color: #1f242c; }
     </style>
 </head>
 <body class="antialiased">
     <div class="container mx-auto">
-        <!-- Navigation to Main Page -->
         <div class="text-left py-4">
             <a href="Resourcehub.html" class="text-lg inline-flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                Back to Main
+                Back to Main Hub
             </a>
         </div>
 
-        <!-- Header -->
-        <header class="text-center py-10 md:py-16">
-            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
-                🌐 Cybersecurity Learning & Community Hub
-            </h1>
-            <p class="text-md md:text-lg text-gray-400">Welcome to your comprehensive guide for cybersecurity learning, community engagement, and career development. Whether you're a beginner or experienced professional, this hub connects you with valuable resources and communities.</p>
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-6xl mb-4">🌐 Cybersecurity Learning & Community Hub</h1>
+            <p class="text-gray-400 max-w-3xl mx-auto text-lg">Your central repository for networking, hands-on training, and professional growth in the information security landscape.</p>
         </header>
 
-        <!-- Main Content Sections -->
-        <main class="space-y-8">
+        <main>
             <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">💬 Community Forums</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">🏫 Skool Cybersecurity Community</h3>
-                <a href="https://www.skool.com/cybersec" class="text-lg text-blue-400 hover:text-blue-500">
-                    Join Skool Cybersecurity
-                </a>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li>- Free community platform</li>
-                    <li>- Network with cybersecurity professionals</li>
-                    <li>- Access to:
-                        <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
-                            <li>Study groups</li>
-                            <li>Mentorship opportunities</li>
-                            <li>Job postings</li>
-                            <li>Resource sharing</li>
-                            <li>Discussion forums</li>
-                            <li>Live events</li>
-                            <li>Project collaboration</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-10 mb-4 text-white">Other Notable Forums</h3>
-                <ul class="list-decimal list-inside ml-4 space-y-4">
-                    <li>
-                        <strong>Reddit Communities</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>r/cybersecurity</li>
-                            <li>r/netsec</li>
-                            <li>r/security</li>
-                            <li>r/crypto</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Professional Networks</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>LinkedIn Cybersecurity Groups</li>
-                            <li>ISACA Forums</li>
-                            <li>(ISC)² Community</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Discord Servers</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>Security Plus Discord</li>
-                            <li>Certification Study Groups</li>
-                            <li>CTF Communities</li>
-                        </ul>
-                    </li>
-                </ul>
+                <h2 class="text-2xl mb-6">🎥 Influencers & Content Creators</h2>
+                <p class="mb-6 text-gray-400">Follow these experts for daily tips, lab walkthroughs, and career advice across LinkedIn, TikTok, and YouTube.</p>
+                <div class="influencer-grid">
+                    <div class="p-3 border border-gray-700 rounded bg-gray-900/50">
+                        <p class="text-white font-semibold">Josh Madakor</p>
+                        <span class="text-xs text-blue-400">@joshmadakor</span>
+                    </div>
+                    <div class="p-3 border border-gray-700 rounded bg-gray-900/50">
+                        <p class="text-white font-semibold">The Cyber Mentor</p>
+                        <span class="text-xs text-blue-400">@tcmsecurity</span>
+                    </div>
+                    <div class="p-3 border border-gray-700 rounded bg-gray-900/50">
+                        <p class="text-white font-semibold">Cyber Ducky</p>
+                        <span class="text-xs text-blue-400">@cyberduckyofficial</span>
+                    </div>
+                    <div class="p-3 border border-gray-700 rounded bg-gray-900/50">
+                        <p class="text-white font-semibold">Day Cyberwox</p>
+                        <span class="text-xs text-blue-400">@cyronewxos</span>
+                    </div>
+                    <div class="p-3 border border-gray-700 rounded bg-gray-900/50">
+                        <p class="text-white font-semibold">Cyber Security Boo</p>
+                        <span class="text-xs text-blue-400">@cybersecurityboo</span>
+                    </div>
+                    <div class="p-3 border border-gray-700 rounded bg-gray-900/50">
+                        <p class="text-white font-semibold">Tech Woke</p>
+                        <span class="text-xs text-blue-400">@techwoke</span>
+                    </div>
+                    <div class="p-3 border border-gray-700 rounded bg-gray-900/50">
+                        <p class="text-white font-semibold">Nana | IT Fundamentals</p>
+                        <span class="text-xs text-blue-400">@techworldwithnana</span>
+                    </div>
+                    <div class="p-3 border border-gray-700 rounded bg-gray-900/50">
+                        <p class="text-white font-semibold">Ashish Rajan</p>
+                        <span class="text-xs text-blue-400">@hashishrajan</span>
+                    </div>
+                </div>
+                <div class="mt-6 flex flex-wrap">
+                    <span class="tag">@hackherproof</span> <span class="tag">@cloudsecninja</span> <span class="tag">@thecyberdani</span>
+                    <span class="tag">@cybersmartresource</span> <span class="tag">@networkverse</span> <span class="tag">@gitkraken</span>
+                    <span class="tag">@didiporshe0</span> <span class="tag">@cybercrimejunkies</span> <span class="tag">@tcmsecurity</span>
+                </div>
             </div>
 
             <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🎓 Free Training Programs</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">NPower Tech Training</h3>
-                <a href="https://www.npower.org/" class="text-lg text-blue-400 hover:text-blue-500">
-                    NPower Organization
-                </a>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Cost:</strong> Free</li>
-                    <li><strong>Duration:</strong> Varies by program</li>
-                    <li><strong>Features:</strong>
-                        <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
-                            <li>Professional certification preparation</li>
-                            <li>Job placement assistance</li>
-                            <li>Industry connections</li>
-                            <li>Mentorship</li>
-                            <li>Professional development</li>
+                <h2 class="text-2xl mb-6">🎓 Education & Certification</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl mb-3">NPower Tech Training</h3>
+                        <p class="text-sm mb-4">Focuses on underserved communities, providing free training and job placement.</p>
+                        <ul class="text-sm space-y-2 text-gray-400">
+                            <li>✔️ 100% Free for eligible students</li>
+                            <li>✔️ Mentorship & Professional Development</li>
+                            <li>✔️ Direct Industry Connections</li>
                         </ul>
-                    </li>
-                    <li><strong>Eligibility:</strong>
-                        <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
-                            <li>Varies by location and program</li>
-                            <li>Focus on underserved communities</li>
-                            <li>Check website for specific requirements</li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="overflow-x-auto mt-6">
-                    <table class="w-full text-sm">
+                        <a href="https://npower.org" class="mt-4 inline-block text-blue-400">Visit npower.org →</a>
+                    </div>
+                    <div>
+                        <h3 class="text-xl mb-3">Academic Foundations</h3>
+                        <div class="space-y-2">
+                            <div class="tag">SANS Institute</div>
+                            <div class="tag">Infosec Institute</div>
+                            <div class="tag">Technical Institute of America</div>
+                            <div class="tag">Delmi Training Institute</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto mt-10">
+                    <table>
                         <thead>
-                            <tr class="bg-gray-800 text-gray-300 uppercase text-xs">
-                                <th class="py-3 px-6">Platform</th>
-                                <th class="py-3 px-6">Duration</th>
-                                <th class="py-3 px-6">Format</th>
-                                <th class="py-3 px-6">Notes</th>
+                            <tr class="text-xs uppercase text-gray-400">
+                                <th>Resource</th>
+                                <th>Primary Format</th>
+                                <th>Best For</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Jason Dion Facebook Group</td>
-                                <td class="py-4 px-6">Unlimited</td>
-                                <td class="py-4 px-6">Self-Paced</td>
-                                <td class="py-4 px-6">Community support for certification preparation</td>
+                        <tbody class="text-sm">
+                            <tr>
+                                <td>Professor Messer</td>
+                                <td>YouTube/Live Streams</td>
+                                <td>CompTIA A+, Net+, Sec+</td>
                             </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Professor Messor (YouTube)</td>
-                                <td class="py-4 px-6">Unlimited</td>
-                                <td class="py-4 px-6">Self-Paced</td>
-                                <td class="py-4 px-6">Certification-focused video content</td>
+                            <tr>
+                                <td>Jason Dion (Dion Training)</td>
+                                <td>Udemy/Facebook Group</td>
+                                <td>Exam Strategies & Practice Tests</td>
                             </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">NetworkChuck (YouTube)</td>
-                                <td class="py-4 px-6">Unlimited</td>
-                                <td class="py-4 px-6">Self-Paced</td>
-                                <td class="py-4 px-6">Practical how-to tutorials</td>
+                            <tr>
+                                <td>NetworkChuck</td>
+                                <td>Project-Based Video</td>
+                                <td>Labs & Home Lab Networking</td>
+                            </tr>
+                            <tr>
+                                <td>TCM Security</td>
+                                <td>Academy/Videos</td>
+                                <td>Ethical Hacking (PNPT)</td>
                             </tr>
                         </tbody>
                     </table>
@@ -193,211 +168,59 @@
             </div>
 
             <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">💻 Hands-On Learning Platforms</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Free Platforms</h3>
-                <ol class="list-decimal list-inside ml-4 space-y-4">
-                    <li>
-                        <strong>TryHackMe</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>Beginner-friendly rooms</li>
-                            <li>Structured learning paths</li>
-                            <li>Active community</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>HackTheBox</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>Advanced challenges</li>
-                            <li>Real-world scenarios</li>
-                            <li>Skills assessment</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>PortSwigger Web Security Academy</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>Web security focus</li>
-                            <li>Interactive labs</li>
-                            <li>Comprehensive curriculum</li>
-                        </ul>
-                    </li>
-                </ol>
+                <h2 class="text-2xl mb-6">🛠️ Hands-On Learning Platforms</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-blue-600/20 p-3 rounded mr-4">💻</div>
+                        <div>
+                            <h3 class="text-lg">TryHackMe</h3>
+                            <p class="text-sm text-gray-400">Guided paths from absolute beginner to SOC Level 1. Gamified learning with virtual labs.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-green-600/20 p-3 rounded mr-4">🛡️</div>
+                        <div>
+                            <h3 class="text-lg">HackTheBox</h3>
+                            <p class="text-sm text-gray-400">Competitive, realistic environments for penetration testing and red teaming.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-purple-600/20 p-3 rounded mr-4">🕸️</div>
+                        <div>
+                            <h3 class="text-lg">PortSwigger Web Security Academy</h3>
+                            <p class="text-sm text-gray-400">The gold standard for learning Web Application vulnerabilities (XSS, SQLi, etc.).</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🎯 Career Development</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Resume Building</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Include relevant certifications</li>
-                    <li>Highlight practical experience</li>
-                    <li>Showcase projects</li>
-                    <li>List technical skills</li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-8 mb-4 text-white">Job Search Resources</h3>
-                <ol class="list-decimal list-inside ml-4 space-y-4">
-                    <li>
-                        <strong>Specialized Job Boards</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>CyberSecJobs.com</li>
-                            <li>ClearedJobs.net</li>
-                            <li>SecurityClearedJobs.com</li>
+                <h2 class="text-2xl mb-6">🎯 Career & Networking</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl mb-4">Job Boards</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#">• CyberSecJobs.com</a> - Industry specific</li>
+                            <li><a href="#">• ClearedJobs.net</a> - Government & Security Clearance</li>
+                            <li><a href="#">• LinkedIn Groups</a> - Network directly with hiring managers</li>
                         </ul>
-                    </li>
-                    <li>
-                        <strong>Company Programs</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>Security Operations Centers (SOC)</li>
-                            <li>Incident Response Teams</li>
-                            <li>Compliance Teams</li>
+                    </div>
+                    <div>
+                        <h3 class="text-xl mb-4">Communities</h3>
+                        <ul class="space-y-3">
+                            <li><a href="https://skool.com/cybersec">• Skool Cybersecurity</a> - Collaborative Learning</li>
+                            <li><a href="#">• OWASP Local Chapters</a> - Application Security Meetups</li>
+                            <li><a href="#">• Reddit r/cybersecurity</a> - News and Discussion</li>
                         </ul>
-                    </li>
-                </ol>
-
-                <h3 class="text-xl font-medium mt-8 mb-4 text-white">Interview Preparation</h3>
-                <ol class="list-decimal list-inside ml-4 space-y-4">
-                    <li>
-                        <strong>Technical Skills</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>Network fundamentals</li>
-                            <li>Security concepts</li>
-                            <li>Common tools</li>
-                            <li>Recent vulnerabilities</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Soft Skills</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>Communication</li>
-                            <li>Problem-solving</li>
-                            <li>Team collaboration</li>
-                            <li>Incident response</li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">📅 Events & Networking</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Virtual Events</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Webinars</li>
-                    <li>Online conferences</li>
-                    <li>Virtual CTF competitions</li>
-                    <li>Study groups</li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-8 mb-4 text-white">Local Meetups</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>OWASP chapters</li>
-                    <li>Security user groups</li>
-                    <li>Professional associations</li>
-                    <li>Tech meetups</li>
-                </ul>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🛠️ Tools & Resources</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Essential Tools</h3>
-                <ol class="list-decimal list-inside ml-4 space-y-4">
-                    <li>
-                        <strong>Network Security</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>Wireshark</li>
-                            <li>Nmap</li>
-                            <li>Metasploit</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Application Security</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>Burp Suite</li>
-                            <li>OWASP ZAP</li>
-                            <li>SQLmap</li>
-                        </ul>
-                    </li>
-                </ol>
-
-                <h3 class="text-xl font-medium mt-8 mb-4 text-white">Learning Resources</h3>
-                <ol class="list-decimal list-inside ml-4 space-y-4">
-                    <li>
-                        <strong>Books</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>"CompTIA Security+ Get Certified Get Ahead"</li>
-                            <li>"CISSP All-in-One Exam Guide"</li>
-                            <li>"The Web Application Hacker's Handbook"</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Online Resources</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>SANS Reading Room</li>
-                            <li>NIST Publications</li>
-                            <li>OWASP Documentation</li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🗺️ Learning Pathways</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Beginner Path</h3>
-                <ol class="list-decimal list-inside ml-4 space-y-1">
-                    <li>Start with basic networking</li>
-                    <li>Move to security fundamentals</li>
-                    <li>Begin hands-on practice</li>
-                    <li>Pursue entry-level certification</li>
-                </ol>
-
-                <h3 class="text-xl font-medium mt-8 mb-4 text-white">Advanced Path</h3>
-                <ol class="list-decimal list-inside ml-4 space-y-1">
-                    <li>Specialize in specific areas</li>
-                    <li>Obtain advanced certifications</li>
-                    <li>Contribute to open source</li>
-                    <li>Mentor others</li>
-                </ol>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">💡 Tips for Success</h2>
-                <ul class="list-decimal list-inside ml-4 space-y-4">
-                    <li>Stay consistently active in forums</li>
-                    <li>Practice regularly</li>
-                    <li>Network with professionals</li>
-                    <li>Build a personal lab</li>
-                    <li>Document your learning</li>
-                    <li>Share knowledge</li>
-                    <li>Stay updated with news</li>
-                </ul>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🤝 Contributing</h2>
-                <p>We welcome:</p>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Resource suggestions</li>
-                    <li>Forum recommendations</li>
-                    <li>Training program updates</li>
-                    <li>Success stories</li>
-                    <li>Tool recommendations</li>
-                </ul>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">⚠️ Disclaimer</h2>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Verify all information independently</li>
-                    <li>Check program eligibility</li>
-                    <li>Use tools ethically</li>
-                    <li>Follow security best practices</li>
-                </ul>
-            </div>
-
-            <hr class="border-t border-gray-700 my-8">
-
-            <div class="text-center text-gray-500 text-sm mt-8">
-                <p>Last Updated: November 2024</p>
+                    </div>
+                </div>
             </div>
         </main>
+
+        <footer class="text-center py-12 border-t border-gray-800">
+            <p class="text-gray-500 text-sm mb-2">Last Significant Update: January 2025</p>
+            <p class="text-gray-600 text-xs">This hub is a collaborative effort. Always use tools and knowledge ethically and legally.</p>
+        </footer>
     </div>
 </body>
 </html>
