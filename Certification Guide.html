@@ -36,21 +36,13 @@
         a:hover {
             color: #79c0ff;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            margin-top: 1rem;
-        }
-        th, td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid #30363d;
-        }
-        thead {
+        .mentor-badge {
             background-color: #1f242c;
-        }
-        tbody tr:hover {
-            background-color: #242932;
+            border: 1px solid #30363d;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 0.25rem;
         }
         ul.list-disc, ul.list-none {
             list-style-type: none;
@@ -60,7 +52,6 @@
 </head>
 <body class="antialiased">
     <div class="container mx-auto">
-        <!-- Navigation to Main Page -->
         <div class="text-left py-4">
             <a href="Resourcehub.html" class="text-lg inline-flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -70,230 +61,75 @@
             </a>
         </div>
 
-        <!-- Header -->
         <header class="text-center py-10 md:py-16">
             <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
                 🎓 Cybersecurity Education & Certification Guide
             </h1>
-            <p class="text-md md:text-lg text-gray-400">A comprehensive guide to free and accessible cybersecurity education resources and certifications.</p>
+            <p class="text-md md:text-lg text-gray-400">A comprehensive roadmap utilizing industry-leading mentors and training institutes.</p>
         </header>
 
-        <!-- Main Content Sections -->
         <main class="space-y-8">
             <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-4 text-white">📚 Introduction</h2>
-                <p>A comprehensive guide to free and accessible cybersecurity education resources and certifications. Whether you're just starting out or looking to expand your knowledge, these resources can help build your cybersecurity career.</p>
-            </div>
-
-            <!-- Learning Paths Section -->
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🗺️ Learning Paths</h2>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">🆓 Free Self-Paced Courses</h3>
-                <div class="space-y-6">
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-300">TryHackMe</h4>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li><strong>Duration:</strong> Unlimited</li>
-                            <li><strong>Cost:</strong> Free</li>
-                            <li><strong>Best For:</strong> Practical hands-on experience</li>
-                            <li><strong>Highlights:</strong> Hands-on cybersecurity rooms, practical learning environment, active community support, beginner-friendly content.</li>
-                        </ul>
+                <h2 class="text-2xl font-semibold mb-6 text-white">🗺️ Educational Institutions & Labs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <h4 class="font-bold text-blue-400">SANS Institute</h4>
+                        [cite_start]<p class="text-sm">The global leader in professional cybersecurity training and GIAC certifications[cite: 16].</p>
                     </div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-300">Cisco Intro to Cybersecurity</h4>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li><strong>Duration:</strong> 15 Hours</li>
-                            <li><strong>Cost:</strong> Free</li>
-                            <li><strong>Best For:</strong> Foundational knowledge</li>
-                            <li><strong>Highlights:</strong> LinkedIn-verified certificate, professional badge, multiple language options, industry-recognized.</li>
-                        </ul>
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <h4 class="font-bold text-blue-400">TCM Security</h4>
+                        [cite_start]<p class="text-sm">Practical, hands-on hacking training and career-focused exams[cite: 18].</p>
                     </div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-300">ISC² Certified in Cybersecurity (CC)</h4>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li><strong>Duration:</strong> Self-Paced</li>
-                            <li><strong>Cost:</strong> Free</li>
-                            <li><strong>Best For:</strong> Entry-level certification</li>
-                            <li><strong>Highlights:</strong> Industry-standard certification, professional recognition, comprehensive curriculum.</li>
-                        </ul>
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <h4 class="font-bold text-blue-400">Delmi Training Institute</h4>
+                        [cite_start]<p class="text-sm">Specialized training programs for technical skill development[cite: 4].</p>
                     </div>
-                </div>
-
-                <h3 class="text-xl font-medium mt-10 mb-4 text-white">📺 Video-Based Learning</h3>
-                <div class="space-y-6">
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-300">Certify Breakfast</h4>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li><strong>Platform:</strong> YouTube</li>
-                            <li><strong>Duration:</strong> Unlimited</li>
-                            <li><strong>Cost:</strong> Free</li>
-                            <li><strong>Focus:</strong> Security+ Certification</li>
-                            <li><strong>Highlights:</strong> Comprehensive Security+ coverage, regular content updates, real-world examples.</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <h3 class="text-xl font-medium mt-10 mb-4 text-white">🎯 Structured Programs</h3>
-                <div class="space-y-6">
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-300">Google Cybersecurity Certificate</h4>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li><strong>Duration:</strong> 3-6 months</li>
-                            <li><strong>Cost:</strong> Free with Coursera Financial Aid or Trial</li>
-                            <li><strong>Best For:</strong> Career transition</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-300">Cybersecurity Fundamentals (RIT)</h4>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li><strong>Duration:</strong> 8 Weeks</li>
-                            <li><strong>Cost:</strong> Free (Certificate is Paid)</li>
-                            <li><strong>Best For:</strong> Academic foundation</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-300">CodePath</h4>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li><strong>Duration:</strong> 10 Weeks</li>
-                            <li><strong>Prerequisites:</strong> Must be enrolled in school</li>
-                            <li><strong>Best For:</strong> Students seeking structured learning</li>
-                            <li><strong>Highlights:</strong> Free introductory course, certificate upon completion, live instruction.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-300">Cybersecurity Awareness Professional Certification (CAPC)</h4>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li><strong>Duration:</strong> Unlimited</li>
-                            <li><strong>Focus:</strong> Security awareness</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-gray-300">Tenable Nessus Certification</h4>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li><strong>Duration:</strong> Self-Paced</li>
-                            <li><strong>Focus:</strong> Vulnerability management</li>
-                        </ul>
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <h4 class="font-bold text-blue-400">AI Automation Labs</h4>
+                        [cite_start]<p class="text-sm">Focus on modern security automation and AI workflows[cite: 6].</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Recommended Paths Section -->
+
             <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🎯 Choosing the Right Path</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">For Beginners</h3>
-                <p>If you are just starting out, this is a great path to follow:</p>
-                <ol class="list-decimal list-inside ml-4 mt-2 space-y-1">
-                    <li>Start with **Cisco Intro to Cybersecurity** for foundational knowledge.</li>
-                    <li>Move to **TryHackMe** for hands-on, practical skills.</li>
-                    <li>Pursue the **ISC² CC** certification for an entry-level credential.</li>
-                </ol>
-
-                <h3 class="text-xl font-medium mt-8 mb-4 text-white">For Students</h3>
-                <p>This path is tailored for those currently enrolled in school:</p>
-                <ol class="list-decimal list-inside ml-4 mt-2 space-y-1">
-                    <li>Enroll in **CodePath** if available for structured learning.</li>
-                    <li>Supplement your studies with **TryHackMe** for hands-on practice.</li>
-                    <li>Consider the **Google Cybersecurity Certificate** to boost your resume.</li>
-                </ol>
-
-                <h3 class="text-xl font-medium mt-8 mb-4 text-white">For Career Changers</h3>
-                <p>This path is ideal if you are transitioning into a cybersecurity career:</p>
-                <ol class="list-decimal list-inside ml-4 mt-2 space-y-1">
-                    <li>Begin with the **Google Cybersecurity Certificate** for a solid foundation.</li>
-                    <li>Add **TryHackMe** to build practical skills.</li>
-                    <li>Pursue relevant certifications, such as **CompTIA Security+**, for career advancement.</li>
-                </ol>
+                <h2 class="text-2xl font-semibold mb-6 text-white">🤝 Expert Mentors & Community</h2>
+                <p class="mb-4">Connecting with these established professionals can provide invaluable guidance for your education path:</p>
+                <div class="flex flex-wrap">
+                    <span class="mentor-badge"><strong>Rodney</strong> | [cite_start]The Cyber Mentor [cite: 15]</span>
+                    <span class="mentor-badge"><strong>Josh Madakor</strong> | [cite_start]Career Paths [cite: 9]</span>
+                    <span class="mentor-badge"><strong>Cyber Dani</strong> | [cite_start]Study Tips [cite: 6]</span>
+                    <span class="mentor-badge"><strong>Angela</strong> | [cite_start]Tech Career Advice [cite: 10]</span>
+                </div>
+                <div class="mt-6">
+                    <h4 class="text-lg font-semibold text-gray-300">Lab Environments to Follow:</h4>
+                    <ul class="list-disc ml-4 mt-2 space-y-1">
+                        [cite_start]<li><strong>Informatik Lab:</strong> Advanced technical tutorials[cite: 6].</li>
+                        [cite_start]<li><strong>Home Lab Networks:</strong> Building your own security practice environment[cite: 6].</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Tips for Success Section -->
             <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">💡 Tips for Success</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">1. Consistent Practice</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Set regular study schedules</li>
-                    <li>Complete hands-on exercises</li>
-                    <li>Join cybersecurity communities</li>
-                </ul>
-                <h3 class="text-xl font-medium mt-8 mb-4 text-white">2. Track Progress</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Document completed courses</li>
-                    <li>Save certificates</li>
-                    <li>Build a portfolio of projects</li>
-                </ul>
-                <h3 class="text-xl font-medium mt-8 mb-4 text-white">3. Network</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Join discussion forums</li>
-                    <li>Participate in communities and events</li>
-                    <li>Connect with professionals in the field</li>
-                </ul>
+                <h2 class="text-2xl font-semibold mb-6 text-white">🛡️ Certification Focus Areas</h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h4 class="font-bold text-white">Practical Ethical Hacking</h4>
+                        [cite_start]<p class="text-sm text-gray-400">Follow <strong>TCM Security</strong> for hands-on penetration testing skills[cite: 18].</p>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h4 class="font-bold text-white">Enterprise Security Management</h4>
+                        [cite_start]<p class="text-sm text-gray-400">Utilize <strong>SANS Institute</strong> or <strong>Infosec Institute</strong> for advanced corporate defense[cite: 7, 16].</p>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h4 class="font-bold text-white">IT Fundamentals</h4>
+                        [cite_start]<p class="text-sm text-gray-400">Learn foundational concepts with <strong>Nana (TechWorld with Nana)</strong>[cite: 21].</p>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Certification Paths Section -->
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🛡️ Certification Paths</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Entry Level</h3>
-                <ul class="list-decimal list-inside ml-4 space-y-1">
-                    <li>
-                        <strong>CompTIA Security+</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>**Duration:** 2-3 months</li>
-                            <li>**Why it matters:** Foundation for a cybersecurity career.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>ISC² CC (Certified in Cybersecurity)</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>**Duration:** Self-paced</li>
-                            <li>**Why it matters:** Excellent entry-level certification.</li>
-                        </ul>
-                    </li>
-                </ul>
-                <h3 class="text-xl font-medium mt-8 mb-4 text-white">Intermediate</h3>
-                <ul class="list-decimal list-inside ml-4 space-y-1">
-                    <li>
-                        <strong>CEH (Certified Ethical Hacker)</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>**Duration:** 3-6 months</li>
-                            <li>**Focus:** Penetration testing.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>CISSP (Certified Information Systems Security Professional)</strong>
-                        <ul class="list-none ml-4 mt-2 space-y-1">
-                            <li>**Duration:** 6+ months</li>
-                            <li>**Focus:** Advanced security concepts.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Final Notes & Contribution -->
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🔄 Stay Current</h2>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Follow cybersecurity news</li>
-                    <li>Join professional groups</li>
-                    <li>Participate in CTF competitions</li>
-                    <li>Regularly update skills</li>
-                </ul>
-            </div>
-            
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">📝 Notes & Contribution</h2>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Course durations are approximate.</li>
-                    <li>Some certifications may require exam fees.</li>
-                    <li>Content availability may vary by region.</li>
-                    <li>Financial aid options may change.</li>
-                    <li>Feel free to **suggest new resources**, **share experiences**, or **report outdated information**.</li>
-                </ul>
-            </div>
-
-            <hr class="border-t border-gray-700 my-8">
 
             <div class="text-center text-gray-500 text-sm mt-8">
-                <p>Last updated: November 2024</p>
+                <p>Curated using resources from the global cybersecurity community.</p>
+                <p>Last updated: January 2026</p>
             </div>
         </main>
     </div>
