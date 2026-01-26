@@ -70,4 +70,75 @@
             {
                 name: "The FAIK Files",
                 description: "Explores the intersection of AI, technology, and humanity, focusing on deepfakes and digital deception.",
-                apple: "
+                apple: "https://podcasts.apple.com/us/podcast/the-faik-files/id1771521321",
+                spotify: "https://open.spotify.com/show/2F9P5r1XJ7k8V",
+                tags: ["AI", "Deepfakes", "Cognitive Warfare"]
+            },
+            {
+                name: "Only Malware in the Building",
+                description: "Solving monthly cyber mysteries with intelligence analysts and former FBI investigators.",
+                apple: "https://podcasts.apple.com/us/podcast/only-malware-in-the-building/id1749644761",
+                spotify: "https://open.spotify.com/show/3D9wI7k5XJ9y",
+                tags: ["Malware", "FBI", "Forensics"]
+            },
+            {
+                name: "UnixGuy Cyber Security Career",
+                description: "Real insights into what it's like to work in cybersecurity, featuring guests from across the industry.",
+                apple: "https://podcasts.apple.com/au/podcast/unixguy-cyber-security-career/id1830928775",
+                spotify: "https://open.spotify.com/show/5P9N7m4XJ8Z2",
+                tags: ["Career Advice", "Mentorship", "UnixGuy"]
+            },
+            {
+                name: "WT 360: The Market From All Angles",
+                description: "Conversations on what's driving the federal government market, focusing on cybersecurity and GovCon trends.",
+                apple: "https://podcasts.apple.com/us/podcast/wt-360-the-market-from-all-angles/id1449676413",
+                spotify: "https://open.spotify.com/show/1k9W7m5XJ7Y3",
+                tags: ["Federal IT", "GovCon", "GovCIO"]
+            },
+            {
+                name: "Tech Career Blueprint",
+                description: "Roadmaps for moving from entry-level to senior positions in tech and cybersecurity.",
+                apple: "https://podcasts.apple.com/us/podcast/tech-career-blueprint-podcast-presented-by-master-i/id1690081331",
+                spotify: "https://open.spotify.com/show/6U9X7m5YJ7V4",
+                tags: ["Career Roadmap", "Certifications", "IT Pro"]
+            }
+        ];
+
+        function renderPodcasts(filter = "") {
+            const grid = document.getElementById('podcastGrid');
+            grid.innerHTML = '';
+            
+            const filtered = podcasts.filter(p => 
+                p.name.toLowerCase().includes(filter.toLowerCase()) || 
+                p.tags.some(t => t.toLowerCase().includes(filter.toLowerCase()))
+            );
+
+            filtered.forEach(p => {
+                const card = `
+                    <div class="podcast-card bg-slate-800 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${p.tags.map(t => `<span class="bg-blue-500/10 text-blue-400 text-xs px-2 py-1 rounded-full border border-blue-500/20">${t}</span>`).join('')}
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">${p.name}</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">${p.description}</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="${p.apple}" target="_blank" class="flex-1 text-center bg-white text-slate-900 py-2 rounded-lg font-semibold hover:bg-slate-200 transition flex items-center justify-center gap-2">
+                                <i class="fab fa-apple"></i> Apple
+                            </a>
+                            <a href="${p.spotify}" target="_blank" class="flex-1 text-center bg-[#1DB954] text-white py-2 rounded-lg font-semibold hover:bg-[#1ed760] transition flex items-center justify-center gap-2">
+                                <i class="fab fa-spotify"></i> Spotify
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => renderPodcasts(e.target.value));
+        renderPodcasts();
+    </script>
+</body>
+</html>
