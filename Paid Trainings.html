@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paid Cybersecurity Learning Resources</title>
+    <title>Premium Cybersecurity Learning Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -13,294 +13,235 @@
             color: #c9d1d9;
             line-height: 1.6;
         }
-        .container {
-            max-width: 900px;
-            padding: 2rem;
-        }
+        .container { max-width: 1100px; }
         .section-card {
             background-color: #161b22;
             border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .section-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+        }
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .platform-card {
+            background: #0d1117;
+            border: 1px solid #30363d;
             border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        h1, h2, h3 {
-            font-weight: 700;
+        .tag {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 0.5rem;
         }
-        a {
-            color: #58a6ff;
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
-        a:hover {
-            color: #79c0ff;
-        }
-        ul.list-disc {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-        }
-        ul.list-none {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
+        .tag-cert { background: #238636; color: #fff; }
+        .tag-hands-on { background: #1f6feb; color: #fff; }
+        .tag-career { background: #8957e5; color: #fff; }
+        
+        a.btn-primary {
+            display: inline-block;
+            background-color: #1f6feb;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
             margin-top: 1rem;
         }
-        th, td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid #30363d;
-        }
-        thead {
-            background-color: #1f242c;
-        }
-        tbody tr:hover {
-            background-color: #242932;
-        }
+        a.btn-primary:hover { background-color: #388bfd; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th { background-color: #1f242c; text-align: left; color: #8b949e; font-size: 0.8rem; }
+        th, td { padding: 1rem; border-bottom: 1px solid #30363d; }
+        tr:hover { background-color: #21262d; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased p-4">
     <div class="container mx-auto">
-        <!-- Navigation to Main Page -->
-        <div class="text-left py-4">
-            <a href="Resourcehub.html" class="text-lg inline-flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-                </svg>
-                Back to Main
+        <div class="py-6">
+            <a href="Resourcehub.html" class="text-blue-400 hover:text-blue-300 flex items-center gap-2">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to Resource Hub
             </a>
         </div>
 
-        <!-- Header -->
-        <header class="text-center py-10 md:py-16">
-            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
-                # Paid Cybersecurity Learning Resources
-            </h1>
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Paid Learning Pathways</h1>
+            <p class="text-gray-400 text-lg">Invest in your career with industry-leading bootcamps, certifications, and labs.</p>
         </header>
 
-        <!-- Main Content Sections -->
-        <main class="space-y-8">
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Bootcamps & Immersive Programs</h2>
-                <div class="overflow-x-auto mt-6">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="bg-gray-800 text-gray-300 uppercase text-xs">
-                                <th class="py-3 px-6">School</th>
-                                <th class="py-3 px-6">Duration</th>
-                                <th class="py-3 px-6">Cost</th>
-                                <th class="py-3 px-6">Key Partnerships & Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Flatiron School</td>
-                                <td class="py-4 px-6">Not Specified</td>
-                                <td class="py-4 px-6">$16,900</td>
-                                <td class="py-4 px-6">
-                                    <ul class="list-disc list-inside space-y-1">
-                                        <li>Partners: Goldman Sachs, Citibank, Google, IBM, Meta</li>
-                                        <li>Acquired SecureSet Academy</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Coding Temple</td>
-                                <td class="py-4 px-6">Not Specified</td>
-                                <td class="py-4 px-6">$9,000</td>
-                                <td class="py-4 px-6">
-                                    <ul class="list-disc list-inside space-y-1">
-                                        <li>Partners: Accenture, Wayfair, Cisco, Yale, Detroit</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Devmountain</td>
-                                <td class="py-4 px-6">Not Specified</td>
-                                <td class="py-4 px-6">$9,900</td>
-                                <td class="py-4 px-6">Comprehensive cybersecurity course</td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Ironhack</td>
-                                <td class="py-4 px-6">Not Specified</td>
-                                <td class="py-4 px-6">$8,500</td>
-                                <td class="py-4 px-6">
-                                    <ul class="list-disc list-inside space-y-1">
-                                        <li>Partners: Amazon, Uber, Meta, Zara, Google</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Springboard</td>
-                                <td class="py-4 px-6">Not Specified</td>
-                                <td class="py-4 px-6">$9,900</td>
-                                <td class="py-4 px-6">-</td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">The Tech Academy</td>
-                                <td class="py-4 px-6">5-9 months<br>(Self-Paced)</td>
-                                <td class="py-4 px-6">$8,980</td>
-                                <td class="py-4 px-6">
-                                    <ul class="list-disc list-inside space-y-1">
-                                        <li>52 Week Access</li>
-                                        <li>Includes Completion Certificate</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Lighthouse Labs</td>
-                                <td class="py-4 px-6">12 or 30 Weeks</td>
-                                <td class="py-4 px-6">$3,500 - $14,000</td>
-                                <td class="py-4 px-6">
-                                    <ul class="list-disc list-inside space-y-1">
-                                        <li>Partners with Canadian government</li>
-                                        <li>Includes CompTIA Security+ Certification</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="section-card">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <span>🛡️</span> Professional Training Institutes
+            </h2>
+            <div class="resource-grid">
+                <div class="platform-card">
+                    <div>
+                        <div class="flex mb-2"><span class="tag tag-cert">Elite Tier</span></div>
+                        <h3 class="text-xl font-bold text-white">SANS Institute</h3>
+                        <p class="text-sm text-gray-400 mt-2">The global standard for professional cybersecurity training. Renowned for deep technical immersion and GIAC certifications.</p>
+                    </div>
+                    <a href="https://www.sans.org/" class="btn-primary">Explore SANS</a>
+                </div>
+                <div class="platform-card">
+                    <div>
+                        <div class="flex mb-2"><span class="tag tag-hands-on">Hands-On</span><span class="tag tag-cert">Practical</span></div>
+                        <h3 class="text-xl font-bold text-white">TCM Security</h3>
+                        <p class="text-sm text-gray-400 mt-2">Famous for the Practical Network Penetration Tester (PNPT) cert. High-quality, affordable training by industry veterans.</p>
+                    </div>
+                    <a href="https://tcm-sec.com/" class="btn-primary">View Courses</a>
+                </div>
+                <div class="platform-card">
+                    <div>
+                        <div class="flex mb-2"><span class="tag tag-cert">Cert-Prep</span></div>
+                        <h3 class="text-xl font-bold text-white">Infosec Institute</h3>
+                        <p class="text-sm text-gray-400 mt-2">Offers extensive bootcamps for CISSP, Security+, and specialized ethical hacking roles.</p>
+                    </div>
+                    <a href="https://www.infosecinstitute.com/" class="btn-primary">See Bootcamps</a>
                 </div>
             </div>
+        </div>
 
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Self-Paced Learning Platforms</h2>
-                <div class="overflow-x-auto mt-6">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="bg-gray-800 text-gray-300 uppercase text-xs">
-                                <th class="py-3 px-6">Platform</th>
-                                <th class="py-3 px-6">Format</th>
-                                <th class="py-3 px-6">Cost</th>
-                                <th class="py-3 px-6">Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">TryHackMe</td>
-                                <td class="py-4 px-6">Self-paced</td>
-                                <td class="py-4 px-6">$126/year</td>
-                                <td class="py-4 px-6">Available monthly at $14/month</td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Cybrary</td>
-                                <td class="py-4 px-6">Self-paced</td>
-                                <td class="py-4 px-6">Varies</td>
-                                <td class="py-4 px-6">-</td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">OffSec - Security Essentials</td>
-                                <td class="py-4 px-6">Self-paced</td>
-                                <td class="py-4 px-6">$899</td>
-                                <td class="py-4 px-6">-</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="section-card">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <span>💻</span> Premium Lab Platforms
+            </h2>
+            <div class="resource-grid">
+                <div class="platform-card">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">TryHackMe (Premium)</h3>
+                        <p class="text-sm text-gray-400 mt-1">Unlock all learning paths, private VPN, and faster machines.</p>
+                        <p class="text-blue-400 font-semibold mt-2">$14/mo or $126/year</p>
+                    </div>
+                    <a href="https://tryhackme.com/" class="btn-primary">Go Pro</a>
+                </div>
+                <div class="platform-card">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">OffSec (OSCP)</h3>
+                        <p class="text-sm text-gray-400 mt-1">The gold standard for penetration testing. Rigorous labs and exams.</p>
+                        <p class="text-blue-400 font-semibold mt-2">Starts at $899+</p>
+                    </div>
+                    <a href="https://www.offsec.com/" class="btn-primary">Get OSCP</a>
+                </div>
+                <div class="platform-card">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Cybrary Insider</h3>
+                        <p class="text-sm text-gray-400 mt-1">Unlimited access to hands-on labs and certification prep tracks.</p>
+                        <p class="text-blue-400 font-semibold mt-2">Varies (Monthly/Annual)</p>
+                    </div>
+                    <a href="https://www.cybrary.it/" class="btn-primary">Join Insider</a>
                 </div>
             </div>
+        </div>
 
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Professional Certification Programs</h2>
-                <div class="overflow-x-auto mt-6">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="bg-gray-800 text-gray-300 uppercase text-xs">
-                                <th class="py-3 px-6">Program</th>
-                                <th class="py-3 px-6">Cost</th>
-                                <th class="py-3 px-6">Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">EC Council</td>
-                                <td class="py-4 px-6">$2,199 - $3,500</td>
-                                <td class="py-4 px-6">-</td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Ethical Hacking Essentials (EHE)</td>
-                                <td class="py-4 px-6">$299</td>
-                                <td class="py-4 px-6">-</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="section-card">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <span>🎓</span> Immersive Career Bootcamps
+            </h2>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Program</th>
+                            <th>Cost (Est.)</th>
+                            <th>Key Features</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="font-bold text-white">Flatiron School</span></td>
+                            <td>$16,900</td>
+                            <td class="text-xs">
+                                <ul class="list-disc ml-4">
+                                    <li>Job offer guarantee options</li>
+                                    <li>Partners: Google, IBM, Meta</li>
+                                </ul>
+                            </td>
+                            <td><a href="https://flatironschool.com/" class="text-blue-400 hover:underline">Website</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="font-bold text-white">Coding Temple</span></td>
+                            <td>$10,495</td>
+                            <td class="text-xs">Project-focused, 10 hands-on portfolio projects.</td>
+                            <td><a href="https://www.codingtemple.com/" class="text-blue-400 hover:underline">Website</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="font-bold text-white">Ironhack</span></td>
+                            <td>$8,500 - $12,000</td>
+                            <td class="text-xs">Includes free CompTIA Security+ exam voucher.</td>
+                            <td><a href="https://www.ironhack.com/" class="text-blue-400 hover:underline">Website</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="font-bold text-white">Lighthouse Labs</span></td>
+                            <td>$14,000</td>
+                            <td class="text-xs">12-week intensive, 1:1 mentorship, career support.</td>
+                            <td><a href="https://www.lighthouselabs.ca/" class="text-blue-400 hover:underline">Website</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <span>📱</span> Expert Communities to Follow
+            </h2>
+            <p class="text-sm text-gray-400 mb-6">Following these industry leaders is a free way to gain high-value insights, tips, and career guidance.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div class="bg-gray-800 p-3 rounded-lg border border-gray-700">
+                    <p class="text-white font-semibold">@letscyber</p>
+                    <p class="text-gray-500">Let’s Cyber</p>
+                </div>
+                <div class="bg-gray-800 p-3 rounded-lg border border-gray-700">
+                    <p class="text-white font-semibold">@tcmsecurity</p>
+                    <p class="text-gray-500">TCM Security</p>
+                </div>
+                <div class="bg-gray-800 p-3 rounded-lg border border-gray-700">
+                    <p class="text-white font-semibold">@sansinstitute</p>
+                    <p class="text-gray-500">SANS Institute</p>
+                </div>
+                <div class="bg-gray-800 p-3 rounded-lg border border-gray-700">
+                    <p class="text-white font-semibold">@cybersecuritygirl</p>
+                    <p class="text-gray-500">Cybersecurity Girl</p>
+                </div>
+                <div class="bg-gray-800 p-3 rounded-lg border border-gray-700">
+                    <p class="text-white font-semibold">@cisotradecraft</p>
+                    <p class="text-gray-500">CISO Tradecraft</p>
+                </div>
+                <div class="bg-gray-800 p-3 rounded-lg border border-gray-700">
+                    <p class="text-white font-semibold">@symonebeez</p>
+                    <p class="text-gray-500">Symoné Beez</p>
+                </div>
+                <div class="bg-gray-800 p-3 rounded-lg border border-gray-700">
+                    <p class="text-white font-semibold">@techwoke</p>
+                    <p class="text-gray-500">Tech Woke</p>
+                </div>
+                <div class="bg-gray-800 p-3 rounded-lg border border-gray-700">
+                    <p class="text-white font-semibold">@cyber_keelow</p>
+                    <p class="text-gray-500">Preponderant Cyber Guy</p>
                 </div>
             </div>
+            <p class="mt-4 text-xs text-center text-gray-500 italic">...and many others from our community list.</p>
+        </div>
 
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">University Partnerships</h2>
-                <div class="overflow-x-auto mt-6">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="bg-gray-800 text-gray-300 uppercase text-xs">
-                                <th class="py-3 px-6">Program</th>
-                                <th class="py-3 px-6">Cost</th>
-                                <th class="py-3 px-6">Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">ThriveDX</td>
-                                <td class="py-4 px-6">Varies</td>
-                                <td class="py-4 px-6">
-                                    <ul class="list-disc list-inside space-y-1">
-                                        <li>Formerly Hacker University</li>
-                                        <li>Partners with various universities</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">CyberPro University</td>
-                                <td class="py-4 px-6">Not Specified</td>
-                                <td class="py-4 px-6">-</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Notes</h2>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>All prices are in USD unless otherwise specified</li>
-                    <li>Prices and program details may vary by location and time of enrollment</li>
-                    <li>Many programs offer payment plans or financing options</li>
-                    <li>Some programs include certification prep or actual certifications</li>
-                    <li>Corporate partnerships may provide job placement opportunities</li>
-                </ul>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">How to Choose</h2>
-                <p class="mb-2">Consider the following factors when selecting a program:</p>
-                <ol class="list-decimal list-inside ml-4 space-y-1">
-                    <li>Budget and payment options</li>
-                    <li>Time commitment and schedule flexibility</li>
-                    <li>Learning format (in-person, online, hybrid)</li>
-                    <li>Industry partnerships and job placement services</li>
-                    <li>Included certifications or preparation</li>
-                    <li>Program duration and pace</li>
-                </ol>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Contributing</h2>
-                <p>If you have updates to any of the listed programs or would like to add new ones, please submit a pull request with:</p>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Current pricing</li>
-                    <li>Program duration</li>
-                    <li>Key partnerships</li>
-                    <li>Notable features or benefits</li>
-                </ul>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Disclaimer</h2>
-                <p>Prices and program details are subject to change. Please verify current information directly with the educational providers.</p>
-            </div>
-        </main>
+        <footer class="text-center py-10 border-t border-gray-800">
+            <p class="text-sm text-gray-500">Prices are subject to change. Verified as of 2024/2025. Verify with providers directly.</p>
+        </footer>
     </div>
 </body>
 </html>
