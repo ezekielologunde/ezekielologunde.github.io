@@ -14,227 +14,189 @@
             line-height: 1.6;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             padding: 2rem;
         }
         .section-card {
             background-color: #161b22;
             border: 1px solid #30363d;
             border-radius: 12px;
-            padding: 2.5rem;
+            padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: border-color 0.3s ease;
         }
-        h1, h2, h3 {
-            font-weight: 700;
+        .section-card:hover {
+            border-color: #58a6ff;
         }
-        a {
+        .resource-link {
             color: #58a6ff;
+            font-weight: 600;
             text-decoration: none;
-            transition: color 0.2s ease-in-out;
         }
-        a:hover {
-            color: #79c0ff;
+        .resource-link:hover {
+            text-decoration: underline;
         }
-        ul.list-disc {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-        }
-        ul.list-none {
-            list-style-type: none;
-            padding-left: 0;
+        .tag {
+            background: #21262d;
+            color: #8b949e;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            border: 1px solid #30363d;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            text-align: left;
-            margin-top: 1rem;
         }
         th, td {
-            padding: 0.75rem 1rem;
+            text-align: left;
+            padding: 12px;
             border-bottom: 1px solid #30363d;
         }
-        thead {
-            background-color: #1f242c;
-        }
-        tbody tr:hover {
-            background-color: #242932;
+        th {
+            color: #8b949e;
+            font-size: 0.8rem;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body class="antialiased">
     <div class="container mx-auto">
-        <!-- Navigation to Main Page -->
-        <div class="text-left py-4">
-            <a href="Resourcehub.html" class="text-lg inline-flex items-center">
+        <div class="py-4">
+            <a href="Resourcehub.html" class="text-blue-400 hover:text-blue-300 inline-flex items-center transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
                 </svg>
-                Back to Main
+                Back to Resource Hub
             </a>
         </div>
 
-        <!-- Header -->
-        <header class="text-center py-10 md:py-16">
-            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
-                # Free Cybersecurity Learning Resources
-            </h1>
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Free Learning Resources</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg">Knowledge is free. Here is a curated collection of the highest quality training platforms, labs, and courses available at no cost.</p>
         </header>
 
-        <!-- Main Content Sections -->
-        <main class="space-y-8">
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Community Learning Platforms</h2>
-                <div class="overflow-x-auto mt-6">
-                    <table class="w-full text-sm">
+        <main class="space-y-10">
+            
+            <section class="section-card">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span class="mr-3">🎥</span> Video & Community Learning
+                </h2>
+                <div class="overflow-x-auto">
+                    <table>
                         <thead>
-                            <tr class="bg-gray-800 text-gray-300 uppercase text-xs">
-                                <th class="py-3 px-6">Platform</th>
-                                <th class="py-3 px-6">Duration</th>
-                                <th class="py-3 px-6">Format</th>
-                                <th class="py-3 px-6">Notes</th>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Specialty</th>
+                                <th>Link</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Jason Dion Facebook Group</td>
-                                <td class="py-4 px-6">Unlimited</td>
-                                <td class="py-4 px-6">Self-Paced</td>
-                                <td class="py-4 px-6">Community support for certification preparation</td>
+                            <tr>
+                                <td><strong>Professor Messer</strong></td>
+                                <td>CompTIA A+, Network+, Security+ focus.</td>
+                                <td><a href="https://www.professormesser.com/" target="_blank" class="resource-link">Visit Channel</a></td>
                             </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Professor Messor (YouTube)</td>
-                                <td class="py-4 px-6">Unlimited</td>
-                                <td class="py-4 px-6">Self-Paced</td>
-                                <td class="py-4 px-6">Certification-focused video content</td>
+                            <tr>
+                                <td><strong>NetworkChuck</strong></td>
+                                <td>Hands-on IT labs, Python, and Linux.</td>
+                                <td><a href="https://www.youtube.com/c/NetworkChuck" target="_blank" class="resource-link">Visit Channel</a></td>
                             </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">NetworkChuck (YouTube)</td>
-                                <td class="py-4 px-6">Unlimited</td>
-                                <td class="py-4 px-6">Self-Paced</td>
-                                <td class="py-4 px-6">Practical how-to tutorials</td>
+                            <tr>
+                                <td><strong>The Cyber Mentor (TCM)</strong></td>
+                                <td>Ethical hacking and career roadmaps.</td>
+                                <td><a href="https://www.youtube.com/c/TheCyberMentor" target="_blank" class="resource-link">Visit Channel</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jason Dion Group</strong></td>
+                                <td>Certification support community.</td>
+                                <td><a href="https://www.facebook.com/groups/diontraining/" target="_blank" class="resource-link">Join Group</a></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </section>
 
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Hands-on Practice Platforms</h2>
-                <div class="overflow-x-auto mt-6">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="bg-gray-800 text-gray-300 uppercase text-xs">
-                                <th class="py-3 px-6">Platform</th>
-                                <th class="py-3 px-6">Duration</th>
-                                <th class="py-3 px-6">Format</th>
-                                <th class="py-3 px-6">Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Hacksplaining</td>
-                                <td class="py-4 px-6">Unlimited</td>
-                                <td class="py-4 px-6">Self-Paced</td>
-                                <td class="py-4 px-6">Red team exercises and training</td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">OverTheWire</td>
-                                <td class="py-4 px-6">Unlimited</td>
-                                <td class="py-4 px-6">Self-Paced</td>
-                                <td class="py-4 px-6">IT tools practice (solutions on Reddit)</td>
-                            </tr>
-                            <tr class="bg-gray-900 border-gray-700">
-                                <td class="py-4 px-6">Hack the Box</td>
-                                <td class="py-4 px-6">Unlimited</td>
-                                <td class="py-4 px-6">Self-Paced</td>
-                                <td class="py-4 px-6">Free version available (paid version includes certificates)</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            
+            <section class="section-card">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span class="mr-3">💻</span> Hands-On Practice Labs
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+                        <h3 class="text-white font-bold mb-2">TryHackMe</h3>
+                        <p class="text-sm text-gray-400 mb-4">The #1 platform for beginners. Gamified rooms that teach everything from Linux basics to Web Hacking.</p>
+                        <a href="https://tryhackme.com" target="_blank" class="resource-link">Try it Free →</a>
+                    </div>
+                    <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+                        <h3 class="text-white font-bold mb-2">Hack The Box (HTB)</h3>
+                        <p class="text-sm text-gray-400 mb-4">Intermediate to Advanced. Practice "pwn-ing" virtual machines in a competitive environment.</p>
+                        <a href="https://www.hackthebox.com/" target="_blank" class="resource-link">Enter the Lab →</a>
+                    </div>
+                    <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+                        <h3 class="text-white font-bold mb-2">OverTheWire</h3>
+                        <p class="text-sm text-gray-400 mb-4">Wargames that teach you how to use the Linux command line (CLI) through a series of "Bandit" levels.</p>
+                        <a href="https://overthewire.org/wargames/" target="_blank" class="resource-link">Start Bandit →</a>
+                    </div>
+                    <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+                        <h3 class="text-white font-bold mb-2">PortSwigger Academy</h3>
+                        <p class="text-sm text-gray-400 mb-4">The absolute best resource for learning Web Application security from the creators of Burp Suite.</p>
+                        <a href="https://portswigger.net/web-security" target="_blank" class="resource-link">Learn Web Security →</a>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Course Providers</h2>
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">General Security</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Ethical Hackers Academy</li>
-                    <li>Plutalsight Cybersecurity Essentials</li>
-                    <li>Networking Essentials</li>
-                </ul>
+            <section class="section-card">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <span class="mr-3">🛡️</span> Vendor-Specific Training
+                </h2>
+                <div class="space-y-4">
+                    <div class="flex items-start justify-between p-3 hover:bg-gray-800/50 rounded-lg transition">
+                        <div>
+                            <h4 class="text-white font-semibold">Cisco Skills For All</h4>
+                            <p class="text-xs text-gray-500">Free courses on Networking, Cyber Ops, and Python with badges.</p>
+                        </div>
+                        <a href="https://skillsforall.com/" target="_blank" class="resource-link">Start Learning</a>
+                    </div>
+                    <div class="flex items-start justify-between p-3 hover:bg-gray-800/50 rounded-lg transition border-t border-gray-800">
+                        <div>
+                            <h4 class="text-white font-semibold">Fortinet Training Institute</h4>
+                            <p class="text-xs text-gray-500">Free FCF and FCA certifications for network security fundamentals.</p>
+                        </div>
+                        <a href="https://training.fortinet.com/" target="_blank" class="resource-link">Claim Training</a>
+                    </div>
+                    <div class="flex items-start justify-between p-3 hover:bg-gray-800/50 rounded-lg transition border-t border-gray-800">
+                        <div>
+                            <h4 class="text-white font-semibold">Microsoft Learn</h4>
+                            <p class="text-xs text-gray-500">Deep dives into Azure Cloud Security and SC-900 fundamentals.</p>
+                        </div>
+                        <a href="https://learn.microsoft.com/en-us/training/browse/?resource_type=learning+path&terms=security" target="_blank" class="resource-link">Explore Azure</a>
+                    </div>
+                </div>
+            </section>
 
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Udacity Courses</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Intro to Information Security</li>
-                    <li>Network Security</li>
-                </ul>
+            <section class="section-card">
+                <h2 class="text-2xl font-bold text-white mb-6">🎓 Academic & Essential Series</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <ul class="space-y-3">
+                        <li><a href="https://www.eccouncil.org/cybersecurity-exchange/essentials-series/" target="_blank" class="resource-link">EC-Council Essentials (NDE, DFE)</a></li>
+                        <li><a href="https://www.open.edu/openlearn/free-courses/full-catalogue" target="_blank" class="resource-link">OpenLearn (The Open University)</a></li>
+                        <li><a href="https://www.cybrary.it/" target="_blank" class="resource-link">Cybrary (Free Tier)</a></li>
+                    </ul>
+                    <ul class="space-y-3">
+                        <li><a href="https://www.cyberaces.org/" target="_blank" class="resource-link">SANS Cyber Aces Online</a></li>
+                        <li><a href="https://www.splunk.com/en_us/training/free-courses/overview.html" target="_blank" class="resource-link">Splunk Free Training (SIEM)</a></li>
+                        <li><a href="https://www.coursera.org/learn/foundations-of-cybersecurity" target="_blank" class="resource-link">Google Cybersecurity Certificate (Audit Mode)</a></li>
+                    </ul>
+                </div>
+            </section>
 
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Fortinet Training</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>FCF (Fortinet Certified Fundamentals)</li>
-                    <li>FCA (Fortinet Certified Associate)</li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">OpenLearn Courses</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Information Security</li>
-                    <li>Network Security</li>
-                    <li>Risk Management</li>
-                    <li>Digital Forensics</li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Professional Certifications</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>CCNA Security Courses</li>
-                    <li>Network Defense Essentials (NDE)</li>
-                    <li>Digital Forensics Essentials (DFE)</li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Cloud Security</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>AWS Cloud Certifications (Cybersecurity focus)</li>
-                    <li>Microsoft Learn for Azure</li>
-                    <li>Google Cloud Training</li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Specialized Topics</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Dark Web, Anonymity, and Cryptocurrency</li>
-                    <li>Android Bug Bounty Hunting: Hunt Like a Rat</li>
-                    <li>Vulnerability Management</li>
-                    <li>Software Security</li>
-                    <li>PortSwigger Web Hacking</li>
-                    <li>RedTeaming</li>
-                    <li>Splunk</li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Academic Resources</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Maryland Software Security</li>
-                    <li>Stanford Cyber Resiliency</li>
-                    <li>Secure Software Development</li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Intelligence & Analysis</h3>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>Cyber Threat Intelligence</li>
-                    <li>Developing Secure Software</li>
-                </ul>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Contributing</h2>
-                <p>Feel free to submit pull requests to add more free resources to this list.</p>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Note</h2>
-                <ul class="list-disc list-inside ml-4 space-y-1">
-                    <li>All resources listed are free or have free tiers available. Some platforms may offer additional paid features or certifications.</li>
-                </ul>
-            </div>
         </main>
+
+        <footer class="text-center py-12 text-gray-600 border-t border-gray-800">
+            <p>Know of a resource we missed? Contibute to the hub on GitHub.</p>
+            <p class="mt-2 text-xs uppercase tracking-widest">Built for the next generation of defenders</p>
+        </footer>
     </div>
 </body>
 </html>
