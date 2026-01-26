@@ -7,26 +7,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #0f172a; color: #f8fafc; }
-        .podcast-card { transition: transform 0.2s ease; }
-        .podcast-card:hover { transform: translateY(-5px); }
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .podcast-card { transition: all 0.3s ease; }
+        .podcast-card:hover { transform: translateY(-5px); border-color: #3b82f6; box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.2); }
+        .back-link { color: #60a5fa; transition: color 0.2s; }
+        .back-link:hover { color: #93c5fd; }
     </style>
 </head>
 <body class="p-6 md:p-12">
     <div class="max-w-6xl mx-auto">
+        <div class="text-left mb-8">
+            <a href="Resourcehub.html" class="back-link text-lg inline-flex items-center font-semibold">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Back to Main
+            </a>
+        </div>
+
         <header class="mb-12 text-center">
-            <h1 class="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-                Cybersecurity Podcast Hub
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                🎙️ Cybersecurity Podcast Hub
             </h1>
-            <p class="text-slate-400 mb-8">Curated insights from the frontlines of digital defense and cyber intelligence.</p>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">A directory of industry-leading voices covering Zero Trust, threat intelligence, and tech career growth.</p>
             
-            <div class="relative max-w-xl mx-auto">
-                <input type="text" id="searchInput" placeholder="Search podcasts or topics..." 
-                    class="w-full bg-slate-800 border border-slate-700 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            <div class="mt-8 relative max-w-xl mx-auto">
+                <input type="text" id="searchInput" placeholder="Search by podcast name or topic..." 
+                    class="w-full bg-slate-800 border border-slate-700 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-white">
             </div>
         </header>
 
-        <div id="podcastGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="podcastGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
     </div>
 
@@ -34,73 +45,73 @@
         const podcasts = [
             {
                 name: "The Dr. Zero Trust Podcast",
-                description: "Hosted by Dr. Chase Cunningham (Dr. Zero Trust), this podcast breaks down the complexities of Zero Trust architecture and the future of cybersecurity strategy.",
+                description: "Dr. Chase Cunningham breaks down Zero Trust architecture and the future of cybersecurity strategy.",
                 apple: "https://podcasts.apple.com/us/podcast/drzerotrust/id1570251081",
-                spotify: "googleusercontent.com/spotify.com/X",
-                tags: ["Zero Trust", "Strategy", "Dr. Chase Cunningham"]
-            },
-            {
-                name: "Data Security Decoded",
-                description: "Actionable, vendor-agnostic insights to reduce data security risk and improve resilience, featuring leaders from Rubrik Zero Labs.",
-                apple: "https://podcasts.apple.com/us/podcast/data-security-decoded/id1738264274",
-                spotify: "open.spotify.com/show/ID",
-                tags: ["Data Security", "Rubrik", "Resilience"]
-            },
-            {
-                name: "#CyberChats",
-                description: "Focused on educating all ages about personal data care and highlighting positive figures in the cybersecurity community.",
-                apple: "https://podcasts.apple.com/us/podcast/cyberchats/id1671622288",
-                spotify: "https://open.spotify.com/show/0O7I78x2Vl2e2e7o1u3S7G",
-                tags: ["Education", "Careers", "Awareness"]
+                spotify: "https://open.spotify.com/show/5YrSai2Q9UGATh8GXgzA5K",
+                tags: ["Zero Trust", "Strategy"]
             },
             {
                 name: "Threat Vector",
-                description: "Presented by Palo Alto Networks, diving into real threats, smart defenses, and future trends with top industry leaders.",
+                description: "Palo Alto Networks' deep dive into real threats, smart defenses, and future trends with industry leaders.",
                 apple: "https://podcasts.apple.com/us/podcast/threat-vector-by-palo-alto-networks/id1725324656",
-                spotify: "https://open.spotify.com/show/6eYF5Q0qO7y7X1A2",
-                tags: ["Palo Alto Networks", "Threat Intel", "Defense"]
+                spotify: "https://open.spotify.com/show/3gvMUOv9QDQGFaA87fuSEz",
+                tags: ["Palo Alto Networks", "Threat Intel"]
+            },
+            {
+                name: "Data Security Decoded",
+                description: "Actionable insights to reduce data security risk and improve resilience, featuring Rubrik Zero Labs.",
+                apple: "https://podcasts.apple.com/us/podcast/data-security-decoded/id1738264274",
+                spotify: "https://open.spotify.com/show/3bLXLVq9nSoj3xtrNh0Br5",
+                tags: ["Data Security", "Rubrik"]
+            },
+            {
+                name: "#CyberChats",
+                description: "Educating all ages about personal data care and highlighting positive figures in cybersecurity.",
+                apple: "https://podcasts.apple.com/us/podcast/cyberchats/id1671622288",
+                spotify: "https://open.spotify.com/show/2ZMszup9Qr9P5AuvJiM5vu",
+                tags: ["Education", "Awareness"]
             },
             {
                 name: "Zero Trust Thirty",
-                description: "A podcast offering unique perspectives on the trends and technologies shaping the world of Zero Trust security.",
+                description: "Unique perspectives on the technologies shaping the world of Zero Trust security.",
                 apple: "https://podcasts.apple.com/us/podcast/zero-trust-thirty/id1597779601",
-                spotify: "https://open.spotify.com/show/4N9vI7f6XJ7z8E",
-                tags: ["Zero Trust", "Infrastructure", "Appgate"]
+                spotify: "https://open.spotify.com/show/0brWoMaIcBZiFmTQWNK62K",
+                tags: ["Zero Trust", "Appgate"]
             },
             {
                 name: "The FAIK Files",
-                description: "Explores the intersection of AI, technology, and humanity, focusing on deepfakes and digital deception.",
+                description: "Exploring the intersection of AI and humanity, specifically deepfakes and digital deception.",
                 apple: "https://podcasts.apple.com/us/podcast/the-faik-files/id1771521321",
-                spotify: "https://open.spotify.com/show/2F9P5r1XJ7k8V",
-                tags: ["AI", "Deepfakes", "Cognitive Warfare"]
+                spotify: "https://open.spotify.com/show/7CGEktxUQAbgwQaWB922Ip",
+                tags: ["AI", "Deepfakes"]
             },
             {
                 name: "Only Malware in the Building",
                 description: "Solving monthly cyber mysteries with intelligence analysts and former FBI investigators.",
                 apple: "https://podcasts.apple.com/us/podcast/only-malware-in-the-building/id1749644761",
-                spotify: "https://open.spotify.com/show/3D9wI7k5XJ9y",
+                spotify: "https://open.spotify.com/show/6Lxwond2BICpOmtpL3i0kM",
                 tags: ["Malware", "FBI", "Forensics"]
             },
             {
-                name: "UnixGuy Cyber Security Career",
-                description: "Real insights into what it's like to work in cybersecurity, featuring guests from across the industry.",
+                name: "Unixcyber Guy",
+                description: "Real-world insights into cybersecurity careers and industry experience.",
                 apple: "https://podcasts.apple.com/au/podcast/unixguy-cyber-security-career/id1830928775",
-                spotify: "https://open.spotify.com/show/5P9N7m4XJ8Z2",
-                tags: ["Career Advice", "Mentorship", "UnixGuy"]
+                spotify: "https://open.spotify.com/show/676BEZwcsufFf620HdzbUo",
+                tags: ["Career", "Unix"]
             },
             {
-                name: "WT 360: The Market From All Angles",
-                description: "Conversations on what's driving the federal government market, focusing on cybersecurity and GovCon trends.",
+                name: "WT360: Market From All Angles",
+                description: "Focusing on cybersecurity trends and the federal government market (GovCon).",
                 apple: "https://podcasts.apple.com/us/podcast/wt-360-the-market-from-all-angles/id1449676413",
-                spotify: "https://open.spotify.com/show/1k9W7m5XJ7Y3",
-                tags: ["Federal IT", "GovCon", "GovCIO"]
+                spotify: "https://open.spotify.com/show/0oY3l5ApUzgdZKHYoct1rJ",
+                tags: ["GovCon", "Federal IT"]
             },
             {
                 name: "Tech Career Blueprint",
                 description: "Roadmaps for moving from entry-level to senior positions in tech and cybersecurity.",
                 apple: "https://podcasts.apple.com/us/podcast/tech-career-blueprint-podcast-presented-by-master-i/id1690081331",
-                spotify: "https://open.spotify.com/show/6U9X7m5YJ7V4",
-                tags: ["Career Roadmap", "Certifications", "IT Pro"]
+                spotify: "https://open.spotify.com/show/7kaJodHquryFw5YDw0BShj",
+                tags: ["Career Roadmap", "Certifications"]
             }
         ];
 
@@ -115,19 +126,19 @@
 
             filtered.forEach(p => {
                 const card = `
-                    <div class="podcast-card bg-slate-800 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
+                    <div class="podcast-card bg-slate-800/50 border border-slate-700 rounded-2xl p-6 flex flex-col justify-between">
                         <div>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 ${p.tags.map(t => `<span class="bg-blue-500/10 text-blue-400 text-xs px-2 py-1 rounded-full border border-blue-500/20">${t}</span>`).join('')}
                             </div>
-                            <h3 class="text-xl font-bold mb-3">${p.name}</h3>
+                            <h3 class="text-xl font-bold mb-3 text-white">${p.name}</h3>
                             <p class="text-slate-400 text-sm mb-6 leading-relaxed">${p.description}</p>
                         </div>
-                        <div class="flex gap-4">
-                            <a href="${p.apple}" target="_blank" class="flex-1 text-center bg-white text-slate-900 py-2 rounded-lg font-semibold hover:bg-slate-200 transition flex items-center justify-center gap-2">
-                                <i class="fab fa-apple"></i> Apple
+                        <div class="flex flex-col gap-3">
+                            <a href="${p.apple}" target="_blank" class="w-full text-center bg-white text-slate-900 py-2.5 rounded-xl font-semibold hover:bg-slate-200 transition flex items-center justify-center gap-2">
+                                <i class="fab fa-apple"></i> Apple Podcasts
                             </a>
-                            <a href="${p.spotify}" target="_blank" class="flex-1 text-center bg-[#1DB954] text-white py-2 rounded-lg font-semibold hover:bg-[#1ed760] transition flex items-center justify-center gap-2">
+                            <a href="${p.spotify}" target="_blank" class="w-full text-center bg-[#1DB954] text-white py-2.5 rounded-xl font-semibold hover:bg-[#1ed760] transition flex items-center justify-center gap-2">
                                 <i class="fab fa-spotify"></i> Spotify
                             </a>
                         </div>
