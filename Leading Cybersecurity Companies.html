@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leading Cybersecurity Companies</title>
+    <title>Leading Cybersecurity Companies | 2025 Industry Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -14,7 +14,7 @@
             line-height: 1.6;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             padding: 2rem;
         }
         .section-card {
@@ -23,245 +23,181 @@
             border-radius: 12px;
             padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        h1, h2, h3 {
-            font-weight: 700;
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
-        a {
-            color: #58a6ff;
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
+        .company-item {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease;
         }
-        a:hover {
-            color: #79c0ff;
+        .company-item:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
         }
-        ul.list-disc {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-        }
-        ul.list-none {
-            list-style-type: none;
-            padding-left: 0;
+        h1, h2, h3 { font-weight: 700; color: white; }
+        a { color: #58a6ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge {
+            font-size: 0.75rem;
+            background: #21262d;
+            padding: 2px 8px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            margin-right: 5px;
         }
     </style>
 </head>
 <body class="antialiased">
     <div class="container mx-auto">
-       <!-- Navigation to Main Page -->
         <div class="text-left py-4">
-            <a href="Resourcehub.html" class="text-lg inline-flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            <a href="Resourcehub.html" class="inline-flex items-center text-blue-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                Back to Main
+                Back to Hub
             </a>
         </div>
-        <!-- Header -->
-        <header class="text-center py-10 md:py-16">
-            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
-                # Leading Cybersecurity Companies
-            </h1>
-            <p class="text-md md:text-lg text-gray-400">A comprehensive overview of major cybersecurity companies and their primary service offerings.</p>
+
+        <header class="text-center py-10">
+            <h1 class="text-4xl md:text-5xl mb-4">Leading Cybersecurity Companies</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto">A directory of the industry titans shaping the future of digital defense, from endpoint detection to zero-trust cloud architecture.</p>
         </header>
 
-        <!-- Main Content Sections -->
         <main class="space-y-8">
             <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Company Profiles</h2>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">CrowdStrike</h3>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Website:</strong> <a href="https://crowdstrike.com">crowdstrike.com</a></li>
-                    <li><strong>Location:</strong> Sunnyvale, CA</li>
-                    <li><strong>Core Services:</strong>
-                        <ul class="list-disc ml-6 mt-1 space-y-1">
-                            <li>Endpoint protection</li>
-                            <li>Threat intelligence</li>
-                            <li>Incident response</li>
-                            <li>Managed detection and response (MDR)</li>
+                <h2 class="text-2xl mb-6">Market Leaders & Innovators</h2>
+                <div class="company-grid">
+                    
+                    <div class="company-item">
+                        <h3 class="text-xl mb-2">CrowdStrike</h3>
+                        <p class="text-sm text-gray-400 mb-4">Austin, TX | <a href="https://crowdstrike.com">crowdstrike.com</a></p>
+                        <ul class="text-sm space-y-2">
+                            <li>• Falcon Platform (AI-Native)</li>
+                            <li>• EDR/XDR & Threat Hunting</li>
+                            <li>• Incident Response (Mendel)</li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
 
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Palo Alto Networks</h3>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Website:</strong> <a href="https://paloaltonetworks.com">paloaltonetworks.com</a></li>
-                    <li><strong>Location:</strong> Santa Clara, CA</li>
-                    <li><strong>Core Services:</strong>
-                        <ul class="list-disc ml-6 mt-1 space-y-1">
-                            <li>Firewall protection</li>
-                            <li>Cloud security</li>
-                            <li>Endpoint protection</li>
-                            <li>Threat intelligence</li>
-                            <li>VPN solutions</li>
+                    <div class="company-item">
+                        <h3 class="text-xl mb-2">Palo Alto Networks</h3>
+                        <p class="text-sm text-gray-400 mb-4">Santa Clara, CA | <a href="https://paloaltonetworks.com">paloaltonetworks.com</a></p>
+                        <ul class="text-sm space-y-2">
+                            <li>• Next-Gen Firewalls (NGFW)</li>
+                            <li>• Prisma Cloud Security</li>
+                            <li>• Cortex AI-driven SecOps</li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
 
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Cisco</h3>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Website:</strong> <a href="https://cisco.com">cisco.com</a></li>
-                    <li><strong>Location:</strong> San Jose, CA</li>
-                    <li><strong>Core Services:</strong>
-                        <ul class="list-disc ml-6 mt-1 space-y-1">
-                            <li>Network security</li>
-                            <li>Firewall protection</li>
-                            <li>Cloud security</li>
-                            <li>Threat intelligence</li>
-                            <li>Endpoint protection</li>
+                    <div class="company-item">
+                        <h3 class="text-xl mb-2">Zscaler</h3>
+                        <p class="text-sm text-gray-400 mb-4">San Jose, CA | <a href="https://zscaler.com">zscaler.com</a></p>
+                        <ul class="text-sm space-y-2">
+                            <li>• Zero Trust Exchange</li>
+                            <li>• Secure Access Service Edge (SASE)</li>
+                            <li>• Cloud Access Security (CASB)</li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
 
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Fortinet</h3>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Website:</strong> <a href="https://fortinet.com">fortinet.com</a></li>
-                    <li><strong>Location:</strong> Sunnyvale, CA</li>
-                    <li><strong>Core Services:</strong>
-                        <ul class="list-disc ml-6 mt-1 space-y-1">
-                            <li>Firewall protection</li>
-                            <li>Network security</li>
-                            <li>Endpoint protection</li>
-                            <li>Cloud security</li>
+                    <div class="company-item">
+                        <h3 class="text-xl mb-2">SentinelOne</h3>
+                        <p class="text-sm text-gray-400 mb-4">Mountain View, CA | <a href="https://sentinelone.com">sentinelone.com</a></p>
+                        <ul class="text-sm space-y-2">
+                            <li>• Singularity XDR Platform</li>
+                            <li>• Autonomous AI Protection</li>
+                            <li>• Data Lake Security</li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
 
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Check Point</h3>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Website:</strong> <a href="https://checkpoint.com">checkpoint.com</a></li>
-                    <li><strong>Location:</strong> San Carlos, CA</li>
-                    <li><strong>Core Services:</strong>
-                        <ul class="list-disc ml-6 mt-1 space-y-1">
-                            <li>Firewall protection</li>
-                            <li>Threat prevention</li>
-                            <li>Endpoint security</li>
-                            <li>Cloud security</li>
+                    <div class="company-item">
+                        <h3 class="text-xl mb-2">Cloudflare</h3>
+                        <p class="text-sm text-gray-400 mb-4">San Francisco, CA | <a href="https://cloudflare.com">cloudflare.com</a></p>
+                        <ul class="text-sm space-y-2">
+                            <li>• DDoS Mitigation</li>
+                            <li>• Web Application Firewall (WAF)</li>
+                            <li>• Zero Trust Browsing</li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
 
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Splunk</h3>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Website:</strong> <a href="https://splunk.com">splunk.com</a></li>
-                    <li><strong>Location:</strong> San Francisco, CA</li>
-                    <li><strong>Core Services:</strong>
-                        <ul class="list-disc ml-6 mt-1 space-y-1">
-                            <li>Security information and event management (SIEM)</li>
-                            <li>Threat detection</li>
-                            <li>Incident response</li>
+                    <div class="company-item">
+                        <h3 class="text-xl mb-2">Fortinet</h3>
+                        <p class="text-sm text-gray-400 mb-4">Sunnyvale, CA | <a href="https://fortinet.com">fortinet.com</a></p>
+                        <ul class="text-sm space-y-2">
+                            <li>• FortiGate Firewalls</li>
+                            <li>• SD-WAN Networking</li>
+                            <li>• Security Fabric Ecosystem</li>
                         </ul>
-                    </li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">FireEye</h3>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Website:</strong> <a href="https://fireeye.com">fireeye.com</a></li>
-                    <li><strong>Location:</strong> Milpitas, CA</li>
-                    <li><strong>Core Services:</strong>
-                        <ul class="list-disc ml-6 mt-1 space-y-1">
-                            <li>Threat intelligence</li>
-                            <li>Incident response</li>
-                            <li>Email security</li>
-                            <li>Endpoint protection</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Trend Micro</h3>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Website:</strong> <a href="https://trendmicro.com">trendmicro.com</a></li>
-                    <li><strong>Location:</strong> Tokyo, Japan</li>
-                    <li><strong>Core Services:</strong>
-                        <ul class="list-disc ml-6 mt-1 space-y-1">
-                            <li>Endpoint protection</li>
-                            <li>Cloud security</li>
-                            <li>Threat intelligence</li>
-                            <li>Network security</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">McAfee</h3>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Website:</strong> <a href="https://mcafee.com">mcafee.com</a></li>
-                    <li><strong>Location:</strong> Santa Clara, CA</li>
-                    <li><strong>Core Services:</strong>
-                        <ul class="list-disc ml-6 mt-1 space-y-1">
-                            <li>Endpoint protection</li>
-                            <li>Cloud security</li>
-                            <li>Threat intelligence</li>
-                            <li>Network security</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Proofpoint</h3>
-                <ul class="list-none ml-4 mt-2 space-y-1">
-                    <li><strong>Website:</strong> <a href="https://proofpoint.com">proofpoint.com</a></li>
-                    <li><strong>Location:</strong> Sunnyvale, CA</li>
-                    <li><strong>Core Services:</strong>
-                        <ul class="list-disc ml-6 mt-1 space-y-1">
-                            <li>Email security</li>
-                            <li>Threat intelligence</li>
-                            <li>Cloud security</li>
-                            <li>Digital risk protection</li>
-                        </ul>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Service Categories Overview</h2>
+                <h2 class="text-2xl mb-6">Service Category Breakdown</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg text-blue-400">1. Next-Gen SOC (Detection & Response)</h3>
+                        <p class="text-sm mt-1">Focuses on visibility across the entire enterprise stack.</p>
+                        
+                        <ul class="list-disc ml-6 mt-2 text-sm text-gray-300">
+                            <li><strong>SIEM/SOAR:</strong> Splunk, Microsoft Sentinel, IBM QRadar.</li>
+                            <li><strong>XDR:</strong> Extended detection across email, cloud, and network.</li>
+                        </ul>
+                    </div>
 
-                <h3 class="text-xl font-medium mt-6 mb-4 text-white">Common Security Services</h3>
-                <ol class="list-decimal list-inside ml-4 space-y-4">
-                    <li>
-                        <strong>Endpoint Protection</strong>
-                        <ul class="list-disc ml-4 mt-2 space-y-1">
-                            <li>Device security</li>
-                            <li>Malware prevention</li>
-                            <li>System monitoring</li>
+                    <div>
+                        <h3 class="text-lg text-blue-400">2. Identity & Access Management (IAM)</h3>
+                        <p class="text-sm mt-1">"Identity is the new perimeter."</p>
+                        <ul class="list-disc ml-6 mt-2 text-sm text-gray-300">
+                            <li><strong>Leaders:</strong> Okta, Microsoft Entra ID, Ping Identity.</li>
+                            <li><strong>Services:</strong> Multi-Factor Auth (MFA), Single Sign-On (SSO), Privileged Access (PAM).</li>
                         </ul>
-                    </li>
-                    <li>
-                        <strong>Cloud Security</strong>
-                        <ul class="list-disc ml-4 mt-2 space-y-1">
-                            <li>Cloud infrastructure protection</li>
-                            <li>Cloud application security</li>
-                            <li>Cloud data protection</li>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg text-blue-400">3. Zero Trust & SASE</h3>
+                        <p class="text-sm mt-1">Replacing traditional VPNs with secure, identity-based tunnels.</p>
+                        
+                        <ul class="list-disc ml-6 mt-2 text-sm text-gray-300">
+                            <li><strong>Leaders:</strong> Zscaler, Netskope, Cloudflare.</li>
                         </ul>
-                    </li>
-                    <li>
-                        <strong>Threat Intelligence</strong>
-                        <ul class="list-disc ml-4 mt-2 space-y-1">
-                            <li>Real-time threat monitoring</li>
-                            <li>Threat analysis</li>
-                            <li>Security advisories</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Network Security</strong>
-                        <ul class="list-disc ml-4 mt-2 space-y-1">
-                            <li>Firewall protection</li>
-                            <li>Network monitoring</li>
-                            <li>Intrusion prevention</li>
-                        </ul>
-                    </li>
-                </ol>
+                    </div>
+                </div>
             </div>
 
             <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">Contributing</h2>
-                <p>Feel free to submit pull requests to add or update company information.</p>
+                <h2 class="text-2xl mb-4">Current Industry Trends</h2>
+                <div class="bg-blue-900/20 border border-blue-800 p-4 rounded-lg">
+                    <ul class="space-y-3 text-sm">
+                        <li>🚀 <strong>AI-First Security:</strong> Companies are shifting from signature-based detection to Generative AI models that predict attacker behavior.</li>
+                        <li>☁️ <strong>CNAPP:</strong> Cloud Native Application Protection Platforms are becoming the standard for AWS/Azure/GCP users.</li>
+                        <li>📉 <strong>Consolidation:</strong> Enterprise customers are moving away from "best-of-breed" point products toward unified security platforms (e.g., Palo Alto's "Platformization").</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">License</h2>
-                <p>This resource list is available under the MIT License.</p>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="section-card flex-1 mb-0">
+                    <h2 class="text-xl mb-2">Contributing</h2>
+                    <p class="text-sm">Found a company missing? Open a PR or submit a request via the repository. We prioritize companies with unique technology or significant market share.</p>
+                </div>
+                <div class="section-card flex-1 mb-0">
+                    <h2 class="text-xl mb-2">Resources</h2>
+                    <p class="text-sm">Check out the <a href="https://www.gartner.com">Gartner Magic Quadrant</a> or <a href="https://www.forrester.com">Forrester Wave</a> for in-depth annual market analysis.</p>
+                </div>
             </div>
         </main>
+
+        <footer class="text-center py-12 text-gray-500 text-sm">
+            <p>© 2025 Cybersecurity Resource Hub. Distributed under the MIT License.</p>
+        </footer>
     </div>
 </body>
 </html>
