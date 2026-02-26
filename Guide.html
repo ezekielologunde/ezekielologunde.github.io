@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero Trust, ICAM & CMMC — Presentation Research Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,600;0,8..60,700;1,8..60,300&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d2240;
+    --navy-mid: #163358;
+    --navy-light: #1e4a7a;
+    --gold: #c8922a;
+    --gold-light: #e6a817;
+    --gold-pale: #fdf6e3;
+    --blue-accent: #2e78c7;
+    --blue-pale: #e8f2fb;
+    --slate: #3d5068;
+    --text: #1a2535;
+    --text-muted: #4a607a;
+    --border: #d0dce8;
+    --bg: #f5f7fa;
+    --white: #ffffff;
+    --red-soft: #c0392b;
+    --green-accent: #1a7a4e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--navy);
+    color: rgba(255,255,255,0.55);
+    font-size: 11.5px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.06em;
+    text-align: center;
+    padding: 7px 20px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-light) 100%);
+    color: white;
+    padding: 56px 40px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,146,42,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  }
+  .header-inner { max-width: 900px; margin: 0 auto; position: relative; }
+  .header-badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    border: 1px solid rgba(200,146,42,0.45);
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: 18px;
+  }
+  header h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 2.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  header h1 span { color: var(--gold-light); }
+  header .subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    max-width: 680px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Source Serif 4', serif;
+  }
+
+  /* ── LAYOUT ── */
+  .layout {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  /* ── SIDEBAR NAV ── */
+  .sidebar {
+    position: sticky;
+    top: 24px;
+    padding: 28px 0 28px 0;
+  }
+  .sidebar-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    padding-left: 4px;
+  }
+  .nav-group { margin-bottom: 8px; }
+  .nav-group-label {
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 6px 8px 3px;
+    display: block;
+  }
+  .nav-link {
+    display: block;
+    padding: 5px 8px 5px 14px;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: all 0.18s;
+    line-height: 1.4;
+  }
+  .nav-link:hover {
+    color: var(--navy);
+    border-left-color: var(--gold);
+    background: rgba(200,146,42,0.07);
+  }
+
+  /* ── MAIN CONTENT ── */
+  main {
+    padding: 32px 0 60px 40px;
+    border-left: 1px solid var(--border);
+    min-height: 100vh;
+  }
+
+  /* ── ALERT BOX ── */
+  .alert {
+    background: var(--gold-pale);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    padding: 16px 20px;
+    margin: 0 0 36px;
+    font-size: 14.5px;
+  }
+  .alert strong { color: #5c3d00; }
+  .alert em { color: #7a5200; }
+
+  /* ── SECTION GROUPS ── */
+  .section-group {
+    margin-bottom: 52px;
+  }
+  .group-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--navy);
+  }
+  .group-number {
+    background: var(--navy);
+    color: var(--gold-light);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .group-header h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  /* ── SLIDE CARD ── */
+  .slide-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(13,34,64,0.06);
+    transition: box-shadow 0.2s;
+  }
+  .slide-card:hover {
+    box-shadow: 0 4px 16px rgba(13,34,64,0.11);
+  }
+  .slide-header {
+    background: var(--navy);
+    padding: 13px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .slide-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+    background: rgba(255,255,255,0.08);
+    padding: 2px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .slide-header h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.01em;
+  }
+  .slide-body {
+    padding: 20px 22px;
+  }
+
+  /* ── ASKING BOX ── */
+  .asking {
+    background: var(--blue-pale);
+    border-left: 3px solid var(--blue-accent);
+    border-radius: 0 5px 5px 0;
+    padding: 11px 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  .asking-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-accent);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ── RESEARCH SECTION ── */
+  .research-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: block;
+    margin: 16px 0 8px;
+  }
+  .source-list { list-style: none; }
+  .source-list li {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .source-list li:last-child { border-bottom: none; }
+  .source-list li::before {
+    content: '→';
+    color: var(--gold);
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .source-list a {
+    color: var(--blue-accent);
+    text-decoration: none;
+    word-break: break-all;
+    font-size: 12.5px;
+  }
+  .source-list a:hover { text-decoration: underline; }
+  .source-list .src-desc {
+    display: block;
+    color: var(--text);
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  /* ── YOUTUBE SECTION ── */
+  .yt-section {
+    background: #fafcfe;
+    border: 1px solid #dce8f5;
+    border-radius: 6px;
+    padding: 13px 16px;
+    margin-top: 14px;
+  }
+  .yt-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c0392b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .yt-label::before {
+    content: '▶';
+    font-size: 9px;
+    background: #c0392b;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 2px;
+  }
+  .yt-list { list-style: none; }
+  .yt-list li {
+    font-size: 13.5px;
+    padding: 4px 0;
+    color: var(--text-muted);
+    display: flex;
+    gap: 8px;
+    line-height: 1.4;
+  }
+  .yt-list li::before {
+    content: '⌕';
+    color: #c0392b;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .yt-list a { color: var(--blue-accent); text-decoration: none; }
+  .yt-list a:hover { text-decoration: underline; }
+  .yt-keyword {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: #f0f4f8;
+    border: 1px solid #d8e3ec;
+    border-radius: 3px;
+    padding: 0 5px;
+    color: var(--navy);
+  }
+  .yt-channel {
+    font-size: 11.5px;
+    color: #888;
+    font-style: italic;
+  }
+
+  /* ── CALLOUT BOXES ── */
+  .callout {
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 16px 0 0;
+    font-size: 14px;
+  }
+  .callout-blue {
+    background: var(--blue-pale);
+    border-left: 4px solid var(--blue-accent);
+  }
+  .callout-gold {
+    background: var(--gold-pale);
+    border-left: 4px solid var(--gold);
+  }
+  .callout strong { display: block; margin-bottom: 6px; font-size: 13px; letter-spacing: 0.01em; }
+  .callout-blue strong { color: var(--navy); }
+  .callout-gold strong { color: #5c3d00; }
+  .callout-levels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .level-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  .level-box b { display: block; color: var(--navy); margin-bottom: 4px; font-size: 13px; }
+
+  /* ── CMMC LEVELS STANDALONE ── */
+  .cmmc-levels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 14px 0 0;
+  }
+  .cmmc-level {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .cmmc-level-head {
+    padding: 8px 12px;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+  .l1 .cmmc-level-head { background: #e8f5e9; color: #2e7d32; }
+  .l2 .cmmc-level-head { background: #fff3e0; color: #e65100; }
+  .l3 .cmmc-level-head { background: #fce4ec; color: #c62828; }
+  .cmmc-level-body { padding: 10px 12px; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── QUICK REFERENCE SECTION ── */
+  .qr-section {
+    background: var(--navy);
+    color: white;
+    border-radius: 10px;
+    padding: 32px 36px;
+    margin-top: 40px;
+  }
+  .qr-section h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .qr-group { margin-bottom: 24px; }
+  .qr-group-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .qr-links { display: flex; flex-direction: column; gap: 6px; }
+  .qr-link-row {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 13.5px;
+  }
+  .qr-link-row::before {
+    content: '·';
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .qr-link-desc { color: rgba(255,255,255,0.75); flex-shrink: 0; min-width: 0; }
+  .qr-link-row a {
+    color: #7eb8f5;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    word-break: break-all;
+  }
+  .qr-link-row a:hover { text-decoration: underline; }
+
+  .yt-channels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .yt-ch-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+  .yt-ch-item b { color: var(--gold-light); display: block; margin-bottom: 2px; }
+  .yt-ch-item span { color: rgba(255,255,255,0.6); font-size: 12px; }
+
+  /* ── APA CITATIONS ── */
+  .apa-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .apa-item {
+    background: rgba(255,255,255,0.05);
+    border-left: 2px solid rgba(200,146,42,0.4);
+    padding: 10px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    border-radius: 0 4px 4px 0;
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .apa-item a { color: #7eb8f5; font-style: normal; }
+
+  /* ── FINAL REMINDER ── */
+  .final-reminder {
+    background: rgba(30,74,122,0.6);
+    border: 1px solid rgba(200,146,42,0.35);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    margin-top: 28px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+  }
+  .final-reminder strong { color: var(--gold-light); display: block; margin-bottom: 6px; }
+  .final-reminder em { color: white; font-style: italic; }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 40px 0;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 820px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; padding: 20px 0 0; }
+    main { border-left: none; padding: 24px 0; }
+    header { padding: 36px 20px; }
+    .layout { padding: 0 16px; }
+    .cmmc-levels, .callout-levels { grid-template-columns: 1fr; }
+    .yt-channels { grid-template-columns: 1fr; }
+    .qr-link-row { flex-direction: column; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">UNCLASSIFIED // FOR ACADEMIC USE — Zero Trust · ICAM · CMMC Presentation Research Guide</div>
+
+<header>
+  <div class="header-inner">
+    <div class="header-badge">Cybersecurity Architecture · Academic Reference</div>
+    <h1>Zero Trust, ICAM &amp; CMMC<br><span>Presentation Research Guide</span></h1>
+    <p class="subtitle">A slide-by-slide research walkthrough: what to read, where to find it, and what to watch — so every slide answers <em>why this matters for your specific system.</em></p>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR NAV -->
+  <nav class="sidebar" aria-label="Page navigation">
+    <div class="sidebar-title">Contents</div>
+
+    <div class="nav-group">
+      <span class="nav-group-label">Foundation</span>
+      <a href="#slides-1-3" class="nav-link">Slides 1–3 · System & Environment</a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Context</span>
+      <a href="#slides-4-5" class="nav-link">Slides 4–5 · Users & Threats</a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Zero Trust</span>
+      <a href="#slides-6-7" class="nav-link">Slides 6–7 · Core Concepts & Application</a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">ICAM</span>
+      <a href="#slides-8-10" class="nav-link">Slides 8–10 · Identity & Device Trust</a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">CMMC</span>
+      <a href="#slides-11-12" class="nav-link">Slides 11–12 · Purpose & Scope</a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Analysis</span>
+      <a href="#slides-13-15" class="nav-link">Slides 13–15 · Tradeoffs & Insight</a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Synthesis</span>
+      <a href="#slides-16-18" class="nav-link">Slides 16–18 · Architecture & Conclusions</a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Reference</span>
+      <a href="#quick-ref" class="nav-link">Quick Reference & APA Citations</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+
+    <div class="alert">
+      <strong>Before you start:</strong> The assignment says "show understanding, not definition dumping." That means every slide should answer the question <em>why does this matter for my specific system?</em> — not just explain what a term means. Read that requirement again before writing a single word.
+    </div>
+
+    <!-- ===== SLIDES 1–3 ===== -->
+    <section id="slides-1-3" class="section-group">
+      <div class="group-header">
+        <span class="group-number">SLIDES 1–3</span>
+        <h2>Foundation: Your System, Your Environment</h2>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 01</span>
+          <h3>Title Slide</h3>
+        </div>
+        <div class="slide-body">
+          <p>No research needed here. Choose your system environment <strong>before</strong> you fill in anything else — it drives every other slide. Pick something specific: a military logistics platform, a healthcare network, a defense contractor IT system, a university research lab, a state emergency management network. <strong>The more specific your scenario, the easier every other slide becomes.</strong></p>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 02</span>
+          <h3>System and Mission Overview</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            If this system goes down or gets compromised, what real-world consequence follows? Describe the mission first, then the technology that supports it.
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy introduction (pages 1–4) — how DoD frames mission dependence on IT systems</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">FICAM Architecture overview — how agencies describe mission needs (civilian/federal systems)</span>
+                <a href="https://www.idmanagement.gov/arch/" target="_blank">idmanagement.gov/arch/</a>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube — watch to understand mission context</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"DoD Zero Trust strategy explained 2024"</span> <span class="yt-channel">— look for DISA, AFCEA, or government conference panels</span></li>
+              <li>Search <span class="yt-keyword">"why Zero Trust matters for government systems"</span> <span class="yt-channel">— NetworkChuck or John Hammond</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 03</span>
+          <h3>Architecture Context</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            What type of environment are you securing — and what makes it hard to secure? Budget, legacy systems, remote users, and uptime requirements all change what security decisions are available to you.
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">NIST SP 800-207, Sections 3 & 4 — Logical Components and Deployment Scenarios (cloud, hybrid, on-prem Zero Trust)</span>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CISA Zero Trust Maturity Model (pages 4–8) — environment types</span>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"cloud vs hybrid vs on-prem security architecture explained"</span></li>
+              <li>Search <span class="yt-keyword">"legacy system security challenges government"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== SLIDES 4–5 ===== -->
+    <section id="slides-4-5" class="section-group">
+      <div class="group-header">
+        <span class="group-number">SLIDES 4–5</span>
+        <h2>Users and Threats</h2>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 04</span>
+          <h3>Operator and User Needs</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Security that makes operators slower or unable to do their jobs is not good security — it is a different kind of failure. Who uses the system, what speed or access do they need, and what does friction look like in your scenario?
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy, pages 6–8 — user experience requirements alongside security</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">OMB Memorandum M-22-09 — how agencies balance user needs with Zero Trust mandates</span>
+                Search: <span class="yt-keyword">OMB M-22-09 zero trust whitehouse.gov PDF</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">FICAM Architecture (idmanagement.gov) — user roles and access patterns</span>
+                <a href="https://www.idmanagement.gov/arch/" target="_blank">idmanagement.gov/arch/</a>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"zero trust user experience challenges"</span></li>
+              <li>Search <span class="yt-keyword">"identity-centric security explained simply"</span> <span class="yt-channel">— IBM Technology or Microsoft Security</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 05</span>
+          <h3>Threats Relevant to This System</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Do not write "ransomware" and "phishing" as generic threats. Write the specific threat that would target your specific system — and explain the realistic damage it would cause to the <em>mission</em>, not just to data.
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">CISA Known Exploited Vulnerabilities catalog — browse threats relevant to your industry sector</span>
+                <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">cisa.gov/known-exploited-vulnerabilities-catalog</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CISA Cybersecurity Advisories by sector (healthcare, defense, energy, etc.)</span>
+                <a href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank">cisa.gov/news-events/cybersecurity-advisories</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy, pages 2–3 — the threat landscape that drove the strategy</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"advanced persistent threat APT explained"</span> <span class="yt-channel">— SANS Institute or CISA</span></li>
+              <li>Search <span class="yt-keyword">"insider threat cybersecurity government 2023 2024"</span></li>
+              <li>Search <span class="yt-keyword">"supply chain attack cybersecurity explained"</span> <span class="yt-channel">— John Hammond or CISA YouTube</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== SLIDES 6–7 ===== -->
+    <section id="slides-6-7" class="section-group">
+      <div class="group-header">
+        <span class="group-number">SLIDES 6–7</span>
+        <h2>Zero Trust</h2>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 06</span>
+          <h3>Zero Trust: Core Concepts</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Explain the four concepts in your own words. What does "never trust, always verify" actually mean when a user tries to open a file? What does "least privilege" mean in practice? Do not quote definitions — write what these mean and <em>why they exist.</em>
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc"><strong>Start here</strong> — NIST SP 800-207, Section 2 (pages 4–11): Tenets of Zero Trust and the Zero Trust view of a network</span>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy, pages 4–6 — how DoD translates concepts into strategy</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CISA Zero Trust Maturity Model v2, pages 1–6 — the five pillars: Identity, Devices, Networks, Applications, Data</span>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CISA Zero Trust Resource Hub — overview page with links</span>
+                <a href="https://www.cisa.gov/zero-trust-maturity-model" target="_blank">cisa.gov/zero-trust-maturity-model</a>
+              </div>
+            </li>
+          </ul>
+          <div class="callout callout-blue">
+            <strong>Key idea to understand</strong>
+            Zero Trust does not mean you trust nothing forever — it means you verify continuously and grant access only for what is needed, for as long as it is needed. The perimeter is no longer the network edge. <strong>The perimeter is now the identity and the device.</strong>
+          </div>
+          <div class="yt-section" style="margin-top:14px;">
+            <div class="yt-label">YouTube — highly recommended</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"Zero Trust security model explained NIST 800-207"</span></li>
+              <li>Search <span class="yt-keyword">"never trust always verify zero trust explained"</span> <span class="yt-channel">— IBM Technology, Microsoft Security, or NetworkChuck</span></li>
+              <li>Search <span class="yt-keyword">"zero trust architecture beginner 2024"</span> <span class="yt-channel">— Professor Messer or TechTarget</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 07</span>
+          <h3>Where Zero Trust Applies in This System</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Take the concepts from Slide 6 and connect them to your specific scenario. Where are the trust boundaries in your system? Who or what makes access decisions? What replaced the old "inside the firewall = trusted" model?
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">NIST SP 800-207, Section 4 — Deployment Scenarios (pages 22–31): Zero Trust in cloud, remote, and hybrid environments</span>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">NIST SP 1800-35 — Implementing a Zero Trust Architecture (practical guide)</span>
+                <a href="https://pages.nist.gov/zero-trust-architecture/" target="_blank">pages.nist.gov/zero-trust-architecture/</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy, pages 7–10 — DoD target architecture and where Zero Trust applies</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"zero trust network access ZTNA explained"</span> <span class="yt-channel">— Cloudflare or Zscaler</span></li>
+              <li>Search <span class="yt-keyword">"micro-segmentation zero trust explained"</span></li>
+              <li>Search <span class="yt-keyword">"policy decision point policy enforcement point zero trust"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== SLIDES 8–10 ===== -->
+    <section id="slides-8-10" class="section-group">
+      <div class="group-header">
+        <span class="group-number">SLIDES 8–10</span>
+        <h2>ICAM</h2>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 08</span>
+          <h3>ICAM: Core Concepts</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Explain each part of the acronym — Identity, Credential, Access Management — and explain the identity lifecycle (join, role change, departure). Then explain why none of Zero Trust works without ICAM.
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc"><strong>Start here</strong> — FICAM Architecture overview: the three practice areas (Identity, Credential, Access Management) and supporting elements</span>
+                <a href="https://www.idmanagement.gov/arch/" target="_blank">idmanagement.gov/arch/</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">DHS ICAM Implementation Guide — plain-language, practical</span>
+                <a href="https://www.dhs.gov/sites/default/files/publications/icam_implementation_guide_final_version_-_092019.pdf" target="_blank">dhs.gov · icam_implementation_guide_final_version_-_092019.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">Federal ICAM policy (CIO.gov / OMB M-19-17 context)</span>
+                <a href="https://www.cio.gov/policies-and-priorities/ICAM/" target="_blank">cio.gov/policies-and-priorities/ICAM/</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">DoD Enterprise ICAM Reference Design — how DoD implements ICAM as foundation for Zero Trust</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Cyber/DoD_Enterprise_ICAM_Reference_Design.pdf" target="_blank">dodcio.defense.gov · DoD_Enterprise_ICAM_Reference_Design.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CISA ICAM resources — public safety context, very readable</span>
+                <a href="https://www.cisa.gov/safecom/icam" target="_blank">cisa.gov/safecom/icam</a>
+              </div>
+            </li>
+          </ul>
+          <div class="callout callout-blue">
+            <strong>Key idea to understand</strong>
+            <strong>Authentication</strong> answers "Are you who you say you are?" <strong>Authorization</strong> answers "Are you allowed to do what you are trying to do?" Both are required. ICAM manages both — plus the full lifecycle of who has access and why.
+          </div>
+          <div class="yt-section" style="margin-top:14px;">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"identity credential access management ICAM explained"</span></li>
+              <li>Search <span class="yt-keyword">"identity lifecycle management joiner mover leaver"</span> <span class="yt-channel">— Microsoft Security or IBM Technology</span></li>
+              <li>Search <span class="yt-keyword">"privileged access management PAM explained"</span> <span class="yt-channel">— CyberArk YouTube</span></li>
+              <li>Search <span class="yt-keyword">"authentication vs authorization explained"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 09</span>
+          <h3>ICAM Applied to the System</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Move from concepts to your specific scenario. How does your system know who a user is? How does it limit what they can access? What happens when someone changes roles or leaves? How is privileged access controlled differently from standard access?
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">FICAM Playbooks — practical implementation guides for provisioning, PIV, federation (scroll to "Playbooks" section)</span>
+                <a href="https://www.idmanagement.gov/arch/" target="_blank">idmanagement.gov/arch/</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">NIST SP 800-63B — authentication assurance levels (AAL1, AAL2, AAL3)</span>
+                Search: <span class="yt-keyword">NIST SP 800-63B digital identity guidelines PDF</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">ICAM Program Management 101 — provisioning, deprovisioning, and governance</span>
+                <a href="https://www.idmanagement.gov/university/pm/" target="_blank">idmanagement.gov/university/pm/</a>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"role-based access control RBAC vs attribute-based ABAC explained"</span></li>
+              <li>Search <span class="yt-keyword">"zero trust identity governance explained 2024"</span></li>
+              <li>Search <span class="yt-keyword">"multi-factor authentication MFA explained"</span> <span class="yt-channel">— Professor Messer or Microsoft Security</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 10</span>
+          <h3>Device Trust and Access Decisions</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            In Zero Trust, it is not enough to know who you are — the device you are using also matters. A managed, patched, compliant device is treated differently than a personal or unmanaged one. What device signals matter and how do they factor into access decisions?
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">NIST SP 800-207, Section 2.1 — Tenets 3 and 4: device trust and per-session access</span>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CISA Zero Trust Maturity Model — "Devices" pillar section (pages 13–17)</span>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy — device health and endpoint management section</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"device compliance conditional access zero trust explained"</span> <span class="yt-channel">— Microsoft Mechanics or John Savill</span></li>
+              <li>Search <span class="yt-keyword">"endpoint detection response EDR zero trust"</span></li>
+              <li>Search <span class="yt-keyword">"mobile device management MDM explained"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== SLIDES 11–12 ===== -->
+    <section id="slides-11-12" class="section-group">
+      <div class="group-header">
+        <span class="group-number">SLIDES 11–12</span>
+        <h2>CMMC</h2>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 11</span>
+          <h3>CMMC: Purpose and Scope</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            What is CMMC actually trying to protect, and which of the three levels fits your system? Do not list control numbers. Explain the purpose in plain language: protecting Federal Contract Information (FCI) and Controlled Unclassified Information (CUI) from adversaries who target the defense supply chain.
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc"><strong>Start here</strong> — CMMC 101 (DoD official overview, November 2025)</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/CMMC-101-Nov2025.pdf" target="_blank">dodcio.defense.gov · CMMC-101-Nov2025.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">DoD CMMC Resources page</span>
+                <a href="https://dodcio.defense.gov/cmmc/Resources-Documentation/" target="_blank">dodcio.defense.gov/cmmc/Resources-Documentation/</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CMMC About page (DoD CIO)</span>
+                <a href="https://dodcio.defense.gov/cmmc/About/" target="_blank">dodcio.defense.gov/cmmc/About/</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CMMC 2.0 Model Overview PDF — official DoD framework document</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverview_V2.0_FINAL2_20211202_508.pdf" target="_blank">dodcio.defense.gov · ModelOverview_V2.0_FINAL2_20211202_508.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">Understanding FCI vs CUI — NARA CUI overview</span>
+                Search: <span class="yt-keyword">what is controlled unclassified information CUI NARA</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="cmmc-levels">
+            <div class="cmmc-level l1">
+              <div class="cmmc-level-head">LEVEL 1 — Foundational</div>
+              <div class="cmmc-level-body">Basic cyber hygiene. For contractors handling Federal Contract Information (FCI) but not sensitive CUI. <strong>Annual self-assessment.</strong></div>
+            </div>
+            <div class="cmmc-level l2">
+              <div class="cmmc-level-head">LEVEL 2 — Advanced</div>
+              <div class="cmmc-level-body">Aligns to NIST SP 800-171 (110 practices). For contractors handling CUI. <strong>Third-party assessment required</strong> for most contracts.</div>
+            </div>
+            <div class="cmmc-level l3">
+              <div class="cmmc-level-head">LEVEL 3 — Expert</div>
+              <div class="cmmc-level-body">For the most sensitive DoD programs. Based on NIST SP 800-172. <strong>Government-led assessment.</strong></div>
+            </div>
+          </div>
+
+          <div class="yt-section" style="margin-top:14px;">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"CMMC 2.0 explained 2024"</span> <span class="yt-channel">— Cyber AB or official DoD channels</span></li>
+              <li>Search <span class="yt-keyword">"what is controlled unclassified information CUI explained"</span></li>
+              <li>Search <span class="yt-keyword">"CMMC Level 1 Level 2 Level 3 difference explained"</span></li>
+              <li>Watch: <a href="https://www.youtube.com/watch?v=MJtontfUEYs" target="_blank">youtube.com/watch?v=MJtontfUEYs</a> <span class="yt-channel">— DoD Zero Trust podcast (also relevant for Slide 15)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 12</span>
+          <h3>Where CMMC Applies in This Architecture</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Which parts of your system fall under CMMC scope? How do the Zero Trust and ICAM controls you described earlier directly satisfy CMMC requirements — without being implemented just to check a box? And why is "we passed our assessment" not the same as "we are secure"?
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">CMMC 101 (Nov 2025) — scope definition and what triggers each CMMC level</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/CMMC-101-Nov2025.pdf" target="_blank">dodcio.defense.gov · CMMC-101-Nov2025.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">NIST SP 800-207 introduction — "ZTA is not a product you buy" (page 2) — for the compliance ≠ security argument</span>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy, pages 3–5 — why compliance-based approaches have failed</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"compliance is not security cybersecurity explained"</span></li>
+              <li>Search <span class="yt-keyword">"CMMC scope CUI boundary assessment"</span></li>
+              <li>Search <span class="yt-keyword">"Zero Trust CMMC relationship explained DoD"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== SLIDES 13–15 ===== -->
+    <section id="slides-13-15" class="section-group">
+      <div class="group-header">
+        <span class="group-number">SLIDES 13–15</span>
+        <h2>Analysis, Judgment, and Real-World Insight</h2>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 13</span>
+          <h3>Security vs Mission Tradeoffs</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            There is no such thing as perfect security that does not cost something. Identify at least five real tradeoffs in your specific system and explain the reasoning behind each choice — not just what the tradeoff is, but why you landed where you did.
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy, pages 8–10 — operational balance and preserving mission capability</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CISA Zero Trust Maturity Model — "Optimal" maturity descriptions show full implementation cost in complexity</span>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">NIST SP 800-207, Section 3.3 — Trust Algorithm variations: the tradeoff between strict policy and operational flexibility</span>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"zero trust least privilege vs productivity tradeoff"</span></li>
+              <li>Search <span class="yt-keyword">"security operations usability tradeoff explained"</span></li>
+              <li>Search <span class="yt-keyword">"continuous monitoring performance overhead cybersecurity"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 14</span>
+          <h3>Mission-Focused vs Check-the-Box Security</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Give a real-world example of when compliance-only security failed to prevent harm — and contrast it with a case where designing around the mission improved security outcomes. This is where your analysis matters most.
+          </div>
+          <span class="research-label">Real compliance-failure case studies to look up</span>
+          <ul class="source-list">
+            <li><div><span class="src-desc"><strong>OPM data breach (2015)</strong> — OPM had passed audits but lacked basic identity controls</span></div></li>
+            <li><div><span class="src-desc"><strong>SolarWinds supply chain attack (2020)</strong> — systems were compliant but not monitored continuously</span></div></li>
+            <li><div><span class="src-desc"><strong>Colonial Pipeline ransomware (2021)</strong> — basic credentials, no MFA on legacy VPN</span></div></li>
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy executive summary — the shift from compliance-based to outcomes-based security</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+          </ul>
+          <div class="callout callout-gold">
+            <strong>Tip: Build original analysis</strong>
+            Use one real case (e.g., OPM) as your compliance-failure example, then build a hypothetical improvement based on your own system design using Zero Trust and ICAM principles. This shows original thinking.
+          </div>
+          <div class="yt-section" style="margin-top:14px;">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"OPM data breach explained cybersecurity lessons"</span></li>
+              <li>Search <span class="yt-keyword">"SolarWinds attack explained supply chain"</span> <span class="yt-channel">— SANS Institute or CISA</span></li>
+              <li>Search <span class="yt-keyword">"Colonial Pipeline hack ransomware explained"</span></li>
+              <li>Search <span class="yt-keyword">"mission-driven security design vs compliance"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 15</span>
+          <h3>Podcast Insight: Zero Trust in Practice</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Listen to the assigned podcast, take notes, and pull out one idea that changed or shaped how you think about your design. Paraphrase — do not quote. Explain why that idea matters more than a textbook model would suggest.
+          </div>
+          <span class="research-label">Required source — listen to this</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">GDIT "Voices of Innovation" EP4 — Innovating for Security: Zero Trust Solutions in the DoD</span>
+                <a href="https://www.gdit.com/perspectives/podcast/voices-of-innovation/ep-4/innovating-for-security-zero-trust-solutions-in-dod/" target="_blank">gdit.com · Voices of Innovation EP4</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">YouTube version of the podcast</span>
+                <a href="https://www.youtube.com/watch?v=MJtontfUEYs" target="_blank">youtube.com/watch?v=MJtontfUEYs</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">Podcast page with episode transcript</span>
+                <a href="https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod" target="_blank">podcast.gdit.com · innovating-for-security-zero-trust-solutions-in-dod</a>
+              </div>
+            </li>
+          </ul>
+          <div class="callout callout-blue">
+            <strong>What to listen for in the podcast</strong>
+            What gaps did the speakers say exist between theory and real DoD implementation? What did they say about legacy systems, budget constraints, or cultural resistance? Any of these can be your "key insight."
+          </div>
+          <div class="yt-section" style="margin-top:14px;">
+            <div class="yt-label">Additional YouTube context</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"DoD zero trust implementation challenges real world"</span></li>
+              <li>Search <span class="yt-keyword">"zero trust journey federal government lessons learned"</span> <span class="yt-channel">— AFCEA, DISA, or NDU conference panels</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== SLIDES 16–18 ===== -->
+    <section id="slides-16-18" class="section-group">
+      <div class="group-header">
+        <span class="group-number">SLIDES 16–18</span>
+        <h2>Synthesis: Your Architecture and Conclusions</h2>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 16</span>
+          <h3>Target Architecture Summary</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Show how Zero Trust, ICAM, and CMMC are not three separate things — they reinforce each other. ICAM provides the identity foundation. Zero Trust enforces continuous verification using that identity. CMMC validates that the controls are in place. What risk is reduced and what mission capability is preserved?
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">NIST SP 1800-35 — practical implementation guide showing how ZTA, ICAM, and compliance fit together</span>
+                <a href="https://pages.nist.gov/zero-trust-architecture/" target="_blank">pages.nist.gov/zero-trust-architecture/</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy — "Target Architecture" and the seven Zero Trust pillars (Identity, Devices, Networks, Applications & Workloads, Data, Automation & Orchestration, Visibility & Analytics)</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CISA Zero Trust Maturity Model — convergence of the five pillars working together</span>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"zero trust ICAM CMMC integration explained"</span></li>
+              <li>Search <span class="yt-keyword">"DoD zero trust pillars explained 2024"</span></li>
+              <li>Search <span class="yt-keyword">"zero trust architecture overview full explanation"</span> <span class="yt-channel">— SANS Institute or IBM Technology</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 17</span>
+          <h3>Implementation Phases</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Nobody implements Zero Trust overnight. What are the realistic short, mid, and long-term steps for your system? Quick wins (MFA, asset inventory, log collection) come first. Mid-term (micro-segmentation, identity governance) takes longer. Long-term maturity (continuous monitoring, automated response, full device trust) is the goal.
+          </div>
+          <span class="research-label">What to research</span>
+          <ul class="source-list">
+            <li>
+              <div>
+                <span class="src-desc">DoD Zero Trust Strategy — "Implementation Roadmap" and phasing section</span>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">CISA Zero Trust Maturity Model — Traditional → Initial → Advanced → Optimal progression for each pillar</span>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="src-desc">OMB M-22-09 — federal agencies received specific timelines for Zero Trust implementation by fiscal year</span>
+                Search: <span class="yt-keyword">OMB M-22-09 zero trust federal agencies timeline</span>
+              </div>
+            </li>
+          </ul>
+          <div class="yt-section">
+            <div class="yt-label">YouTube</div>
+            <ul class="yt-list">
+              <li>Search <span class="yt-keyword">"zero trust implementation roadmap steps 2024"</span></li>
+              <li>Search <span class="yt-keyword">"zero trust quick wins where to start"</span> <span class="yt-channel">— Microsoft Security, Crowdstrike, or CISA</span></li>
+              <li>Search <span class="yt-keyword">"MFA identity as first zero trust step explained"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-header">
+          <span class="slide-num">SLIDE 18</span>
+          <h3>Conclusion + Sources</h3>
+        </div>
+        <div class="slide-body">
+          <div class="asking">
+            <span class="asking-label">What this slide is really asking</span>
+            Distill your entire argument to three things: what matters most in your architecture, why mission context is the driver (not the framework or the standard), and one specific thing you learned or reconsidered while building this presentation.
+          </div>
+          <p style="font-size:14px; color:var(--text-muted); margin-bottom: 14px;">No new research needed here — this is synthesis. Look back at your notes and identify the single most important idea that changed how you think about security design.</p>
+          <span class="research-label">APA citations — format your required sources</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUICK REFERENCE ===== -->
+    <section id="quick-ref" class="qr-section">
+      <h2>Quick Reference — All Sources</h2>
+
+      <div class="qr-group">
+        <span class="qr-group-title">Required Sources</span>
+        <div class="qr-links">
+          <div class="qr-link-row"><span class="qr-link-desc">NIST SP 800-207 Zero Trust Architecture</span> <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">DoD Zero Trust Strategy</span> <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CISA Zero Trust Maturity Model v2</span> <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov/…/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CISA Zero Trust Resource Hub</span> <a href="https://www.cisa.gov/zero-trust-maturity-model" target="_blank">cisa.gov/zero-trust-maturity-model</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">Federal ICAM Policy (CIO.gov)</span> <a href="https://www.cio.gov/policies-and-priorities/ICAM/" target="_blank">cio.gov/policies-and-priorities/ICAM/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">DHS ICAM Implementation Guide</span> <a href="https://www.dhs.gov/sites/default/files/publications/icam_implementation_guide_final_version_-_092019.pdf" target="_blank">dhs.gov/…/icam_implementation_guide_final_version_-_092019.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">FICAM Architecture</span> <a href="https://www.idmanagement.gov/arch/" target="_blank">idmanagement.gov/arch/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CMMC Resources (DoD CIO)</span> <a href="https://dodcio.defense.gov/cmmc/Resources-Documentation/" target="_blank">dodcio.defense.gov/cmmc/Resources-Documentation/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CMMC 101 (November 2025)</span> <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/CMMC-101-Nov2025.pdf" target="_blank">dodcio.defense.gov/…/CMMC-101-Nov2025.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">GDIT Podcast (YouTube)</span> <a href="https://www.youtube.com/watch?v=MJtontfUEYs" target="_blank">youtube.com/watch?v=MJtontfUEYs</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">GDIT Podcast page + transcript</span> <a href="https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod" target="_blank">podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod</a></div>
+        </div>
+      </div>
+
+      <div class="qr-group">
+        <span class="qr-group-title">Additional Recommended Sources</span>
+        <div class="qr-links">
+          <div class="qr-link-row"><span class="qr-link-desc">NIST SP 1800-35 (Practical ZTA Guide)</span> <a href="https://pages.nist.gov/zero-trust-architecture/" target="_blank">pages.nist.gov/zero-trust-architecture/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">DoD CMMC About page</span> <a href="https://dodcio.defense.gov/cmmc/About/" target="_blank">dodcio.defense.gov/cmmc/About/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">DoD Enterprise ICAM Reference Design</span> <a href="https://dodcio.defense.gov/Portals/0/Documents/Cyber/DoD_Enterprise_ICAM_Reference_Design.pdf" target="_blank">dodcio.defense.gov/…/DoD_Enterprise_ICAM_Reference_Design.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">ICAM Program Management 101</span> <a href="https://www.idmanagement.gov/university/pm/" target="_blank">idmanagement.gov/university/pm/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CISA ICAM (public safety context)</span> <a href="https://www.cisa.gov/safecom/icam" target="_blank">cisa.gov/safecom/icam</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CISA Known Exploited Vulnerabilities</span> <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">cisa.gov/known-exploited-vulnerabilities-catalog</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">OMB M-22-09 Zero Trust Memo</span> <a href="https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf" target="_blank">whitehouse.gov/…/M-22-09.pdf</a></div>
+        </div>
+      </div>
+
+      <div class="qr-group">
+        <span class="qr-group-title">APA Citations (Slide 18)</span>
+        <div class="apa-list">
+          <div class="apa-item">National Institute of Standards and Technology. (2020). <em>Zero trust architecture</em> (NIST Special Publication 800-207). U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.SP.800-207" target="_blank">https://doi.org/10.6028/NIST.SP.800-207</a></div>
+          <div class="apa-item">Department of Defense Chief Information Officer. (2022). <em>DoD zero trust strategy</em>. U.S. Department of Defense. <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf</a></div>
+          <div class="apa-item">Cybersecurity and Infrastructure Security Agency. (2023). <em>Zero trust maturity model, version 2</em>. CISA. <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a></div>
+          <div class="apa-item">Office of Management and Budget. (2022). <em>Moving the U.S. government toward zero trust cybersecurity principles</em> (OMB Memorandum M-22-09). Executive Office of the President. <a href="https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf" target="_blank">https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf</a></div>
+          <div class="apa-item">Department of Defense Chief Information Officer. (2021). <em>Cybersecurity maturity model certification (CMMC) 2.0 model overview</em>. U.S. Department of Defense. <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverview_V2.0_FINAL2_20211202_508.pdf" target="_blank">https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverview_V2.0_FINAL2_20211202_508.pdf</a></div>
+          <div class="apa-item">Federal Chief Information Officers Council. (n.d.). <em>Identity, credential, and access management</em>. CIO.gov. <a href="https://www.cio.gov/policies-and-priorities/ICAM/" target="_blank">https://www.cio.gov/policies-and-priorities/ICAM/</a></div>
+          <div class="apa-item">General Dynamics Information Technology. (n.d.). Innovating for security: Zero trust solutions in the DoD [Podcast episode]. <em>Voices of Innovation</em>. <a href="https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod" target="_blank">https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod</a></div>
+        </div>
+      </div>
+
+      <div class="qr-group">
+        <span class="qr-group-title">YouTube Channels to Follow</span>
+        <div class="yt-channels">
+          <div class="yt-ch-item"><b>IBM Technology</b><span>Zero Trust, ICAM, security architecture explainers</span></div>
+          <div class="yt-ch-item"><b>Microsoft Security</b><span>Conditional access, identity, Zero Trust implementation</span></div>
+          <div class="yt-ch-item"><b>SANS Institute</b><span>Threat analysis, incident case studies, framework deep dives</span></div>
+          <div class="yt-ch-item"><b>NetworkChuck</b><span>Beginner-friendly network and security concepts</span></div>
+          <div class="yt-ch-item"><b>John Hammond</b><span>Real-world attack analysis, incident response</span></div>
+          <div class="yt-ch-item"><b>Professor Messer</b><span>CompTIA-aligned security concept explanations</span></div>
+          <div class="yt-ch-item"><b>CISA</b><span>Official government security guidance videos</span></div>
+        </div>
+      </div>
+
+      <div class="final-reminder">
+        <strong>Final reminder</strong>
+        The assignment is graded on understanding, not on how many sources you cite or how many terms you define. Every slide should answer one question: <em>How does this concept apply to my specific system, and why does it matter for the mission?</em> If you can answer that for every slide, you have done the work correctly.
+      </div>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
