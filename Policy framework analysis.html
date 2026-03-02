@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Policy Framework Analysis</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap');
+  :root {
+    --ink:#0d1117;--navy:#0f2744;--blue:#1d4ed8;--lblue:#dbeafe;--sky:#0ea5e9;
+    --teal:#0d9488;--lteal:#ccfbf1;--purple:#7c3aed;--lpurple:#ede9fe;
+    --green:#15803d;--lgreen:#dcfce7;--orange:#c2410c;--lorange:#ffedd5;
+    --red:#b91c1c;--lred:#fee2e2;--yellow:#fefce8;--ylbdr:#ca8a04;
+    --gray:#f1f5f9;--mgray:#e2e8f0;--dgray:#64748b;--border:#cbd5e1;--white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;color:var(--ink);background:#f0f4f8;}
+  .page{max-width:920px;margin:0 auto;background:white;padding-bottom:60px;}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,#0f2744 0%,#1d4ed8 100%);padding:44px 44px 36px;color:white;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.05);}
+  .hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#7dd3fc;margin-bottom:10px;}
+  .hero h1{font-size:30px;font-weight:700;line-height:1.2;margin-bottom:8px;}
+  .hero-sub{font-size:15px;color:#bfdbfe;margin-bottom:22px;max-width:560px;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;}
+  .badge{font-family:'DM Mono',monospace;font-size:11px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.12);color:#e0f2fe;border:1px solid rgba(255,255,255,.2);}
+
+  /* Tab nav */
+  .tab-nav{background:var(--navy);display:flex;flex-wrap:wrap;border-bottom:3px solid var(--sky);}
+  .tab-nav a{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:#94a3b8;text-decoration:none;padding:12px 15px;border-right:1px solid rgba(255,255,255,.08);}
+  .tab-nav a:hover{color:white;background:rgba(255,255,255,.06);}
+
+  /* Content */
+  .content{padding:0 44px;}
+
+  /* Part headers */
+  .part-header{display:flex;align-items:stretch;gap:0;margin:42px 0 20px;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+  .part-num{width:64px;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:26px;font-weight:500;color:white;flex-shrink:0;}
+  .part-body{padding:14px 20px;flex:1;}
+  .part-body h2{font-size:19px;font-weight:700;color:white;margin:0 0 3px;border:none;padding:0;}
+  .part-body p{font-size:13px;margin:0;opacity:.85;color:white;}
+  .ph-blue .part-num,.ph-blue .part-body{background:#1d4ed8;}
+  .ph-teal .part-num,.ph-teal .part-body{background:#0d9488;}
+  .ph-purple .part-num,.ph-purple .part-body{background:#7c3aed;}
+  .ph-orange .part-num,.ph-orange .part-body{background:#c2410c;}
+  .ph-green .part-num,.ph-green .part-body{background:#15803d;}
+
+  /* Headings */
+  h3{font-size:15px;font-weight:700;color:var(--navy);margin:24px 0 10px;font-family:'DM Mono',monospace;letter-spacing:.02em;}
+  h2{font-size:20px;font-weight:700;color:var(--navy);margin:32px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--sky);}
+  p{font-size:14.5px;margin:8px 0 12px;}
+  a{color:var(--blue);}
+  ul,ol{padding-left:22px;margin:8px 0;}
+  li{margin:5px 0;font-size:14px;}
+  strong{font-weight:700;}
+  code{font-family:'DM Mono',monospace;font-size:12.5px;background:var(--gray);padding:1px 6px;border-radius:4px;color:var(--orange);}
+
+  /* Steps */
+  .step-list{margin:16px 0;}
+  .step{display:flex;gap:14px;margin-bottom:14px;}
+  .step-n{width:32px;height:32px;border-radius:50%;background:var(--blue);color:white;font-family:'DM Mono',monospace;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+  .step-body{flex:1;}
+  .step-title{font-weight:700;font-size:14.5px;color:var(--navy);margin-bottom:4px;}
+  .step-desc{font-size:14px;color:#334155;}
+
+  /* Callout */
+  .callout{border-left:4px solid;border-radius:0 8px 8px 0;padding:13px 18px;margin:16px 0;font-size:14px;}
+  .callout-title{font-weight:700;font-size:13px;margin-bottom:6px;}
+  .callout.info{background:var(--lblue);border-color:var(--blue);}
+  .callout.tip{background:var(--lteal);border-color:var(--teal);}
+  .callout.warn{background:var(--lorange);border-color:var(--orange);}
+  .callout.danger{background:var(--lred);border-color:var(--red);}
+  .callout.success{background:var(--lgreen);border-color:var(--green);}
+  .callout.purple{background:var(--lpurple);border-color:var(--purple);}
+  .callout.yellow{background:var(--yellow);border-color:var(--ylbdr);}
+
+  /* Slide card */
+  .slide-card{border:1.5px solid var(--border);border-radius:10px;overflow:hidden;margin:14px 0;box-shadow:0 1px 6px rgba(0,0,0,.06);}
+  .slide-card-header{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--gray);border-bottom:1px solid var(--border);}
+  .slide-label{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dgray);}
+  .slide-title-text{font-weight:700;font-size:14px;color:var(--navy);}
+  .slide-card-body{padding:14px 18px;font-size:14px;}
+  .slide-card-body li{font-size:13.5px;margin:3px 0;}
+
+  /* Framework grid */
+  .fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+  .fw-card{border:2px solid var(--border);border-radius:8px;padding:14px 16px;}
+  .fw-card:hover{border-color:var(--sky);}
+  .fw-card h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .fw-card p{font-size:12.5px;color:var(--dgray);margin:0;}
+  .fw-tag{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:6px;}
+  .tag-vol{background:var(--lteal);color:var(--teal);}
+  .tag-cert{background:var(--lpurple);color:var(--purple);}
+
+  /* Tables */
+  table.def,table.grade,table.res{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0;}
+  table.def th,table.grade th,table.res th{background:var(--navy);color:white;padding:9px 14px;text-align:left;font-size:12px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.07em;}
+  table.def td,table.grade td,table.res td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.def tr:nth-child(even) td,table.grade tr:nth-child(even) td,table.res tr:nth-child(even) td{background:var(--gray);}
+  table.def td:first-child{font-weight:700;width:22%;color:var(--navy);}
+  table.def td:nth-child(2){width:34%;font-size:13px;}
+  table.def td:last-child{color:var(--dgray);font-size:13px;}
+  table.grade td:nth-child(2){text-align:center;width:16%;}
+  table.grade td:last-child{color:var(--dgray);font-size:13px;}
+
+  /* Checklist */
+  .checklist{background:var(--lgreen);border:1.5px solid #86efac;border-radius:8px;padding:14px 18px;margin:20px 0;}
+  .checklist h4{color:var(--green);font-size:12px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;}
+  .checklist ul{padding-left:0;list-style:none;}
+  .checklist li{font-size:14px;padding:4px 0 4px 28px;position:relative;}
+  .checklist li::before{content:'';position:absolute;left:2px;top:7px;width:14px;height:14px;border:2px solid var(--green);border-radius:2px;}
+
+  /* AI prompt */
+  .ai-prompt{background:#0f172a;border-radius:8px;overflow:hidden;margin:14px 0;}
+  .ai-prompt-bar{background:#1e293b;padding:8px 16px;font-family:'DM Mono',monospace;font-size:11px;color:#64748b;letter-spacing:.06em;display:flex;align-items:center;gap:8px;}
+  .ai-dot{width:10px;height:10px;border-radius:50%;}
+  .ai-prompt-body{padding:16px 20px;font-family:'DM Mono',monospace;font-size:13.5px;color:#86efac;line-height:1.6;}
+
+  /* Weakness grid */
+  .weakness-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0;}
+  .wk-card{border:1.5px solid #fca5a5;border-radius:8px;padding:14px;background:#fff5f5;}
+  .wk-card h4{font-size:13px;font-weight:700;color:var(--red);margin-bottom:6px;font-family:'DM Mono',monospace;}
+  .wk-card p{font-size:12.5px;color:#475569;margin:0;}
+
+  /* Do/Dont */
+  .tip-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+  .tip-box{border-radius:8px;padding:14px;font-size:13.5px;}
+  .tip-box h4{font-size:13px;font-weight:700;margin-bottom:6px;}
+  .tip-box.do{background:var(--lgreen);border:1.5px solid #86efac;}
+  .tip-box.do h4{color:var(--green);}
+  .tip-box.dont{background:var(--lred);border:1.5px solid #fca5a5;}
+  .tip-box.dont h4{color:var(--red);}
+
+  /* Footer */
+  .footer{margin-top:50px;background:var(--navy);color:#64748b;font-size:12px;font-family:'DM Mono',monospace;padding:18px 44px;text-align:center;}
+  .footer strong{color:var(--sky);}
+
+  @media(max-width:640px){
+    .hero{padding:26px 20px;}
+    .content{padding:0 18px;}
+    .fw-grid,.weakness-grid,.tip-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-eyebrow">Cybersecurity Policy &nbsp;&middot;&nbsp; Final Project</div>
+  <h1>Policy Framework Analysis<br>Frameworks, Controls &amp; The Limits of AI</h1>
+  <div class="hero-sub">Research a real cybersecurity framework, define core security concepts, critically evaluate AI-generated security advice, and revise it using your own professional judgment.</div>
+  <div class="hero-meta">
+    <span class="badge">PowerPoint Presentation</span>
+    <span class="badge">No Slide Count Minimum</span>
+    <span class="badge">5 Parts</span>
+    <span class="badge">Depth &gt; Length</span>
+    <span class="badge">Critical Thinking Required</span>
+  </div>
+</div>
+
+<!-- Nav -->
+<div class="tab-nav">
+  <a href="#overview">Overview</a>
+  <a href="#part1">Part 1 &middot; Frameworks</a>
+  <a href="#part2">Part 2 &middot; Controls</a>
+  <a href="#part3">Part 3 &middot; AI Eval</a>
+  <a href="#part4">Part 4 &middot; Revision</a>
+  <a href="#part5">Part 5 &middot; Reflection</a>
+  <a href="#grading">Grading</a>
+</div>
+
+<div class="content">
+
+<!-- Overview -->
+<div id="overview" style="margin-top:32px;">
+
+  <div class="callout yellow">
+    <div class="callout-title">&#127919; What This Assignment Is Really About</div>
+    This is not just a research assignment. It tests whether you can <strong>think critically about AI-generated security advice</strong> &mdash; a skill every modern security professional needs. AI tools can produce convincing-sounding plans that miss critical details, ignore regulations, or give unrealistic recommendations. Your job is to spot those gaps and fix them.
+  </div>
+
+  <h3>// Assignment at a Glance</h3>
+  <table class="def">
+    <thead><tr><th>Part</th><th>What You Do</th><th>Final Product</th></tr></thead>
+    <tbody>
+      <tr><td>Part 1</td><td>Research one cybersecurity framework</td><td>3&ndash;4 slides explaining the framework</td></tr>
+      <tr><td>Part 2</td><td>Define policies, procedures, and 3 control types</td><td>2 slides with definitions and examples</td></tr>
+      <tr><td>Part 3</td><td>Prompt AI, paste the response, then critique it</td><td>3&ndash;4 slides of AI output and your analysis</td></tr>
+      <tr><td>Part 4</td><td>Rewrite the AI plan with realistic, prioritized controls</td><td>1&ndash;2 slides of your revised plan</td></tr>
+      <tr><td>Part 5</td><td>Reflect on when AI should and should not be trusted</td><td>1&ndash;2 slides of written reflection</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tip-row">
+    <div class="tip-box do">
+      <h4>&#10003; What Earns Full Credit</h4>
+      <ul>
+        <li>Specific, original analysis of the AI output</li>
+        <li>Examples tied directly to your chosen framework</li>
+        <li>A realistic revised plan that shows real constraints</li>
+        <li>Reflection that references actual laws or breaches</li>
+        <li>Your own words throughout</li>
+      </ul>
+    </div>
+    <div class="tip-box dont">
+      <h4>&#10007; What Loses Credit</h4>
+      <ul>
+        <li>Accepting the AI output without criticism</li>
+        <li>Generic definitions copied from Wikipedia</li>
+        <li>Examples that do not connect to your framework</li>
+        <li>Vague critique like "the AI was too general"</li>
+        <li>Reflection with no real-world grounding</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout info">
+    <div class="callout-title">&#128193; Submission Format</div>
+    Upload as <strong>.ppt or .pptx</strong> to Canvas. Free-style design &mdash; no template required. No minimum slide count. Depth and critical thinking matter more than quantity. Every slide should have written explanation, not just bullet points.
+  </div>
+</div>
+
+
+<!-- PART 1 -->
+<div class="part-header ph-blue" id="part1">
+  <div class="part-num">1</div>
+  <div class="part-body">
+    <h2>Framework Research</h2>
+    <p>Choose one framework, research it thoroughly, and explain it in your own words with cited sources.</p>
+  </div>
+</div>
+
+<h3>// Step 1 &mdash; Choose Your Framework</h3>
+<p>Pick <strong>one</strong> of the four frameworks below. Read about it before building slides &mdash; your analysis in later parts will be stronger if you genuinely understand your choice.</p>
+
+<div class="fw-grid">
+  <div class="fw-card">
+    <span class="fw-tag tag-vol">Voluntary</span>
+    <h4>NIST Cybersecurity Framework (CSF 2.0)</h4>
+    <p>Developed by the U.S. government. Widely adopted across industries. Organized around six functions: Govern, Identify, Protect, Detect, Respond, Recover.</p>
+    <p style="margin-top:8px;"><a href="https://www.nist.gov/cyberframework" target="_blank">nist.gov/cyberframework</a></p>
+  </div>
+  <div class="fw-card">
+    <span class="fw-tag tag-cert">Certifiable</span>
+    <h4>ISO/IEC 27001</h4>
+    <p>International standard for Information Security Management Systems (ISMS). Organizations can be formally certified. Mandatory in some regulated industries worldwide.</p>
+    <p style="margin-top:8px;"><a href="https://www.iso.org/standard/27001" target="_blank">iso.org/standard/27001</a></p>
+  </div>
+  <div class="fw-card">
+    <span class="fw-tag tag-vol">Voluntary</span>
+    <h4>CIS Critical Security Controls v8</h4>
+    <p>A prioritized list of 18 practical security controls. Popular with smaller organizations. Mapped directly to real-world attack data and threat intelligence.</p>
+    <p style="margin-top:8px;"><a href="https://www.cisecurity.org/controls" target="_blank">cisecurity.org/controls</a></p>
+  </div>
+  <div class="fw-card">
+    <span class="fw-tag tag-cert">Governance</span>
+    <h4>COBIT 2019</h4>
+    <p>Focuses on IT governance and management. Widely used by auditors and large enterprises. Connects business goals to IT security controls and accountability structures.</p>
+    <p style="margin-top:8px;"><a href="https://www.isaca.org/resources/cobit" target="_blank">isaca.org/resources/cobit</a></p>
+  </div>
+</div>
+
+<h3>// Step 2 &mdash; Build Your Framework Slides</h3>
+<p>Your Part 1 slides must answer all five questions below in your own words. Do not copy text directly from the framework's website.</p>
+
+<div class="slide-card">
+  <div class="slide-card-header">
+    <span class="slide-label">Slide Set</span>
+    <span class="slide-title-text">Framework Overview &mdash; answer all five questions</span>
+  </div>
+  <div class="slide-card-body">
+    <ul>
+      <li><strong>Purpose</strong> &mdash; What problem does this framework solve? What is it trying to help organizations do?</li>
+      <li><strong>Audience</strong> &mdash; Who is it designed for? All industries? Specific sectors? Large or small organizations?</li>
+      <li><strong>Mandatory or Voluntary?</strong> &mdash; Is compliance legally required for anyone, or is it an optional best practice? For whom?</li>
+      <li><strong>Major Domains or Functions</strong> &mdash; List and briefly explain the main categories or functions the framework uses to organize security activity.</li>
+      <li><strong>Security Maturity</strong> &mdash; How does adopting this framework help an organization improve its security posture over time? What does progress look like?</li>
+    </ul>
+    <div class="callout tip" style="margin-top:12px;">
+      <div class="callout-title">&#128218; Citation Requirement</div>
+      You must cite <strong>at least 2 credible sources</strong> for Part 1. Acceptable: the official framework website, NIST publications, ISACA, peer-reviewed articles, or established security organizations. Wikipedia and generic blogs do not count as primary sources.
+    </div>
+  </div>
+</div>
+
+<div class="checklist">
+  <h4>Part 1 Checklist</h4>
+  <ul>
+    <li>Framework chosen and clearly named on your first slide</li>
+    <li>All five questions answered in your own words &mdash; not copied from the framework's homepage</li>
+    <li>Major domains or functions listed with at least one sentence explaining each</li>
+    <li>At least 2 credible sources cited (in-slide or in notes)</li>
+    <li>Explanation of how the framework improves security maturity &mdash; not just what it is</li>
+  </ul>
+</div>
+
+
+<!-- PART 2 -->
+<div class="part-header ph-teal" id="part2">
+  <div class="part-num">2</div>
+  <div class="part-body">
+    <h2>Policies, Procedures &amp; Controls</h2>
+    <p>Define five core security terms in your own words, then give real examples aligned to your chosen framework.</p>
+  </div>
+</div>
+
+<h3>// Step 1 &mdash; Define the Five Terms</h3>
+<p>Write definitions <strong>in your own words</strong>. The goal is to show you understand the difference between these terms &mdash; not to recite a textbook. Pay attention to the distinctions column.</p>
+
+<table class="def">
+  <thead><tr><th>Term</th><th>Plain-Language Meaning</th><th>Common Mistake to Avoid</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Policy</td>
+      <td>A high-level statement of intent or rules set by leadership. Says <em>what</em> must happen and <em>why</em>. Does not explain how.</td>
+      <td>A policy says "employees must use strong passwords" &mdash; it does not say how to create one. That is a procedure.</td>
+    </tr>
+    <tr>
+      <td>Procedure</td>
+      <td>A step-by-step process for carrying out a policy. Says <em>how</em> to do something in a specific situation.</td>
+      <td>"Open your password manager, click New Password, set 16 characters..." is a procedure, not a policy.</td>
+    </tr>
+    <tr>
+      <td>Technical Control</td>
+      <td>A control enforced by technology: software, hardware, or system configuration. Examples: firewalls, MFA, encryption, endpoint detection.</td>
+      <td>The tool only becomes a control when it is configured to enforce a security requirement. A firewall that allows everything is not a control.</td>
+    </tr>
+    <tr>
+      <td>Administrative Control</td>
+      <td>A control based on people, processes, and governance. Examples: security training, background checks, access reviews, hiring policies.</td>
+      <td>Administrative controls are often underestimated. An untrained employee can bypass even the best technical controls.</td>
+    </tr>
+    <tr>
+      <td>Physical Control</td>
+      <td>A control that protects physical access to systems or facilities. Examples: locked server rooms, security cameras, keycards, cable locks.</td>
+      <td>Physical controls are not just locks. Environmental controls (fire suppression, temperature monitoring) are also physical controls.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>// Step 2 &mdash; Build the Examples Slide</h3>
+<p>Create <strong>one slide</strong> that provides a concrete example of each term. All examples must align with your chosen framework and fit the same organizational context.</p>
+
+<div class="slide-card">
+  <div class="slide-card-header">
+    <span class="slide-label">Required Slide</span>
+    <span class="slide-title-text">Controls and Examples &mdash; one slide, all six items</span>
+  </div>
+  <div class="slide-card-body">
+    <ul>
+      <li><strong>1 Policy example</strong> &mdash; e.g., "All remote access must use VPN and MFA, per the Access Control Policy approved by the CISO."</li>
+      <li><strong>1 Procedure example</strong> &mdash; e.g., "When an employee is terminated, IT disables their account within 2 hours using the Offboarding Checklist in the ticketing system."</li>
+      <li><strong>2 Technical control examples</strong> &mdash; e.g., endpoint detection and response (EDR) software; encrypted off-site backups tested quarterly.</li>
+      <li><strong>1 Administrative control example</strong> &mdash; e.g., annual security awareness training required for all staff with completion tracked by HR.</li>
+      <li><strong>1 Physical control example</strong> &mdash; e.g., server room access restricted to IT staff via keycard; access log reviewed monthly by the security team.</li>
+    </ul>
+    <div class="callout tip" style="margin-top:12px;">
+      <div class="callout-title">&#128161; Alignment Means a Named Connection</div>
+      If you chose NIST CSF, state which function each example belongs to (e.g., "Protect" or "Detect"). If you chose CIS Controls, reference the control number (e.g., "CIS Control 6 &mdash; Access Control Management"). This explicit mapping is what "framework alignment" means.
+    </div>
+  </div>
+</div>
+
+<div class="checklist">
+  <h4>Part 2 Checklist</h4>
+  <ul>
+    <li>All five terms defined in your own words &mdash; not copied from a source</li>
+    <li>Definitions show you understand how the terms differ from each other</li>
+    <li>One examples slide with all six required items present</li>
+    <li>Each example explicitly linked to a named part of your chosen framework</li>
+    <li>Policy and procedure examples are clearly distinct from each other</li>
+  </ul>
+</div>
+
+
+<!-- PART 3 -->
+<div class="part-header ph-purple" id="part3">
+  <div class="part-num">3</div>
+  <div class="part-body">
+    <h2>AI Evaluation Challenge</h2>
+    <p>Prompt an AI tool, paste its full response into your slides, then critically analyze its strengths and weaknesses.</p>
+  </div>
+</div>
+
+<div class="callout purple">
+  <div class="callout-title">&#9888; Blind Trust in AI Is Penalized</div>
+  The point of this part is <strong>not</strong> to show that AI is useful. It is to demonstrate that you can identify what AI gets wrong, oversimplifies, or misses entirely. A student who defends the AI response without critique will lose significant points.
+</div>
+
+<h3>// Step 1 &mdash; Run This Exact Prompt</h3>
+<p>Use any AI tool (ChatGPT, Claude, Gemini, Copilot, or similar). Copy and paste this prompt word-for-word:</p>
+
+<div class="ai-prompt">
+  <div class="ai-prompt-bar">
+    <span class="ai-dot" style="background:#ef4444;"></span>
+    <span class="ai-dot" style="background:#f59e0b;"></span>
+    <span class="ai-dot" style="background:#22c55e;"></span>
+    <span style="margin-left:6px;">COPY THIS PROMPT EXACTLY</span>
+  </div>
+  <div class="ai-prompt-body">"Create a security plan for a small healthcare clinic with 20 employees handling patient medical records."</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-card-header">
+    <span class="slide-label">Required Slide(s)</span>
+    <span class="slide-title-text">Paste the full, unedited AI response here</span>
+  </div>
+  <div class="slide-card-body">
+    <p>Copy the <strong>complete, unedited AI response</strong> into your slides. Use a small font or multi-slide layout if it is long. Do not summarize or cut it. Graders need to see the full output to evaluate your critique.</p>
+    <p>Label the slide clearly: <em>"AI-Generated Response &mdash; Unedited"</em></p>
+  </div>
+</div>
+
+<h3>// Step 2 &mdash; Answer All Six Critique Questions</h3>
+<p>On the slides that follow the AI response, answer every question below. Reference specific sentences or sections from the AI output &mdash; do not critique in the abstract.</p>
+
+<div class="step-list">
+  <div class="step">
+    <div class="step-n" style="background:var(--purple);">1</div>
+    <div class="step-body">
+      <div class="step-title">What did the AI do well?</div>
+      <div class="step-desc">Identify at least one accurate, helpful, or well-organized section. Honest analysis means acknowledging what worked, not just what failed.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n" style="background:var(--purple);">2</div>
+    <div class="step-body">
+      <div class="step-title">What was too generic?</div>
+      <div class="step-desc">Which recommendations could apply to any organization &mdash; a hospital, a coffee shop, a bank? Point to specific advice that ignored the healthcare clinic context and explain what it missed.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n" style="background:var(--purple);">3</div>
+    <div class="step-body">
+      <div class="step-title">What risks were missing?</div>
+      <div class="step-desc">What threats specific to a healthcare clinic did the AI fail to address? Consider: medical device security, ransomware targeting patient records, insider threats from clinical staff, and third-party vendor access to EHR systems.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n" style="background:var(--purple);">4</div>
+    <div class="step-body">
+      <div class="step-title">Did it address HIPAA compliance?</div>
+      <div class="step-desc">HIPAA (the Health Insurance Portability and Accountability Act) sets legally required security standards for organizations handling patient health information. Did the AI mention it? Did it explain what the HIPAA Security Rule actually requires? Or did it treat legal compliance as optional? Note: this is a legal obligation, not a best practice.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n" style="background:var(--purple);">5</div>
+    <div class="step-body">
+      <div class="step-title">Were any recommendations unrealistic?</div>
+      <div class="step-desc">A 20-person clinic has a very different budget and IT capacity than a hospital or large enterprise. Did the AI recommend tools or processes that would be impractical for a small clinic with limited resources? Give at least one specific example.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n" style="background:var(--purple);">6</div>
+    <div class="step-body">
+      <div class="step-title">Did it separate policy from controls?</div>
+      <div class="step-desc">Using what you learned in Part 2 &mdash; did the AI correctly distinguish between policies, procedures, and technical, administrative, and physical controls? Or did it blend them together without explanation?</div>
+    </div>
+  </div>
+</div>
+
+<h3>// Step 3 &mdash; Identify At Least 3 AI Weaknesses</h3>
+<p>For each weakness, explain <strong>why it matters in the real world</strong> &mdash; not just that it is a problem, but what could actually go wrong because of it.</p>
+
+<div class="weakness-grid">
+  <div class="wk-card">
+    <h4>No Industry Specificity</h4>
+    <p>The same advice given to a clinic could apply to a retail store. HIPAA requires specific technical safeguards. Generic advice leaves those gaps uncovered.</p>
+  </div>
+  <div class="wk-card">
+    <h4>No Cost Consideration</h4>
+    <p>Enterprise SIEM platforms cost thousands per year. A 20-person clinic may have near-zero IT security budget. An unaffordable plan is the same as no plan.</p>
+  </div>
+  <div class="wk-card">
+    <h4>Enterprise-Level Tools</h4>
+    <p>Recommending a full SOC, dedicated security team, or 24/7 monitoring assumes staff and infrastructure most small clinics simply do not have.</p>
+  </div>
+  <div class="wk-card">
+    <h4>Missing Incident Response</h4>
+    <p>Saying "have an incident response plan" without specifying what to do during a ransomware attack on patient records leaves staff with no usable guidance when it matters most.</p>
+  </div>
+  <div class="wk-card">
+    <h4>No Risk Prioritization</h4>
+    <p>Listing 20 equal recommendations forces an under-resourced clinic to guess where to start. In practice, organizations with no guidance tend to start with the easiest items, not the most critical ones.</p>
+  </div>
+  <div class="wk-card">
+    <h4>Missing Regulatory Teeth</h4>
+    <p>Framing HIPAA as a "best practice" understates the consequences. HIPAA civil penalties range from $100 to over $50,000 per violation, with annual caps up to $1.9 million per category.</p>
+  </div>
+</div>
+
+<div class="checklist">
+  <h4>Part 3 Checklist</h4>
+  <ul>
+    <li>Full, unedited AI response included and clearly labeled in slides</li>
+    <li>All six critique questions answered with references to specific parts of the AI output</li>
+    <li>HIPAA addressed directly &mdash; explain what it actually requires, not just that it exists</li>
+    <li>At least 3 AI weaknesses identified with real-world explanations of the consequences</li>
+    <li>Analysis quotes or paraphrases specific lines from the AI response &mdash; not vague general statements</li>
+  </ul>
+</div>
+
+
+<!-- PART 4 -->
+<div class="part-header ph-orange" id="part4">
+  <div class="part-num">4</div>
+  <div class="part-body">
+    <h2>Human Judgment Revision</h2>
+    <p>Rewrite the AI plan into something realistic, prioritized, and actually usable by a small healthcare clinic.</p>
+  </div>
+</div>
+
+<p>This is where your judgment replaces the AI output. Your revised plan must be practical, specific, and grounded in the real constraints of a 20-person clinic with limited budget and no dedicated security staff.</p>
+
+<h3>// Your Revised Plan Must Include All Four of These</h3>
+
+<div class="step-list">
+  <div class="step">
+    <div class="step-n" style="background:var(--orange);">1</div>
+    <div class="step-body">
+      <div class="step-title">Prioritized Controls &mdash; High / Medium / Low</div>
+      <div class="step-desc">Choose your top 5&ndash;8 controls and rank them. Explain the reasoning behind each priority level for this specific clinic. For example: "MFA on the EHR system is High priority because patient records are the primary ransomware target. Annual security training is Medium because it reduces phishing risk but takes longer to show results."</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n" style="background:var(--orange);">2</div>
+    <div class="step-body">
+      <div class="step-title">Cost and Staffing Reality</div>
+      <div class="step-desc">Acknowledge that this clinic likely has no dedicated IT security staff. Recommend free or low-cost tools where possible. Be honest about time requirements. Example: "Enable Windows Defender and configure automatic updates &mdash; this costs nothing and requires no specialized knowledge to maintain long-term."</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n" style="background:var(--orange);">3</div>
+    <div class="step-body">
+      <div class="step-title">A Basic Incident Response Outline</div>
+      <div class="step-desc">Write a short, practical IR outline that clinic staff who are not security experts can actually follow. It should have at least four steps. "Call your IT provider and disconnect the affected computer from the network" is more useful than "activate your CSIRT."</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n" style="background:var(--orange);">4</div>
+    <div class="step-body">
+      <div class="step-title">At Least One HIPAA Security Rule Requirement</div>
+      <div class="step-desc">Reference a specific HIPAA Security Rule section by name or code. For example: "&#167;164.312(a)(1) &mdash; Access Controls: limit EHR access to authorized users only, using unique login credentials per staff member." Show that your plan addresses a real legal obligation, not just general best practices.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-card-header">
+    <span class="slide-label">Example Structure</span>
+    <span class="slide-title-text">What a Strong Revised Plan Looks Like</span>
+  </div>
+  <div class="slide-card-body">
+    <p><strong>HIGH PRIORITY &mdash; Implement within 30 days:</strong></p>
+    <ul>
+      <li>Enable MFA on EHR system and staff email. Free via Microsoft 365 or Google Workspace settings. Addresses HIPAA &#167;164.312(d) &mdash; Person or Entity Authentication.</li>
+      <li>Encrypt all laptops and USB drives containing patient data. Use BitLocker (built into Windows &mdash; free). Required under HIPAA Breach Notification Rule to qualify for Safe Harbor.</li>
+    </ul>
+    <p style="margin-top:10px;"><strong>MEDIUM PRIORITY &mdash; Within 90 days:</strong></p>
+    <ul>
+      <li>Enable automatic OS and application patching. Reduces attack surface with minimal ongoing staff effort.</li>
+      <li>Conduct phishing awareness training using free CISA resources or KnowBe4 free trial. Document completion for HIPAA audit readiness.</li>
+    </ul>
+    <p style="margin-top:10px;"><strong>Basic Incident Response Outline:</strong></p>
+    <ol>
+      <li><strong>Detect</strong> &mdash; Unusual system behavior or a ransom note? Any staff member reports it immediately to the clinic manager or office lead.</li>
+      <li><strong>Contain</strong> &mdash; Disconnect the affected device from Wi-Fi and Ethernet. Do not turn the device off. Do not try to fix it yourself.</li>
+      <li><strong>Notify</strong> &mdash; Call your IT provider immediately. If patient data may be affected, contact your HIPAA Privacy Officer within 24 hours to begin breach assessment.</li>
+      <li><strong>Document</strong> &mdash; Record every action taken and the time it occurred. HIPAA may require formal breach notification to HHS within 60 days if patient records were exposed.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="callout warn">
+  <div class="callout-title">&#128221; Required: What Did You Change and Why?</div>
+  At the end of Part 4, include a short written explanation (on the slide or in the speaker notes) answering: <em>What specific things did you remove, add, or change from the AI plan &mdash; and what was your reasoning for each change?</em> This is where your critical thinking is most visible.
+</div>
+
+<div class="checklist">
+  <h4>Part 4 Checklist</h4>
+  <ul>
+    <li>Controls are prioritized (High / Medium / Low) with reasoning for each level</li>
+    <li>Budget and staffing constraints acknowledged &mdash; no unrealistic enterprise-scale recommendations</li>
+    <li>At least one free or low-cost tool named specifically</li>
+    <li>Incident response outline with at least 4 actionable, plain-language steps</li>
+    <li>At least one specific HIPAA Security Rule section referenced by name or code number</li>
+    <li>Written explanation of what you changed from the AI plan and why</li>
+  </ul>
+</div>
+
+
+<!-- PART 5 -->
+<div class="part-header ph-green" id="part5">
+  <div class="part-num">5</div>
+  <div class="part-body">
+    <h2>Reflection</h2>
+    <p>Answer three critical questions about human judgment, professional responsibility, and the real limits of AI in cybersecurity.</p>
+  </div>
+</div>
+
+<p>This section should go beyond surface-level observations. Use what you observed in Parts 3 and 4 as evidence. You may reference real-world breaches, regulatory enforcement actions, or published news to strengthen your arguments.</p>
+
+<h3>// Answer All Three Questions in 1&ndash;2 Slides</h3>
+
+<div class="step-list">
+  <div class="step">
+    <div class="step-n" style="background:var(--green);">1</div>
+    <div class="step-body">
+      <div class="step-title">When should cybersecurity professionals NOT rely on AI?</div>
+      <div class="step-desc">Think about scenarios where AI limitations make it dangerous to follow AI advice directly. AI has no current threat intelligence, no knowledge of your specific environment, no legal accountability, and no ethical judgment. Consider: compliance decisions, incident response during a live breach, risk assessments with legal implications, any context where a wrong recommendation has serious financial or safety consequences.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n" style="background:var(--green);">2</div>
+    <div class="step-body">
+      <div class="step-title">What are the risks of AI-generated compliance advice?</div>
+      <div class="step-desc">If an organization follows an AI-generated compliance plan and it turns out to be incomplete or wrong, who is responsible? Can AI be held legally accountable? What happens to the organization if an auditor finds gaps the AI plan missed? Reference at least one real regulation (HIPAA, PCI-DSS, GDPR, or SOX) and explain what non-compliance consequences actually look like in practice.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n" style="background:var(--green);">3</div>
+    <div class="step-body">
+      <div class="step-title">Why is human oversight legally and ethically necessary?</div>
+      <div class="step-desc">AI does not carry professional liability. A certified security professional (CISSP, CISM) or privacy attorney does. Explain why this accountability gap matters for organizations handling sensitive data. You may reference professional codes of conduct (such as ISACA's Code of Professional Ethics), legal frameworks, or cases where human negligence during a breach was found to be legally actionable.</div>
+    </div>
+  </div>
+</div>
+
+<div class="callout tip">
+  <div class="callout-title">&#128214; Real-World References You Can Use</div>
+  <ul style="margin:4px 0;">
+    <li><strong>Change Healthcare breach (2024)</strong> &mdash; Ransomware attack on a healthcare payment processor. Disrupted medical claims processing nationwide for weeks.</li>
+    <li><strong>Advocate Health Care settlement (2016)</strong> &mdash; Unencrypted laptops containing 4 million patient records stolen. $5.55 million HIPAA settlement with HHS.</li>
+    <li><strong>MGM Resorts (2023)</strong> &mdash; Social engineering attack disabled systems for days. Automated security tools failed to detect early lateral movement.</li>
+    <li><strong>Colonial Pipeline (2021)</strong> &mdash; Ransomware shut down fuel supply to the U.S. East Coast. An incident response plan existed but had not been practiced or tested.</li>
+  </ul>
+</div>
+
+<div class="checklist">
+  <h4>Part 5 Checklist</h4>
+  <ul>
+    <li>All three questions answered with substantive discussion &mdash; not just listed as bullet points</li>
+    <li>At least one real regulation named with a specific consequence for non-compliance</li>
+    <li>Explanation of why AI cannot replace legal or professional accountability</li>
+    <li>Optional but valued: reference to a real breach or enforcement case with a brief explanation of relevance</li>
+    <li>Reflection demonstrates your own professional judgment &mdash; not a generic paragraph praising AI as a useful tool</li>
+  </ul>
+</div>
+
+
+<!-- GRADING -->
+<h2 id="grading" style="margin-top:44px;">&#128202; Grading Breakdown</h2>
+<p>Graded on depth of analysis and quality of reasoning &mdash; not slide count. A 10-slide presentation with strong analysis outscores a 30-slide deck with surface-level content.</p>
+
+<table class="grade">
+  <thead><tr><th>Component</th><th>Points</th><th>What Earns Full Points</th></tr></thead>
+  <tbody>
+    <tr><td>Part 1 &mdash; Framework Research</td><td>25</td><td>All five questions answered thoroughly, 2+ credible citations, genuine understanding shown beyond the framework homepage</td></tr>
+    <tr><td>Part 2 &mdash; Definitions and Examples</td><td>20</td><td>All five terms defined in original words, examples clearly aligned to the chosen framework, distinction between terms demonstrated</td></tr>
+    <tr><td>Part 3 &mdash; AI Critique</td><td>25</td><td>Full AI response included, all six questions answered with specific references, 3+ weaknesses explained with real-world consequences</td></tr>
+    <tr><td>Part 4 &mdash; Human Revision</td><td>20</td><td>Realistic prioritized plan, HIPAA addressed with specific citation, incident response included, written explanation of what changed and why</td></tr>
+    <tr><td>Part 5 &mdash; Reflection</td><td>10</td><td>All three questions answered with specificity, real regulation or breach referenced, demonstrates professional judgment rather than AI enthusiasm</td></tr>
+  </tbody>
+</table>
+
+<div class="callout danger" style="margin-top:20px;">
+  <div class="callout-title">&#9940; Automatic Point Deductions</div>
+  <ul>
+    <li><strong>Accepting the AI response without critique</strong> &mdash; significant deduction across Parts 3 and 4</li>
+    <li><strong>Definitions copied from a textbook or website</strong> &mdash; no credit for Part 2 definitions</li>
+    <li><strong>Examples with no framework connection</strong> &mdash; Part 2 examples receive partial credit only</li>
+    <li><strong>Reflection that only praises AI</strong> &mdash; Part 5 requires critical analysis, not enthusiasm</li>
+    <li><strong>No HIPAA mention in Part 3 or 4</strong> &mdash; the scenario involves patient health records; addressing HIPAA is not optional</li>
+  </ul>
+</div>
+
+<div class="callout success" style="margin-top:14px;">
+  <div class="callout-title">&#127942; What Distinguishes an Excellent Submission</div>
+  <ul>
+    <li>Framework analysis that goes beyond the official overview &mdash; shows you actually read the framework document</li>
+    <li>AI critique that quotes specific lines and explains precisely why each is problematic for this scenario</li>
+    <li>Revised plan that feels like it was written by someone who has thought about a real clinic's constraints</li>
+    <li>Reflection that names real consequences (HIPAA fines, breach notification timelines, professional liability) not just theoretical risks</li>
+    <li>The framework from Part 1 appears as a through-line across all five parts of the presentation</li>
+  </ul>
+</div>
+
+</div><!-- /content -->
+
+<div class="footer">
+  <strong>Policy Framework Analysis</strong> &nbsp;&middot;&nbsp; Frameworks, Controls &amp; The Limits of AI &nbsp;&middot;&nbsp; Submit as .ppt or .pptx via Canvas
+</div>
+
+</div>
+</body>
+</html>
