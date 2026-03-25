@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latara N. McGuire | Nursing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1b3a2d;--forest-deep:#0f2219;--forest-mid:#254d3c;--sage:#4a7c59;--sage-light:#6aaa7e;--champ:#d4aa70;--champ-lt:#ead99f;--ivory:#faf6ef;--ivory-w:#f2ead8;--bone:#e8dfc8;--text:#1a1a1a;--muted:#6b7068;--border-c:rgba(212,170,112,0.2);--border-g:rgba(106,170,126,0.25);--glass:rgba(255,255,255,0.06);--glass-b:rgba(255,255,255,0.12)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--ivory);color:var(--text);overflow-x:hidden;cursor:none}
+.cur-dot{width:8px;height:8px;background:var(--champ);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,background .3s}
+.cur-ring{width:32px;height:32px;border:1.5px solid var(--champ);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .18s ease;opacity:.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;background:rgba(15,34,25,.95);backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--border-c);transition:padding .4s ease}
+.nav-brand{display:flex;flex-direction:column}
+.nav-name{font-family:'Bodoni Moda',serif;font-size:1.1rem;color:var(--champ-lt);letter-spacing:.04em}
+.nav-sub{font-size:.63rem;color:rgba(255,255,255,.38);letter-spacing:.2em;text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:.2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.62);text-decoration:none;font-size:.71rem;letter-spacing:.1em;text-transform:uppercase;padding:.42rem .8rem;border-radius:2px;transition:all .25s;cursor:none}
+.nav-links a:hover{color:var(--champ-lt);background:rgba(212,170,112,.1)}
+.nav-cta{background:var(--champ);color:var(--forest-deep);font-size:.71rem;letter-spacing:.12em;text-transform:uppercase;padding:.55rem 1.2rem;border-radius:2px;font-weight:600;text-decoration:none;transition:all .25s;cursor:none}
+.nav-cta:hover{background:var(--champ-lt);transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,170,112,.3)}
+.hero{min-height:100vh;background:var(--forest-deep);display:grid;grid-template-columns:55% 45%;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 80%,rgba(74,124,89,.15) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(212,170,112,.08) 0%,transparent 45%),radial-gradient(circle at 60% 60%,rgba(27,58,45,.4) 0%,transparent 60%);pointer-events:none}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:9rem 4rem 6rem;position:relative;z-index:2}
+.h-eye{display:flex;align-items:center;gap:1rem;font-size:.67rem;letter-spacing:.3em;text-transform:uppercase;color:var(--sage-light);margin-bottom:2rem;opacity:0;animation:sR .8s .2s cubic-bezier(.22,.68,0,1.2) forwards}
+.h-eye::before{content:'';display:block;width:44px;height:1px;background:var(--sage-light)}
+.h-name{font-family:'Bodoni Moda',serif;font-size:clamp(3.5rem,7vw,6.5rem);font-weight:400;line-height:.95;color:#fff;margin-bottom:.5rem;opacity:0;animation:sR .9s .4s cubic-bezier(.22,.68,0,1.2) forwards}
+.h-name em{font-style:italic;color:var(--champ);display:block}
+.h-rule{width:80px;height:2px;background:linear-gradient(90deg,var(--champ),var(--sage-light));margin:1.5rem 0;opacity:0;animation:sR .8s .6s cubic-bezier(.22,.68,0,1.2) forwards}
+.h-creds{font-family:'Source Serif 4',serif;font-size:1.05rem;color:rgba(255,255,255,.5);font-style:italic;letter-spacing:.04em;margin-bottom:1.5rem;opacity:0;animation:sR .8s .7s cubic-bezier(.22,.68,0,1.2) forwards}
+.h-desc{font-size:.93rem;line-height:1.8;max-width:46ch;color:rgba(255,255,255,.58);margin-bottom:2.5rem;opacity:0;animation:sR .8s .9s cubic-bezier(.22,.68,0,1.2) forwards}
+.h-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:sR .8s 1.1s cubic-bezier(.22,.68,0,1.2) forwards}
+.btn-p{padding:.9rem 2.2rem;background:var(--champ);color:var(--forest-deep);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;border:none;border-radius:2px;text-decoration:none;cursor:none;transition:all .3s}
+.btn-p:hover{background:var(--champ-lt);transform:translateY(-3px);box-shadow:0 12px 28px rgba(212,170,112,.35)}
+.btn-g{padding:.9rem 2.2rem;background:transparent;color:rgba(255,255,255,.75);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400;border:1px solid rgba(255,255,255,.25);border-radius:2px;text-decoration:none;cursor:none;transition:all .3s}
+.btn-g:hover{border-color:var(--champ);color:var(--champ)}
+.h-stats{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.08);opacity:0;animation:fU .8s 1.3s ease forwards}
+.stn{font-family:'Bodoni Moda',serif;font-size:2.8rem;font-weight:400;color:var(--champ);line-height:1}
+.stl{font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:.25rem}
+.hero-right{position:relative;display:flex;align-items:flex-end;justify-content:center;opacity:0;animation:fI 1.4s .5s ease forwards}
+.h-frame{width:72%;max-width:420px;align-self:flex-end;aspect-ratio:3/4;position:relative}
+.h-photo{width:100%;height:100%;background:linear-gradient(160deg,rgba(74,124,89,.35) 0%,rgba(15,34,25,.85) 100%);border:1px solid var(--border-c);border-bottom:none;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.h-photo::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-40deg,transparent,transparent 24px,rgba(212,170,112,.03) 24px,rgba(212,170,112,.03) 25px)}
+.ph-ic{font-size:4rem;opacity:.22}.ph-ct{font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-top:.75rem}
+.h-badge{position:absolute;bottom:-1px;left:0;right:0;background:linear-gradient(90deg,var(--forest-mid),var(--sage));padding:.9rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.hb-t{font-size:.71rem;color:rgba(255,255,255,.85);letter-spacing:.07em}
+.hb-d{width:8px;height:8px;background:var(--champ);border-radius:50%;animation:pulse 2s infinite}
+.sec{padding:7rem 0}.sec-sm{padding:5rem 0}
+.ctr{max-width:1240px;margin:0 auto;padding:0 4.5rem}
+.eye{display:flex;align-items:center;gap:1rem;font-size:.67rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);margin-bottom:.75rem}
+.eye::before{content:'';display:block;width:32px;height:1px;background:var(--sage)}
+.eye.lt{color:var(--sage-light)}.eye.lt::before{background:var(--sage-light)}
+.eye.gd{color:var(--champ)}.eye.gd::before{background:var(--champ)}
+h2.disp{font-family:'Bodoni Moda',serif;font-weight:400;font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1.15;color:var(--forest-deep);margin-bottom:1rem}
+h2.disp em{font-style:italic;color:var(--sage)}
+h2.disp.wh{color:#fff}.h2.disp.wh em{color:var(--champ)}
+.lead{font-family:'Source Serif 4',serif;font-size:1.02rem;color:var(--muted);line-height:1.8;max-width:60ch}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+.rv.up{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+/* VIDEO */
+.vid-sec{background:var(--forest-deep);position:relative;overflow:hidden}
+.vid-sec::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--champ),transparent)}
+.vid-sec::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--sage-light),transparent)}
+.vid-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:center}
+.vid-wrap{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5);border:1px solid var(--border-c)}
+.vid-wrap video{width:100%;display:block;background:#000;border-radius:6px}
+.vid-info .eye{margin-bottom:1.25rem}
+.vid-q{font-family:'Source Serif 4',serif;font-size:1.12rem;font-style:italic;color:rgba(255,255,255,.65);line-height:1.75;border-left:3px solid var(--champ);padding-left:1.5rem;margin-bottom:2rem}
+.vtags{display:flex;flex-wrap:wrap;gap:.5rem}
+.vtag{background:rgba(212,170,112,.12);color:var(--champ);font-size:.71rem;letter-spacing:.07em;padding:.33rem .78rem;border-radius:2px;border:1px solid rgba(212,170,112,.2)}
+/* MISSION */
+.miss-sec{background:var(--ivory-w);position:relative}
+.miss-sec::before{content:'"';position:absolute;top:0;right:6%;font-family:'Bodoni Moda',serif;font-size:22rem;font-style:italic;color:rgba(74,124,89,.06);line-height:1;pointer-events:none;user-select:none}
+.miss-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem}
+.miss-q{font-family:'Source Serif 4',serif;font-size:1.32rem;font-style:italic;line-height:1.8;color:var(--forest);border-left:4px solid var(--champ);padding-left:2rem;margin-bottom:2rem}
+.miss-body{font-size:.9rem;color:var(--muted);line-height:1.85}
+.vals{display:flex;flex-direction:column;gap:.85rem}
+.val-row{display:flex;align-items:flex-start;gap:1.1rem;background:#fff;border:1px solid rgba(27,58,45,.07);padding:1.15rem 1.45rem;border-radius:4px;transition:all .3s;cursor:default}
+.val-row:hover{border-color:var(--sage);transform:translateX(6px);box-shadow:0 4px 20px rgba(74,124,89,.1)}
+.val-ic{width:38px;height:38px;flex-shrink:0;background:linear-gradient(135deg,var(--forest),var(--sage));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.vt{font-size:.87rem;font-weight:600;color:var(--forest);margin-bottom:.18rem}
+.vd{font-size:.79rem;color:var(--muted);line-height:1.5}
+/* PHILOSOPHY */
+.phil-sec{background:var(--forest);position:relative;overflow:hidden}
+.phil-sec::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,170,112,.08) 0%,transparent 70%);pointer-events:none}
+.ptabs{display:flex;gap:0;margin-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.ptab{padding:.82rem 1.4rem;background:none;border:none;color:rgba(255,255,255,.4);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;cursor:none;font-family:'Outfit',sans-serif;font-weight:500;position:relative;transition:color .3s}
+.ptab::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--champ);transform:scaleX(0);transition:transform .3s}
+.ptab.act{color:var(--champ)}.ptab.act::after{transform:scaleX(1)}
+.ppanel{display:none}.ppanel.act{display:block}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.pgrid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.pillar{background:var(--glass);border:1px solid var(--glass-b);padding:1.75rem;border-radius:6px;transition:all .3s}
+.pillar:hover{background:rgba(74,124,89,.18);border-color:var(--sage)}
+.pn{font-family:'Bodoni Moda',serif;font-size:2.8rem;font-weight:400;color:rgba(212,170,112,.22);line-height:1;margin-bottom:.72rem}
+.pt{font-size:.87rem;font-weight:600;color:#fff;margin-bottom:.5rem}
+.pd{font-size:.79rem;color:rgba(255,255,255,.5);line-height:1.67}
+/* ISSUES */
+.iss-sec{background:var(--ivory)}
+.iss-list{margin-top:3rem;display:flex;flex-direction:column;gap:.6rem}
+.iss-item{background:#fff;border:1px solid rgba(27,58,45,.08);border-radius:6px;overflow:hidden}
+.iss-hdr{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.7rem;cursor:none;transition:background .3s}
+.iss-hdr:hover{background:rgba(74,124,89,.04)}
+.iss-item.open .iss-hdr{background:rgba(74,124,89,.06)}
+.iss-left{display:flex;align-items:center;gap:.9rem}
+.bdg{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:.2rem .62rem;border-radius:20px;white-space:nowrap}
+.bc{background:#fde8e6;color:#b83c2e}.bt{background:#e6f0fc;color:#1e5fa0}
+.be{background:#f0e8fc;color:#7e3cb8}.bp{background:#e6f5ec;color:#246b3e}.bs{background:#fff8e6;color:#966b0a}
+.iss-title{font-size:.91rem;font-weight:500;color:var(--forest)}
+.iss-arr{width:28px;height:28px;border-radius:50%;background:rgba(74,124,89,.1);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--sage);transition:transform .3s,background .3s;flex-shrink:0}
+.iss-item.open .iss-arr{transform:rotate(180deg);background:var(--sage);color:#fff}
+.iss-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.iss-inner{padding:0 1.7rem 1.7rem;display:grid;grid-template-columns:3fr 2fr;gap:2rem}
+.iss-txt{font-size:.86rem;color:var(--muted);line-height:1.78}
+.iss-txt p{margin-bottom:.7rem}
+.iss-sb{background:var(--ivory-w);border-radius:4px;padding:1.2rem}
+.iss-sb h4{font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:.8rem;font-weight:600}
+.iss-sb ul{list-style:none;display:flex;flex-direction:column;gap:.38rem}
+.iss-sb li{font-size:.79rem;color:var(--forest);padding-left:1.1rem;position:relative;line-height:1.5}
+.iss-sb li::before{content:'›';position:absolute;left:0;color:var(--champ);font-size:1rem;line-height:1.3}
+/* CREDENTIALS */
+.cred-sec{background:var(--ivory-w)}
+.cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.cc{background:#fff;border:1px solid rgba(27,58,45,.08);border-radius:6px;padding:1.9rem;text-align:center;transition:all .35s;position:relative;overflow:hidden}
+.cc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sage),var(--champ));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.cc:hover{box-shadow:0 10px 40px rgba(27,58,45,.12);transform:translateY(-4px)}.cc:hover::after{transform:scaleX(1)}
+.cc-em{font-size:1.8rem;margin-bottom:.85rem;display:block}
+.cc-ab{font-family:'Bodoni Moda',serif;font-size:1.85rem;color:var(--forest);margin-bottom:.28rem}
+.cc-nm{font-size:.78rem;color:var(--muted);line-height:1.45;margin-bottom:.5rem}
+.cc-mt{font-size:.68rem;color:var(--sage);font-weight:600;letter-spacing:.04em;margin-bottom:.9rem}
+.cc-slot{border:2px dashed rgba(27,58,45,.12);border-radius:4px;padding:.85rem;font-size:.67rem;color:rgba(27,58,45,.28);letter-spacing:.1em;text-transform:uppercase}
+/* SKILLS */
+.sk-sec{background:var(--ivory)}
+.sk-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem}
+.sk-col h3{font-family:'Bodoni Moda',serif;font-size:1.5rem;color:var(--forest);margin-bottom:1.75rem;font-weight:400}
+.bars{display:flex;flex-direction:column;gap:1.2rem}
+.brow{}.btop{display:flex;justify-content:space-between;margin-bottom:.4rem}
+.bnm{font-size:.82rem;font-weight:500;color:var(--forest)}
+.blv{font-size:.71rem;color:var(--muted)}
+.btrack{height:4px;background:rgba(27,58,45,.08);border-radius:2px;overflow:hidden}
+.bfill{height:100%;background:linear-gradient(90deg,var(--sage),var(--champ));border-radius:2px;width:0;transition:width 1.1s cubic-bezier(.22,.68,0,1.2) .3s}
+.ts{margin-bottom:1.75rem}
+.tcat{font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:.7rem;font-weight:600}
+.trow{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{background:rgba(74,124,89,.08);color:var(--forest);font-size:.72rem;padding:.3rem .7rem;border-radius:3px;font-weight:400;border:1px solid rgba(74,124,89,.15)}
+.chip.gd{background:rgba(212,170,112,.1);color:#6b4c10;border-color:rgba(212,170,112,.25)}
+/* EXPERIENCE */
+.exp-sec{background:var(--forest-deep)}
+.exp-grid{display:grid;grid-template-columns:1fr 240px;gap:4rem;margin-top:3rem}
+.tl{position:relative;padding-left:2rem}
+.tl::before{content:'';position:absolute;left:0;top:.5rem;bottom:2rem;width:1px;background:linear-gradient(to bottom,var(--champ) 0%,var(--sage) 60%,transparent 100%)}
+.tli{position:relative;padding-left:2rem;padding-bottom:2.5rem}
+.tli::before{content:'';position:absolute;left:-2rem;top:.42rem;width:9px;height:9px;border-radius:50%;background:var(--champ);border:2px solid var(--forest-deep);transform:translateX(50%)}
+.tld{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--champ);margin-bottom:.3rem}
+.tlr{font-size:.97rem;font-weight:600;color:#fff;margin-bottom:.2rem}
+.tlo{font-size:.81rem;color:var(--sage-light);margin-bottom:.58rem}
+.tltx{font-size:.79rem;color:rgba(255,255,255,.47);line-height:1.7;margin-bottom:.6rem}
+.tlcs{display:flex;flex-wrap:wrap;gap:.3rem}
+.tlc{background:rgba(255,255,255,.05);color:rgba(255,255,255,.42);font-size:.64rem;padding:.17rem .48rem;border-radius:2px}
+.esb{display:flex;flex-direction:column;gap:1.5rem}
+.sph{aspect-ratio:3/4;border:2px dashed rgba(212,170,112,.25);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(255,255,255,.02);padding:1.5rem;transition:border-color .3s}
+.sph:hover{border-color:var(--champ)}
+.sph-i{font-size:2.2rem;opacity:.22;margin-bottom:.7rem}
+.sph-t{font-size:.67rem;color:rgba(255,255,255,.25);letter-spacing:.1em;text-transform:uppercase}
+.scard{background:var(--glass);border:1px solid var(--glass-b);border-radius:6px;padding:1.4rem}
+.scard h4{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--champ);margin-bottom:1rem}
+.scard ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.scard li{font-size:.77rem;color:rgba(255,255,255,.48);padding-left:.9rem;position:relative;line-height:1.45}
+.scard li::before{content:'›';position:absolute;left:0;color:var(--sage-light)}
+/* EXEMPLARS */
+.ex-sec{background:var(--ivory-w)}
+.ex-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:3rem}
+.exc{background:#fff;border:1px solid rgba(27,58,45,.08);border-radius:6px;padding:2rem;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:all .35s}
+.exc:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(27,58,45,.1)}
+.exn{font-family:'Bodoni Moda',serif;font-size:4.5rem;font-weight:400;color:rgba(74,124,89,.07);position:absolute;top:.5rem;right:1.2rem;line-height:1}
+.exs{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:.48rem;font-weight:600}
+.ext{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--forest);margin-bottom:.72rem;line-height:1.3;font-weight:400}
+.exb{font-size:.84rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem;flex:1}
+.extags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.4rem}
+.extag{background:rgba(74,124,89,.08);color:var(--sage);font-size:.67rem;padding:.2rem .54rem;border-radius:3px;font-weight:500}
+.dl-btn{display:inline-flex;align-items:center;gap:.65rem;background:linear-gradient(135deg,var(--forest),var(--sage));color:#fff;padding:.72rem 1.3rem;border-radius:4px;text-decoration:none;font-size:.75rem;letter-spacing:.06em;font-weight:500;transition:all .3s;cursor:none;box-shadow:0 4px 12px rgba(27,58,45,.25);align-self:flex-start}
+.dl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(27,58,45,.35)}
+.dl-ic{font-size:1rem}
+.ex-ph{border:2px dashed rgba(74,124,89,.2);border-radius:4px;padding:.85rem 1.15rem;display:flex;align-items:center;gap:.65rem;color:rgba(74,124,89,.5);font-size:.74rem}
+/* COMMUNITY */
+.comm-sec{background:var(--ivory)}
+.comm-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3rem}
+.comm-card{background:#fff;border:1px solid rgba(27,58,45,.08);border-radius:6px;padding:2.25rem}
+.comm-card h3{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--forest);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--bone);font-weight:400}
+.comm-list{list-style:none;display:flex;flex-direction:column;gap:1rem}
+.comm-list li{font-size:.84rem;color:var(--muted);padding-left:1.2rem;position:relative;line-height:1.7}
+.comm-list li::before{content:'→';position:absolute;left:0;color:var(--champ);font-weight:600}
+.comm-list li strong{color:var(--forest);font-weight:500}
+/* MUSIC */
+.music-sec{background:var(--forest-deep);position:relative;overflow:hidden}
+.music-sec::before{content:'♪';position:absolute;top:-2rem;right:5%;font-size:22rem;color:rgba(255,255,255,.025);font-family:serif;line-height:1;pointer-events:none}
+.music-sec::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--champ),transparent)}
+.music-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.m-desc{font-size:.93rem;color:rgba(255,255,255,.58);line-height:1.82;margin-bottom:2rem}
+.m-det{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;margin-bottom:1rem}
+.m-det-i{font-size:1.4rem;flex-shrink:0}
+.m-det-t{font-size:.81rem;color:rgba(255,255,255,.55);line-height:1.5}
+.m-det-t strong{color:rgba(255,255,255,.85);font-weight:500}
+.yt-wrap{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1)}
+.yt-wrap::before{content:'';display:block;padding-top:56.25%}
+.yt-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.yt-lbl{display:flex;align-items:center;gap:.75rem;margin-top:1.25rem;font-size:.77rem;color:rgba(255,255,255,.35);letter-spacing:.06em}
+.yt-dot{width:8px;height:8px;background:#ff0000;border-radius:50%;flex-shrink:0}
+/* AFFILIATIONS */
+.aff-sec{background:var(--ivory-w);padding:4.5rem 0}
+.aff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
+.afc{background:#fff;border:1px solid rgba(27,58,45,.08);padding:1.5rem;border-radius:6px;text-align:center;transition:all .3s}
+.afc:hover{box-shadow:0 8px 24px rgba(27,58,45,.1);transform:translateY(-3px)}
+.afab{font-family:'Bodoni Moda',serif;font-size:1.7rem;color:var(--forest);margin-bottom:.4rem;font-weight:400}
+.afnm{font-size:.72rem;color:var(--muted);line-height:1.5}
+/* CONTACT */
+.cont-sec{background:var(--forest);position:relative;overflow:hidden}
+.cont-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 10% 50%,rgba(212,170,112,.08) 0%,transparent 50%),radial-gradient(circle at 90% 20%,rgba(106,170,126,.1) 0%,transparent 50%);pointer-events:none}
+.cont-sec::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--champ),transparent)}
+.cont-in{text-align:center;position:relative;z-index:1}
+.cont-in .eye{justify-content:center}.cont-in .eye::before{display:none}
+.cont-cards{display:flex;justify-content:center;gap:1.4rem;margin:3rem 0;flex-wrap:wrap}
+.ccard{background:var(--glass);border:1px solid var(--glass-b);padding:1.5rem 2.4rem;border-radius:8px;text-align:center;transition:all .3s;text-decoration:none;cursor:none}
+.ccard:hover{background:rgba(255,255,255,.1);border-color:var(--champ);transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,.3)}
+.cc-ico{font-size:1.6rem;margin-bottom:.6rem;display:block}
+.cc-lbl{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.3rem}
+.cc-val{font-size:.87rem;color:rgba(255,255,255,.8)}
+.sig{margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.1)}
+.sig-n{font-family:'Bodoni Moda',serif;font-size:2.8rem;font-style:italic;font-weight:400;color:rgba(212,170,112,.42);margin-bottom:.4rem}
+.sig-c{font-size:.69rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+footer{background:#050f09;padding:1.5rem 4.5rem;display:flex;justify-content:space-between;align-items:center}
+.ft{font-size:.68rem;color:rgba(255,255,255,.18);letter-spacing:.07em}
+@keyframes sR{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fI{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@media(max-width:1024px){
+  nav{padding:1rem 2rem}.nav-links{display:none}
+  .ctr{padding:0 2rem}
+  .hero{grid-template-columns:1fr}.hero-left{padding:7rem 2rem 4rem}.hero-right{display:none}
+  .h-stats{position:static;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08)}
+  .vid-grid,.music-grid,.miss-grid,.sk-grid,.comm-grid,.ex-grid,.exp-grid,.aff-grid,.cred-grid,.pgrid,.pgrid-2{grid-template-columns:1fr}
+  .iss-inner{grid-template-columns:1fr}
+  .cont-cards{flex-direction:column;align-items:center}
+  footer{flex-direction:column;gap:.5rem;text-align:center}
+  .esb{display:none}
+}
+</style>
+</head>
+<body>
+<div class="cur-dot" id="cD"></div>
+<div class="cur-ring" id="cR"></div>
+<nav id="mNav">
+  <div class="nav-brand">
+    <span class="nav-name">Latara N. McGuire</span>
+    <span class="nav-sub">MSN/MBA Candidate · CMSRN · MEDSURG-BC</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#issues">Issues</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#exemplars">Exemplars</a></li>
+    <li><a href="#music">Inspiration</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Contact Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-left">
+    <div class="h-eye">Professional Nursing Portfolio</div>
+    <h1 class="h-name">Latara N.<em>McGuire</em></h1>
+    <div class="h-rule"></div>
+    <p class="h-creds">BSN · MSN/MBA Candidate (UNCG 2026) · CMSRN · MEDSURG-BC</p>
+    <p class="h-desc">Results-driven Registered Nurse with 8+ years of progressive clinical experience across five major health systems — dedicated to reducing health disparities, building resilient care teams, and shaping evidence-based nursing leadership for the next generation.</p>
+    <div class="h-btns">
+      <a href="#about" class="btn-p">Meet Latara</a>
+      <a href="#exemplars" class="btn-g">View Exemplars</a>
+    </div>
+    <div class="h-stats">
+      <div><div class="stn">8+</div><div class="stl">Years Clinical</div></div>
+      <div><div class="stn">5</div><div class="stl">Health Systems</div></div>
+      <div><div class="stn">2</div><div class="stl">Master's Degrees</div></div>
+      <div><div class="stn">4</div><div class="stl">Certifications</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="h-frame">
+      <div class="h-photo">
+        <div class="ph-ic">📷</div>
+        <div class="ph-ct">Professional Photo</div>
+      </div>
+      <div class="h-badge">
+        <span class="hb-t">Currently accepting leadership opportunities</span>
+        <div class="hb-d"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / VIDEO -->
+<section class="vid-sec sec" id="about">
+  <div class="ctr">
+    <div class="vid-grid">
+      <div class="vid-wrap rv">
+        <video controls preload="metadata">
+          <source src="Portfolio video.mov" type="video/quicktime">
+          <source src="Portfolio video.mov" type="video/mp4">
+          Your browser does not support this video format. Please try opening the page in Chrome or Firefox.
+        </video>
+      </div>
+      <div class="vid-info rv d2">
+        <div class="eye gd">Personal Introduction</div>
+        <h2 class="disp wh" style="color:#fff;margin-bottom:1.5rem;">Meet <em style="color:var(--champ)">Latara</em></h2>
+        <p class="vid-q">"I pursued this journey not just to advance my career — but to transform the way healthcare serves our communities, our nurses, and the patients who trust us with their lives."</p>
+        <div class="vtags">
+          <span class="vtag">8+ Years of Clinical Excellence</span>
+          <span class="vtag">Dual Graduate Candidate</span>
+          <span class="vtag">Aspiring Nurse Manager</span>
+          <span class="vtag">Community Health Advocate</span>
+          <span class="vtag">Evidence-Based Practice Champion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="miss-sec sec" id="mission">
+  <div class="ctr">
+    <div class="eye rv">Personal Mission</div>
+    <h2 class="disp rv d1">Mission Statement &amp; <em>Core Values</em></h2>
+    <div class="miss-grid">
+      <div class="rv d1">
+        <p class="miss-q">"I advocate for data-driven and evidence-based practices, structured mentorship and leadership transition programs, ethical AI integration, and the interconnectedness of ambulatory and inpatient care — to improve community health outcomes for all."</p>
+        <p class="miss-body">With 8+ years of progressive clinical experience spanning UNC Rex, Moses Cone, WakeMed, Johns Hopkins, ECU Health, and Lewis Gale Medical Center, I bring deep bedside expertise and healthcare business acumen to nursing leadership. My dual MSN/MBA at UNCG (Expected May 2026) reflects an unwavering commitment to advancing the profession and my community.</p>
+      </div>
+      <div class="vals rv d2">
+        <div class="val-row"><div class="val-ic">🔬</div><div><div class="vt">Evidence-Based Practice</div><div class="vd">Championing data-informed decisions from bedside QI to executive strategy — through QI initiatives targeting falls, CAUTI, and medication reconciliation.</div></div></div>
+        <div class="val-row"><div class="val-ic">🤝</div><div><div class="vt">Mentorship &amp; Development</div><div class="vd">Structured pathways for new graduates and emerging leaders grounded in precepting across WakeMed, UNC Rex, and ECU Health.</div></div></div>
+        <div class="val-row"><div class="val-ic">🛡️</div><div><div class="vt">Ethical Technology Integration</div><div class="vd">Nursing-led AI governance that enhances — never replaces — the irreplaceable human connection and professional judgment at the bedside.</div></div></div>
+        <div class="val-row"><div class="val-ic">🌍</div><div><div class="vt">Health Equity &amp; Community</div><div class="vd">Bridging ambulatory and acute care for equitable outcomes — especially in underserved rural communities like those I served at ECU Health North.</div></div></div>
+        <div class="val-row"><div class="val-ic">📊</div><div><div class="vt">Transparency &amp; Accountability</div><div class="vd">Developing nursing-sensitive quality indicators and data dashboards that drive continuous improvement and organizational trust at every level.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="phil-sec sec" id="philosophy">
+  <div class="ctr">
+    <div class="eye lt rv">How I Lead</div>
+    <h2 class="disp wh rv d1" style="color:#fff;">Nursing Leadership &amp; <em style="color:var(--champ)">Administration Philosophy</em></h2>
+    <p style="font-family:'Source Serif 4',serif;font-size:1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:72ch;margin:1.5rem 0 2.5rem;" class="rv d2">I pursued an MSN/MBA in Healthcare Management to lead, educate, and empower colleagues, patients, and my community — believing front-line nurses must be equipped with data and evidence-based tools to design patient-centered workflows across all care settings.</p>
+    <div class="ptabs rv">
+      <button class="ptab act" onclick="pTab(event,'pp1')">Core Pillars</button>
+      <button class="ptab" onclick="pTab(event,'pp2')">Interconnected Systems</button>
+      <button class="ptab" onclick="pTab(event,'pp3')">Strategic Vision</button>
+    </div>
+    <div id="pp1" class="ppanel act">
+      <div class="pgrid">
+        <div class="pillar"><div class="pn">01</div><div class="pt">Data-Driven, Evidence-Based Care</div><div class="pd">Equipping front-line nurses with dashboards, PDSA frameworks, and EBP training. Contributed to QI initiatives targeting fall prevention, CAUTI reduction, and medication reconciliation across multiple health systems.</div></div>
+        <div class="pillar"><div class="pn">02</div><div class="pt">Structured Mentorship &amp; Transitions</div><div class="pd">Designing residency programs with measurable competency milestones and resilience frameworks. Precepting experience across WakeMed, UNC Rex, and ECU Health reflects this commitment in daily practice.</div></div>
+        <div class="pillar"><div class="pn">03</div><div class="pt">Human-Centered Technology</div><div class="pd">Technology must enhance, not replace, the bedside relationship. I advocate for nursing informatics councils that govern AI ethically — auditing bias, protecting privacy, and ensuring clinical judgment stays with the nurse.</div></div>
+        <div class="pillar"><div class="pn">04</div><div class="pt">Integrated Care Continuum</div><div class="pd">Ambulatory and acute care must function as one system. Experience spans both — from urology clinic operations to complex cardiac, surgical, trauma, and neurological inpatient care.</div></div>
+        <div class="pillar"><div class="pn">05</div><div class="pt">Ambulatory Quality Measurement</div><div class="pd">Developing nursing-sensitive indicators for outpatient settings. My graduate capstone directly addresses 30-day readmission reduction with clinical data analysis and financial impact modeling.</div></div>
+        <div class="pillar"><div class="pn">06</div><div class="pt">Nursing Informatics Leadership</div><div class="pd">Nursing must shape — not merely adopt — the AI landscape. Informatics councils must analyze how technology impacts healthcare, communities, the workforce, and our environment sustainably.</div></div>
+      </div>
+    </div>
+    <div id="pp2" class="ppanel">
+      <div class="pgrid-2">
+        <div class="pillar"><div class="pt" style="margin-bottom:.72rem;">Patient Goals &amp; Health Outcomes</div><div class="pd">Patient goals define what health means. Leadership aligns services through education and prevention. Ambulatory prevention reduces acute burden; inpatient insights inform community interventions continuously.</div></div>
+        <div class="pillar"><div class="pt" style="margin-bottom:.72rem;">Environment &amp; Nursing Practice</div><div class="pd">Safe staffing ratios, positive culture, and appropriate technology enable safe practice and reduce burnout. Leaders must design environments promoting psychological safety and clinical resilience.</div></div>
+        <div class="pillar"><div class="pt" style="margin-bottom:.72rem;">Inquiry &amp; Continuous Improvement</div><div class="pd">Continuous inquiry drives nursing interventions and system redesign. My capstone translates research findings into actionable policy, workflow improvements, and financial justification for nurse-led programs.</div></div>
+        <div class="pillar"><div class="pt" style="margin-bottom:.72rem;">Technology, Ethics &amp; Sustainability</div><div class="pd">AI and digital tools must be governed by ethical frameworks protecting patient privacy, promoting sustainability, and supporting professional nursing judgment. Nursing must lead this governance.</div></div>
+      </div>
+    </div>
+    <div id="pp3" class="ppanel">
+      <div class="pgrid">
+        <div class="pillar"><div class="pn">→</div><div class="pt">Leadership Pipeline Initiative</div><div class="pd">Structured residency and transition programs with competency frameworks, formal mentorship pairings, and protected development time — supporting succession planning from bedside to boardroom.</div></div>
+        <div class="pillar"><div class="pn">→</div><div class="pt">Ambulatory Quality Dashboard</div><div class="pd">Nursing-sensitive ambulatory indicators tracking access, outcomes, care gaps, and readmissions — creating real-time data for population health management and demonstrating the ROI of nursing investment.</div></div>
+        <div class="pillar"><div class="pn">→</div><div class="pt">Nursing AI Governance Council</div><div class="pd">Governance structures to analyze, audit, and advocate for responsible AI deployment — from algorithm bias reviews to cybersecurity protocols and environmental impact assessment.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT ISSUES -->
+<section class="iss-sec sec" id="issues">
+  <div class="ctr">
+    <div class="eye rv">The Landscape</div>
+    <h2 class="disp rv d1">Current Issues in <em>Nursing Leadership</em></h2>
+    <p class="lead rv d2" style="margin:.75rem 0 0;">Critical challenges shaping the profession — and how a forward-thinking nurse leader responds.</p>
+    <div class="iss-list rv">
+      <div class="iss-item">
+        <div class="iss-hdr" onclick="togIss(this)"><div class="iss-left"><span class="bdg bc">Critical</span><span class="iss-title">Nurse Staffing Crisis &amp; Burnout Epidemic</span></div><div class="iss-arr">▾</div></div>
+        <div class="iss-body"><div class="iss-inner">
+          <div class="iss-txt"><p>The nursing shortage has reached crisis proportions — a projected deficit of over one million nurses nationwide. High patient-to-nurse ratios, moral injury, and post-pandemic fatigue are driving experienced nurses from the profession at alarming rates, simultaneously eroding care quality, safety outcomes, and institutional financial stability.</p><p>Addressing this demands a dual strategy: immediate interventions like flexible scheduling and real-time staffing analytics alongside long-term investments in structured residency programs, robust preceptorship, and authentic career ladders that make nursing leadership genuinely aspirational.</p><p>Having participated in recruitment and retention committees and served as a preceptor across five health systems, I understand that retention is won or lost in the micro-stressors that accumulate long before a resignation letter is written.</p></div>
+          <div class="iss-sb"><h4>Leadership Response</h4><ul><li>Real-time staffing analytics and ratio dashboards</li><li>Peer support networks and burnout screening</li><li>Flexible and self-scheduling models</li><li>Structured residency and transition programs</li><li>Recruitment and retention committee leadership</li><li>Authentic career ladders from bedside to management</li></ul></div>
+        </div></div>
+      </div>
+      <div class="iss-item">
+        <div class="iss-hdr" onclick="togIss(this)"><div class="iss-left"><span class="bdg bt">Technology</span><span class="iss-title">Artificial Intelligence &amp; Ethical Integration in Clinical Workflows</span></div><div class="iss-arr">▾</div></div>
+        <div class="iss-body"><div class="iss-inner">
+          <div class="iss-txt"><p>AI is entering clinical workflows rapidly — through predictive analytics, sepsis early-warning systems, automated documentation, and clinical decision support. These tools offer significant potential but introduce complex ethical, equity, privacy, and cybersecurity concerns that nursing must actively govern rather than passively inherit.</p><p>We must champion governance structures — nursing informatics councils — that validate AI tools across diverse patient populations, audit for algorithmic bias, and ensure deployment is transparent and auditable by clinicians, not only IT departments.</p><p>The environmental footprint of large-scale AI systems, growing cybersecurity vulnerabilities, and the risk of eroding the therapeutic relationship are equally important considerations that nurse managers must bring to institutional planning.</p></div>
+          <div class="iss-sb"><h4>Leadership Response</h4><ul><li>Establish nursing informatics governance councils</li><li>Mandate bias audits on clinical AI tools</li><li>Integrate AI literacy into nursing orientation</li><li>Protect bedside nurses' clinical decision authority</li><li>Partner with IT on cybersecurity protocols</li><li>Evaluate environmental impact of digital infrastructure</li></ul></div>
+        </div></div>
+      </div>
+      <div class="iss-item">
+        <div class="iss-hdr" onclick="togIss(this)"><div class="iss-left"><span class="bdg be">Equity</span><span class="iss-title">Health Disparities, Social Determinants &amp; Rural Community Health</span></div><div class="iss-arr">▾</div></div>
+        <div class="iss-body"><div class="iss-inner">
+          <div class="iss-txt"><p>Racial, socioeconomic, and geographic health disparities remain among the most persistent challenges in American healthcare. My travel nursing experience at ECU Health North in rural eastern North Carolina gave me direct exposure to how social determinants drive emergency utilization, care fragmentation, and preventable hospitalizations.</p><p>Nursing leaders are uniquely positioned to drive equity-centered care. Integrating SDOH screening into routine protocols and connecting findings to community resources is an evidence-based strategy for addressing upstream drivers of disparity. My BSN capstone delivered chronic disease education for underserved adults in Guilford County.</p><p>Quality metrics must stratify by race, income, and geography — making disparities visible and holding systems genuinely accountable for measurable improvement over time.</p></div>
+          <div class="iss-sb"><h4>Leadership Response</h4><ul><li>SDOH screening protocols in all care settings</li><li>Community health worker partnerships</li><li>Equity-stratified quality reporting</li><li>Cultural humility training as standard practice</li><li>Ambulatory-acute care coordination for rural populations</li><li>Community needs assessments tied to resource deployment</li></ul></div>
+        </div></div>
+      </div>
+      <div class="iss-item">
+        <div class="iss-hdr" onclick="togIss(this)"><div class="iss-left"><span class="bdg bp">Pipeline</span><span class="iss-title">Nursing Leadership Succession, Diversity &amp; Development</span></div><div class="iss-arr">▾</div></div>
+        <div class="iss-body"><div class="iss-inner">
+          <div class="iss-txt"><p>The retirement of the Baby Boomer nursing cohort is creating a leadership vacuum simultaneously with the bedside staffing crisis. Healthcare organizations are failing to systematically develop their next generation of nurse leaders — leaving succession to chance rather than strategy.</p><p>Succession planning must be intentional: visible career pathways, graduate education sponsorship, protected development time, and formal mentorship relationships. The preceptor and charge nurse work I have done across five health systems reflects this commitment — developing others is a professional obligation.</p><p>Leadership teams must reflect the communities they serve. Targeted development programs for underrepresented groups in nursing leadership are a strategic priority for any organization genuinely committed to equity.</p></div>
+          <div class="iss-sb"><h4>Leadership Response</h4><ul><li>Formal leadership development programs</li><li>Graduate education sponsorship</li><li>Diversity-focused succession initiatives</li><li>Formal mentorship pairing: senior leaders &amp; high-potentials</li><li>Transparent promotion criteria and career ladder visibility</li></ul></div>
+        </div></div>
+      </div>
+      <div class="iss-item">
+        <div class="iss-hdr" onclick="togIss(this)"><div class="iss-left"><span class="bdg bs">Systems</span><span class="iss-title">Telehealth Expansion, Readmissions &amp; Ambulatory-Inpatient Integration</span></div><div class="iss-arr">▾</div></div>
+        <div class="iss-body"><div class="iss-inner">
+          <div class="iss-txt"><p>The telehealth revolution permanently altered ambulatory care. Nursing leaders must now design workflows, quality metrics, and competency frameworks for hybrid care models. My experience delivering telemedicine nursing at WakeMed Urology via Webex provides direct operational insight into both the opportunities and workflow challenges of virtual care.</p><p>The strategic opportunity lies in treating ambulatory and inpatient care as a single integrated system — using ambulatory data to predict and prevent hospitalizations, and inpatient insights to design better community follow-up.</p><p>My MSN/MBA capstone — investigating evidence-based transitional care models and their financial impact on 30-day readmissions for heart failure, pneumonia, and COPD — directly addresses the gap between hospital disease management and post-discharge community follow-up.</p></div>
+          <div class="iss-sb"><h4>Leadership Response</h4><ul><li>Telehealth nursing workflow design and protocols</li><li>Ambulatory nursing-sensitive quality indicators</li><li>Shared care coordination across care settings</li><li>Predictive analytics for readmission risk</li><li>Virtual visit nursing competency training</li><li>Financial modeling of transitional care value</li></ul></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="cred-sec sec" id="credentials">
+  <div class="ctr">
+    <div class="eye rv">Qualifications</div>
+    <h2 class="disp rv d1">Licensure, Education &amp; <em>Certifications</em></h2>
+    <div class="cred-grid">
+      <div class="cc rv"><span class="cc-em">🎓</span><div class="cc-ab">MSN</div><div class="cc-nm">Master of Science in Nursing · Healthcare Management</div><div class="cc-mt">UNC Greensboro · Expected May 2026</div><div class="cc-slot">📄 Insert Degree Document</div></div>
+      <div class="cc rv d1"><span class="cc-em">💼</span><div class="cc-ab">MBA</div><div class="cc-nm">Master of Business Administration · Healthcare Management</div><div class="cc-mt">UNC Greensboro · Expected May 2026</div><div class="cc-slot">📄 Insert Degree Document</div></div>
+      <div class="cc rv d2"><span class="cc-em">🎓</span><div class="cc-ab">BSN</div><div class="cc-nm">Bachelor of Science in Nursing</div><div class="cc-mt">UNC Greensboro · May 2017</div><div class="cc-slot">📄 Insert Degree Document</div></div>
+      <div class="cc rv"><span class="cc-em">📋</span><div class="cc-ab">RN</div><div class="cc-nm">Registered Nurse · NC Board of Nursing</div><div class="cc-mt">License #296646</div><div class="cc-slot">📄 Insert License Document</div></div>
+      <div class="cc rv d1"><span class="cc-em">🏅</span><div class="cc-ab">CMSRN</div><div class="cc-nm">Certified Medical-Surgical Registered Nurse — MSNCB</div><div class="cc-mt">Credential #87009815 · Exp. 04/30/2028</div><div class="cc-slot">📄 Insert Certificate</div></div>
+      <div class="cc rv d2"><span class="cc-em">🏅</span><div class="cc-ab">MEDSURG-BC</div><div class="cc-nm">Medical-Surgical Nursing Board Certified — ANCC</div><div class="cc-mt">License #2023020125 · Exp. 06/01/2028</div><div class="cc-slot">📄 Insert Certificate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sk-sec sec" id="skills">
+  <div class="ctr">
+    <div class="eye rv">Competency Profile</div>
+    <h2 class="disp rv d1">Clinical &amp; Leadership <em>Skills</em></h2>
+    <div class="sk-grid">
+      <div class="sk-col rv" id="skGrid">
+        <h3>Core Competency Levels</h3>
+        <div class="bars">
+          <div class="brow"><div class="btop"><span class="bnm">Medical-Surgical &amp; Telemetry Nursing</span><span class="blv">Expert</span></div><div class="btrack"><div class="bfill" data-w="96%"></div></div></div>
+          <div class="brow"><div class="btop"><span class="bnm">Cardiac &amp; Heart Failure Management</span><span class="blv">Expert</span></div><div class="btrack"><div class="bfill" data-w="94%"></div></div></div>
+          <div class="brow"><div class="btop"><span class="bnm">Neurological &amp; Surgical Nursing</span><span class="blv">Expert</span></div><div class="btrack"><div class="bfill" data-w="93%"></div></div></div>
+          <div class="brow"><div class="btop"><span class="bnm">Evidence-Based Practice &amp; QI</span><span class="blv">Expert</span></div><div class="btrack"><div class="bfill" data-w="92%"></div></div></div>
+          <div class="brow"><div class="btop"><span class="bnm">Staff Education, Precepting &amp; Mentorship</span><span class="blv">Advanced</span></div><div class="btrack"><div class="bfill" data-w="91%"></div></div></div>
+          <div class="brow"><div class="btop"><span class="bnm">Care Coordination &amp; Transitions</span><span class="blv">Advanced</span></div><div class="btrack"><div class="bfill" data-w="90%"></div></div></div>
+          <div class="brow"><div class="btop"><span class="bnm">Population Health &amp; Chronic Disease</span><span class="blv">Advanced</span></div><div class="btrack"><div class="bfill" data-w="85%"></div></div></div>
+          <div class="brow"><div class="btop"><span class="bnm">Healthcare Finance &amp; Strategic Planning</span><span class="blv">Proficient</span></div><div class="btrack"><div class="bfill" data-w="81%"></div></div></div>
+        </div>
+      </div>
+      <div class="sk-col rv d2">
+        <h3>Technical Competencies</h3>
+        <div class="ts"><div class="tcat">Health IT &amp; EMR Platforms</div><div class="trow"><span class="chip">Epic Inpatient</span><span class="chip">Epic Outpatient</span><span class="chip">Meditech</span><span class="chip">Webex Telehealth</span></div></div>
+        <div class="ts"><div class="tcat">Advanced Clinical Skills</div><div class="trow"><span class="chip">Tracheostomy Care</span><span class="chip">Wound VAC Therapy</span><span class="chip">Insulin Drip Mgmt</span><span class="chip">Heparin Protocols</span><span class="chip">Cardiac Cath Pre/Post</span><span class="chip">Chemotherapy Admin</span><span class="chip">Spirometry</span><span class="chip">Allergy Skin Testing</span></div></div>
+        <div class="ts"><div class="tcat">Quality &amp; Compliance</div><div class="trow"><span class="chip gd">JCAHO</span><span class="chip gd">HIPAA</span><span class="chip gd">PDSA</span><span class="chip gd">HEDIS Measures</span><span class="chip gd">CMS Compliance</span><span class="chip gd">NCBON Standards</span></div></div>
+        <div class="ts"><div class="tcat">Graduate Business (MBA)</div><div class="trow"><span class="chip gd">Healthcare Finance</span><span class="chip gd">Revenue Cycle</span><span class="chip gd">Strategic Planning</span><span class="chip gd">Org Leadership</span><span class="chip gd">Value-Based Care</span><span class="chip gd">Healthcare Policy</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp-sec sec" id="experience">
+  <div class="ctr">
+    <div class="eye gd rv">Career Journey</div>
+    <h2 class="disp rv d1" style="color:#fff;">Professional <em style="color:var(--champ)">Experience</em></h2>
+    <div class="exp-grid">
+      <div class="tl rv">
+        <div class="tli"><div class="tld">Feb 2025 – Present</div><div class="tlr">Registered Nurse — Medical-Surgical / Telemetry</div><div class="tlo">UNC Rex Holly Springs · Holly Springs, NC</div><div class="tltx">Evidence-based nursing care for complex post-operative orthopedic, cardiac, and neurological patients. Coordinating interdisciplinary care with physicians, PT, case managers, and social workers. Serving as resource nurse and QI contributor targeting fall prevention, CAUTI reduction, and medication safety.</div><div class="tlcs"><span class="tlc">Epic EMR</span><span class="tlc">Telemetry</span><span class="tlc">Resource Nurse</span><span class="tlc">QI Initiatives</span></div></div>
+        <div class="tli"><div class="tld">Sep 2023 – Feb 2025</div><div class="tlr">Registered Nurse — Heart Failure Progressive Unit</div><div class="tlo">Moses H. Cone Memorial Hospital · Greensboro, NC</div><div class="tltx">Managed hemodynamically complex patients requiring telemetry surveillance, medication titration, and invasive procedure support. Executed heart failure protocols including fluid management, diuresis monitoring, and BNP trending. Mentored new graduates and travel nurses; collaborated on transition-of-care planning.</div><div class="tlcs"><span class="tlc">Heart Failure</span><span class="tlc">Hemodynamic Monitoring</span><span class="tlc">Cardiac Cath</span><span class="tlc">Preceptor</span></div></div>
+        <div class="tli"><div class="tld">May 2023 – Aug 2023</div><div class="tlr">Travel RN — Trauma, Surgical &amp; Neurology</div><div class="tlo">Johns Hopkins Hospital (Host Health Care) · Baltimore, MD</div><div class="tltx">High-acuity care at a nationally ranked Level I Trauma Center across trauma surgery, general surgery, orthopedics, and neurology. Managed advanced wound care including wound VACs, hemovacs, and external fixators. Achieved full independent practice within standard orientation.</div><div class="tlcs"><span class="tlc">Level I Trauma</span><span class="tlc">Wound VAC</span><span class="tlc">Neurosurgery</span><span class="tlc">Academic Medical Center</span></div></div>
+        <div class="tli"><div class="tld">Sep 2019 – Dec 2020</div><div class="tlr">Registered Nurse — Ambulatory Urology</div><div class="tlo">WakeMed Physician Practices · Raleigh, NC</div><div class="tltx">Clinical operations lead for a high-volume urology practice across two locations. Triaged complex patients, assisted with cystoscopies, prostate biopsies, vasectomies. Administered chemotherapy and hormonal therapies for prostate cancer patients. Delivered care via Webex telemedicine. Recruited, onboarded, and trained new clinical staff.</div><div class="tlcs"><span class="tlc">Multi-Site Operations</span><span class="tlc">Oncology Meds</span><span class="tlc">Telemedicine</span><span class="tlc">Staff Training</span></div></div>
+        <div class="tli"><div class="tld">Nov 2018 – Sep 2019</div><div class="tlr">Registered Nurse — Neurology Intermediate Care</div><div class="tlo">WakeMed Health &amp; Hospitals · Raleigh, NC</div><div class="tltx">Specialized nursing care for stroke, seizure, and neurologically compromised patients. Managed insulin and heparin drip protocols, telemetry surveillance, and tracheostomy care. Participated in interdisciplinary rounds advocating for patient-centered care adjustments.</div><div class="tlcs"><span class="tlc">Neurology IMC</span><span class="tlc">Stroke Care</span><span class="tlc">Heparin Protocols</span><span class="tlc">Epic EMR</span></div></div>
+        <div class="tli"><div class="tld">Apr – Nov 2018</div><div class="tlr">Registered Nurse — Neurology Ambulatory (Per Diem)</div><div class="tlo">Duke Private Diagnostic Clinic · Durham, NC</div><div class="tltx">Neurology patient triage and care coordination for epilepsy, MS, and movement disorders. Conducted spirometry and allergy skin testing; administered IM injections and immunotherapy protocols with anaphylaxis preparedness.</div><div class="tlcs"><span class="tlc">Neurology Ambulatory</span><span class="tlc">Epilepsy/MS</span><span class="tlc">Spirometry</span><span class="tlc">Immunotherapy</span></div></div>
+        <div class="tli"><div class="tld">Jul 2017 – Jun 2022 (with travel intervals)</div><div class="tlr">RN — Surgical/Neuro Care &amp; Travel Assignments</div><div class="tlo">UNC Rex · ECU Health North · Lewis Gale · Moses Cone (Travel)</div><div class="tltx">Post-operative bariatric, thoracic, craniotomy, and orthopedic surgical nursing at UNC Rex. Multiple travel assignments demonstrating clinical adaptability, cross-system EMR competency (Epic &amp; Meditech), and direct exposure to SDOH drivers of rural health disparities in eastern NC and VA.</div><div class="tlcs"><span class="tlc">Surgical Nursing</span><span class="tlc">Craniotomy</span><span class="tlc">Travel Nursing</span><span class="tlc">Rural Health</span><span class="tlc">Epic &amp; Meditech</span></div></div>
+      </div>
+      <div class="esb">
+        <div class="sph"><div class="sph-i">🖼️</div><div class="sph-t">Insert Professional Photo</div></div>
+        <div class="scard"><h4>Leadership Highlights</h4><ul><li>Charge Nurse — 20+ bed units</li><li>Preceptor: new grads, travel RNs, students</li><li>Recruitment &amp; Retention Committee</li><li>QI: Falls, CAUTI, Med Reconciliation</li><li>Multi-site ambulatory operations lead</li><li>Telemedicine workflow development</li><li>New employee onboarding design</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXEMPLARS WITH PPTX DOWNLOADS -->
+<section class="ex-sec sec" id="exemplars">
+  <div class="ctr">
+    <div class="eye rv">Clinical Practice</div>
+    <h2 class="disp rv d1">Clinical <em>Exemplars</em></h2>
+    <p class="lead rv d2" style="margin:.75rem 0 0;">Scholarly presentations and clinical narratives demonstrating advanced judgment, leadership in action, and patient-centered excellence.</p>
+    <div class="ex-grid">
+      <div class="exc rv">
+        <div class="exn">01</div>
+        <div class="exs">Data Analytics · NUR 614 Graduate Course</div>
+        <div class="ext">Data-Driven Quality Improvement Report</div>
+        <div class="exb">This graduate-level data report demonstrates advanced application of healthcare analytics and evidence-based quality improvement methodology — examining nursing-sensitive indicators, outcome measurement, and data-driven decision making as foundations of nursing leadership practice.</div>
+        <div class="extags"><span class="extag">Healthcare Analytics</span><span class="extag">Quality Improvement</span><span class="extag">Nursing Leadership</span><span class="extag">Graduate Scholarship</span></div>
+        <a href="McGuire NUR 614-20 Data Report .pptx" class="dl-btn" download><span class="dl-ic">📊</span> Download Presentation (PPTX)</a>
+      </div>
+      <div class="exc rv d1">
+        <div class="exn">02</div>
+        <div class="exs">Nursing Policy &amp; Leadership · NUR 607</div>
+        <div class="ext">Nursing Leadership &amp; Policy Analysis</div>
+        <div class="exb">A graduate-level presentation exploring the intersection of nursing leadership, healthcare policy, and organizational management — reflecting advanced preparation in the strategic and systems-thinking competencies required for effective nurse management at unit and organizational levels.</div>
+        <div class="extags"><span class="extag">Healthcare Policy</span><span class="extag">Organizational Management</span><span class="extag">Strategic Leadership</span><span class="extag">Graduate Scholarship</span></div>
+        <a href="McGuire,Latara NUR 607 Powerpoint.pptx" class="dl-btn" download><span class="dl-ic">📋</span> Download Presentation (PPTX)</a>
+      </div>
+      <div class="exc rv">
+        <div class="exn">03</div>
+        <div class="exs">Quality &amp; Patient Safety · NUR 609</div>
+        <div class="ext">Quality &amp; Safety — Part 2</div>
+        <div class="exb">This advanced graduate presentation addresses the critical domains of healthcare quality and patient safety — including evidence-based safety culture frameworks, regulatory compliance, risk reduction strategies, and the nurse leader's role in designing systems that prevent harm and drive measurable safety outcomes.</div>
+        <div class="extags"><span class="extag">Patient Safety</span><span class="extag">Safety Culture</span><span class="extag">Risk Reduction</span><span class="extag">Regulatory Compliance</span></div>
+        <a href="McGuireNUR609 Quality and Safety Part 2 [Autosaved].pptx" class="dl-btn" download><span class="dl-ic">🛡️</span> Download Presentation (PPTX)</a>
+      </div>
+      <div class="exc rv d1">
+        <div class="exn">04</div>
+        <div class="exs">Clinical Practice · Heart Failure Unit — Coming Soon</div>
+        <div class="ext">Heart Failure &amp; Transitional Care Exemplar</div>
+        <div class="exb">A narrative clinical exemplar from the Heart Failure Progressive Care Unit at Moses Cone — demonstrating advanced clinical assessment, early deterioration recognition, interdisciplinary care coordination, and transition-of-care planning that reduced readmission risk for a high-acuity patient population.</div>
+        <div class="extags"><span class="extag">Heart Failure</span><span class="extag">Hemodynamic Monitoring</span><span class="extag">Transition Planning</span><span class="extag">Interdisciplinary Care</span></div>
+        <div class="ex-ph">📝 &nbsp;Clinical narrative in progress</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY & RESEARCH -->
+<section class="comm-sec sec" id="community">
+  <div class="ctr">
+    <div class="eye rv">Impact Beyond the Bedside</div>
+    <h2 class="disp rv d1">Community Engagement &amp; <em>Scholarly Contributions</em></h2>
+    <div class="comm-grid">
+      <div class="comm-card rv">
+        <h3>Community &amp; Population Health</h3>
+        <ul class="comm-list">
+          <li><strong>BSN Capstone — Guilford County, NC:</strong> Designed and delivered a community health intervention targeting hypertension and diabetes self-management for underserved adults — developing culturally sensitive health literacy materials with community health worker coordination.</li>
+          <li><strong>Graduate Population Health Project (In Progress):</strong> Leading a community needs assessment with a Raleigh-area health organization identifying care gaps in chronic disease management, preventive screening, and SDOH resource access for uninsured populations.</li>
+          <li><strong>Rural Health Advocacy — ECU Health:</strong> Documented SDOH drivers of emergency utilization, care fragmentation, and preventable hospitalization in underserved rural eastern North Carolina during multiple travel assignments.</li>
+          <li><strong>Health Literacy Advocacy:</strong> Produced evidence-based patient and family education materials across all care settings aligned with health literacy best practices to improve medication adherence and reduce avoidable readmissions.</li>
+        </ul>
+      </div>
+      <div class="comm-card rv d2">
+        <h3>Research &amp; Scholarly Work</h3>
+        <ul class="comm-list">
+          <li><strong>MSN/MBA Graduate Capstone:</strong> Investigating evidence-based transitional care models and their effectiveness in reducing 30-day readmissions for heart failure, pneumonia, and COPD — integrating clinical data analysis with financial impact modeling for policy-actionable recommendations.</li>
+          <li><strong>Population Health Program (ACO Model):</strong> Developed a comprehensive population health strategy for a simulated ACO incorporating HEDIS quality measures, care gap analysis, SDOH protocols, and value-based care financial modeling.</li>
+          <li><strong>Heart Failure Care Coordination Analysis:</strong> Analyzed gaps between hospital disease management and post-discharge community follow-up — identifying high-risk discharge indicators and proposing structured transitional care interventions.</li>
+          <li><strong>Independent Pharmacy Consulting Capstone:</strong> Applied dual MBA and nursing frameworks to operational analysis and strategic planning for an independent pharmacy — bridging clinical insight with healthcare business administration.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC / YOUTUBE -->
+<section class="music-sec sec" id="music">
+  <div class="ctr">
+    <div class="music-grid">
+      <div class="rv">
+        <div class="eye gd" style="margin-bottom:1.4rem;">Inspiration &amp; Motivation</div>
+        <h2 class="disp" style="color:#fff;margin-bottom:1.5rem;">Sound That <em style="color:var(--champ)">Drives</em> the Work</h2>
+        <p class="m-desc">Behind every long shift, every late-night study session, and every moment of doubt that turned into determination — there's music that carries you through. This selection captures the spirit of resilience, purpose, and the relentless pursuit of excellence that defines a career in nursing leadership.</p>
+        <div class="m-det"><div class="m-det-i">🎵</div><div class="m-det-t"><strong>Featured Track</strong><br>A song that speaks to the journey — the dedication, the sacrifice, and the reward of leading with heart in healthcare.</div></div>
+        <div class="m-det"><div class="m-det-i">💪</div><div class="m-det-t"><strong>What Drives Latara</strong><br>The same energy that fuels great nursing — showing up fully, every time, for patients and for the profession we are building together.</div></div>
+      </div>
+      <div class="rv d2">
+        <div class="yt-wrap">
+          <iframe src="https://www.youtube.com/embed/KyV6W_FHVZ4?rel=0&modestbranding=1&color=white" title="Inspiration Music" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="yt-lbl"><div class="yt-dot"></div>Playing via YouTube · Use player controls for volume</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AFFILIATIONS -->
+<section class="aff-sec">
+  <div class="ctr">
+    <div class="eye rv">Professional Network</div>
+    <h2 class="disp rv d1" style="font-size:2.2rem;">Professional <em>Affiliations</em></h2>
+    <div class="aff-grid rv">
+      <div class="afc"><div class="afab">AMSN</div><div class="afnm">Academy of Medical-Surgical Nurses — Active Member</div></div>
+      <div class="afc"><div class="afab">ANA</div><div class="afnm">American Nurses Association — Active Member</div></div>
+      <div class="afc"><div class="afab">ΣΘΤ</div><div class="afnm">Sigma Theta Tau International — Nursing Honor Society</div></div>
+      <div class="afc"><div class="afab">ACHE</div><div class="afnm">American College of Healthcare Executives — Affiliate (In Progress)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="cont-sec sec" id="contact">
+  <div class="ctr">
+    <div class="cont-in">
+      <div class="eye gd" style="justify-content:center;">Let's Connect</div>
+      <h2 class="disp wh" style="color:#fff;text-align:center;margin-bottom:.5rem;">Ready to <em style="color:var(--champ)">Lead Together</em></h2>
+      <p style="color:rgba(255,255,255,.44);font-size:.9rem;margin-top:.75rem;">Open to nursing management, director-level, and collaborative healthcare leadership opportunities.</p>
+      <div class="cont-cards">
+        <a href="tel:2523082013" class="ccard"><span class="cc-ico">📞</span><div class="cc-lbl">Phone</div><div class="cc-val">(252) 308-2013</div></a>
+        <a href="mailto:lataramcguire@gmail.com" class="ccard"><span class="cc-ico">✉️</span><div class="cc-lbl">Email</div><div class="cc-val">lataramcguire@gmail.com</div></a>
+        <div class="ccard"><span class="cc-ico">📍</span><div class="cc-lbl">Location</div><div class="cc-val">Zebulon, NC</div></div>
+        <div class="ccard"><span class="cc-ico">🎓</span><div class="cc-lbl">Graduating</div><div class="cc-val">May 2026 · UNCG</div></div>
+      </div>
+      <div class="sig">
+        <div class="sig-n">Latara McGuire</div>
+        <div class="sig-c">BSN · MSN/MBA Candidate (UNCG) · CMSRN · MEDSURG-BC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">© 2025 Latara N. McGuire — Professional Nursing Portfolio · UNCG MSN/MBA Candidate May 2026</div>
+  <div class="ft">Zebulon, NC · (252) 308-2013 · lataramcguire@gmail.com</div>
+</footer>
+
+<script>
+const cD=document.getElementById('cD'),cR=document.getElementById('cR');
+document.addEventListener('mousemove',e=>{cD.style.left=e.clientX+'px';cD.style.top=e.clientY+'px';cR.style.left=e.clientX+'px';cR.style.top=e.clientY+'px'});
+document.querySelectorAll('a,button,.val-row,.cc,.exc,.iss-hdr,.ptab,.afc,.ccard').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cR.style.width='48px';cR.style.height='48px';cR.style.borderColor='var(--champ-lt)';cD.style.background='var(--champ-lt)';cD.style.transform='translate(-50%,-50%) scale(1.5)'});
+  el.addEventListener('mouseleave',()=>{cR.style.width='32px';cR.style.height='32px';cR.style.borderColor='var(--champ)';cD.style.background='var(--champ)';cD.style.transform='translate(-50%,-50%) scale(1)'});
+});
+window.addEventListener('scroll',()=>{document.getElementById('mNav').style.padding=window.scrollY>60?'.7rem 4rem':'1.25rem 4rem'});
+function pTab(e,id){document.querySelectorAll('.ppanel').forEach(p=>p.classList.remove('act'));document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('act'));document.getElementById(id).classList.add('act');e.target.classList.add('act')}
+function togIss(h){const item=h.parentElement,body=item.querySelector('.iss-body'),isOpen=item.classList.contains('open');document.querySelectorAll('.iss-item').forEach(i=>{i.classList.remove('open');i.querySelector('.iss-body').style.maxHeight='0'});if(!isOpen){item.classList.add('open');body.style.maxHeight=body.scrollHeight+'px'}}
+const rvObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');rvObs.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+const skObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.bfill').forEach(b=>{b.style.width=b.dataset.w});skObs.unobserve(e.target)}})},{threshold:.2});
+const sg=document.getElementById('skGrid');if(sg)skObs.observe(sg);
+</script>
+</body>
+</html>
