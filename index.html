@@ -1,1058 +1,1467 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ezekiel Ologunde</title>
+  <title>Ezekiel Ologunde — Cybersecurity Expert</title>
   <meta name="description" content="Cybersecurity Educator | AI/ML Specialist | Digital Forensics Analyst" />
-  <link rel="icon" href="client/public/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #060812;
-      --panel: rgba(12, 16, 30, 0.85);
-      --panel-2: rgba(12, 16, 30, 0.55);
-      --border: rgba(148, 163, 184, 0.18);
-      --text: #e5e7eb;
-      --muted: rgba(229, 231, 235, 0.72);
-      --primary: #38bdf8;
-      --success: #34d399;
-      --warn: #fbbf24;
-      --shadow: 0 20px 60px rgba(0,0,0,0.55);
-      --radius: 18px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --bg: #020408;
+      --bg2: #040810;
+      --panel: rgba(4, 12, 24, 0.92);
+      --panel2: rgba(0, 20, 40, 0.65);
+      --border: rgba(0, 200, 255, 0.14);
+      --border2: rgba(0, 255, 150, 0.12);
+      --text: #c8d8e8;
+      --text2: #7090a8;
+      --cyan: #00e5ff;
+      --green: #00ff9d;
+      --orange: #ff6b35;
+      --red: #ff3366;
+      --mono: 'Share Tech Mono', monospace;
+      --display: 'Orbitron', monospace;
+      --body: 'Rajdhani', sans-serif;
+      --r: 4px;
+      --glow-c: 0 0 20px rgba(0,229,255,0.25);
+      --glow-g: 0 0 20px rgba(0,255,157,0.25);
     }
 
-    * { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
-      margin: 0;
-      font-family: var(--sans);
+      font-family: var(--body);
       color: var(--text);
-      background: radial-gradient(1200px 800px at 20% 10%, rgba(56,189,248,0.12), transparent 60%),
-                  radial-gradient(1000px 700px at 90% 25%, rgba(52,211,153,0.10), transparent 55%),
-                  var(--bg);
+      background: var(--bg);
       overflow-x: hidden;
+      font-size: 16px;
+      line-height: 1.6;
     }
+
+    ::selection { background: rgba(0,229,255,0.25); color: #fff; }
 
     a { color: inherit; text-decoration: none; }
-    .muted { color: var(--muted); }
 
-    /* Matrix background */
-    #matrix {
+    /* SCANLINES */
+    body::before {
+      content: '';
       position: fixed;
       inset: 0;
-      z-index: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 4px
+      );
       pointer-events: none;
-      opacity: 0.55;
+      z-index: 9999;
     }
-    .noise {
+
+    /* HEX GRID BG */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52'%3E%3Cpolygon points='30,2 58,17 58,37 30,52 2,37 2,17' fill='none' stroke='rgba(0,229,255,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 60px 52px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* MATRIX CANVAS */
+    #matrix {
       position: fixed;
       inset: 0;
       z-index: 1;
       pointer-events: none;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
-      mix-blend-mode: overlay;
+      opacity: 0.35;
     }
 
-    /* Layout */
-    .wrap {
-      position: relative;
-      z-index: 2;
-      min-height: 100vh;
+    /* CORNER DECORATIONS */
+    .corner-tl, .corner-tr, .corner-bl, .corner-br {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      z-index: 10;
+      pointer-events: none;
     }
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    section {
-      padding: 92px 0;
-    }
-    h1, h2, h3 {
-      margin: 0 0 14px 0;
-      letter-spacing: -0.02em;
-    }
-    h2 {
-      font-size: 28px;
-      font-family: var(--mono);
-    }
-    .section-head {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-    .section-head .prompt {
-      font-family: var(--mono);
-      color: var(--success);
-    }
+    .corner-tl { top: 16px; left: 16px; border-top: 1px solid var(--cyan); border-left: 1px solid var(--cyan); opacity: 0.4; }
+    .corner-tr { top: 16px; right: 16px; border-top: 1px solid var(--cyan); border-right: 1px solid var(--cyan); opacity: 0.4; }
+    .corner-bl { bottom: 16px; left: 16px; border-bottom: 1px solid var(--cyan); border-left: 1px solid var(--cyan); opacity: 0.4; }
+    .corner-br { bottom: 16px; right: 16px; border-bottom: 1px solid var(--cyan); border-right: 1px solid var(--cyan); opacity: 0.4; }
 
-    /* Nav */
+    /* WRAP */
+    .wrap { position: relative; z-index: 2; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* ======= NAV ======= */
     .nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 3;
-      backdrop-filter: blur(12px);
-      background: rgba(6, 8, 18, 0.55);
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(2, 4, 8, 0.9);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
+    }
+    .nav::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), var(--green), transparent);
+      opacity: 0.5;
     }
     .nav .container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: 14px;
-      padding-bottom: 14px;
+      padding-top: 12px;
+      padding-bottom: 12px;
       gap: 16px;
     }
     .brand {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-family: var(--mono);
-      font-weight: 700;
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--cyan);
+      letter-spacing: 0.1em;
     }
-    .brand .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: var(--success);
-      box-shadow: 0 0 18px rgba(52,211,153,0.6);
+    .brand-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green), 0 0 24px rgba(0,255,157,0.4);
+      animation: pulse 2s infinite;
     }
-    .links {
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+    .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 4px;
       font-family: var(--mono);
-      font-size: 13px;
-      color: var(--muted);
+      font-size: 12px;
     }
-    .links a {
-      padding: 6px 10px;
-      border-radius: 999px;
+    .nav-links a {
+      padding: 5px 10px;
+      border-radius: var(--r);
+      color: var(--text2);
       border: 1px solid transparent;
+      transition: all 0.2s;
     }
-    .links a:hover {
-      color: var(--text);
-      border-color: var(--border);
-      background: rgba(12, 16, 30, 0.45);
+    .nav-links a:hover {
+      color: var(--cyan);
+      border-color: rgba(0,229,255,0.25);
+      background: rgba(0,229,255,0.05);
+      text-shadow: 0 0 8px rgba(0,229,255,0.5);
     }
 
-    /* Hero */
-    .hero {
-      padding-top: 120px;
-      padding-bottom: 70px;
+    /* ======= SECTION BASE ======= */
+    section { padding: 80px 0; }
+
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 36px;
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 22px;
+    .sec-prompt {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--green);
+    }
+    .sec-title {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0.05em;
+    }
+    .sec-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    /* ======= HERO ======= */
+    .hero {
+      padding-top: 110px;
+      padding-bottom: 60px;
+      min-height: 100vh;
+      display: flex;
       align-items: center;
     }
-    @media (max-width: 920px) {
-      .hero-grid { grid-template-columns: 1fr; }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 24px;
+      align-items: center;
+      width: 100%;
     }
+
+    /* Glitch effect */
+    .glitch {
+      position: relative;
+    }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .glitch::before {
+      left: 2px;
+      color: var(--red);
+      clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+      animation: glitch1 4s infinite;
+      opacity: 0.7;
+    }
+    .glitch::after {
+      left: -2px;
+      color: var(--cyan);
+      clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+      animation: glitch2 4s infinite;
+      opacity: 0.7;
+    }
+    @keyframes glitch1 {
+      0%,94%,100% { transform: translateX(0); opacity: 0; }
+      95%,97% { transform: translateX(3px); opacity: 0.7; }
+      96%,98% { transform: translateX(-3px); opacity: 0.7; }
+    }
+    @keyframes glitch2 {
+      0%,91%,100% { transform: translateX(0); opacity: 0; }
+      92%,94% { transform: translateX(-3px); opacity: 0.7; }
+      93%,95% { transform: translateX(3px); opacity: 0.7; }
+    }
+
+    /* Terminal */
     .terminal {
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      border-radius: var(--r);
       overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(0,229,255,0.05), 0 30px 80px rgba(0,0,0,0.7), var(--glow-c);
     }
-    .terminal-top {
+    .terminal-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(2, 6, 23, 0.7);
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .dots {
-      display: inline-flex;
-      gap: 7px;
-      align-items: center;
-    }
-    .dots span {
-      width: 10px; height: 10px; border-radius: 999px; display: inline-block;
-      background: rgba(148,163,184,0.35);
-    }
-    .dots span:nth-child(1) { background: rgba(239,68,68,0.75); }
-    .dots span:nth-child(2) { background: rgba(245,158,11,0.75); }
-    .dots span:nth-child(3) { background: rgba(34,197,94,0.75); }
-
-    .terminal-body {
-      padding: 18px 18px 22px 18px;
-      font-family: var(--mono);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-    .line { white-space: pre-wrap; }
-    .line .prompt { color: var(--success); margin-right: 8px; }
-    .line.out { color: var(--text); }
-    .line.blank { opacity: 0.4; }
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-    .badge {
-      border: 1px solid var(--border);
-      background: rgba(12, 16, 30, 0.55);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .profile {
-      background: var(--panel-2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      display: block;
-      margin: 4px auto 14px auto;
-      object-fit: cover;
-    }
-    .name {
-      text-align: center;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-    .sub {
-      text-align: center;
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: 13px;
-      margin-top: 6px;
-    }
-    .cta {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-    }
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
       padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(12, 16, 30, 0.65);
+      background: rgba(0, 10, 20, 0.8);
+      border-bottom: 1px solid var(--border);
       font-family: var(--mono);
-      font-size: 13px;
-      color: var(--text);
+      font-size: 12px;
+      color: var(--text2);
     }
-    .btn:hover {
-      border-color: rgba(56,189,248,0.45);
-      box-shadow: 0 0 0 3px rgba(56,189,248,0.12);
-    }
-
-    /* Cards */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-    .card {
-      grid-column: span 6;
-      background: rgba(12, 16, 30, 0.62);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-    }
-    @media (max-width: 920px) {
-      .card { grid-column: span 12; }
-    }
-    .card-title {
+    .term-dots { display: flex; gap: 6px; }
+    .term-dots span { width: 10px; height: 10px; border-radius: 50%; }
+    .term-dots span:nth-child(1) { background: #ff5f57; }
+    .term-dots span:nth-child(2) { background: #ffbd2e; }
+    .term-dots span:nth-child(3) { background: #28c840; }
+    .terminal-body {
+      padding: 20px;
       font-family: var(--mono);
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .card-desc {
-      color: var(--muted);
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.8;
     }
-
-    /* Skills */
-    .skills .skill { margin-top: 12px; }
-    .skill-top {
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 6px;
+    .t-line { white-space: pre-wrap; }
+    .t-prompt { color: var(--green); }
+    .t-cmd { color: var(--cyan); }
+    .t-out { color: var(--text); }
+    .t-blank { opacity: 0; height: 8px; display: block; }
+    .t-cursor {
+      display: inline-block;
+      width: 8px; height: 15px;
+      background: var(--cyan);
+      animation: blink 1s step-end infinite;
+      vertical-align: text-bottom;
+      margin-left: 2px;
     }
-    .bar {
-      height: 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.20);
-      background: rgba(2, 6, 23, 0.5);
-      overflow: hidden;
-    }
-    .fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, rgba(56,189,248,0.95), rgba(52,211,153,0.95));
-      border-radius: 999px;
-      transition: width 1000ms ease;
-    }
-
-    /* Projects */
-    .project { grid-column: span 4; }
-    @media (max-width: 920px) {
-      .project { grid-column: span 12; }
-    }
-    .project-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-    .project h3 {
-      font-size: 16px;
-      font-family: var(--mono);
-      margin: 0;
-    }
-    .status {
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      background: rgba(2, 6, 23, 0.35);
-    }
-    .tags {
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+    .hero-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 12px;
+      margin-top: 20px;
     }
-    .tag {
+    .hbadge {
       font-family: var(--mono);
       font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.18);
-      color: rgba(229,231,235,0.8);
-      background: rgba(2, 6, 23, 0.35);
+      padding: 5px 12px;
+      border: 1px solid rgba(0,229,255,0.25);
+      border-radius: var(--r);
+      background: rgba(0,229,255,0.06);
+      color: var(--cyan);
     }
 
-    /* Lists */
-    .bullets {
-      margin: 12px 0 0 18px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
+    /* Profile card */
+    .profile-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      text-align: center;
     }
-
-    /* Resources */
-    .resource {
-      grid-column: span 4;
+    .avatar-wrap {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 16px;
+    }
+    .avatar-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: conic-gradient(var(--cyan), var(--green), var(--cyan));
+      animation: spin 6s linear infinite;
+      z-index: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar {
+      position: relative;
+      z-index: 1;
+      width: 114px;
+      height: 114px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--bg);
       display: block;
-      transition: transform 160ms ease, border-color 160ms ease;
+      margin: 3px auto 0;
     }
-    .resource:hover {
-      transform: translateY(-2px);
-      border-color: rgba(56,189,248,0.35);
-    }
-
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    @media (max-width: 920px) {
-      .contact-grid { grid-template-columns: 1fr; }
-    }
-    label {
-      display: block;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--muted);
+    .p-name {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.05em;
       margin-bottom: 6px;
     }
+    .p-role {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text2);
+      line-height: 1.7;
+    }
+    .p-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--green);
+      margin: 10px 0;
+    }
+    .p-btns {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .pbtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      background: rgba(0,229,255,0.04);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .pbtn:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: rgba(0,229,255,0.08);
+      box-shadow: var(--glow-c);
+    }
+    .pbtn.green:hover { border-color: var(--green); color: var(--green); background: rgba(0,255,157,0.08); box-shadow: var(--glow-g); }
+
+    /* ======= CARDS / GRID ======= */
+    .grid-12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+    .col-3 { grid-column: span 3; }
+    .col-12 { grid-column: span 12; }
+
+    .card {
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .card:hover { border-color: rgba(0,229,255,0.3); box-shadow: 0 0 30px rgba(0,229,255,0.07); }
+    .card:hover::before { opacity: 0.6; }
+    .card-t {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+    .card-d {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.65;
+    }
+
+    /* ======= SKILLS ======= */
+    .skill-row { margin-top: 12px; }
+    .skill-meta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; color: var(--text2); margin-bottom: 5px; }
+    .skill-meta span:last-child { color: var(--cyan); }
+    .bar { height: 6px; background: rgba(0,229,255,0.08); border-radius: 999px; border: 1px solid rgba(0,229,255,0.1); overflow: hidden; }
+    .fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--cyan), var(--green)); border-radius: 999px; transition: width 1.2s cubic-bezier(0.16,1,0.3,1); }
+
+    /* ======= STATUS BADGES ======= */
+    .status {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid;
+    }
+    .status.active { border-color: var(--green); color: var(--green); background: rgba(0,255,157,0.08); }
+    .status.done { border-color: var(--cyan); color: var(--cyan); background: rgba(0,229,255,0.08); }
+    .status.progress { border-color: var(--orange); color: var(--orange); background: rgba(255,107,53,0.08); }
+    .status.incomplete { border-color: var(--text2); color: var(--text2); background: rgba(112,144,168,0.08); }
+    .status.study { border-color: rgba(255,51,102,0.6); color: #ff6688; background: rgba(255,51,102,0.08); }
+
+    /* ======= TAGS ======= */
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: var(--r);
+      border: 1px solid var(--border2);
+      color: var(--green);
+      background: rgba(0,255,157,0.05);
+    }
+
+    /* ======= PROJECT CARDS ======= */
+    .proj-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+    .proj-head h3 { font-family: var(--mono); font-size: 14px; color: var(--text); line-height: 1.4; }
+
+    /* ======= RESEARCH ======= */
+    .research-card {
+      grid-column: span 6;
+      display: flex;
+      flex-direction: column;
+    }
+    .research-card .rc-year {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text2);
+      margin-bottom: 8px;
+    }
+    .research-card .rc-title {
+      font-family: var(--body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .research-card .rc-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text2);
+      margin-bottom: 10px;
+    }
+    .rc-reads {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green);
+      margin-top: auto;
+    }
+    .rc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--cyan);
+      margin-top: 10px;
+      transition: opacity 0.2s;
+    }
+    .rc-link:hover { opacity: 0.7; }
+
+    .research-profile-banner {
+      grid-column: span 12;
+      background: linear-gradient(135deg, rgba(0,229,255,0.06) 0%, rgba(0,255,157,0.04) 100%);
+      border: 1px solid rgba(0,229,255,0.2);
+      border-radius: var(--r);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .rpb-left { display: flex; flex-direction: column; gap: 4px; }
+    .rpb-name { font-family: var(--display); font-size: 16px; font-weight: 700; color: #fff; letter-spacing: 0.05em; }
+    .rpb-sub { font-family: var(--mono); font-size: 12px; color: var(--text2); }
+    .rpb-stats { display: flex; gap: 24px; }
+    .rpb-stat { text-align: center; }
+    .rpb-stat .n { font-family: var(--display); font-size: 22px; font-weight: 800; color: var(--cyan); }
+    .rpb-stat .l { font-family: var(--mono); font-size: 10px; color: var(--text2); margin-top: 2px; }
+    .rpb-links { display: flex; gap: 10px; }
+    .rpb-link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--cyan);
+      background: rgba(0,229,255,0.05);
+      transition: all 0.2s;
+    }
+    .rpb-link:hover { border-color: var(--cyan); box-shadow: var(--glow-c); }
+    .rpb-link.green { color: var(--green); background: rgba(0,255,157,0.05); }
+    .rpb-link.green:hover { border-color: var(--green); box-shadow: var(--glow-g); }
+
+    /* ======= MEDIUM PUBS ======= */
+    .medium-card {
+      grid-column: span 6;
+    }
+    .mc-date {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text2);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mc-date::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 6px var(--orange);
+    }
+    .mc-title {
+      font-family: var(--body);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .medium-card:hover .mc-title { color: var(--cyan); }
+    .mc-excerpt {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+    .mc-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--orange);
+      margin-top: 12px;
+    }
+
+    .medium-banner {
+      grid-column: span 12;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: linear-gradient(135deg, rgba(255,107,53,0.06), rgba(255,51,102,0.04));
+      border: 1px solid rgba(255,107,53,0.2);
+      border-radius: var(--r);
+      padding: 18px 24px;
+      margin-bottom: 4px;
+    }
+    .mb-left { font-family: var(--mono); }
+    .mb-left .label { font-size: 12px; color: var(--text2); margin-bottom: 4px; }
+    .mb-left .val { font-size: 15px; color: var(--orange); font-weight: 700; }
+    .mb-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,107,53,0.3);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--orange);
+      background: rgba(255,107,53,0.06);
+      transition: all 0.2s;
+    }
+    .mb-link:hover { border-color: var(--orange); box-shadow: 0 0 20px rgba(255,107,53,0.2); }
+
+    /* ======= EDUCATION ======= */
+    .edu-card { grid-column: span 4; }
+    .edu-inst { font-family: var(--mono); font-size: 11px; color: var(--green); margin-bottom: 6px; }
+    .edu-degree { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+    .edu-date { font-family: var(--mono); font-size: 10px; color: var(--text2); margin-bottom: 12px; }
+    .edu-bullets { list-style: none; }
+    .edu-bullets li { font-size: 13px; color: var(--text2); padding-left: 14px; position: relative; margin-bottom: 4px; }
+    .edu-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--cyan); font-size: 10px; top: 3px; }
+
+    /* ======= CERTIFICATIONS ======= */
+    .cert-card { grid-column: span 4; }
+    .cert-abbr {
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--cyan), var(--green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+    .cert-full { font-size: 13px; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+    .cert-issuer { font-family: var(--mono); font-size: 11px; color: var(--text2); }
+
+    /* ======= STUDENT RESOURCES ======= */
+    .resource-card {
+      grid-column: span 3;
+      display: block;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .resource-card:hover {
+      border-color: rgba(0,255,157,0.35);
+      box-shadow: 0 0 20px rgba(0,255,157,0.07), var(--glow-g);
+      transform: translateY(-2px);
+    }
+    .resource-card:hover .rc-icon { color: var(--green); }
+    .rc-icon { font-size: 22px; margin-bottom: 10px; color: var(--cyan); font-family: var(--mono); }
+    .rc-name { font-family: var(--mono); font-size: 13px; color: var(--text); margin-bottom: 4px; }
+    .rc-desc { font-size: 12px; color: var(--text2); }
+
+    /* ======= CONTACT ======= */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    label { display: block; font-family: var(--mono); font-size: 11px; color: var(--text2); margin-bottom: 5px; letter-spacing: 0.05em; }
     input, textarea {
       width: 100%;
       padding: 10px 12px;
-      border-radius: 12px;
+      background: rgba(0, 10, 20, 0.7);
       border: 1px solid var(--border);
-      background: rgba(2, 6, 23, 0.45);
+      border-radius: var(--r);
       color: var(--text);
+      font-family: var(--body);
+      font-size: 14px;
       outline: none;
-      font-family: var(--sans);
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    textarea { min-height: 130px; resize: vertical; }
     input:focus, textarea:focus {
-      border-color: rgba(56,189,248,0.55);
-      box-shadow: 0 0 0 3px rgba(56,189,248,0.12);
+      border-color: rgba(0,229,255,0.4);
+      box-shadow: 0 0 0 3px rgba(0,229,255,0.07);
     }
-
-    .send {
-      margin-top: 12px;
+    textarea { min-height: 120px; resize: vertical; }
+    .send-btn {
       width: 100%;
+      margin-top: 12px;
+      padding: 11px;
+      background: rgba(0,229,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-size: 13px;
       cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.1em;
     }
+    .send-btn:hover {
+      background: rgba(0,229,255,0.12);
+      border-color: var(--cyan);
+      box-shadow: var(--glow-c);
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 14px; }
+    .contact-item { display: flex; flex-direction: column; gap: 3px; }
+    .ci-label { font-family: var(--mono); font-size: 11px; color: var(--text2); }
+    .ci-val { font-family: var(--mono); font-size: 14px; color: var(--cyan); }
 
-    /* Footer */
+    /* ======= FOOTER ======= */
     footer {
       border-top: 1px solid var(--border);
-      padding: 28px 0;
-      color: var(--muted);
+      padding: 24px 0;
       font-family: var(--mono);
       font-size: 12px;
     }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .f-cmd { color: var(--text2); }
+    .f-cmd .c { color: var(--cyan); }
+    .f-cmd .g { color: var(--green); }
+
+    /* ======= RESPONSIVE ======= */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .col-6, .col-4, .col-3 { grid-column: span 12; }
+      .research-card, .medium-card, .edu-card, .cert-card, .resource-card { grid-column: span 12; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .rpb-stats, .rpb-links { flex-wrap: wrap; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+      color: var(--text2);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Highlight text */
+    .hl-c { color: var(--cyan); }
+    .hl-g { color: var(--green); }
+    .hl-o { color: var(--orange); }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s, transform 0.6s; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Number ticker stat in about */
+    .about-stats {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .astat { text-align: center; }
+    .astat-n { font-family: var(--display); font-size: 28px; font-weight: 900; color: var(--cyan); line-height: 1; }
+    .astat-l { font-family: var(--mono); font-size: 10px; color: var(--text2); margin-top: 4px; letter-spacing: 0.05em; }
   </style>
 </head>
 <body>
-  <canvas id="matrix"></canvas>
-  <div class="noise"></div>
 
-  <div class="nav">
+  <canvas id="matrix"></canvas>
+
+  <!-- Corner decorations -->
+  <div class="corner-tl"></div>
+  <div class="corner-tr"></div>
+  <div class="corner-bl"></div>
+  <div class="corner-br"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
     <div class="container">
       <div class="brand">
-        <span class="dot"></span>
-        <span>ezekiel@cyntraix:~$</span>
+        <span class="brand-dot"></span>
+        <span>OLOGUNDE::CYBERLAB</span>
       </div>
-      <div class="links">
+      <div class="nav-links">
         <a href="#about">about</a>
         <a href="#skills">skills</a>
         <a href="#projects">projects</a>
+        <a href="#research">research</a>
+        <a href="#publications">writing</a>
         <a href="#education">education</a>
-        <a href="#certifications">certifications</a>
+        <a href="#certifications">certs</a>
         <a href="#students">students</a>
         <a href="#contact">contact</a>
       </div>
     </div>
-  </div>
+  </nav>
 
   <div class="wrap">
+
+    <!-- HERO -->
     <header class="hero" id="top">
-      <div class="container hero-grid">
-        <div class="terminal" aria-label="Terminal hero">
-          <div class="terminal-top">
-            <div class="dots"><span></span><span></span><span></span></div>
-            <div>terminal</div>
-            <div class="muted">secure shell</div>
-          </div>
-          <div class="terminal-body" id="terminalLines">
-            <div class="line"><span class="prompt">$ </span>whoami</div>
-<div class="line out">Ezekiel Ologunde</div>
-<div class="line blank">&nbsp;</div>
-<div class="line"><span class="prompt">$ </span>cat role.txt</div>
-<div class="line out">Cybersecurity Expert | AI/ML Specialist | Digital Forensics Analyst</div>
-<div class="line blank">&nbsp;</div>
-<div class="line"><span class="prompt">$ </span>cat status.txt</div>
-<div class="line out">D.Eng. Candidate in Cybersecurity Analytics</div>
-<div class="line out">Specializing in Predictive Threat Detection</div>
-<div class="line blank">&nbsp;</div>
-<div class="line"><span class="prompt">$ </span>echo &quot;Ready to secure your digital future.&quot;</div>
-            <div class="badges">
-              <span class="badge">CISSP</span>
-              <span class="badge">AI/ML</span>
-              <span class="badge">CEH</span>
-              <span class="badge">Forensics</span>
+      <div class="container">
+        <div class="hero-inner">
+
+          <!-- Terminal -->
+          <div class="terminal">
+            <div class="terminal-bar">
+              <div class="term-dots"><span></span><span></span><span></span></div>
+              <span>root@cyntraix — ~/profile — bash</span>
+              <span style="color:var(--green)">● SECURE</span>
+            </div>
+            <div class="terminal-body">
+              <div class="t-line"><span class="t-prompt">root@cyntraix</span><span style="color:var(--text2)">:</span><span style="color:var(--cyan)">~</span><span style="color:var(--text2)">$</span> <span class="t-cmd">whoami</span></div>
+              <div class="t-line t-out">Ezekiel Ologunde</div>
+              <div class="t-blank"></div>
+              <div class="t-line"><span class="t-prompt">root@cyntraix</span><span style="color:var(--text2)">:</span><span style="color:var(--cyan)">~</span><span style="color:var(--text2)">$</span> <span class="t-cmd">cat /etc/profile.d/role.conf</span></div>
+              <div class="t-line t-out">ROLE="Cybersecurity Expert | AI/ML Specialist"</div>
+              <div class="t-line t-out">DOMAIN="Digital Forensics + Risk Governance"</div>
+              <div class="t-line t-out">STATUS="D.Eng. Candidate — Cybersecurity Analytics"</div>
+              <div class="t-blank"></div>
+              <div class="t-line"><span class="t-prompt">root@cyntraix</span><span style="color:var(--text2)">:</span><span style="color:var(--cyan)">~</span><span style="color:var(--text2)">$</span> <span class="t-cmd">cat /etc/research.conf</span></div>
+              <div class="t-line t-out">FOCUS="AI-Enabled Security Governance"</div>
+              <div class="t-line t-out">PAPERS=33 | CITATIONS=5 | H_INDEX=2</div>
+              <div class="t-line t-out">INSTITUTION="George Washington University"</div>
+              <div class="t-blank"></div>
+              <div class="t-line"><span class="t-prompt">root@cyntraix</span><span style="color:var(--text2)">:</span><span style="color:var(--cyan)">~</span><span style="color:var(--text2)">$</span> <span class="t-cmd">echo "Securing the future, one vector at a time."</span></div>
+              <div class="t-line t-out" style="color:var(--green)">Securing the future, one vector at a time.</div>
+              <div class="t-blank"></div>
+              <div class="t-line"><span class="t-prompt">root@cyntraix</span><span style="color:var(--text2)">:</span><span style="color:var(--cyan)">~</span><span style="color:var(--text2)">$</span> <span class="t-cursor"></span></div>
+              <div class="hero-badges">
+                <span class="hbadge">NIST RMF</span>
+                <span class="hbadge">CMMC 2.0</span>
+                <span class="hbadge">MITRE ATT&CK</span>
+                <span class="hbadge">Zero Trust</span>
+                <span class="hbadge">AI/ML Security</span>
+                <span class="hbadge">Digital Forensics</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <aside class="profile">
-          <img class="avatar" src="IMG_8794.JPG" alt="Ezekiel Ologunde" loading="lazy" />
-          <div class="name">Ezekiel Ologunde</div>
-          <div class="sub">Cybersecurity Expert • AI/ML Specialist • Digital Forensics Analyst</div>
-          <div class="cta">
-            <a class="btn" href="#contact">Contact</a>
-            <a class="btn" href="#projects">View Projects</a>
-            <a class="btn" href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a>
+          <!-- Profile -->
+          <div class="profile-card">
+            <div class="avatar-wrap">
+              <img class="avatar" src="IMG_8794.JPG" alt="Ezekiel Ologunde" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div style="display:none;width:114px;height:114px;border-radius:50%;background:rgba(0,229,255,0.1);border:3px solid var(--bg);align-items:center;justify-content:center;font-family:var(--display);font-size:32px;color:var(--cyan);margin:3px auto 0;">EO</div>
+            </div>
+            <div class="p-name">EZEKIEL OLOGUNDE</div>
+            <div class="p-role">Cybersecurity Expert &amp; Educator<br>AI/ML Specialist · Digital Forensics Analyst</div>
+            <div class="p-location">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Birmingham, AL · Remote Available
+            </div>
+            <div class="p-btns">
+              <a class="pbtn green" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                Medium Publications
+              </a>
+              <a class="pbtn" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .079.53 3.193 3.193 0 0 0 .112.437c.243.743.65 1.302 1.213 1.68.565.375 1.255.565 2.073.565.707 0 1.356-.172 1.96-.516a4.146 4.146 0 0 0 1.476-1.401l-1.478-.929c-.226.358-.49.622-.79.788a1.96 1.96 0 0 1-.975.248c-.445 0-.82-.118-1.124-.354-.302-.237-.524-.57-.663-1.001-.084-.251-.136-.52-.154-.81a12.62 12.62 0 0 1-.03-.866c0-.36.01-.65.03-.866.018-.29.07-.559.154-.81.14-.43.36-.764.664-1a1.87 1.87 0 0 1 1.123-.355c.334 0 .641.07.921.211.28.14.508.342.683.603L22 6.748A4.087 4.087 0 0 0 20.508.514 3.965 3.965 0 0 0 19.586 0zM9.5 3.15v5.4H7v2.15h2.5v5.7h2.35v-5.7h2.8V8.55h-2.8V3.15H9.5z"/></svg>
+                ResearchGate Profile
+              </a>
+              <a class="pbtn" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&hl=en" target="_blank" rel="noopener">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                Google Scholar
+              </a>
+              <a class="pbtn" href="https://linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a class="pbtn" href="#contact" style="border-color:var(--green);color:var(--green)">
+                ▶ Contact Me
+              </a>
+            </div>
           </div>
-        </aside>
+
+        </div>
       </div>
     </header>
 
     <main>
+
+      <!-- ABOUT -->
       <section id="about">
         <div class="container">
-          <div class="section-head">
-            <div class="prompt"><span class="prompt">$</span> cat</div>
-            <h2>about.md</h2>
+          <div class="sec-head reveal">
+            <span class="sec-prompt">$ cat</span>
+            <h2 class="sec-title">about.md</h2>
+            <div class="sec-line"></div>
           </div>
-
-          <div class="grid">
-            <div class="card">
-              <div class="card-title">Focus Areas</div>
-              <div class="grid" style="margin-top: 12px;">
-                
-  <div class="card">
-    <div class="card-title">Cybersecurity</div>
-    <div class="card-desc">Advanced threat detection and incident response</div>
-  </div>
-
-
-  <div class="card">
-    <div class="card-title">AI/ML</div>
-    <div class="card-desc">Machine learning for predictive security analytics</div>
-  </div>
-
-
-  <div class="card">
-    <div class="card-title">Development</div>
-    <div class="card-desc">Secure application development and code review</div>
-  </div>
-
-
-  <div class="card">
-    <div class="card-title">Digital Forensics</div>
-    <div class="card-desc">Evidence analysis and investigation procedures</div>
-  </div>
-
+          <div class="grid-12">
+            <div class="card col-6 reveal">
+              <div class="card-t">// MISSION STATEMENT</div>
+              <p class="card-d">Passionate cybersecurity leader, educator, and researcher with over a decade of progressive expertise spanning <span class="hl-c">AI-powered security operations</span>, digital forensics, risk governance, and higher education leadership.</p>
+              <p class="card-d" style="margin-top:12px">Recognized for integrating emerging <span class="hl-g">AI/ML technologies</span> into both security operations and academic programs—preparing the next generation of cybersecurity professionals through evidence-based pedagogy and experiential learning design.</p>
+              <div class="about-stats">
+                <div class="astat">
+                  <div class="astat-n">10+</div>
+                  <div class="astat-l">YRS EXP</div>
+                </div>
+                <div class="astat">
+                  <div class="astat-n">33</div>
+                  <div class="astat-l">PAPERS</div>
+                </div>
+                <div class="astat">
+                  <div class="astat-n">5</div>
+                  <div class="astat-l">CITATIONS</div>
+                </div>
+                <div class="astat">
+                  <div class="astat-n">8+</div>
+                  <div class="astat-l">ARTICLES</div>
+                </div>
               </div>
             </div>
-
-            <div class="card">
-              <div class="card-title">Profile</div>
-              <p class="muted" style="margin: 10px 0 0 0;">
-                I am a dedicated <span style="color: var(--primary); font-weight: 700;">cybersecurity professional</span> and
-                <span style="color: var(--success); font-weight: 700;"> AI/ML specialist</span> with extensive experience in
-                protecting digital infrastructure and leveraging machine learning for advanced threat detection.
-              </p>
-              <p class="muted" style="margin: 12px 0 0 0;">
-                Currently pursuing a <span style="color: var(--primary); font-weight: 700;">Doctorate in Engineering (D.Eng.)</span>
-                in Cybersecurity Analytics, my research focuses on developing predictive models for identifying and
-                mitigating cyber threats before they materialize.
-              </p>
-              <p class="muted" style="margin: 12px 0 0 0;">
-                With certifications including CISSP, CEH, and expertise in SIEM platforms, I bring a comprehensive
-                approach to securing organizations against evolving digital threats while maintaining operational efficiency.
-              </p>
+            <div class="card col-6 reveal" style="transition-delay:0.1s">
+              <div class="card-t">// CORE DOMAINS</div>
+              <div class="grid-12" style="gap:10px;margin-top:4px">
+                <div class="card col-6" style="background:rgba(0,229,255,0.04);border-color:rgba(0,229,255,0.15)">
+                  <div class="card-t" style="font-size:11px">CYBERSECURITY</div>
+                  <div class="card-d" style="font-size:13px">Advanced threat detection &amp; incident response</div>
+                </div>
+                <div class="card col-6" style="background:rgba(0,255,157,0.04);border-color:rgba(0,255,157,0.15)">
+                  <div class="card-t" style="font-size:11px;color:var(--green)">AI / ML</div>
+                  <div class="card-d" style="font-size:13px">ML for predictive security analytics</div>
+                </div>
+                <div class="card col-6" style="background:rgba(255,107,53,0.04);border-color:rgba(255,107,53,0.15)">
+                  <div class="card-t" style="font-size:11px;color:var(--orange)">FORENSICS</div>
+                  <div class="card-d" style="font-size:13px">Evidence analysis &amp; investigation</div>
+                </div>
+                <div class="card col-6" style="background:rgba(255,51,102,0.04);border-color:rgba(255,51,102,0.15)">
+                  <div class="card-t" style="font-size:11px;color:var(--red)">EDUCATION</div>
+                  <div class="card-d" style="font-size:13px">Curriculum design &amp; workforce dev</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- SKILLS -->
       <section id="skills">
         <div class="container">
-          <div class="section-head">
-            <div class="prompt"><span class="prompt">$</span> cat</div>
-            <h2>skills.json</h2>
+          <div class="sec-head reveal">
+            <span class="sec-prompt">$ cat</span>
+            <h2 class="sec-title">skills.json</h2>
+            <div class="sec-line"></div>
           </div>
-          <div class="grid">
-            
-    <div class="card">
-      <div class="card-title">Cybersecurity</div>
-      <div class="skills">
-      <div class="skill">
-        <div class="skill-top"><span>Threat Intelligence</span><span class="pct">95%</span></div>
-        <div class="bar"><div class="fill" data-level="95"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>Incident Response</span><span class="pct">92%</span></div>
-        <div class="bar"><div class="fill" data-level="92"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>Digital Forensics</span><span class="pct">90%</span></div>
-        <div class="bar"><div class="fill" data-level="90"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>Penetration Testing</span><span class="pct">88%</span></div>
-        <div class="bar"><div class="fill" data-level="88"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>SIEM/SOAR</span><span class="pct">85%</span></div>
-        <div class="bar"><div class="fill" data-level="85"></div></div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="card">
-      <div class="card-title">AI/ML</div>
-      <div class="skills">
-      <div class="skill">
-        <div class="skill-top"><span>Machine Learning</span><span class="pct">90%</span></div>
-        <div class="bar"><div class="fill" data-level="90"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>Deep Learning</span><span class="pct">85%</span></div>
-        <div class="bar"><div class="fill" data-level="85"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>NLP</span><span class="pct">82%</span></div>
-        <div class="bar"><div class="fill" data-level="82"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>Python/TensorFlow</span><span class="pct">88%</span></div>
-        <div class="bar"><div class="fill" data-level="88"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>Data Analytics</span><span class="pct">92%</span></div>
-        <div class="bar"><div class="fill" data-level="92"></div></div>
-      </div>
-    </div>
-    </div>
-    
-    <div class="card">
-      <div class="card-title">Tools &amp; Technologies</div>
-      <div class="skills">
-      <div class="skill">
-        <div class="skill-top"><span>Splunk/ELK Stack</span><span class="pct">90%</span></div>
-        <div class="bar"><div class="fill" data-level="90"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>Wireshark/tcpdump</span><span class="pct">88%</span></div>
-        <div class="bar"><div class="fill" data-level="88"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>Metasploit/Burp Suite</span><span class="pct">85%</span></div>
-        <div class="bar"><div class="fill" data-level="85"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>Cloud Security (AWS/Azure)</span><span class="pct">82%</span></div>
-        <div class="bar"><div class="fill" data-level="82"></div></div>
-      </div>
-    
-
-      <div class="skill">
-        <div class="skill-top"><span>Docker/Kubernetes</span><span class="pct">78%</span></div>
-        <div class="bar"><div class="fill" data-level="78"></div></div>
-      </div>
-    </div>
-    </div>
-    
+          <div class="grid-12" id="skills-grid">
+            <div class="card col-4 reveal">
+              <div class="card-t">// CYBERSECURITY</div>
+              <div class="skill-row"><div class="skill-meta"><span>Threat Intelligence</span><span>95%</span></div><div class="bar"><div class="fill" data-level="95"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>Incident Response</span><span>92%</span></div><div class="bar"><div class="fill" data-level="92"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>Digital Forensics</span><span>90%</span></div><div class="bar"><div class="fill" data-level="90"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>SIEM / SOAR</span><span>88%</span></div><div class="bar"><div class="fill" data-level="88"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>Risk Governance</span><span>92%</span></div><div class="bar"><div class="fill" data-level="92"></div></div></div>
+            </div>
+            <div class="card col-4 reveal" style="transition-delay:0.1s">
+              <div class="card-t">// AI / ML SECURITY</div>
+              <div class="skill-row"><div class="skill-meta"><span>AI Threat Detection</span><span>90%</span></div><div class="bar"><div class="fill" data-level="90"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>Adversarial ML Defense</span><span>85%</span></div><div class="bar"><div class="fill" data-level="85"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>LLM Security</span><span>85%</span></div><div class="bar"><div class="fill" data-level="85"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>Python / TensorFlow</span><span>88%</span></div><div class="bar"><div class="fill" data-level="88"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>Data Analytics</span><span>90%</span></div><div class="bar"><div class="fill" data-level="90"></div></div></div>
+            </div>
+            <div class="card col-4 reveal" style="transition-delay:0.2s">
+              <div class="card-t">// TOOLS &amp; PLATFORMS</div>
+              <div class="skill-row"><div class="skill-meta"><span>Splunk / ELK</span><span>90%</span></div><div class="bar"><div class="fill" data-level="90"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>Wireshark / Nmap</span><span>88%</span></div><div class="bar"><div class="fill" data-level="88"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>Autopsy / FTK / Cellebrite</span><span>88%</span></div><div class="bar"><div class="fill" data-level="88"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>Cloud Security (AWS)</span><span>82%</span></div><div class="bar"><div class="fill" data-level="82"></div></div></div>
+              <div class="skill-row"><div class="skill-meta"><span>Kali / Pen Testing</span><span>85%</span></div><div class="bar"><div class="fill" data-level="85"></div></div></div>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- PROJECTS -->
       <section id="projects">
         <div class="container">
-          <div class="section-head">
-            <div class="prompt"><span class="prompt">$</span> ls</div>
-            <h2>projects</h2>
+          <div class="sec-head reveal">
+            <span class="sec-prompt">$ ls -la</span>
+            <h2 class="sec-title">projects/</h2>
+            <div class="sec-line"></div>
           </div>
-          <div class="grid">
-            
-  <article class="card project">
-    <div class="project-head">
-      <h3>AI-Powered Threat Detection System</h3>
-      <span class="status">Active</span>
-    </div>
-    <p class="muted">Machine learning pipeline for real-time identification of network anomalies and potential security breaches using deep learning models.</p>
-    <div class="tags">
-      <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Elasticsearch</span><span class="tag">Kafka</span>
-    </div>
-  </article>
-
-
-  <article class="card project">
-    <div class="project-head">
-      <h3>Digital Forensics Toolkit</h3>
-      <span class="status">Incomplete</span>
-    </div>
-    <p class="muted">Comprehensive forensic analysis suite for disk imaging, memory analysis, and evidence preservation with chain of custody tracking.</p>
-    <div class="tags">
-      <span class="tag">Python</span><span class="tag">C++</span><span class="tag">Volatility</span><span class="tag">FTK</span>
-    </div>
-  </article>
-
-
-  <article class="card project">
-    <div class="project-head">
-      <h3>SIEM Dashboard Enhancement</h3>
-      <span class="status">Completed</span>
-    </div>
-    <p class="muted">Custom Splunk dashboards and automated alert correlation engine for improved threat visibility and faster incident response.</p>
-    <div class="tags">
-      <span class="tag">Splunk SPL</span><span class="tag">Python</span><span class="tag">REST API</span>
-    </div>
-  </article>
-
-
-  <article class="card project">
-    <div class="project-head">
-      <h3>Phishing Detection with NLP</h3>
-      <span class="status">Completed</span>
-    </div>
-    <p class="muted">Natural language processing model for identifying phishing emails and malicious URLs with 98.5% accuracy.</p>
-    <div class="tags">
-      <span class="tag">Python</span><span class="tag">BERT</span><span class="tag">FastAPI</span><span class="tag">React</span>
-    </div>
-  </article>
-
-
-  <article class="card project">
-    <div class="project-head">
-      <h3>Vulnerability Assessment Platform</h3>
-      <span class="status">In Progress</span>
-    </div>
-    <p class="muted">Automated vulnerability scanning and reporting system integrated with NIST CVE database for continuous security monitoring.</p>
-    <div class="tags">
-      <span class="tag">Go</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Nmap</span>
-    </div>
-  </article>
-
-
-  <article class="card project">
-    <div class="project-head">
-      <h3>Malware Behavior Analysis</h3>
-      <span class="status">Active</span>
-    </div>
-    <p class="muted">Sandbox environment for dynamic malware analysis with behavioral pattern recognition and threat classification.</p>
-    <div class="tags">
-      <span class="tag">Python</span><span class="tag">Cuckoo</span><span class="tag">YARA</span><span class="tag">Machine Learning</span>
-    </div>
-  </article>
-
+          <div class="grid-12">
+            <article class="card col-4 reveal">
+              <div class="proj-head">
+                <h3>AI-Powered Threat Detection System</h3>
+                <span class="status active">ACTIVE</span>
+              </div>
+              <p class="card-d">ML pipeline for real-time network anomaly identification using deep learning models.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Elasticsearch</span><span class="tag">Kafka</span></div>
+            </article>
+            <article class="card col-4 reveal" style="transition-delay:0.1s">
+              <div class="proj-head">
+                <h3>Phishing Detection with NLP</h3>
+                <span class="status done">COMPLETED</span>
+              </div>
+              <p class="card-d">NLP model for identifying phishing emails and malicious URLs with 98.5% accuracy.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">BERT</span><span class="tag">FastAPI</span><span class="tag">React</span></div>
+            </article>
+            <article class="card col-4 reveal" style="transition-delay:0.2s">
+              <div class="proj-head">
+                <h3>SIEM Dashboard Enhancement</h3>
+                <span class="status done">COMPLETED</span>
+              </div>
+              <p class="card-d">Custom Splunk dashboards and automated alert correlation engine for faster incident response.</p>
+              <div class="tags"><span class="tag">Splunk SPL</span><span class="tag">Python</span><span class="tag">REST API</span></div>
+            </article>
+            <article class="card col-4 reveal">
+              <div class="proj-head">
+                <h3>Digital Forensics Toolkit</h3>
+                <span class="status progress">IN PROGRESS</span>
+              </div>
+              <p class="card-d">Forensic analysis suite for disk imaging, memory analysis, and evidence preservation with chain-of-custody tracking.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">Volatility</span><span class="tag">FTK</span></div>
+            </article>
+            <article class="card col-4 reveal" style="transition-delay:0.1s">
+              <div class="proj-head">
+                <h3>Vulnerability Assessment Platform</h3>
+                <span class="status progress">IN PROGRESS</span>
+              </div>
+              <p class="card-d">Automated vulnerability scanning integrated with NIST CVE database for continuous security monitoring.</p>
+              <div class="tags"><span class="tag">Go</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Nmap</span></div>
+            </article>
+            <article class="card col-4 reveal" style="transition-delay:0.2s">
+              <div class="proj-head">
+                <h3>Malware Behavior Analysis</h3>
+                <span class="status active">ACTIVE</span>
+              </div>
+              <p class="card-d">Sandbox environment for dynamic malware analysis with behavioral pattern recognition and threat classification.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Cuckoo</span><span class="tag">YARA</span><span class="tag">Machine Learning</span></div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="education">
+      <!-- RESEARCH -->
+      <section id="research">
         <div class="container">
-          <div class="section-head">
-            <div class="prompt"><span class="prompt">$</span> cat</div>
-            <h2>education.log</h2>
+          <div class="sec-head reveal">
+            <span class="sec-prompt">$ grep -r</span>
+            <h2 class="sec-title">research/publications</h2>
+            <div class="sec-line"></div>
           </div>
-          <div class="grid">
-            
-  <article class="card">
-    <div class="project-head">
-      <h3>Doctor of Engineering (D.Eng.) in Cybersecurity Analytics</h3>
-      <span class="status"> Expected 2027 </span>
-    </div>
-    <div class="muted">George Washington University</div>
-    <ul class="bullets">
-      <li>Research focus: Predictive threat detection using machine learning</li><li>Dissertation: AI-driven approaches to zero-day vulnerability identification</li>
-    </ul>
-  </article>
-
-
-  <article class="card">
-    <div class="project-head">
-      <h3>Master of Science in Cyberforensic</h3>
-      <span class="status">2022 - 2024</span>
-    </div>
-    <div class="muted">University of Baltimore</div>
-    <ul class="bullets">
-      <li>Concentration: Network Security and Digital Forensics</li><li>Thesis: Behavioral analysis of advanced persistent threats</li><li>Dean&#x27;s List - All Semesters</li>
-    </ul>
-  </article>
-
-
-  <article class="card">
-    <div class="project-head">
-      <h3>Bachelor of Science in Computer Science and Education</h3>
-      <span class="status">2015 - 2019</span>
-    </div>
-    <div class="muted">University of Ilorin</div>
-    <ul class="bullets">
-      <li>Minor: Mathematics</li><li>Capstone: Intrusion detection system using neural networks</li>
-    </ul>
-  </article>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="certifications">
-        <div class="container">
-          <div class="section-head">
-            <div class="prompt"><span class="prompt">$</span> cat</div>
-            <h2>certifications.txt</h2>
-          </div>
-          <div class="grid">
-            
-  <article class="card cert">
-    <div class="cert-top">
-      <div class="cert-badge">CISSP</div>
-      <div class="cert-meta">
-        <div class="cert-full">Certified Information Systems Security Professional</div>
-        <div class="muted">(ISC)² • Studying</div>
-      </div>
-    </div>
-  </article>
-
-
-  <article class="card cert">
-    <div class="cert-top">
-      <div class="cert-badge">CEH</div>
-      <div class="cert-meta">
-        <div class="cert-full">Certified Ethical Hacker</div>
-        <div class="muted">EC-Council • 2024</div>
-      </div>
-    </div>
-  </article>
-
-
-  <article class="card cert">
-    <div class="cert-top">
-      <div class="cert-badge">GCFE</div>
-      <div class="cert-meta">
-        <div class="cert-full">GIAC Certified Forensic Examiner</div>
-        <div class="muted">SANS/GIAC • 2024</div>
-      </div>
-    </div>
-  </article>
-
-
-  <article class="card cert">
-    <div class="cert-top">
-      <div class="cert-badge">AWS Sec</div>
-      <div class="cert-meta">
-        <div class="cert-full">AWS Certified Security - Specialty</div>
-        <div class="muted">Amazon Web Services • 2025</div>
-      </div>
-    </div>
-  </article>
-
-
-  <article class="card cert">
-    <div class="cert-top">
-      <div class="cert-badge">OSCP</div>
-      <div class="cert-meta">
-        <div class="cert-full">Offensive Security Certified Professional</div>
-        <div class="muted">Offensive Security • Study</div>
-      </div>
-    </div>
-  </article>
-
-
-  <article class="card cert">
-    <div class="cert-top">
-      <div class="cert-badge">Security+</div>
-      <div class="cert-meta">
-        <div class="cert-full">CompTIA Security+</div>
-        <div class="muted">CompTIA • 2024</div>
-      </div>
-    </div>
-  </article>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="students">
-        <div class="container">
-          <div class="section-head">
-            <div class="prompt"><span class="prompt">$</span> open</div>
-            <h2>my students-resources</h2>
-          </div>
-          <div class="grid">
-            
-  <a class="card resource" href="basics.html" target="_blank" rel="noopener">
-    <div class="card-title">Basics</div>
-    <div class="muted">Fundamental concepts and getting started</div>
-  </a>
-
-
-  <a class="card resource" href="Acronyms.html" target="_blank" rel="noopener">
-    <div class="card-title">Acronyms</div>
-    <div class="muted">Common cybersecurity terminology</div>
-  </a>
-
-
-  <a class="card resource" href="Certification Guide.html" target="_blank" rel="noopener">
-    <div class="card-title">Certification Guide</div>
-    <div class="muted">How to get certified in cybersecurity</div>
-  </a>
-
-
-  <a class="card resource" href="Certifications.html" target="_blank" rel="noopener">
-    <div class="card-title">Certifications</div>
-    <div class="muted">Available certifications overview</div>
-  </a>
-
-
-  <a class="card resource" href="Resources.html" target="_blank" rel="noopener">
-    <div class="card-title">Resources</div>
-    <div class="muted">Learning materials and guides</div>
-  </a>
-
-
-  <a class="card resource" href="Resourcehub.html" target="_blank" rel="noopener">
-    <div class="card-title">Resource Hub</div>
-    <div class="muted">Centralized resource collection</div>
-  </a>
-
-
-  <a class="card resource" href="Paid Trainings.html" target="_blank" rel="noopener">
-    <div class="card-title">Paid Trainings</div>
-    <div class="muted">Premium training programs</div>
-  </a>
-
-
-  <a class="card resource" href="Conferences.html" target="_blank" rel="noopener">
-    <div class="card-title">Conferences</div>
-    <div class="muted">Industry events and conferences</div>
-  </a>
-
-
-  <a class="card resource" href="Forums & Community.html" target="_blank" rel="noopener">
-    <div class="card-title">Forums &amp; Community</div>
-    <div class="muted">Join the cybersecurity community</div>
-  </a>
-
-
-  <a class="card resource" href="Leading Cybersecurity 20Companies.html" target="_blank" rel="noopener">
-    <div class="card-title">Leading Companies</div>
-    <div class="muted">Top companies in cybersecurity</div>
-  </a>
-
-
-  <a class="card resource" href="Tiktok.html" target="_blank" rel="noopener">
-    <div class="card-title">TikTok</div>
-    <div class="muted">Video content and tutorials</div>
-  </a>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="container">
-          <div class="section-head">
-            <div class="prompt"><span class="prompt">$</span> mail</div>
-            <h2>contact</h2>
-          </div>
-
-          <div class="contact-grid">
-            <div class="card">
-              <div class="card-title">Direct</div>
-              <p class="muted" style="margin-top: 10px;">Email</p>
-              <p style="margin: 6px 0 0 0; font-family: var(--mono);">
-                <a href="mailto:ezekiel@cyntraix.io" style="color: var(--primary);">ezekiel@cyntraix.io</a>
-              </p>
-
-              <div style="margin-top: 18px;">
-                <div class="card-title">Social</div>
-                <p class="muted" style="margin-top: 10px;">Links in the original project are placeholders (#). Replace them when ready.</p>
-                <div class="tags" style="margin-top: 12px;">
-                  <span class="tag">LinkedIn</span>
-                  <span class="tag">GitHub</span>
-                  <span class="tag">Twitter</span>
-                </div>
+          <div class="grid-12">
+            <!-- Research Banner -->
+            <div class="research-profile-banner reveal">
+              <div class="rpb-left">
+                <div class="rpb-name">EZEKIEL OLOGUNDE</div>
+                <div class="rpb-sub">D.Eng. Candidate · George Washington University · SSRN · ResearchGate</div>
+              </div>
+              <div class="rpb-stats">
+                <div class="rpb-stat"><div class="n">33</div><div class="l">PAPERS</div></div>
+                <div class="rpb-stat"><div class="n">5</div><div class="l">CITATIONS</div></div>
+                <div class="rpb-stat"><div class="n">2</div><div class="l">H-INDEX</div></div>
+                <div class="rpb-stat"><div class="n">24.1</div><div class="l">INTEREST SCORE</div></div>
+              </div>
+              <div class="rpb-links">
+                <a class="rpb-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2"/></svg>
+                  ResearchGate
+                </a>
+                <a class="rpb-link green" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&hl=en" target="_blank" rel="noopener">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                  Google Scholar
+                </a>
               </div>
             </div>
 
-            <div class="card">
-              <div class="card-title">Send a message</div>
-              <form id="contactForm">
-                <div style="display:grid; gap: 12px; margin-top: 12px;">
-                  <div>
-                    <label for="name">Name</label>
-                    <input id="name" name="name" autocomplete="name" required />
-                  </div>
-                  <div>
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required />
-                  </div>
-                  <div>
-                    <label for="subject">Subject</label>
-                    <input id="subject" name="subject" required />
-                  </div>
-                  <div>
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                  </div>
-                  <button class="btn send" type="submit">Send</button>
-                </div>
-              </form>
-              <p class="muted" style="margin-top: 12px; font-size: 13px;">
-                This static page uses an email compose link. Submitting opens your email client.
-              </p>
+            <!-- Papers -->
+            <article class="card research-card reveal">
+              <div class="rc-year">October 2025 · SSRN Electronic Journal · 31 reads</div>
+              <div class="rc-title">BootKitty: A Critical Analysis of Modern Bootkit-Rootkit Threats and Defense Limitations in Contemporary Cybersecurity Infrastructure</div>
+              <div class="rc-meta">Ezekiel Ologunde</div>
+              <p class="card-d" style="font-size:13px">Analysis of modern bootkit and rootkit threats targeting firmware-level persistence and the limitations of contemporary defense mechanisms.</p>
+              <a class="rc-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">View on ResearchGate →</a>
+            </article>
+
+            <article class="card research-card reveal" style="transition-delay:0.1s">
+              <div class="rc-year">October 2025 · SSRN Electronic Journal · 12 reads</div>
+              <div class="rc-title">Aligning Threat Actor TTPs to the Cyber Kill Chain: Anticipating Future Cyber Threats with the MITRE ATT&CK Framework</div>
+              <div class="rc-meta">Ezekiel Ologunde</div>
+              <p class="card-d" style="font-size:13px">Structured threat modeling methodology aligning adversary TTPs with kill chain stages using MITRE ATT&CK for predictive defense.</p>
+              <a class="rc-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">View on ResearchGate →</a>
+            </article>
+
+            <article class="card research-card reveal">
+              <div class="rc-year">September 2025 · SSRN Electronic Journal · 42 reads</div>
+              <div class="rc-title">Government Efficiency vs. Cybersecurity: A CIA Triad Analysis of the DOGE Social Security Data Incident</div>
+              <div class="rc-meta">Ezekiel Ologunde</div>
+              <p class="card-d" style="font-size:13px">CIA triad framework applied to the high-profile DOGE/SSA data incident, examining the tension between operational efficiency and security posture.</p>
+              <a class="rc-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">View on ResearchGate →</a>
+            </article>
+
+            <article class="card research-card reveal" style="transition-delay:0.1s">
+              <div class="rc-year">September 2025 · SSRN Electronic Journal · 11 reads</div>
+              <div class="rc-title">The Thin Line Between Strategic Risk Acceptance and Negligence: A Critical Analysis of Cybersecurity Risk Management Failures</div>
+              <div class="rc-meta">Ezekiel Ologunde</div>
+              <p class="card-d" style="font-size:13px">Examination of the boundary between informed risk acceptance and negligence in enterprise cybersecurity risk management programs.</p>
+              <a class="rc-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">View on ResearchGate →</a>
+            </article>
+
+            <article class="card research-card reveal">
+              <div class="rc-year">September 2025 · SSRN Electronic Journal · 3 reads</div>
+              <div class="rc-title">Analyzing Assessment Output in Infrastructure Systems: Reflections on the Cisco ASA Zero-Day Case</div>
+              <div class="rc-meta">Ezekiel Ologunde</div>
+              <p class="card-d" style="font-size:13px">Lessons from the Cisco ASA zero-day vulnerability, focusing on assessment output analysis in critical infrastructure security contexts.</p>
+              <a class="rc-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">View on ResearchGate →</a>
+            </article>
+
+            <div class="card research-card reveal" style="transition-delay:0.1s;background:rgba(0,229,255,0.03);border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:160px">
+              <div style="font-family:var(--display);font-size:36px;font-weight:900;color:var(--cyan);opacity:0.3">33</div>
+              <div class="card-t" style="margin-bottom:8px">TOTAL PUBLICATIONS</div>
+              <p class="card-d" style="font-size:13px">View the complete research portfolio on ResearchGate and Google Scholar</p>
+              <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:center">
+                <a class="pbtn" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener" style="padding:7px 14px;font-size:11px">ResearchGate →</a>
+                <a class="pbtn green" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&hl=en" target="_blank" rel="noopener" style="padding:7px 14px;font-size:11px;color:var(--green);border-color:rgba(0,255,157,0.2)">Scholar →</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- MEDIUM PUBLICATIONS -->
+      <section id="publications">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="sec-prompt">$ curl</span>
+            <h2 class="sec-title">medium_publications</h2>
+            <div class="sec-line"></div>
+          </div>
+          <div class="grid-12">
+            <div class="medium-banner reveal">
+              <div class="mb-left">
+                <div class="label">WRITING ON MEDIUM</div>
+                <div class="val">@ezekielologunde · 8 Articles · Cybersecurity Analysis &amp; Commentary</div>
+              </div>
+              <a class="mb-link" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                Follow on Medium
+              </a>
+            </div>
+
+            <a class="card medium-card reveal" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener">
+              <div class="mc-date">Dec 14, 2025</div>
+              <div class="mc-title">Compliance vs. Reality: When Cybersecurity Controls Are Recommended but Not Practicable</div>
+              <p class="mc-excerpt">Cybersecurity frameworks such as NIST SP 800-53 and CMMC provide organizations with structured controls—but what happens when implementation isn't feasible?</p>
+              <div class="tags"><span class="tag">NIST</span><span class="tag">CMMC 2.0</span><span class="tag">Risk Management</span></div>
+              <div class="mc-read">Read on Medium →</div>
+            </a>
+
+            <a class="card medium-card reveal" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="transition-delay:0.1s">
+              <div class="mc-date">Dec 5, 2025</div>
+              <div class="mc-title">Why Risk Management Matters More Than Ever in the Age of AI</div>
+              <p class="mc-excerpt">Risk management has long been the backbone of effective cybersecurity. It provides organizations with a structured and repeatable method for navigating threats in an AI-driven era.</p>
+              <div class="tags"><span class="tag">AI Security</span><span class="tag">Risk Management</span></div>
+              <div class="mc-read">Read on Medium →</div>
+            </a>
+
+            <a class="card medium-card reveal" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener">
+              <div class="mc-date">Dec 2, 2025</div>
+              <div class="mc-title">The Ancient Scrolls Warned Us: Patch or Perish</div>
+              <p class="mc-excerpt">On paper, Change Healthcare and UnitedHealth Group are exactly the kind of organizations you'd expect to have mature security. So what went wrong?</p>
+              <div class="tags"><span class="tag">Incident Response</span><span class="tag">Ransomware</span><span class="tag">Healthcare</span></div>
+              <div class="mc-read">Read on Medium →</div>
+            </a>
+
+            <a class="card medium-card reveal" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="transition-delay:0.1s">
+              <div class="mc-date">Nov 19, 2025</div>
+              <div class="mc-title">Dear Vendor: We're Breaking Up. It's Not Us, It's Your Security Posture</div>
+              <p class="mc-excerpt">The Salesloft/Drift SaaS breach and supply chain attack that impacted major cybersecurity vendors—a deep dive into third-party risk.</p>
+              <div class="tags"><span class="tag">Supply Chain</span><span class="tag">SaaS Security</span><span class="tag">Vendor Risk</span></div>
+              <div class="mc-read">Read on Medium →</div>
+            </a>
+
+            <a class="card medium-card reveal" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener">
+              <div class="mc-date">Nov 15, 2025</div>
+              <div class="mc-title">When Nation-State Hackers Target Small Defense Contractors: A Look Through the DREAD Lens</div>
+              <p class="mc-excerpt">Most assume cyberattacks only happen to massive companies. For a Security Manager at a small U.S. defense contractor, the reality is very different.</p>
+              <div class="tags"><span class="tag">Nation-State</span><span class="tag">DREAD</span><span class="tag">Defense Sector</span></div>
+              <div class="mc-read">Read on Medium →</div>
+            </a>
+
+            <a class="card medium-card reveal" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="transition-delay:0.1s">
+              <div class="mc-date">Nov 7, 2025</div>
+              <div class="mc-title">The Faketivism Frontier: Weaponized AI to Attack Trust, Not Servers</div>
+              <p class="mc-excerpt">The CrowdStrike 2024 Global Threat Report paints a sober picture of how nation-states are transforming information warfare using weaponized AI.</p>
+              <div class="tags"><span class="tag">Disinformation</span><span class="tag">AI Warfare</span><span class="tag">Threat Intel</span></div>
+              <div class="mc-read">Read on Medium →</div>
+            </a>
+
+            <a class="card medium-card reveal" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener">
+              <div class="mc-date">Nov 20, 2025</div>
+              <div class="mc-title">Practical Expected Value Review</div>
+              <p class="mc-excerpt">A full expected value breakdown with cybersecurity context and real-world lessons for risk quantification practitioners.</p>
+              <div class="tags"><span class="tag">Risk Quantification</span><span class="tag">Expected Value</span></div>
+              <div class="mc-read">Read on Medium →</div>
+            </a>
+
+            <a class="card medium-card reveal" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="transition-delay:0.1s">
+              <div class="mc-date">Nov 12, 2025</div>
+              <div class="mc-title">I Read the Privacy Policy (Said No One Ever)</div>
+              <p class="mc-excerpt">The F5 cyber breach and the Zscaler ThreatLabz 2025 Mobile, IoT &amp; OT Threat Report reveal how the meaning of data privacy has fundamentally shifted.</p>
+              <div class="tags"><span class="tag">Privacy</span><span class="tag">IoT Security</span><span class="tag">Data Governance</span></div>
+              <div class="mc-read">Read on Medium →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="sec-prompt">$ cat</span>
+            <h2 class="sec-title">education.log</h2>
+            <div class="sec-line"></div>
+          </div>
+          <div class="grid-12">
+            <article class="card edu-card reveal">
+              <div class="edu-inst">GEORGE WASHINGTON UNIVERSITY</div>
+              <div class="edu-degree">Doctor of Engineering — Cybersecurity Analytics</div>
+              <div class="edu-date">Expected 2027 · Washington, DC</div>
+              <ul class="edu-bullets">
+                <li>AI-enabled security governance frameworks &amp; adversarial ML defenses</li>
+                <li>Zero Trust architecture, AI/ML threat modeling, NIST RMF alignment</li>
+                <li>Risk quantification in enterprise and educational environments</li>
+              </ul>
+            </article>
+            <article class="card edu-card reveal" style="transition-delay:0.1s">
+              <div class="edu-inst">UNIVERSITY OF BALTIMORE</div>
+              <div class="edu-degree">M.S. — Cyber Forensics</div>
+              <div class="edu-date">May 2024 · Baltimore, MD</div>
+              <ul class="edu-bullets">
+                <li>Digital Forensics, Incident Response, Python-Based Security Analytics</li>
+                <li>Research: Cryptography protocols for secure voting &amp; strategic risk acceptance</li>
+                <li>SOC Operations, HITRUST compliance framework</li>
+              </ul>
+            </article>
+            <article class="card edu-card reveal" style="transition-delay:0.2s">
+              <div class="edu-inst">UNIVERSITY OF ILORIN, NIGERIA</div>
+              <div class="edu-degree">B.S. — Computer Science &amp; Education (Dual Major)</div>
+              <div class="edu-date">Oct 2019</div>
+              <ul class="edu-bullets">
+                <li>Dual major combining rigorous CS foundation with pedagogical training</li>
+                <li>Software Engineering, Data Structures, Algorithms, Educational Technology</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section id="certifications">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="sec-prompt">$ verify</span>
+            <h2 class="sec-title">certifications.txt</h2>
+            <div class="sec-line"></div>
+          </div>
+          <div class="grid-12">
+            <div class="card cert-card reveal">
+              <div class="cert-abbr">CISSP</div>
+              <div class="cert-full">Certified Information Systems Security Professional</div>
+              <div class="cert-issuer">(ISC)² <span class="status study" style="margin-left:8px">STUDYING</span></div>
+            </div>
+            <div class="card cert-card reveal" style="transition-delay:0.05s">
+              <div class="cert-abbr">CMMC</div>
+              <div class="cert-full">Cybersecurity Maturity Model Certification</div>
+              <div class="cert-issuer">DoD <span class="status done" style="margin-left:8px">CERTIFIED</span></div>
+            </div>
+            <div class="card cert-card reveal" style="transition-delay:0.1s">
+              <div class="cert-abbr">CEH</div>
+              <div class="cert-full">Certified Ethical Hacker</div>
+              <div class="cert-issuer">EC-Council · 2024 <span class="status done" style="margin-left:8px">ACTIVE</span></div>
+            </div>
+            <div class="card cert-card reveal" style="transition-delay:0.15s">
+              <div class="cert-abbr">Sec+</div>
+              <div class="cert-full">CompTIA Security+</div>
+              <div class="cert-issuer">CompTIA · 2024 <span class="status done" style="margin-left:8px">ACTIVE</span></div>
+            </div>
+            <div class="card cert-card reveal" style="transition-delay:0.2s">
+              <div class="cert-abbr">AWS</div>
+              <div class="cert-full">AWS Certified Cloud Practitioner</div>
+              <div class="cert-issuer">Amazon Web Services <span class="status done" style="margin-left:8px">ACTIVE</span></div>
+            </div>
+            <div class="card cert-card reveal" style="transition-delay:0.25s">
+              <div class="cert-abbr">GenAI</div>
+              <div class="cert-full">AI-Powered Software Dev &amp; Generative AI Engineering</div>
+              <div class="cert-issuer">Google Cloud · Certified</div>
+            </div>
+            <div class="card cert-card reveal" style="transition-delay:0.1s">
+              <div class="cert-abbr">OSCP</div>
+              <div class="cert-full">Offensive Security Certified Professional</div>
+              <div class="cert-issuer">Offensive Security <span class="status study" style="margin-left:8px">STUDYING</span></div>
+            </div>
+            <div class="card cert-card reveal" style="transition-delay:0.15s">
+              <div class="cert-abbr">GCP</div>
+              <div class="cert-full">Google Cybersecurity Professional Certificate</div>
+              <div class="cert-issuer">Google <span class="status done" style="margin-left:8px">CERTIFIED</span></div>
+            </div>
+            <div class="card cert-card reveal" style="transition-delay:0.2s">
+              <div class="cert-abbr">Cisco</div>
+              <div class="cert-full">Cisco Networking Basics &amp; Intro to Cybersecurity</div>
+              <div class="cert-issuer">Cisco Networking Academy</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STUDENT RESOURCES -->
+      <section id="students">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="sec-prompt">$ open</span>
+            <h2 class="sec-title">student_resources/</h2>
+            <div class="sec-line"></div>
+          </div>
+          <div class="grid-12">
+            <a class="card resource-card reveal" href="basics.html" target="_blank" rel="noopener">
+              <div class="rc-icon">▸_</div>
+              <div class="rc-name">Basics</div>
+              <div class="rc-desc">Fundamental concepts &amp; getting started</div>
+            </a>
+            <a class="card resource-card reveal" href="Acronyms.html" target="_blank" rel="noopener" style="transition-delay:0.05s">
+              <div class="rc-icon">[A-Z]</div>
+              <div class="rc-name">Acronyms</div>
+              <div class="rc-desc">Common cybersecurity terminology</div>
+            </a>
+            <a class="card resource-card reveal" href="Certification Guide.html" target="_blank" rel="noopener" style="transition-delay:0.1s">
+              <div class="rc-icon">✦</div>
+              <div class="rc-name">Certification Guide</div>
+              <div class="rc-desc">How to get certified in cybersecurity</div>
+            </a>
+            <a class="card resource-card reveal" href="Certifications.html" target="_blank" rel="noopener" style="transition-delay:0.15s">
+              <div class="rc-icon">◈</div>
+              <div class="rc-name">Certifications</div>
+              <div class="rc-desc">Available certifications overview</div>
+            </a>
+            <a class="card resource-card reveal" href="Resources.html" target="_blank" rel="noopener" style="transition-delay:0.2s">
+              <div class="rc-icon">◉</div>
+              <div class="rc-name">Resources</div>
+              <div class="rc-desc">Learning materials &amp; guides</div>
+            </a>
+            <a class="card resource-card reveal" href="Resourcehub.html" target="_blank" rel="noopener" style="transition-delay:0.25s">
+              <div class="rc-icon">⬡</div>
+              <div class="rc-name">Resource Hub</div>
+              <div class="rc-desc">Centralized resource collection</div>
+            </a>
+            <a class="card resource-card reveal" href="Paid Trainings.html" target="_blank" rel="noopener">
+              <div class="rc-icon">$</div>
+              <div class="rc-name">Paid Trainings</div>
+              <div class="rc-desc">Premium training programs</div>
+            </a>
+            <a class="card resource-card reveal" href="Conferences.html" target="_blank" rel="noopener" style="transition-delay:0.05s">
+              <div class="rc-icon">⊕</div>
+              <div class="rc-name">Conferences</div>
+              <div class="rc-desc">Industry events &amp; conferences</div>
+            </a>
+            <a class="card resource-card reveal" href="Forums & Community.html" target="_blank" rel="noopener" style="transition-delay:0.1s">
+              <div class="rc-icon">◎</div>
+              <div class="rc-name">Forums &amp; Community</div>
+              <div class="rc-desc">Join the cybersecurity community</div>
+            </a>
+            <a class="card resource-card reveal" href="Leading Cybersecurity 20Companies.html" target="_blank" rel="noopener" style="transition-delay:0.15s">
+              <div class="rc-icon">▲</div>
+              <div class="rc-name">Leading Companies</div>
+              <div class="rc-desc">Top companies in cybersecurity</div>
+            </a>
+            <a class="card resource-card reveal" href="Tiktok.html" target="_blank" rel="noopener" style="transition-delay:0.2s">
+              <div class="rc-icon">▶</div>
+              <div class="rc-name">TikTok</div>
+              <div class="rc-desc">Video content &amp; tutorials</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <div class="sec-head reveal">
+            <span class="sec-prompt">$ mail</span>
+            <h2 class="sec-title">contact</h2>
+            <div class="sec-line"></div>
+          </div>
+          <div class="contact-grid">
+            <div class="card reveal">
+              <div class="card-t">// DIRECT CONTACT</div>
+              <div class="contact-info" style="margin-top:16px">
+                <div class="contact-item">
+                  <div class="ci-label">PRIMARY EMAIL</div>
+                  <a class="ci-val" href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a>
+                </div>
+                <div class="contact-item">
+                  <div class="ci-label">ACADEMIC EMAIL</div>
+                  <a class="ci-val" href="mailto:ologundeomotola@gmail.com">ologundeomotola@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                  <div class="ci-label">LOCATION</div>
+                  <div class="ci-val">Birmingham, AL</div>
+                </div>
+              </div>
+              <div class="divider">PROFILES</div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <a class="pbtn" href="https://linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener">LinkedIn</a>
+                <a class="pbtn green" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="color:var(--green);border-color:rgba(0,255,157,0.2)">Medium</a>
+                <a class="pbtn" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">ResearchGate</a>
+                <a class="pbtn" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+                <a class="pbtn" href="https://ezekielologunde.github.io" target="_blank" rel="noopener">GitHub Pages</a>
+              </div>
+            </div>
+            <div class="card reveal" style="transition-delay:0.1s">
+              <div class="card-t">// SEND A MESSAGE</div>
+              <form id="contactForm" style="display:grid;gap:12px;margin-top:16px">
+                <div>
+                  <label for="name">NAME</label>
+                  <input id="name" name="name" autocomplete="name" required placeholder="Your name" />
+                </div>
+                <div>
+                  <label for="email">EMAIL</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required placeholder="your@email.com" />
+                </div>
+                <div>
+                  <label for="subject">SUBJECT</label>
+                  <input id="subject" name="subject" required placeholder="What is this about?" />
+                </div>
+                <div>
+                  <label for="message">MESSAGE</label>
+                  <textarea id="message" name="message" required placeholder="Your message..."></textarea>
+                </div>
+                <button class="send-btn" type="submit">▶ SEND MESSAGE</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer>
       <div class="container">
-        <div>
-          <span style="color: var(--primary);">ezekiel@cyntraix</span>
-          <span>:~$ </span>
-          <span style="color: var(--success);">echo</span> "Built with security in mind"
-        </div>
-        <div style="margin-top: 6px;">© <span id="year"></span> Ezekiel Ologunde</div>
+        <div class="f-cmd"><span class="c">ezekiel@cyntraix</span>:~$ <span class="g">echo</span> "Built with security in mind. Zero-Trust architecture applied."</div>
+        <div class="f-cmd">© <span id="year"></span> Ezekiel Ologunde. All systems nominal.</div>
       </div>
     </footer>
   </div>
 
   <script>
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Animate skill bars when visible
-    const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.querySelectorAll('.fill').forEach((el) => {
-          const lvl = el.getAttribute('data-level') || '0';
-          el.style.width = lvl + '%';
-        });
-        skillObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.25 });
-
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) skillObserver.observe(skillsSection);
-
-    // Contact: open mail client with populated subject/body
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const from = document.getElementById('email').value.trim();
-      const subject = document.getElementById('subject').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      const body = `From: ${name}\nEmail: ${from}\n\n${message}`;
-      const mailto = `mailto:ezekiel@cybersec.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-    });
-
-    // Matrix rain background (simple, lightweight)
+    // Matrix Rain
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
     const resize = () => {
@@ -1062,23 +1471,30 @@
     resize();
     window.addEventListener('resize', resize);
 
-    const letters = 'アァカサタナハマヤャラワン01010101010100101010100001010100110001010101$+-*/=<>#';
-    const fontSize = 14;
-    let columns = Math.floor(canvas.width / fontSize);
-    let drops = new Array(columns).fill(1);
+    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン$#@%&<>{}[]▸◈';
+    const fs = 13;
+    let cols = Math.floor(canvas.width / fs);
+    let drops = Array(cols).fill(1);
+    let tick = 0;
 
     const draw = () => {
-      ctx.fillStyle = 'rgba(6, 8, 18, 0.08)';
+      tick++;
+      ctx.fillStyle = 'rgba(2, 4, 8, 0.06)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = `${fs}px 'Share Tech Mono', monospace`;
 
-      ctx.font = fontSize + 'px monospace';
       for (let i = 0; i < drops.length; i++) {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
+        const c = chars[Math.floor(Math.random() * chars.length)];
+        const x = i * fs;
+        const y = drops[i] * fs;
 
-        ctx.fillStyle = 'rgba(52, 211, 153, 0.55)';
-        ctx.fillText(text, x, y);
+        const bright = Math.random() > 0.97;
+        ctx.fillStyle = bright
+          ? 'rgba(255,255,255,0.9)'
+          : (Math.random() > 0.5
+              ? `rgba(0,229,255,${0.3 + Math.random() * 0.3})`
+              : `rgba(0,255,157,${0.2 + Math.random() * 0.25})`);
+        ctx.fillText(c, x, y);
 
         if (y > canvas.height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
@@ -1086,6 +1502,38 @@
       requestAnimationFrame(draw);
     };
     draw();
+
+    // Skill bar animation
+    const skillObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('.fill').forEach(el => {
+          el.style.width = (el.dataset.level || 0) + '%';
+        });
+        skillObs.unobserve(e.target);
+      });
+    }, { threshold: 0.3 });
+    const sg = document.getElementById('skills-grid');
+    if (sg) skillObs.observe(sg);
+
+    // Scroll reveal
+    const revObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const from = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const body = `From: ${name}\nEmail: ${from}\n\n${message}`;
+      window.location.href = `mailto:ezekiel@cyntraix.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
   </script>
 </body>
 </html>
