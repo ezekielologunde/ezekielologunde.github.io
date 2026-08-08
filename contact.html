@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Ezekiel Ologunde</title>
+  <meta name="description" content="Reach out about research collaboration, consulting, or speaking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/future.css">
+</head>
+<body>
+  <canvas id="fx-mesh" aria-hidden="true"></canvas>
+  <div class="fx-veil" aria-hidden="true"></div>
+
+  <nav class="fx-nav" aria-label="Main navigation">
+    <div class="container fx-nav__inner">
+      <a class="fx-brand" href="index.html"><span class="fx-brand__mark" aria-hidden="true"></span>Ezekiel Ologunde</a>
+      <button class="fx-nav__toggle" aria-expanded="false" aria-controls="fx-nav-links">Menu ▾</button>
+      <div class="fx-nav__links" id="fx-nav-links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="writing.html">Writing</a>
+        <a href="education.html">Education</a>
+        <a href="credentials.html">Credentials</a>
+        <a href="Resourcehub.html">Resources</a>
+        <a href="contact.html" class="fx-nav__cta">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="fx-pagehero">
+      <div class="container">
+        <p class="fx-pagehero__eyebrow">Contact</p>
+        <h1 class="fx-pagehero__title">Get in Touch</h1>
+        <p class="fx-pagehero__sub">Reach out about research collaboration, consulting, or speaking.</p>
+      </div>
+    </header>
+
+    <section class="fx-section" aria-label="Contact options">
+      <div class="container">
+        <div class="fx-grid fx-grid--2">
+
+          <div class="fx-panel rv" data-parallax="0.03">
+            <div class="fx-section__head" style="margin-bottom:22px;"><span class="fx-section__num">01</span><h2 class="fx-section__title">Direct Contact</h2></div>
+
+            <ul class="fx-focus">
+              <li>
+                <span class="fx-focus__i" aria-hidden="true"></span>
+                <span><span class="fx-focus__label">Email</span><span class="fx-focus__detail"><a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span></span>
+              </li>
+              <li>
+                <span class="fx-focus__i" aria-hidden="true"></span>
+                <span><span class="fx-focus__label">Academic</span><span class="fx-focus__detail"><a href="mailto:ologundeomotola@gmail.com">ologundeomotola@gmail.com</a></span></span>
+              </li>
+              <li>
+                <span class="fx-focus__i" aria-hidden="true"></span>
+                <span><span class="fx-focus__label">Location</span><span class="fx-focus__detail">Birmingham, AL · Remote Available</span></span>
+              </li>
+              <li>
+                <span class="fx-focus__i" aria-hidden="true"></span>
+                <span><span class="fx-focus__label">Current Roles</span><span class="fx-focus__detail">Faculty · University of Arizona Global Campus &nbsp;/&nbsp; CS Instructor · Lawson State Community College &nbsp;/&nbsp; Founder · Cyntraix</span></span>
+              </li>
+            </ul>
+
+            <div class="fx-hero__cta" style="justify-content:flex-start; margin-top:26px; margin-bottom:0;">
+              <a class="fx-btn fx-btn--sm" href="https://linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="fx-btn fx-btn--sm" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">Medium</a>
+              <a class="fx-btn fx-btn--sm" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+              <a class="fx-btn fx-btn--sm" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            </div>
+          </div>
+
+          <div class="fx-panel rv" data-parallax="0.06" style="transition-delay:.05s">
+            <div class="fx-section__head" style="margin-bottom:22px;"><span class="fx-section__num">02</span><h2 class="fx-section__title">Send a Message</h2></div>
+
+            <form id="contactForm" aria-label="Contact form">
+              <div class="fx-fgroup">
+                <div class="fx-frow">
+                  <div><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name" /></div>
+                  <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="your@email.com" /></div>
+                </div>
+                <div><label for="subject">Subject</label><input id="subject" name="subject" type="text" required placeholder="What is this about?" /></div>
+                <div><label for="message">Message</label><textarea id="message" name="message" required placeholder="Your message…"></textarea></div>
+                <button class="fx-submit" type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fx-footer">
+    <div class="container">
+      <span>© <span id="year"></span> Ezekiel Ologunde</span>
+      <span>Birmingham, AL &nbsp;·&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/js/mesh.js"></script>
+  <script src="assets/js/future.js"></script>
+</body>
+</html>

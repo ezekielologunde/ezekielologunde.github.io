@@ -1,202 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Cybersecurity Learning Resources</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1000px;
-            padding: 2rem;
-        }
-        .section-card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            transition: border-color 0.3s ease;
-        }
-        .section-card:hover {
-            border-color: #58a6ff;
-        }
-        .resource-link {
-            color: #58a6ff;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .resource-link:hover {
-            text-decoration: underline;
-        }
-        .tag {
-            background: #21262d;
-            color: #8b949e;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            border: 1px solid #30363d;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #30363d;
-        }
-        th {
-            color: #8b949e;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Cybersecurity Learning Resources — Ezekiel Ologunde</title>
+  <meta name="description" content="A curated collection of free cybersecurity training platforms, hands-on labs, and courses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="antialiased">
-    <div class="container mx-auto">
-        <div class="py-4">
-            <a href="Resourcehub.html" class="text-blue-400 hover:text-blue-300 inline-flex items-center transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-                </svg>
-                Back to Resource Hub
-            </a>
-        </div>
+<body>
 
-        <header class="text-center py-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Free Learning Resources</h1>
-            <p class="text-gray-400 max-w-2xl mx-auto text-lg">Knowledge is free. Here is a curated collection of the highest quality training platforms, labs, and courses available at no cost.</p>
-        </header>
-
-        <main class="space-y-10">
-            
-            <section class="section-card">
-                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-                    <span class="mr-3">🎥</span> Video & Community Learning
-                </h2>
-                <div class="overflow-x-auto">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Platform</th>
-                                <th>Specialty</th>
-                                <th>Link</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Professor Messer</strong></td>
-                                <td>CompTIA A+, Network+, Security+ focus.</td>
-                                <td><a href="https://www.professormesser.com/" target="_blank" class="resource-link">Visit Channel</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>NetworkChuck</strong></td>
-                                <td>Hands-on IT labs, Python, and Linux.</td>
-                                <td><a href="https://www.youtube.com/c/NetworkChuck" target="_blank" class="resource-link">Visit Channel</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>The Cyber Mentor (TCM)</strong></td>
-                                <td>Ethical hacking and career roadmaps.</td>
-                                <td><a href="https://www.youtube.com/c/TheCyberMentor" target="_blank" class="resource-link">Visit Channel</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Jason Dion Group</strong></td>
-                                <td>Certification support community.</td>
-                                <td><a href="https://www.facebook.com/groups/diontraining/" target="_blank" class="resource-link">Join Group</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            
-            <section class="section-card">
-                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-                    <span class="mr-3">💻</span> Hands-On Practice Labs
-                </h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
-                        <h3 class="text-white font-bold mb-2">TryHackMe</h3>
-                        <p class="text-sm text-gray-400 mb-4">The #1 platform for beginners. Gamified rooms that teach everything from Linux basics to Web Hacking.</p>
-                        <a href="https://tryhackme.com" target="_blank" class="resource-link">Try it Free →</a>
-                    </div>
-                    <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
-                        <h3 class="text-white font-bold mb-2">Hack The Box (HTB)</h3>
-                        <p class="text-sm text-gray-400 mb-4">Intermediate to Advanced. Practice "pwn-ing" virtual machines in a competitive environment.</p>
-                        <a href="https://www.hackthebox.com/" target="_blank" class="resource-link">Enter the Lab →</a>
-                    </div>
-                    <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
-                        <h3 class="text-white font-bold mb-2">OverTheWire</h3>
-                        <p class="text-sm text-gray-400 mb-4">Wargames that teach you how to use the Linux command line (CLI) through a series of "Bandit" levels.</p>
-                        <a href="https://overthewire.org/wargames/" target="_blank" class="resource-link">Start Bandit →</a>
-                    </div>
-                    <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
-                        <h3 class="text-white font-bold mb-2">PortSwigger Academy</h3>
-                        <p class="text-sm text-gray-400 mb-4">The absolute best resource for learning Web Application security from the creators of Burp Suite.</p>
-                        <a href="https://portswigger.net/web-security" target="_blank" class="resource-link">Learn Web Security →</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-card">
-                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-                    <span class="mr-3">🛡️</span> Vendor-Specific Training
-                </h2>
-                <div class="space-y-4">
-                    <div class="flex items-start justify-between p-3 hover:bg-gray-800/50 rounded-lg transition">
-                        <div>
-                            <h4 class="text-white font-semibold">Cisco Skills For All</h4>
-                            <p class="text-xs text-gray-500">Free courses on Networking, Cyber Ops, and Python with badges.</p>
-                        </div>
-                        <a href="https://skillsforall.com/" target="_blank" class="resource-link">Start Learning</a>
-                    </div>
-                    <div class="flex items-start justify-between p-3 hover:bg-gray-800/50 rounded-lg transition border-t border-gray-800">
-                        <div>
-                            <h4 class="text-white font-semibold">Fortinet Training Institute</h4>
-                            <p class="text-xs text-gray-500">Free FCF and FCA certifications for network security fundamentals.</p>
-                        </div>
-                        <a href="https://training.fortinet.com/" target="_blank" class="resource-link">Claim Training</a>
-                    </div>
-                    <div class="flex items-start justify-between p-3 hover:bg-gray-800/50 rounded-lg transition border-t border-gray-800">
-                        <div>
-                            <h4 class="text-white font-semibold">Microsoft Learn</h4>
-                            <p class="text-xs text-gray-500">Deep dives into Azure Cloud Security and SC-900 fundamentals.</p>
-                        </div>
-                        <a href="https://learn.microsoft.com/en-us/training/browse/?resource_type=learning+path&terms=security" target="_blank" class="resource-link">Explore Azure</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-card">
-                <h2 class="text-2xl font-bold text-white mb-6">🎓 Academic & Essential Series</h2>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <ul class="space-y-3">
-                        <li><a href="https://www.eccouncil.org/cybersecurity-exchange/essentials-series/" target="_blank" class="resource-link">EC-Council Essentials (NDE, DFE)</a></li>
-                        <li><a href="https://www.open.edu/openlearn/free-courses/full-catalogue" target="_blank" class="resource-link">OpenLearn (The Open University)</a></li>
-                        <li><a href="https://www.cybrary.it/" target="_blank" class="resource-link">Cybrary (Free Tier)</a></li>
-                    </ul>
-                    <ul class="space-y-3">
-                        <li><a href="https://www.cyberaces.org/" target="_blank" class="resource-link">SANS Cyber Aces Online</a></li>
-                        <li><a href="https://www.splunk.com/en_us/training/free-courses/overview.html" target="_blank" class="resource-link">Splunk Free Training (SIEM)</a></li>
-                        <li><a href="https://www.coursera.org/learn/foundations-of-cybersecurity" target="_blank" class="resource-link">Google Cybersecurity Certificate (Audit Mode)</a></li>
-                    </ul>
-                </div>
-            </section>
-
-        </main>
-
-        <footer class="text-center py-12 text-gray-600 border-t border-gray-800">
-            <p>Know of a resource we missed? Contibute to the hub on GitHub.</p>
-            <p class="mt-2 text-xs uppercase tracking-widest">Built for the next generation of defenders</p>
-        </footer>
+  <nav class="eo-nav" aria-label="Main navigation">
+    <div class="container eo-nav__inner">
+      <a class="eo-brand" href="index.html"><span class="eo-brand__pip" aria-hidden="true"></span>Ezekiel Ologunde</a>
+      <button class="eo-nav__toggle" aria-expanded="false" aria-controls="eo-nav-links">Menu ▾</button>
+      <div class="eo-nav__links" id="eo-nav-links">
+        <a href="index.html">Home</a>
+        <a href="Resourcehub.html">Resource Index</a>
+      </div>
     </div>
+  </nav>
+
+  <header class="eo-pagehead">
+    <div class="container">
+      <a class="eo-pagehead__back" href="Resourcehub.html">&larr; Resource Hub</a>
+      <span class="eo-pagehead__cat">Reference</span>
+      <h1 class="eo-pagehead__title">Free Learning Resources</h1>
+      <p class="eo-pagehead__sub">Knowledge is free — a curated collection of the highest quality training platforms, labs, and courses available at no cost.</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- VIDEO & COMMUNITY LEARNING -->
+    <section class="eo-section">
+      <div class="container">
+        <div class="eo-section__head rv"><span class="eo-section__num">01</span><h2 class="eo-section__title">Video &amp; Community Learning</h2></div>
+        <div class="eo-card rv" style="overflow-x:auto">
+          <table class="eo-ledger">
+            <thead>
+              <tr><th>Platform</th><th>Specialty</th><th>Link</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Professor Messer</td>
+                <td>CompTIA A+, Network+, Security+ focus.</td>
+                <td><a href="https://www.professormesser.com/" target="_blank" rel="noopener noreferrer" style="color:var(--signal)">Visit Channel</a></td>
+              </tr>
+              <tr>
+                <td>NetworkChuck</td>
+                <td>Hands-on IT labs, Python, and Linux.</td>
+                <td><a href="https://www.youtube.com/c/NetworkChuck" target="_blank" rel="noopener noreferrer" style="color:var(--signal)">Visit Channel</a></td>
+              </tr>
+              <tr>
+                <td>The Cyber Mentor (TCM)</td>
+                <td>Ethical hacking and career roadmaps.</td>
+                <td><a href="https://www.youtube.com/c/TheCyberMentor" target="_blank" rel="noopener noreferrer" style="color:var(--signal)">Visit Channel</a></td>
+              </tr>
+              <tr>
+                <td>Jason Dion Group</td>
+                <td>Certification support community.</td>
+                <td><a href="https://www.facebook.com/groups/diontraining/" target="_blank" rel="noopener noreferrer" style="color:var(--signal)">Join Group</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- HANDS-ON PRACTICE LABS -->
+    <section class="eo-section">
+      <div class="container">
+        <div class="eo-section__head rv"><span class="eo-section__num">02</span><h2 class="eo-section__title">Hands-On Practice Labs</h2></div>
+        <div class="eo-grid eo-grid--2 rv">
+          <a class="eo-card eo-res-card" href="https://tryhackme.com" target="_blank" rel="noopener noreferrer">
+            <div class="eo-res-card__cat">Lab</div>
+            <div class="eo-res-card__name">TryHackMe <span class="eo-badge eo-badge--verify">Beginner-Friendly</span></div>
+            <div class="eo-res-card__desc">The #1 platform for beginners. Gamified rooms that teach everything from Linux basics to Web Hacking.</div>
+          </a>
+          <a class="eo-card eo-res-card" href="https://www.hackthebox.com/" target="_blank" rel="noopener noreferrer">
+            <div class="eo-res-card__cat">Lab</div>
+            <div class="eo-res-card__name">Hack The Box (HTB) <span class="eo-badge eo-badge--flag">Advanced</span></div>
+            <div class="eo-res-card__desc">Intermediate to advanced. Practice "pwn-ing" virtual machines in a competitive environment.</div>
+          </a>
+          <a class="eo-card eo-res-card" href="https://overthewire.org/wargames/" target="_blank" rel="noopener noreferrer">
+            <div class="eo-res-card__cat">Lab</div>
+            <div class="eo-res-card__name">OverTheWire</div>
+            <div class="eo-res-card__desc">Wargames that teach you how to use the Linux command line (CLI) through a series of "Bandit" levels.</div>
+          </a>
+          <a class="eo-card eo-res-card" href="https://portswigger.net/web-security" target="_blank" rel="noopener noreferrer">
+            <div class="eo-res-card__cat">Lab</div>
+            <div class="eo-res-card__name">PortSwigger Academy</div>
+            <div class="eo-res-card__desc">The absolute best resource for learning web application security from the creators of Burp Suite.</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENDOR-SPECIFIC TRAINING -->
+    <section class="eo-section">
+      <div class="container">
+        <div class="eo-section__head rv"><span class="eo-section__num">03</span><h2 class="eo-section__title">Vendor-Specific Training</h2></div>
+        <div class="eo-grid eo-grid--3 rv">
+          <a class="eo-card eo-res-card" href="https://skillsforall.com/" target="_blank" rel="noopener noreferrer">
+            <div class="eo-res-card__cat">Vendor</div>
+            <div class="eo-res-card__name">Cisco Skills For All</div>
+            <div class="eo-res-card__desc">Free courses on networking, cyber ops, and Python with badges.</div>
+          </a>
+          <a class="eo-card eo-res-card" href="https://training.fortinet.com/" target="_blank" rel="noopener noreferrer">
+            <div class="eo-res-card__cat">Vendor</div>
+            <div class="eo-res-card__name">Fortinet Training Institute</div>
+            <div class="eo-res-card__desc">Free FCF and FCA certifications for network security fundamentals.</div>
+          </a>
+          <a class="eo-card eo-res-card" href="https://learn.microsoft.com/en-us/training/browse/?resource_type=learning+path&amp;terms=security" target="_blank" rel="noopener noreferrer">
+            <div class="eo-res-card__cat">Vendor</div>
+            <div class="eo-res-card__name">Microsoft Learn</div>
+            <div class="eo-res-card__desc">Deep dives into Azure Cloud Security and SC-900 fundamentals.</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMIC & ESSENTIAL SERIES -->
+    <section class="eo-section">
+      <div class="container">
+        <div class="eo-section__head rv"><span class="eo-section__num">04</span><h2 class="eo-section__title">Academic &amp; Essential Series</h2></div>
+        <div class="eo-grid eo-grid--2 rv">
+          <div class="eo-prose" style="max-width:none">
+            <ul>
+              <li><a href="https://www.eccouncil.org/cybersecurity-exchange/essentials-series/" target="_blank" rel="noopener noreferrer">EC-Council Essentials (NDE, DFE)</a></li>
+              <li><a href="https://www.open.edu/openlearn/free-courses/full-catalogue" target="_blank" rel="noopener noreferrer">OpenLearn (The Open University)</a></li>
+              <li><a href="https://www.cybrary.it/" target="_blank" rel="noopener noreferrer">Cybrary (Free Tier)</a></li>
+            </ul>
+          </div>
+          <div class="eo-prose" style="max-width:none">
+            <ul>
+              <li><a href="https://www.cyberaces.org/" target="_blank" rel="noopener noreferrer">SANS Cyber Aces Online</a></li>
+              <li><a href="https://www.splunk.com/en_us/training/free-courses/overview.html" target="_blank" rel="noopener noreferrer">Splunk Free Training (SIEM)</a></li>
+              <li><a href="https://www.coursera.org/learn/foundations-of-cybersecurity" target="_blank" rel="noopener noreferrer">Google Cybersecurity Certificate (Audit Mode)</a></li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:8px;font-family:var(--serif);font-size:13.5px;color:var(--muted)">Know of a resource we missed? Contribute to the hub on GitHub.</p>
+        <p style="margin-top:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint)">Built for the next generation of defenders</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="eo-footer">
+    <div class="container">
+      <span>&copy; <span id="year"></span> Ezekiel Ologunde</span>
+      <span>Birmingham, AL &nbsp;&middot;&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

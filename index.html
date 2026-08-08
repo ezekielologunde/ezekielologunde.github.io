@@ -3,733 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ezekiel Ologunde — Cybersecurity Leader & Educator</title>
-  <meta name="description" content="Cybersecurity leader, educator, and researcher specializing in AI-powered security, digital forensics, and higher education." />
+  <title>Ezekiel Ologunde — Cybersecurity Leader &amp; Educator</title>
+  <meta name="description" content="Cybersecurity leader, educator, and doctoral researcher specializing in AI-powered security, digital forensics, and risk governance." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:      #090e1c;
-      --bg2:     #0d1526;
-      --surface: rgba(13, 21, 38, 0.8);
-      --border:  rgba(56, 189, 248, 0.13);
-      --border2: rgba(56, 189, 248, 0.06);
-      --text:    #dde4f0;
-      --muted:   #7a90b0;
-      --faint:   #3d5070;
-      --sky:     #38bdf8;
-      --teal:    #2dd4bf;
-      --warm:    #f0abfc;
-      --display: 'Syne', sans-serif;
-      --body:    'Instrument Sans', sans-serif;
-      --mono:    'Fira Code', monospace;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      font-family: var(--body);
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      line-height: 1.65;
-    }
-    /* Dot grid */
-    body::before {
-      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image: radial-gradient(circle, rgba(56,189,248,0.06) 1px, transparent 1px);
-      background-size: 38px 38px;
-    }
-    .ambient { position: fixed; z-index: 0; pointer-events: none; border-radius: 50%; filter: blur(100px); }
-    .ambient-1 { width: 700px; height: 400px; top: -120px; left: -200px; background: radial-gradient(ellipse, rgba(56,189,248,0.18), transparent 70%); }
-    .ambient-2 { width: 500px; height: 350px; bottom: 60px; right: -150px; background: radial-gradient(ellipse, rgba(45,212,191,0.12), transparent 70%); }
-    #particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.45; }
-    .wrap { position: relative; z-index: 2; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
-    a { color: inherit; text-decoration: none; }
-    a:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; border-radius: 3px; }
-
-    /* NAV */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(9,14,28,0.9); backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border2);
-    }
-    .nav .container {
-      display: flex; align-items: center; justify-content: space-between;
-      padding-top: 14px; padding-bottom: 14px; gap: 16px;
-    }
-    .brand {
-      display: flex; align-items: center; gap: 10px;
-      font-family: var(--display); font-size: 14px; font-weight: 700; color: var(--text);
-    }
-    .brand-pip {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--teal); box-shadow: 0 0 10px var(--teal);
-      animation: pip 2.5s ease-in-out infinite; flex-shrink: 0;
-    }
-    @keyframes pip { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 2px; font-family: var(--mono); font-size: 12px; }
-    .nav-links a {
-      padding: 5px 12px; border-radius: 4px; color: var(--muted);
-      border: 1px solid transparent; transition: color .18s, border-color .18s, background .18s;
-    }
-    .nav-links a:hover { color: var(--sky); border-color: var(--border); background: rgba(56,189,248,0.05); }
-
-    /* SECTIONS */
-    section { padding: 80px 0; }
-    .sec-rule { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
-    .sec-rule .label { font-family: var(--mono); font-size: 11px; color: var(--sky); letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; }
-    .sec-rule h2 { font-family: var(--display); font-size: 24px; font-weight: 800; }
-    .sec-rule::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
-
-    /* HERO */
-    .hero { padding-top: 120px; padding-bottom: 80px; min-height: 100vh; display: flex; align-items: center; }
-    .hero-inner { display: grid; grid-template-columns: auto 1fr; gap: 52px; align-items: center; }
-    .photo-col { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-    .photo-frame { position: relative; width: 180px; height: 180px; }
-    .photo-frame::before {
-      content: ''; position: absolute; inset: -2px; border-radius: 50%;
-      background: conic-gradient(var(--sky) 0deg, var(--teal) 120deg, transparent 200deg, var(--sky) 360deg);
-      animation: rspin 8s linear infinite; z-index: 0;
-    }
-    @keyframes rspin { to { transform: rotate(360deg); } }
-    .photo-frame img {
-      position: relative; z-index: 1; width: 174px; height: 174px;
-      border-radius: 50%; object-fit: cover; border: 3px solid var(--bg);
-      display: block; margin: 3px auto 0;
-    }
-    .fallback-av {
-      position: relative; z-index: 1; width: 174px; height: 174px;
-      border-radius: 50%; background: rgba(56,189,248,0.08);
-      border: 3px solid var(--bg); margin: 3px auto 0;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--display); font-size: 48px; font-weight: 800; color: var(--sky);
-    }
-    .status-pill {
-      display: inline-flex; align-items: center; gap: 7px; padding: 6px 14px;
-      border-radius: 100px; border: 1px solid rgba(45,212,191,0.25);
-      background: rgba(45,212,191,0.06); font-family: var(--mono); font-size: 11px; color: var(--teal);
-    }
-    .s-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); animation: pip 2s infinite; }
-
-    .hero-eyebrow { font-family: var(--mono); font-size: 12px; color: var(--sky); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
-    .hero-name { font-family: var(--display); font-size: clamp(38px,5vw,58px); font-weight: 800; line-height: 1.05; color: #fff; margin-bottom: 16px; }
-    .hero-name span { color: var(--sky); }
-    .hero-bio { font-size: 17px; color: var(--muted); max-width: 600px; line-height: 1.75; margin-bottom: 26px; }
-    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
-    .htag {
-      font-family: var(--mono); font-size: 11px; padding: 5px 12px;
-      border-radius: 100px; border: 1px solid var(--border2); color: var(--muted); background: rgba(13,21,38,0.6);
-    }
-    .hero-links { display: flex; flex-wrap: wrap; gap: 10px; }
-    .hlink {
-      display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px;
-      border-radius: 6px; border: 1px solid var(--border);
-      font-family: var(--mono); font-size: 12px; color: var(--text); background: rgba(13,21,38,0.7);
-      transition: border-color .2s, color .2s, box-shadow .2s;
-    }
-    .hlink:hover { border-color: var(--sky); color: var(--sky); box-shadow: 0 0 20px rgba(56,189,248,0.1); }
-    .hlink.primary { background: rgba(56,189,248,0.08); border-color: rgba(56,189,248,0.3); color: var(--sky); }
-    .hlink.primary:hover { background: rgba(56,189,248,0.14); box-shadow: 0 0 24px rgba(56,189,248,0.18); }
-
-    /* CARDS */
-    .grid { display: grid; gap: 14px; }
-    .g2 { grid-template-columns: 1fr 1fr; }
-    .g3 { grid-template-columns: repeat(3,1fr); }
-    .g4 { grid-template-columns: repeat(4,1fr); }
-    .card {
-      background: var(--surface); border: 1px solid var(--border2); border-radius: 8px; padding: 22px;
-      transition: border-color .2s, box-shadow .2s; position: relative; overflow: hidden;
-    }
-    .card::after {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(56,189,248,0.3), transparent);
-      opacity: 0; transition: opacity .2s;
-    }
-    .card:hover { border-color: var(--border); box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
-    .card:hover::after { opacity: 1; }
-
-    /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 14px; }
-    .about-body { font-size: 15px; color: var(--muted); line-height: 1.8; }
-    .about-body p + p { margin-top: 14px; }
-    .about-body strong { color: var(--text); font-weight: 600; }
-    .mono-label { font-family: var(--mono); font-size: 11px; color: var(--sky); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; display: block; }
-    .focus-list { list-style: none; }
-    .focus-list li { display: flex; align-items: flex-start; gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--border2); font-size: 14px; color: var(--muted); }
-    .focus-list li:last-child { border-bottom: none; padding-bottom: 0; }
-    .fi { color: var(--sky); font-family: var(--mono); font-size: 11px; margin-top: 3px; flex-shrink: 0; }
-    .fl { color: var(--text); font-weight: 600; font-size: 14px; display: block; margin-bottom: 2px; }
-
-    /* RESEARCH */
-    .rp-banner {
-      background: linear-gradient(135deg, rgba(56,189,248,0.05), rgba(45,212,191,0.03));
-      border: 1px solid rgba(56,189,248,0.18); border-radius: 8px; padding: 22px 26px;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; margin-bottom: 18px;
-    }
-    .rp-name { font-family: var(--display); font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 4px; }
-    .rp-sub { font-family: var(--mono); font-size: 12px; color: var(--muted); }
-    .rp-links { display: flex; gap: 10px; flex-wrap: wrap; }
-    .rp-link {
-      display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px;
-      border-radius: 6px; border: 1px solid var(--border);
-      font-family: var(--mono); font-size: 12px; color: var(--sky); background: rgba(56,189,248,0.05);
-      transition: all .18s;
-    }
-    .rp-link:hover { border-color: var(--sky); box-shadow: 0 0 18px rgba(56,189,248,0.12); }
-    .rp-link.t { color: var(--teal); background: rgba(45,212,191,0.05); }
-    .rp-link.t:hover { border-color: var(--teal); box-shadow: 0 0 18px rgba(45,212,191,0.12); }
-
-    .paper-venue { font-family: var(--mono); font-size: 10px; color: var(--faint); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
-    .paper-title { font-family: var(--display); font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 10px; }
-    .paper-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
-    .paper-link {
-      font-family: var(--mono); font-size: 11px; color: var(--sky);
-      display: inline-flex; align-items: center; gap: 4px; margin-top: auto; transition: opacity .18s;
-    }
-    .paper-link:hover { opacity: 0.7; }
-    .paper-link::after { content: '→'; transition: transform .18s; }
-    .paper-link:hover::after { transform: translateX(3px); }
-    .paper-card { display: flex; flex-direction: column; }
-
-    /* MEDIUM */
-    .med-banner {
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px; background: rgba(240,171,252,0.04);
-      border: 1px solid rgba(240,171,252,0.15); border-radius: 8px; padding: 18px 24px; margin-bottom: 16px;
-    }
-    .mb-label { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-bottom: 3px; }
-    .mb-val { font-size: 14px; color: var(--text); font-weight: 500; }
-    .mb-cta {
-      display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px;
-      border-radius: 6px; border: 1px solid rgba(240,171,252,0.25);
-      font-family: var(--mono); font-size: 12px; color: var(--warm); background: rgba(240,171,252,0.05);
-      transition: all .18s;
-    }
-    .mb-cta:hover { border-color: var(--warm); box-shadow: 0 0 20px rgba(240,171,252,0.1); }
-    .art-card { display: block; }
-    .art-date { font-family: var(--mono); font-size: 11px; color: var(--faint); margin-bottom: 8px; }
-    .art-title { font-family: var(--display); font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 8px; transition: color .18s; }
-    .art-card:hover .art-title { color: var(--sky); }
-    .art-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
-    .art-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .atag { font-family: var(--mono); font-size: 10px; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border2); color: var(--faint); }
-
-    /* EDUCATION */
-    .edu-school { font-family: var(--mono); font-size: 11px; color: var(--sky); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
-    .edu-degree { font-family: var(--display); font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 4px; }
-    .edu-date { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-bottom: 14px; }
-    .edu-pts { list-style: none; display: flex; flex-direction: column; gap: 5px; }
-    .edu-pts li { font-size: 13px; color: var(--muted); padding-left: 14px; position: relative; }
-    .edu-pts li::before { content: '·'; position: absolute; left: 3px; color: var(--sky); }
-
-    /* CERTS */
-    .cert-card { display: flex; align-items: flex-start; gap: 14px; }
-    .cert-badge {
-      flex-shrink: 0; width: 50px; height: 50px; border: 1px solid var(--border); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--display); font-size: 10px; font-weight: 800; color: var(--sky);
-      background: rgba(56,189,248,0.05); text-align: center; line-height: 1.1;
-    }
-    .cert-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; line-height: 1.3; }
-    .cert-issuer { font-family: var(--mono); font-size: 11px; color: var(--muted); }
-    .cstatus {
-      display: inline-block; margin-top: 5px; padding: 2px 8px;
-      border-radius: 100px; border: 1px solid; font-family: var(--mono); font-size: 10px;
-    }
-    .cs-a { border-color: rgba(45,212,191,0.4); color: var(--teal); }
-    .cs-s { border-color: rgba(240,171,252,0.4); color: var(--warm); }
-
-    /* RESOURCES */
-    .res-card { display: block; transition: border-color .18s, box-shadow .18s, transform .18s; }
-    .res-card:hover { border-color: rgba(45,212,191,0.3); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
-    .res-icon {
-      width: 36px; height: 36px; border-radius: 8px; background: rgba(56,189,248,0.07);
-      border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
-      font-family: var(--mono); font-size: 13px; color: var(--sky); margin-bottom: 12px;
-    }
-    .res-name { font-family: var(--display); font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-    .res-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
-
-    /* CONTACT */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 14px; }
-    .ci-list { display: flex; flex-direction: column; }
-    .ci-item { padding: 13px 0; border-bottom: 1px solid var(--border2); display: flex; flex-direction: column; gap: 3px; }
-    .ci-item:first-child { padding-top: 0; }
-    .ci-l { font-family: var(--mono); font-size: 10px; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; }
-    .ci-v { font-size: 14px; color: var(--text); }
-    .ci-v a { color: var(--sky); transition: opacity .15s; }
-    .ci-v a:hover { opacity: 0.75; }
-    .slinks { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
-    .slink {
-      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
-      border-radius: 6px; border: 1px solid var(--border2); background: rgba(13,21,38,0.5);
-      font-size: 13px; color: var(--muted); transition: border-color .18s, color .18s;
-    }
-    .slink:hover { border-color: var(--border); color: var(--text); }
-    .slink svg { flex-shrink: 0; color: var(--sky); }
-    label { display: block; font-family: var(--mono); font-size: 11px; color: var(--muted); margin-bottom: 6px; letter-spacing: 0.05em; }
-    input, textarea {
-      width: 100%; padding: 10px 14px; background: rgba(9,14,28,0.8);
-      border: 1px solid var(--border2); border-radius: 6px; color: var(--text);
-      font-family: var(--body); font-size: 14px; outline: none; transition: border-color .18s, box-shadow .18s;
-    }
-    input:focus, textarea:focus { border-color: rgba(56,189,248,0.35); box-shadow: 0 0 0 3px rgba(56,189,248,0.06); }
-    textarea { min-height: 120px; resize: vertical; }
-    .fg { display: grid; gap: 12px; margin-top: 4px; }
-    .fr { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .sbtn {
-      width: 100%; padding: 11px; border-radius: 6px; border: 1px solid rgba(56,189,248,0.3);
-      background: rgba(56,189,248,0.06); color: var(--sky); font-family: var(--mono); font-size: 13px;
-      cursor: pointer; transition: all .2s; letter-spacing: 0.06em;
-    }
-    .sbtn:hover { background: rgba(56,189,248,0.12); border-color: var(--sky); box-shadow: 0 0 20px rgba(56,189,248,0.1); }
-    .sbtn:focus-visible { outline: 2px solid var(--sky); outline-offset: 2px; }
-
-    footer { border-top: 1px solid var(--border2); padding: 26px 0; font-family: var(--mono); font-size: 12px; color: var(--faint); }
-    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-
-    /* REVEAL */
-    .rv { opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; }
-    .rv.in { opacity: 1; transform: none; }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .photo-col { flex-direction: row; gap: 20px; align-items: center; }
-      .g2, .g3, .g4, .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .fr { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .rp-banner { flex-direction: column; align-items: flex-start; }
-    }
-    @media (max-width: 640px) {
-      .container { padding: 0 18px; }
-      .hero-name { font-size: 32px; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/future.css">
 </head>
 <body>
-  <div class="ambient ambient-1" aria-hidden="true"></div>
-  <div class="ambient ambient-2" aria-hidden="true"></div>
-  <canvas id="particles" aria-hidden="true"></canvas>
 
-  <nav class="nav" aria-label="Main navigation">
-    <div class="container">
-      <div class="brand">
-        <span class="brand-pip" aria-hidden="true"></span>
-        Ezekiel Ologunde
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Writing</a>
-        <a href="#education">Education</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#students">Students</a>
-        <a href="#contact">Contact</a>
+  <div class="fx-loader" aria-hidden="true">
+    <span class="fx-loader__mark">Initializing Interface</span>
+    <div class="fx-loader__bar"><div class="fx-loader__fill"></div></div>
+  </div>
+
+  <canvas id="fx-mesh" aria-hidden="true"></canvas>
+  <div class="fx-veil" aria-hidden="true"></div>
+
+  <nav class="fx-nav" aria-label="Main navigation">
+    <div class="container fx-nav__inner">
+      <a class="fx-brand" href="index.html"><span class="fx-brand__mark" aria-hidden="true"></span>Ezekiel Ologunde</a>
+      <button class="fx-nav__toggle" aria-expanded="false" aria-controls="fx-nav-links">Menu ▾</button>
+      <div class="fx-nav__links" id="fx-nav-links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="writing.html">Writing</a>
+        <a href="education.html">Education</a>
+        <a href="credentials.html">Credentials</a>
+        <a href="Resourcehub.html">Resources</a>
+        <a href="contact.html" class="fx-nav__cta">Get in Touch</a>
       </div>
     </div>
   </nav>
 
-  <div class="wrap">
-
-    <!-- HERO -->
-    <header class="hero" id="top">
-      <div class="container">
-        <div class="hero-inner">
-
-          <div class="photo-col">
-            <div class="photo-frame" role="img" aria-label="Portrait of Ezekiel Ologunde">
-              <img src="IMG_8794.JPG" alt="Ezekiel Ologunde"
-                onerror="this.style.display='none';document.getElementById('fav').style.display='flex'" />
-              <div class="fallback-av" id="fav" style="display:none" aria-hidden="true">EO</div>
-            </div>
-            <div class="status-pill" role="status">
-              <span class="s-dot" aria-hidden="true"></span>
-              Available for Roles
-            </div>
-          </div>
-
-          <div class="hero-text">
-            <p class="hero-eyebrow">Cybersecurity · Education · Research</p>
-            <h1 class="hero-name">Ezekiel<br><span>Ologunde</span></h1>
-            <p class="hero-bio">
-              Cybersecurity leader, educator, and doctoral researcher with over a decade of experience in AI-powered security operations, digital forensics, and risk governance. Dedicated to preparing the next generation of security professionals through rigorous, evidence-based academic instruction.
-            </p>
-            <div class="hero-tags" role="list" aria-label="Areas of expertise">
-              <span class="htag" role="listitem">AI / ML Security</span>
-              <span class="htag" role="listitem">Digital Forensics</span>
-              <span class="htag" role="listitem">Risk Governance</span>
-              <span class="htag" role="listitem">Curriculum Design</span>
-              <span class="htag" role="listitem">NIST · CMMC 2.0</span>
-              <span class="htag" role="listitem">Zero Trust</span>
-            </div>
-            <nav class="hero-links" aria-label="Profile links">
-              <a class="hlink primary" href="mailto:ezekiel@cyntraix.io" aria-label="Send email">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Contact Me
-              </a>
-              <a class="hlink" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">Medium</a>
-              <a class="hlink" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-              <a class="hlink" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar</a>
-              <a class="hlink" href="https://linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </nav>
-          </div>
-
-        </div>
+  <main>
+    <header class="fx-hero">
+      <div class="fx-portrait" role="img" aria-label="Portrait of Ezekiel Ologunde">
+        <img class="fx-portrait__img" src="IMG_8794.JPG" alt="Ezekiel Ologunde"
+          onerror="this.style.display='none';document.getElementById('fav').style.display='flex'" />
+        <div class="fx-portrait__fallback" id="fav" style="display:none" aria-hidden="true">EO</div>
+        <span class="fx-portrait__ring" aria-hidden="true"></span>
+        <span class="fx-portrait__corner fx-portrait__corner--tl" aria-hidden="true"></span>
+        <span class="fx-portrait__corner fx-portrait__corner--br" aria-hidden="true"></span>
       </div>
+      <p class="fx-hero__eyebrow" data-role-cycle="AI Security Researcher|Digital Forensics Educator|Zero Trust Architect|Founder, Cyntraix"></p>
+      <h1 class="fx-hero__name">Ezekiel Ologunde</h1>
+      <p class="fx-hero__bio">
+        Cybersecurity leader, educator, and doctoral researcher with over a decade of experience in AI-powered security operations, digital forensics, and risk governance — preparing the next generation of security professionals through rigorous, evidence-based instruction.
+      </p>
+      <div class="fx-hero__cta">
+        <a class="fx-btn fx-btn--primary" href="research.html">View Research</a>
+        <a class="fx-btn" href="contact.html">Get in Touch</a>
+      </div>
+      <div class="fx-scroll-cue"><span>Scroll</span><span class="fx-scroll-cue__line" aria-hidden="true"></span></div>
     </header>
 
-    <main>
-
-      <!-- ABOUT -->
-      <section id="about">
-        <div class="container">
-          <div class="sec-rule rv"><span class="label">About</span><h2>Profile</h2></div>
-          <div class="about-grid">
-            <div class="card rv">
-              <div class="about-body">
-                <p>I am a <strong>cybersecurity professional, educator, and researcher</strong> with a demonstrated record of building and scaling rigorous, industry-aligned academic programs at community college, university, and K–12 levels.</p>
-                <p>Currently pursuing a <strong>Doctor of Engineering in Cybersecurity Analytics</strong> at George Washington University, my research examines AI-enabled security governance frameworks, adversarial machine learning defenses, and risk quantification in enterprise and educational environments.</p>
-                <p>As Founder of <strong>Cyntraix</strong>, I provide enterprise security assessments, Zero Trust architecture design, and risk governance advisory services to organizations navigating NIST CSF, CMMC 2.0, and HITRUST compliance landscapes.</p>
-                <p>I bring deep experience in <strong>curriculum governance, faculty collaboration, departmental strategic planning, and workforce development</strong> — committed to academic excellence, student equity, and advancing the intersection of artificial intelligence and cybersecurity defense.</p>
-              </div>
-            </div>
-            <div class="card rv" style="transition-delay:.1s">
-              <span class="mono-label">Areas of Focus</span>
-              <ul class="focus-list">
-                <li><span class="fi">▸</span><div><span class="fl">AI-Powered Security Operations</span>Threat detection, adversarial ML defense, LLM security</div></li>
-                <li><span class="fi">▸</span><div><span class="fl">Digital Forensics &amp; Incident Response</span>Evidence analysis, SOC operations, ransomware investigation</div></li>
-                <li><span class="fi">▸</span><div><span class="fl">Risk Governance &amp; Compliance</span>NIST RMF, CMMC 2.0, Zero Trust, enterprise risk quantification</div></li>
-                <li><span class="fi">▸</span><div><span class="fl">Cybersecurity Education &amp; Leadership</span>Curriculum design, SLO assessment, workforce development</div></li>
-                <li><span class="fi">▸</span><div><span class="fl">Security Architecture</span>Cloud (AWS), hybrid environments, IAM, endpoint security</div></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- RESEARCH -->
-      <section id="research">
-        <div class="container">
-          <div class="sec-rule rv"><span class="label">Research</span><h2>Scholarly Work</h2></div>
-
-          <div class="rp-banner rv">
-            <div>
-              <div class="rp-name">Ezekiel Ologunde</div>
-              <div class="rp-sub">D.Eng. Candidate · George Washington University &nbsp;·&nbsp; SSRN · ResearchGate · Google Scholar</div>
-            </div>
-            <div class="rp-links">
-              <a class="rp-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-              <a class="rp-link t" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-            </div>
-          </div>
-
-          <div class="grid g2">
-            <article class="card paper-card rv">
-              <div class="paper-venue">SSRN Electronic Journal · Oct 2025</div>
-              <h3 class="paper-title">BootKitty: A Critical Analysis of Modern Bootkit-Rootkit Threats and Defense Limitations in Contemporary Cybersecurity Infrastructure</h3>
-              <p class="paper-desc">Analysis of firmware-level persistence threats and the limitations of contemporary defenses against modern bootkit attacks.</p>
-              <a class="paper-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">View on ResearchGate</a>
-            </article>
-            <article class="card paper-card rv" style="transition-delay:.08s">
-              <div class="paper-venue">SSRN Electronic Journal · Oct 2025</div>
-              <h3 class="paper-title">Aligning Threat Actor TTPs to the Cyber Kill Chain: Anticipating Future Cyber Threats with the MITRE ATT&CK Framework</h3>
-              <p class="paper-desc">Structured threat modeling aligning adversary tactics to kill chain stages using MITRE ATT&CK for predictive defense planning.</p>
-              <a class="paper-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">View on ResearchGate</a>
-            </article>
-            <article class="card paper-card rv" style="transition-delay:.04s">
-              <div class="paper-venue">SSRN Electronic Journal · Sep 2025</div>
-              <h3 class="paper-title">Government Efficiency vs. Cybersecurity: A CIA Triad Analysis of the DOGE Social Security Data Incident</h3>
-              <p class="paper-desc">CIA triad framework applied to the SSA data incident, examining the tension between operational efficiency and security posture in public-sector environments.</p>
-              <a class="paper-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">View on ResearchGate</a>
-            </article>
-            <article class="card paper-card rv" style="transition-delay:.12s">
-              <div class="paper-venue">SSRN Electronic Journal · Sep 2025</div>
-              <h3 class="paper-title">The Thin Line Between Strategic Risk Acceptance and Negligence: A Critical Analysis of Cybersecurity Risk Management Failures</h3>
-              <p class="paper-desc">Examination of the boundary between informed risk acceptance and negligence in enterprise cybersecurity risk management and governance.</p>
-              <a class="paper-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">View on ResearchGate</a>
-            </article>
-            <article class="card paper-card rv" style="transition-delay:.04s">
-              <div class="paper-venue">SSRN Electronic Journal · Sep 2025</div>
-              <h3 class="paper-title">Analyzing Assessment Output in Infrastructure Systems: Reflections on the Cisco ASA Zero-Day Case</h3>
-              <p class="paper-desc">Lessons drawn from the Cisco ASA zero-day, focusing on assessment output analysis in critical infrastructure security contexts.</p>
-              <a class="paper-link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">View on ResearchGate</a>
-            </article>
-            <article class="card rv" style="transition-delay:.12s; background:rgba(56,189,248,0.025); border-style:dashed; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:170px;">
-              <div class="paper-venue" style="margin-bottom:8px">Full Portfolio</div>
-              <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6">View all published research across SSRN, ResearchGate, and Google Scholar.</p>
-              <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
-                <a class="rp-link" style="font-size:11px" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">ResearchGate →</a>
-                <a class="rp-link t" style="font-size:11px" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar →</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- WRITING -->
-      <section id="publications">
-        <div class="container">
-          <div class="sec-rule rv"><span class="label">Writing</span><h2>Medium Publications</h2></div>
-
-          <div class="med-banner rv">
-            <div>
-              <div class="mb-label">Published on Medium</div>
-              <div class="mb-val">Cybersecurity analysis and practitioner insights · @ezekielologunde</div>
-            </div>
-            <a class="mb-cta" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-              Read on Medium
-            </a>
-          </div>
-
-          <div class="grid g2">
-            <a class="card art-card rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">
-              <div class="art-date">December 14, 2025</div>
-              <h3 class="art-title">Compliance vs. Reality: When Cybersecurity Controls Are Recommended but Not Practicable</h3>
-              <p class="art-desc">What happens when NIST SP 800-53 and CMMC-mandated controls exist on paper but simply cannot be implemented? A practitioner's honest look at the gap.</p>
-              <div class="art-tags"><span class="atag">NIST</span><span class="atag">CMMC 2.0</span><span class="atag">Risk Management</span></div>
-            </a>
-            <a class="card art-card rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer" style="transition-delay:.08s">
-              <div class="art-date">December 5, 2025</div>
-              <h3 class="art-title">Why Risk Management Matters More Than Ever in the Age of AI</h3>
-              <p class="art-desc">Risk management has long been the backbone of effective cybersecurity — and the rise of AI has made it more complex, and more consequential, than ever.</p>
-              <div class="art-tags"><span class="atag">AI Security</span><span class="atag">Risk Management</span></div>
-            </a>
-            <a class="card art-card rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer" style="transition-delay:.04s">
-              <div class="art-date">December 2, 2025</div>
-              <h3 class="art-title">The Ancient Scrolls Warned Us: Patch or Perish</h3>
-              <p class="art-desc">Change Healthcare and UnitedHealth Group looked like they had everything in order. The breach told a different story — and the lessons apply everywhere.</p>
-              <div class="art-tags"><span class="atag">Incident Response</span><span class="atag">Healthcare</span><span class="atag">Ransomware</span></div>
-            </a>
-            <a class="card art-card rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer" style="transition-delay:.12s">
-              <div class="art-date">November 19, 2025</div>
-              <h3 class="art-title">Dear Vendor: We're Breaking Up. It's Not Us, It's Your Security Posture</h3>
-              <p class="art-desc">The Salesloft/Drift SaaS breach — a deep dive into third-party risk and vendor security governance.</p>
-              <div class="art-tags"><span class="atag">Supply Chain</span><span class="atag">SaaS Security</span><span class="atag">Vendor Risk</span></div>
-            </a>
-            <a class="card art-card rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer" style="transition-delay:.04s">
-              <div class="art-date">November 15, 2025</div>
-              <h3 class="art-title">When Nation-State Hackers Target Small Defense Contractors: A Look Through the DREAD Lens</h3>
-              <p class="art-desc">Most assume nation-state attacks only target large institutions. For a Security Manager at a small U.S. defense contractor, that assumption is dangerous.</p>
-              <div class="art-tags"><span class="atag">Nation-State</span><span class="atag">DREAD Model</span><span class="atag">Defense</span></div>
-            </a>
-            <a class="card art-card rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer" style="transition-delay:.12s">
-              <div class="art-date">November 7, 2025</div>
-              <h3 class="art-title">The Faketivism Frontier: Weaponized AI to Attack Trust, Not Servers</h3>
-              <p class="art-desc">The CrowdStrike 2024 Global Threat Report details how nation-states are transforming information warfare — targeting credibility and trust over infrastructure.</p>
-              <div class="art-tags"><span class="atag">AI Warfare</span><span class="atag">Disinformation</span><span class="atag">Threat Intel</span></div>
-            </a>
-            <a class="card art-card rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer" style="transition-delay:.04s">
-              <div class="art-date">November 20, 2025</div>
-              <h3 class="art-title">Practical Expected Value Review</h3>
-              <p class="art-desc">A full expected value breakdown with cybersecurity context — real-world lessons for risk quantification practitioners and security leaders.</p>
-              <div class="art-tags"><span class="atag">Risk Quantification</span><span class="atag">Expected Value</span></div>
-            </a>
-            <a class="card art-card rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer" style="transition-delay:.12s">
-              <div class="art-date">November 12, 2025</div>
-              <h3 class="art-title">I Read the Privacy Policy (Said No One Ever)</h3>
-              <p class="art-desc">The F5 breach and the Zscaler 2025 Mobile, IoT &amp; OT Threat Report reveal how the meaning of data privacy has fundamentally shifted in a connected world.</p>
-              <div class="art-tags"><span class="atag">Privacy</span><span class="atag">IoT Security</span><span class="atag">Data Governance</span></div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- EDUCATION -->
-      <section id="education">
-        <div class="container">
-          <div class="sec-rule rv"><span class="label">Education</span><h2>Academic Background</h2></div>
-          <div class="grid g3">
-            <article class="card rv">
-              <div class="edu-school">George Washington University</div>
-              <div class="edu-degree">Doctor of Engineering — Cybersecurity Analytics</div>
-              <div class="edu-date">Expected 2027 · Washington, DC</div>
-              <ul class="edu-pts">
-                <li>AI-enabled security governance &amp; adversarial ML defenses</li>
-                <li>Zero Trust architecture and NIST RMF alignment</li>
-                <li>Risk quantification in enterprise &amp; educational environments</li>
-              </ul>
-            </article>
-            <article class="card rv" style="transition-delay:.08s">
-              <div class="edu-school">University of Baltimore</div>
-              <div class="edu-degree">M.S. — Cyber Forensics</div>
-              <div class="edu-date">May 2024 · Baltimore, MD</div>
-              <ul class="edu-pts">
-                <li>Digital Forensics, Incident Response, Python-Based Security Analytics</li>
-                <li>Research on cryptography protocols for secure voting</li>
-                <li>SOC Operations and HITRUST compliance</li>
-              </ul>
-            </article>
-            <article class="card rv" style="transition-delay:.16s">
-              <div class="edu-school">University of Ilorin, Nigeria</div>
-              <div class="edu-degree">B.S. — Computer Science &amp; Education (Dual Major)</div>
-              <div class="edu-date">October 2019</div>
-              <ul class="edu-pts">
-                <li>Dual major combining CS foundation with pedagogical training</li>
-                <li>Software Engineering, Data Structures, Instructional Design</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- CERTIFICATIONS -->
-      <section id="certifications">
-        <div class="container">
-          <div class="sec-rule rv"><span class="label">Certifications</span><h2>Credentials</h2></div>
-          <div class="grid g3">
-            <div class="card cert-card rv"><div class="cert-badge">CISSP</div><div><div class="cert-name">Certified Information Systems Security Professional</div><div class="cert-issuer">(ISC)²</div><span class="cstatus cs-s">Studying</span></div></div>
-            <div class="card cert-card rv" style="transition-delay:.05s"><div class="cert-badge">CMMC</div><div><div class="cert-name">Cybersecurity Maturity Model Certification 2.0</div><div class="cert-issuer">U.S. Department of Defense</div><span class="cstatus cs-a">Certified</span></div></div>
-            <div class="card cert-card rv" style="transition-delay:.10s"><div class="cert-badge">CEH</div><div><div class="cert-name">Certified Ethical Hacker</div><div class="cert-issuer">EC-Council · 2024</div><span class="cstatus cs-a">Active</span></div></div>
-            <div class="card cert-card rv" style="transition-delay:.04s"><div class="cert-badge">Sec+</div><div><div class="cert-name">CompTIA Security+</div><div class="cert-issuer">CompTIA · 2024</div><span class="cstatus cs-a">Active</span></div></div>
-            <div class="card cert-card rv" style="transition-delay:.08s"><div class="cert-badge">AWS</div><div><div class="cert-name">AWS Certified Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div><span class="cstatus cs-a">Active</span></div></div>
-            <div class="card cert-card rv" style="transition-delay:.12s"><div class="cert-badge">Gen AI</div><div><div class="cert-name">AI-Powered Software Dev &amp; Generative AI Engineering</div><div class="cert-issuer">Google Cloud</div><span class="cstatus cs-a">Certified</span></div></div>
-            <div class="card cert-card rv" style="transition-delay:.04s"><div class="cert-badge">OSCP</div><div><div class="cert-name">Offensive Security Certified Professional</div><div class="cert-issuer">Offensive Security</div><span class="cstatus cs-s">Studying</span></div></div>
-            <div class="card cert-card rv" style="transition-delay:.08s"><div class="cert-badge">GCP</div><div><div class="cert-name">Google Cybersecurity Professional Certificate</div><div class="cert-issuer">Google</div><span class="cstatus cs-a">Certified</span></div></div>
-            <div class="card cert-card rv" style="transition-delay:.12s"><div class="cert-badge">Cisco</div><div><div class="cert-name">Networking Basics &amp; Intro to Cybersecurity</div><div class="cert-issuer">Cisco Networking Academy</div><span class="cstatus cs-a">Certified</span></div></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- STUDENT RESOURCES -->
-      <section id="students">
-        <div class="container">
-          <div class="sec-rule rv"><span class="label">For Students</span><h2>Student Resources</h2></div>
-          <p class="rv" style="font-size:15px;color:var(--muted);margin-bottom:28px;max-width:580px;line-height:1.75">A curated collection of resources to help you break into cybersecurity, navigate certifications, and build a lasting career in the field.</p>
-          <div class="grid g4">
-            <a class="card res-card rv" href="basics.html" target="_blank" rel="noopener noreferrer"><div class="res-icon" aria-hidden="true">▸_</div><div class="res-name">Basics</div><div class="res-desc">Foundational concepts to get started</div></a>
-            <a class="card res-card rv" href="Acronyms.html" target="_blank" rel="noopener noreferrer" style="transition-delay:.04s"><div class="res-icon" aria-hidden="true">A–Z</div><div class="res-name">Acronyms</div><div class="res-desc">Cybersecurity terminology demystified</div></a>
-            <a class="card res-card rv" href="Certification Guide.html" target="_blank" rel="noopener noreferrer" style="transition-delay:.08s"><div class="res-icon" aria-hidden="true">✦</div><div class="res-name">Certification Guide</div><div class="res-desc">Step-by-step guidance on getting certified</div></a>
-            <a class="card res-card rv" href="Certifications.html" target="_blank" rel="noopener noreferrer" style="transition-delay:.12s"><div class="res-icon" aria-hidden="true">◈</div><div class="res-name">Certifications</div><div class="res-desc">Overview of available certifications</div></a>
-            <a class="card res-card rv" href="Resources.html" target="_blank" rel="noopener noreferrer" style="transition-delay:.04s"><div class="res-icon" aria-hidden="true">◉</div><div class="res-name">Resources</div><div class="res-desc">Learning materials and study guides</div></a>
-            <a class="card res-card rv" href="Resourcehub.html" target="_blank" rel="noopener noreferrer" style="transition-delay:.08s"><div class="res-icon" aria-hidden="true">⬡</div><div class="res-name">Resource Hub</div><div class="res-desc">Centralized vetted resource collection</div></a>
-            <a class="card res-card rv" href="Paid Trainings.html" target="_blank" rel="noopener noreferrer" style="transition-delay:.12s"><div class="res-icon" aria-hidden="true">$</div><div class="res-name">Paid Trainings</div><div class="res-desc">Premium training programs worth investing in</div></a>
-            <a class="card res-card rv" href="Conferences.html" target="_blank" rel="noopener noreferrer" style="transition-delay:.04s"><div class="res-icon" aria-hidden="true">⊕</div><div class="res-name">Conferences</div><div class="res-desc">Industry events to attend and network at</div></a>
-            <a class="card res-card rv" href="Forums & Community.html" target="_blank" rel="noopener noreferrer" style="transition-delay:.08s"><div class="res-icon" aria-hidden="true">◎</div><div class="res-name">Forums &amp; Community</div><div class="res-desc">Connect with the global cybersecurity community</div></a>
-            <a class="card res-card rv" href="Leading Cybersecurity 20Companies.html" target="_blank" rel="noopener noreferrer" style="transition-delay:.12s"><div class="res-icon" aria-hidden="true">▲</div><div class="res-name">Leading Companies</div><div class="res-desc">Top organizations in the industry</div></a>
-            <a class="card res-card rv" href="Tiktok.html" target="_blank" rel="noopener noreferrer" style="transition-delay:.04s"><div class="res-icon" aria-hidden="true">▶</div><div class="res-name">TikTok</div><div class="res-desc">Short-form video content and tutorials</div></a>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact">
-        <div class="container">
-          <div class="sec-rule rv"><span class="label">Contact</span><h2>Get in Touch</h2></div>
-          <div class="contact-grid">
-            <div class="card rv">
-              <span class="mono-label">Direct Contact</span>
-              <div class="ci-list">
-                <div class="ci-item"><span class="ci-l">Email</span><span class="ci-v"><a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span></div>
-                <div class="ci-item"><span class="ci-l">Academic</span><span class="ci-v"><a href="mailto:ologundeomotola@gmail.com">ologundeomotola@gmail.com</a></span></div>
-                <div class="ci-item"><span class="ci-l">Location</span><span class="ci-v">Birmingham, AL · Remote Available</span></div>
-                <div class="ci-item"><span class="ci-l">Current Roles</span><span class="ci-v" style="font-size:13px;color:var(--muted)">Faculty · University of Arizona Global Campus<br>CS Instructor · Lawson State Community College<br>Founder · Cyntraix</span></div>
-              </div>
-              <div class="slinks" aria-label="Social profiles">
-                <a class="slink" href="https://linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                  LinkedIn
-                </a>
-                <a class="slink" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-                  Medium
-                </a>
-                <a class="slink" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .079.53 3.193 3.193 0 0 0 .112.437c.243.743.65 1.302 1.213 1.68.565.375 1.255.565 2.073.565.707 0 1.356-.172 1.96-.516a4.146 4.146 0 0 0 1.476-1.401l-1.478-.929c-.226.358-.49.622-.79.788a1.96 1.96 0 0 1-.975.248c-.445 0-.82-.118-1.124-.354-.302-.237-.524-.57-.663-1.001-.084-.251-.136-.52-.154-.81a12.62 12.62 0 0 1-.03-.866c0-.36.01-.65.03-.866.018-.29.07-.559.154-.81.14-.43.36-.764.664-1a1.87 1.87 0 0 1 1.123-.355c.334 0 .641.07.921.211.28.14.508.342.683.603L22 6.748A4.087 4.087 0 0 0 20.508.514 3.965 3.965 0 0 0 19.586 0zM9.5 3.15v5.4H7v2.15h2.5v5.7h2.35v-5.7h2.8V8.55h-2.8V3.15H9.5z"/></svg>
-                  ResearchGate
-                </a>
-                <a class="slink" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
-                  Google Scholar
-                </a>
-              </div>
-            </div>
-            <div class="card rv" style="transition-delay:.1s">
-              <span class="mono-label">Send a Message</span>
-              <form id="contactForm" aria-label="Contact form">
-                <div class="fg">
-                  <div class="fr">
-                    <div><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name" /></div>
-                    <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="your@email.com" /></div>
-                  </div>
-                  <div><label for="subject">Subject</label><input id="subject" name="subject" type="text" required placeholder="What is this about?" /></div>
-                  <div><label for="message">Message</label><textarea id="message" name="message" required placeholder="Your message…"></textarea></div>
-                  <button class="sbtn" type="submit">Send Message</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
+    <section class="fx-section" aria-label="Quick facts">
       <div class="container">
-        <span>© <span id="year"></span> Ezekiel Ologunde</span>
-        <span style="font-family:var(--mono);font-size:11px">Birmingham, AL &nbsp;·&nbsp; <a href="mailto:ezekiel@cyntraix.io" style="color:var(--sky)">ezekiel@cyntraix.io</a></span>
+        <div class="fx-stats rv">
+          <div class="fx-stat"><div class="fx-stat__num">10+</div><div class="fx-stat__label">Years Experience</div></div>
+          <div class="fx-stat"><div class="fx-stat__num">9</div><div class="fx-stat__label">Certifications</div></div>
+          <div class="fx-stat"><div class="fx-stat__num">5+</div><div class="fx-stat__label">Published Papers</div></div>
+          <div class="fx-stat"><div class="fx-stat__num">3</div><div class="fx-stat__label">Current Roles</div></div>
+        </div>
       </div>
-    </footer>
-  </div>
+    </section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <section class="fx-section" aria-label="Explore">
+      <div class="container">
+        <div class="fx-section__head rv"><span class="fx-section__num">//</span><h2 class="fx-section__title">Explore</h2></div>
+        <div class="fx-portals">
+          <a class="fx-portal rv" href="about.html" data-parallax="0.03">
+            <div class="fx-portal__num">01</div>
+            <div class="fx-portal__title">About</div>
+            <div class="fx-portal__desc">Profile, focus areas, and the work behind Cyntraix.</div>
+            <div class="fx-portal__arrow">Read profile</div>
+          </a>
+          <a class="fx-portal rv" href="research.html" data-parallax="0.06" style="transition-delay:.05s">
+            <div class="fx-portal__num">02</div>
+            <div class="fx-portal__title">Research</div>
+            <div class="fx-portal__desc">Published papers on bootkits, threat modeling, and AI risk.</div>
+            <div class="fx-portal__arrow">View papers</div>
+          </a>
+          <a class="fx-portal rv" href="writing.html" data-parallax="0.03" style="transition-delay:.1s">
+            <div class="fx-portal__num">03</div>
+            <div class="fx-portal__title">Writing</div>
+            <div class="fx-portal__desc">Practitioner essays on Medium — breaches, compliance, and AI.</div>
+            <div class="fx-portal__arrow">Start reading</div>
+          </a>
+          <a class="fx-portal rv" href="education.html" data-parallax="0.06" style="transition-delay:.05s">
+            <div class="fx-portal__num">04</div>
+            <div class="fx-portal__title">Education</div>
+            <div class="fx-portal__desc">Doctoral, graduate, and undergraduate academic background.</div>
+            <div class="fx-portal__arrow">See timeline</div>
+          </a>
+          <a class="fx-portal rv" href="credentials.html" data-parallax="0.03" style="transition-delay:.1s">
+            <div class="fx-portal__num">05</div>
+            <div class="fx-portal__title">Credentials</div>
+            <div class="fx-portal__desc">CISSP, CEH, Security+, AWS, OSCP, and more.</div>
+            <div class="fx-portal__arrow">View ledger</div>
+          </a>
+          <a class="fx-portal rv" href="Resourcehub.html" data-parallax="0.06" style="transition-delay:.15s">
+            <div class="fx-portal__num">06</div>
+            <div class="fx-portal__title">Resources</div>
+            <div class="fx-portal__desc">A curated hub for students breaking into cybersecurity.</div>
+            <div class="fx-portal__arrow">Browse hub</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    // Floating particle network
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    let W, H, pts;
-    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-    function init() {
-      const n = Math.min(55, Math.floor(W * H / 22000));
-      pts = Array.from({length: n}, () => ({
-        x: Math.random() * W, y: Math.random() * H,
-        vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22,
-        r: Math.random() * 1.5 + 0.4, a: Math.random() * 0.4 + 0.1
-      }));
-    }
-    resize(); init();
-    window.addEventListener('resize', () => { resize(); init(); });
-    function tick() {
-      ctx.clearRect(0, 0, W, H);
-      for (const p of pts) {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(56,189,248,${p.a})`; ctx.fill();
-      }
-      for (let i = 0; i < pts.length; i++) {
-        for (let j = i + 1; j < pts.length; j++) {
-          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
-          const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < 120) {
-            ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y);
-            ctx.strokeStyle = `rgba(56,189,248,${0.07 * (1 - d / 120)})`; ctx.lineWidth = 0.5; ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(tick);
-    }
-    tick();
+  <footer class="fx-footer">
+    <div class="container">
+      <span>© <span id="year"></span> Ezekiel Ologunde</span>
+      <span>Birmingham, AL &nbsp;·&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
+    </div>
+  </footer>
 
-    // Scroll reveal
-    const ro = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
-    }, { threshold: 0.07 });
-    document.querySelectorAll('.rv').forEach(el => ro.observe(el));
-
-    // Contact form
-    document.getElementById('contactForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const n = document.getElementById('name').value.trim();
-      const em = document.getElementById('email').value.trim();
-      const s = document.getElementById('subject').value.trim();
-      const m = document.getElementById('message').value.trim();
-      window.location.href = `mailto:ezekiel@cyntraix.io?subject=${encodeURIComponent(s)}&body=${encodeURIComponent(`From: ${n}\nEmail: ${em}\n\n${m}`)}`;
-    });
-  </script>
+  <script src="assets/js/mesh.js"></script>
+  <script src="assets/js/future.js"></script>
 </body>
 </html>

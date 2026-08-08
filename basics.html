@@ -1,167 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT & Cybersecurity Basics | Your Gateway</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #0d1117;
-            color: #c9d1d9;
-            line-height: 1.75;
-        }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 2rem;
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #58a6ff, #3fb950);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            transition: all 0.3s ease;
-        }
-        .card:hover {
-            border-color: #58a6ff;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-        }
-        .internal-link {
-            color: #58a6ff;
-            transition: color 0.2s;
-        }
-        .internal-link:hover {
-            color: #79c0ff;
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT & Cybersecurity Basics — Ezekiel Ologunde</title>
+  <meta name="description" content="Foundational IT and cybersecurity concepts, core terminology, and a quickstart guide for students entering the field." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="selection:bg-blue-900/50 selection:text-white">
+<body>
 
+  <nav class="eo-nav" aria-label="Main navigation">
+    <div class="container eo-nav__inner">
+      <a class="eo-brand" href="index.html"><span class="eo-brand__pip" aria-hidden="true"></span>Ezekiel Ologunde</a>
+      <button class="eo-nav__toggle" aria-expanded="false" aria-controls="eo-nav-links">Menu ▾</button>
+      <div class="eo-nav__links" id="eo-nav-links">
+        <a href="index.html">Home</a>
+        <a href="Resourcehub.html">Resource Index</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="eo-pagehead">
     <div class="container">
-        <nav class="py-6">
-            <a href="Resourcehub.html" class="text-blue-400 hover:text-blue-300 text-lg inline-flex items-center font-semibold transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-                </svg>
-                Back to Resource Hub
-            </a>
-        </nav>
+      <a class="eo-pagehead__back" href="Resourcehub.html">&larr; Resource Index</a>
+      <span class="eo-pagehead__cat">Fundamentals</span>
+      <h1 class="eo-pagehead__title">IT & Cybersecurity Basics</h1>
+      <p class="eo-pagehead__sub">The foundation for high school and college students looking to break into the tech industry — what IT and cybersecurity are, the core concepts underneath them, and a quickstart path to your first steps.</p>
+    </div>
+  </header>
 
-        <header class="text-center mb-16">
-            <h1 class="text-4xl lg:text-6xl font-extrabold gradient-text mb-6">IT & Cybersecurity Basics</h1>
-            <p class="text-xl text-gray-400 max-w-3xl mx-auto">The ultimate foundation for high school and college students looking to break into the tech industry.</p>
-        </header>
+  <main>
+    <section class="eo-section">
+      <div class="container">
 
-        
-        <div class="grid md:grid-cols-2 gap-8 mb-16">
-            <section id="what-is-it" class="card rounded-2xl p-8">
-                <div class="text-blue-500 mb-4"><i data-lucide="cpu" class="w-10 h-10"></i></div>
-                <h2 class="text-2xl font-bold text-white mb-4">What is IT?</h2>
-                <p class="text-gray-400 mb-4">Think of IT as the <strong>nervous system</strong> of the modern world. Professionals build and maintain the networks, servers, and devices that allow society to function digitally.</p>
-                <ul class="text-sm text-gray-500 space-y-2">
-                    <li>• Cloud Infrastructure</li>
-                    <li>• Network Administration</li>
-                    <li>• Hardware Troubleshooting</li>
-                </ul>
-            </section>
+        <div class="eo-grid eo-grid--2 rv">
+          <article class="eo-card">
+            <div class="eo-label" style="margin-bottom:10px">IT</div>
+            <h2 style="font-family:var(--mono);font-weight:700;font-size:18px;color:#fff;margin-bottom:12px;letter-spacing:-0.01em">What is IT?</h2>
+            <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px">Think of IT as the <strong style="color:var(--text)">nervous system</strong> of the modern world. Professionals build and maintain the networks, servers, and devices that allow society to function digitally.</p>
+            <ul class="eo-focus" style="gap:0">
+              <li style="padding:6px 0;border:none"><span class="eo-focus__i" style="margin-top:1px">·</span><span style="font-size:13px;color:var(--muted)">Cloud Infrastructure</span></li>
+              <li style="padding:6px 0;border:none"><span class="eo-focus__i" style="margin-top:1px">·</span><span style="font-size:13px;color:var(--muted)">Network Administration</span></li>
+              <li style="padding:6px 0;border:none"><span class="eo-focus__i" style="margin-top:1px">·</span><span style="font-size:13px;color:var(--muted)">Hardware Troubleshooting</span></li>
+            </ul>
+          </article>
 
-            <section id="what-is-cybersecurity" class="card rounded-2xl p-8">
-                <div class="text-emerald-500 mb-4"><i data-lucide="shield-check" class="w-10 h-10"></i></div>
-                <h2 class="text-2xl font-bold text-white mb-4">What is Cybersecurity?</h2>
-                <p class="text-gray-400 mb-4">If IT is the nervous system, Cybersecurity is the <strong>immune system</strong>. It protects digital health by identifying and neutralizing threats like malware and hackers.</p>
-                <ul class="text-sm text-gray-500 space-y-2">
-                    <li>• Threat Hunting</li>
-                    <li>• Ethical Hacking</li>
-                    <li>• Incident Response</li>
-                </ul>
-            </section>
+          <article class="eo-card">
+            <div class="eo-label" style="margin-bottom:10px">SEC</div>
+            <h2 style="font-family:var(--mono);font-weight:700;font-size:18px;color:#fff;margin-bottom:12px;letter-spacing:-0.01em">What is Cybersecurity?</h2>
+            <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px">If IT is the nervous system, cybersecurity is the <strong style="color:var(--text)">immune system</strong>. It protects digital health by identifying and neutralizing threats like malware and hackers.</p>
+            <ul class="eo-focus" style="gap:0">
+              <li style="padding:6px 0;border:none"><span class="eo-focus__i" style="margin-top:1px">·</span><span style="font-size:13px;color:var(--muted)">Threat Hunting</span></li>
+              <li style="padding:6px 0;border:none"><span class="eo-focus__i" style="margin-top:1px">·</span><span style="font-size:13px;color:var(--muted)">Ethical Hacking</span></li>
+              <li style="padding:6px 0;border:none"><span class="eo-focus__i" style="margin-top:1px">·</span><span style="font-size:13px;color:var(--muted)">Incident Response</span></li>
+            </ul>
+          </article>
         </div>
 
-        
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold text-white mb-8 border-b border-gray-800 pb-2">Core Foundations</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-6 bg-gray-900/50 rounded-xl border border-gray-800">
-                    <h3 class="text-blue-400 font-bold mb-2">Networking (The Connections)</h3>
-                    <p class="text-gray-400 text-sm">How devices talk. Key terms: IP Addresses, DNS (the internet's phonebook), and the OSI Model.</p>
-                </div>
-                <div class="p-6 bg-gray-900/50 rounded-xl border border-gray-800">
-                    <h3 class="text-blue-400 font-bold mb-2">Operating Systems</h3>
-                    <p class="text-gray-400 text-sm">The bridge between user and hardware. Master Windows and learn to love <strong>Linux</strong> (the industry standard).</p>
-                </div>
-                <div class="p-6 bg-gray-900/50 rounded-xl border border-gray-800">
-                    <h3 class="text-blue-400 font-bold mb-2">Cryptography</h3>
-                    <p class="text-gray-400 text-sm">The art of secret writing. Encryption ensures your private data stays private using mathematical keys.</p>
-                </div>
-                <div class="p-6 bg-gray-900/50 rounded-xl border border-gray-800">
-                    <h3 class="text-blue-400 font-bold mb-2">Identity Management</h3>
-                    <p class="text-gray-400 text-sm">Ensuring people are who they say they are using MFA (Multi-Factor Authentication) and Biometrics.</p>
-                </div>
-            </div>
-        </section>
+        <div class="eo-section__head rv" style="margin-top:56px"><span class="eo-section__num">01</span><h2 class="eo-section__title">Core Foundations</h2></div>
+        <div class="eo-grid eo-grid--2 rv">
+          <article class="eo-card">
+            <h3 style="font-family:var(--mono);font-weight:600;font-size:13.5px;color:var(--signal);margin-bottom:8px">Networking (The Connections)</h3>
+            <p style="font-size:13.5px;color:var(--muted);line-height:1.65">How devices talk. Key terms: IP addresses, DNS (the internet's phonebook), and the OSI model.</p>
+          </article>
+          <article class="eo-card">
+            <h3 style="font-family:var(--mono);font-weight:600;font-size:13.5px;color:var(--signal);margin-bottom:8px">Operating Systems</h3>
+            <p style="font-size:13.5px;color:var(--muted);line-height:1.65">The bridge between user and hardware. Master Windows and learn to love <strong style="color:var(--text)">Linux</strong> — the industry standard.</p>
+          </article>
+          <article class="eo-card">
+            <h3 style="font-family:var(--mono);font-weight:600;font-size:13.5px;color:var(--signal);margin-bottom:8px">Cryptography</h3>
+            <p style="font-size:13.5px;color:var(--muted);line-height:1.65">The art of secret writing. Encryption ensures your private data stays private using mathematical keys.</p>
+          </article>
+          <article class="eo-card">
+            <h3 style="font-family:var(--mono);font-weight:600;font-size:13.5px;color:var(--signal);margin-bottom:8px">Identity Management</h3>
+            <p style="font-size:13.5px;color:var(--muted);line-height:1.65">Ensuring people are who they say they are, using MFA (Multi-Factor Authentication) and biometrics.</p>
+          </article>
+        </div>
 
-        <section class="card rounded-2xl p-8 mb-16">
-            <h2 class="text-3xl font-bold text-white mb-8">4-Step Quickstart Guide</h2>
-            <div class="space-y-8">
-                <div class="flex gap-4">
-                    <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-bold">1</div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-white">Understand the Basics</h4>
-                        <p class="text-gray-400">Review our <a href="Resources.html" class="internal-link">Free Resources</a> for fundamental courses on IP networking and hardware.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-bold">2</div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-white">Get Hands-On</h4>
-                        <p class="text-gray-400">Download VirtualBox and install Kali Linux. Practice what you learn on <a href="https://tryhackme.com" target="_blank" class="internal-link">TryHackMe</a>.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-bold">3</div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-white">Target Certifications</h4>
-                        <p class="text-gray-400">View our <a href="Certifications.html" class="internal-link">Certification Roadmap</a> to see which exam fits your career goals (CompTIA A+ vs Security+).</p>
-                    </div>
-                </div>
-                <div class="flex gap-4">
-                    <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-bold">4</div>
-                    <div>
-                        <h4 class="text-lg font-semibold text-white">Join the Community</h4>
-                        <p class="text-gray-400">Follow creators on <a href="instagram.html" class="internal-link">Instagram</a> or join the discussions in our <a href="Forums & Community.html" class="internal-link">Forums section</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="eo-section__head rv" style="margin-top:56px"><span class="eo-section__num">02</span><h2 class="eo-section__title">4-Step Quickstart Guide</h2></div>
+        <div class="eo-card rv">
+          <ul class="eo-focus">
+            <li>
+              <span class="eo-focus__i" style="font-weight:700">1</span>
+              <div>
+                <span class="eo-focus__label">Understand the Basics</span>
+                <span class="eo-focus__detail">Review the <a href="Resources.html" style="color:var(--signal);border-bottom:1px solid var(--signal-soft-2)">Free Resources</a> page for fundamental courses on IP networking and hardware.</span>
+              </div>
+            </li>
+            <li>
+              <span class="eo-focus__i" style="font-weight:700">2</span>
+              <div>
+                <span class="eo-focus__label">Get Hands-On</span>
+                <span class="eo-focus__detail">Download VirtualBox and install Kali Linux. Practice what you learn on <a href="https://tryhackme.com" target="_blank" rel="noopener noreferrer" style="color:var(--signal);border-bottom:1px solid var(--signal-soft-2)">TryHackMe</a>.</span>
+              </div>
+            </li>
+            <li>
+              <span class="eo-focus__i" style="font-weight:700">3</span>
+              <div>
+                <span class="eo-focus__label">Target Certifications</span>
+                <span class="eo-focus__detail">View the <a href="Certifications.html" style="color:var(--signal);border-bottom:1px solid var(--signal-soft-2)">Certification Roadmap</a> to see which exam fits your career goals (CompTIA A+ vs. Security+).</span>
+              </div>
+            </li>
+            <li>
+              <span class="eo-focus__i" style="font-weight:700">4</span>
+              <div>
+                <span class="eo-focus__label">Join the Community</span>
+                <span class="eo-focus__detail">Follow creators on <a href="instagram.html" style="color:var(--signal);border-bottom:1px solid var(--signal-soft-2)">Instagram</a> or join the discussions in the <a href="forums-community.html" style="color:var(--signal);border-bottom:1px solid var(--signal-soft-2)">Forums section</a>.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold text-white mb-6">Jump to Deep Dives</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="Resources.html" class="p-3 border border-gray-800 rounded-lg text-center hover:bg-gray-800 transition">Free Training</a>
-                <a href="Paid Trainings.html" class="p-3 border border-gray-800 rounded-lg text-center hover:bg-gray-800 transition">Bootcamps</a>
-                <a href="Acronyms.html" class="p-3 border border-gray-800 rounded-lg text-center hover:bg-gray-800 transition">Jargon Guide</a>
-                <a href="Conferences.html" class="p-3 border border-gray-800 rounded-lg text-center hover:bg-gray-800 transition">Events</a>
-            </div>
-        </section>
+        <div class="eo-section__head rv" style="margin-top:56px"><span class="eo-section__num">03</span><h2 class="eo-section__title">Jump to Deep Dives</h2></div>
+        <nav class="eo-links rv" aria-label="Related resources">
+          <a class="eo-link" href="Resources.html">Free Training</a>
+          <a class="eo-link" href="paid-trainings.html">Bootcamps</a>
+          <a class="eo-link" href="Acronyms.html">Jargon Guide</a>
+          <a class="eo-link" href="Conferences.html">Events</a>
+        </nav>
 
-        <footer class="text-center py-12 border-t border-gray-800">
-            <p class="text-gray-500 italic">"The best time to start was yesterday. The second best time is now."</p>
-            <p class="mt-4 text-xs text-gray-600">Part of the Cybersecurity Resource Hub Project</p>
-        </footer>
+        <div class="eo-prose rv" style="margin-top:56px;padding-top:32px;border-top:1px solid var(--line)">
+          <blockquote>The best time to start was yesterday. The second best time is now.</blockquote>
+          <p style="font-size:12px;color:var(--faint)">Part of the Cybersecurity Resource Hub Project</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="eo-footer">
+    <div class="container">
+      <span>&copy; <span id="year"></span> Ezekiel Ologunde</span>
+      <span>Birmingham, AL &nbsp;&middot;&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
     </div>
+  </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

@@ -1,311 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Tech & Cybersecurity Accounts</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1200px;
-            padding: 2rem;
-        }
-        .section-card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-        }
-        h1, h2, h3, h4 {
-            font-weight: 700;
-        }
-        a {
-            color: #58a6ff;
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
-        a:hover {
-            color: #79c0ff;
-        }
-        .profile-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        .profile-card {
-            background-color: #0d1117;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 1rem;
-            transition: all 0.2s ease-in-out;
-            display: block;
-        }
-        .profile-card:hover {
-            border-color: #58a6ff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.1);
-        }
-        .search-box {
-            background-color: #0d1117;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            width: 100%;
-            color: #c9d1d9;
-            margin-bottom: 1.5rem;
-        }
-        .search-box:focus {
-            outline: none;
-            border-color: #58a6ff;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TikTok Tech &amp; Cybersecurity Accounts — Ezekiel Ologunde</title>
+  <meta name="description" content="A curated directory of cybersecurity, tech, and AI creators worth following on TikTok." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .eo-dir-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+    .eo-dir-card { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 14px 16px; transition: border-color .18s, box-shadow .18s, transform .18s; }
+    .eo-dir-card:hover { border-color: var(--line-2); box-shadow: 0 6px 20px rgba(0,0,0,.32); transform: translateY(-2px); }
+    .eo-dir-card__name { font-family: var(--mono); font-weight: 700; font-size: 13.5px; color: var(--text); margin-bottom: 4px; line-height: 1.35; }
+    .eo-dir-card:hover .eo-dir-card__name { color: var(--signal); }
+    .eo-dir-card__handle { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+    .eo-dir-empty { font-family: var(--mono); font-size: 12.5px; color: var(--faint); padding: 8px 0 0; }
+    .eo-dir-count { font-family: var(--mono); font-size: 11px; color: var(--faint); margin: -6px 0 18px; display: block; }
+  </style>
 </head>
-<body class="antialiased">
-    <div class="container mx-auto">
-        <div class="text-left py-4">
-            <a href="Resourcehub.html" class="text-lg inline-flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-                </svg>
-                Back to Main
-            </a>
-        </div>
+<body>
 
-        <header class="text-center py-10 md:py-16">
-            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
-                🚀 TikTok Tech & Cybersecurity Accounts Collection
-            </h1>
-            <p class="text-md md:text-lg text-gray-400">A curated list of tech, cybersecurity, and AI creators from your directory.</p>
-        </header>
-
-        <div class="section-card">
-            <input type="text" id="searchBox" class="search-box" placeholder="Search accounts by name or username...">
-        </div>
-
-        <main class="space-y-8">
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🛡️ Cybersecurity & Tech Directory</h2>
-                <div class="profile-grid" id="cyberProfiles">
-                    </div>
-            </div>
-
-            <div class="section-card">
-                <h2 class="text-2xl font-semibold mb-6 text-white">🔄 Updates</h2>
-                <p>Last updated: January 2026</p>
-            </div>
-        </main>
+  <nav class="eo-nav" aria-label="Main navigation">
+    <div class="container eo-nav__inner">
+      <a class="eo-brand" href="index.html"><span class="eo-brand__pip" aria-hidden="true"></span>Ezekiel Ologunde</a>
+      <button class="eo-nav__toggle" aria-expanded="false" aria-controls="eo-nav-links">Menu ▾</button>
+      <div class="eo-nav__links" id="eo-nav-links">
+        <a href="index.html">Home</a>
+        <a href="Resourcehub.html">Resource Index</a>
+      </div>
     </div>
+  </nav>
 
-    <script>
-        // List extracted and cleaned from Let.txt
-        const profiles = [
-            { name: "Let's Cyber", username: "letscyber" },
-            { name: "Creatively Ange", username: "creativelyange" },
-            { name: "Lan Luvah", username: "lanluvah" },
-            { name: "Symoné Beez", username: "symonebeez" },
-            { name: "Sweeeezy IT", username: "sweeeezyit" },
-            { name: "Tech Woke", username: "techwoke" },
-            { name: "Brandy J. | CLT Creator", username: "boldlybrandy" },
-            { name: "OCILLA", username: "iamocilla" },
-            { name: "Zane", username: "zanetheeninja" },
-            { name: "Jet Wind Lab", username: "jetwindlab" },
-            { name: "Euni Cyber Girl", username: "eunicybergirl" },
-            { name: "hackHERproof", username: "hackherproof" },
-            { name: "Lance", username: "lancealot007" },
-            { name: "DJ Whisper", username: "djwhisper" },
-            { name: "Lunchbox", username: "tech_tips4you" },
-            { name: "Antonio", username: "antonio.ow" },
-            { name: "Bytekage", username: "bytekage" },
-            { name: "Lenny J", username: "thereallennyj" },
-            { name: "Authoryzation", username: "authoryzation" },
-            { name: "Crein Tech", username: "creintech" },
-            { name: "James Anthony Journey", username: "jamesanthonyjourney" },
-            { name: "Zion Harvin", username: "zion.harvin" },
-            { name: "CloudGodKord", username: "cloudgodkord" },
-            { name: "Greg", username: "greghahre" },
-            { name: "Codexo", username: "codexo98" },
-            { name: "Cyrone WXOS", username: "cyronewxos" },
-            { name: "Cyntraix", username: "cyntraix" },
-            { name: "Cyber Girl Diaries", username: "cybergirldiaries" },
-            { name: "Evan Hyearwood", username: "evanhyearwood" },
-            { name: "The Cyber Guy", username: "lil_elvis83" },
-            { name: "Shawn Kyree", username: "shawn_kyree55" },
-            { name: "Cyber Ducky", username: "cyberduckyofficial" },
-            { name: "Andres Vidoza", username: "andresvidoza" },
-            { name: "Nathan The Engineer", username: "zahiran227" },
-            { name: "Wreck It Mech", username: "wreckitmech" },
-            { name: "Get 2 Cloud", username: "get2cloud" },
-            { name: "Reyan", username: "reyanqureshi" },
-            { name: "Cam | CyberSecurity", username: "tech_withcam" },
-            { name: "Oso.dev", username: "oso.dev" },
-            { name: "Samira", username: "techysammy" },
-            { name: "Delmi Training Institute", username: "delmitraining" },
-            { name: "Lumia Techs", username: "lumiatechs" },
-            { name: "Caleb Davis", username: "smoovee.cd" },
-            { name: "All Systems Ray.exe", username: "all.systems.ray.exe" },
-            { name: "BEN K USA", username: "benkip_kiruiusa" },
-            { name: "David Lyons", username: "proofofdk" },
-            { name: "Empty Jump Jo", username: "emptyjumpjo1" },
-            { name: "Kristian Paul-Oti", username: "elpaulkris" },
-            { name: "Tristan", username: "exroh" },
-            { name: "Developer Matt B", username: "deveopermattb" },
-            { name: "Everything Moving", username: "everything.moving" },
-            { name: "Al Be and Tech", username: "albryant.tech" },
-            { name: "Informatik Lab", username: "gregaku" },
-            { name: "Demetrius Harvey", username: "demetriustech" },
-            { name: "PortaSecure", username: "portasecure" },
-            { name: "Sybrinity LLC", username: "sybrinityllc" },
-            { name: "SapphireBlu", username: "marrrri.__" },
-            { name: "Dein Lynn", username: "dein.lynn4" },
-            { name: "Homelab Networks", username: "homelabnetworks" },
-            { name: "Kevin", username: "kevoreacts_" },
-            { name: "Ur Daily Dose of Internet", username: "urdailydoseofinternet28" },
-            { name: "Cyber Security Boo", username: "cybersecurityboo" },
-            { name: "AI Automation Labs", username: "automationlabs.business" },
-            { name: "CyberDani", username: "thecyberdani" },
-            { name: "Daily Tech Dose", username: "tech_geekk" },
-            { name: "Hackers to Founders", username: "hackerstofounders" },
-            { name: "Island IT Guy", username: "island.it.guy" },
-            { name: "Certs and Coffee", username: "certsandcoffee" },
-            { name: "Millie | Cybergrad Chronicles", username: "cybergradchronicles" },
-            { name: "Alima On Air", username: "alimaonair" },
-            { name: "Infosec Institute", username: "infosecinstitute" },
-            { name: "Iqra | Cybersecurity", username: "iqraxma" },
-            { name: "D Smith", username: "dsmith9" },
-            { name: "Trey Incs", username: "treyincs" },
-            { name: "J0sh T3ch", username: "j0sh_t3ch" },
-            { name: "Felipe IAM Cybersecurity", username: "felipeiamcybersec" },
-            { name: "Gardy Saturne", username: "gardysaturne" },
-            { name: "Rod", username: "rodtakes" },
-            { name: "Shark Byte", username: "_shark_byte" },
-            { name: "AJ", username: "techwithaj1" },
-            { name: "Cyber Smart Resource", username: "cybersmartresource" },
-            { name: "Cyber Ninja", username: "cyberninja257" },
-            { name: "The Practical CISO", username: "thepracticalciso" },
-            { name: "Josh Madakor", username: "joshmadakor" },
-            { name: "Angela", username: "itsangelahey" },
-            { name: "Cybersecure Weekly", username: "cybersecureweekly" },
-            { name: "Brittany Nicole", username: "xo.bnicole" },
-            { name: "Cyber Ratel", username: "cyberratel" },
-            { name: "Kylie J | CCJ Podcast", username: "cybercrimejunkiespodcast" },
-            { name: "Deadboy Divine", username: "deadboydivine" },
-            { name: "Didiporshe | Cybersecurity", username: "didiporshe0" },
-            { name: "MG in IT", username: "mg.in.it" },
-            { name: "Keepin' It Faith", username: "faithyywaithyy" },
-            { name: "The Network Attorney", username: "thenetworkattorney" },
-            { name: "Cyber Net Sec", username: "cybernetsec" },
-            { name: "Ben Networking", username: "dripwayy" },
-            { name: "Deadpan Crickets", username: "deadpancrickets" },
-            { name: "Monica Alvarez", username: "monica.alvarez833" },
-            { name: "JayJ The Jet", username: "jayjaythejet" },
-            { name: "Technical Institute of America", username: "technicalioa" },
-            { name: "JTech", username: "jtech183" },
-            { name: "The IT Gamer", username: "the.it.gamer" },
-            { name: "Benjamin Kay", username: "benjaminlexbet" },
-            { name: "Cloud Tech Exec", username: "cloudtechexec" },
-            { name: "Kauzilious", username: "luv4kero" },
-            { name: "Mohammad Mahdi", username: "mohammadaboosaiedi" },
-            { name: "Technically Jeff", username: "technicallyjefff" },
-            { name: "Code Ninjas Brampton East", username: "codeninjasbramptoneast" },
-            { name: "IMD Technologies", username: "imdtechnologies" },
-            { name: "Cyberkoyo", username: "keikoyoter" },
-            { name: "Vazkeft", username: "vazkeft" },
-            { name: "Ty Talks Tech", username: "tytalkstech" },
-            { name: "1CONNECT", username: "1connect" },
-            { name: "BigI", username: "bigibz1" },
-            { name: "Zero Day Sloan", username: "zerodaysloan" },
-            { name: "Packet Chasers", username: "packet.chasers" },
-            { name: "HY CONNECT", username: "hy.connect1" },
-            { name: "Axon Tech", username: "axon.tech" },
-            { name: "Amir | Cyber with Amir", username: "cyberwithamir" },
-            { name: "Setup.s", username: "setup.s" },
-            { name: "Network Verse", username: "networkverse" },
-            { name: "Alias Cybersecurity", username: "aliascybersecurity" },
-            { name: "GitKraken", username: "gitkraken" },
-            { name: "Simplex-IT", username: "simplex.it" },
-            { name: "Dr. Barry | PhD Cyber & AI", username: "drbarryofficial" },
-            { name: "Rodney | The Cyber Mentor", username: "rodney_arceneaux" },
-            { name: "G | Cybersecurity", username: "gilbertsanchz" },
-            { name: "Vibe Coding FM", username: "vibecoding_fm" },
-            { name: "Cyber Psych with Connor", username: "cyberpsychwithconnor" },
-            { name: "Three Headed Beast Security", username: "threeheadedbeastsecurity" },
-            { name: "Jonathan @ CTech-Academy", username: "jonathanctech" },
-            { name: "Data Formatter", username: "dataformatter" },
-            { name: "SANS Institute", username: "sansinstituteofficial" },
-            { name: "Preponderant Cyber Guy", username: "cyber_keelow" },
-            { name: "Black Cyber", username: "black_cyber" },
-            { name: "Ash On Cyber", username: "ashoncyber" },
-            { name: "CISO Tradecraft", username: "cisotradecraft" },
-            { name: "Covenant Training Center", username: "covenanttrainingc" },
-            { name: "FLEX!", username: "iamriflex" },
-            { name: "Spatix Networks", username: "spatixnetworks" },
-            { name: "WatchGate", username: "watchgate" },
-            { name: "TechStep", username: "techstep_cyber" },
-            { name: "AnonHack3r", username: "anonhack3r1337" },
-            { name: "TCM Security", username: "tcmsecurity" },
-            { name: "Cybersecurity Girl", username: "cybersecuritygirl" },
-            { name: "HackNotice", username: "hack_notice" },
-            { name: "GC+ CISO Connection", username: "gcciso.connection" },
-            { name: "Nate Butler Explains", username: "natebutlerexplains" },
-            { name: "Just a girl in Cyber", username: "oladunni_cyber" },
-            { name: "Ashish Rajan", username: "hashishrajan" },
-            { name: "CyberDad", username: "cyberdad71" },
-            { name: "PJ Catalano", username: "pj.catalano" },
-            { name: "David Campbell", username: "dcam_ai" },
-            { name: "Phil", username: "notppphil" },
-            { name: "ACE | Govtech", username: "acewitdaspade" },
-            { name: "Nigelb Tech", username: "nigelbtech" },
-            { name: "SECURE | CYBER CONNECT", username: "secure.cyber.connect" },
-            { name: "Professor Whiz", username: "ysenhunt25" },
-            { name: "Cyber & Seth", username: "cyber.and.seth" },
-            { name: "Riann Stroud", username: "riann.stroud" },
-            { name: "Cyber Awareness Hub", username: "cyberawarenesshub" },
-            { name: "Cyber Unc", username: "cyber__unc" },
-            { name: "Cyber Secrets", username: "arescyberdefense" },
-            { name: "Jay | Cybersecurity", username: "jaybytebank" },
-            { name: "Cloud Sec Ninja", username: "cloudsecninja" },
-            { name: "The Cyber Circle", username: "thecybercircle" },
-            { name: "Brad Tech", username: "techbrad" },
-            { name: "Nana | IT Fundamentals", username: "techworldwithnana" }
-        ];
+  <header class="eo-pagehead">
+    <div class="container">
+      <a class="eo-pagehead__back" href="Resourcehub.html">&larr; Resource Index</a>
+      <span class="eo-pagehead__cat">Media</span>
+      <h1 class="eo-pagehead__title">TikTok Tech &amp; Cybersecurity Accounts</h1>
+      <p class="eo-pagehead__sub">A curated list of tech, cybersecurity, and AI creators worth following on TikTok.</p>
+    </div>
+  </header>
 
-        const container = document.getElementById('cyberProfiles');
-        const searchBox = document.getElementById('searchBox');
+  <main>
+    <section class="eo-section">
+      <div class="container">
 
-        function renderProfiles(filter = "") {
-            container.innerHTML = "";
-            const filtered = profiles.filter(p => 
-                p.name.toLowerCase().includes(filter.toLowerCase()) || 
-                p.username.toLowerCase().includes(filter.toLowerCase())
-            );
+        <div class="eo-card rv">
+          <label for="tiktokSearch" class="eo-label" style="display:block;margin-bottom:10px">Search Accounts</label>
+          <input type="text" id="tiktokSearch" placeholder="Search by name or username…" autocomplete="off" />
+        </div>
 
-            filtered.forEach(profile => {
-                const card = document.createElement('a');
-                card.href = `https://www.tiktok.com/@${profile.username}`;
-                card.target = "_blank";
-                card.className = "profile-card";
-                card.innerHTML = `
-                    <div class="font-semibold text-white">${profile.name}</div>
-                    <div class="text-sm text-gray-400">@${profile.username}</div>
-                `;
-                container.appendChild(card);
-            });
+        <div class="eo-res-group rv" style="margin-top:32px">
+          <span class="eo-res-group__label">Cybersecurity &amp; Tech Directory</span>
+          <span class="eo-dir-count" id="tiktokCount"></span>
+          <div class="eo-dir-grid" id="cyberProfiles"></div>
+        </div>
+
+        <p style="font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:40px">Last updated: January 2026</p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="eo-footer">
+    <div class="container">
+      <span>&copy; <span id="year"></span> Ezekiel Ologunde</span>
+      <span>Birmingham, AL &nbsp;&middot;&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    // List extracted and cleaned from Let.txt
+    const profiles = [
+        { name: "Let's Cyber", username: "letscyber" },
+        { name: "Creatively Ange", username: "creativelyange" },
+        { name: "Lan Luvah", username: "lanluvah" },
+        { name: "Symoné Beez", username: "symonebeez" },
+        { name: "Sweeeezy IT", username: "sweeeezyit" },
+        { name: "Tech Woke", username: "techwoke" },
+        { name: "Brandy J. | CLT Creator", username: "boldlybrandy" },
+        { name: "OCILLA", username: "iamocilla" },
+        { name: "Zane", username: "zanetheeninja" },
+        { name: "Jet Wind Lab", username: "jetwindlab" },
+        { name: "Euni Cyber Girl", username: "eunicybergirl" },
+        { name: "hackHERproof", username: "hackherproof" },
+        { name: "Lance", username: "lancealot007" },
+        { name: "DJ Whisper", username: "djwhisper" },
+        { name: "Lunchbox", username: "tech_tips4you" },
+        { name: "Antonio", username: "antonio.ow" },
+        { name: "Bytekage", username: "bytekage" },
+        { name: "Lenny J", username: "thereallennyj" },
+        { name: "Authoryzation", username: "authoryzation" },
+        { name: "Crein Tech", username: "creintech" },
+        { name: "James Anthony Journey", username: "jamesanthonyjourney" },
+        { name: "Zion Harvin", username: "zion.harvin" },
+        { name: "CloudGodKord", username: "cloudgodkord" },
+        { name: "Greg", username: "greghahre" },
+        { name: "Codexo", username: "codexo98" },
+        { name: "Cyrone WXOS", username: "cyronewxos" },
+        { name: "Cyntraix", username: "cyntraix" },
+        { name: "Cyber Girl Diaries", username: "cybergirldiaries" },
+        { name: "Evan Hyearwood", username: "evanhyearwood" },
+        { name: "The Cyber Guy", username: "lil_elvis83" },
+        { name: "Shawn Kyree", username: "shawn_kyree55" },
+        { name: "Cyber Ducky", username: "cyberduckyofficial" },
+        { name: "Andres Vidoza", username: "andresvidoza" },
+        { name: "Nathan The Engineer", username: "zahiran227" },
+        { name: "Wreck It Mech", username: "wreckitmech" },
+        { name: "Get 2 Cloud", username: "get2cloud" },
+        { name: "Reyan", username: "reyanqureshi" },
+        { name: "Cam | CyberSecurity", username: "tech_withcam" },
+        { name: "Oso.dev", username: "oso.dev" },
+        { name: "Samira", username: "techysammy" },
+        { name: "Delmi Training Institute", username: "delmitraining" },
+        { name: "Lumia Techs", username: "lumiatechs" },
+        { name: "Caleb Davis", username: "smoovee.cd" },
+        { name: "All Systems Ray.exe", username: "all.systems.ray.exe" },
+        { name: "BEN K USA", username: "benkip_kiruiusa" },
+        { name: "David Lyons", username: "proofofdk" },
+        { name: "Empty Jump Jo", username: "emptyjumpjo1" },
+        { name: "Kristian Paul-Oti", username: "elpaulkris" },
+        { name: "Tristan", username: "exroh" },
+        { name: "Developer Matt B", username: "deveopermattb" },
+        { name: "Everything Moving", username: "everything.moving" },
+        { name: "Al Be and Tech", username: "albryant.tech" },
+        { name: "Informatik Lab", username: "gregaku" },
+        { name: "Demetrius Harvey", username: "demetriustech" },
+        { name: "PortaSecure", username: "portasecure" },
+        { name: "Sybrinity LLC", username: "sybrinityllc" },
+        { name: "SapphireBlu", username: "marrrri.__" },
+        { name: "Dein Lynn", username: "dein.lynn4" },
+        { name: "Homelab Networks", username: "homelabnetworks" },
+        { name: "Kevin", username: "kevoreacts_" },
+        { name: "Ur Daily Dose of Internet", username: "urdailydoseofinternet28" },
+        { name: "Cyber Security Boo", username: "cybersecurityboo" },
+        { name: "AI Automation Labs", username: "automationlabs.business" },
+        { name: "CyberDani", username: "thecyberdani" },
+        { name: "Daily Tech Dose", username: "tech_geekk" },
+        { name: "Hackers to Founders", username: "hackerstofounders" },
+        { name: "Island IT Guy", username: "island.it.guy" },
+        { name: "Certs and Coffee", username: "certsandcoffee" },
+        { name: "Millie | Cybergrad Chronicles", username: "cybergradchronicles" },
+        { name: "Alima On Air", username: "alimaonair" },
+        { name: "Infosec Institute", username: "infosecinstitute" },
+        { name: "Iqra | Cybersecurity", username: "iqraxma" },
+        { name: "D Smith", username: "dsmith9" },
+        { name: "Trey Incs", username: "treyincs" },
+        { name: "J0sh T3ch", username: "j0sh_t3ch" },
+        { name: "Felipe IAM Cybersecurity", username: "felipeiamcybersec" },
+        { name: "Gardy Saturne", username: "gardysaturne" },
+        { name: "Rod", username: "rodtakes" },
+        { name: "Shark Byte", username: "_shark_byte" },
+        { name: "AJ", username: "techwithaj1" },
+        { name: "Cyber Smart Resource", username: "cybersmartresource" },
+        { name: "Cyber Ninja", username: "cyberninja257" },
+        { name: "The Practical CISO", username: "thepracticalciso" },
+        { name: "Josh Madakor", username: "joshmadakor" },
+        { name: "Angela", username: "itsangelahey" },
+        { name: "Cybersecure Weekly", username: "cybersecureweekly" },
+        { name: "Brittany Nicole", username: "xo.bnicole" },
+        { name: "Cyber Ratel", username: "cyberratel" },
+        { name: "Kylie J | CCJ Podcast", username: "cybercrimejunkiespodcast" },
+        { name: "Deadboy Divine", username: "deadboydivine" },
+        { name: "Didiporshe | Cybersecurity", username: "didiporshe0" },
+        { name: "MG in IT", username: "mg.in.it" },
+        { name: "Keepin' It Faith", username: "faithyywaithyy" },
+        { name: "The Network Attorney", username: "thenetworkattorney" },
+        { name: "Cyber Net Sec", username: "cybernetsec" },
+        { name: "Ben Networking", username: "dripwayy" },
+        { name: "Deadpan Crickets", username: "deadpancrickets" },
+        { name: "Monica Alvarez", username: "monica.alvarez833" },
+        { name: "JayJ The Jet", username: "jayjaythejet" },
+        { name: "Technical Institute of America", username: "technicalioa" },
+        { name: "JTech", username: "jtech183" },
+        { name: "The IT Gamer", username: "the.it.gamer" },
+        { name: "Benjamin Kay", username: "benjaminlexbet" },
+        { name: "Cloud Tech Exec", username: "cloudtechexec" },
+        { name: "Kauzilious", username: "luv4kero" },
+        { name: "Mohammad Mahdi", username: "mohammadaboosaiedi" },
+        { name: "Technically Jeff", username: "technicallyjefff" },
+        { name: "Code Ninjas Brampton East", username: "codeninjasbramptoneast" },
+        { name: "IMD Technologies", username: "imdtechnologies" },
+        { name: "Cyberkoyo", username: "keikoyoter" },
+        { name: "Vazkeft", username: "vazkeft" },
+        { name: "Ty Talks Tech", username: "tytalkstech" },
+        { name: "1CONNECT", username: "1connect" },
+        { name: "BigI", username: "bigibz1" },
+        { name: "Zero Day Sloan", username: "zerodaysloan" },
+        { name: "Packet Chasers", username: "packet.chasers" },
+        { name: "HY CONNECT", username: "hy.connect1" },
+        { name: "Axon Tech", username: "axon.tech" },
+        { name: "Amir | Cyber with Amir", username: "cyberwithamir" },
+        { name: "Setup.s", username: "setup.s" },
+        { name: "Network Verse", username: "networkverse" },
+        { name: "Alias Cybersecurity", username: "aliascybersecurity" },
+        { name: "GitKraken", username: "gitkraken" },
+        { name: "Simplex-IT", username: "simplex.it" },
+        { name: "Dr. Barry | PhD Cyber & AI", username: "drbarryofficial" },
+        { name: "Rodney | The Cyber Mentor", username: "rodney_arceneaux" },
+        { name: "G | Cybersecurity", username: "gilbertsanchz" },
+        { name: "Vibe Coding FM", username: "vibecoding_fm" },
+        { name: "Cyber Psych with Connor", username: "cyberpsychwithconnor" },
+        { name: "Three Headed Beast Security", username: "threeheadedbeastsecurity" },
+        { name: "Jonathan @ CTech-Academy", username: "jonathanctech" },
+        { name: "Data Formatter", username: "dataformatter" },
+        { name: "SANS Institute", username: "sansinstituteofficial" },
+        { name: "Preponderant Cyber Guy", username: "cyber_keelow" },
+        { name: "Black Cyber", username: "black_cyber" },
+        { name: "Ash On Cyber", username: "ashoncyber" },
+        { name: "CISO Tradecraft", username: "cisotradecraft" },
+        { name: "Covenant Training Center", username: "covenanttrainingc" },
+        { name: "FLEX!", username: "iamriflex" },
+        { name: "Spatix Networks", username: "spatixnetworks" },
+        { name: "WatchGate", username: "watchgate" },
+        { name: "TechStep", username: "techstep_cyber" },
+        { name: "AnonHack3r", username: "anonhack3r1337" },
+        { name: "TCM Security", username: "tcmsecurity" },
+        { name: "Cybersecurity Girl", username: "cybersecuritygirl" },
+        { name: "HackNotice", username: "hack_notice" },
+        { name: "GC+ CISO Connection", username: "gcciso.connection" },
+        { name: "Nate Butler Explains", username: "natebutlerexplains" },
+        { name: "Just a girl in Cyber", username: "oladunni_cyber" },
+        { name: "Ashish Rajan", username: "hashishrajan" },
+        { name: "CyberDad", username: "cyberdad71" },
+        { name: "PJ Catalano", username: "pj.catalano" },
+        { name: "David Campbell", username: "dcam_ai" },
+        { name: "Phil", username: "notppphil" },
+        { name: "ACE | Govtech", username: "acewitdaspade" },
+        { name: "Nigelb Tech", username: "nigelbtech" },
+        { name: "SECURE | CYBER CONNECT", username: "secure.cyber.connect" },
+        { name: "Professor Whiz", username: "ysenhunt25" },
+        { name: "Cyber & Seth", username: "cyber.and.seth" },
+        { name: "Riann Stroud", username: "riann.stroud" },
+        { name: "Cyber Awareness Hub", username: "cyberawarenesshub" },
+        { name: "Cyber Unc", username: "cyber__unc" },
+        { name: "Cyber Secrets", username: "arescyberdefense" },
+        { name: "Jay | Cybersecurity", username: "jaybytebank" },
+        { name: "Cloud Sec Ninja", username: "cloudsecninja" },
+        { name: "The Cyber Circle", username: "thecybercircle" },
+        { name: "Brad Tech", username: "techbrad" },
+        { name: "Nana | IT Fundamentals", username: "techworldwithnana" }
+    ];
+
+    const container = document.getElementById('cyberProfiles');
+    const searchBox = document.getElementById('tiktokSearch');
+    const countEl = document.getElementById('tiktokCount');
+
+    function renderProfiles(filter = "") {
+        container.innerHTML = "";
+        const filtered = profiles.filter(p =>
+            p.name.toLowerCase().includes(filter.toLowerCase()) ||
+            p.username.toLowerCase().includes(filter.toLowerCase())
+        );
+
+        countEl.textContent = filtered.length + ' account' + (filtered.length === 1 ? '' : 's');
+
+        if (!filtered.length) {
+            container.innerHTML = '<p class="eo-dir-empty">No accounts match your search.</p>';
+            return;
         }
 
-        searchBox.addEventListener('input', (e) => renderProfiles(e.target.value));
+        filtered.forEach(profile => {
+            const card = document.createElement('a');
+            card.href = `https://www.tiktok.com/@${profile.username}`;
+            card.target = "_blank";
+            card.rel = "noopener noreferrer";
+            card.className = "eo-dir-card";
+            card.innerHTML = `
+                <div class="eo-dir-card__name">${profile.name}</div>
+                <div class="eo-dir-card__handle">@${profile.username}</div>
+            `;
+            container.appendChild(card);
+        });
+    }
 
-        // Initial render
-        renderProfiles();
-    </script>
+    searchBox.addEventListener('input', (e) => renderProfiles(e.target.value));
+
+    // Initial render
+    renderProfiles();
+  </script>
 </body>
 </html>
