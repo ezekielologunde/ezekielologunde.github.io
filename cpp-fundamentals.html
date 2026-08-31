@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>C++ Fundamentals — Course Slides — Ezekiel Ologunde</title>
-  <meta name="description" content="Nine-module C++ Fundamentals lecture deck for community college students, building one capstone Student Grade & Course Tracker project from variables to file I/O." />
+  <meta name="description" content="Fifteen-module C++ Fundamentals lecture deck for community college students, building one capstone Student Grade & Course Tracker project from variables all the way through pointers, templates, exceptions, recursion, linked lists, stacks/queues, and file I/O." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
       <a class="eo-pagehead__back" href="Resourcehub.html">&larr; Resource Hub</a>
       <span class="eo-pagehead__cat">Teaching</span>
       <h1 class="eo-pagehead__title">C++ Fundamentals — Course Slides</h1>
-      <p class="eo-pagehead__sub">A nine-module intro-to-C++ lecture deck for community college students. Every module builds toward one growing capstone program — a Student Grade &amp; Course Tracker — so students see each new concept land in real, working code.</p>
+      <p class="eo-pagehead__sub">A fifteen-module intro-to-C++ lecture deck for community college students, grounded in a full CS1/CS2 syllabus (Malik's <em>C++ Programming</em>) and simplified for a first-semester audience. Every module builds toward one growing capstone program — a Student Grade &amp; Course Tracker — so students see each new concept, from your first <code>cout</code> to pointers, templates, exceptions, recursion, and linked lists, land in real, working code.</p>
     </div>
   </header>
 
@@ -38,7 +38,7 @@
       <div class="container">
         <div class="eo-section__head rv"><span class="eo-section__num">01</span><h2 class="eo-section__title">How the Course Is Structured</h2></div>
         <div class="eo-prose rv" style="max-width:none">
-          <p>Each module is a self-contained, lecture-ready slide deck (12&ndash;15 slides) covering new syntax and concepts, then a <strong>Project Build</strong> slide that extends the same capstone program, and an <strong>in-class exercise</strong> to practice before moving on. By Module 9, students have a complete, file-backed C++ application built entirely from scratch.</p>
+          <p>Each module is a self-contained, lecture-ready slide deck (12&ndash;14 slides) covering new syntax and concepts, then a <strong>Project Build</strong> slide that extends the same capstone program, and an <strong>in-class exercise</strong> to practice before moving on. Modules 1&ndash;8 cover a standard CS1 arc (syntax, control flow, functions, collections, and OOP); Modules 9&ndash;14 add CS2-level topics &mdash; pointers, templates, exception handling, recursion, linked lists, and stacks/queues &mdash; that are often skipped in a first course but show up constantly afterward. By Module 15, students have a complete, sorted, file-backed C++ application built entirely from scratch.</p>
         </div>
       </div>
     </section>
@@ -57,7 +57,7 @@
           <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-2-Variables-Data-Types-Operators.pptx" download>
             <div class="eo-res-card__cat">Module 2</div>
             <div class="eo-res-card__name">Variables, Data Types &amp; Operators</div>
-            <div class="eo-res-card__desc">Primitive types, constants, arithmetic/relational/logical operators, and reading input with cin.</div>
+            <div class="eo-res-card__desc">Primitive types, constants, arithmetic/relational/logical operators, formatted decimal output, and reading input with cin.</div>
           </a>
 
           <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-3-Control-Flow-Decisions-Loops.pptx" download>
@@ -93,13 +93,49 @@
           <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-8-Inheritance-Polymorphism.pptx" download>
             <div class="eo-res-card__cat">Module 8</div>
             <div class="eo-res-card__name">Inheritance &amp; Polymorphism</div>
-            <div class="eo-res-card__desc">A GradedActivity base class with Quiz/Exam/Homework, virtual functions, and polymorphic dispatch.</div>
+            <div class="eo-res-card__desc">A GradedActivity base class with Quiz/Exam/Homework, virtual functions, pure virtual/abstract classes, and polymorphic dispatch.</div>
           </a>
 
-          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-9-File-I-O-STL-Essentials-Final-Assembly.pptx" download>
-            <div class="eo-res-card__cat">Module 9 <span class="eo-badge eo-badge--signal">Capstone</span></div>
-            <div class="eo-res-card__name">File I/O, STL Essentials &amp; Final Assembly</div>
-            <div class="eo-res-card__desc">Saving/loading the roster to a file, sorting with the STL, and the final project rubric.</div>
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-9-Pointers-Dynamic-Memory.pptx" download>
+            <div class="eo-res-card__cat">Module 9</div>
+            <div class="eo-res-card__name">Pointers &amp; Dynamic Memory</div>
+            <div class="eo-res-card__desc">Memory addresses, &amp; and *, new/delete, dynamic arrays, and the classic pointer bugs to avoid.</div>
+          </a>
+
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-10-Templates-Generic-Code.pptx" download>
+            <div class="eo-res-card__cat">Module 10</div>
+            <div class="eo-res-card__name">Templates: Writing Generic Code</div>
+            <div class="eo-res-card__desc">Function templates, class templates, and how std::vector&lt;T&gt; itself is built on the same idea.</div>
+          </a>
+
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-11-Exception-Handling.pptx" download>
+            <div class="eo-res-card__cat">Module 11</div>
+            <div class="eo-res-card__name">Exception Handling</div>
+            <div class="eo-res-card__desc">try/throw/catch, standard exception types, and validating grade input instead of crashing on it.</div>
+          </a>
+
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-12-Recursion.pptx" download>
+            <div class="eo-res-card__cat">Module 12</div>
+            <div class="eo-res-card__name">Recursion: Functions That Call Themselves</div>
+            <div class="eo-res-card__desc">Base cases, the call stack, factorial and range-sum examples, and recursion vs. iteration.</div>
+          </a>
+
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-13-Linked-Lists.pptx" download>
+            <div class="eo-res-card__cat">Module 13</div>
+            <div class="eo-res-card__name">Linked Lists</div>
+            <div class="eo-res-card__desc">Node structs, hand-linking pointers, traversal, and when a linked list beats a vector.</div>
+          </a>
+
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-14-Stacks-Queues.pptx" download>
+            <div class="eo-res-card__cat">Module 14</div>
+            <div class="eo-res-card__name">Stacks &amp; Queues</div>
+            <div class="eo-res-card__desc">LIFO vs. FIFO, std::stack and std::queue, and picking the right container for the job.</div>
+          </a>
+
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-15-Searching-Sorting-File-IO-Final-Assembly.pptx" download>
+            <div class="eo-res-card__cat">Module 15 <span class="eo-badge eo-badge--signal">Capstone</span></div>
+            <div class="eo-res-card__name">Searching, Sorting, File I/O &amp; Final Assembly</div>
+            <div class="eo-res-card__desc">Linear and binary search, sorting the roster with the STL, saving/loading to a file, and the final project rubric.</div>
           </a>
 
         </div>
