@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>C++ Fundamentals — Course Slides — Ezekiel Ologunde</title>
-  <meta name="description" content="Fifteen-module C++ Fundamentals lecture deck for community college students, building one capstone Student Grade & Course Tracker project from variables all the way through pointers, templates, exceptions, recursion, linked lists, stacks/queues, and file I/O." />
+  <meta name="description" content="Nineteen-module C++ Fundamentals lecture deck for community college students, building one capstone Student Grade & Course Tracker project from variables all the way through pointers, templates, exceptions, recursion, linked lists, stacks/queues, casting, bitwise operators, namespaces, string manipulation, and file I/O." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
       <a class="eo-pagehead__back" href="Resourcehub.html">&larr; Resource Hub</a>
       <span class="eo-pagehead__cat">Teaching</span>
       <h1 class="eo-pagehead__title">C++ Fundamentals — Course Slides</h1>
-      <p class="eo-pagehead__sub">A fifteen-module intro-to-C++ lecture deck for community college students, grounded in a full CS1/CS2 syllabus (Malik's <em>C++ Programming</em>) and simplified for a first-semester audience. Every module builds toward one growing capstone program — a Student Grade &amp; Course Tracker — so students see each new concept, from your first <code>cout</code> to pointers, templates, exceptions, recursion, and linked lists, land in real, working code.</p>
+      <p class="eo-pagehead__sub">A nineteen-module intro-to-C++ lecture deck for community college students, grounded in a full CS1/CS2 syllabus (Malik's <em>C++ Programming</em> plus Cisco NetAcad's <em>C++ Essentials 1</em>) and simplified for a first-semester audience. Every module builds toward one growing capstone program — a Student Grade &amp; Course Tracker — so students see each new concept, from your first <code>cout</code> to pointers, templates, exceptions, recursion, linked lists, and casting, land in real, working code.</p>
     </div>
   </header>
 
@@ -38,7 +38,7 @@
       <div class="container">
         <div class="eo-section__head rv"><span class="eo-section__num">01</span><h2 class="eo-section__title">How the Course Is Structured</h2></div>
         <div class="eo-prose rv" style="max-width:none">
-          <p>Each module is a self-contained, lecture-ready slide deck (12&ndash;14 slides) covering new syntax and concepts, then a <strong>Project Build</strong> slide that extends the same capstone program, and an <strong>in-class exercise</strong> to practice before moving on. Modules 1&ndash;8 cover a standard CS1 arc (syntax, control flow, functions, collections, and OOP); Modules 9&ndash;14 add CS2-level topics &mdash; pointers, templates, exception handling, recursion, linked lists, and stacks/queues &mdash; that are often skipped in a first course but show up constantly afterward. By Module 15, students have a complete, sorted, file-backed C++ application built entirely from scratch.</p>
+          <p>Each module is a self-contained, lecture-ready slide deck (12&ndash;14 slides) covering new syntax and concepts, then a <strong>Project Build</strong> slide that extends the same capstone program, and an <strong>in-class exercise</strong> to practice before moving on. Modules 1&ndash;8 cover a standard CS1 arc (syntax, control flow, functions, collections, and OOP); Modules 9&ndash;14 add CS2-level topics &mdash; pointers, templates, exception handling, recursion, linked lists, and stacks/queues &mdash; that are often skipped in a first course but show up constantly afterward; Modules 15&ndash;18 round out the language itself with topics intro courses tend to gloss over &mdash; type casting, bitwise operators, namespaces, and real string manipulation. By Module 19, students have a complete, sorted, file-backed C++ application built entirely from scratch.</p>
         </div>
       </div>
     </section>
@@ -132,8 +132,32 @@
             <div class="eo-res-card__desc">LIFO vs. FIFO, std::stack and std::queue, and picking the right container for the job.</div>
           </a>
 
-          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-15-Searching-Sorting-File-IO-Final-Assembly.pptx" download>
-            <div class="eo-res-card__cat">Module 15 <span class="eo-badge eo-badge--signal">Capstone</span></div>
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-15-Type-Conversions-Casting.pptx" download>
+            <div class="eo-res-card__cat">Module 15</div>
+            <div class="eo-res-card__name">Type Conversions &amp; Casting</div>
+            <div class="eo-res-card__desc">Implicit vs. explicit conversion, static_cast, the classic integer-division bug, and the floating-point equality trap.</div>
+          </a>
+
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-16-Bitwise-Operators-Boolean-Logic.pptx" download>
+            <div class="eo-res-card__cat">Module 16</div>
+            <div class="eo-res-card__name">Bitwise Operators &amp; Boolean Logic</div>
+            <div class="eo-res-card__desc">&amp;, |, ^, &lt;&lt;, &gt;&gt; on individual bits, packing flags into an int, and not confusing &amp; with &amp;&amp;.</div>
+          </a>
+
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-17-Namespaces.pptx" download>
+            <div class="eo-res-card__cat">Module 17</div>
+            <div class="eo-res-card__name">Namespaces</div>
+            <div class="eo-res-card__desc">What "using namespace std;" has actually been doing since Module 1, and how to organize larger programs.</div>
+          </a>
+
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-18-String-Manipulation.pptx" download>
+            <div class="eo-res-card__cat">Module 18</div>
+            <div class="eo-res-card__name">String Manipulation: Search, Modify &amp; Compare</div>
+            <div class="eo-res-card__desc">substr, find, insert, erase, replace, and comparing strings &mdash; real text-processing beyond the basics.</div>
+          </a>
+
+          <a class="eo-card eo-res-card" href="assets/downloads/cpp-fundamentals/Module-19-Searching-Sorting-File-IO-Final-Assembly.pptx" download>
+            <div class="eo-res-card__cat">Module 19 <span class="eo-badge eo-badge--signal">Capstone</span></div>
             <div class="eo-res-card__name">Searching, Sorting, File I/O &amp; Final Assembly</div>
             <div class="eo-res-card__desc">Linear and binary search, sorting the roster with the STL, saving/loading to a file, and the final project rubric.</div>
           </a>
