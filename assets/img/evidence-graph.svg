@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 600" role="img" aria-labelledby="gt gd">
+<title id="gt">Breakwater evidence graph, OpenSSH 8.4p1 on a simulated lab router</title>
+<desc id="gd">Directed graph with 23 nodes and 22 edges from a doctoral coursework notebook run. A simulated lab router exposes SSH on TCP port 22, identified as OpenSSH 8.4p1. The CPE is affected by ten CVEs, each linked to one patch or mitigate action. Ranked by fused triage score: CVE-2023-38408 score 16.24 (CVSS 9.8, EPSS 0.64); CVE-2025-26465 score 13.05 (CVSS 6.8, EPSS 0.62); CVE-2023-48795 score 11.32 (CVSS 5.9, EPSS 0.54); CVE-2008-3844 score 9.57 (CVSS 9.3, EPSS 0.03); CVE-2023-51385 score 8.22 (CVSS 6.5, EPSS 0.17); CVE-2026-35385 score 7.51 (CVSS 7.5, EPSS 0.00); CVE-2021-28041 score 7.13 (CVSS 7.1, EPSS 0.00); CVE-2021-41617 score 7.03 (CVSS 7.0, EPSS 0.00); CVE-2023-51767 score 7.00 (CVSS 7.0, EPSS 0.00); CVE-2016-20012 score 6.76 (CVSS 5.3, EPSS 0.15). None of the ten is in the CISA KEV catalog.</desc>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8a857b"/></marker><marker id="ahs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f0714f"/></marker></defs>
+<style>.bg{fill:#1c1f23}.nd{fill:#24282d;stroke:rgba(235,229,216,.28);stroke-width:1}.hot{fill:#24282d;stroke:#f0714f;stroke-width:1.5}.lb{font:600 13px Archivo,"Arial Narrow",Arial,sans-serif;fill:#ebe5d8}.sm{font:11.5px "IBM Plex Mono",Consolas,monospace;fill:#a39f96}.id{font:12.5px "IBM Plex Mono",Consolas,monospace;fill:#e6e1d6}.hd{font:600 11px Archivo,Arial,sans-serif;fill:#a39f96;letter-spacing:.12em}.e{stroke:#6a665e;stroke-width:1;fill:none;marker-end:url(#ah)}.es{stroke:#f0714f;stroke-width:1.3;fill:none;marker-end:url(#ahs)}.bar{fill:#6f7c80}.barh{fill:#f0714f}.sc{font:600 12.5px "IBM Plex Mono",Consolas,monospace;fill:#ebe5d8}.rel{font:11px Archivo,Arial,sans-serif;fill:#8a857b}</style>
+<rect class="bg" width="920" height="600"/>
+<text class="hd" x="24" y="44">ASSET</text>
+<text class="hd" x="170" y="44">SERVICE</text>
+<text class="hd" x="316" y="44">CPE</text>
+<text class="hd" x="474" y="44">CVE  (CVSS / EPSS)</text>
+<text class="hd" x="716" y="44">ACTION, BY FUSED SCORE</text>
+<line x1="24" y1="56" x2="896" y2="56" stroke="rgba(235,229,216,.18)"/>
+<rect class="nd" x="24" y="273.0" width="120" height="52" rx="2"/>
+<text class="lb" x="36" y="294.0">Lab router</text><text class="sm" x="36" y="312.0">simulated</text>
+<rect class="nd" x="170" y="273.0" width="120" height="52" rx="2"/>
+<text class="lb" x="182" y="294.0">SSH</text><text class="sm" x="182" y="312.0">TCP 22</text>
+<rect class="nd" x="316" y="273.0" width="128" height="52" rx="2"/>
+<text class="lb" x="328" y="294.0">OpenSSH 8.4p1</text><text class="sm" x="328" y="312.0">cpe:2.3:a:openbsd</text>
+<path class="e" d="M144 299.0 H168"/><path class="e" d="M290 299.0 H314"/>
+<text class="rel" x="146" y="267.0">exposes</text><text class="rel" x="283" y="341.0">identified as</text>
+<path class="es" d="M444 299.0 C 458 299.0, 458 92, 472 92"/>
+<rect class="hot" x="474" y="75" width="206" height="34" rx="2"/>
+<text class="id" x="484" y="96.5">CVE-2023-38408</text>
+<text class="sm" x="592" y="96.5">9.8 / 0.644</text>
+<path class="es" d="M680 92 H714"/>
+<rect class="barh" x="716" y="83" width="150.0" height="18"/>
+<text class="sc" x="874.0" y="96.5">16.24</text>
+<path class="es" d="M444 299.0 C 458 299.0, 458 138, 472 138"/>
+<rect class="hot" x="474" y="121" width="206" height="34" rx="2"/>
+<text class="id" x="484" y="142.5">CVE-2025-26465</text>
+<text class="sm" x="592" y="142.5">6.8 / 0.625</text>
+<path class="es" d="M680 138 H714"/>
+<rect class="barh" x="716" y="129" width="120.5" height="18"/>
+<text class="sc" x="844.5" y="142.5">13.05</text>
+<path class="es" d="M444 299.0 C 458 299.0, 458 184, 472 184"/>
+<rect class="hot" x="474" y="167" width="206" height="34" rx="2"/>
+<text class="id" x="484" y="188.5">CVE-2023-48795</text>
+<text class="sm" x="592" y="188.5">5.9 / 0.542</text>
+<path class="es" d="M680 184 H714"/>
+<rect class="barh" x="716" y="175" width="104.6" height="18"/>
+<text class="sc" x="828.6" y="188.5">11.32</text>
+<path class="e" d="M444 299.0 C 458 299.0, 458 230, 472 230"/>
+<rect class="nd" x="474" y="213" width="206" height="34" rx="2"/>
+<text class="id" x="484" y="234.5">CVE-2008-3844</text>
+<text class="sm" x="592" y="234.5">9.3 / 0.027</text>
+<path class="e" d="M680 230 H714"/>
+<rect class="bar" x="716" y="221" width="88.5" height="18"/>
+<text class="sc" x="812.5" y="234.5">9.57</text>
+<path class="e" d="M444 299.0 C 458 299.0, 458 276, 472 276"/>
+<rect class="nd" x="474" y="259" width="206" height="34" rx="2"/>
+<text class="id" x="484" y="280.5">CVE-2023-51385</text>
+<text class="sm" x="592" y="280.5">6.5 / 0.172</text>
+<path class="e" d="M680 276 H714"/>
+<rect class="bar" x="716" y="267" width="76.0" height="18"/>
+<text class="sc" x="800.0" y="280.5">8.22</text>
+<path class="e" d="M444 299.0 C 458 299.0, 458 322, 472 322"/>
+<rect class="nd" x="474" y="305" width="206" height="34" rx="2"/>
+<text class="id" x="484" y="326.5">CVE-2026-35385</text>
+<text class="sm" x="592" y="326.5">7.5 / &lt;0.001</text>
+<path class="e" d="M680 322 H714"/>
+<rect class="bar" x="716" y="313" width="69.3" height="18"/>
+<text class="sc" x="793.3" y="326.5">7.51</text>
+<path class="e" d="M444 299.0 C 458 299.0, 458 368, 472 368"/>
+<rect class="nd" x="474" y="351" width="206" height="34" rx="2"/>
+<text class="id" x="484" y="372.5">CVE-2021-28041</text>
+<text class="sm" x="592" y="372.5">7.1 / 0.003</text>
+<path class="e" d="M680 368 H714"/>
+<rect class="bar" x="716" y="359" width="65.8" height="18"/>
+<text class="sc" x="789.8" y="372.5">7.13</text>
+<path class="e" d="M444 299.0 C 458 299.0, 458 414, 472 414"/>
+<rect class="nd" x="474" y="397" width="206" height="34" rx="2"/>
+<text class="id" x="484" y="418.5">CVE-2021-41617</text>
+<text class="sm" x="592" y="418.5">7.0 / 0.003</text>
+<path class="e" d="M680 414 H714"/>
+<rect class="bar" x="716" y="405" width="64.9" height="18"/>
+<text class="sc" x="788.9" y="418.5">7.03</text>
+<path class="e" d="M444 299.0 C 458 299.0, 458 460, 472 460"/>
+<rect class="nd" x="474" y="443" width="206" height="34" rx="2"/>
+<text class="id" x="484" y="464.5">CVE-2023-51767</text>
+<text class="sm" x="592" y="464.5">7.0 / &lt;0.001</text>
+<path class="e" d="M680 460 H714"/>
+<rect class="bar" x="716" y="451" width="64.7" height="18"/>
+<text class="sc" x="788.7" y="464.5">7.00</text>
+<path class="e" d="M444 299.0 C 458 299.0, 458 506, 472 506"/>
+<rect class="nd" x="474" y="489" width="206" height="34" rx="2"/>
+<text class="id" x="484" y="510.5">CVE-2016-20012</text>
+<text class="sm" x="592" y="510.5">5.3 / 0.146</text>
+<path class="e" d="M680 506 H714"/>
+<rect class="bar" x="716" y="497" width="62.5" height="18"/>
+<text class="sc" x="786.5" y="510.5">6.76</text>
+<text class="rel" x="474" y="550">affected by</text>
+<text class="rel" x="716" y="550">drives one patch action each</text>
+<line x1="24" y1="542" x2="896" y2="542" stroke="rgba(235,229,216,.18)"/>
+<text class="sm" x="24" y="566">23 nodes, 22 edges. Score = CVSS + 10 x EPSS + 5 x KEV + 2 x ransomware. No CVE here is in CISA KEV,</text>
+<text class="sm" x="24" y="584">so the graph has no KEV node. Highlighted: the top three by fused score. Simulated network, doctoral coursework.</text>
+</svg>

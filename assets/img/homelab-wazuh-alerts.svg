@@ -1,35 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="t d"><title id="t">Host-based detection alerts, last 7 days</title><desc id="d">About 3,700 alerts in 7 days from the host-based intrusion detection manager. Most are level 7 rootcheck anomaly events; the rest are file integrity, new file, package and benchmark-status alerts.</desc>
-<style>.bg{fill:#14181c}.bar{fill:#0b0e11}.mono{font:12.5px "JetBrains Mono",Consolas,monospace;fill:#d7dde4}.k{fill:#5cc05c}.f{fill:#ee7d3d}.b{fill:#6cb6ff}.m{font:11.5px Arial,sans-serif;fill:#8e9aa6}.t{font:600 15px Arial,sans-serif;fill:#eef1ff}.d{font:13px Arial,sans-serif;fill:#d7dde4}.c{font:12.5px "JetBrains Mono",Consolas,monospace;fill:#d7dde4}.l{font:700 10.5px "JetBrains Mono",Consolas,monospace;fill:#060814}.ax{stroke:#3a4450;stroke-width:1}</style>
-<rect class="bg" width="920" height="430" rx="14"/>
+<style>.bg{fill:#1c1f23}.bar{fill:#15171a}.mono{font:12.5px "IBM Plex Mono",Consolas,monospace;fill:#e6e1d6}.k{fill:#9fb1b0}.f{fill:#f0714f}.b{fill:#c8b48f}.m{font:11.5px Arial,sans-serif;fill:#a39f96}.t{font:600 15px Arial,sans-serif;fill:#ebe5d8}.d{font:13px Arial,sans-serif;fill:#e6e1d6}.c{font:12.5px "IBM Plex Mono",Consolas,monospace;fill:#e6e1d6}.l{font:700 10.5px "IBM Plex Mono",Consolas,monospace;fill:#1c1f23}.ax{stroke:#3a3f45;stroke-width:1}</style>
+<rect class="bg" width="920" height="430" rx="2"/>
 <text class="t" x="28" y="34">Host-based detection alerts</text>
 <text class="m" x="28" y="52">Last 7 days, sanitized excerpt from a live search</text>
-<rect class="bar" x="28" y="64" width="864" height="34" rx="6"/>
+<rect class="bar" x="28" y="64" width="864" height="34" rx="2"/>
 <text class="mono" x="42" y="86"><tspan class="k">index</tspan>=homelab <tspan class="f">sourcetype</tspan>=wazuh | <tspan class="b">rex</tspan> level, description | <tspan class="b">stats</tspan> <tspan class="f">count</tspan> <tspan class="b">by</tspan> description</text>
 <text class="m" x="28" y="128">top rules by description</text><text class="m" x="640" y="128" text-anchor="end">level</text><text class="m" x="892" y="128" text-anchor="end">alerts</text>
 <line class="ax" x1="28" y1="134" x2="892" y2="134"/>
 <text class="d" x="28" y="160">Host-based anomaly detection event (rootcheck)</text>
-<rect x="596" y="147" width="30" height="18" rx="9" fill="#ff4fd8"/><text class="l" x="611" y="160" text-anchor="middle">7</text>
-<rect x="640" y="149" width="150.0" height="14" rx="3" fill="#ff4fd8" opacity=".85"/>
+<rect x="596" y="147" width="30" height="18" rx="2" fill="#f0714f"/><text class="l" x="611" y="160" text-anchor="middle">7</text>
+<rect x="640" y="149" width="150.0" height="14" rx="2" fill="#f0714f" opacity=".85"/>
 <text class="c" x="892" y="160" text-anchor="end">3,294</text>
 <text class="d" x="28" y="196">Integrity checksum changed</text>
-<rect x="596" y="183" width="30" height="18" rx="9" fill="#ff4fd8"/><text class="l" x="611" y="196" text-anchor="middle">7</text>
-<rect x="640" y="185" width="8.0" height="14" rx="3" fill="#ff4fd8" opacity=".85"/>
+<rect x="596" y="183" width="30" height="18" rx="2" fill="#f0714f"/><text class="l" x="611" y="196" text-anchor="middle">7</text>
+<rect x="640" y="185" width="8.0" height="14" rx="2" fill="#f0714f" opacity=".85"/>
 <text class="c" x="892" y="196" text-anchor="end">175</text>
 <text class="d" x="28" y="232">File added to the system</text>
-<rect x="596" y="219" width="30" height="18" rx="9" fill="#a855f7"/><text class="l" x="611" y="232" text-anchor="middle">5</text>
-<rect x="640" y="221" width="6.2" height="14" rx="3" fill="#a855f7" opacity=".85"/>
+<rect x="596" y="219" width="30" height="18" rx="2" fill="#c8b48f"/><text class="l" x="611" y="232" text-anchor="middle">5</text>
+<rect x="640" y="221" width="6.2" height="14" rx="2" fill="#c8b48f" opacity=".85"/>
 <text class="c" x="892" y="232" text-anchor="end">136</text>
 <text class="d" x="28" y="268">Debian package half configured</text>
-<rect x="596" y="255" width="30" height="18" rx="9" fill="#ff4fd8"/><text class="l" x="611" y="268" text-anchor="middle">7</text>
-<rect x="640" y="257" width="3.0" height="14" rx="3" fill="#ff4fd8" opacity=".85"/>
+<rect x="596" y="255" width="30" height="18" rx="2" fill="#f0714f"/><text class="l" x="611" y="268" text-anchor="middle">7</text>
+<rect x="640" y="257" width="3.0" height="14" rx="2" fill="#f0714f" opacity=".85"/>
 <text class="c" x="892" y="268" text-anchor="end">24</text>
 <text class="d" x="28" y="304">New Debian package installed</text>
-<rect x="596" y="291" width="30" height="18" rx="9" fill="#ff4fd8"/><text class="l" x="611" y="304" text-anchor="middle">7</text>
-<rect x="640" y="293" width="3.0" height="14" rx="3" fill="#ff4fd8" opacity=".85"/>
+<rect x="596" y="291" width="30" height="18" rx="2" fill="#f0714f"/><text class="l" x="611" y="304" text-anchor="middle">7</text>
+<rect x="640" y="293" width="3.0" height="14" rx="2" fill="#f0714f" opacity=".85"/>
 <text class="c" x="892" y="304" text-anchor="end">24</text>
 <text class="d" x="28" y="340">CIS Debian 13 benchmark: control status changed</text>
-<rect x="596" y="327" width="30" height="18" rx="9" fill="#4deeff"/><text class="l" x="611" y="340" text-anchor="middle">3</text>
-<rect x="640" y="329" width="3.0" height="14" rx="3" fill="#4deeff" opacity=".85"/>
+<rect x="596" y="327" width="30" height="18" rx="2" fill="#9fb1b0"/><text class="l" x="611" y="340" text-anchor="middle">3</text>
+<rect x="640" y="329" width="3.0" height="14" rx="2" fill="#9fb1b0" opacity=".85"/>
 <text class="c" x="892" y="340" text-anchor="end">6</text>
 <line class="ax" x1="28" y1="358" x2="892" y2="358"/><text class="m" x="28" y="378">total alerts, 7 days</text><text class="c" x="892" y="378" text-anchor="end">3,692</text>
 <text class="m" x="28" y="410">Most alerts are one noisy rootcheck rule, a tuning candidate. Agents are on the lab's Linux hosts; hostnames are omitted.</text>
