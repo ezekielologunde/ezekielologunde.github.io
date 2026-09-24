@@ -10,6 +10,16 @@ tags: [project/ezekielologunde-github-io]
 
 See [[Project]] and [[Features]].
 
+## 2026-09-24: One investigation, told across six scene pages
+
+- **Decision:** merge the case file, the career attack graph and the model card into one storied investigation with moving parts, then split it into six scene pages (case opens, route, evidence room, AI thread, model card, report to) that share a header and a scene rail. Spec: `docs/superpowers/specs/2026-09-24-interactive-story-design.md`.
+- **Why:** the owner asked for "interactive moving elements, moving parts, storied", then for each section to have its own page; separate pages keep each scroll story short and give recruiters direct links.
+- **Motion rules:** only transform, opacity and stroke-dashoffset; everything final without JS or with reduced motion; background canvases capped at about 30 fps, paused when hidden, still under reduced motion or on slow devices.
+- **Plain English:** recruiters without a security background are a primary audience, so each section opens with a plain line and jargon gets a first-use `<abbr>` plus a glossary. Facts and numbers are unchanged.
+- **Email:** the public address is ologundeomotola@gmail.com (owner's instruction); no hello@cyntraix.io reference existed on the site.
+- **Scroll anchoring off** on scene pages (`overflow-anchor: none`): changing caption text inside the sticky stage could otherwise feed back into the scroll position.
+- **Alternatives considered:** keeping one long page (rejected by the owner), a scroll library such as GSAP (rejected: no third-party scripts under the CSP), WebGL backgrounds (rejected: weight and battery).
+
 ## 2026-09-24: Case file redesign replaces the story redesign
 
 - **Decision:** the site is told as an investigation report ("Case file: E. Ologunde") on a dark forensic-lab ground with evidence-tag surfaces, with AI security as a central thread. Spec: `docs/superpowers/specs/2026-09-24-casefile-redesign-design.md`. Built on branch `casefile-redesign`; `story-redesign` stays as the fallback.

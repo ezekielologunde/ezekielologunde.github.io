@@ -13,6 +13,16 @@ Git history available in this working copy contains a single commit
 Recorded here for reference; extend this file going forward as real changes
 land.
 
+## 2026-09-24: Interactive story, then six scene pages (branch `interactive-story`)
+- Spec first: `docs/superpowers/specs/2026-09-24-interactive-story-design.md` (with an addendum for the scene pages). Cut from `casefile-redesign`, which stays as the fallback.
+- Merged the case file, the attack-graph prototype and the model-card prototype. The route graph draws itself on scroll (stroke-dashoffset edges, nodes in date order, scan line, year ticker, caption panel, red shortest path), with click and keyboard pinning, a scrubber, a text list and a vertical layout on phones.
+- Split into scene pages: `index.html`, `route.html` (new), `evidence.html` (new), `ai.html` (new), `about.html` (now the full model card with a glossary), `contact.html` (report to). Scene rail and previous/next links on each; old `index.html#...` anchors are forwarded.
+- New: `assets/css/investigation.css`, `assets/js/investigation.js`, `assets/js/motion.js`, `assets/js/ambient.js` (per-page robot and quantum themed background canvas). Evidence graph inlined as SVG so it can highlight chains.
+- Plain-English pass: "In plain English" lines, first-use `<abbr title>` for jargon, rewritten home hook and key findings, glossary on the model card.
+- Public email changed from the Cyntraix address to ologundeomotola@gmail.com on every page and in the contact form hand-off.
+- Nav: Case file, Route, Evidence, AI thread, Model card, Lab, Built, Research, Resources, Contact. Writing, Education and Credentials moved to the footer.
+- `prototypes/` (untracked) deleted after merging.
+
 ## 2026-09-24: Case file redesign (branch `casefile-redesign`)
 - The owner said the story redesign looked machine generated and asked for an AI and cyber themed story. Spec written first: `docs/superpowers/specs/2026-09-24-casefile-redesign-design.md`. The `story-redesign` branch is kept untouched as the fallback.
 - New system: `assets/css/casefile.css`, `assets/js/casefile.js` (dark forensic-lab ground, evidence-tag paper surfaces, one signal color; Archivo, Newsreader, IBM Plex Mono). `story.css` and `story.js` removed after a check found no references.
