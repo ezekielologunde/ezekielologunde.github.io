@@ -1,117 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research — Ezekiel Ologunde</title>
-  <meta name="description" content="Published papers on AI security, threat modeling, and risk governance." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Research | Ezekiel Ologunde</title>
+  <meta name="description" content="Research by Ezekiel Ologunde, D.Eng. candidate at George Washington University: SSRN preprints on AI security, threat modeling and risk governance, and the Breakwater OT/IoT work.">
+  <meta name="theme-color" content="#f7f1e8">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Research | Ezekiel Ologunde">
+  <meta property="og:description" content="Research by Ezekiel Ologunde, D.Eng. candidate at George Washington University: SSRN preprints on AI security, threat modeling and risk governance, and the Breakwater OT/IoT work.">
+  <meta property="og:url" content="https://ezekielologunde.github.io/research.html">
+  <meta property="og:image" content="https://ezekielologunde.github.io/assets/img/ezekiel-800.jpg">
+  <link rel="canonical" href="https://ezekielologunde.github.io/research.html">
+  <link rel="icon" type="image/jpeg" href="assets/img/ezekiel-96.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/future.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/story.css">
+  <script src="assets/js/story.js" defer></script>
 </head>
 <body>
-  <canvas id="fx-mesh" aria-hidden="true"></canvas>
-  <div class="fx-veil" aria-hidden="true"></div>
-
-  <nav class="fx-nav" aria-label="Main navigation">
-    <div class="container fx-nav__inner">
-      <a class="fx-brand" href="index.html"><span class="fx-brand__mark" aria-hidden="true"></span>Ezekiel Ologunde</a>
-      <button class="fx-nav__toggle" aria-expanded="false" aria-controls="fx-nav-links">Menu ▾</button>
-      <div class="fx-nav__links" id="fx-nav-links">
-        <a href="about.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="writing.html">Writing</a>
-        <a href="education.html">Education</a>
-        <a href="credentials.html">Credentials</a>
-        <a href="Resourcehub.html">Resources</a>
-        <a href="contact.html" class="fx-nav__cta">Get in Touch</a>
-      </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html">
+      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="40" height="40" alt="">
+      <span class="brand__name">Ezekiel Ologunde</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="homelab.html">Lab</a></li>
+        <li><a href="built.html">Built</a></li>
+        <li><a href="research.html" aria-current="page">Research</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="credentials.html">Credentials</a></li>
+        <li><a href="Resourcehub.html">Resources</a></li>
+        <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+</header>
+<main id="main">
+<header class="page-head">
+  <div class="wrap">
+    <p class="kicker">Scholarly work</p>
+    <h1 class="page-head__title">Research</h1>
+    <p class="page-head__lede">Papers on AI security, threat modeling and risk governance, from a D.Eng. candidate in Cybersecurity Analytics at The George Washington University.</p>
+    <div class="btn-row" style="margin-top:28px">
+      <a class="btn" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      <a class="btn" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+      <a class="btn" href="https://orcid.org/0009-0005-7207-8506" target="_blank" rel="noopener noreferrer">ORCID</a>
     </div>
-  </nav>
+  </div>
+</header>
 
-  <main>
-    <header class="fx-pagehero">
-      <div class="container">
-        <p class="fx-pagehero__eyebrow">Scholarly Work</p>
-        <h1 class="fx-pagehero__title">Research</h1>
-        <p class="fx-pagehero__sub">Published papers on AI security, threat modeling, and risk governance.</p>
-      </div>
-    </header>
+<section class="section" aria-labelledby="areas-title">
+  <div class="wrap">
+    <div class="section__head rv"><span class="section__num">01</span><h2 class="section__title" id="areas-title">Research areas</h2></div>
+    <ul class="tag-list rv">
+      <li class="tag">Explainable AI</li>
+      <li class="tag">Zero Trust architecture</li>
+      <li class="tag">AI / ML threat modeling</li>
+      <li class="tag">Adversarial machine learning</li>
+      <li class="tag">NIST RMF alignment</li>
+      <li class="tag">AI-enabled security governance</li>
+      <li class="tag">Risk quantification</li>
+      <li class="tag">OT/IoT vulnerability intelligence</li>
+    </ul>
+    <p class="note rv">Doctoral praxis research at The George Washington University began in fall 2026; the D.Eng. is expected in September 2027.</p>
+  </div>
+</section>
 
-    <section class="fx-section" aria-label="Researcher profile">
-      <div class="container">
-        <div class="fx-panel rv" data-parallax="0.03" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px;">
-          <p style="font-family:var(--mono); font-size:12.5px; letter-spacing:0.04em; color:var(--muted); max-width:520px;">Ezekiel Ologunde — D.Eng. Candidate · George Washington University · SSRN · ResearchGate · Google Scholar</p>
-          <div style="display:flex; flex-wrap:wrap; gap:12px;">
-            <a class="fx-btn fx-btn--sm" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">ResearchGate</a>
-            <a class="fx-btn fx-btn--sm" href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
-          </div>
+<section class="section section--alt" aria-labelledby="papers-title">
+  <div class="wrap">
+    <div class="section__head rv"><span class="section__num">02</span><h2 class="section__title" id="papers-title">Selected papers</h2></div>
+    <ol class="entries">
+      <li class="entry rv">
+        <div class="entry__meta">SSRN Electronic Journal<br>Oct 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">BootKitty: A Critical Analysis of Modern Bootkit-Rootkit Threats and Defense Limitations in Contemporary Cybersecurity Infrastructure</a></h3>
+          <p class="entry__desc">Analysis of firmware-level persistence threats and the limitations of contemporary defenses against modern bootkit attacks.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="fx-section" aria-label="Published papers">
-      <div class="container">
-        <div class="fx-section__head rv"><span class="fx-section__num">//</span><h2 class="fx-section__title">Published Papers</h2></div>
-        <div class="fx-grid fx-grid--2">
-          <div class="fx-panel rv">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">SSRN Electronic Journal · Oct 2025</div>
-              <div class="fx-entry__title">BootKitty: A Critical Analysis of Modern Bootkit-Rootkit Threats and Defense Limitations in Contemporary Cybersecurity Infrastructure</div>
-              <div class="fx-entry__desc">Analysis of firmware-level persistence threats and the limitations of contemporary defenses against modern bootkit attacks.</div>
-              <a class="fx-entry__link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">Read on ResearchGate</a>
-            </div>
-          </div>
-
-          <div class="fx-panel rv" style="transition-delay:.05s">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">SSRN Electronic Journal · Oct 2025</div>
-              <div class="fx-entry__title">Aligning Threat Actor TTPs to the Cyber Kill Chain: Anticipating Future Cyber Threats with the MITRE ATT&amp;CK Framework</div>
-              <div class="fx-entry__desc">Structured threat modeling aligning adversary tactics to kill chain stages using MITRE ATT&amp;CK for predictive defense planning.</div>
-              <a class="fx-entry__link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">Read on ResearchGate</a>
-            </div>
-          </div>
-
-          <div class="fx-panel rv">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">SSRN Electronic Journal · Sep 2025</div>
-              <div class="fx-entry__title">Government Efficiency vs. Cybersecurity: A CIA Triad Analysis of the DOGE Social Security Data Incident</div>
-              <div class="fx-entry__desc">CIA triad framework applied to the SSA data incident, examining the tension between operational efficiency and security posture in public-sector environments.</div>
-              <a class="fx-entry__link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">Read on ResearchGate</a>
-            </div>
-          </div>
-
-          <div class="fx-panel rv" style="transition-delay:.05s">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">SSRN Electronic Journal · Sep 2025</div>
-              <div class="fx-entry__title">The Thin Line Between Strategic Risk Acceptance and Negligence: A Critical Analysis of Cybersecurity Risk Management Failures</div>
-              <div class="fx-entry__desc">Examination of the boundary between informed risk acceptance and negligence in enterprise cybersecurity risk management and governance.</div>
-              <a class="fx-entry__link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">Read on ResearchGate</a>
-            </div>
-          </div>
-
-          <div class="fx-panel rv">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">SSRN Electronic Journal · Sep 2025</div>
-              <div class="fx-entry__title">Analyzing Assessment Output in Infrastructure Systems: Reflections on the Cisco ASA Zero-Day Case</div>
-              <div class="fx-entry__desc">Lessons drawn from the Cisco ASA zero-day, focusing on assessment output analysis in critical infrastructure security contexts.</div>
-              <a class="fx-entry__link" href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener">Read on ResearchGate</a>
-            </div>
-          </div>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">SSRN Electronic Journal<br>Oct 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">Aligning Threat Actor TTPs to the Cyber Kill Chain: Anticipating Future Cyber Threats with the MITRE ATT&amp;CK Framework</a></h3>
+          <p class="entry__desc">Structured threat modeling aligning adversary tactics to kill chain stages using MITRE ATT&amp;CK for predictive defense planning.</p>
         </div>
-      </div>
-    </section>
-  </main>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">SSRN Electronic Journal<br>Sep 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">Government Efficiency vs. Cybersecurity: A CIA Triad Analysis of the DOGE Social Security Data Incident</a></h3>
+          <p class="entry__desc">CIA triad framework applied to the SSA data incident, examining the tension between operational efficiency and security posture in public-sector environments.</p>
+        </div>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">SSRN Electronic Journal<br>Sep 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">The Thin Line Between Strategic Risk Acceptance and Negligence: A Critical Analysis of Cybersecurity Risk Management Failures</a></h3>
+          <p class="entry__desc">Examination of the boundary between informed risk acceptance and negligence in enterprise cybersecurity risk management and governance.</p>
+        </div>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">SSRN Electronic Journal<br>Sep 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">Analyzing Assessment Output in Infrastructure Systems: Reflections on the Cisco ASA Zero-Day Case</a></h3>
+          <p class="entry__desc">Lessons drawn from the Cisco ASA zero-day, focusing on assessment output analysis in critical infrastructure security contexts.</p>
+        </div>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">In preparation<br>ACM format</div>
+        <div>
+          <h3 class="entry__title"><a href="homelab.html#breakwater">Evidence-Bounded Vulnerability Intelligence for OT/IoT Networks</a></h3>
+          <p class="entry__desc">The write-up of Breakwater, an end-to-end security-analytics pipeline built in GWU doctoral coursework against a containerized OT/IoT simulation network.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
 
-  <footer class="fx-footer">
-    <div class="container">
-      <span>© <span id="year"></span> Ezekiel Ologunde</span>
-      <span>Birmingham, AL &nbsp;·&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
+<section class="section" aria-labelledby="more-title">
+  <div class="wrap">
+    <div class="section__head rv"><span class="section__num">03</span><h2 class="section__title" id="more-title">More preprints on SSRN</h2></div>
+    <p class="section__lede rv">Other titles listed on ORCID, 2024 to 2026, shown as ORCID lists them (some shortened). SSRN is a preprint repository, not a peer-reviewed journal.</p>
+    <ul class="compact-list rv">
+      <li><span>2026</span>Adversarial Machine Learning on Automotive Attack Surfaces</li>
+      <li><span>2026</span>Governance Models and Hard Forks in Decentralized Blockchains</li>
+      <li><span>2026</span>Risk Acceptance in Critical Infrastructure Cyber Incidents</li>
+      <li><span>2026</span>Zero Trust Architecture in Practice: Security Fatigue</li>
+      <li><span>2025</span>Identity-Centric Zero Trust Architecture: A Comprehensive Framework for Modern Enterprise Security Governance</li>
+      <li><span>2025</span>When there is no Plan: Comprehensive Incident Response</li>
+      <li><span>2025</span>Beyond Personal Data: Redefining Privacy in the Era of IoT</li>
+      <li><span>2025</span>Beyond the Firewall: Nation-State Information Operations</li>
+      <li><span>2025</span>Compensating Controls and Architecting for Cyber Resilience</li>
+      <li><span>2025</span>Global Navigation Satellite Systems: Emerging Vulnerabilities</li>
+      <li><span>2025</span>Software Assurance Beyond Secure Coding: Lessons from 2024</li>
+      <li><span>2025</span>Third-Party SaaS Integration Security: Lessons from Supply Chain</li>
+      <li><span>2025</span>Threat Modeling Nation-State Attacks on Defense Contractors</li>
+      <li><span>2024</span>Cryptographic Protocols for Electronic Voting Systems</li>
+      <li><span>2024</span>Ransomware and Social Engineering: Critical Examination</li>
+    </ul>
+    <p class="rv" style="margin-top:28px"><a class="arrow-link" href="https://orcid.org/0009-0005-7207-8506" target="_blank" rel="noopener noreferrer">Full list on ORCID</a></p>
+  </div>
+</section>
+</main>
+<nav class="continue" aria-label="Continue the story">
+  <div class="wrap continue__in">
+    <a class="prev" href="built.html"><span class="continue__k">&larr; Previous</span><span class="continue__t">Built</span></a>
+    <a class="next" href="writing.html"><span class="continue__k">Next &rarr;</span><span class="continue__t">Writing</span></a>
+  </div>
+</nav>
+<footer class="site-foot">
+  <div class="wrap site-foot__in">
+    <div>
+      <p class="site-foot__name">Ezekiel Ologunde</p>
+      <p class="site-foot__meta">Cybersecurity consultant, educator and doctoral researcher. Birmingham, Alabama.</p>
     </div>
-  </footer>
-
-  <script src="assets/js/mesh.js"></script>
-  <script src="assets/js/future.js"></script>
+    <ul class="site-foot__links">
+      <li><a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></li>
+      <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+      <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="Resourcehub.html">Resource hub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="site-foot__legal">&copy; <span data-year>2026</span> Ezekiel Ologunde. No trackers, no analytics, no cookies.</p>
+  </div>
+</footer>
 </body>
 </html>

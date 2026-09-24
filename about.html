@@ -1,168 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Ezekiel Ologunde</title>
-  <meta name="description" content="Who I am, what I focus on, and the work behind Cyntraix." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>About | Ezekiel Ologunde</title>
+  <meta name="description" content="Who Ezekiel Ologunde is, what he focuses on, and the work behind Cyntraix: cybersecurity consulting, teaching and doctoral research.">
+  <meta name="theme-color" content="#f7f1e8">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About | Ezekiel Ologunde">
+  <meta property="og:description" content="Who Ezekiel Ologunde is, what he focuses on, and the work behind Cyntraix: cybersecurity consulting, teaching and doctoral research.">
+  <meta property="og:url" content="https://ezekielologunde.github.io/about.html">
+  <meta property="og:image" content="https://ezekielologunde.github.io/assets/img/ezekiel-800.jpg">
+  <link rel="canonical" href="https://ezekielologunde.github.io/about.html">
+  <link rel="icon" type="image/jpeg" href="assets/img/ezekiel-96.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/future.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/story.css">
+  <script src="assets/js/story.js" defer></script>
 </head>
 <body>
-  <canvas id="fx-mesh" aria-hidden="true"></canvas>
-  <div class="fx-veil" aria-hidden="true"></div>
-
-  <nav class="fx-nav" aria-label="Main navigation">
-    <div class="container fx-nav__inner">
-      <a class="fx-brand" href="index.html"><span class="fx-brand__mark" aria-hidden="true"></span>Ezekiel Ologunde</a>
-      <button class="fx-nav__toggle" aria-expanded="false" aria-controls="fx-nav-links">Menu ▾</button>
-      <div class="fx-nav__links" id="fx-nav-links">
-        <a href="about.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="writing.html">Writing</a>
-        <a href="education.html">Education</a>
-        <a href="credentials.html">Credentials</a>
-        <a href="Resourcehub.html">Resources</a>
-        <a href="contact.html" class="fx-nav__cta">Get in Touch</a>
-      </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html">
+      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="40" height="40" alt="">
+      <span class="brand__name">Ezekiel Ologunde</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Story</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="homelab.html">Lab</a></li>
+        <li><a href="built.html">Built</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="credentials.html">Credentials</a></li>
+        <li><a href="Resourcehub.html">Resources</a></li>
+        <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+</header>
+<main id="main">
+<header class="page-head">
+  <div class="wrap page-head__grid">
+    <div>
+      <p class="kicker">Profile</p>
+      <h1 class="page-head__title">About</h1>
+      <p class="page-head__lede">Who I am, what I focus on, and the work behind Cyntraix.</p>
     </div>
-  </nav>
+    <img class="page-head__portrait" src="assets/img/ezekiel-400.jpg" width="400" height="400" decoding="async" alt="Portrait of Ezekiel Ologunde in a blue suit and burgundy tie against a warm peach backdrop.">
+  </div>
+</header>
 
-  <main>
-    <header class="fx-pagehero">
-      <div class="container">
-        <div class="fx-portrait" style="width:104px;height:104px;margin:0 0 24px;" role="img" aria-label="Portrait of Ezekiel Ologunde">
-          <img class="fx-portrait__img" src="IMG_8794.JPG" alt="Ezekiel Ologunde"
-            onerror="this.style.display='none';document.getElementById('fav-about').style.display='flex'" />
-          <div class="fx-portrait__fallback" id="fav-about" style="display:none;font-size:28px" aria-hidden="true">EO</div>
-          <span class="fx-portrait__ring" aria-hidden="true"></span>
-        </div>
-        <p class="fx-pagehero__eyebrow">Profile</p>
-        <h1 class="fx-pagehero__title">About</h1>
-        <p class="fx-pagehero__sub">Who I am, what I focus on, and the work behind Cyntraix.</p>
-      </div>
-    </header>
-
-    <section class="fx-section" aria-label="Biography">
-      <div class="container">
-        <div class="fx-grid fx-grid--2">
-          <div class="fx-panel rv" data-parallax="0.03">
-            <p style="margin-bottom:18px;">I am a cybersecurity professional, educator, and researcher with a demonstrated record of building and scaling rigorous, industry-aligned academic programs at community college, university, and K–12 levels.</p>
-            <p style="margin-bottom:18px;">Currently pursuing a Doctor of Engineering in Cybersecurity Analytics at George Washington University, my research examines AI-enabled security governance frameworks, adversarial machine learning defenses, and risk quantification in enterprise and educational environments.</p>
-            <p style="margin-bottom:18px;">As Founder of Cyntraix, I provide enterprise security assessments, Zero Trust architecture design, and risk governance advisory services to organizations navigating NIST CSF, CMMC 2.0, and HITRUST compliance landscapes.</p>
-            <p>I bring deep experience in curriculum governance, faculty collaboration, departmental strategic planning, and workforce development — committed to academic excellence, student equity, and advancing the intersection of artificial intelligence and cybersecurity defense.</p>
-          </div>
-
-          <div class="fx-panel rv" style="transition-delay:.05s">
-            <div class="fx-section__head" style="margin-bottom:20px;"><span class="fx-section__num">//</span><h2 class="fx-section__title">Areas of Focus</h2></div>
-            <ul class="fx-focus">
-              <li>
-                <span class="fx-focus__i" aria-hidden="true"></span>
-                <div>
-                  <span class="fx-focus__label">AI-Powered Security Operations</span>
-                  <span class="fx-focus__detail">Threat detection, adversarial ML defense, LLM security</span>
-                </div>
-              </li>
-              <li>
-                <span class="fx-focus__i" aria-hidden="true"></span>
-                <div>
-                  <span class="fx-focus__label">Digital Forensics &amp; IR</span>
-                  <span class="fx-focus__detail">Evidence analysis, SOC operations, ransomware investigation</span>
-                </div>
-              </li>
-              <li>
-                <span class="fx-focus__i" aria-hidden="true"></span>
-                <div>
-                  <span class="fx-focus__label">Risk Governance &amp; Compliance</span>
-                  <span class="fx-focus__detail">NIST RMF, CMMC 2.0, Zero Trust, risk quantification</span>
-                </div>
-              </li>
-              <li>
-                <span class="fx-focus__i" aria-hidden="true"></span>
-                <div>
-                  <span class="fx-focus__label">Cybersecurity Education</span>
-                  <span class="fx-focus__detail">Curriculum design, SLO assessment, workforce development</span>
-                </div>
-              </li>
-              <li>
-                <span class="fx-focus__i" aria-hidden="true"></span>
-                <div>
-                  <span class="fx-focus__label">Security Architecture</span>
-                  <span class="fx-focus__detail">Cloud (AWS), hybrid environments, IAM, endpoint security</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="fx-section" aria-label="Expertise">
-      <div class="container">
-        <div class="fx-section__head rv"><span class="fx-section__num">//</span><h2 class="fx-section__title">Expertise</h2></div>
-        <div class="rv" style="display:flex; flex-wrap:wrap; gap:10px;">
-          <span class="fx-tag">AI / ML Security</span>
-          <span class="fx-tag">Digital Forensics</span>
-          <span class="fx-tag">Risk Governance</span>
-          <span class="fx-tag">Curriculum Design</span>
-          <span class="fx-tag">NIST · CMMC 2.0</span>
-          <span class="fx-tag">Zero Trust</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="fx-section" aria-label="Current roles">
-      <div class="container">
-        <div class="fx-section__head rv"><span class="fx-section__num">//</span><h2 class="fx-section__title">Current Roles</h2></div>
-        <div class="fx-panel rv">
-          <ul class="fx-focus">
-            <li>
-              <span class="fx-focus__i" aria-hidden="true"></span>
-              <div>
-                <span class="fx-focus__label">Faculty</span>
-                <span class="fx-focus__detail">University of Arizona Global Campus</span>
-              </div>
-            </li>
-            <li>
-              <span class="fx-focus__i" aria-hidden="true"></span>
-              <div>
-                <span class="fx-focus__label">CS Instructor</span>
-                <span class="fx-focus__detail">Lawson State Community College</span>
-              </div>
-            </li>
-            <li>
-              <span class="fx-focus__i" aria-hidden="true"></span>
-              <div>
-                <span class="fx-focus__label">Founder</span>
-                <span class="fx-focus__detail">Cyntraix</span>
-              </div>
-            </li>
-          </ul>
-          <p style="margin-top:18px; font-family:var(--mono); font-size:11.5px; letter-spacing:0.05em; color:var(--muted); text-transform:uppercase;">Birmingham, AL · Remote Available</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="fx-section" aria-label="Next steps">
-      <div class="container">
-        <div class="fx-hero__cta rv" style="justify-content:flex-start;">
-          <a class="fx-btn fx-btn--primary" href="research.html">View Research</a>
-          <a class="fx-btn" href="contact.html">Get in Touch</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="fx-footer">
-    <div class="container">
-      <span>© <span id="year"></span> Ezekiel Ologunde</span>
-      <span>Birmingham, AL &nbsp;·&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
+<section class="section" aria-labelledby="bio-title">
+  <div class="wrap cols">
+    <div class="prose-block rv">
+      <div class="section__head"><span class="section__num">01</span><h2 class="section__title" id="bio-title">In brief</h2></div>
+      <p class="lead">I am a cybersecurity professional, educator and researcher with a record of building rigorous, industry-aligned academic programs at community college, university and K&ndash;12 levels.</p>
+      <p>I am pursuing a Doctor of Engineering in Cybersecurity Analytics at The George Washington University, expected September 2027. My research examines AI-enabled security governance, adversarial machine learning defenses, explainable AI, and risk quantification in enterprise and educational environments. I chose an engineering doctorate because I want to build and solve real problems.</p>
+      <p>As founder of Cyntraix, I provide enterprise security assessments, Zero Trust architecture design and risk governance advisory to organizations working with NIST CSF, CMMC 2.0 and HITRUST. Before I recommend a tool, I run it in my own security lab.</p>
+      <p>I bring experience in curriculum governance, faculty collaboration, departmental planning and workforce development, and a commitment to academic excellence, student equity, and the meeting point of artificial intelligence and cybersecurity defense.</p>
     </div>
-  </footer>
+    <div class="rv">
+      <div class="section__head"><span class="section__num">02</span><h2 class="section__title">Areas of focus</h2></div>
+      <ol class="index-list">
+        <li><span class="index-list__n">01</span><span><strong>AI-powered security operations</strong><span class="d">Threat detection, adversarial ML defense, LLM security</span></span></li>
+        <li><span class="index-list__n">02</span><span><strong>Digital forensics and incident response</strong><span class="d">Evidence analysis, SOC operations, ransomware investigation</span></span></li>
+        <li><span class="index-list__n">03</span><span><strong>Risk governance and compliance</strong><span class="d">NIST RMF, CMMC 2.0, Zero Trust, risk quantification</span></span></li>
+        <li><span class="index-list__n">04</span><span><strong>Cybersecurity education</strong><span class="d">Curriculum design, SLO assessment, workforce development</span></span></li>
+        <li><span class="index-list__n">05</span><span><strong>Security architecture</strong><span class="d">Cloud (AWS), hybrid environments, IAM, endpoint security</span></span></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
-  <script src="assets/js/mesh.js"></script>
-  <script src="assets/js/future.js"></script>
+<section class="section section--alt" aria-labelledby="roles-title">
+  <div class="wrap">
+    <div class="section__head rv"><span class="section__num">03</span><h2 class="section__title" id="roles-title">Current roles</h2></div>
+    <div class="roles rv">
+      <div class="role"><span class="role__when">Since January 2025</span><span class="role__where">Founder and Principal Consultant, Cyntraix</span><p>Security assessments, architecture and risk governance advisory for small and mid-market organizations.</p></div>
+      <div class="role"><span class="role__when">Since June 2025</span><span class="role__where">Computer Science Instructor, Lawson State Community College</span><p>Computer science and cybersecurity instruction, and cybersecurity curriculum mapping for the CIS pathway.</p></div>
+      <div class="role"><span class="role__when">Since March 2026</span><span class="role__where">Faculty, University of Arizona Global Campus</span><p>Online instruction in network penetration testing.</p></div>
+      <div class="role"><span class="role__when">Fall 2026</span><span class="role__where">Ethical Hacking Instructor, Adrian College</span><p>Placed through Rize Education.</p></div>
+      <div class="role"><span class="role__when">Expected September 2027</span><span class="role__where">D.Eng. candidate, The George Washington University</span><p>Cybersecurity Analytics, now in the praxis research phase.</p></div>
+    </div>
+    <p class="note rv">Birmingham, Alabama. Remote available.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="expertise-title">
+  <div class="wrap">
+    <div class="section__head rv"><span class="section__num">04</span><h2 class="section__title" id="expertise-title">Expertise</h2></div>
+    <ul class="tag-list rv">
+      <li class="tag">AI / ML security</li>
+      <li class="tag">Digital forensics</li>
+      <li class="tag">Risk governance</li>
+      <li class="tag">Curriculum design</li>
+      <li class="tag">NIST &middot; CMMC 2.0</li>
+      <li class="tag">Zero Trust</li>
+      <li class="tag">SIEM and detection</li>
+      <li class="tag">OT/IoT security</li>
+    </ul>
+    <div class="section__head rv" style="margin-top:48px"><span class="section__num">05</span><h2 class="section__title">Memberships</h2></div>
+    <ul class="checklist rv">
+      <li>ISSA, Information Systems Security Association</li>
+      <li>ISACA, Information Systems Audit and Control Association</li>
+      <li>MS-ISAC, Multi-State Information Sharing and Analysis Center</li>
+      <li>CAMI, Cybersecurity Association of Maryland</li>
+      <li>IEEE, student member</li>
+      <li>Mentor, Cyber Ready Professionals Consortium</li>
+    </ul>
+    <div class="btn-row rv" style="margin-top:32px">
+      <a class="btn btn--solid" href="research.html">View research</a>
+      <a class="btn" href="contact.html">Get in touch</a>
+    </div>
+  </div>
+</section>
+</main>
+<nav class="continue" aria-label="Continue the story">
+  <div class="wrap continue__in">
+    <a class="prev" href="index.html"><span class="continue__k">&larr; Previous</span><span class="continue__t">The story</span></a>
+    <a class="next" href="education.html"><span class="continue__k">Next &rarr;</span><span class="continue__t">Education</span></a>
+  </div>
+</nav>
+<footer class="site-foot">
+  <div class="wrap site-foot__in">
+    <div>
+      <p class="site-foot__name">Ezekiel Ologunde</p>
+      <p class="site-foot__meta">Cybersecurity consultant, educator and doctoral researcher. Birmingham, Alabama.</p>
+    </div>
+    <ul class="site-foot__links">
+      <li><a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></li>
+      <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+      <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="Resourcehub.html">Resource hub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="site-foot__legal">&copy; <span data-year>2026</span> Ezekiel Ologunde. No trackers, no analytics, no cookies.</p>
+  </div>
+</footer>
 </body>
 </html>

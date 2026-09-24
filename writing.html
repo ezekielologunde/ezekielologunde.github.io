@@ -1,181 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medium Publications — Ezekiel Ologunde</title>
-  <meta name="description" content="Practitioner essays on breaches, compliance, and AI security." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Writing | Ezekiel Ologunde</title>
+  <meta name="description" content="Practitioner essays by Ezekiel Ologunde on Medium: breaches, compliance, risk management and AI security.">
+  <meta name="theme-color" content="#f7f1e8">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Writing | Ezekiel Ologunde">
+  <meta property="og:description" content="Practitioner essays by Ezekiel Ologunde on Medium: breaches, compliance, risk management and AI security.">
+  <meta property="og:url" content="https://ezekielologunde.github.io/writing.html">
+  <meta property="og:image" content="https://ezekielologunde.github.io/assets/img/ezekiel-800.jpg">
+  <link rel="canonical" href="https://ezekielologunde.github.io/writing.html">
+  <link rel="icon" type="image/jpeg" href="assets/img/ezekiel-96.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/future.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/story.css">
+  <script src="assets/js/story.js" defer></script>
 </head>
 <body>
-  <canvas id="fx-mesh" aria-hidden="true"></canvas>
-  <div class="fx-veil" aria-hidden="true"></div>
-
-  <nav class="fx-nav" aria-label="Main navigation">
-    <div class="container fx-nav__inner">
-      <a class="fx-brand" href="index.html"><span class="fx-brand__mark" aria-hidden="true"></span>Ezekiel Ologunde</a>
-      <button class="fx-nav__toggle" aria-expanded="false" aria-controls="fx-nav-links">Menu ▾</button>
-      <div class="fx-nav__links" id="fx-nav-links">
-        <a href="about.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="writing.html">Writing</a>
-        <a href="education.html">Education</a>
-        <a href="credentials.html">Credentials</a>
-        <a href="Resourcehub.html">Resources</a>
-        <a href="contact.html" class="fx-nav__cta">Get in Touch</a>
-      </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html">
+      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="40" height="40" alt="">
+      <span class="brand__name">Ezekiel Ologunde</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="homelab.html">Lab</a></li>
+        <li><a href="built.html">Built</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="writing.html" aria-current="page">Writing</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="credentials.html">Credentials</a></li>
+        <li><a href="Resourcehub.html">Resources</a></li>
+        <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+</header>
+<main id="main">
+<header class="page-head">
+  <div class="wrap">
+    <p class="kicker">Writing</p>
+    <h1 class="page-head__title">Essays on Medium</h1>
+    <p class="page-head__lede">Practitioner essays on breaches, compliance and AI security, written for people who have to make the call.</p>
+    <div class="btn-row" style="margin-top:28px">
+      <a class="btn btn--solid" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">Read on Medium</a>
     </div>
-  </nav>
+  </div>
+</header>
 
-  <main>
-    <header class="fx-pagehero">
-      <div class="container">
-        <p class="fx-pagehero__eyebrow">Writing</p>
-        <h1 class="fx-pagehero__title">Medium Publications</h1>
-        <p class="fx-pagehero__sub">Practitioner essays on breaches, compliance, and AI security.</p>
-      </div>
-    </header>
-
-    <section class="fx-section" aria-label="Medium profile">
-      <div class="container">
-        <div class="fx-panel rv" data-parallax="0.03" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px;">
-          <p style="font-family:var(--mono); font-size:12.5px; letter-spacing:0.04em; color:var(--muted); max-width:520px;">Published on Medium — Cybersecurity analysis and practitioner insights · @ezekielologunde</p>
-          <a class="fx-btn fx-btn--sm" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener">Read on Medium</a>
+<section class="section" aria-labelledby="articles-title">
+  <div class="wrap">
+    <div class="section__head rv"><span class="section__num">01</span><h2 class="section__title" id="articles-title">Articles</h2></div>
+    <ol class="entries">
+      <li class="entry rv">
+        <div class="entry__meta">December 14, 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">Compliance vs. Reality: When Cybersecurity Controls Are Recommended but Not Practicable</a></h3>
+          <p class="entry__desc">What happens when NIST SP 800-53 and CMMC-mandated controls exist on paper but cannot be implemented? A practitioner&rsquo;s honest look at the gap.</p>
+          <ul class="tag-list"><li class="tag">NIST</li><li class="tag">CMMC 2.0</li><li class="tag">Risk management</li></ul>
         </div>
-      </div>
-    </section>
-
-    <section class="fx-section" aria-label="Articles">
-      <div class="container">
-        <div class="fx-section__head rv"><span class="fx-section__num">//</span><h2 class="fx-section__title">Articles</h2></div>
-        <div class="fx-grid fx-grid--2">
-
-          <a class="fx-panel rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="display:block;">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">December 14, 2025</div>
-              <div class="fx-entry__title">Compliance vs. Reality: When Cybersecurity Controls Are Recommended but Not Practicable</div>
-              <div class="fx-entry__desc">What happens when NIST SP 800-53 and CMMC-mandated controls exist on paper but simply cannot be implemented? A practitioner's honest look at the gap.</div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
-                <span class="fx-tag">NIST</span>
-                <span class="fx-tag">CMMC 2.0</span>
-                <span class="fx-tag">Risk Management</span>
-              </div>
-              <span class="fx-entry__link">Read on Medium</span>
-            </div>
-          </a>
-
-          <a class="fx-panel rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="display:block; transition-delay:.05s">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">December 5, 2025</div>
-              <div class="fx-entry__title">Why Risk Management Matters More Than Ever in the Age of AI</div>
-              <div class="fx-entry__desc">Risk management has long been the backbone of effective cybersecurity — and the rise of AI has made it more complex, and more consequential, than ever.</div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
-                <span class="fx-tag">AI Security</span>
-                <span class="fx-tag">Risk Management</span>
-              </div>
-              <span class="fx-entry__link">Read on Medium</span>
-            </div>
-          </a>
-
-          <a class="fx-panel rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="display:block;">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">December 2, 2025</div>
-              <div class="fx-entry__title">The Ancient Scrolls Warned Us: Patch or Perish</div>
-              <div class="fx-entry__desc">Change Healthcare and UnitedHealth Group looked like they had everything in order. The breach told a different story — and the lessons apply everywhere.</div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
-                <span class="fx-tag">Incident Response</span>
-                <span class="fx-tag">Healthcare</span>
-                <span class="fx-tag">Ransomware</span>
-              </div>
-              <span class="fx-entry__link">Read on Medium</span>
-            </div>
-          </a>
-
-          <a class="fx-panel rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="display:block; transition-delay:.05s">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">November 19, 2025</div>
-              <div class="fx-entry__title">Dear Vendor: We're Breaking Up. It's Not Us, It's Your Security Posture</div>
-              <div class="fx-entry__desc">The Salesloft/Drift SaaS breach — a deep dive into third-party risk and vendor security governance.</div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
-                <span class="fx-tag">Supply Chain</span>
-                <span class="fx-tag">SaaS Security</span>
-                <span class="fx-tag">Vendor Risk</span>
-              </div>
-              <span class="fx-entry__link">Read on Medium</span>
-            </div>
-          </a>
-
-          <a class="fx-panel rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="display:block;">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">November 15, 2025</div>
-              <div class="fx-entry__title">When Nation-State Hackers Target Small Defense Contractors: A Look Through the DREAD Lens</div>
-              <div class="fx-entry__desc">Most assume nation-state attacks only target large institutions. For a Security Manager at a small U.S. defense contractor, that assumption is dangerous.</div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
-                <span class="fx-tag">Nation-State</span>
-                <span class="fx-tag">DREAD Model</span>
-                <span class="fx-tag">Defense</span>
-              </div>
-              <span class="fx-entry__link">Read on Medium</span>
-            </div>
-          </a>
-
-          <a class="fx-panel rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="display:block; transition-delay:.05s">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">November 7, 2025</div>
-              <div class="fx-entry__title">The Faketivism Frontier: Weaponized AI to Attack Trust, Not Servers</div>
-              <div class="fx-entry__desc">The CrowdStrike 2024 Global Threat Report details how nation-states are transforming information warfare — targeting credibility and trust over infrastructure.</div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
-                <span class="fx-tag">AI Warfare</span>
-                <span class="fx-tag">Disinformation</span>
-                <span class="fx-tag">Threat Intel</span>
-              </div>
-              <span class="fx-entry__link">Read on Medium</span>
-            </div>
-          </a>
-
-          <a class="fx-panel rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="display:block;">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">November 20, 2025</div>
-              <div class="fx-entry__title">Practical Expected Value Review</div>
-              <div class="fx-entry__desc">A full expected value breakdown with cybersecurity context — real-world lessons for risk quantification practitioners and security leaders.</div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
-                <span class="fx-tag">Risk Quantification</span>
-                <span class="fx-tag">Expected Value</span>
-              </div>
-              <span class="fx-entry__link">Read on Medium</span>
-            </div>
-          </a>
-
-          <a class="fx-panel rv" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener" style="display:block; transition-delay:.05s">
-            <div class="fx-entry">
-              <div class="fx-entry__meta">November 12, 2025</div>
-              <div class="fx-entry__title">I Read the Privacy Policy (Said No One Ever)</div>
-              <div class="fx-entry__desc">The F5 breach and the Zscaler 2025 Mobile, IoT &amp; OT Threat Report reveal how the meaning of data privacy has fundamentally shifted in a connected world.</div>
-              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
-                <span class="fx-tag">Privacy</span>
-                <span class="fx-tag">IoT Security</span>
-                <span class="fx-tag">Data Governance</span>
-              </div>
-              <span class="fx-entry__link">Read on Medium</span>
-            </div>
-          </a>
-
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">December 5, 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">Why Risk Management Matters More Than Ever in the Age of AI</a></h3>
+          <p class="entry__desc">Risk management has long been the backbone of effective cybersecurity, and the rise of AI has made it more complex, and more consequential, than ever.</p>
+          <ul class="tag-list"><li class="tag">AI security</li><li class="tag">Risk management</li></ul>
         </div>
-      </div>
-    </section>
-  </main>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">December 2, 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">The Ancient Scrolls Warned Us: Patch or Perish</a></h3>
+          <p class="entry__desc">Change Healthcare and UnitedHealth Group looked like they had everything in order. The breach told a different story, and the lessons apply everywhere.</p>
+          <ul class="tag-list"><li class="tag">Incident response</li><li class="tag">Healthcare</li><li class="tag">Ransomware</li></ul>
+        </div>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">November 20, 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">Practical Expected Value Review</a></h3>
+          <p class="entry__desc">A full expected value breakdown with cybersecurity context: real-world lessons for risk quantification practitioners and security leaders.</p>
+          <ul class="tag-list"><li class="tag">Risk quantification</li><li class="tag">Expected value</li></ul>
+        </div>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">November 19, 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">Dear Vendor: We&rsquo;re Breaking Up. It&rsquo;s Not Us, It&rsquo;s Your Security Posture</a></h3>
+          <p class="entry__desc">The Salesloft/Drift SaaS breach: a deep dive into third-party risk and vendor security governance.</p>
+          <ul class="tag-list"><li class="tag">Supply chain</li><li class="tag">SaaS security</li><li class="tag">Vendor risk</li></ul>
+        </div>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">November 15, 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">When Nation-State Hackers Target Small Defense Contractors: A Look Through the DREAD Lens</a></h3>
+          <p class="entry__desc">Most assume nation-state attacks only target large institutions. For a security manager at a small U.S. defense contractor, that assumption is dangerous.</p>
+          <ul class="tag-list"><li class="tag">Nation-state</li><li class="tag">DREAD model</li><li class="tag">Defense</li></ul>
+        </div>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">November 12, 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">I Read the Privacy Policy (Said No One Ever)</a></h3>
+          <p class="entry__desc">The F5 breach and the Zscaler 2025 Mobile, IoT &amp; OT Threat Report reveal how the meaning of data privacy has shifted in a connected world.</p>
+          <ul class="tag-list"><li class="tag">Privacy</li><li class="tag">IoT security</li><li class="tag">Data governance</li></ul>
+        </div>
+      </li>
+      <li class="entry rv">
+        <div class="entry__meta">November 7, 2025</div>
+        <div>
+          <h3 class="entry__title"><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">The Faketivism Frontier: Weaponized AI to Attack Trust, Not Servers</a></h3>
+          <p class="entry__desc">The CrowdStrike 2024 Global Threat Report details how nation-states are transforming information warfare, targeting credibility and trust over infrastructure.</p>
+          <ul class="tag-list"><li class="tag">AI warfare</li><li class="tag">Disinformation</li><li class="tag">Threat intel</li></ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
 
-  <footer class="fx-footer">
-    <div class="container">
-      <span>© <span id="year"></span> Ezekiel Ologunde</span>
-      <span>Birmingham, AL &nbsp;·&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
+<section class="section section--alt" aria-labelledby="also-title">
+  <div class="wrap">
+    <div class="section__head rv"><span class="section__num">02</span><h2 class="section__title" id="also-title">Also published</h2></div>
+    <ul class="compact-list rv">
+      <li><span>Medium</span>Cybersecurity as a Growth Engine: Bridging Technical Controls with Business Strategy</li>
+      <li><span>Medium</span>The Breach Wasn&rsquo;t in the Plan, Because There Wasn&rsquo;t a Plan</li>
+      <li><span>Medium</span>This Update Brought to You by the &lsquo;It Worked on My Machine&rsquo; Foundation</li>
+      <li><span>Medium</span>Distributed Spoofing in Critical Infrastructure: Challenges in Cybersecurity</li>
+      <li><span>LinkedIn article</span>AI Ops and Cyber Security</li>
+    </ul>
+    <p class="rv" style="margin-top:28px"><a class="arrow-link" href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">All essays on Medium</a></p>
+  </div>
+</section>
+</main>
+<nav class="continue" aria-label="Continue the story">
+  <div class="wrap continue__in">
+    <a class="prev" href="research.html"><span class="continue__k">&larr; Previous</span><span class="continue__t">Research</span></a>
+    <a class="next" href="credentials.html"><span class="continue__k">Next &rarr;</span><span class="continue__t">Credentials</span></a>
+  </div>
+</nav>
+<footer class="site-foot">
+  <div class="wrap site-foot__in">
+    <div>
+      <p class="site-foot__name">Ezekiel Ologunde</p>
+      <p class="site-foot__meta">Cybersecurity consultant, educator and doctoral researcher. Birmingham, Alabama.</p>
     </div>
-  </footer>
-
-  <script src="assets/js/mesh.js"></script>
-  <script src="assets/js/future.js"></script>
+    <ul class="site-foot__links">
+      <li><a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></li>
+      <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+      <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="Resourcehub.html">Resource hub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="site-foot__legal">&copy; <span data-year>2026</span> Ezekiel Ologunde. No trackers, no analytics, no cookies.</p>
+  </div>
+</footer>
 </body>
 </html>
