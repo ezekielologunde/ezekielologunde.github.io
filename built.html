@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Built | Ezekiel Ologunde</title>
+  <meta name="description" content="Software Ezekiel Ologunde designed and built: a food marketplace, church web platforms, a fintech savings app, a private automation platform, and brand sites, with the security design behind each." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/future.css">
+  <style>
+    .bt-card { display:flex; flex-direction:column; min-width:0; }
+    .bt-num { font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--cyan); }
+    .bt-desc { color:var(--muted); line-height:1.72; font-size:14.5px; margin:14px 0 18px; }
+    .bt-facts { margin:0; padding:16px 0 0; border-top:1px solid var(--edge); display:grid; grid-template-columns:auto 1fr; gap:10px 14px; }
+    .bt-facts dt { font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); padding-top:3px; }
+    .bt-facts dd { margin:0; color:var(--text); font-size:13.5px; line-height:1.6; min-width:0; overflow-wrap:anywhere; }
+    .bt-link { margin-top:auto; padding-top:18px; }
+    .bt-link a { font-family:var(--mono); font-size:11.5px; color:var(--cyan); }
+    .bt-link a:hover { text-decoration:underline; }
+    .bt-private { font-family:var(--mono); font-size:11px; color:var(--faint); }
+    .bt-note { font-family:var(--mono); font-size:11.5px; letter-spacing:.04em; color:var(--muted); margin-top:18px; line-height:1.7; }
+    @media (max-width: 480px) {
+      .bt-facts { grid-template-columns:1fr; gap:4px; }
+      .bt-facts dd { margin-bottom:8px; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="fx-mesh" aria-hidden="true"></canvas>
+  <div class="fx-veil" aria-hidden="true"></div>
+
+  <nav class="fx-nav" aria-label="Main navigation">
+    <div class="container fx-nav__inner">
+      <a class="fx-brand" href="index.html"><span class="fx-brand__mark" aria-hidden="true"></span>Ezekiel Ologunde</a>
+      <button class="fx-nav__toggle" aria-expanded="false" aria-controls="fx-nav-links">Menu &#9662;</button>
+      <div class="fx-nav__links" id="fx-nav-links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="writing.html">Writing</a>
+        <a href="education.html">Education</a>
+        <a href="credentials.html">Credentials</a>
+        <a href="Resourcehub.html">Resources</a>
+        <a href="contact.html" class="fx-nav__cta">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="fx-pagehero">
+      <div class="container">
+        <p class="fx-pagehero__eyebrow">Software I Built</p>
+        <h1 class="fx-pagehero__title">Built</h1>
+        <p class="fx-pagehero__sub">Working software I designed and built myself: a marketplace, church web platforms, a fintech app, a private automation platform, and brand sites. Each entry lists what the code actually does and the security design behind it.</p>
+      </div>
+    </header>
+
+    <section class="fx-section" aria-label="Case studies">
+      <div class="container">
+        <div class="fx-section__head rv"><span class="fx-section__num">//</span><h2 class="fx-section__title">Case Studies</h2></div>
+        <p class="fx-section__lede rv">I design the architecture and the security model before writing code, then review what I built with a red-team pass. Every claim below comes from the project's own code, migrations, and documentation.</p>
+
+        <div class="fx-grid fx-grid--2">
+
+          <article class="fx-panel bt-card rv">
+            <div class="fx-entry">
+              <div class="fx-entry__meta"><span class="bt-num">01</span> &nbsp; <span class="fx-badge fx-badge--progress">Pre-launch</span></div>
+              <h3 class="fx-entry__title">Preppa: a two-sided home-cooked food marketplace</h3>
+            </div>
+            <p class="bt-desc">Preppa lets home cooks sell meals, run subscription meal plans, and take bookings, while customers browse, order, and pay in one app. I built the customer app, the cook workspace, and an admin console as one Expo and React Native codebase that also ships to the web, on a Supabase backend with 225 versioned SQL migrations and 41 Edge Functions. Payments and cook payouts run through Stripe Connect, with automated payout reconciliation and a weekly payout sweep. Cook onboarding includes document review, and in-home cooking bookings sit behind a separate, stricter vetting step. CI type-checks every push, then replays the full migration history on a fresh Postgres and runs database regression tests. An earlier browser-only prototype, PrepDash, is where I first worked out the operator console.</p>
+            <dl class="bt-facts">
+              <dt>Stack</dt><dd>Expo, React Native, TypeScript, Supabase (Postgres, Auth, Edge Functions, Storage), Stripe Connect, GitHub Actions</dd>
+              <dt>Status</dt><dd>Deployed, in pre-launch acceptance testing. Built since July 2026.</dd>
+              <dt>Security</dt><dd>Row Level Security on data tables, checked by regression tests; privileged actions re-verified server-side and a trigger blocks role self-escalation; Stripe and Mux webhooks are signature-verified; uploads are validated by their real file bytes, not the declared type; native sessions live in the OS keychain; CI scans the production web bundle for secret keys.</dd>
+            </dl>
+            <div class="bt-link"><a href="https://preppa.live" target="_blank" rel="noopener">preppa.live</a></div>
+          </article>
+
+          <article class="fx-panel bt-card rv" style="transition-delay:.05s">
+            <div class="fx-entry">
+              <div class="fx-entry__meta"><span class="bt-num">02</span> &nbsp; <span class="fx-badge fx-badge--active">Live</span></div>
+              <h3 class="fx-entry__title">CAC North America: organization site and admin console</h3>
+            </div>
+            <p class="bt-desc">The public website and admin console for Christ Apostolic Church North America, a regional church body. I built it by porting my own Salvation Center codebase (entry 03) onto a separate database schema, then replacing content page by page and adding a church directory, ministry pages, and convention schedule and archive pages. Staff manage announcements, blog posts, events, the gallery, the newsletter, and store orders from an admin area, with no CMS vendor. A separate Next.js site I built for the 2026 annual convention was merged into the main site in phases and now serves a single redirect page, so old links still land. Structured data, sitemaps, and canonical-host redirects are handled in code so search engines index one host.</p>
+            <dl class="bt-facts">
+              <dt>Stack</dt><dd>Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Supabase, Stripe, Resend, Cloudinary, Vercel</dd>
+              <dt>Status</dt><dd>Live. Built July to September 2026.</dd>
+              <dt>Security</dt><dd>Admin routes redirect signed-out users in middleware, then check an admin table on the server; Row Level Security policies in the migrations limit public reads to published rows and all writes to admins.</dd>
+            </dl>
+            <div class="bt-link"><a href="https://cacna.cacsalvationcenter.org" target="_blank" rel="noopener">cacna.cacsalvationcenter.org</a></div>
+          </article>
+
+          <article class="fx-panel bt-card rv">
+            <div class="fx-entry">
+              <div class="fx-entry__meta"><span class="bt-num">03</span> &nbsp; <span class="fx-badge fx-badge--active">Live</span></div>
+              <h3 class="fx-entry__title">Church websites with staff admin panels</h3>
+            </div>
+            <p class="bt-desc">Two live websites for local congregations, each paired with a password-protected admin area so non-technical staff can keep content current without a developer. The CAC Salvation Center site, the codebase the CAC North America site later grew from, covers service times, ministries, events, sermons and a blog, online giving, and a small merchandise store with Stripe checkout and Resend confirmation emails. Staff manage announcements, events, the gallery, prayer requests, testimonies, and store orders from the admin panel. The Deeper Life Bible Church Columbia site covers services, events with search-engine structured data, sermons, beliefs, testimonies, and giving links, and a scheduled job pulls in the daily devotional from an external source every day.</p>
+            <dl class="bt-facts">
+              <dt>Stack</dt><dd>Next.js 16, React 19, TypeScript, Tailwind CSS 4, Supabase (Postgres, Auth), Stripe, Resend, Cloudinary, Framer Motion, Vercel Cron</dd>
+              <dt>Status</dt><dd>Both live. Salvation Center since June 2026, Deeper Life since July 2026.</dd>
+              <dt>Security</dt><dd>Admin areas are gated by Supabase Auth; Salvation Center also checks an admin table on the server and signs image uploads only for admins; Stripe webhooks verify signatures; public forms on the Deeper Life site carry a honeypot that drops bot submissions.</dd>
+            </dl>
+            <div class="bt-link"><a href="https://www.cacsalvationcenter.org" target="_blank" rel="noopener">cacsalvationcenter.org</a> &nbsp;&middot;&nbsp; <a href="https://deeperlifecolumbia.org" target="_blank" rel="noopener">deeperlifecolumbia.org</a></div>
+          </article>
+
+          <article class="fx-panel bt-card rv" style="transition-delay:.05s">
+            <div class="fx-entry">
+              <div class="fx-entry__meta"><span class="bt-num">04</span> &nbsp; <span class="fx-badge fx-badge--progress">In development</span></div>
+              <h3 class="fx-entry__title">Bagsly: a fintech savings app</h3>
+            </div>
+            <p class="bt-desc">A savings app where users pass identity verification, receive a deposit account from a banking-as-a-service provider, link outside banks through Plaid, and organize money into typed vaults: anytime access, scheduled auto-saves, fixed-term locks, bill savings, and shared group goals. It is a pnpm and Turborepo monorepo with a Next.js web app and admin console, an Expo mobile app, and a shared TypeScript package for interest and penalty math with its own unit tests. There is no custom API server: clients read only their own rows through Row Level Security, and every money-moving operation runs in one of 42 Supabase Edge Functions that verify the session token first. Written runbooks cover money incidents, reconciliation, and support.</p>
+            <dl class="bt-facts">
+              <dt>Stack</dt><dd>TypeScript, Next.js 16, Expo and React Native, Supabase (Postgres, Edge Functions), Turborepo, Vitest, Playwright</dd>
+              <dt>Status</dt><dd>In development against the providers' sandbox environments. Built since August 2026.</dd>
+              <dt>Security</dt><dd>Select-own-only Row Level Security, with writes only through server functions; new database functions get no execute grant by default; transaction status changes and fixed-term locks are enforced in the database, not just app code; idempotent webhook settlement closed a race; a nightly job reconciles balances with the bank; identity details are forwarded to the provider, not stored; withdrawals go only to Plaid-verified accounts.</dd>
+            </dl>
+            <div class="bt-link"><span class="bt-private">Private repository: architecture and security design only.</span></div>
+          </article>
+
+          <article class="fx-panel bt-card rv">
+            <div class="fx-entry">
+              <div class="fx-entry__meta"><span class="bt-num">05</span> &nbsp; <span class="fx-badge fx-badge--active">In daily use</span></div>
+              <h3 class="fx-entry__title">HoWz: a private automation and operations platform</h3>
+            </div>
+            <p class="bt-desc">A personal operations platform that runs on my own hardware. A React and Vite dashboard, served by a Node server with no runtime dependencies, brings together a scheduled job-search pipeline, a Routines page showing whether each scheduled task and backup really ran, a monitor for my sites' availability, TLS certificates, and domain expiry, and a question pane where a language model may propose changes but code validates them and nothing is written until I approve it. The job-search runs are read-only by design: they find and track postings and draft materials only from a verified profile, and they never submit a form or create an account. Real personal data stays local and out of version control.</p>
+            <dl class="bt-facts">
+              <dt>Stack</dt><dd>Node.js, React 19, Vite, Vitest, GnuPG, Git hooks, Windows Task Scheduler</dd>
+              <dt>Status</dt><dd>In daily use since August 2026. Private, local-only.</dd>
+              <dt>Security</dt><dd>Nightly backups are encrypted and signed, the decryption key is kept off the machine, and restore drills prove they open; a Git leak guard blocks commits and pushes that carry private files, real figures, or credential-shaped strings, and a push needs a one-time permit approved at a physical terminal; the sites monitor contacts nothing until approved the same way; the dashboard is password-gated with a Content Security Policy and HttpOnly, SameSite=Strict cookies. Each feature had independent reviews, a red-team pass, and mutation-checked tests.</dd>
+            </dl>
+            <div class="bt-link"><span class="bt-private">Private: not published.</span></div>
+          </article>
+
+          <article class="fx-panel bt-card rv" style="transition-delay:.05s">
+            <div class="fx-entry">
+              <div class="fx-entry__meta"><span class="bt-num">06</span> &nbsp; <span class="fx-badge fx-badge--active">Live</span></div>
+              <h3 class="fx-entry__title">Brand and marketing sites</h3>
+            </div>
+            <p class="bt-desc">Three static, multi-page sites written by hand in HTML, CSS, and JavaScript, with no framework and no build step. Cyntraix is the site for my cybersecurity consultancy, with a hero video that scrubs frame by frame as you scroll, an animated network canvas, and clean-URL, long-cache hosting configuration. HoWz Studios is an editorial portfolio for my creative studio. WealthDJ is the artist site for my DJ work, with a live canvas waveform and a radio player that rotates mixes through the SoundCloud widget API. All three honor the visitor's reduced-motion setting, and each shares one design system across its pages so a new page stays consistent without extra tooling.</p>
+            <dl class="bt-facts">
+              <dt>Stack</dt><dd>HTML, CSS, vanilla JavaScript, Canvas API, Vercel</dd>
+              <dt>Status</dt><dd>Live. Built August 2026.</dd>
+              <dt>Security</dt><dd>No backend and no stored form data: contact and booking requests open the visitor's own email client.</dd>
+            </dl>
+            <div class="bt-link"><a href="https://cyntraix.io" target="_blank" rel="noopener">cyntraix.io</a> &nbsp;&middot;&nbsp; <a href="https://howzstudios.vercel.app" target="_blank" rel="noopener">howzstudios.vercel.app</a></div>
+          </article>
+
+        </div>
+        <p class="bt-note rv">Client engagements are not shown here. Repositories that hold private data or move money stay private; for those, this page describes the design rather than linking the code.</p>
+      </div>
+    </section>
+
+    <section class="fx-section" aria-label="Next steps">
+      <div class="container">
+        <div class="fx-hero__cta rv" style="justify-content:flex-start;">
+          <a class="fx-btn fx-btn--primary" href="homelab.html">Tour the Homelab</a>
+          <a class="fx-btn" href="contact.html">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fx-footer">
+    <div class="container">
+      <span>&copy; <span id="year"></span> Ezekiel Ologunde</span>
+      <span>Birmingham, AL &nbsp;&middot;&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/js/mesh.js"></script>
+  <script src="assets/js/future.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 project: ezekielologunde-github-io
 type: changelog
 status: active
-last_updated: 2026-09-23
+last_updated: 2026-09-24
 tags: [project/ezekielologunde-github-io]
 ---
 
@@ -12,6 +12,11 @@ Git history available in this working copy contains a single commit
 (the repo may be shallow-cloned or history was squashed at some point).
 Recorded here for reference; extend this file going forward as real changes
 land.
+
+## 2026-09-24: Built page
+- Added `built.html`: six case studies (Preppa marketplace, CAC North America site and admin console, two church websites, Bagsly fintech app, private HoWz automation platform, brand sites), each 90 to 140 words plus Stack, Status and Security lines. Every claim was checked against the project's own code, migrations, config or docs; unverified items were left out.
+- Added portal 08 (Built) to the Explore grid in `index.html`.
+- Public-safety rule for this page: no secrets, env values, project IDs, database names, internal URLs or client names; links only to live public URLs confirmed in each repo's config. See [[Decisions]].
 
 ## 2026-09-23: Homelab page (working tree, not committed)
 - Added a sanitized host-based detection alerts figure (`assets/img/homelab-wazuh-alerts.svg`, rule names, levels and counts only) to `homelab.html`.

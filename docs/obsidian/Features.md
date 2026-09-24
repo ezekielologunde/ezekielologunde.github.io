@@ -2,7 +2,7 @@
 project: ezekielologunde-github-io
 type: features
 status: active
-last_updated: 2026-09-23
+last_updated: 2026-09-24
 tags: [project/ezekielologunde-github-io]
 ---
 
@@ -21,6 +21,7 @@ See [[Project]] for stack/purpose context.
 | `research.html` | Published papers on AI security, threat modeling, risk governance |
 | `writing.html` | Practitioner essays on breaches, compliance, AI security |
 | `homelab.html` | Self-hosted security monitoring lab (described by role, no addresses or hostnames) and the Breakwater OT/IoT lab, labeled as doctoral coursework. Linked from the index portal grid (07), not from the main nav. Added 2026-09-23. |
+| `built.html` | Case studies of software Ezekiel built (Preppa, CAC North America, church sites, Bagsly, the private HoWz automation platform, brand sites), each with Stack, Status and Security lines taken only from the projects' own code, migrations and docs. Private repos are described, never linked. Linked from the index portal grid (08), not from the main nav. Added 2026-09-24. See [[Decisions]]. |
 | `contact.html` | Contact form for research collaboration, consulting, speaking (client-side handled in `site.js`, `#contactForm`) |
 
 ## Resource hub track
