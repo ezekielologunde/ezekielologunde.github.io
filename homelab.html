@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homelab | Ezekiel Ologunde</title>
+  <meta name="description" content="A self-hosted security monitoring and detection lab, and the Breakwater OT/IoT vulnerability lab from doctoral coursework." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/future.css">
+  <style>
+    .hl-flow { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:6px; }
+    .hl-flow__step { font-family:var(--mono); font-size:11.5px; letter-spacing:.03em; padding:8px 14px; border-radius:10px; border:1px solid var(--edge-2); background:var(--panel-2); color:var(--text); }
+    .hl-flow__arrow { color:var(--cyan); font-family:var(--mono); font-size:13px; }
+    .hl-list { list-style:none; margin:0; padding:0; }
+    .hl-list li { position:relative; padding:0 0 12px 20px; color:var(--muted); line-height:1.7; font-size:14.5px; }
+    .hl-list li::before { content:""; position:absolute; left:0; top:.62em; width:8px; height:8px; border-radius:2px; background:var(--gradient); }
+    .hl-list strong { color:var(--text); font-weight:700; }
+    .hl-note { font-family:var(--mono); font-size:11.5px; letter-spacing:.04em; color:var(--muted); margin-top:14px; }
+  </style>
+</head>
+<body>
+  <canvas id="fx-mesh" aria-hidden="true"></canvas>
+  <div class="fx-veil" aria-hidden="true"></div>
+
+  <nav class="fx-nav" aria-label="Main navigation">
+    <div class="container fx-nav__inner">
+      <a class="fx-brand" href="index.html"><span class="fx-brand__mark" aria-hidden="true"></span>Ezekiel Ologunde</a>
+      <button class="fx-nav__toggle" aria-expanded="false" aria-controls="fx-nav-links">Menu &#9662;</button>
+      <div class="fx-nav__links" id="fx-nav-links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="writing.html">Writing</a>
+        <a href="education.html">Education</a>
+        <a href="credentials.html">Credentials</a>
+        <a href="Resourcehub.html">Resources</a>
+        <a href="contact.html" class="fx-nav__cta">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="fx-pagehero">
+      <div class="container">
+        <p class="fx-pagehero__eyebrow">Hands-On Practice</p>
+        <h1 class="fx-pagehero__title">Homelab</h1>
+        <p class="fx-pagehero__sub">A self-hosted security monitoring and detection lab, and the Breakwater OT/IoT vulnerability lab from my doctoral coursework.</p>
+      </div>
+    </header>
+
+    <section class="fx-section" aria-label="Security monitoring lab">
+      <div class="container">
+        <div class="fx-section__head rv"><span class="fx-section__num">//</span><h2 class="fx-section__title">Security Monitoring Lab</h2></div>
+        <p class="fx-section__lede rv">I run a small, self-hosted lab where I try out SIEM, host-based detection, and monitoring tooling before I recommend it to Cyntraix clients. It runs on two small machines at home.</p>
+
+        <div class="fx-grid fx-grid--2">
+          <div class="fx-panel rv" data-parallax="0.03">
+            <div class="fx-entry">
+              <div class="fx-entry__meta">Architecture, by role</div>
+              <div class="fx-entry__title">Two hypervisor nodes, one log pipeline</div>
+            </div>
+            <ul class="hl-list" style="margin-top:14px;">
+              <li><strong>Virtualization:</strong> two Proxmox VE nodes running lightweight containers and full virtual machines, kept deliberately unclustered.</li>
+              <li><strong>Network services:</strong> an open-source firewall VM, a DNS sinkhole for ad and tracker filtering, and a reverse proxy in front of the web consoles.</li>
+              <li><strong>Detection:</strong> a SIEM with dedicated syslog inputs and a host-based intrusion detection manager with agents on the lab's Linux hosts.</li>
+              <li><strong>Monitoring:</strong> uptime checks for every core service, reachability probes with an uplink dashboard, and LAN device discovery.</li>
+              <li><strong>Testing and AI:</strong> a penetration-testing VM, and a small language model running locally on CPU.</li>
+            </ul>
+          </div>
+
+          <div class="fx-panel rv" style="transition-delay:.05s">
+            <div class="fx-entry">
+              <div class="fx-entry__meta">What it does</div>
+              <div class="fx-entry__title">From raw logs to a daily digest</div>
+            </div>
+            <ul class="hl-list" style="margin-top:14px;">
+              <li>Firewall, DNS, proxy, container, Linux, and host-agent alert logs are forwarded over syslog into one SIEM index.</li>
+              <li>Each source's time zone is normalized so events land in the right search window.</li>
+              <li>Scheduled searches produce a daily digest and a critical-event watch, running under a search-only service account scoped to that one index.</li>
+              <li>A new device joining the network raises an alert in the SIEM.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fx-panel rv" style="margin-top:18px;">
+          <div class="fx-entry__meta" style="margin-bottom:12px;">Log flow</div>
+          <div class="hl-flow" role="list" aria-label="Log flow from sources to digest">
+            <span class="hl-flow__step" role="listitem">Firewall, DNS, proxy, containers, host agents</span>
+            <span class="hl-flow__arrow" aria-hidden="true">&rarr;</span>
+            <span class="hl-flow__step" role="listitem">Syslog forwarding</span>
+            <span class="hl-flow__arrow" aria-hidden="true">&rarr;</span>
+            <span class="hl-flow__step" role="listitem">SIEM index</span>
+            <span class="hl-flow__arrow" aria-hidden="true">&rarr;</span>
+            <span class="hl-flow__step" role="listitem">Scheduled detection searches</span>
+            <span class="hl-flow__arrow" aria-hidden="true">&rarr;</span>
+            <span class="hl-flow__step" role="listitem">Digest and critical-event watch</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fx-section" aria-label="Decisions and lessons">
+      <div class="container">
+        <div class="fx-section__head rv"><span class="fx-section__num">//</span><h2 class="fx-section__title">Decisions &amp; Lessons</h2></div>
+        <div class="fx-grid fx-grid--2">
+          <div class="fx-panel rv">
+            <div class="fx-entry">
+              <div class="fx-entry__meta">Security trade-offs</div>
+              <div class="fx-entry__title">Choosing the safer option</div>
+            </div>
+            <ul class="hl-list" style="margin-top:14px;">
+              <li>Kept the firewall console off the reverse proxy, because fronting it would have meant turning off TLS certificate verification.</li>
+              <li>Remote shell access to the second node is key-only, and the automation key works from one machine only.</li>
+              <li>The local language model listens on the lab network only and was installed only after its release checksum was verified.</li>
+              <li>Automated log review uses a read-only account that can search one index and nothing else.</li>
+            </ul>
+          </div>
+          <div class="fx-panel rv" style="transition-delay:.05s">
+            <div class="fx-entry">
+              <div class="fx-entry__meta">Troubleshooting</div>
+              <div class="fx-entry__title">What the lab taught me</div>
+            </div>
+            <ul class="hl-list" style="margin-top:14px;">
+              <li>Found a VPN container that had never worked, crash-looping more than 12,000 times and writing about 361 GB to disk. Retired it and removed its agent.</li>
+              <li>Decommissioned an unused DNS filter after confirming it had zero clients, then reused its slot.</li>
+              <li>Traced a flapping, slow network link to a bad cable before blaming the network card.</li>
+              <li>Learned that one spinning disk under a SIEM, a HIDS, and a metrics store is the bottleneck. Moving those to SSD is next.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rv" style="display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;">
+          <span class="fx-tag">Proxmox VE</span>
+          <span class="fx-tag">Splunk</span>
+          <span class="fx-tag">Wazuh</span>
+          <span class="fx-tag">OPNsense</span>
+          <span class="fx-tag">Pi-hole</span>
+          <span class="fx-tag">Caddy</span>
+          <span class="fx-tag">Uptime Kuma</span>
+          <span class="fx-tag">Docker</span>
+          <span class="fx-tag">Prometheus &middot; Grafana</span>
+          <span class="fx-tag">rsyslog</span>
+          <span class="fx-tag">Kali Linux</span>
+          <span class="fx-tag">Ollama</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="fx-section" aria-label="Breakwater lab">
+      <div class="container">
+        <div class="fx-section__head rv"><span class="fx-section__num">//</span><h2 class="fx-section__title">Breakwater Lab</h2></div>
+        <p class="fx-section__lede rv">Doctoral coursework, George Washington University (SEAS 8414, Analytical Tools for Cyber). A containerized OT/IoT simulation network used to build an end-to-end security-analytics pipeline, one phase at a time.</p>
+
+        <div class="fx-grid fx-grid--2">
+          <div class="fx-panel rv">
+            <div class="fx-entry">
+              <div class="fx-entry__meta"><span class="fx-badge fx-badge--progress">Doctoral coursework</span></div>
+              <div class="fx-entry__title">Discovery, identity, and triage</div>
+            </div>
+            <ul class="hl-list" style="margin-top:14px;">
+              <li><strong>Asset inventory:</strong> active and passive discovery against a declared 26-device simulated network confirmed 20 devices (77%) with zero phantom hosts. TCP probing found the most.</li>
+              <li><strong>Device identity:</strong> fingerprinting from management-plane self-reports rather than transport banners, with three-witness corroboration and an admissibility gate before any downstream use.</li>
+              <li><strong>Vulnerability triage:</strong> NVD CVEs fused with CISA KEV and FIRST EPSS into a transparent score, CVSS + 10&middot;EPSS + 5&middot;[KEV] + 2&middot;[ransomware].</li>
+            </ul>
+          </div>
+          <div class="fx-panel rv" style="transition-delay:.05s">
+            <div class="fx-entry">
+              <div class="fx-entry__meta"><span class="fx-badge fx-badge--progress">Doctoral coursework</span></div>
+              <div class="fx-entry__title">From risk models to remediation</div>
+            </div>
+            <ul class="hl-list" style="margin-top:14px;">
+              <li><strong>Attack paths:</strong> attack graphs with k-shortest-path analysis, mapped to MITRE ATT&amp;CK for ICS and exported as STIX 2.1.</li>
+              <li><strong>Simulation:</strong> a digital twin built from scan data, with checkpoint rollback for testing remediation before touching the real network.</li>
+              <li><strong>Crypto readiness:</strong> harvest-now-decrypt-later exposure and a migration plan toward NIST post-quantum standards.</li>
+              <li><strong>Write-up:</strong> an ACM-format paper, "Evidence-Bounded Vulnerability Intelligence for OT/IoT Networks," in preparation.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="hl-note rv">All Breakwater devices are simulated containers. No real operational network was scanned.</p>
+      </div>
+    </section>
+
+    <section class="fx-section" aria-label="Next steps">
+      <div class="container">
+        <div class="fx-hero__cta rv" style="justify-content:flex-start;">
+          <a class="fx-btn fx-btn--primary" href="research.html">View Research</a>
+          <a class="fx-btn" href="contact.html">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fx-footer">
+    <div class="container">
+      <span>&copy; <span id="year"></span> Ezekiel Ologunde</span>
+      <span>Birmingham, AL &nbsp;&middot;&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/js/mesh.js"></script>
+  <script src="assets/js/future.js"></script>
+</body>
+</html>

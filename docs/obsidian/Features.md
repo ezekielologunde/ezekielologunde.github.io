@@ -2,7 +2,7 @@
 project: ezekielologunde-github-io
 type: features
 status: active
-last_updated: 2026-08-22
+last_updated: 2026-09-23
 tags: [project/ezekielologunde-github-io]
 ---
 
@@ -20,6 +20,7 @@ See [[Project]] for stack/purpose context.
 | `education.html` | Doctoral, graduate, and undergraduate training |
 | `research.html` | Published papers on AI security, threat modeling, risk governance |
 | `writing.html` | Practitioner essays on breaches, compliance, AI security |
+| `homelab.html` | Self-hosted security monitoring lab (described by role, no addresses or hostnames) and the Breakwater OT/IoT lab, labeled as doctoral coursework. Linked from the index portal grid (07), not from the main nav. Added 2026-09-23. |
 | `contact.html` | Contact form for research collaboration, consulting, speaking (client-side handled in `site.js`, `#contactForm`) |
 
 ## Resource hub track
