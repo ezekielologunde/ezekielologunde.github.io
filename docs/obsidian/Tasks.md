@@ -40,7 +40,7 @@ not commitments — verify before acting on them.
 
 ## Confirmed non-issues (do not "fix")
 
-- The contact form's mailto: handoff (`assets/js/story.js`) is intentional,
+- The contact form's mailto: handoff (`assets/js/casefile.js`) is intentional,
   not a stub — there is no backend in this repo.
 - Input `placeholder="..."` attributes flagged by a naive grep for
   "placeholder" are normal HTML form UX text, not TODO markers.

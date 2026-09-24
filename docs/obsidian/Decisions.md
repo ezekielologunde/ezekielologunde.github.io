@@ -10,6 +10,15 @@ tags: [project/ezekielologunde-github-io]
 
 See [[Project]] and [[Features]].
 
+## 2026-09-24: Case file redesign replaces the story redesign
+
+- **Decision:** the site is told as an investigation report ("Case file: E. Ologunde") on a dark forensic-lab ground with evidence-tag surfaces, with AI security as a central thread. Spec: `docs/superpowers/specs/2026-09-24-casefile-redesign-design.md`. Built on branch `casefile-redesign`; `story-redesign` stays as the fallback.
+- **Why:** the owner found the story version generic. A case file is specific to him (M.S. Cyber Forensics), and it lets real work (lab numbers, Breakwater figures, a threat model) carry the AI and cyber theme instead of decorative neural imagery.
+- **Anti-template rules:** no gradients or glow, no mesh or particles, no glass, no italic accent on the name, no oversized chapter numerals, no pill buttons, no dot-and-line timelines, no centered hero, no uniform rounded card grids, no emoji or stock icons.
+- **Credentials:** CEH, AWS Cloud Practitioner, CISSP and OSCP are hidden until the owner confirms them; they are not in the profile files.
+- **Figures:** only real, sanitized data from the owner's coursework files, labeled "doctoral coursework"; no address of any kind. The LLM threat model is labeled illustrative and cites the design notes it comes from.
+- **Alternatives considered:** a paper case-file look with a stamp color (rejected: too close to the cream and burgundy story version), and a neon terminal look (rejected: a cliche the owner asked to avoid).
+
 ## 2026-09-24: Story redesign replaces the dark neural-mesh look
 
 - **Decision:** the home page became one scrolling story in five numbered chapters, and every page moved to one light editorial system (`assets/css/story.css`) drawn from the new portrait. Spec: `docs/superpowers/specs/2026-09-24-story-redesign-design.md`.

@@ -22,12 +22,12 @@ creators to follow on social platforms).
 
 - **Static HTML/CSS/JS** — no framework, no bundler, no package.json. Every
   page is a hand-authored `.html` file at the repo root.
-- **Styling**: one shared stylesheet, `assets/css/story.css` (story design
-  system, added 2026-09-24: warm paper, navy ink, burgundy accent, Fraunces,
+- **Styling**: one shared stylesheet, `assets/css/casefile.css` (case file design
+  system, added 2026-09-24 on branch `casefile-redesign`: dark forensic-lab ground, evidence-tag paper, one signal color, Archivo, Newsreader, IBM Plex Mono; it replaces the story system of warm paper, navy ink, burgundy accent, Fraunces,
   Source Sans 3 and JetBrains Mono). Tokens are prefixed `--eo-`; legacy
   aliases (`--signal`, `--muted`, and so on) keep the preserved resource
   pages' inline styles working. See [[Decisions]].
-- **Behavior**: `assets/js/story.js` (menu toggle, current page, scroll
+- **Behavior**: `assets/js/casefile.js` (menu toggle, current page, scroll
   reveals, home chapter rail, reading progress bar, mailto contact form),
   plus `assets/js/dir-tiktok.js`, `dir-instagram.js` and `dir-podcast.js`
   holding the directory data and search that used to be inline scripts.
@@ -72,11 +72,11 @@ cleanup items, and [[Changelog]] for project history.
 "Leading Cybersecurity Companies.html",
 "Paid Trainings.html",
 "Policy framework analysis.html"  older/legacy copies (see [[Tasks]])
-/assets/css/story.css
-/assets/js/story.js, dir-*.js
+/assets/css/casefile.css
+/assets/js/casefile.js, dir-*.js
 /assets/img/ezekiel-{800,400,96}.jpg  portrait (hero, small placements, header avatar)
 /assets/img/homelab-*.svg         sanitized homelab figures
-/docs/superpowers/specs/          design specs (story redesign, 2026-09-24)
+/docs/superpowers/specs/          design specs (story and case file redesigns, 2026-09-24)
 ```
 
 No `Architecture.md` — the layout above is the entire architecture; there is

@@ -110,3 +110,12 @@ Meta CSP on every page: `default-src 'self'; script-src 'self'; style-src 'self'
 - Headless Chrome screenshots of index, about, homelab, built and one resource page at 1300px and 400px, inspected by eye against section 3.
 - Script: every internal `href` and `src` resolves (files and anchors); no page references story.css or story.js; every `target="_blank"` has `rel="noopener noreferrer"`; every page has the CSP meta; no em dashes in new copy; no CEH, AWS Cloud Practitioner, CISSP or OSCP on any main page.
 - Contrast script over the token pairs above.
+
+## 11. Addendum (same day, during the build): the AI thread
+
+The owner added a requirement mid-build: the theme must be an AI and cyber story, not only forensics. The case-file frame stays; the "matter under investigation" becomes how he moved from keeping systems up to securing AI-era systems. Built only from verified facts in `master-profile.json` and `doctoral-research.json`:
+
+- Summary, case header and timeline carry the thread: Introduction to Generative AI (Google Cloud, May 2023), SANS AI Cybersecurity Forum (2024), the App Academy AI engineering certificate (July 2025), the AI risk essays (Medium, November and December 2025), Breakwater's AI phases and the Howard AI Network Agentic AI Bootcamp (summer 2026), and praxis research on explainable AI, AI and ML threat modeling and AI-enabled security governance (fall 2026).
+- **Exhibit D, AI security** (home page): D.1 the Breakwater paper's rule that AI may propose and rank but a finding closes only on a measured witness, with the paper's seven-row technique table; D.2 models as targets (federated Transformer IDS with Multi-Krum, differential privacy and SCAFFOLD; a PPO agent behind a tiered safety controller; five-stage remediation); D.3 an illustrative threat model of a language model near systems he runs, every control cited to `built.html` (HoWz) or `homelab.html` (local model), labeled "not an audit".
+- Exhibits after C are renumbered: D AI security, E software, F written record. New finding F-03 ("I let AI propose, never conclude") and a Part 6, "Open lines of inquiry", for now and next; Report to becomes Part 7.
+- NIST AI RMF is not claimed (the profile says NIST RMF). The withdrawn Cengage session is not mentioned. No chatbot, no backend, no neural imagery.
