@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 470" role="img" aria-labelledby="t d">
+  <title id="t">Security monitoring lab architecture</title>
+  <desc id="d">Log sources (firewall, DNS sinkhole, reverse proxy, containers and Linux hosts, host-based detection agents) forward over syslog into one SIEM index. Scheduled searches produce a daily digest and a critical-event watch. Uptime monitoring and device discovery run alongside.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b6cff"/><stop offset=".55" stop-color="#a855f7"/><stop offset="1" stop-color="#ff4fd8"/></linearGradient>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#4deeff"/></marker>
+    <style>
+      .bg{fill:#060814}
+      .box{fill:#0e1224;stroke:rgba(140,160,255,.32);stroke-width:1.2}
+      .hot{fill:#0e1224;stroke:url(#g);stroke-width:2}
+      .t{font:600 14px 'Manrope',Arial,sans-serif;fill:#eef1ff}
+      .s{font:500 11.5px 'Manrope',Arial,sans-serif;fill:#929ac4}
+      .h{font:700 11px 'JetBrains Mono',monospace;fill:#4deeff;letter-spacing:.08em}
+      .ln{stroke:#4deeff;stroke-width:1.6;fill:none;marker-end:url(#a)}
+      .pl{stroke:#4deeff;stroke-width:1.6;fill:none}
+      .dl{stroke:#4a5080;stroke-width:1.4;fill:none;stroke-dasharray:5 5;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect class="bg" width="920" height="470" rx="14"/>
+
+  <text class="h" x="40" y="38">LOG SOURCES</text>
+  <rect class="box" x="40" y="54" width="230" height="52" rx="10"/><text class="t" x="58" y="77">Firewall</text><text class="s" x="58" y="94">open-source firewall VM</text>
+  <rect class="box" x="40" y="118" width="230" height="52" rx="10"/><text class="t" x="58" y="141">DNS sinkhole</text><text class="s" x="58" y="158">ad and tracker filtering</text>
+  <rect class="box" x="40" y="182" width="230" height="52" rx="10"/><text class="t" x="58" y="205">Reverse proxy</text><text class="s" x="58" y="222">fronts the web consoles</text>
+  <rect class="box" x="40" y="246" width="230" height="52" rx="10"/><text class="t" x="58" y="269">Containers and Linux hosts</text><text class="s" x="58" y="286">container host, guests</text>
+  <rect class="box" x="40" y="310" width="230" height="52" rx="10"/><text class="t" x="58" y="333">Host-based detection</text><text class="s" x="58" y="350">manager plus agents, alert mirror</text>
+
+  <path class="pl" d="M270 80 H330 V336 M270 144 H330 M270 208 H330 M270 272 H330 M270 336 H330"/>
+  <path class="ln" d="M330 208 H352"/>
+  <text class="s" x="284" y="384">syslog forwarding</text>
+
+  <text class="h" x="360" y="38">SIEM</text>
+  <rect class="hot" x="356" y="150" width="190" height="116" rx="12"/>
+  <text class="t" x="374" y="184">SIEM index</text>
+  <text class="s" x="374" y="204">one index for all sources</text>
+  <text class="s" x="374" y="222">time zones normalized</text>
+  <text class="s" x="374" y="240">search-only service account</text>
+
+  <path class="pl" d="M546 208 H580 V152 M580 208 V264"/>
+  <text class="h" x="612" y="38">OUTPUTS</text>
+  <rect class="box" x="612" y="120" width="268" height="64" rx="10"/><text class="t" x="630" y="147">Scheduled detection searches</text><text class="s" x="630" y="166">daily digest, critical-event watch</text>
+  <rect class="box" x="612" y="232" width="268" height="64" rx="10"/><text class="t" x="630" y="259">Alerting</text><text class="s" x="630" y="278">new device on the network</text>
+  <path class="ln" d="M580 152 H612"/>
+  <path class="ln" d="M580 264 H612"/>
+
+  <text class="h" x="40" y="420">ALONGSIDE</text>
+  <rect class="box" x="130" y="404" width="210" height="44" rx="10"/><text class="t" x="146" y="431">Uptime checks</text>
+  <rect class="box" x="352" y="404" width="230" height="44" rx="10"/><text class="t" x="368" y="431">Reachability and uplink view</text>
+  <rect class="box" x="594" y="404" width="286" height="44" rx="10"/><text class="t" x="610" y="431">LAN device discovery</text>
+  <path class="dl" d="M700 404 V296"/>
+</svg>

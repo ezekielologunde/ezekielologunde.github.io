@@ -84,6 +84,12 @@
         </div>
 
         <div class="fx-panel rv" style="margin-top:18px;">
+          <div class="fx-entry__meta" style="margin-bottom:12px;">Architecture diagram</div>
+          <img src="assets/img/homelab-architecture.svg" alt="Diagram of the security monitoring lab: log sources forward over syslog into one SIEM index, which feeds scheduled detection searches and alerting, with uptime checks, reachability and device discovery alongside." style="width:100%;height:auto;border-radius:12px;" loading="lazy">
+          <p style="margin-top:10px;color:var(--muted,#929ac4);font-size:.85rem;">Generic by design: roles only, no addresses or hostnames.</p>
+        </div>
+
+        <div class="fx-panel rv" style="margin-top:18px;">
           <div class="fx-entry__meta" style="margin-bottom:12px;">Log flow</div>
           <div class="hl-flow" role="list" aria-label="Log flow from sources to digest">
             <span class="hl-flow__step" role="listitem">Firewall, DNS, proxy, containers, host agents</span>

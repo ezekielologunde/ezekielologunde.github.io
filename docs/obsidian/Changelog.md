@@ -14,6 +14,7 @@ Recorded here for reference; extend this file going forward as real changes
 land.
 
 ## 2026-09-23: Homelab page (working tree, not committed)
+- Added a generic architecture diagram (`assets/img/homelab-architecture.svg`, roles only, no addressing) to `homelab.html`.
 - Added `homelab.html` describing the homelab security monitoring lab and the Breakwater doctoral-coursework lab. Security rule for this page: no internal IP addresses, hostnames, credentials, license details, or addressing diagrams.
 - Added portal 07 (Homelab) to the Explore grid in `index.html`.
 
