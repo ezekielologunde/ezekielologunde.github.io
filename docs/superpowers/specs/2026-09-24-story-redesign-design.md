@@ -35,7 +35,7 @@ Every biographical claim traces to `Personal Assisant/profile/master-profile.jso
 ## 3. Information architecture
 
 - **Primary nav** (every page): Story (home), About, Lab, Built, Research, Writing, Education, Credentials, Resources, Contact. Collapses to a disclosure button under 1040px.
-- **Chapter rail** (home only): fixed at the left edge on wide screens (1240px and up), listing 01 to 05 plus Contact, with the current chapter highlighted. Below that width a 3px reading-progress bar under the header does the orientation job.
+- **Chapter rail** (home only): fixed at the left edge on wide screens (1440px and up, where it clears the content column), listing 01 to 05 plus Contact, with the current chapter highlighted. Below that width a 3px reading-progress bar under the header does the orientation job.
 - **Detail pages** (about, homelab, built, research, writing, education, credentials, contact) share one template: page head (mono kicker, serif title, lede), numbered content sections, then a "Continue the story" strip linking the previous and next page in story order: About, Education, Lab, Built, Research, Writing, Credentials, Contact.
 - **Resource hub and guide pages** keep their body copy. They get the shared shell (header, footer, tokens, typography) and restyled content components. Two self-styled long documents (`guide.html`, `policy-framework-analysis.html`) keep their internal styles and receive the shared header and footer only.
 - **URLs**: no page is renamed or removed. The five space-named redirect stubs stay as they are.
