@@ -7,7 +7,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Homelab | Ezekiel Ologunde</title>
   <meta name="description" content="A self-hosted security monitoring and detection lab, and the Breakwater OT/IoT vulnerability lab from doctoral coursework at George Washington University.">
-  <meta name="theme-color" content="#f7f1e8">
+  <meta name="theme-color" content="#15171a">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Homelab | Ezekiel Ologunde">
   <meta property="og:description" content="A self-hosted security monitoring and detection lab, and the Breakwater OT/IoT vulnerability lab from doctoral coursework at George Washington University.">
@@ -17,22 +17,23 @@
   <link rel="icon" type="image/jpeg" href="assets/img/ezekiel-96.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
-  <link rel="stylesheet" href="assets/css/story.css">
-  <script src="assets/js/story.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400..600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/casefile.css">
+  <script src="assets/js/casefile.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
   <div class="wrap site-head__in">
     <a class="brand" href="index.html">
-      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="40" height="40" alt="">
-      <span class="brand__name">Ezekiel Ologunde</span>
+      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="32" height="32" alt="">
+      <span class="brand__name">E. Ologunde</span>
+      <span class="brand__file">Case file</span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span>Menu</button>
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
-        <li><a href="index.html">Story</a></li>
+        <li><a href="index.html">Case file</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="homelab.html" aria-current="page">Lab</a></li>
         <li><a href="built.html">Built</a></li>
@@ -48,11 +49,15 @@
   <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
 </header>
 <main id="main">
-<header class="page-head">
+<header class="subfile">
   <div class="wrap">
-    <p class="kicker">Hands-on practice</p>
-    <h1 class="page-head__title">Homelab</h1>
-    <p class="page-head__lede">A self-hosted security monitoring and detection lab, and the Breakwater OT/IoT vulnerability lab from my doctoral coursework.</p>
+    <p class="subfile__ref"><b>Case file EO</b><span>Section: Hands-on practice</span><span>Ref. EO-LAB</span><span><a href="index.html">Back to the case file</a></span></p>
+    <div class="subfile__grid">
+      <div class="subfile__main">
+        <h1 class="subfile__title">Homelab</h1>
+        <p class="subfile__lede">A self-hosted security monitoring and detection lab, and the Breakwater OT/IoT vulnerability lab from my doctoral coursework.</p>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -174,6 +179,16 @@
         </ul>
       </div>
     </div>
+    <div class="block rv" style="margin-top:36px">
+      <span class="block__label">The AI thread</span>
+      <h3 class="block__title">Where AI helps, and where it is kept on a leash</h3>
+      <ul class="checklist">
+        <li><strong>AI proposes, evidence decides:</strong> LLM-guided mutation fuzzing and AutoML ranking may propose and rank, but a finding closes only on a measured or scoped, simulated witness.</li>
+        <li><strong>Models as targets:</strong> a federated, Transformer-based intrusion-detection model trained across simulated sites, with Multi-Krum against poisoned client updates, differential privacy (Gaussian mechanism, R&eacute;nyi accounting) and SCAFFOLD for client drift.</li>
+        <li><strong>Agents behind safety controls:</strong> a PPO reinforcement-learning agent for offensive testing behind a tiered safety controller with SHA-256 evidence-chain logging, and remediation that runs simulate, verify, approve, execute, health-check.</li>
+      </ul>
+      <p><a class="arrow-link" href="index.html#exhibit-d">The AI security exhibit in the case file</a></p>
+    </div>
     <p class="note rv">All Breakwater devices are simulated containers. No real operational network was scanned.</p>
     <div class="btn-row rv" style="margin-top:32px">
       <a class="btn btn--solid" href="research.html">View research</a>
@@ -182,7 +197,7 @@
   </div>
 </section>
 </main>
-<nav class="continue" aria-label="Continue the story">
+<nav class="continue" aria-label="Previous and next section">
   <div class="wrap continue__in">
     <a class="prev" href="education.html"><span class="continue__k">&larr; Previous</span><span class="continue__t">Education</span></a>
     <a class="next" href="built.html"><span class="continue__k">Next &rarr;</span><span class="continue__t">Built</span></a>
@@ -192,17 +207,17 @@
   <div class="wrap site-foot__in">
     <div>
       <p class="site-foot__name">Ezekiel Ologunde</p>
-      <p class="site-foot__meta">Cybersecurity consultant, educator and doctoral researcher. Birmingham, Alabama.</p>
+      <p class="site-foot__meta">Security consultant, cybersecurity instructor and doctoral researcher. Birmingham, Alabama.</p>
     </div>
     <ul class="site-foot__links">
-      <li><a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></li>
+      <li><a href="mailto:ezekiel@cyntraix.io">Email</a></li>
       <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
       <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
       <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       <li><a href="Resourcehub.html">Resource hub</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <p class="site-foot__legal">&copy; <span data-year>2026</span> Ezekiel Ologunde. No trackers, no analytics, no cookies.</p>
+    <p class="site-foot__legal"><span>End of file. &copy; <span data-year>2026</span> Ezekiel Ologunde.</span><span>No trackers, no analytics, no cookies.</span></p>
   </div>
 </footer>
 </body>
