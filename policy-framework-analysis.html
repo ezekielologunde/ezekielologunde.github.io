@@ -6,6 +6,14 @@
 <title>Policy Framework Analysis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" type="image/jpeg" href="assets/img/ezekiel-96.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="assets/css/story.css">
+<script src="assets/js/story.js" defer></script>
+<style>.doc-shell .sidebar{top:92px}</style>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap');
   :root {
@@ -145,17 +153,34 @@
   }
 </style>
 </head>
-<body>
+<body class="doc-shell" data-section="Resourcehub.html">
 
-<nav style="position:sticky;top:0;z-index:200;background:rgba(10,13,16,0.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,180,84,0.25);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;">
-  <a href="index.html" style="display:flex;align-items:center;gap:8px;color:#ffb454;text-decoration:none;font-weight:700;">
-    <span style="width:7px;height:7px;border-radius:50%;background:#6ee7b0;box-shadow:0 0 8px #6ee7b0;"></span>
-    Ezekiel Ologunde
-  </a>
-  <a href="Resourcehub.html" style="color:#ffb454;text-decoration:none;border:1px solid rgba(255,180,84,0.3);padding:6px 14px;border-radius:4px;">&larr; Resource Index</a>
-</nav>
-
-<div class="page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html">
+      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="40" height="40" alt="">
+      <span class="brand__name">Ezekiel Ologunde</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="homelab.html">Lab</a></li>
+        <li><a href="built.html">Built</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="credentials.html">Credentials</a></li>
+        <li><a href="Resourcehub.html">Resources</a></li>
+        <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+</header>
+<div class="page" id="main">
 
 <!-- Hero -->
 <div class="hero">
@@ -251,25 +276,25 @@
     <span class="fw-tag tag-vol">Voluntary</span>
     <h4>NIST Cybersecurity Framework (CSF 2.0)</h4>
     <p>Developed by the U.S. government. Widely adopted across industries. Organized around six functions: Govern, Identify, Protect, Detect, Respond, Recover.</p>
-    <p style="margin-top:8px;"><a href="https://www.nist.gov/cyberframework" target="_blank">nist.gov/cyberframework</a></p>
+    <p style="margin-top:8px;"><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">nist.gov/cyberframework</a></p>
   </div>
   <div class="fw-card">
     <span class="fw-tag tag-cert">Certifiable</span>
     <h4>ISO/IEC 27001</h4>
     <p>International standard for Information Security Management Systems (ISMS). Organizations can be formally certified. Mandatory in some regulated industries worldwide.</p>
-    <p style="margin-top:8px;"><a href="https://www.iso.org/standard/27001" target="_blank">iso.org/standard/27001</a></p>
+    <p style="margin-top:8px;"><a href="https://www.iso.org/standard/27001" target="_blank" rel="noopener noreferrer">iso.org/standard/27001</a></p>
   </div>
   <div class="fw-card">
     <span class="fw-tag tag-vol">Voluntary</span>
     <h4>CIS Critical Security Controls v8</h4>
     <p>A prioritized list of 18 practical security controls. Popular with smaller organizations. Mapped directly to real-world attack data and threat intelligence.</p>
-    <p style="margin-top:8px;"><a href="https://www.cisecurity.org/controls" target="_blank">cisecurity.org/controls</a></p>
+    <p style="margin-top:8px;"><a href="https://www.cisecurity.org/controls" target="_blank" rel="noopener noreferrer">cisecurity.org/controls</a></p>
   </div>
   <div class="fw-card">
     <span class="fw-tag tag-cert">Governance</span>
     <h4>COBIT 2019</h4>
     <p>Focuses on IT governance and management. Widely used by auditors and large enterprises. Connects business goals to IT security controls and accountability structures.</p>
-    <p style="margin-top:8px;"><a href="https://www.isaca.org/resources/cobit" target="_blank">isaca.org/resources/cobit</a></p>
+    <p style="margin-top:8px;"><a href="https://www.isaca.org/resources/cobit" target="_blank" rel="noopener noreferrer">isaca.org/resources/cobit</a></p>
   </div>
 </div>
 
@@ -706,9 +731,22 @@
 
 </div>
 
-<footer style="border-top:1px solid rgba(255,255,255,0.08);padding:24px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#8b96a1;text-align:center;">
-  <a href="index.html" style="color:#cc8f3f;">&larr; Back to ezekielologunde.github.io</a>
+<footer class="site-foot">
+  <div class="wrap site-foot__in">
+    <div>
+      <p class="site-foot__name">Ezekiel Ologunde</p>
+      <p class="site-foot__meta">Cybersecurity consultant, educator and doctoral researcher. Birmingham, Alabama.</p>
+    </div>
+    <ul class="site-foot__links">
+      <li><a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></li>
+      <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+      <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="Resourcehub.html">Resource hub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="site-foot__legal">&copy; <span data-year>2026</span> Ezekiel Ologunde. No trackers, no analytics, no cookies.</p>
+  </div>
 </footer>
-
 </body>
 </html>

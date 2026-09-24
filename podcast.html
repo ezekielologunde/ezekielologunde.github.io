@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cybersecurity Podcast Hub — Ezekiel Ologunde</title>
-  <meta name="description" content="A directory of industry-leading cybersecurity podcasts covering Zero Trust, threat intelligence, and career growth." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Cybersecurity Podcast Hub | Ezekiel Ologunde</title>
+  <meta name="description" content="A directory of industry-leading cybersecurity podcasts covering Zero Trust, threat intelligence, and career growth.">
+  <meta name="theme-color" content="#f7f1e8">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cybersecurity Podcast Hub | Ezekiel Ologunde">
+  <meta property="og:description" content="A directory of industry-leading cybersecurity podcasts covering Zero Trust, threat intelligence, and career growth.">
+  <meta property="og:url" content="https://ezekielologunde.github.io/podcast.html">
+  <meta property="og:image" content="https://ezekielologunde.github.io/assets/img/ezekiel-800.jpg">
+  <link rel="canonical" href="https://ezekielologunde.github.io/podcast.html">
+  <link rel="icon" type="image/jpeg" href="assets/img/ezekiel-96.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/story.css">
+  <script src="assets/js/story.js" defer></script>
   <style>
     .eo-pod-card { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
     .eo-pod-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
@@ -19,20 +30,35 @@
     .eo-dir-empty { font-family: var(--mono); font-size: 12.5px; color: var(--faint); padding: 8px 0 0; grid-column: 1 / -1; }
     .eo-dir-count { font-family: var(--mono); font-size: 11px; color: var(--faint); margin: -6px 0 18px; display: block; }
   </style>
+  <script src="assets/js/dir-podcast.js" defer></script>
 </head>
-<body>
-
-  <nav class="eo-nav" aria-label="Main navigation">
-    <div class="container eo-nav__inner">
-      <a class="eo-brand" href="index.html"><span class="eo-brand__pip" aria-hidden="true"></span>Ezekiel Ologunde</a>
-      <button class="eo-nav__toggle" aria-expanded="false" aria-controls="eo-nav-links">Menu ▾</button>
-      <div class="eo-nav__links" id="eo-nav-links">
-        <a href="index.html">Home</a>
-        <a href="Resourcehub.html">Resource Index</a>
-      </div>
-    </div>
-  </nav>
-
+<body data-section="Resourcehub.html">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html">
+      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="40" height="40" alt="">
+      <span class="brand__name">Ezekiel Ologunde</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="homelab.html">Lab</a></li>
+        <li><a href="built.html">Built</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="credentials.html">Credentials</a></li>
+        <li><a href="Resourcehub.html">Resources</a></li>
+        <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+</header>
+<main id="main">
   <header class="eo-pagehead">
     <div class="container">
       <a class="eo-pagehead__back" href="Resourcehub.html">&larr; Resource Index</a>
@@ -42,7 +68,7 @@
     </div>
   </header>
 
-  <main>
+  
     <section class="eo-section">
       <div class="container">
 
@@ -60,129 +86,22 @@
       </div>
     </section>
   </main>
-
-  <footer class="eo-footer">
-    <div class="container">
-      <span>&copy; <span id="year"></span> Ezekiel Ologunde</span>
-      <span>Birmingham, AL &nbsp;&middot;&nbsp; <a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></span>
+<footer class="site-foot">
+  <div class="wrap site-foot__in">
+    <div>
+      <p class="site-foot__name">Ezekiel Ologunde</p>
+      <p class="site-foot__meta">Cybersecurity consultant, educator and doctoral researcher. Birmingham, Alabama.</p>
     </div>
-  </footer>
-
-  <script src="assets/js/site.js"></script>
-  <script>
-    const podcasts = [
-        {
-            name: "The Dr. Zero Trust Podcast",
-            description: "Dr. Chase Cunningham breaks down Zero Trust architecture and the future of cybersecurity strategy.",
-            apple: "https://podcasts.apple.com/us/podcast/drzerotrust/id1570251081",
-            spotify: "https://open.spotify.com/show/5YrSai2Q9UGATh8GXgzA5K",
-            tags: ["Zero Trust", "Strategy"]
-        },
-        {
-            name: "Threat Vector",
-            description: "Palo Alto Networks' deep dive into real threats, smart defenses, and future trends with industry leaders.",
-            apple: "https://podcasts.apple.com/us/podcast/threat-vector-by-palo-alto-networks/id1725324656",
-            spotify: "https://open.spotify.com/show/3gvMUOv9QDQGFaA87fuSEz",
-            tags: ["Palo Alto Networks", "Threat Intel"]
-        },
-        {
-            name: "Data Security Decoded",
-            description: "Actionable insights to reduce data security risk and improve resilience, featuring Rubrik Zero Labs.",
-            apple: "https://podcasts.apple.com/us/podcast/data-security-decoded/id1738264274",
-            spotify: "https://open.spotify.com/show/3bLXLVq9nSoj3xtrNh0Br5",
-            tags: ["Data Security", "Rubrik"]
-        },
-        {
-            name: "#CyberChats",
-            description: "Educating all ages about personal data care and highlighting positive figures in cybersecurity.",
-            apple: "https://podcasts.apple.com/us/podcast/cyberchats/id1671622288",
-            spotify: "https://open.spotify.com/show/2ZMszup9Qr9P5AuvJiM5vu",
-            tags: ["Education", "Awareness"]
-        },
-        {
-            name: "Zero Trust Thirty",
-            description: "Unique perspectives on the technologies shaping the world of Zero Trust security.",
-            apple: "https://podcasts.apple.com/us/podcast/zero-trust-thirty/id1597779601",
-            spotify: "https://open.spotify.com/show/0brWoMaIcBZiFmTQWNK62K",
-            tags: ["Zero Trust", "Appgate"]
-        },
-        {
-            name: "The FAIK Files",
-            description: "Exploring the intersection of AI and humanity, specifically deepfakes and digital deception.",
-            apple: "https://podcasts.apple.com/us/podcast/the-faik-files/id1771521321",
-            spotify: "https://open.spotify.com/show/7CGEktxUQAbgwQaWB922Ip",
-            tags: ["AI", "Deepfakes"]
-        },
-        {
-            name: "Only Malware in the Building",
-            description: "Solving monthly cyber mysteries with intelligence analysts and former FBI investigators.",
-            apple: "https://podcasts.apple.com/us/podcast/only-malware-in-the-building/id1749644761",
-            spotify: "https://open.spotify.com/show/6Lxwond2BICpOmtpL3i0kM",
-            tags: ["Malware", "FBI", "Forensics"]
-        },
-        {
-            name: "Unixcyber Guy",
-            description: "Real-world insights into cybersecurity careers and industry experience.",
-            apple: "https://podcasts.apple.com/au/podcast/unixguy-cyber-security-career/id1830928775",
-            spotify: "https://open.spotify.com/show/676BEZwcsufFf620HdzbUo",
-            tags: ["Career", "Unix"]
-        },
-        {
-            name: "WT360: Market From All Angles",
-            description: "Focusing on cybersecurity trends and the federal government market (GovCon).",
-            apple: "https://podcasts.apple.com/us/podcast/wt-360-the-market-from-all-angles/id1449676413",
-            spotify: "https://open.spotify.com/show/0oY3l5ApUzgdZKHYoct1rJ",
-            tags: ["GovCon", "Federal IT"]
-        },
-        {
-            name: "Tech Career Blueprint",
-            description: "Roadmaps for moving from entry-level to senior positions in tech and cybersecurity.",
-            apple: "https://podcasts.apple.com/us/podcast/tech-career-blueprint-podcast-presented-by-master-i/id1690081331",
-            spotify: "https://open.spotify.com/show/7kaJodHquryFw5YDw0BShj",
-            tags: ["Career Roadmap", "Certifications"]
-        }
-    ];
-
-    const grid = document.getElementById('podcastGrid');
-    const searchBox = document.getElementById('podcastSearch');
-    const countEl = document.getElementById('podcastCount');
-
-    function renderPodcasts(filter = "") {
-        grid.innerHTML = '';
-
-        const filtered = podcasts.filter(p =>
-            p.name.toLowerCase().includes(filter.toLowerCase()) ||
-            p.tags.some(t => t.toLowerCase().includes(filter.toLowerCase()))
-        );
-
-        countEl.textContent = filtered.length + ' podcast' + (filtered.length === 1 ? '' : 's');
-
-        if (!filtered.length) {
-            grid.innerHTML = '<p class="eo-dir-empty">No podcasts match your search.</p>';
-            return;
-        }
-
-        filtered.forEach(p => {
-            const card = document.createElement('div');
-            card.className = 'eo-card eo-pod-card';
-            card.innerHTML = `
-                <div>
-                    <div class="eo-pod-card__tags">${p.tags.map(t => `<span class="eo-tag">${t}</span>`).join('')}</div>
-                    <h3 class="eo-pod-card__name">${p.name}</h3>
-                    <p class="eo-pod-card__desc">${p.description}</p>
-                </div>
-                <div class="eo-pod-card__links">
-                    <a class="eo-link" href="${p.apple}" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
-                    <a class="eo-link eo-link--primary" href="${p.spotify}" target="_blank" rel="noopener noreferrer">Spotify</a>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-    }
-
-    searchBox.addEventListener('input', (e) => renderPodcasts(e.target.value));
-
-    renderPodcasts();
-  </script>
+    <ul class="site-foot__links">
+      <li><a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></li>
+      <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+      <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="Resourcehub.html">Resource hub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="site-foot__legal">&copy; <span data-year>2026</span> Ezekiel Ologunde. No trackers, no analytics, no cookies.</p>
+  </div>
+</footer>
 </body>
 </html>

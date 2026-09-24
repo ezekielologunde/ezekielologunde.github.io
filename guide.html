@@ -6,6 +6,14 @@
 <title>Zero Trust, ICAM & CMMC — Presentation Research Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,600;0,8..60,700;1,8..60,300&family=JetBrains+Mono:wght@400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" type="image/jpeg" href="assets/img/ezekiel-96.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="assets/css/story.css">
+<script src="assets/js/story.js" defer></script>
+<style>.doc-shell .sidebar{top:92px}</style>
 <style>
   :root {
     --navy: #0d2240;
@@ -540,19 +548,36 @@
   }
 </style>
 </head>
-<body>
+<body class="doc-shell" data-section="Resourcehub.html">
 
-<nav style="position:sticky;top:0;z-index:200;background:rgba(10,13,16,0.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,180,84,0.25);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;">
-  <a href="index.html" style="display:flex;align-items:center;gap:8px;color:#ffb454;text-decoration:none;font-weight:700;">
-    <span style="width:7px;height:7px;border-radius:50%;background:#6ee7b0;box-shadow:0 0 8px #6ee7b0;"></span>
-    Ezekiel Ologunde
-  </a>
-  <a href="Resourcehub.html" style="color:#ffb454;text-decoration:none;border:1px solid rgba(255,180,84,0.3);padding:6px 14px;border-radius:4px;">&larr; Resource Index</a>
-</nav>
-
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html">
+      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="40" height="40" alt="">
+      <span class="brand__name">Ezekiel Ologunde</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="homelab.html">Lab</a></li>
+        <li><a href="built.html">Built</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="credentials.html">Credentials</a></li>
+        <li><a href="Resourcehub.html">Resources</a></li>
+        <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+</header>
 <div class="topbar">UNCLASSIFIED // FOR ACADEMIC USE — Zero Trust · ICAM · CMMC Presentation Research Guide</div>
 
-<header>
+<header id="main">
   <div class="header-inner">
     <div class="header-badge">Cybersecurity Architecture · Academic Reference</div>
     <h1>Zero Trust, ICAM &amp; CMMC<br><span>Presentation Research Guide</span></h1>
@@ -639,13 +664,13 @@
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy introduction (pages 1–4) — how DoD frames mission dependence on IT systems</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">FICAM Architecture overview — how agencies describe mission needs (civilian/federal systems)</span>
-                <a href="https://www.idmanagement.gov/arch/" target="_blank">idmanagement.gov/arch/</a>
+                <a href="https://www.idmanagement.gov/arch/" target="_blank" rel="noopener noreferrer">idmanagement.gov/arch/</a>
               </div>
             </li>
           </ul>
@@ -674,13 +699,13 @@
             <li>
               <div>
                 <span class="src-desc">NIST SP 800-207, Sections 3 & 4 — Logical Components and Deployment Scenarios (cloud, hybrid, on-prem Zero Trust)</span>
-                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank" rel="noopener noreferrer">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CISA Zero Trust Maturity Model (pages 4–8) — environment types</span>
-                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank" rel="noopener noreferrer">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
               </div>
             </li>
           </ul>
@@ -719,7 +744,7 @@
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy, pages 6–8 — user experience requirements alongside security</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
             <li>
@@ -731,7 +756,7 @@
             <li>
               <div>
                 <span class="src-desc">FICAM Architecture (idmanagement.gov) — user roles and access patterns</span>
-                <a href="https://www.idmanagement.gov/arch/" target="_blank">idmanagement.gov/arch/</a>
+                <a href="https://www.idmanagement.gov/arch/" target="_blank" rel="noopener noreferrer">idmanagement.gov/arch/</a>
               </div>
             </li>
           </ul>
@@ -760,19 +785,19 @@
             <li>
               <div>
                 <span class="src-desc">CISA Known Exploited Vulnerabilities catalog — browse threats relevant to your industry sector</span>
-                <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">cisa.gov/known-exploited-vulnerabilities-catalog</a>
+                <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">cisa.gov/known-exploited-vulnerabilities-catalog</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CISA Cybersecurity Advisories by sector (healthcare, defense, energy, etc.)</span>
-                <a href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank">cisa.gov/news-events/cybersecurity-advisories</a>
+                <a href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener noreferrer">cisa.gov/news-events/cybersecurity-advisories</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy, pages 2–3 — the threat landscape that drove the strategy</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
           </ul>
@@ -812,25 +837,25 @@
             <li>
               <div>
                 <span class="src-desc"><strong>Start here</strong> — NIST SP 800-207, Section 2 (pages 4–11): Tenets of Zero Trust and the Zero Trust view of a network</span>
-                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank" rel="noopener noreferrer">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy, pages 4–6 — how DoD translates concepts into strategy</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CISA Zero Trust Maturity Model v2, pages 1–6 — the five pillars: Identity, Devices, Networks, Applications, Data</span>
-                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank" rel="noopener noreferrer">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CISA Zero Trust Resource Hub — overview page with links</span>
-                <a href="https://www.cisa.gov/zero-trust-maturity-model" target="_blank">cisa.gov/zero-trust-maturity-model</a>
+                <a href="https://www.cisa.gov/zero-trust-maturity-model" target="_blank" rel="noopener noreferrer">cisa.gov/zero-trust-maturity-model</a>
               </div>
             </li>
           </ul>
@@ -864,19 +889,19 @@
             <li>
               <div>
                 <span class="src-desc">NIST SP 800-207, Section 4 — Deployment Scenarios (pages 22–31): Zero Trust in cloud, remote, and hybrid environments</span>
-                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank" rel="noopener noreferrer">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">NIST SP 1800-35 — Implementing a Zero Trust Architecture (practical guide)</span>
-                <a href="https://pages.nist.gov/zero-trust-architecture/" target="_blank">pages.nist.gov/zero-trust-architecture/</a>
+                <a href="https://pages.nist.gov/zero-trust-architecture/" target="_blank" rel="noopener noreferrer">pages.nist.gov/zero-trust-architecture/</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy, pages 7–10 — DoD target architecture and where Zero Trust applies</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
           </ul>
@@ -916,31 +941,31 @@
             <li>
               <div>
                 <span class="src-desc"><strong>Start here</strong> — FICAM Architecture overview: the three practice areas (Identity, Credential, Access Management) and supporting elements</span>
-                <a href="https://www.idmanagement.gov/arch/" target="_blank">idmanagement.gov/arch/</a>
+                <a href="https://www.idmanagement.gov/arch/" target="_blank" rel="noopener noreferrer">idmanagement.gov/arch/</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">DHS ICAM Implementation Guide — plain-language, practical</span>
-                <a href="https://www.dhs.gov/sites/default/files/publications/icam_implementation_guide_final_version_-_092019.pdf" target="_blank">dhs.gov · icam_implementation_guide_final_version_-_092019.pdf</a>
+                <a href="https://www.dhs.gov/sites/default/files/publications/icam_implementation_guide_final_version_-_092019.pdf" target="_blank" rel="noopener noreferrer">dhs.gov · icam_implementation_guide_final_version_-_092019.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">Federal ICAM policy (CIO.gov / OMB M-19-17 context)</span>
-                <a href="https://www.cio.gov/policies-and-priorities/ICAM/" target="_blank">cio.gov/policies-and-priorities/ICAM/</a>
+                <a href="https://www.cio.gov/policies-and-priorities/ICAM/" target="_blank" rel="noopener noreferrer">cio.gov/policies-and-priorities/ICAM/</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">DoD Enterprise ICAM Reference Design — how DoD implements ICAM as foundation for Zero Trust</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Cyber/DoD_Enterprise_ICAM_Reference_Design.pdf" target="_blank">dodcio.defense.gov · DoD_Enterprise_ICAM_Reference_Design.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Cyber/DoD_Enterprise_ICAM_Reference_Design.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD_Enterprise_ICAM_Reference_Design.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CISA ICAM resources — public safety context, very readable</span>
-                <a href="https://www.cisa.gov/safecom/icam" target="_blank">cisa.gov/safecom/icam</a>
+                <a href="https://www.cisa.gov/safecom/icam" target="_blank" rel="noopener noreferrer">cisa.gov/safecom/icam</a>
               </div>
             </li>
           </ul>
@@ -975,7 +1000,7 @@
             <li>
               <div>
                 <span class="src-desc">FICAM Playbooks — practical implementation guides for provisioning, PIV, federation (scroll to "Playbooks" section)</span>
-                <a href="https://www.idmanagement.gov/arch/" target="_blank">idmanagement.gov/arch/</a>
+                <a href="https://www.idmanagement.gov/arch/" target="_blank" rel="noopener noreferrer">idmanagement.gov/arch/</a>
               </div>
             </li>
             <li>
@@ -987,7 +1012,7 @@
             <li>
               <div>
                 <span class="src-desc">ICAM Program Management 101 — provisioning, deprovisioning, and governance</span>
-                <a href="https://www.idmanagement.gov/university/pm/" target="_blank">idmanagement.gov/university/pm/</a>
+                <a href="https://www.idmanagement.gov/university/pm/" target="_blank" rel="noopener noreferrer">idmanagement.gov/university/pm/</a>
               </div>
             </li>
           </ul>
@@ -1017,19 +1042,19 @@
             <li>
               <div>
                 <span class="src-desc">NIST SP 800-207, Section 2.1 — Tenets 3 and 4: device trust and per-session access</span>
-                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank" rel="noopener noreferrer">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CISA Zero Trust Maturity Model — "Devices" pillar section (pages 13–17)</span>
-                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank" rel="noopener noreferrer">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy — device health and endpoint management section</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
           </ul>
@@ -1069,25 +1094,25 @@
             <li>
               <div>
                 <span class="src-desc"><strong>Start here</strong> — CMMC 101 (DoD official overview, November 2025)</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/CMMC-101-Nov2025.pdf" target="_blank">dodcio.defense.gov · CMMC-101-Nov2025.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/CMMC-101-Nov2025.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · CMMC-101-Nov2025.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">DoD CMMC Resources page</span>
-                <a href="https://dodcio.defense.gov/cmmc/Resources-Documentation/" target="_blank">dodcio.defense.gov/cmmc/Resources-Documentation/</a>
+                <a href="https://dodcio.defense.gov/cmmc/Resources-Documentation/" target="_blank" rel="noopener noreferrer">dodcio.defense.gov/cmmc/Resources-Documentation/</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CMMC About page (DoD CIO)</span>
-                <a href="https://dodcio.defense.gov/cmmc/About/" target="_blank">dodcio.defense.gov/cmmc/About/</a>
+                <a href="https://dodcio.defense.gov/cmmc/About/" target="_blank" rel="noopener noreferrer">dodcio.defense.gov/cmmc/About/</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CMMC 2.0 Model Overview PDF — official DoD framework document</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverview_V2.0_FINAL2_20211202_508.pdf" target="_blank">dodcio.defense.gov · ModelOverview_V2.0_FINAL2_20211202_508.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverview_V2.0_FINAL2_20211202_508.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · ModelOverview_V2.0_FINAL2_20211202_508.pdf</a>
               </div>
             </li>
             <li>
@@ -1119,7 +1144,7 @@
               <li>Search <span class="yt-keyword">"CMMC 2.0 explained 2024"</span> <span class="yt-channel">— Cyber AB or official DoD channels</span></li>
               <li>Search <span class="yt-keyword">"what is controlled unclassified information CUI explained"</span></li>
               <li>Search <span class="yt-keyword">"CMMC Level 1 Level 2 Level 3 difference explained"</span></li>
-              <li>Watch: <a href="https://www.youtube.com/watch?v=MJtontfUEYs" target="_blank">youtube.com/watch?v=MJtontfUEYs</a> <span class="yt-channel">— DoD Zero Trust podcast (also relevant for Slide 15)</span></li>
+              <li>Watch: <a href="https://www.youtube.com/watch?v=MJtontfUEYs" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=MJtontfUEYs</a> <span class="yt-channel">— DoD Zero Trust podcast (also relevant for Slide 15)</span></li>
             </ul>
           </div>
         </div>
@@ -1140,19 +1165,19 @@
             <li>
               <div>
                 <span class="src-desc">CMMC 101 (Nov 2025) — scope definition and what triggers each CMMC level</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/CMMC-101-Nov2025.pdf" target="_blank">dodcio.defense.gov · CMMC-101-Nov2025.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/CMMC-101-Nov2025.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · CMMC-101-Nov2025.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">NIST SP 800-207 introduction — "ZTA is not a product you buy" (page 2) — for the compliance ≠ security argument</span>
-                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank" rel="noopener noreferrer">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy, pages 3–5 — why compliance-based approaches have failed</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
           </ul>
@@ -1192,19 +1217,19 @@
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy, pages 8–10 — operational balance and preserving mission capability</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CISA Zero Trust Maturity Model — "Optimal" maturity descriptions show full implementation cost in complexity</span>
-                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank" rel="noopener noreferrer">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">NIST SP 800-207, Section 3.3 — Trust Algorithm variations: the tradeoff between strict policy and operational flexibility</span>
-                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
+                <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank" rel="noopener noreferrer">nvlpubs.nist.gov · NIST.SP.800-207.pdf</a>
               </div>
             </li>
           </ul>
@@ -1237,7 +1262,7 @@
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy executive summary — the shift from compliance-based to outcomes-based security</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
           </ul>
@@ -1272,19 +1297,19 @@
             <li>
               <div>
                 <span class="src-desc">GDIT "Voices of Innovation" EP4 — Innovating for Security: Zero Trust Solutions in the DoD</span>
-                <a href="https://www.gdit.com/perspectives/podcast/voices-of-innovation/ep-4/innovating-for-security-zero-trust-solutions-in-dod/" target="_blank">gdit.com · Voices of Innovation EP4</a>
+                <a href="https://www.gdit.com/perspectives/podcast/voices-of-innovation/ep-4/innovating-for-security-zero-trust-solutions-in-dod/" target="_blank" rel="noopener noreferrer">gdit.com · Voices of Innovation EP4</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">YouTube version of the podcast</span>
-                <a href="https://www.youtube.com/watch?v=MJtontfUEYs" target="_blank">youtube.com/watch?v=MJtontfUEYs</a>
+                <a href="https://www.youtube.com/watch?v=MJtontfUEYs" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=MJtontfUEYs</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">Podcast page with episode transcript</span>
-                <a href="https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod" target="_blank">podcast.gdit.com · innovating-for-security-zero-trust-solutions-in-dod</a>
+                <a href="https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod" target="_blank" rel="noopener noreferrer">podcast.gdit.com · innovating-for-security-zero-trust-solutions-in-dod</a>
               </div>
             </li>
           </ul>
@@ -1327,19 +1352,19 @@
             <li>
               <div>
                 <span class="src-desc">NIST SP 1800-35 — practical implementation guide showing how ZTA, ICAM, and compliance fit together</span>
-                <a href="https://pages.nist.gov/zero-trust-architecture/" target="_blank">pages.nist.gov/zero-trust-architecture/</a>
+                <a href="https://pages.nist.gov/zero-trust-architecture/" target="_blank" rel="noopener noreferrer">pages.nist.gov/zero-trust-architecture/</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy — "Target Architecture" and the seven Zero Trust pillars (Identity, Devices, Networks, Applications & Workloads, Data, Automation & Orchestration, Visibility & Analytics)</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CISA Zero Trust Maturity Model — convergence of the five pillars working together</span>
-                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank" rel="noopener noreferrer">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
               </div>
             </li>
           </ul>
@@ -1369,13 +1394,13 @@
             <li>
               <div>
                 <span class="src-desc">DoD Zero Trust Strategy — "Implementation Roadmap" and phasing section</span>
-                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
+                <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov · DoD-ZTStrategy.pdf</a>
               </div>
             </li>
             <li>
               <div>
                 <span class="src-desc">CISA Zero Trust Maturity Model — Traditional → Initial → Advanced → Optimal progression for each pillar</span>
-                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
+                <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank" rel="noopener noreferrer">cisa.gov · CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a>
               </div>
             </li>
             <li>
@@ -1419,43 +1444,43 @@
       <div class="qr-group">
         <span class="qr-group-title">Required Sources</span>
         <div class="qr-links">
-          <div class="qr-link-row"><span class="qr-link-desc">NIST SP 800-207 Zero Trust Architecture</span> <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank">nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">DoD Zero Trust Strategy</span> <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">CISA Zero Trust Maturity Model v2</span> <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">cisa.gov/…/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">CISA Zero Trust Resource Hub</span> <a href="https://www.cisa.gov/zero-trust-maturity-model" target="_blank">cisa.gov/zero-trust-maturity-model</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">Federal ICAM Policy (CIO.gov)</span> <a href="https://www.cio.gov/policies-and-priorities/ICAM/" target="_blank">cio.gov/policies-and-priorities/ICAM/</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">DHS ICAM Implementation Guide</span> <a href="https://www.dhs.gov/sites/default/files/publications/icam_implementation_guide_final_version_-_092019.pdf" target="_blank">dhs.gov/…/icam_implementation_guide_final_version_-_092019.pdf</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">FICAM Architecture</span> <a href="https://www.idmanagement.gov/arch/" target="_blank">idmanagement.gov/arch/</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">CMMC Resources (DoD CIO)</span> <a href="https://dodcio.defense.gov/cmmc/Resources-Documentation/" target="_blank">dodcio.defense.gov/cmmc/Resources-Documentation/</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">CMMC 101 (November 2025)</span> <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/CMMC-101-Nov2025.pdf" target="_blank">dodcio.defense.gov/…/CMMC-101-Nov2025.pdf</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">GDIT Podcast (YouTube)</span> <a href="https://www.youtube.com/watch?v=MJtontfUEYs" target="_blank">youtube.com/watch?v=MJtontfUEYs</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">GDIT Podcast page + transcript</span> <a href="https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod" target="_blank">podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">NIST SP 800-207 Zero Trust Architecture</span> <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf" target="_blank" rel="noopener noreferrer">nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">DoD Zero Trust Strategy</span> <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CISA Zero Trust Maturity Model v2</span> <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank" rel="noopener noreferrer">cisa.gov/…/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CISA Zero Trust Resource Hub</span> <a href="https://www.cisa.gov/zero-trust-maturity-model" target="_blank" rel="noopener noreferrer">cisa.gov/zero-trust-maturity-model</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">Federal ICAM Policy (CIO.gov)</span> <a href="https://www.cio.gov/policies-and-priorities/ICAM/" target="_blank" rel="noopener noreferrer">cio.gov/policies-and-priorities/ICAM/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">DHS ICAM Implementation Guide</span> <a href="https://www.dhs.gov/sites/default/files/publications/icam_implementation_guide_final_version_-_092019.pdf" target="_blank" rel="noopener noreferrer">dhs.gov/…/icam_implementation_guide_final_version_-_092019.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">FICAM Architecture</span> <a href="https://www.idmanagement.gov/arch/" target="_blank" rel="noopener noreferrer">idmanagement.gov/arch/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CMMC Resources (DoD CIO)</span> <a href="https://dodcio.defense.gov/cmmc/Resources-Documentation/" target="_blank" rel="noopener noreferrer">dodcio.defense.gov/cmmc/Resources-Documentation/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CMMC 101 (November 2025)</span> <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/CMMC-101-Nov2025.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov/…/CMMC-101-Nov2025.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">GDIT Podcast (YouTube)</span> <a href="https://www.youtube.com/watch?v=MJtontfUEYs" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=MJtontfUEYs</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">GDIT Podcast page + transcript</span> <a href="https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod" target="_blank" rel="noopener noreferrer">podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod</a></div>
         </div>
       </div>
 
       <div class="qr-group">
         <span class="qr-group-title">Additional Recommended Sources</span>
         <div class="qr-links">
-          <div class="qr-link-row"><span class="qr-link-desc">NIST SP 1800-35 (Practical ZTA Guide)</span> <a href="https://pages.nist.gov/zero-trust-architecture/" target="_blank">pages.nist.gov/zero-trust-architecture/</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">DoD CMMC About page</span> <a href="https://dodcio.defense.gov/cmmc/About/" target="_blank">dodcio.defense.gov/cmmc/About/</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">DoD Enterprise ICAM Reference Design</span> <a href="https://dodcio.defense.gov/Portals/0/Documents/Cyber/DoD_Enterprise_ICAM_Reference_Design.pdf" target="_blank">dodcio.defense.gov/…/DoD_Enterprise_ICAM_Reference_Design.pdf</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">ICAM Program Management 101</span> <a href="https://www.idmanagement.gov/university/pm/" target="_blank">idmanagement.gov/university/pm/</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">CISA ICAM (public safety context)</span> <a href="https://www.cisa.gov/safecom/icam" target="_blank">cisa.gov/safecom/icam</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">CISA Known Exploited Vulnerabilities</span> <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">cisa.gov/known-exploited-vulnerabilities-catalog</a></div>
-          <div class="qr-link-row"><span class="qr-link-desc">OMB M-22-09 Zero Trust Memo</span> <a href="https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf" target="_blank">whitehouse.gov/…/M-22-09.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">NIST SP 1800-35 (Practical ZTA Guide)</span> <a href="https://pages.nist.gov/zero-trust-architecture/" target="_blank" rel="noopener noreferrer">pages.nist.gov/zero-trust-architecture/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">DoD CMMC About page</span> <a href="https://dodcio.defense.gov/cmmc/About/" target="_blank" rel="noopener noreferrer">dodcio.defense.gov/cmmc/About/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">DoD Enterprise ICAM Reference Design</span> <a href="https://dodcio.defense.gov/Portals/0/Documents/Cyber/DoD_Enterprise_ICAM_Reference_Design.pdf" target="_blank" rel="noopener noreferrer">dodcio.defense.gov/…/DoD_Enterprise_ICAM_Reference_Design.pdf</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">ICAM Program Management 101</span> <a href="https://www.idmanagement.gov/university/pm/" target="_blank" rel="noopener noreferrer">idmanagement.gov/university/pm/</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CISA ICAM (public safety context)</span> <a href="https://www.cisa.gov/safecom/icam" target="_blank" rel="noopener noreferrer">cisa.gov/safecom/icam</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">CISA Known Exploited Vulnerabilities</span> <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">cisa.gov/known-exploited-vulnerabilities-catalog</a></div>
+          <div class="qr-link-row"><span class="qr-link-desc">OMB M-22-09 Zero Trust Memo</span> <a href="https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf" target="_blank" rel="noopener noreferrer">whitehouse.gov/…/M-22-09.pdf</a></div>
         </div>
       </div>
 
       <div class="qr-group">
         <span class="qr-group-title">APA Citations (Slide 18)</span>
         <div class="apa-list">
-          <div class="apa-item">National Institute of Standards and Technology. (2020). <em>Zero trust architecture</em> (NIST Special Publication 800-207). U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.SP.800-207" target="_blank">https://doi.org/10.6028/NIST.SP.800-207</a></div>
-          <div class="apa-item">Department of Defense Chief Information Officer. (2022). <em>DoD zero trust strategy</em>. U.S. Department of Defense. <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank">https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf</a></div>
-          <div class="apa-item">Cybersecurity and Infrastructure Security Agency. (2023). <em>Zero trust maturity model, version 2</em>. CISA. <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank">https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a></div>
-          <div class="apa-item">Office of Management and Budget. (2022). <em>Moving the U.S. government toward zero trust cybersecurity principles</em> (OMB Memorandum M-22-09). Executive Office of the President. <a href="https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf" target="_blank">https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf</a></div>
-          <div class="apa-item">Department of Defense Chief Information Officer. (2021). <em>Cybersecurity maturity model certification (CMMC) 2.0 model overview</em>. U.S. Department of Defense. <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverview_V2.0_FINAL2_20211202_508.pdf" target="_blank">https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverview_V2.0_FINAL2_20211202_508.pdf</a></div>
-          <div class="apa-item">Federal Chief Information Officers Council. (n.d.). <em>Identity, credential, and access management</em>. CIO.gov. <a href="https://www.cio.gov/policies-and-priorities/ICAM/" target="_blank">https://www.cio.gov/policies-and-priorities/ICAM/</a></div>
-          <div class="apa-item">General Dynamics Information Technology. (n.d.). Innovating for security: Zero trust solutions in the DoD [Podcast episode]. <em>Voices of Innovation</em>. <a href="https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod" target="_blank">https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod</a></div>
+          <div class="apa-item">National Institute of Standards and Technology. (2020). <em>Zero trust architecture</em> (NIST Special Publication 800-207). U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.SP.800-207" target="_blank" rel="noopener noreferrer">https://doi.org/10.6028/NIST.SP.800-207</a></div>
+          <div class="apa-item">Department of Defense Chief Information Officer. (2022). <em>DoD zero trust strategy</em>. U.S. Department of Defense. <a href="https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf" target="_blank" rel="noopener noreferrer">https://dodcio.defense.gov/Portals/0/Documents/Library/DoD-ZTStrategy.pdf</a></div>
+          <div class="apa-item">Cybersecurity and Infrastructure Security Agency. (2023). <em>Zero trust maturity model, version 2</em>. CISA. <a href="https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf" target="_blank" rel="noopener noreferrer">https://www.cisa.gov/sites/default/files/2023-04/CISA_Zero_Trust_Maturity_Model_Version_2_508c.pdf</a></div>
+          <div class="apa-item">Office of Management and Budget. (2022). <em>Moving the U.S. government toward zero trust cybersecurity principles</em> (OMB Memorandum M-22-09). Executive Office of the President. <a href="https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf" target="_blank" rel="noopener noreferrer">https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf</a></div>
+          <div class="apa-item">Department of Defense Chief Information Officer. (2021). <em>Cybersecurity maturity model certification (CMMC) 2.0 model overview</em>. U.S. Department of Defense. <a href="https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverview_V2.0_FINAL2_20211202_508.pdf" target="_blank" rel="noopener noreferrer">https://dodcio.defense.gov/Portals/0/Documents/CMMC/ModelOverview_V2.0_FINAL2_20211202_508.pdf</a></div>
+          <div class="apa-item">Federal Chief Information Officers Council. (n.d.). <em>Identity, credential, and access management</em>. CIO.gov. <a href="https://www.cio.gov/policies-and-priorities/ICAM/" target="_blank" rel="noopener noreferrer">https://www.cio.gov/policies-and-priorities/ICAM/</a></div>
+          <div class="apa-item">General Dynamics Information Technology. (n.d.). Innovating for security: Zero trust solutions in the DoD [Podcast episode]. <em>Voices of Innovation</em>. <a href="https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod" target="_blank" rel="noopener noreferrer">https://podcast.gdit.com/episodes/innovating-for-security-zero-trust-solutions-in-dod</a></div>
         </div>
       </div>
 
@@ -1481,9 +1506,22 @@
   </main>
 </div>
 
-<footer style="border-top:1px solid rgba(255,255,255,0.08);padding:24px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#8b96a1;text-align:center;">
-  <a href="index.html" style="color:#cc8f3f;">&larr; Back to ezekielologunde.github.io</a>
+<footer class="site-foot">
+  <div class="wrap site-foot__in">
+    <div>
+      <p class="site-foot__name">Ezekiel Ologunde</p>
+      <p class="site-foot__meta">Cybersecurity consultant, educator and doctoral researcher. Birmingham, Alabama.</p>
+    </div>
+    <ul class="site-foot__links">
+      <li><a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></li>
+      <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+      <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="Resourcehub.html">Resource hub</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="site-foot__legal">&copy; <span data-year>2026</span> Ezekiel Ologunde. No trackers, no analytics, no cookies.</p>
+  </div>
 </footer>
-
 </body>
 </html>
