@@ -13,6 +13,14 @@ Git history available in this working copy contains a single commit
 Recorded here for reference; extend this file going forward as real changes
 land.
 
+## 2026-09-24: Story redesign and new portrait
+- Wrote the design spec first: `docs/superpowers/specs/2026-09-24-story-redesign-design.md`.
+- New shared system: `assets/css/story.css`, `assets/js/story.js`. Removed `future.css`, `style.css`, `future.js`, `mesh.js`, `site.js` and the old root portrait `IMG_8794.JPG` after a script confirmed nothing referenced them.
+- New portrait (from LinkedIn): `assets/img/ezekiel-800.jpg` (hero), `-400.jpg` (about, contact), `-96.jpg` (header avatar, favicon).
+- `index.html` rebuilt as a five-chapter story; about, homelab, built, research, writing, education, credentials and contact rebuilt in the new system with content preserved. Research gained the fuller ORCID preprint list; writing gained the other published titles; education gained the A.S. degree and professional development; credentials were corrected to the profile (see [[Decisions]]).
+- All resource hub and guide pages moved onto the shared header, footer and tokens; the three directory pages' inline scripts moved to `assets/js/dir-*.js`.
+- CSP and referrer meta tags on every content page; every `target="_blank"` link has `rel="noopener noreferrer"`. Link check: 587 internal references, 0 broken.
+
 ## 2026-09-24: Built page
 - Added `built.html`: six case studies (Preppa marketplace, CAC North America site and admin console, two church websites, Bagsly fintech app, private HoWz automation platform, brand sites), each 90 to 140 words plus Stack, Status and Security lines. Every claim was checked against the project's own code, migrations, config or docs; unverified items were left out.
 - Added portal 08 (Built) to the Explore grid in `index.html`.

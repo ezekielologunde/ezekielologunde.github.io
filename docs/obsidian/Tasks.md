@@ -2,7 +2,7 @@
 project: ezekielologunde-github-io
 type: tasks
 status: active
-last_updated: 2026-08-22
+last_updated: 2026-09-24
 tags: [project/ezekielologunde-github-io]
 ---
 
@@ -25,9 +25,14 @@ not commitments — verify before acting on them.
   referenced from `index.html`'s nav. These look like earlier
   export/renamed versions left in place. Worth confirming whether they're
   dead weight to delete, or intentionally kept for old inbound links.
-- **`IMG_8794.JPG`** sits at the repo root (424KB) rather than under
-  `assets/` — likely should be moved into `assets/img/` (or wherever the
-  site's images live) for consistency, if it's still in use.
+- ~~`IMG_8794.JPG` at the repo root~~: removed 2026-09-24; the portrait now
+  lives in `assets/img/ezekiel-{800,400,96}.jpg`.
+- **Confirm unverified credentials**: CEH (2024), AWS Cloud Practitioner,
+  CISSP (studying) and OSCP (studying) appear on `credentials.html` from the
+  old site but not in the profile files.
+- **Preserved resource copy is dated**: body text on the resource pages was
+  kept as is (for example "Last updated: January 2026" on directory pages);
+  a content pass could refresh it.
 - **No CI/deploy workflow**: no `.github/workflows/` — GitHub Pages is
   presumably serving directly off `main`. Fine for a static site, but worth
   confirming Pages settings (branch/source) if changes ever stop
@@ -35,7 +40,7 @@ not commitments — verify before acting on them.
 
 ## Confirmed non-issues (do not "fix")
 
-- The contact form's mailto: handoff (`assets/js/site.js`) is intentional,
+- The contact form's mailto: handoff (`assets/js/story.js`) is intentional,
   not a stub — there is no backend in this repo.
 - Input `placeholder="..."` attributes flagged by a naive grep for
   "placeholder" are normal HTML form UX text, not TODO markers.

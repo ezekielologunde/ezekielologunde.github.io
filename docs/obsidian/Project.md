@@ -2,7 +2,7 @@
 project: ezekielologunde-github-io
 type: project-overview
 status: active
-last_updated: 2026-08-22
+last_updated: 2026-09-24
 tags: [project/ezekielologunde-github-io]
 ---
 
@@ -22,12 +22,15 @@ creators to follow on social platforms).
 
 - **Static HTML/CSS/JS** — no framework, no bundler, no package.json. Every
   page is a hand-authored `.html` file at the repo root.
-- **Styling**: `assets/css/style.css` (site-wide) and `assets/css/future.css`
-  (supplemental/newer styling).
-- **Behavior**: `assets/js/site.js` (nav toggle, scroll-reveal animations via
-  `IntersectionObserver`, active-section highlighting, contact form
-  handling), plus `assets/js/future.js` and `assets/js/mesh.js` for
-  additional page effects.
+- **Styling**: one shared stylesheet, `assets/css/story.css` (story design
+  system, added 2026-09-24: warm paper, navy ink, burgundy accent, Fraunces,
+  Source Sans 3 and JetBrains Mono). Tokens are prefixed `--eo-`; legacy
+  aliases (`--signal`, `--muted`, and so on) keep the preserved resource
+  pages' inline styles working. See [[Decisions]].
+- **Behavior**: `assets/js/story.js` (menu toggle, current page, scroll
+  reveals, home chapter rail, reading progress bar, mailto contact form),
+  plus `assets/js/dir-tiktok.js`, `dir-instagram.js` and `dir-podcast.js`
+  holding the directory data and search that used to be inline scripts.
 - **Fonts**: Google Fonts, loaded via `<link rel="preconnect">` in each page
   head.
 - **Hosting**: GitHub Pages, deployed straight from the repo (no CI/build
@@ -69,8 +72,11 @@ cleanup items, and [[Changelog]] for project history.
 "Leading Cybersecurity Companies.html",
 "Paid Trainings.html",
 "Policy framework analysis.html"  older/legacy copies (see [[Tasks]])
-/assets/css/style.css, future.css
-/assets/js/site.js, future.js, mesh.js
+/assets/css/story.css
+/assets/js/story.js, dir-*.js
+/assets/img/ezekiel-{800,400,96}.jpg  portrait (hero, small placements, header avatar)
+/assets/img/homelab-*.svg         sanitized homelab figures
+/docs/superpowers/specs/          design specs (story redesign, 2026-09-24)
 ```
 
 No `Architecture.md` — the layout above is the entire architecture; there is
