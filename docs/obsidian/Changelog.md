@@ -14,6 +14,7 @@ Recorded here for reference; extend this file going forward as real changes
 land.
 
 ## 2026-09-23: Homelab page (working tree, not committed)
+- Added a sanitized host-based detection alerts figure (`assets/img/homelab-wazuh-alerts.svg`, rule names, levels and counts only) to `homelab.html`.
 - Added a sanitized SIEM search figure (`assets/img/homelab-siem-search.svg`, real counts by source, no hosts or addresses) to `homelab.html`.
 - Added a generic architecture diagram (`assets/img/homelab-architecture.svg`, roles only, no addressing) to `homelab.html`.
 - Added `homelab.html` describing the homelab security monitoring lab and the Breakwater doctoral-coursework lab. Security rule for this page: no internal IP addresses, hostnames, credentials, license details, or addressing diagrams.
