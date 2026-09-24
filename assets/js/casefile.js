@@ -1,5 +1,6 @@
 /* Case file site behavior: nav toggle, current page, reveals, reading
-   progress, triage re-rank toggle, contact form hand-off.
+   progress, contact form hand-off. The home page scenes (route graph,
+   triage re-rank, model card) live in investigation.js.
    No dependencies, no network, no storage. */
 (function () {
   'use strict';
@@ -38,7 +39,8 @@
   var here = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
   var section = document.body.getAttribute('data-section');
   document.querySelectorAll('.site-nav a[href]').forEach(function (a) {
-    var href = a.getAttribute('href').split('#')[0];
+    if (a.getAttribute('href').indexOf('#') !== -1) return;
+    var href = a.getAttribute('href');
     if (href === here || (section && href === section)) a.setAttribute('aria-current', 'page');
   });
 
@@ -68,38 +70,6 @@
     window.addEventListener('resize', update, { passive: true });
     update();
   }
-
-  // Triage re-rank: reorder the table rows by CVSS or by fused score.
-  // Without JS the table stays in fused-score order and the buttons stay hidden.
-  document.querySelectorAll('[data-triage]').forEach(function (wrap) {
-    var controls = wrap.querySelector('.triage__bar');
-    var body = wrap.querySelector('tbody');
-    var status = wrap.querySelector('[data-triage-status]');
-    if (!controls || !body) return;
-    var rows = Array.prototype.slice.call(body.querySelectorAll('tr'));
-    var buttons = controls.querySelectorAll('button[data-sort]');
-    controls.hidden = false;
-    var sortBy = function (key) {
-      var sorted = rows.slice().sort(function (a, b) {
-        var d = parseFloat(b.getAttribute('data-' + key)) - parseFloat(a.getAttribute('data-' + key));
-        return d !== 0 ? d : parseFloat(b.getAttribute('data-score')) - parseFloat(a.getAttribute('data-score'));
-      });
-      sorted.forEach(function (r, i) {
-        var rank = r.querySelector('[data-rank]');
-        if (rank) rank.textContent = String(i + 1);
-        body.appendChild(r);
-      });
-      buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-sort') === key ? 'true' : 'false'); });
-      if (status) {
-        var first = sorted[0].querySelector('th, td');
-        status.textContent = (key === 'cvss' ? 'Ranked by CVSS. ' : 'Ranked by fused score. ') +
-          'First: ' + (first ? first.textContent : '') + '.';
-      }
-    };
-    buttons.forEach(function (b) {
-      b.addEventListener('click', function () { sortBy(b.getAttribute('data-sort')); });
-    });
-  });
 
   // Contact form: nothing is sent to a server; it opens the visitor's mail client
   var form = document.getElementById('contactForm');
