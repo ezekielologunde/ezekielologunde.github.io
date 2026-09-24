@@ -17,7 +17,11 @@
   var W = 0, H = 0, DPR = 1, still = false, raf = 0, last = 0, t0 = 0;
   var bg = null; /* pre-rendered static layer */
   var probe = { n: 0, sum: 0 };
-  var INK = '235,229,216', SIG = '240,113,79', GRN = '159,192,168';
+  var INK = '196,214,255', SIG = '255,122,74', GRN = '63,224,180';
+  var ACC = { evidence: '255,200,87', qubits: '99,179,255', waves: '63,224,180' };
+  if (document.body.classList.contains('page-evidence')) SIG = ACC.evidence;
+  else if (document.body.classList.contains('page-ai')) SIG = ACC.qubits;
+  else if (document.body.classList.contains('modelcard-page')) SIG = ACC.waves;
   var rgba = function (c, a) { return 'rgba(' + c + ',' + a + ')'; };
   var TAU = Math.PI * 2;
 
