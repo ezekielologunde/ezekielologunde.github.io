@@ -6,11 +6,11 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Model card: ezekiel-ologunde | Ezekiel Ologunde</title>
-  <meta name="description" content="Ezekiel Ologunde, written up as a model card: intended use, out-of-scope use with honest gaps, training data, evaluation with real results, limitations, safety practices, changelog and citation.">
+  <meta name="description" content="Ezekiel Ologunde, written up as an AI model card: intended use, honest gaps, training data, evaluation with real results, limitations, changelog, citation and a plain-English glossary.">
   <meta name="theme-color" content="#15171a">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Model card: ezekiel-ologunde">
-  <meta property="og:description" content="Ezekiel Ologunde, written up as a model card: intended use, honest gaps, training data, evaluation with real results, limitations and a changelog.">
+  <meta property="og:description" content="Ezekiel Ologunde, written up as an AI model card: intended use, honest gaps, training data, evaluation with real results, limitations, changelog, citation and a plain-English glossary.">
   <meta property="og:url" content="https://ezekielologunde.github.io/about.html">
   <meta property="og:image" content="https://ezekielologunde.github.io/assets/img/ezekiel-800.jpg">
   <link rel="canonical" href="https://ezekielologunde.github.io/about.html">
@@ -23,9 +23,11 @@
   <script src="assets/js/motion.js"></script>
   <script src="assets/js/casefile.js" defer></script>
   <script src="assets/js/investigation.js" defer></script>
+  <script src="assets/js/ambient.js" defer></script>
 </head>
-<body class="modelcard-page">
+<body class="scene-page modelcard-page" data-ambient="waves">
 <a class="skip" href="#main">Skip to content</a>
+<canvas class="ambient" aria-hidden="true"></canvas>
 <header class="site-head">
   <div class="wrap site-head__in">
     <a class="brand" href="index.html">
@@ -37,13 +39,13 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Case file</a></li>
-        <li><a href="index.html#route">Graph</a></li>
-        <li><a href="index.html#evidence">Evidence</a></li>
+        <li><a href="route.html">Route</a></li>
+        <li><a href="evidence.html">Evidence</a></li>
+        <li><a href="ai.html">AI thread</a></li>
         <li><a href="about.html" aria-current="page">Model card</a></li>
         <li><a href="homelab.html">Lab</a></li>
         <li><a href="built.html">Built</a></li>
         <li><a href="research.html">Research</a></li>
-        <li><a href="writing.html">Writing</a></li>
         <li><a href="Resourcehub.html">Resources</a></li>
         <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
       </ul>
@@ -51,14 +53,25 @@
   </div>
   <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
 </header>
+<nav class="rail" aria-label="Scenes">
+  <ol>
+    <li><a href="index.html" aria-label="Scene 1: Case opens"><span class="rail__n" aria-hidden="true">01</span><span class="rail__t">Case opens</span></a></li>
+    <li><a href="route.html" aria-label="Scene 2: The route"><span class="rail__n" aria-hidden="true">02</span><span class="rail__t">The route</span></a></li>
+    <li><a href="evidence.html" aria-label="Scene 3: Evidence room"><span class="rail__n" aria-hidden="true">03</span><span class="rail__t">Evidence room</span></a></li>
+    <li><a href="ai.html" aria-label="Scene 4: The AI thread"><span class="rail__n" aria-hidden="true">04</span><span class="rail__t">The AI thread</span></a></li>
+    <li><a href="about.html" aria-current="page" aria-label="Scene 5: Model card"><span class="rail__n" aria-hidden="true">05</span><span class="rail__t">Model card</span></a></li>
+    <li><a href="contact.html" aria-label="Scene 6: Report to"><span class="rail__n" aria-hidden="true">06</span><span class="rail__t">Report to</span></a></li>
+  </ol>
+</nav>
 <main id="main">
 <header class="subfile">
   <div class="wrap">
-    <p class="subfile__ref"><b>Case file EO</b><span>Section: Model card</span><span>Ref. EO-MC-v2026.09</span><span>Card updated 2026-09-24</span><span><a href="index.html">Back to the case file</a></span></p>
+    <p class="subfile__ref"><b>Scene 05 of 06</b><span>Model card</span><span>Ref. EO-MC-v2026.09</span><span>Card updated 2026-09-24</span><span><a href="index.html">Back to the case file</a></span></p>
     <div class="subfile__grid">
       <div class="subfile__main">
         <h1 class="subfile__title">Model card</h1>
         <p class="subfile__lede">Me, documented the way AI models are: what I am for, what I am not for, what I was trained on, how I was evaluated, and where I fall short.</p>
+        <p class="plain"><b>In plain English:</b> AI companies publish a &ldquo;model card&rdquo; so buyers know what a model is good at and where it fails. This is mine, with a glossary of every technical term on this site.</p>
       </div>
       <div class="subfile__aside">
         <figure class="subfile__photo">
@@ -76,9 +89,9 @@
   <div class="mc-plate">
     <p class="mc-plate__k">Model card</p>
     <p class="mc-plate__name"><span>Model:</span> ezekiel-ologunde</p>
-    <p class="mc-plate__rev"><span>v2026.09</span><span>D.Eng. checkpoint expected 2027-09</span></p>
+    <p class="mc-plate__rev"><span>v2026.09</span><span><abbr title="Doctor of Engineering, a doctoral degree focused on applied research. His is expected in September 2027.">D.Eng.</abbr> checkpoint expected 2027-09</span></p>
     <p class="mc-license"><span class="mc-license__k">license:</span> <span class="stamp stamp--flat">open-to-work</span></p>
-    <p class="mc-plate__note">Security engineering, AI security and governance, GRC, detection and cybersecurity education roles. Birmingham, Alabama. Remote available.</p>
+    <p class="mc-plate__note">Security engineering, AI security and governance, <abbr title="Governance, risk and compliance: making sure an organization manages its risks and follows the rules it must follow.">GRC</abbr>, detection and cybersecurity education roles. Birmingham, Alabama. Remote available.</p>
     <ul class="mc-tags" aria-label="Tags">
       <li>security-engineering</li><li>ai-security</li><li>ai-governance</li><li>grc</li><li>detection</li><li>digital-forensics</li><li>ot-scada</li><li>teaching</li>
     </ul>
@@ -89,7 +102,7 @@
 <span class="tk-k">from</span> hiring <span class="tk-k">import</span> load
 model = load(<span class="tk-s">"ezekiel-ologunde"</span>, revision=<span class="tk-s">"v2026.09"</span>)
 model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class="tk-c"># or AI security, GRC, detection, teaching</span>
-<span class="tk-c"># endpoint: ezekiel@cyntraix.io</span></code></pre>
+<span class="tk-c"># endpoint: ologundeomotola@gmail.com</span></code></pre>
   </div>
 </div>
     <div class="mc-layout">
@@ -106,6 +119,7 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
           <li><a href="#safety">Safety and security</a></li>
           <li><a href="#changelog">Changelog</a></li>
           <li><a href="#cite">Citation</a></li>
+          <li><a href="#glossary">Glossary</a></li>
           <li><a href="#contact">Contact</a></li>
         </ol>
         <dl class="mc-index__meta">
@@ -115,13 +129,14 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
         </dl>
       </nav>
       <div class="sheet-wrap sheet-wrap--full">
-        <div class="sheet-bar" hidden><span class="sheet-bar__k">Spec sheet, 11 sections</span><button type="button" class="sheet-bar__all" data-expand="all">Expand all</button></div>
+        <div class="sheet-bar" hidden><span class="sheet-bar__k">Spec sheet, 12 sections</span><button type="button" class="sheet-bar__all" data-expand="all">Expand all</button></div>
 <details class="spec" id="summary" open>
   <summary><span class="spec__n">01</span><span class="spec__t">Summary</span><span class="spec__meta">who, what now, what next</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> who I am, what I do now, and what I want next, in three short paragraphs.</p>
     <div class="prose">
-      <p>I started out keeping strangers&rsquo; computers alive in an internet cafe in Ilorin, Nigeria, and spent the next ten years in IT support, web work and, eventually, wiring oil pump controls into SCADA pipelines.</p>
-      <p>A master&rsquo;s in cyber forensics taught me to ask what happened and how we know. That question followed me into AI-era security: my doctoral work at George Washington University (D.Eng., expected September 2027) is on AI and ML threat modeling, adversarial machine learning and explainable AI, and at Cyntraix I advise on security risk, AI risk included.</p>
+      <p>I started out keeping strangers&rsquo; computers alive in an internet cafe in Ilorin, Nigeria, and spent the next ten years in IT support, web work and, eventually, wiring oil pump controls into <abbr title="Supervisory control and data acquisition: systems that monitor and control industrial equipment from a distance.">SCADA</abbr> pipelines.</p>
+      <p>A master&rsquo;s in <abbr title="Investigating computers and networks to find out what happened, and proving it with evidence.">cyber forensics</abbr> taught me to ask what happened and how we know. That question followed me into AI-era security: my doctoral work at George Washington University (D.Eng., expected September 2027) is on AI and ML <abbr title="A structured list of what could go wrong in a system, how, and what stops it.">threat modeling</abbr>, <abbr title="Attacks that trick or corrupt AI models, and the defenses against those attacks.">adversarial machine learning</abbr> and <abbr title="AI whose decisions can be explained to a person, so they can be checked.">explainable AI</abbr>, and at Cyntraix I advise on security risk, AI risk included.</p>
       <p>I teach this at three institutions, test what I recommend in my own lab first, and I am looking for the next role.</p>
     </div>
     <p class="mc-note"><b>Card authored by the model.</b> Conflict of interest: total. To compensate, every number below points to an exhibit you can check.</p>
@@ -130,6 +145,7 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
 <details class="spec" id="details" open>
   <summary><span class="spec__n">02</span><span class="spec__t">Model details</span><span class="spec__meta">maintainer, lineage, checkpoint</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> the basic facts: name, job, location, and the doctorate that is still in progress.</p>
     <table class="mc-kv">
       <caption class="visually-hidden">Model details</caption>
       <tbody>
@@ -151,14 +167,15 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
 <details class="spec" id="use" open>
   <summary><span class="spec__n">03</span><span class="spec__t">Intended use</span><span class="spec__meta">5 tasks, each with its evidence</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> the kinds of jobs I am a good fit for, each with the proof.</p>
     <table class="mc-grid">
       <caption class="visually-hidden">Primary intended uses and the evidence behind each</caption>
       <thead><tr><th scope="col">Task</th><th scope="col">Supported by</th></tr></thead>
       <tbody>
-        <tr><td class="mono">security-engineering</td><td>Six builds, each with the security design written down before the code. <a class="ref" href="index.html#exhibit-e">Exhibit E</a></td></tr>
-        <tr><td class="mono">ai-security-and-governance</td><td>Doctoral research on AI and ML threat modeling and adversarial ML; AI risk advisory at Cyntraix. <a class="ref" href="index.html#exhibit-d">Exhibit D</a></td></tr>
-        <tr><td class="mono">grc</td><td>Risk governance and Zero Trust architecture at Cyntraix; a public health insurance agency that handled sensitive health data; a CMMC 2.0 course.</td></tr>
-        <tr><td class="mono">detection</td><td>A running SIEM and host-based detection lab with scheduled searches and a daily digest. <a class="ref" href="index.html#exhibit-b">Exhibit B</a></td></tr>
+        <tr><td class="mono">security-engineering</td><td>Six builds, each with the security design written down before the code. <a class="ref" href="evidence.html#exhibit-e">Exhibit E</a></td></tr>
+        <tr><td class="mono">ai-security-and-governance</td><td>Doctoral research on AI and ML threat modeling and adversarial ML; AI risk advisory at Cyntraix. <a class="ref" href="ai.html#exhibit-d">Exhibit D</a></td></tr>
+        <tr><td class="mono">grc</td><td>Risk governance and <abbr title="A security approach where no user or device is trusted by default, even inside the network.">Zero Trust</abbr> architecture at Cyntraix; a public health insurance agency that handled sensitive health data; a <abbr title="Cybersecurity Maturity Model Certification: the U.S. Defense Department&rsquo;s security standard for its contractors.">CMMC 2.0</abbr> course.</td></tr>
+        <tr><td class="mono">detection</td><td>A running <abbr title="Security information and event management: software that gathers activity records from many systems in one place and raises alerts.">SIEM</abbr> and <abbr title="Software on each computer that watches for signs of an attack on that machine.">host-based detection</abbr> lab with scheduled searches and a daily digest. <a class="ref" href="evidence.html#exhibit-b">Exhibit B</a></td></tr>
         <tr><td class="mono">teaching</td><td>High school to university: Syracuse, Lawson State, UAGC, Adrian College.</td></tr>
       </tbody>
     </table>
@@ -168,14 +185,15 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
 <details class="spec" id="oos" open>
   <summary><span class="spec__n">04</span><span class="spec__t">Out-of-scope use</span><span class="spec__meta">6 honest gaps</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> the jobs and claims I am not the right fit for, stated up front so nobody is surprised.</p>
     <p>The model should not be used for the following. Listed here so nobody finds out in the interview.</p>
     <table class="mc-grid mc-grid--oos">
       <caption class="visually-hidden">Out-of-scope uses</caption>
       <thead><tr><th scope="col">Use</th><th scope="col">Why</th></tr></thead>
       <tbody>
         <tr><td>Roles that require a security clearance or U.S. citizenship</td><td>Not eligible. Please do not route these here.</td></tr>
-        <tr><td>SAST, DAST or secret scanning in CI/CD</td><td>No pipeline of mine runs these tools yet. A small public repo is planned.</td></tr>
-        <tr><td>Infrastructure as Code (Terraform, Ansible)</td><td>The lab was configured by hand in Proxmox and the shell. Not claimed.</td></tr>
+        <tr><td>SAST, DAST or secret scanning in <abbr title="Continuous integration: automated checks that run every time the code changes.">CI</abbr>/CD</td><td>No pipeline of mine runs these tools yet. A small public repo is planned.</td></tr>
+        <tr><td>Infrastructure as Code (Terraform, Ansible)</td><td>The lab was configured by hand in <abbr title="Software that runs many virtual computers on one physical machine.">Proxmox</abbr> and the shell. Not claimed.</td></tr>
         <tr><td>Hands-on AWS services</td><td>No account work or artifact on file. Not claimed.</td></tr>
         <tr><td>Paid SOC tier work</td><td>The SIEM lab is real; a paid SOC role is not. Not claimed.</td></tr>
         <tr><td>Addressing the model by a doctoral title</td><td>Checkpoint not released until 2027-09 at the earliest.</td></tr>
@@ -186,6 +204,7 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
 <details class="spec" id="data" open>
   <summary><span class="spec__n">05</span><span class="spec__t">Training data</span><span class="spec__meta">2 corpora, 15 years</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> my education and every job I have held, in order.</p>
     <p>Two corpora, collected over fifteen years. Overlaps are real; some years had two jobs.</p>
     <h4 class="mc-sub">Formal education</h4>
     <div class="table-scroll" tabindex="0" role="region" aria-label="Formal education table">
@@ -212,15 +231,15 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
         <tr><td class="r mono">04</td><td>Ebonyi State Health Insurance Agency</td><td>IT officer, Abakaliki</td><td class="mono d">regulated-data</td><td class="r mono">2019-11 .. 2020-10</td></tr>
         <tr><td class="r mono">05</td><td>Dreamlabs Softwares</td><td>IT support specialist</td><td class="mono d">systems</td><td class="r mono">2020-10 .. 2022-08</td></tr>
         <tr><td class="r mono">06</td><td>Lubcon Group</td><td>IT intern</td><td class="mono d">systems</td><td class="r mono">2021-06 .. 2021-12</td></tr>
-        <tr><td class="r mono">07</td><td>Total Secure</td><td>Integration technician, OT and SCADA</td><td class="mono d">ot-scada</td><td class="r mono">2021-10 .. 2022-03</td></tr>
+        <tr><td class="r mono">07</td><td>Total Secure</td><td>Integration technician, <abbr title="Operational technology: computers that run physical equipment such as pumps, valves and production lines.">OT</abbr> and SCADA</td><td class="mono d">ot-scada</td><td class="r mono">2021-10 .. 2022-03</td></tr>
         <tr><td class="r mono">08</td><td>Boston University</td><td>Graduate teaching assistant, Experience Design</td><td class="mono d">teaching</td><td class="r mono">2022-09 .. 2022-12</td></tr>
         <tr><td class="r mono">09</td><td>Enterprise Community Partners</td><td>Community development intern, Baltimore</td><td class="mono d">community</td><td class="r mono">2023-05 .. 2023-09</td></tr>
         <tr><td class="r mono">10</td><td>Syracuse City School District</td><td>Cybersecurity instructor</td><td class="mono d">teaching</td><td class="r mono">2024-08 .. 2025-06</td></tr>
         <tr class="live"><td class="r mono">11</td><td>Cyntraix</td><td>Founder and principal consultant. Clients: <span class="redact" tabindex="0" role="img" aria-label="Redacted: client names withheld" data-label="client names withheld">withheld</span></td><td class="mono d">advisory</td><td class="r mono">2025-01 .. now</td></tr>
         <tr class="live"><td class="r mono">12</td><td>Lawson State Community College</td><td>Computer science instructor, Birmingham</td><td class="mono d">teaching</td><td class="r mono">2025-06 .. now</td></tr>
         <tr class="live"><td class="r mono">13</td><td>Cyber Ready Professionals</td><td>Mentor to early-career professionals</td><td class="mono d">mentoring</td><td class="r mono">2025-09 .. now</td></tr>
-        <tr class="live"><td class="r mono">14</td><td>University of Arizona Global Campus</td><td>Online faculty, network penetration testing</td><td class="mono d">teaching</td><td class="r mono">2026-03 .. now</td></tr>
-        <tr class="live"><td class="r mono">15</td><td>Adrian College, via Rize Education</td><td>Ethical hacking instructor</td><td class="mono d">teaching</td><td class="r mono">2026-fall .. now</td></tr>
+        <tr class="live"><td class="r mono">14</td><td>University of Arizona Global Campus</td><td>Online faculty, network <abbr title="Authorized, simulated attacks that find weaknesses before criminals do.">penetration testing</abbr></td><td class="mono d">teaching</td><td class="r mono">2026-03 .. now</td></tr>
+        <tr class="live"><td class="r mono">15</td><td>Adrian College, via Rize Education</td><td><abbr title="Hacking with permission, to find and fix weaknesses.">Ethical hacking</abbr> instructor</td><td class="mono d">teaching</td><td class="r mono">2026-fall .. now</td></tr>
       </tbody>
     </table>
     </div>
@@ -232,22 +251,23 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
 <details class="spec" id="eval" open>
   <summary><span class="spec__n">06</span><span class="spec__t">Evaluation</span><span class="spec__meta">11 results, no invented benchmark</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> measured results, each taken from something real, with the setting it was measured in.</p>
     <p>No benchmark was invented for this card. Each result is a count or a measurement from a real artifact, next to the setting it was measured in. Where the setting is a simulation or a home lab, the table says so.</p>
     <div class="table-scroll" tabindex="0" role="region" aria-label="Evaluation results table">
     <table class="mc-grid mc-grid--results">
       <caption class="visually-hidden">Evaluation results</caption>
       <thead><tr><th scope="col">Eval</th><th scope="col">Setting</th><th scope="col">Metric</th><th scope="col" class="r">Value</th></tr></thead>
       <tbody>
-        <tr><td class="mono"><a href="index.html#exhibit-b">homelab/siem</a></td><td>live SIEM index, 2 nodes at home</td><td>events ingested, 24 h</td><td class="r mono v">304,708</td></tr>
-        <tr><td class="mono"><a href="index.html#exhibit-b">homelab/siem</a></td><td>same</td><td>log sources</td><td class="r mono v">5</td></tr>
-        <tr><td class="mono"><a href="index.html#exhibit-b">homelab/hids</a></td><td>host agents, 7 days</td><td>host-based alerts</td><td class="r mono v">~3,700</td></tr>
-        <tr><td class="mono"><a href="index.html#exhibit-c">breakwater/discovery</a></td><td>simulated OT/IoT, 26 declared devices</td><td>hosts admitted</td><td class="r mono v">20 <span class="u">(77%)</span></td></tr>
-        <tr><td class="mono"><a href="index.html#exhibit-c">breakwater/discovery</a></td><td>same</td><td>phantom hosts</td><td class="r mono v">0</td></tr>
-        <tr><td class="mono"><a href="index.html#exhibit-c">breakwater/vuln</a></td><td>NVD match on admitted identities</td><td>CVEs matched</td><td class="r mono v">248</td></tr>
-        <tr><td class="mono"><a href="index.html#exhibit-c">breakwater/creds</a></td><td>simulation only</td><td>default-credential findings</td><td class="r mono v">19</td></tr>
-        <tr><td class="mono"><a href="index.html#exhibit-d">ai-security/witness</a></td><td>Breakwater paper</td><td>AI techniques tied to a required witness</td><td class="r mono v">7 <span class="u">of 7</span></td></tr>
-        <tr><td class="mono"><a href="index.html#exhibit-e">builds/design</a></td><td>own software</td><td>builds with a written security design</td><td class="r mono v">6 <span class="u">of 6</span></td></tr>
-        <tr><td class="mono"><a href="index.html#exhibit-f">written/ssrn</a></td><td>2024 to 2026, not peer reviewed</td><td>preprints</td><td class="r mono v">24</td></tr>
+        <tr><td class="mono"><a href="evidence.html#exhibit-b">homelab/siem</a></td><td>live SIEM index, 2 nodes at home</td><td>events ingested, 24 h</td><td class="r mono v">304,708</td></tr>
+        <tr><td class="mono"><a href="evidence.html#exhibit-b">homelab/siem</a></td><td>same</td><td>log sources</td><td class="r mono v">5</td></tr>
+        <tr><td class="mono"><a href="evidence.html#exhibit-b">homelab/hids</a></td><td>host agents, 7 days</td><td>host-based alerts</td><td class="r mono v">~3,700</td></tr>
+        <tr><td class="mono"><a href="evidence.html#exhibit-c">breakwater/discovery</a></td><td>simulated OT/<abbr title="Internet of Things: everyday devices on a network, such as cameras, speakers and thermostats.">IoT</abbr>, 26 declared devices</td><td>hosts admitted</td><td class="r mono v">20 <span class="u">(77%)</span></td></tr>
+        <tr><td class="mono"><a href="evidence.html#exhibit-c">breakwater/discovery</a></td><td>same</td><td>phantom hosts</td><td class="r mono v">0</td></tr>
+        <tr><td class="mono"><a href="evidence.html#exhibit-c">breakwater/vuln</a></td><td><abbr title="The U.S. National Vulnerability Database, the public record of known security flaws.">NVD</abbr> match on admitted identities</td><td><abbr title="Common Vulnerabilities and Exposures: the public ID number given to each known security flaw.">CVEs</abbr> matched</td><td class="r mono v">248</td></tr>
+        <tr><td class="mono"><a href="evidence.html#exhibit-c">breakwater/creds</a></td><td>simulation only</td><td>default-credential findings</td><td class="r mono v">19</td></tr>
+        <tr><td class="mono"><a href="ai.html#exhibit-d">ai-security/witness</a></td><td>Breakwater paper</td><td>AI techniques tied to a required witness</td><td class="r mono v">7 <span class="u">of 7</span></td></tr>
+        <tr><td class="mono"><a href="evidence.html#exhibit-e">builds/design</a></td><td>own software</td><td>builds with a written security design</td><td class="r mono v">6 <span class="u">of 6</span></td></tr>
+        <tr><td class="mono"><a href="evidence.html#exhibit-f">written/ssrn</a></td><td>2024 to 2026, not peer reviewed</td><td><abbr title="A research paper shared publicly before, or without, formal peer review.">preprints</abbr></td><td class="r mono v">24</td></tr>
         <tr><td class="mono">teaching/sites</td><td>high school to university</td><td>institutions taught at</td><td class="r mono v">4</td></tr>
       </tbody>
     </table>
@@ -257,10 +277,11 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
 <details class="spec" id="limits" open>
   <summary><span class="spec__n">07</span><span class="spec__t">Limitations and biases</span><span class="spec__meta">read before deploying</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> where my evidence is thinner than it looks, stated honestly.</p>
     <ul class="mc-lims">
       <li><b>Small lab, labeled as such.</b> The lab is two small machines at home, not an enterprise. Its numbers are real and small.</li>
       <li><b>Simulated network.</b> Breakwater runs against simulated containers. Nothing in it is presented as client work.</li>
-      <li><b>Preprints are not peer review.</b> Twenty-four SSRN preprints show output, not refereeing. The ACM paper is still in preparation.</li>
+      <li><b>Preprints are not peer review.</b> Twenty-four <abbr title="An online library where researchers post papers, often before or without formal peer review.">SSRN</abbr> preprints show output, not refereeing. The ACM paper is still in preparation.</li>
       <li><b>Known gaps.</b> No CI security pipeline, Infrastructure as Code, hands-on AWS or paid SOC work on file yet. Each has a small public repo planned, and none moves onto this card until it exists.</li>
       <li><b>Evidence bias.</b> Fine-tuned on forensics, the model asks &ldquo;how do we know?&rdquo; before agreeing to anything. This is intended behavior.</li>
       <li><b>Author bias.</b> The card was written by the model. Every number links to its exhibit for that reason.</li>
@@ -270,6 +291,7 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
 <details class="spec" id="safety" open>
   <summary><span class="spec__n">08</span><span class="spec__t">Safety and security</span><span class="spec__meta">practices on my own systems</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> how I keep my own systems, and this website, safe.</p>
     <p>Practices the maintainer applies to his own systems, including this page.</p>
     <table class="mc-kv">
       <caption class="visually-hidden">Security practices</caption>
@@ -277,7 +299,7 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
         <tr><th scope="row" class="mono">private-by-default</th><td>Repositories that hold private data or move money stay private. Client names stay out of public pages.</td></tr>
         <tr><th scope="row" class="mono">leak-guard</th><td>Every commit on HoWz passes a leak guard; backups are encrypted and signed.</td></tr>
         <tr><th scope="row" class="mono">sanitized-figures</th><td>Lab figures are redrawn excerpts: source names and counts only, no addresses or hostnames. The Breakwater subnet is withheld even though it is fake.</td></tr>
-        <tr><th scope="row" class="mono">human-approval</th><td>Where a language model can suggest changes to my systems, it can only propose. Code validates every proposal, and nothing is written until I approve it.</td></tr>
+        <tr><th scope="row" class="mono">human-approval</th><td>Where a <abbr title="An AI system that reads and writes text, such as a chat assistant.">language model</abbr> can suggest changes to my systems, it can only propose. Code validates every proposal, and nothing is written until I approve it.</td></tr>
         <tr><th scope="row" class="mono">local-model</th><td>The lab&rsquo;s small model runs on a CPU, was installed only after its release checksum was verified, and listens on the lab network only.</td></tr>
         <tr><th scope="row" class="mono">least-privilege</th><td>Scheduled SIEM searches run under a search-only service account that can read one index and nothing else.</td></tr>
         <tr><th scope="row" class="mono">this-page</th><td>Content Security Policy, no trackers, no analytics, no cookies, no third-party scripts. Fonts are the only outside request.</td></tr>
@@ -288,11 +310,12 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
 <details class="spec" id="changelog" open>
   <summary><span class="spec__n">09</span><span class="spec__t">Changelog</span><span class="spec__meta">26 entries, newest first</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> my career as a dated list, newest first.</p>
     <div class="mc-log" role="region" aria-label="Changelog entries" tabindex="0">
       <ol>
         <li class="pend"><span class="t">2027-09</span><span class="lv">PEND</span><span class="msg">D.Eng. Cybersecurity Analytics, George Washington University. Expected; not released.</span></li>
         <li class="cur"><span class="t">2026-fall</span><span class="lv">REL</span><span class="msg">v2026.09 (current). Doctoral coursework done; praxis research begins on explainable AI, AI and ML threat modeling and AI-enabled security governance. Teaching Ethical Hacking at Adrian College.</span></li>
-        <li><span class="t">2026-summer</span><span class="lv">RES</span><span class="msg">Breakwater later phases: federated intrusion detection with poisoning and privacy defenses; RL agents behind safety controllers. Agentic AI Bootcamp, Howard AI Network.</span></li>
+        <li><span class="t">2026-summer</span><span class="lv">RES</span><span class="msg">Breakwater later phases: <abbr title="Training one AI model across several sites without sending their raw data to one place.">federated</abbr> intrusion detection with poisoning and privacy defenses; RL agents behind safety controllers. Agentic AI Bootcamp, Howard AI Network.</span></li>
         <li><span class="t">2026-05</span><span class="lv">RES</span><span class="msg">Breakwater Phase 1: discovery run against a simulated OT/IoT network, checked against declared ground truth.</span></li>
         <li><span class="t">2026-05</span><span class="lv">CERT</span><span class="msg">CompTIA Security+.</span></li>
         <li><span class="t">2026-03</span><span class="lv">ROLE</span><span class="msg">Online faculty, CYB102 Network Penetration Testing, University of Arizona Global Campus.</span></li>
@@ -323,6 +346,7 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
 <details class="spec" id="cite" open>
   <summary><span class="spec__n">10</span><span class="spec__t">Citation</span><span class="spec__meta">BibTeX, with a copy button</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> how to reference this page in a paper or report.</p>
     <p>If this model is useful in your work, please cite it. Better yet, hire it.</p>
     <div class="bib">
       <div class="bib__bar"><span>BibTeX</span><button type="button" class="bib__copy" data-copy="bibtex" hidden>Copy</button></div>
@@ -338,11 +362,59 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
     </div>
   </div>
 </details>
-<details class="spec" id="contact" open>
-  <summary><span class="spec__n">11</span><span class="spec__t">Contact</span><span class="spec__meta">the endpoint</span><span class="spec__sign" aria-hidden="true"></span></summary>
+<details class="spec" id="glossary" open>
+  <summary><span class="spec__n">11</span><span class="spec__t">Glossary</span><span class="spec__meta">39 terms, in plain English</span><span class="spec__sign" aria-hidden="true"></span></summary>
   <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> short explanations of the technical terms used on this site.</p>
+    <dl class="gloss">
+        <div><dt>Adversarial machine learning</dt><dd>Attacks that trick or corrupt AI models, and the defenses against those attacks.</dd></div>
+        <div><dt>AI</dt><dd>Artificial intelligence: software that learns patterns from data and makes suggestions or predictions.</dd></div>
+        <div><dt>Attack graph</dt><dd>A map of the steps an attacker could take, from a starting point to a target.</dd></div>
+        <div><dt>Capture the flag</dt><dd>A security exercise where students solve hacking puzzles to find hidden answers, called flags.</dd></div>
+        <div><dt>CI</dt><dd>Continuous integration: automated checks that run every time the code changes.</dd></div>
+        <div><dt>CMMC</dt><dd>Cybersecurity Maturity Model Certification: the U.S. Defense Department&rsquo;s security standard for its contractors.</dd></div>
+        <div><dt>CPE</dt><dd>A standard name for a product and version, used to match it to its known flaws.</dd></div>
+        <div><dt>CVE</dt><dd>Common Vulnerabilities and Exposures: the public ID number given to each known security flaw.</dd></div>
+        <div><dt>CVSS</dt><dd>A 0 to 10 score of how severe a security flaw could be.</dd></div>
+        <div><dt>D.Eng.</dt><dd>Doctor of Engineering, a doctoral degree focused on applied research. His is expected in September 2027.</dd></div>
+        <div><dt>Differential privacy</dt><dd>A mathematical way to learn from data without exposing any single person&rsquo;s or site&rsquo;s records.</dd></div>
+        <div><dt>Digital forensics</dt><dd>Investigating computers and networks to find out what happened, and proving it with evidence.</dd></div>
+        <div><dt>EDR</dt><dd>Endpoint detection and response: software on each computer that watches for attacks and helps stop them.</dd></div>
+        <div><dt>EPSS</dt><dd>A 0 to 1 estimate of how likely a security flaw is to be used by attackers soon.</dd></div>
+        <div><dt>Ethical hacking</dt><dd>Hacking with permission, to find and fix weaknesses.</dd></div>
+        <div><dt>Explainable AI</dt><dd>AI whose decisions can be explained to a person, so they can be checked.</dd></div>
+        <div><dt>Federated learning</dt><dd>Training one AI model across several sites without sending their raw data to one place.</dd></div>
+        <div><dt>GRC</dt><dd>Governance, risk and compliance: making sure an organization manages its risks and follows the rules it must follow.</dd></div>
+        <div><dt>Host-based detection</dt><dd>Software on each computer that watches for signs of an attack on that machine.</dd></div>
+        <div><dt>IoT</dt><dd>Internet of Things: everyday devices on a network, such as cameras, speakers and thermostats.</dd></div>
+        <div><dt>KEV</dt><dd>The U.S. government&rsquo;s (CISA) catalog of flaws that attackers are known to be using.</dd></div>
+        <div><dt>Language model</dt><dd>An AI system that reads and writes text, such as a chat assistant.</dd></div>
+        <div><dt>LLM</dt><dd>Large language model: the kind of AI behind chat assistants, which reads and writes text.</dd></div>
+        <div><dt>MQTT</dt><dd>A lightweight messaging system many smart devices use to talk to each other.</dd></div>
+        <div><dt>NIST</dt><dd>The U.S. National Institute of Standards and Technology, which publishes widely used security frameworks.</dd></div>
+        <div><dt>NVD</dt><dd>The U.S. National Vulnerability Database, the public record of known security flaws.</dd></div>
+        <div><dt>OT</dt><dd>Operational technology: computers that run physical equipment such as pumps, valves and production lines.</dd></div>
+        <div><dt>Penetration testing</dt><dd>Authorized, simulated attacks that find weaknesses before criminals do.</dd></div>
+        <div><dt>Preprint</dt><dd>A research paper shared publicly before, or without, formal peer review.</dd></div>
+        <div><dt>Prompt injection</dt><dd>Hidden instructions slipped into text an AI reads, trying to make it do something it should not.</dd></div>
+        <div><dt>Proxmox VE</dt><dd>Software that runs many virtual computers on one physical machine.</dd></div>
+        <div><dt>Reinforcement learning</dt><dd>Training an AI by trial and reward, the way a game-playing AI learns.</dd></div>
+        <div><dt>RLS</dt><dd>Database rules that decide which rows of data each user is allowed to see.</dd></div>
+        <div><dt>SBOM</dt><dd>Software bill of materials: a list of every component inside a piece of software.</dd></div>
+        <div><dt>SCADA</dt><dd>Supervisory control and data acquisition: systems that monitor and control industrial equipment from a distance.</dd></div>
+        <div><dt>SIEM</dt><dd>Security information and event management: software that gathers activity records from many systems in one place and raises alerts.</dd></div>
+        <div><dt>SSRN</dt><dd>An online library where researchers post papers, often before or without formal peer review.</dd></div>
+        <div><dt>Threat model</dt><dd>A structured list of what could go wrong in a system, how, and what stops it.</dd></div>
+        <div><dt>Zero Trust</dt><dd>A security approach where no user or device is trusted by default, even inside the network.</dd></div>
+    </dl>
+  </div>
+</details>
+<details class="spec" id="contact" open>
+  <summary><span class="spec__n">12</span><span class="spec__t">Contact</span><span class="spec__meta">the endpoint</span><span class="spec__sign" aria-hidden="true"></span></summary>
+  <div class="spec__body">
+    <p class="plain"><b>In plain English:</b> how to reach me.</p>
     <p>Write about a security engineering, AI security, GRC, detection or teaching role, a research collaboration, or a Cyntraix engagement.</p>
-    <p class="mc-mail"><a href="mailto:ezekiel@cyntraix.io">ezekiel@cyntraix.io</a></p>
+    <p class="mc-mail"><a href="mailto:ologundeomotola@gmail.com">ologundeomotola@gmail.com</a></p>
     <ul class="linkrows">
       <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn <span>in/ezekiel-ologunde</span></a></li>
       <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <span>profile</span></a></li>
@@ -356,11 +428,12 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
     </div>
   </div>
 </section>
+
 </main>
-<nav class="continue" aria-label="Previous and next section">
+<nav class="continue" aria-label="Previous and next scene">
   <div class="wrap continue__in">
-    <a class="prev" href="index.html"><span class="continue__k">&larr; Previous</span><span class="continue__t">The case file</span></a>
-    <a class="next" href="education.html"><span class="continue__k">Next &rarr;</span><span class="continue__t">Education</span></a>
+    <a class="prev" href="ai.html"><span class="continue__k">&larr; Scene 04</span><span class="continue__t">The AI thread</span></a>
+    <a class="next" href="contact.html"><span class="continue__k">Scene 06 &rarr;</span><span class="continue__t">Report to</span></a>
   </div>
 </nav>
 <footer class="site-foot">
@@ -370,15 +443,15 @@ model.assign(role=<span class="tk-s">"security engineering"</span>)  <span class
       <p class="site-foot__meta">Security consultant, cybersecurity instructor and doctoral researcher. Birmingham, Alabama.</p>
     </div>
     <ul class="site-foot__links">
-      <li><a href="mailto:ezekiel@cyntraix.io">Email</a></li>
+      <li><a href="mailto:ologundeomotola@gmail.com">Email</a></li>
       <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
       <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
       <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       <li><a href="about.html">Model card</a></li>
+      <li><a href="writing.html">Writing</a></li>
       <li><a href="education.html">Education</a></li>
       <li><a href="credentials.html">Credentials</a></li>
       <li><a href="Resourcehub.html">Resource hub</a></li>
-      <li><a href="contact.html">Contact</a></li>
     </ul>
     <p class="site-foot__legal"><span>End of file. &copy; <span data-year>2026</span> Ezekiel Ologunde.</span><span>No trackers, no analytics, no cookies.</span></p>
   </div>

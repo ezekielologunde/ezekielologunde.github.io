@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>The AI thread: using, defending and limiting AI | E. Ologunde</title>
+  <meta name="description" content="How Ezekiel Ologunde uses AI in security work without letting it decide, how he defends AI models, and an interactive, illustrative threat model of an AI assistant near real systems.">
+  <meta name="theme-color" content="#15171a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The AI thread | E. Ologunde">
+  <meta property="og:description" content="How Ezekiel Ologunde uses AI in security work without letting it decide, how he defends AI models, and an interactive, illustrative threat model of an AI assistant near real systems.">
+  <meta property="og:url" content="https://ezekielologunde.github.io/ai.html">
+  <meta property="og:image" content="https://ezekielologunde.github.io/assets/img/ezekiel-800.jpg">
+  <link rel="canonical" href="https://ezekielologunde.github.io/ai.html">
+  <link rel="icon" type="image/jpeg" href="assets/img/ezekiel-96.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400..600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/casefile.css">
+  <link rel="stylesheet" href="assets/css/investigation.css">
+  <script src="assets/js/motion.js"></script>
+  <script src="assets/js/casefile.js" defer></script>
+  <script src="assets/js/investigation.js" defer></script>
+  <script src="assets/js/ambient.js" defer></script>
+</head>
+<body class="scene-page page-ai" data-ambient="qubits">
+<a class="skip" href="#main">Skip to content</a>
+<canvas class="ambient" aria-hidden="true"></canvas>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html">
+      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="32" height="32" alt="">
+      <span class="brand__name">E. Ologunde</span>
+      <span class="brand__file">Case file</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Case file</a></li>
+        <li><a href="route.html">Route</a></li>
+        <li><a href="evidence.html">Evidence</a></li>
+        <li><a href="ai.html" aria-current="page">AI thread</a></li>
+        <li><a href="about.html">Model card</a></li>
+        <li><a href="homelab.html">Lab</a></li>
+        <li><a href="built.html">Built</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="Resourcehub.html">Resources</a></li>
+        <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+</header>
+<nav class="rail" aria-label="Scenes">
+  <ol>
+    <li><a href="index.html" aria-label="Scene 1: Case opens"><span class="rail__n" aria-hidden="true">01</span><span class="rail__t">Case opens</span></a></li>
+    <li><a href="route.html" aria-label="Scene 2: The route"><span class="rail__n" aria-hidden="true">02</span><span class="rail__t">The route</span></a></li>
+    <li><a href="evidence.html" aria-label="Scene 3: Evidence room"><span class="rail__n" aria-hidden="true">03</span><span class="rail__t">Evidence room</span></a></li>
+    <li><a href="ai.html" aria-current="page" aria-label="Scene 4: The AI thread"><span class="rail__n" aria-hidden="true">04</span><span class="rail__t">The AI thread</span></a></li>
+    <li><a href="about.html" aria-label="Scene 5: Model card"><span class="rail__n" aria-hidden="true">05</span><span class="rail__t">Model card</span></a></li>
+    <li><a href="contact.html" aria-label="Scene 6: Report to"><span class="rail__n" aria-hidden="true">06</span><span class="rail__t">Report to</span></a></li>
+  </ol>
+</nav>
+<main id="main">
+<p class="scene-ref wrap"><b>Scene 04 of 06</b><span>The AI thread</span><span>Case file: E. Ologunde</span></p>
+<section class="sec scene" id="ai" aria-labelledby="ai-title">
+  <div class="wrap">
+    <div class="g12">
+      <header class="part">
+        <p class="part__no">Scene 04</p>
+        <h1 class="part__title" id="ai-title">The AI thread</h1>
+        <p class="part__note">Starts in 2023 on the route. Research in progress; praxis began fall 2026.</p>
+      </header>
+      <div class="body prose rv">
+        <p class="plain"><b>In plain English:</b> AI can speed up security work, but it can be wrong or be tricked. I let it suggest, never decide, and I protect AI systems themselves from attack.</p>
+        <p class="lede">Where AI helps, where it gets attacked, and where it is not allowed to decide.</p>
+      </div>
+    </div>
+
+    <article class="exhibit" id="exhibit-d" aria-labelledby="xd-title">
+      <p class="xtag"><span class="xtag__id">Exhibit D</span><span class="xtag__what">AI security</span></p>
+      <h3 class="exhibit__title" id="xd-title">AI proposes, evidence decides</h3>
+      <p class="meta-row"><span><b>Sources:</b> the Breakwater paper and phase work (doctoral coursework), and the design notes of two systems I run</span><span><b>Status:</b> research in progress; praxis began fall 2026</span></p>
+      <dl class="figures">
+        <div><dt data-count="7">7</dt><dd>AI-assisted techniques, each tied to the evidence that must exist before its output counts</dd></div>
+        <div><dt data-count="3">3</dt><dd>defenses on one <abbr title="Training one AI model across several sites without sending their raw data to one place.">federated</abbr> model: poisoning filter, <abbr title="A mathematical way to learn from data without exposing any single person&rsquo;s or site&rsquo;s records.">differential privacy</abbr>, drift correction</dd></div>
+        <div><dt data-count="5">5</dt><dd>stages before an automated fix runs: simulate, verify, approve, execute, health-check</dd></div>
+      </dl>
+
+      <h4 class="sub" style="margin-top:36px">D.1 Threat model: letting a language model near systems I run</h4>
+      <p class="plain"><b>In plain English:</b> a map of how an AI assistant connected to my own systems could be misused, and the safeguard I put in place at each step.</p>
+      <p class="rv" style="max-width:66ch">Two of my own systems use a <abbr title="An AI system that reads and writes text, such as a chat assistant.">language model</abbr>: my operations platform, HoWz, has a question pane where a model may suggest changes, and the lab runs a small local model on a CPU. Pick any part of the flow to see what can go wrong there and the control in the design.</p>
+      <div class="tm" data-tm>
+        <p class="tm__label"><span class="stamp stamp--flat">Illustrative</span> Written for this page from the design notes of HoWz and the lab. It is not an audit.</p>
+        <div class="tm__grid">
+          <div class="tm__flowwrap">
+            <ol class="tm__flow" aria-label="How a model suggestion reaches a system I run, in order">
+              <li><button class="tm__node" type="button" data-t="T-1"><span class="tm__n">1</span><span class="tm__name">Text the model reads</span><span class="tm__sub">input</span></button></li>
+              <li><button class="tm__node" type="button" data-t="T-3 T-4"><span class="tm__n">2</span><span class="tm__name">Language model</span><span class="tm__sub">local, CPU, lab network</span></button></li>
+              <li><button class="tm__node" type="button" data-t="T-2"><span class="tm__n">3</span><span class="tm__name">Proposal</span><span class="tm__sub">data, not an action</span></button></li>
+              <li><button class="tm__node" type="button" data-t="T-1 T-2"><span class="tm__n">4</span><span class="tm__name">Code validation</span><span class="tm__sub">checks every proposal</span></button></li>
+              <li class="tm__gate"><button class="tm__node" type="button" data-t="T-5 T-2"><span class="tm__n">5</span><span class="tm__name">Human approval</span><span class="tm__sub">the step that needs me</span><span class="tm__ok" aria-hidden="true">Approved</span></button></li>
+              <li><button class="tm__node" type="button" data-t="T-2"><span class="tm__n">6</span><span class="tm__name">Write</span><span class="tm__sub">only after approval</span></button></li>
+            </ol>
+            <span class="tm__token" aria-hidden="true"></span>
+          </div>
+          <div class="tm__panel" aria-live="polite">
+            <p class="tm__panel-k">Threats at this step</p>
+            <p class="tm__panel-empty">Hover, tap or tab to a step in the flow. Each shows the threats that enter there and the control in the design, with its source.</p>
+          </div>
+        </div>
+        <details class="tm__text" open>
+          <summary>The threat model as a table</summary>
+          <div class="table-scroll">
+            <table class="sheet sheet--stack">
+              <caption class="visually-hidden">Threat model for a language model that can suggest changes to systems the subject runs, with the control from each design and its source</caption>
+              <thead><tr><th scope="col">No.</th><th scope="col">Threat</th><th scope="col">Enters through</th><th scope="col">Control in the design</th><th scope="col">Source</th></tr></thead>
+              <tbody>
+                <tr data-t="T-1"><td class="n">T-1</td><td class="k" style="font-size:17px"><abbr title="Hidden instructions slipped into text an AI reads, trying to make it do something it should not.">Prompt injection</abbr> steers the model toward a harmful change</td><td class="s" data-l="Enters through">Text the model reads</td><td data-l="Control">The model can only propose. Code validates every proposal, and nothing is written until I approve it.</td><td class="s" data-l="Source"><a href="built.html">HoWz</a></td></tr>
+                <tr data-t="T-2"><td class="n">T-2</td><td class="k" style="font-size:17px">Excessive agency: the model acts instead of suggesting</td><td class="s" data-l="Enters through">Model output</td><td data-l="Control">Proposals are data, not actions: nothing is written until a separate human step approves it.</td><td class="s" data-l="Source"><a href="built.html">HoWz</a></td></tr>
+                <tr data-t="T-3"><td class="n">T-3</td><td class="k" style="font-size:17px">Tampered model runtime</td><td class="s" data-l="Enters through">Installation</td><td data-l="Control">Installed only after its release checksum was verified.</td><td class="s" data-l="Source"><a href="homelab.html#lessons">Lab</a></td></tr>
+                <tr data-t="T-4"><td class="n">T-4</td><td class="k" style="font-size:17px">Model endpoint reachable from outside</td><td class="s" data-l="Enters through">Network</td><td data-l="Control">The local model listens on the lab network only.</td><td class="s" data-l="Source"><a href="homelab.html#lessons">Lab</a></td></tr>
+                <tr data-t="T-5"><td class="n">T-5</td><td class="k" style="font-size:17px">Stolen session on the approval screen</td><td class="s" data-l="Enters through">Browser</td><td data-l="Control">Password gate, Content Security Policy, and HttpOnly, SameSite=Strict cookies.</td><td class="s" data-l="Source"><a href="built.html">HoWz</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+
+      <div class="split split--rev" style="margin-top:48px">
+        <div class="rv">
+          <h4 class="sub">D.2 The rule, in the research</h4>
+          <p class="plain"><b>In plain English:</b> in my research an AI tool may point at a possible problem, but the problem only counts once a real test confirms it.</p>
+          <p>Language models are fast and confidently wrong often enough that I do not let one close a finding. In the Breakwater paper every AI-assisted technique gets the same treatment: it may propose candidates and rank them, but a finding closes only when a measured or scoped, simulated witness exists. AutoML ranks known <abbr title="Common Vulnerabilities and Exposures: the public ID number given to each known security flaw.">CVE</abbr> features; it does not discover vulnerabilities. An <abbr title="Large language model: the kind of AI behind chat assistants, which reads and writes text.">LLM</abbr> proposes fuzzing inputs; the proof is the crash, not the model&rsquo;s description of one.</p>
+        </div>
+        <div class="table-scroll rv" role="region" aria-labelledby="aimap-cap" tabindex="0">
+          <table class="sheet">
+            <caption id="aimap-cap">AI-assisted techniques and the witness each needs. From the Breakwater paper, doctoral coursework.</caption>
+            <thead><tr><th scope="col">Technique</th><th scope="col">What it may do</th><th scope="col">Witness required</th></tr></thead>
+            <tbody>
+              <tr><td class="k" style="font-size:16px">AutoML triage ranking</td><td class="s">rank candidates</td><td class="s">measured CVE and <abbr title="A 0 to 1 estimate of how likely a security flaw is to be used by attackers soon.">EPSS</abbr> features</td></tr>
+              <tr><td class="k" style="font-size:16px">Nuclei templates</td><td class="s">targeted checks</td><td class="s">measured template match</td></tr>
+              <tr><td class="k" style="font-size:16px">OpenVAS / GVM</td><td class="s">scanner evidence</td><td class="s">measured plugin result</td></tr>
+              <tr><td class="k" style="font-size:16px">Default-credential check</td><td class="s">scoped proof</td><td class="s">simulated loopback login</td></tr>
+              <tr><td class="k" style="font-size:16px">Firmware entropy</td><td class="s">supply-chain signal</td><td class="s">measured file evidence</td></tr>
+              <tr><td class="k" style="font-size:16px">Protocol grammar from captures</td><td class="s">structure inference</td><td class="s">measured wire capture</td></tr>
+              <tr><td class="k" style="font-size:16px">LLM mutation and RL fuzzing</td><td class="s">propose test inputs</td><td class="s">measured crash or response</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h4 class="sub" style="margin-top:44px">D.3 AI as the target: defending the models themselves</h4>
+      <p class="plain"><b>In plain English:</b> AI models can be attacked too, for example by feeding them bad training data. These are defenses I built and tested in my doctoral project.</p>
+      <div class="pair" style="margin-top:12px">
+        <div class="rv">
+          <p><b>A federated intrusion detector that expects some of its clients to lie.</b> In Breakwater&rsquo;s collaborative phase I trained a Transformer-based intrusion-detection model across simulated sites without pooling their raw traffic. Multi-Krum aggregation drops poisoned updates from malicious clients, differential privacy (Gaussian mechanism with R&eacute;nyi accounting) bounds what any one site&rsquo;s data can leak, and SCAFFOLD corrects client drift.</p>
+        </div>
+        <div class="rv">
+          <p><b>Autonomous agents on a short leash.</b> A <abbr title="Training an AI by trial and reward, the way a game-playing AI learns.">reinforcement-learning</abbr> agent (PPO) plans offensive tests inside a decision model, but only behind a tiered safety controller that moves from simulation or shadow mode to controlled to autonomous, with every step written to a SHA-256 evidence chain. The remediation phase asks before it acts: simulate, verify, approve, execute, health-check, with rollback checkpoints.</p>
+        </div>
+      </div>
+      <p class="note">Also on file: the App Academy certificate in AI-powered software development and generative AI engineering, Introduction to Generative AI (Google Cloud), the SANS AI Cybersecurity Forum, the Agentic AI Bootcamp at the Howard AI Network, a 2026 <abbr title="A research paper shared publicly before, or without, formal peer review.">preprint</abbr> on <abbr title="Attacks that trick or corrupt AI models, and the defenses against those attacks.">adversarial machine learning</abbr> against automotive attack surfaces, and AI security risk and governance advisory at Cyntraix.</p>
+    </article>
+  </div>
+</section>
+
+
+</main>
+<nav class="continue" aria-label="Previous and next scene">
+  <div class="wrap continue__in">
+    <a class="prev" href="evidence.html"><span class="continue__k">&larr; Scene 03</span><span class="continue__t">Evidence room</span></a>
+    <a class="next" href="about.html"><span class="continue__k">Scene 05 &rarr;</span><span class="continue__t">Model card</span></a>
+  </div>
+</nav>
+<footer class="site-foot">
+  <div class="wrap site-foot__in">
+    <div>
+      <p class="site-foot__name">Ezekiel Ologunde</p>
+      <p class="site-foot__meta">Security consultant, cybersecurity instructor and doctoral researcher. Birmingham, Alabama.</p>
+    </div>
+    <ul class="site-foot__links">
+      <li><a href="mailto:ologundeomotola@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+      <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="about.html">Model card</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="credentials.html">Credentials</a></li>
+      <li><a href="Resourcehub.html">Resource hub</a></li>
+    </ul>
+    <p class="site-foot__legal"><span>End of file. &copy; <span data-year>2026</span> Ezekiel Ologunde.</span><span>No trackers, no analytics, no cookies.</span></p>
+  </div>
+</footer>
+</body>
+</html>

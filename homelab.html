@@ -34,13 +34,13 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Case file</a></li>
-        <li><a href="index.html#route">Graph</a></li>
-        <li><a href="index.html#evidence">Evidence</a></li>
+        <li><a href="route.html">Route</a></li>
+        <li><a href="evidence.html">Evidence</a></li>
+        <li><a href="ai.html">AI thread</a></li>
         <li><a href="about.html">Model card</a></li>
         <li><a href="homelab.html" aria-current="page">Lab</a></li>
         <li><a href="built.html">Built</a></li>
         <li><a href="research.html">Research</a></li>
-        <li><a href="writing.html">Writing</a></li>
         <li><a href="Resourcehub.html">Resources</a></li>
         <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
       </ul>
@@ -64,18 +64,19 @@
 <section class="section" id="monitoring" aria-labelledby="mon-title">
   <div class="wrap">
     <div class="section__head rv"><span class="section__num">01</span><h2 class="section__title" id="mon-title">Security monitoring lab</h2></div>
-    <p class="section__lede rv">I run a small, self-hosted lab where I try out SIEM, host-based detection and monitoring tooling before I recommend it to Cyntraix clients. It runs on two small machines at home.</p>
+    <p class="plain"><b>In plain English:</b> a small version of the monitoring a company&rsquo;s security team runs, built on two machines at home, so I can test tools before I recommend them.</p>
+    <p class="section__lede rv">I run a small, self-hosted lab where I try out <abbr title="Security information and event management: software that gathers activity records from many systems in one place and raises alerts.">SIEM</abbr>, <abbr title="Software on each computer that watches for signs of an attack on that machine.">host-based detection</abbr> and monitoring tooling before I recommend it to Cyntraix clients. It runs on two small machines at home.</p>
 
     <div class="cols rv">
       <div class="block">
         <span class="block__label">Architecture, by role</span>
         <h3 class="block__title">Two hypervisor nodes, one log pipeline</h3>
         <ul class="checklist">
-          <li><strong>Virtualization:</strong> two Proxmox VE nodes running lightweight containers and full virtual machines, kept deliberately unclustered.</li>
+          <li><strong>Virtualization:</strong> two <abbr title="Software that runs many virtual computers on one physical machine.">Proxmox VE</abbr> nodes running lightweight containers and full virtual machines, kept deliberately unclustered.</li>
           <li><strong>Network services:</strong> an open-source firewall VM, a DNS sinkhole for ad and tracker filtering, and a reverse proxy in front of the web consoles.</li>
           <li><strong>Detection:</strong> a SIEM with dedicated syslog inputs and a host-based intrusion detection manager with agents on the lab&rsquo;s Linux hosts.</li>
           <li><strong>Monitoring:</strong> uptime checks for every core service, reachability probes with an uplink dashboard, and LAN device discovery.</li>
-          <li><strong>Testing and AI:</strong> a penetration-testing VM, and a small language model running locally on CPU.</li>
+          <li><strong>Testing and AI:</strong> a penetration-testing VM, and a small <abbr title="An AI system that reads and writes text, such as a chat assistant.">language model</abbr> running locally on CPU.</li>
         </ul>
       </div>
       <div class="block">
@@ -121,6 +122,7 @@
 <section class="section section--alt" id="lessons" aria-labelledby="lessons-title">
   <div class="wrap">
     <div class="section__head rv"><span class="section__num">02</span><h2 class="section__title" id="lessons-title">Decisions and lessons</h2></div>
+    <p class="plain"><b>In plain English:</b> what I decided while building the lab, and what went wrong and how it was fixed.</p>
     <div class="cols rv">
       <div class="block">
         <span class="block__label">Security trade-offs</span>
@@ -152,7 +154,8 @@
 <section class="section" id="breakwater" aria-labelledby="bw-title">
   <div class="wrap">
     <div class="section__head rv"><span class="section__num">03</span><h2 class="section__title" id="bw-title">Breakwater lab</h2></div>
-    <p class="section__lede rv">Doctoral coursework, George Washington University (SEAS 8414, Analytical Tools for Cyber). A containerized OT/IoT simulation network used to build an end-to-end security-analytics pipeline, one phase at a time.</p>
+    <p class="plain"><b>In plain English:</b> a practice network of simulated devices from my doctorate, used to find and rank security flaws safely.</p>
+    <p class="section__lede rv">Doctoral coursework, George Washington University (SEAS 8414, Analytical Tools for Cyber). A containerized <abbr title="Operational technology: computers that run physical equipment such as pumps, valves and production lines.">OT</abbr>/<abbr title="Internet of Things: everyday devices on a network, such as cameras, speakers and thermostats.">IoT</abbr> simulation network used to build an end-to-end security-analytics pipeline, one phase at a time.</p>
     <div class="stats rv">
       <div class="stat"><span class="stat__n">26</span><span class="stat__l">devices declared in the simulated network</span></div>
       <div class="stat"><span class="stat__n">20 (77%)</span><span class="stat__l">confirmed by active and passive discovery</span></div>
@@ -165,16 +168,16 @@
         <ul class="checklist">
           <li><strong>Asset inventory:</strong> active and passive discovery against a declared 26-device simulated network confirmed 20 devices (77%) with zero phantom hosts. TCP probing found the most.</li>
           <li><strong>Device identity:</strong> fingerprinting from management-plane self-reports rather than transport banners, with three-witness corroboration and an admissibility gate before any downstream use.</li>
-          <li><strong>Vulnerability triage:</strong> NVD CVEs fused with CISA KEV and FIRST EPSS into a transparent score, <code>CVSS + 10&middot;EPSS + 5&middot;[KEV] + 2&middot;[ransomware]</code>.</li>
+          <li><strong>Vulnerability triage:</strong> <abbr title="The U.S. National Vulnerability Database, the public record of known security flaws.">NVD</abbr> <abbr title="Common Vulnerabilities and Exposures: the public ID number given to each known security flaw.">CVEs</abbr> fused with CISA <abbr title="The U.S. government&rsquo;s (CISA) catalog of flaws that attackers are known to be using.">KEV</abbr> and FIRST <abbr title="A 0 to 1 estimate of how likely a security flaw is to be used by attackers soon.">EPSS</abbr> into a transparent score, <code>CVSS + 10&middot;EPSS + 5&middot;[KEV] + 2&middot;[ransomware]</code>.</li>
         </ul>
       </div>
       <div class="block">
         <span class="badge badge--progress">Doctoral coursework</span>
         <h3 class="block__title" style="margin-top:12px">From risk models to remediation</h3>
         <ul class="checklist">
-          <li><strong>Attack paths:</strong> attack graphs with k-shortest-path analysis, mapped to MITRE ATT&amp;CK for ICS and exported as STIX 2.1.</li>
+          <li><strong>Attack paths:</strong> <abbr title="A map of the steps an attacker could take, from a starting point to a target.">attack graphs</abbr> with k-shortest-path analysis, mapped to MITRE ATT&amp;CK for ICS and exported as STIX 2.1.</li>
           <li><strong>Simulation:</strong> a digital twin built from scan data, with checkpoint rollback for testing remediation before touching the real network.</li>
-          <li><strong>Crypto readiness:</strong> harvest-now-decrypt-later exposure and a migration plan toward NIST post-quantum standards.</li>
+          <li><strong>Crypto readiness:</strong> harvest-now-decrypt-later exposure and a migration plan toward <abbr title="The U.S. National Institute of Standards and Technology, which publishes widely used security frameworks.">NIST</abbr> post-quantum standards.</li>
           <li><strong>Write-up:</strong> an ACM-format paper, &ldquo;Evidence-Bounded Vulnerability Intelligence for OT/IoT Networks,&rdquo; in preparation.</li>
         </ul>
       </div>
@@ -183,11 +186,11 @@
       <span class="block__label">The AI thread</span>
       <h3 class="block__title">Where AI helps, and where it is kept on a leash</h3>
       <ul class="checklist">
-        <li><strong>AI proposes, evidence decides:</strong> LLM-guided mutation fuzzing and AutoML ranking may propose and rank, but a finding closes only on a measured or scoped, simulated witness.</li>
-        <li><strong>Models as targets:</strong> a federated, Transformer-based intrusion-detection model trained across simulated sites, with Multi-Krum against poisoned client updates, differential privacy (Gaussian mechanism, R&eacute;nyi accounting) and SCAFFOLD for client drift.</li>
-        <li><strong>Agents behind safety controls:</strong> a PPO reinforcement-learning agent for offensive testing behind a tiered safety controller with SHA-256 evidence-chain logging, and remediation that runs simulate, verify, approve, execute, health-check.</li>
+        <li><strong>AI proposes, evidence decides:</strong> <abbr title="Large language model: the kind of AI behind chat assistants, which reads and writes text.">LLM</abbr>-guided mutation fuzzing and AutoML ranking may propose and rank, but a finding closes only on a measured or scoped, simulated witness.</li>
+        <li><strong>Models as targets:</strong> a <abbr title="Training one AI model across several sites without sending their raw data to one place.">federated</abbr>, Transformer-based intrusion-detection model trained across simulated sites, with Multi-Krum against poisoned client updates, <abbr title="A mathematical way to learn from data without exposing any single person&rsquo;s or site&rsquo;s records.">differential privacy</abbr> (Gaussian mechanism, R&eacute;nyi accounting) and SCAFFOLD for client drift.</li>
+        <li><strong>Agents behind safety controls:</strong> a PPO <abbr title="Training an AI by trial and reward, the way a game-playing AI learns.">reinforcement-learning</abbr> agent for offensive testing behind a tiered safety controller with SHA-256 evidence-chain logging, and remediation that runs simulate, verify, approve, execute, health-check.</li>
       </ul>
-      <p><a class="arrow-link" href="index.html#exhibit-d">The AI security exhibit in the case file</a></p>
+      <p><a class="arrow-link" href="ai.html#exhibit-d">The AI security exhibit in the case file</a></p>
     </div>
     <p class="note rv">All Breakwater devices are simulated containers. No real operational network was scanned.</p>
     <div class="btn-row rv" style="margin-top:32px">
@@ -210,15 +213,15 @@
       <p class="site-foot__meta">Security consultant, cybersecurity instructor and doctoral researcher. Birmingham, Alabama.</p>
     </div>
     <ul class="site-foot__links">
-      <li><a href="mailto:ezekiel@cyntraix.io">Email</a></li>
+      <li><a href="mailto:ologundeomotola@gmail.com">Email</a></li>
       <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
       <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
       <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       <li><a href="about.html">Model card</a></li>
+      <li><a href="writing.html">Writing</a></li>
       <li><a href="education.html">Education</a></li>
       <li><a href="credentials.html">Credentials</a></li>
       <li><a href="Resourcehub.html">Resource hub</a></li>
-      <li><a href="contact.html">Contact</a></li>
     </ul>
     <p class="site-foot__legal"><span>End of file. &copy; <span data-year>2026</span> Ezekiel Ologunde.</span><span>No trackers, no analytics, no cookies.</span></p>
   </div>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>The route: a career drawn as an attack graph | E. Ologunde</title>
+  <meta name="description" content="Ezekiel Ologunde's career drawn as an attack graph that draws itself as you scroll: 22 dated steps from an internet cafe in Ilorin in 2011 to securing AI-era systems.">
+  <meta name="theme-color" content="#15171a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The route | E. Ologunde">
+  <meta property="og:description" content="Ezekiel Ologunde's career drawn as an attack graph that draws itself as you scroll: 22 dated steps from an internet cafe in Ilorin in 2011 to securing AI-era systems.">
+  <meta property="og:url" content="https://ezekielologunde.github.io/route.html">
+  <meta property="og:image" content="https://ezekielologunde.github.io/assets/img/ezekiel-800.jpg">
+  <link rel="canonical" href="https://ezekielologunde.github.io/route.html">
+  <link rel="icon" type="image/jpeg" href="assets/img/ezekiel-96.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400..600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/casefile.css">
+  <link rel="stylesheet" href="assets/css/investigation.css">
+  <script src="assets/js/motion.js"></script>
+  <script src="assets/js/casefile.js" defer></script>
+  <script src="assets/js/investigation.js" defer></script>
+  <script src="assets/js/ambient.js" defer></script>
+</head>
+<body class="scene-page page-route" data-ambient="circuits">
+<a class="skip" href="#main">Skip to content</a>
+<canvas class="ambient" aria-hidden="true"></canvas>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html">
+      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="32" height="32" alt="">
+      <span class="brand__name">E. Ologunde</span>
+      <span class="brand__file">Case file</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Case file</a></li>
+        <li><a href="route.html" aria-current="page">Route</a></li>
+        <li><a href="evidence.html">Evidence</a></li>
+        <li><a href="ai.html">AI thread</a></li>
+        <li><a href="about.html">Model card</a></li>
+        <li><a href="homelab.html">Lab</a></li>
+        <li><a href="built.html">Built</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="Resourcehub.html">Resources</a></li>
+        <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+</header>
+<nav class="rail" aria-label="Scenes">
+  <ol>
+    <li><a href="index.html" aria-label="Scene 1: Case opens"><span class="rail__n" aria-hidden="true">01</span><span class="rail__t">Case opens</span></a></li>
+    <li><a href="route.html" aria-current="page" aria-label="Scene 2: The route"><span class="rail__n" aria-hidden="true">02</span><span class="rail__t">The route</span></a></li>
+    <li><a href="evidence.html" aria-label="Scene 3: Evidence room"><span class="rail__n" aria-hidden="true">03</span><span class="rail__t">Evidence room</span></a></li>
+    <li><a href="ai.html" aria-label="Scene 4: The AI thread"><span class="rail__n" aria-hidden="true">04</span><span class="rail__t">The AI thread</span></a></li>
+    <li><a href="about.html" aria-label="Scene 5: Model card"><span class="rail__n" aria-hidden="true">05</span><span class="rail__t">Model card</span></a></li>
+    <li><a href="contact.html" aria-label="Scene 6: Report to"><span class="rail__n" aria-hidden="true">06</span><span class="rail__t">Report to</span></a></li>
+  </ol>
+</nav>
+<main id="main">
+<p class="scene-ref wrap"><b>Scene 02 of 06</b><span>The route</span><span>Case file: E. Ologunde</span></p>
+<section class="sec scene scene--route" id="route" aria-labelledby="route-title">
+  <div class="wrap g12">
+    <header class="part">
+      <p class="part__no">Scene 02</p>
+      <h1 class="part__title" id="route-title">The route</h1>
+      <p class="part__note">22 dated nodes, 2011 to the expected D.Eng. in 2027. With motion on, it draws itself as you scroll.</p>
+    </header>
+    <div class="body prose">
+      <p class="plain"><b>In plain English:</b> each mark is a job, a degree or a project, in date order. The lines show how one step led to the next, and the red line is the shortest route from my first job to the work I want to do now: keeping AI-era systems secure.</p>
+      <p class="lede">Read it like an <abbr title="A map of the steps an attacker could take, from a starting point to a target.">attack graph</abbr>: one entry point, pivots that each opened the next position, assets picked up on the way, one objective.</p>
+      <p class="note" style="margin-top:0">Every node is a dated fact from my record; the layout and the edge labels are my reading of it. Select a node, or tab to it, for the full story. <a href="#route-text">Skip the drawing and read the route as text</a>.</p>
+    </div>
+  </div>
+  <div class="route" data-route>
+    <div class="route__stage">
+      <div class="wrap route__grid">
+        <div class="route__figure">
+          <div class="route__sheet">
+            <div class="route__cam">
+<svg class="graph graph--wide" viewBox="0 0 1360 610" role="group" aria-labelledby="g-title g-desc">
+<title id="g-title">Career attack graph of Ezekiel Ologunde</title>
+<desc id="g-desc">22 dated nodes from 2011 to the expected doctorate in 2027, joined by edges named for the technique that led from one to the next. The highlighted shortest path runs from the Ilorin internet cafe through tech support, OT and SCADA work, a master's in cyber forensics, the GWU doctorate and Breakwater to the objective, securing AI-era systems. The same content is listed as text below the graph.</desc>
+<defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" class="gridline"/></pattern><marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0.5L7.5 4L0 7.5" class="arrowhead"/></marker></defs>
+<rect class="sheet" x="0.5" y="0.5" width="1359" height="609"/><rect class="gridfill" x="1" y="1" width="1358" height="608"/>
+<g class="axis" aria-hidden="true">
+<line x1="40" y1="34" x2="1320" y2="34"/>
+<line x1="70" y1="30" x2="70" y2="38"/><line class="col" x1="70" y1="42" x2="70" y2="598"/><text x="70" y="24">2011</text>
+<line x1="190" y1="30" x2="190" y2="38"/><line class="col" x1="190" y1="42" x2="190" y2="598"/><text x="190" y="24">2014</text>
+<line x1="300" y1="30" x2="300" y2="38"/><line class="col" x1="300" y1="42" x2="300" y2="598"/><text x="300" y="24">2016</text>
+<line x1="420" y1="30" x2="420" y2="38"/><line class="col" x1="420" y1="42" x2="420" y2="598"/><text x="420" y="24">2019</text>
+<line x1="530" y1="30" x2="530" y2="38"/><line class="col" x1="530" y1="42" x2="530" y2="598"/><text x="530" y="24">2021</text>
+<line x1="630" y1="30" x2="630" y2="38"/><line class="col" x1="630" y1="42" x2="630" y2="598"/><text x="630" y="24">2022</text>
+<line x1="720" y1="30" x2="720" y2="38"/><line class="col" x1="720" y1="42" x2="720" y2="598"/><text x="720" y="24">2023</text>
+<line x1="810" y1="30" x2="810" y2="38"/><line class="col" x1="810" y1="42" x2="810" y2="598"/><text x="810" y="24">2024</text>
+<line x1="920" y1="30" x2="920" y2="38"/><line class="col" x1="920" y1="42" x2="920" y2="598"/><text x="920" y="24">2025</text>
+<line x1="1040" y1="30" x2="1040" y2="38"/><line class="col" x1="1040" y1="42" x2="1040" y2="598"/><text x="1040" y="24">2026</text>
+<line x1="1150" y1="30" x2="1150" y2="38"/><line class="col" x1="1150" y1="42" x2="1150" y2="598"/><text x="1150" y="24">2027</text>
+</g>
+<g class="legend" aria-hidden="true" transform="translate(24 62)">
+<rect class="lg-box" x="0" y="0" width="300" height="190"/><line class="lg-rule" x1="0" y1="26" x2="300" y2="26"/>
+<text class="lg-head" x="12" y="17">LEGEND . DWG EO-01 . SHEET 1/1</text>
+<g class="node-static t-entry"><rect class="shape" x="17" y="39" width="18" height="18"/><rect class="core" x="23" y="45" width="6" height="6"/></g>
+<text class="lg-txt" x="48" y="52">Entry point: where it started</text>
+<g class="node-static t-pivot"><circle class="shape" cx="26" cy="72" r="7"/></g>
+<text class="lg-txt" x="48" y="76">Pivot: a step that opened the next</text>
+<g class="node-static t-asset"><path class="shape" d="M26 87 L35 96 L26 105 L17 96 Z"/></g>
+<text class="lg-txt" x="48" y="100">Asset: a credential, tool or work</text>
+<g class="node-static t-objective" transform="translate(26 120) scale(.6) translate(-26 -120)"><circle class="shape" cx="26" cy="120" r="15"/><circle class="ring" cx="26" cy="120" r="9"/><circle class="core" cx="26" cy="120" r="3.5"/><path class="tick" d="M5 120h5M42 120h5M26 99v5M26 136v5"/></g>
+<text class="lg-txt" x="48" y="124">Objective: where the route points</text>
+<line class="edge-line hot" x1="12" y1="146" x2="40" y2="146"/><text class="lg-txt" x="48" y="150">Shortest path: 6 hops</text>
+<line class="edge-line" x1="12" y1="168" x2="40" y2="168"/><text class="lg-txt" x="48" y="172">Other move. Label = technique</text>
+</g>
+
+<line class="scan" x1="0" y1="42" x2="0" y2="598" aria-hidden="true"/>
+<g class="traces" aria-hidden="true"><path class="trace" d="M70 330 L300 330 L530 330 L810 330 L950 330 L1040 220 L1210 330"/></g>
+<g class="edges" aria-hidden="true">
+<g class="edge" data-from="cafe" data-to="dreamlabs" data-i="1"><line class="edge-line" x1="79.2" y1="339.2" x2="181.5" y2="441.5" marker-end="url(#arr)"/><text class="edge-label" x="180.0" y="393.0">web + networks</text></g>
+<g class="edge" data-from="cafe" data-to="poly" data-i="2"><line class="edge-line" x1="76.4" y1="341.3" x2="183.6" y2="528.7" marker-end="url(#arr)"/><text class="edge-label" x="104.4" y="471.2">formal CS</text></g>
+<g class="edge hot" data-from="cafe" data-to="pulse" data-i="3"><line class="edge-line" x1="83.0" y1="330.0" x2="288.0" y2="330.0" marker-end="url(#arr)"/><text class="edge-label" x="185.0" y="325.0">troubleshooting</text></g>
+<g class="edge" data-from="dreamlabs" data-to="pulse" data-i="3"><line class="edge-line" x1="197.4" y1="441.9" x2="291.9" y2="338.8" marker-end="url(#arr)"/><text class="edge-label" x="293.0" y="393.0">user support</text></g>
+<g class="edge" data-from="poly" data-to="unilorin" data-i="4"><line class="edge-line" x1="202.0" y1="540.0" x2="407.0" y2="540.0" marker-end="url(#arr)"/><text class="edge-label" x="305.0" y="535.0">CS + education</text></g>
+<g class="edge" data-from="pulse" data-to="ebonyi" data-i="5"><line class="edge-line" x1="307.8" y1="337.8" x2="411.5" y2="441.5" marker-end="url(#arr)"/><text class="edge-label" x="410.0" y="393.0">access control</text></g>
+<g class="edge hot" data-from="pulse" data-to="totalsecure" data-i="6"><line class="edge-line" x1="311.0" y1="330.0" x2="518.0" y2="330.0" marker-end="url(#arr)"/><text class="edge-label" x="415.0" y="325.0">network integration</text></g>
+<g class="edge" data-from="ebonyi" data-to="totalsecure" data-i="6"><line class="edge-line" x1="427.4" y1="441.9" x2="521.9" y2="338.8" marker-end="url(#arr)"/><text class="edge-label" x="531.0" y="393.0">regulated systems</text></g>
+<g class="edge" data-from="unilorin" data-to="bu" data-i="7"><line class="edge-line" x1="432.0" y1="540.0" x2="618.0" y2="540.0" marker-end="url(#arr)"/><text class="edge-label" x="525.0" y="535.0">teaching</text></g>
+<g class="edge" data-from="totalsecure" data-to="genai" data-i="8"><line class="edge-line" x1="537.2" y1="321.7" x2="711.5" y2="119.8" marker-end="url(#arr)"/><text class="edge-label" x="567.0" y="223.0">new attack surface</text></g>
+<g class="edge hot" data-from="totalsecure" data-to="ubalt" data-i="9"><line class="edge-line" x1="541.0" y1="330.0" x2="798.0" y2="330.0" marker-end="url(#arr)"/><text class="edge-label" x="670.0" y="325.0">forensics</text></g>
+<g class="edge" data-from="ubalt" data-to="ssrn" data-i="10"><line class="edge-line" x1="810.0" y1="319.0" x2="810.0" y2="233.0" marker-end="url(#arr)"/><text class="edge-label" x="758.0" y="278.0">writing in public</text></g>
+<g class="edge" data-from="bu" data-to="syracuse" data-i="11"><line class="edge-line" x1="641.0" y1="540.0" x2="798.0" y2="540.0" marker-end="url(#arr)"/><text class="edge-label" x="720.0" y="535.0">classroom labs</text></g>
+<g class="edge" data-from="ubalt" data-to="cyntraix" data-i="12"><line class="edge-line" x1="817.4" y1="338.1" x2="911.9" y2="441.2" marker-end="url(#arr)"/><text class="edge-label" x="915.0" y="393.0">risk assessment</text></g>
+<g class="edge" data-from="syracuse" data-to="lawson" data-i="13"><line class="edge-line" x1="821.0" y1="540.0" x2="908.0" y2="540.0" marker-end="url(#arr)"/><text class="edge-label" x="865.0" y="535.0">curriculum</text></g>
+<g class="edge" data-from="genai" data-to="appacademy" data-i="14"><line class="edge-line" x1="732.0" y1="110.0" x2="907.0" y2="110.0" marker-end="url(#arr)"/><text class="edge-label" x="820.0" y="105.0">building with models</text></g>
+<g class="edge" data-from="lawson" data-to="uagc" data-i="15"><line class="edge-line" x1="931.0" y1="540.0" x2="1028.0" y2="540.0" marker-end="url(#arr)"/><text class="edge-label" x="980.0" y="535.0">pen testing</text></g>
+<g class="edge hot" data-from="ubalt" data-to="gwu" data-i="16"><line class="edge-line" x1="821.0" y1="330.0" x2="938.0" y2="330.0" marker-end="url(#arr)"/><text class="edge-label" x="880.0" y="325.0">evidence rules</text></g>
+<g class="edge hot" data-from="gwu" data-to="breakwater" data-i="17"><line class="edge-line" x1="957.0" y1="321.5" x2="1032.4" y2="229.3" marker-end="url(#arr)"/><text class="edge-label" x="962" y="272">attack-graph research</text></g>
+<g class="edge" data-from="ssrn" data-to="breakwater" data-i="17"><line class="edge-line" x1="822.0" y1="220.0" x2="1028.0" y2="220.0" marker-end="url(#arr)"/><text class="edge-label" x="925.0" y="215.0">ACM paper draft</text></g>
+<g class="edge" data-from="cyntraix" data-to="homelab" data-i="18"><line class="edge-line" x1="931.0" y1="450.0" x2="1027.0" y2="450.0" marker-end="url(#arr)"/><text class="edge-label" x="980.0" y="445.0">test first</text></g>
+<g class="edge" data-from="appacademy" data-to="howz" data-i="19"><line class="edge-line" x1="932.0" y1="110.0" x2="1137.0" y2="110.0" marker-end="url(#arr)"/><text class="edge-label" x="1035.0" y="105.0">LLM guardrails</text></g>
+<g class="edge" data-from="uagc" data-to="adrian" data-i="20"><line class="edge-line" x1="1051.0" y1="540.0" x2="1138.0" y2="540.0" marker-end="url(#arr)"/><text class="edge-label" x="1095.0" y="535.0">hacking</text></g>
+<g class="edge hot" data-from="breakwater" data-to="objective" data-i="21"><line class="edge-line" x1="1049.2" y1="226.0" x2="1193.2" y2="319.1" marker-end="url(#arr)"/><text class="edge-label" x="1172" y="262">AI threat modeling</text></g>
+<g class="edge" data-from="howz" data-to="objective" data-i="21"><line class="edge-line" x1="1153.2" y1="121.6" x2="1204.7" y2="310.7" marker-end="url(#arr)"/><text class="edge-label" x="1218.0" y="179.0">human approval</text></g>
+<g class="edge" data-from="homelab" data-to="objective" data-i="21"><line class="edge-line" x1="1049.8" y1="443.1" x2="1193.7" y2="341.5" marker-end="url(#arr)"/><text class="edge-label" x="1090.0" y="397.0">run what I recommend</text></g>
+<g class="edge" data-from="adrian" data-to="objective" data-i="21"><line class="edge-line" x1="1153.0" y1="529.4" x2="1204.5" y2="349.2" marker-end="url(#arr)"/><text class="edge-label" x="1234.0" y="438.0">training defenders</text></g>
+</g>
+<g class="nodes">
+<a class="node t-entry on-path" id="g-cafe" href="#n-cafe" data-id="cafe" data-i="0" aria-label="Internet cafe. Entry point. June 2011 to November 2012. Show details."><circle class="hit" cx="70" cy="330" r="23"/><rect class="shape" x="61" y="321" width="18" height="18"/><rect class="core" x="67" y="327" width="6" height="6"/><text class="n-title" x="70" y="356">Internet cafe</text><text class="n-meta" x="70" y="370">2011 . Ilorin</text></a>
+<a class="node t-pivot" id="g-dreamlabs" href="#n-dreamlabs" data-id="dreamlabs" data-i="1" aria-label="Dreamlabs. Pivot. June 2014 to September 2015; again October 2020 to August 2022. Show details."><circle class="hit" cx="190" cy="450" r="21"/><circle class="shape" cx="190" cy="450" r="7"/><text class="n-title" x="190" y="474">Dreamlabs</text><text class="n-meta" x="190" y="488">2014 . web admin</text></a>
+<a class="node t-asset" id="g-poly" href="#n-poly" data-id="poly" data-i="2" aria-label="A.S. Computer Sci.. Asset. August 2014. Show details."><circle class="hit" cx="190" cy="540" r="22"/><path class="shape" d="M190 531 L199 540 L190 549 L181 540 Z"/><text class="n-title" x="190" y="565">A.S. Computer Sci.</text><text class="n-meta" x="190" y="579">2014 . Kwara Poly</text></a>
+<a class="node t-pivot on-path" id="g-pulse" href="#n-pulse" data-id="pulse" data-i="3" aria-label="Tech support. Pivot. February 2016 to October 2020. Show details."><circle class="hit" cx="300" cy="330" r="21"/><circle class="shape" cx="300" cy="330" r="7"/><text class="n-title" x="300" y="354">Tech support</text><text class="n-meta" x="300" y="368">2016 to 2020</text></a>
+<a class="node t-asset" id="g-unilorin" href="#n-unilorin" data-id="unilorin" data-i="4" aria-label="B.S. CS + Education. Asset. October 2019. Show details."><circle class="hit" cx="420" cy="540" r="22"/><path class="shape" d="M420 531 L429 540 L420 549 L411 540 Z"/><text class="n-title" x="420" y="565">B.S. CS + Education</text><text class="n-meta" x="420" y="579">2019 . Unilorin</text></a>
+<a class="node t-pivot" id="g-ebonyi" href="#n-ebonyi" data-id="ebonyi" data-i="5" aria-label="Health insurance IT. Pivot. November 2019 to October 2020. Show details."><circle class="hit" cx="420" cy="450" r="21"/><circle class="shape" cx="420" cy="450" r="7"/><text class="n-title" x="420" y="474">Health insurance IT</text><text class="n-meta" x="420" y="488">2019 . Abakaliki</text></a>
+<a class="node t-pivot on-path" id="g-totalsecure" href="#n-totalsecure" data-id="totalsecure" data-i="6" aria-label="OT / SCADA. Pivot. October 2021 to March 2022. Show details."><circle class="hit" cx="530" cy="330" r="21"/><circle class="shape" cx="530" cy="330" r="7"/><text class="n-title" x="530" y="354">OT / SCADA</text><text class="n-meta" x="530" y="368">2021 . remote</text></a>
+<a class="node t-pivot" id="g-bu" href="#n-bu" data-id="bu" data-i="7" aria-label="Boston Univ. TA. Pivot. September 2022 to December 2022. Show details."><circle class="hit" cx="630" cy="540" r="21"/><circle class="shape" cx="630" cy="540" r="7"/><text class="n-title" x="630" y="564">Boston Univ. TA</text><text class="n-meta" x="630" y="578">2022</text></a>
+<a class="node t-asset" id="g-genai" href="#n-genai" data-id="genai" data-i="8" aria-label="Intro to GenAI. Asset. May 2023. Show details."><circle class="hit" cx="720" cy="110" r="22"/><path class="shape" d="M720 101 L729 110 L720 119 L711 110 Z"/><text class="n-title" x="720" y="90">Intro to GenAI</text><text class="n-meta" x="720" y="76">2023 . Udacity</text></a>
+<a class="node t-pivot on-path" id="g-ubalt" href="#n-ubalt" data-id="ubalt" data-i="9" aria-label="M.S. Cyber Forensics. Pivot. May 2024. Show details."><circle class="hit" cx="810" cy="330" r="21"/><circle class="shape" cx="810" cy="330" r="7"/><text class="n-title" x="810" y="354">M.S. Cyber Forensics</text><text class="n-meta" x="810" y="368">2024 . GPA 3.9</text></a>
+<a class="node t-asset" id="g-ssrn" href="#n-ssrn" data-id="ssrn" data-i="10" aria-label="SSRN preprints. Asset. 2024 to 2026. Show details."><circle class="hit" cx="810" cy="220" r="22"/><path class="shape" d="M810 211 L819 220 L810 229 L801 220 Z"/><text class="n-title" x="810" y="200">SSRN preprints</text><text class="n-meta" x="810" y="186">2024 to 2026 . 24</text></a>
+<a class="node t-pivot" id="g-syracuse" href="#n-syracuse" data-id="syracuse" data-i="11" aria-label="Syracuse CSD. Pivot. August 2024 to June 2025. Show details."><circle class="hit" cx="810" cy="540" r="21"/><circle class="shape" cx="810" cy="540" r="7"/><text class="n-title" x="810" y="564">Syracuse CSD</text><text class="n-meta" x="810" y="578">2024 to 2025</text></a>
+<a class="node t-pivot" id="g-cyntraix" href="#n-cyntraix" data-id="cyntraix" data-i="12" aria-label="Cyntraix. Pivot. January 2025 to now. Show details."><circle class="hit" cx="920" cy="450" r="21"/><circle class="shape" cx="920" cy="450" r="7"/><text class="n-title" x="920" y="474">Cyntraix</text><text class="n-meta" x="920" y="488">2025 . founder</text></a>
+<a class="node t-pivot" id="g-lawson" href="#n-lawson" data-id="lawson" data-i="13" aria-label="Lawson State. Pivot. June 2025 to now. Show details."><circle class="hit" cx="920" cy="540" r="21"/><circle class="shape" cx="920" cy="540" r="7"/><text class="n-title" x="920" y="564">Lawson State</text><text class="n-meta" x="920" y="578">since 2025</text></a>
+<a class="node t-asset" id="g-appacademy" href="#n-appacademy" data-id="appacademy" data-i="14" aria-label="AI engineering cert. Asset. July 2025. Show details."><circle class="hit" cx="920" cy="110" r="22"/><path class="shape" d="M920 101 L929 110 L920 119 L911 110 Z"/><text class="n-title" x="920" y="90">AI engineering cert</text><text class="n-meta" x="920" y="76">2025 . App Academy</text></a>
+<a class="node t-pivot" id="g-uagc" href="#n-uagc" data-id="uagc" data-i="15" aria-label="UAGC faculty. Pivot. March 2026 to now. Show details."><circle class="hit" cx="1040" cy="540" r="21"/><circle class="shape" cx="1040" cy="540" r="7"/><text class="n-title" x="1040" y="564">UAGC faculty</text><text class="n-meta" x="1040" y="578">2026 . CYB102</text></a>
+<a class="node t-pivot on-path" id="g-gwu" href="#n-gwu" data-id="gwu" data-i="16" aria-label="GWU D.Eng.. Pivot. Expected September 2027. Show details."><circle class="hit" cx="950" cy="330" r="21"/><circle class="shape" cx="950" cy="330" r="7"/><text class="n-title" x="950" y="354">GWU D.Eng.</text><text class="n-meta" x="950" y="368">expected Sep 2027</text></a>
+<a class="node t-pivot on-path" id="g-breakwater" href="#n-breakwater" data-id="breakwater" data-i="17" aria-label="Breakwater. Pivot. May 2026 onward. Show details."><circle class="hit" cx="1040" cy="220" r="21"/><circle class="shape" cx="1040" cy="220" r="7"/><text class="n-title" x="1040" y="201">Breakwater</text><text class="n-meta" x="1040" y="187">2026 . SEAS 8414</text></a>
+<a class="node t-asset" id="g-homelab" href="#n-homelab" data-id="homelab" data-i="18" aria-label="Security lab. Asset. Running now. Show details."><circle class="hit" cx="1040" cy="450" r="22"/><path class="shape" d="M1040 441 L1049 450 L1040 459 L1031 450 Z"/><text class="n-title" x="1040" y="475">Security lab</text><text class="n-meta" x="1040" y="489">2 nodes . 1 SIEM</text></a>
+<a class="node t-asset" id="g-howz" href="#n-howz" data-id="howz" data-i="19" aria-label="HoWz + local model. Asset. Daily use. Show details."><circle class="hit" cx="1150" cy="110" r="22"/><path class="shape" d="M1150 101 L1159 110 L1150 119 L1141 110 Z"/><text class="n-title" x="1150" y="90">HoWz + local model</text><text class="n-meta" x="1150" y="76">2026 . my systems</text></a>
+<a class="node t-pivot" id="g-adrian" href="#n-adrian" data-id="adrian" data-i="20" aria-label="Adrian College. Pivot. Fall 2026. Show details."><circle class="hit" cx="1150" cy="540" r="21"/><circle class="shape" cx="1150" cy="540" r="7"/><text class="n-title" x="1150" y="564">Adrian College</text><text class="n-meta" x="1150" y="578">fall 2026</text></a>
+<a class="node t-objective on-path" id="g-objective" href="#n-objective" data-id="objective" data-i="21" aria-label="Securing AI-era systems. Objective. Now and next. Show details."><circle class="hit" cx="1210" cy="330" r="29"/><circle class="shape" cx="1210" cy="330" r="15"/><circle class="ring" cx="1210" cy="330" r="9"/><circle class="core" cx="1210" cy="330" r="3.5"/><path class="tick" d="M1189 330h5M1226 330h5M1210 309v5M1210 346v5"/><text class="n-title start" x="1235" y="324">Securing</text><text class="n-title start" x="1235" y="340">AI-era systems</text><text class="n-meta start" x="1235" y="356">objective . open</text></a>
+</g></svg>
+<svg class="graph graph--tall" viewBox="0 0 360 1356" role="group" aria-labelledby="gv-title gv-desc">
+<title id="gv-title">Career attack graph, vertical layout</title>
+<desc id="gv-desc">The same 22 nodes on one line in date order, from the Ilorin internet cafe in 2011 at the top to the objective, securing AI-era systems, at the bottom. Arcs on the left are the edges; the highlighted arcs are the shortest path. The same content is listed as text below.</desc>
+<defs><marker id="varr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0.5L7.5 4L0 7.5" class="arrowhead"/></marker></defs>
+<line class="spine" x1="150" y1="46" x2="150" y2="1306" aria-hidden="true"/>
+<g class="traces" aria-hidden="true"><path class="trace" d="M142 46 C104 46 104 226 138 226 M142 226 C104 226 104 406 138 406 M142 406 C104 406 104 586 138 586 M142 586 C44 586 44 1006 138 1006 M150 1017 L150 1054 M142 1066 C89 1066 89 1306 138 1306"/></g>
+<g class="edges" aria-hidden="true">
+<g class="edge" data-from="cafe" data-to="dreamlabs" data-i="1"><path class="edge-line" d="M150 57 L150 94" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="cafe" data-to="poly" data-i="2"><path class="edge-line" d="M142 46 C119 46 119 166 138 166" marker-end="url(#varr)"/></g>
+<g class="edge hot" data-from="cafe" data-to="pulse" data-i="3"><path class="edge-line" d="M142 46 C104 46 104 226 138 226" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="dreamlabs" data-to="pulse" data-i="3"><path class="edge-line" d="M142 106 C119 106 119 226 138 226" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="poly" data-to="unilorin" data-i="4"><path class="edge-line" d="M142 166 C119 166 119 286 138 286" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="pulse" data-to="ebonyi" data-i="5"><path class="edge-line" d="M142 226 C119 226 119 346 138 346" marker-end="url(#varr)"/></g>
+<g class="edge hot" data-from="pulse" data-to="totalsecure" data-i="6"><path class="edge-line" d="M142 226 C104 226 104 406 138 406" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="ebonyi" data-to="totalsecure" data-i="6"><path class="edge-line" d="M150 357 L150 394" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="unilorin" data-to="bu" data-i="7"><path class="edge-line" d="M142 286 C104 286 104 466 138 466" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="totalsecure" data-to="genai" data-i="8"><path class="edge-line" d="M142 406 C119 406 119 526 138 526" marker-end="url(#varr)"/></g>
+<g class="edge hot" data-from="totalsecure" data-to="ubalt" data-i="9"><path class="edge-line" d="M142 406 C104 406 104 586 138 586" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="ubalt" data-to="ssrn" data-i="10"><path class="edge-line" d="M150 597 L150 634" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="bu" data-to="syracuse" data-i="11"><path class="edge-line" d="M142 466 C89 466 89 706 138 706" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="ubalt" data-to="cyntraix" data-i="12"><path class="edge-line" d="M142 586 C104 586 104 766 138 766" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="syracuse" data-to="lawson" data-i="13"><path class="edge-line" d="M142 706 C119 706 119 826 138 826" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="genai" data-to="appacademy" data-i="14"><path class="edge-line" d="M142 526 C59 526 59 886 138 886" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="lawson" data-to="uagc" data-i="15"><path class="edge-line" d="M142 826 C119 826 119 946 138 946" marker-end="url(#varr)"/></g>
+<g class="edge hot" data-from="ubalt" data-to="gwu" data-i="16"><path class="edge-line" d="M142 586 C44 586 44 1006 138 1006" marker-end="url(#varr)"/></g>
+<g class="edge hot" data-from="gwu" data-to="breakwater" data-i="17"><path class="edge-line" d="M150 1017 L150 1054" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="ssrn" data-to="breakwater" data-i="17"><path class="edge-line" d="M142 646 C44 646 44 1066 138 1066" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="cyntraix" data-to="homelab" data-i="18"><path class="edge-line" d="M142 766 C59 766 59 1126 138 1126" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="appacademy" data-to="howz" data-i="19"><path class="edge-line" d="M142 886 C74 886 74 1186 138 1186" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="uagc" data-to="adrian" data-i="20"><path class="edge-line" d="M142 946 C74 946 74 1246 138 1246" marker-end="url(#varr)"/></g>
+<g class="edge hot" data-from="breakwater" data-to="objective" data-i="21"><path class="edge-line" d="M142 1066 C89 1066 89 1306 138 1306" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="howz" data-to="objective" data-i="21"><path class="edge-line" d="M142 1186 C119 1186 119 1306 138 1306" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="homelab" data-to="objective" data-i="21"><path class="edge-line" d="M142 1126 C104 1126 104 1306 138 1306" marker-end="url(#varr)"/></g>
+<g class="edge" data-from="adrian" data-to="objective" data-i="21"><path class="edge-line" d="M150 1257 L150 1294" marker-end="url(#varr)"/></g>
+</g>
+<g class="nodes">
+<a class="node t-entry on-path" id="v-cafe" href="#n-cafe" data-id="cafe" data-i="0" aria-label="Internet cafe. Entry point. June 2011 to November 2012. Show details."><circle class="hit" cx="150" cy="46" r="24"/><rect class="shape" x="141" y="37" width="18" height="18"/><rect class="core" x="147" y="43" width="6" height="6"/><text class="n-title start" x="172" y="47">Internet cafe</text><text class="n-meta start" x="172" y="62">2011 . Ilorin</text></a>
+<a class="node t-pivot" id="v-dreamlabs" href="#n-dreamlabs" data-id="dreamlabs" data-i="1" aria-label="Dreamlabs. Pivot. June 2014 to September 2015; again October 2020 to August 2022. Show details."><circle class="hit" cx="150" cy="106" r="24"/><circle class="shape" cx="150" cy="106" r="7"/><text class="n-title start" x="172" y="107">Dreamlabs</text><text class="n-meta start" x="172" y="122">2014 . web admin</text></a>
+<a class="node t-asset" id="v-poly" href="#n-poly" data-id="poly" data-i="2" aria-label="A.S. Computer Sci.. Asset. August 2014. Show details."><circle class="hit" cx="150" cy="166" r="24"/><path class="shape" d="M150 157 L159 166 L150 175 L141 166 Z"/><text class="n-title start" x="172" y="167">A.S. Computer Sci.</text><text class="n-meta start" x="172" y="182">2014 . Kwara Poly</text></a>
+<a class="node t-pivot on-path" id="v-pulse" href="#n-pulse" data-id="pulse" data-i="3" aria-label="Tech support. Pivot. February 2016 to October 2020. Show details."><circle class="hit" cx="150" cy="226" r="24"/><circle class="shape" cx="150" cy="226" r="7"/><text class="n-title start" x="172" y="227">Tech support</text><text class="n-meta start" x="172" y="242">2016 to 2020</text></a>
+<a class="node t-asset" id="v-unilorin" href="#n-unilorin" data-id="unilorin" data-i="4" aria-label="B.S. CS + Education. Asset. October 2019. Show details."><circle class="hit" cx="150" cy="286" r="24"/><path class="shape" d="M150 277 L159 286 L150 295 L141 286 Z"/><text class="n-title start" x="172" y="287">B.S. CS + Education</text><text class="n-meta start" x="172" y="302">2019 . Unilorin</text></a>
+<a class="node t-pivot" id="v-ebonyi" href="#n-ebonyi" data-id="ebonyi" data-i="5" aria-label="Health insurance IT. Pivot. November 2019 to October 2020. Show details."><circle class="hit" cx="150" cy="346" r="24"/><circle class="shape" cx="150" cy="346" r="7"/><text class="n-title start" x="172" y="347">Health insurance IT</text><text class="n-meta start" x="172" y="362">2019 . Abakaliki</text></a>
+<a class="node t-pivot on-path" id="v-totalsecure" href="#n-totalsecure" data-id="totalsecure" data-i="6" aria-label="OT / SCADA. Pivot. October 2021 to March 2022. Show details."><circle class="hit" cx="150" cy="406" r="24"/><circle class="shape" cx="150" cy="406" r="7"/><text class="n-title start" x="172" y="407">OT / SCADA</text><text class="n-meta start" x="172" y="422">2021 . remote</text></a>
+<a class="node t-pivot" id="v-bu" href="#n-bu" data-id="bu" data-i="7" aria-label="Boston Univ. TA. Pivot. September 2022 to December 2022. Show details."><circle class="hit" cx="150" cy="466" r="24"/><circle class="shape" cx="150" cy="466" r="7"/><text class="n-title start" x="172" y="467">Boston Univ. TA</text><text class="n-meta start" x="172" y="482">2022</text></a>
+<a class="node t-asset" id="v-genai" href="#n-genai" data-id="genai" data-i="8" aria-label="Intro to GenAI. Asset. May 2023. Show details."><circle class="hit" cx="150" cy="526" r="24"/><path class="shape" d="M150 517 L159 526 L150 535 L141 526 Z"/><text class="n-title start" x="172" y="527">Intro to GenAI</text><text class="n-meta start" x="172" y="542">2023 . Udacity</text></a>
+<a class="node t-pivot on-path" id="v-ubalt" href="#n-ubalt" data-id="ubalt" data-i="9" aria-label="M.S. Cyber Forensics. Pivot. May 2024. Show details."><circle class="hit" cx="150" cy="586" r="24"/><circle class="shape" cx="150" cy="586" r="7"/><text class="n-title start" x="172" y="587">M.S. Cyber Forensics</text><text class="n-meta start" x="172" y="602">2024 . GPA 3.9</text></a>
+<a class="node t-asset" id="v-ssrn" href="#n-ssrn" data-id="ssrn" data-i="10" aria-label="SSRN preprints. Asset. 2024 to 2026. Show details."><circle class="hit" cx="150" cy="646" r="24"/><path class="shape" d="M150 637 L159 646 L150 655 L141 646 Z"/><text class="n-title start" x="172" y="647">SSRN preprints</text><text class="n-meta start" x="172" y="662">2024 to 2026 . 24</text></a>
+<a class="node t-pivot" id="v-syracuse" href="#n-syracuse" data-id="syracuse" data-i="11" aria-label="Syracuse CSD. Pivot. August 2024 to June 2025. Show details."><circle class="hit" cx="150" cy="706" r="24"/><circle class="shape" cx="150" cy="706" r="7"/><text class="n-title start" x="172" y="707">Syracuse CSD</text><text class="n-meta start" x="172" y="722">2024 to 2025</text></a>
+<a class="node t-pivot" id="v-cyntraix" href="#n-cyntraix" data-id="cyntraix" data-i="12" aria-label="Cyntraix. Pivot. January 2025 to now. Show details."><circle class="hit" cx="150" cy="766" r="24"/><circle class="shape" cx="150" cy="766" r="7"/><text class="n-title start" x="172" y="767">Cyntraix</text><text class="n-meta start" x="172" y="782">2025 . founder</text></a>
+<a class="node t-pivot" id="v-lawson" href="#n-lawson" data-id="lawson" data-i="13" aria-label="Lawson State. Pivot. June 2025 to now. Show details."><circle class="hit" cx="150" cy="826" r="24"/><circle class="shape" cx="150" cy="826" r="7"/><text class="n-title start" x="172" y="827">Lawson State</text><text class="n-meta start" x="172" y="842">since 2025</text></a>
+<a class="node t-asset" id="v-appacademy" href="#n-appacademy" data-id="appacademy" data-i="14" aria-label="AI engineering cert. Asset. July 2025. Show details."><circle class="hit" cx="150" cy="886" r="24"/><path class="shape" d="M150 877 L159 886 L150 895 L141 886 Z"/><text class="n-title start" x="172" y="887">AI engineering cert</text><text class="n-meta start" x="172" y="902">2025 . App Academy</text></a>
+<a class="node t-pivot" id="v-uagc" href="#n-uagc" data-id="uagc" data-i="15" aria-label="UAGC faculty. Pivot. March 2026 to now. Show details."><circle class="hit" cx="150" cy="946" r="24"/><circle class="shape" cx="150" cy="946" r="7"/><text class="n-title start" x="172" y="947">UAGC faculty</text><text class="n-meta start" x="172" y="962">2026 . CYB102</text></a>
+<a class="node t-pivot on-path" id="v-gwu" href="#n-gwu" data-id="gwu" data-i="16" aria-label="GWU D.Eng.. Pivot. Expected September 2027. Show details."><circle class="hit" cx="150" cy="1006" r="24"/><circle class="shape" cx="150" cy="1006" r="7"/><text class="n-title start" x="172" y="1007">GWU D.Eng.</text><text class="n-meta start" x="172" y="1022">expected Sep 2027</text></a>
+<a class="node t-pivot on-path" id="v-breakwater" href="#n-breakwater" data-id="breakwater" data-i="17" aria-label="Breakwater. Pivot. May 2026 onward. Show details."><circle class="hit" cx="150" cy="1066" r="24"/><circle class="shape" cx="150" cy="1066" r="7"/><text class="n-title start" x="172" y="1067">Breakwater</text><text class="n-meta start" x="172" y="1082">2026 . SEAS 8414</text></a>
+<a class="node t-asset" id="v-homelab" href="#n-homelab" data-id="homelab" data-i="18" aria-label="Security lab. Asset. Running now. Show details."><circle class="hit" cx="150" cy="1126" r="24"/><path class="shape" d="M150 1117 L159 1126 L150 1135 L141 1126 Z"/><text class="n-title start" x="172" y="1127">Security lab</text><text class="n-meta start" x="172" y="1142">2 nodes . 1 SIEM</text></a>
+<a class="node t-asset" id="v-howz" href="#n-howz" data-id="howz" data-i="19" aria-label="HoWz + local model. Asset. Daily use. Show details."><circle class="hit" cx="150" cy="1186" r="24"/><path class="shape" d="M150 1177 L159 1186 L150 1195 L141 1186 Z"/><text class="n-title start" x="172" y="1187">HoWz + local model</text><text class="n-meta start" x="172" y="1202">2026 . my systems</text></a>
+<a class="node t-pivot" id="v-adrian" href="#n-adrian" data-id="adrian" data-i="20" aria-label="Adrian College. Pivot. Fall 2026. Show details."><circle class="hit" cx="150" cy="1246" r="24"/><circle class="shape" cx="150" cy="1246" r="7"/><text class="n-title start" x="172" y="1247">Adrian College</text><text class="n-meta start" x="172" y="1262">fall 2026</text></a>
+<a class="node t-objective on-path" id="v-objective" href="#n-objective" data-id="objective" data-i="21" aria-label="Securing AI-era systems. Objective. Now and next. Show details."><circle class="hit" cx="150" cy="1306" r="26"/><circle class="shape" cx="150" cy="1306" r="15"/><circle class="ring" cx="150" cy="1306" r="9"/><circle class="core" cx="150" cy="1306" r="3.5"/><text class="n-title start" x="180" y="1307">Securing AI-era systems</text><text class="n-meta start" x="180" y="1322">objective . open</text></a>
+</g></svg>
+            </div>
+          </div>
+          <div class="route__controls" hidden>
+            <label class="route__scrub-k" for="route-scrub">Scrub</label>
+            <input class="route__scrub" id="route-scrub" type="range" min="0" max="21" step="1" value="21" aria-describedby="route-scrub-hint">
+            <span class="route__scrub-hint" id="route-scrub-hint">Arrow keys move one node</span>
+          </div>
+        </div>
+        <aside class="route__caption" aria-label="Node detail">
+          <div class="cap__ticker">
+            <span class="cap__k">Year</span>
+            <span class="cap__year" aria-hidden="true">Next</span>
+            <span class="cap__step">N-22 / 22</span>
+          </div>
+          <div class="cap__live" aria-live="polite" aria-atomic="true">
+            <p class="cap__kind">Objective . path 7/7</p>
+            <h3 class="cap__title" tabindex="-1">Securing AI-era systems</h3>
+            <p class="cap__date">Now and next</p>
+            <p class="cap__where">Open to work: Birmingham, Alabama, remote available</p>
+            <p class="cap__story">Where the route points: security engineering, AI security and governance, <abbr title="Governance, risk and compliance: making sure an organization manages its risks and follows the rules it must follow.">GRC</abbr>, detection and cybersecurity education roles. The rule I carry from forensics into AI: AI proposes, evidence decides.</p>
+            <p class="cap__via"><span>Shortest path</span> Internet cafe, Tech support, <abbr title="Operational technology: computers that run physical equipment such as pumps, valves and production lines.">OT</abbr> / <abbr title="Supervisory control and data acquisition: systems that monitor and control industrial equipment from a distance.">SCADA</abbr>, M.S. <abbr title="Investigating computers and networks to find out what happened, and proving it with evidence.">Cyber Forensics</abbr>, GWU <abbr title="Doctor of Engineering, a doctoral degree focused on applied research. His is expected in September 2027.">D.Eng.</abbr>, Breakwater, Securing AI-era systems.</p>
+          </div>
+          <div class="cap__extra"></div>
+          <button class="cap__resume btn" type="button" hidden>Resume the route</button>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="readout"><span class="readout__k">Shortest path, 6 hops</span> <a href="#n-cafe" data-go="cafe">Internet cafe</a> <span class="arrow" aria-hidden="true">&rarr;</span> <a href="#n-pulse" data-go="pulse">Tech support</a> <span class="arrow" aria-hidden="true">&rarr;</span> <a href="#n-totalsecure" data-go="totalsecure">OT / SCADA</a> <span class="arrow" aria-hidden="true">&rarr;</span> <a href="#n-ubalt" data-go="ubalt">M.S. Cyber Forensics</a> <span class="arrow" aria-hidden="true">&rarr;</span> <a href="#n-gwu" data-go="gwu">GWU D.Eng.</a> <span class="arrow" aria-hidden="true">&rarr;</span> <a href="#n-breakwater" data-go="breakwater">Breakwater</a> <span class="arrow" aria-hidden="true">&rarr;</span> <a href="#n-objective" data-go="objective">Securing AI-era systems</a></p>
+    <details class="astext" id="route-text" open>
+      <summary><span class="astext__t">The same graph, as text</span><span class="astext__m">22 nodes in date order, each with the edges that enter and leave it</span></summary>
+      <ol class="route-list">
+<li class="rn t-entry on-path" id="n-cafe" data-id="cafe" data-i="0" data-tick="2011" data-kind="Entry point . path 1/7">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-01</span><span class="rn__type">Entry point . path 1/7</span><span class="rn__date">June 2011 to November 2012</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Internet cafe</h3>
+    <p class="rn__where">Global Link Internet Cafe, Ilorin, Nigeria</p>
+    <p class="rn__story">My first job: running an internet cafe. The machines, the network, and every customer whose email would not open. Keeping strangers&#x27; computers alive is where the whole route starts.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">out</span> to <a href="#n-pulse" data-go="pulse">Tech support</a> by <span class="tech">troubleshooting</span></li><li><span class="dir">out</span> to <a href="#n-dreamlabs" data-go="dreamlabs">Dreamlabs</a> by <span class="tech">web + networks</span></li><li><span class="dir">out</span> to <a href="#n-poly" data-go="poly">A.S. Computer Sci.</a> by <span class="tech">formal CS</span></li></ul>
+    <p class="rn__links"><a href="about.html">About me</a></p>
+  </div></li>
+<li class="rn t-pivot" id="n-dreamlabs" data-id="dreamlabs" data-i="1" data-tick="2014" data-kind="Pivot">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-02</span><span class="rn__type">Pivot</span><span class="rn__date">June 2014 to September 2015; again October 2020 to August 2022</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Dreamlabs</h3>
+    <p class="rn__where">Dreamlabs Softwares, Ilorin</p>
+    <p class="rn__story">Manager and website administrator internship: I built web features in HTML, CSS and JavaScript and kept the network behind them up. I came back from 2020 to 2022 as the IT support specialist.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-cafe" data-go="cafe">Internet cafe</a> by <span class="tech">web + networks</span></li><li><span class="dir">out</span> to <a href="#n-pulse" data-go="pulse">Tech support</a> by <span class="tech">user support</span></li></ul>
+  </div></li>
+<li class="rn t-asset" id="n-poly" data-id="poly" data-i="2" data-tick="2014" data-kind="Asset">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-03</span><span class="rn__type">Asset</span><span class="rn__date">August 2014</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">A.S. Computer Sci.</h3>
+    <p class="rn__where">Kwara State Polytechnic</p>
+    <p class="rn__story">Associate of Science in Computer Science. The formal foundations under what the cafe had taught by hand.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-cafe" data-go="cafe">Internet cafe</a> by <span class="tech">formal CS</span></li><li><span class="dir">out</span> to <a href="#n-unilorin" data-go="unilorin">B.S. CS + Education</a> by <span class="tech">CS + education</span></li></ul>
+    <p class="rn__links"><a href="education.html">Education</a></p>
+  </div></li>
+<li class="rn t-pivot on-path" id="n-pulse" data-id="pulse" data-i="3" data-tick="2016" data-kind="Pivot . path 2/7">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-04</span><span class="rn__type">Pivot . path 2/7</span><span class="rn__date">February 2016 to October 2020</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Tech support</h3>
+    <p class="rn__where">Pulse Technologies, Ilorin</p>
+    <p class="rn__story">Four years as a technical support agent: Windows, business applications, user accounts, and who is allowed to open what. Access control, learned one ticket at a time.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-cafe" data-go="cafe">Internet cafe</a> by <span class="tech">troubleshooting</span></li><li><span class="dir">in</span> from <a href="#n-dreamlabs" data-go="dreamlabs">Dreamlabs</a> by <span class="tech">user support</span></li><li><span class="dir">out</span> to <a href="#n-totalsecure" data-go="totalsecure">OT / SCADA</a> by <span class="tech">network integration</span></li><li><span class="dir">out</span> to <a href="#n-ebonyi" data-go="ebonyi">Health insurance IT</a> by <span class="tech">access control</span></li></ul>
+  </div></li>
+<li class="rn t-asset" id="n-unilorin" data-id="unilorin" data-i="4" data-tick="2019" data-kind="Asset">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-05</span><span class="rn__type">Asset</span><span class="rn__date">October 2019</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">B.S. CS + Education</h3>
+    <p class="rn__where">University of Ilorin</p>
+    <p class="rn__story">B.S. Computer Science and Education, dual major. Building systems and explaining them, on one transcript.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-poly" data-go="poly">A.S. Computer Sci.</a> by <span class="tech">CS + education</span></li><li><span class="dir">out</span> to <a href="#n-bu" data-go="bu">Boston Univ. TA</a> by <span class="tech">teaching</span></li></ul>
+    <p class="rn__links"><a href="education.html">Education</a></p>
+  </div></li>
+<li class="rn t-pivot" id="n-ebonyi" data-id="ebonyi" data-i="5" data-tick="2019" data-kind="Pivot">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-06</span><span class="rn__type">Pivot</span><span class="rn__date">November 2019 to October 2020</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Health insurance IT</h3>
+    <p class="rn__where">Ebonyi State Health Insurance Agency, Abakaliki</p>
+    <p class="rn__story">IT officer at a public health insurance agency that handled sensitive health data: my first regulated environment. I built the interface for a claims registration system.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-pulse" data-go="pulse">Tech support</a> by <span class="tech">access control</span></li><li><span class="dir">out</span> to <a href="#n-totalsecure" data-go="totalsecure">OT / SCADA</a> by <span class="tech">regulated systems</span></li></ul>
+  </div></li>
+<li class="rn t-pivot on-path" id="n-totalsecure" data-id="totalsecure" data-i="6" data-tick="2021" data-kind="Pivot . path 3/7">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-07</span><span class="rn__type">Pivot . path 3/7</span><span class="rn__date">October 2021 to March 2022</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">OT / SCADA</h3>
+    <p class="rn__where">Total Secure (remote)</p>
+    <p class="rn__story">Integration technician: connecting oil pump control and monitoring systems to OT networks and SCADA data pipelines. My first operational technology work.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-pulse" data-go="pulse">Tech support</a> by <span class="tech">network integration</span></li><li><span class="dir">in</span> from <a href="#n-ebonyi" data-go="ebonyi">Health insurance IT</a> by <span class="tech">regulated systems</span></li><li><span class="dir">out</span> to <a href="#n-ubalt" data-go="ubalt">M.S. Cyber Forensics</a> by <span class="tech">forensics</span></li><li><span class="dir">out</span> to <a href="#n-genai" data-go="genai">Intro to GenAI</a> by <span class="tech">new attack surface</span></li></ul>
+  </div></li>
+<li class="rn t-pivot" id="n-bu" data-id="bu" data-i="7" data-tick="2022" data-kind="Pivot">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-08</span><span class="rn__type">Pivot</span><span class="rn__date">September 2022 to December 2022</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Boston Univ. TA</h3>
+    <p class="rn__where">Boston University</p>
+    <p class="rn__story">Graduate teaching assistant for Experience Design.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-unilorin" data-go="unilorin">B.S. CS + Education</a> by <span class="tech">teaching</span></li><li><span class="dir">out</span> to <a href="#n-syracuse" data-go="syracuse">Syracuse CSD</a> by <span class="tech">classroom labs</span></li></ul>
+  </div></li>
+<li class="rn t-asset" id="n-genai" data-id="genai" data-i="8" data-tick="2023" data-kind="Asset">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-09</span><span class="rn__type">Asset</span><span class="rn__date">May 2023</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Intro to GenAI</h3>
+    <p class="rn__where">Google Cloud, via Udacity</p>
+    <p class="rn__story">Introduction to Generative AI. The first formal look at the thing everyone was about to plug into everything. The AI thread starts here.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-totalsecure" data-go="totalsecure">OT / SCADA</a> by <span class="tech">new attack surface</span></li><li><span class="dir">out</span> to <a href="#n-appacademy" data-go="appacademy">AI engineering cert</a> by <span class="tech">building with models</span></li></ul>
+    <p class="rn__links"><a href="credentials.html">Credentials</a></p>
+  </div></li>
+<li class="rn t-pivot on-path" id="n-ubalt" data-id="ubalt" data-i="9" data-tick="2024" data-kind="Pivot . path 4/7">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-10</span><span class="rn__type">Pivot . path 4/7</span><span class="rn__date">May 2024</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">M.S. Cyber Forensics</h3>
+    <p class="rn__where">University of Baltimore</p>
+    <p class="rn__story">M.S. Cyber Forensics, GPA 3.9. The turn: from keeping systems up to explaining what happened to them. It taught me to ask what happened and how we know, and that question followed me into AI-era security.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-totalsecure" data-go="totalsecure">OT / SCADA</a> by <span class="tech">forensics</span></li><li><span class="dir">out</span> to <a href="#n-gwu" data-go="gwu">GWU D.Eng.</a> by <span class="tech">evidence rules</span></li><li><span class="dir">out</span> to <a href="#n-ssrn" data-go="ssrn">SSRN preprints</a> by <span class="tech">writing in public</span></li><li><span class="dir">out</span> to <a href="#n-cyntraix" data-go="cyntraix">Cyntraix</a> by <span class="tech">risk assessment</span></li></ul>
+    <p class="rn__links"><a href="education.html">Education</a></p>
+  </div></li>
+<li class="rn t-asset" id="n-ssrn" data-id="ssrn" data-i="10" data-tick="2024" data-kind="Asset">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-11</span><span class="rn__type">Asset</span><span class="rn__date">2024 to 2026</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">SSRN preprints</h3>
+    <p class="rn__where"><abbr title="An online library where researchers post papers, often before or without formal peer review.">SSRN</abbr>, listed on ORCID; essays on Medium</p>
+    <p class="rn__story">24 <abbr title="A research paper shared publicly before, or without, formal peer review.">preprints</abbr>, including BootKitty, an analysis of modern bootkit and rootkit threats (October 2025), and Adversarial Machine Learning on Automotive Attack Surfaces (2026). SSRN is a preprint repository, not a peer-reviewed journal: the count says I write, not that anyone refereed it. Essays include why risk management matters more than ever in the age of AI (December 2025).</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-ubalt" data-go="ubalt">M.S. Cyber Forensics</a> by <span class="tech">writing in public</span></li><li><span class="dir">out</span> to <a href="#n-breakwater" data-go="breakwater">Breakwater</a> by <span class="tech">ACM paper draft</span></li></ul>
+    <p class="rn__links"><a href="writing.html">Writing</a><a href="https://orcid.org/0009-0005-7207-8506" target="_blank" rel="noopener noreferrer">ORCID</a><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">Medium</a></p>
+  </div></li>
+<li class="rn t-pivot" id="n-syracuse" data-id="syracuse" data-i="11" data-tick="2024" data-kind="Pivot">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-12</span><span class="rn__type">Pivot</span><span class="rn__date">August 2024 to June 2025</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Syracuse CSD</h3>
+    <p class="rn__where">Syracuse City School District</p>
+    <p class="rn__story">My first classroom of my own: high school cybersecurity with Wireshark and Nessus labs and <abbr title="A security exercise where students solve hacking puzzles to find hidden answers, called flags.">capture-the-flag</abbr> exercises.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-bu" data-go="bu">Boston Univ. TA</a> by <span class="tech">classroom labs</span></li><li><span class="dir">out</span> to <a href="#n-lawson" data-go="lawson">Lawson State</a> by <span class="tech">curriculum</span></li></ul>
+  </div></li>
+<li class="rn t-pivot" id="n-cyntraix" data-id="cyntraix" data-i="12" data-tick="2025" data-kind="Pivot">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-13</span><span class="rn__type">Pivot</span><span class="rn__date">January 2025 to now</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Cyntraix</h3>
+    <p class="rn__where">Cyntraix</p>
+    <p class="rn__story">I founded Cyntraix: security assessments, <abbr title="A security approach where no user or device is trusted by default, even inside the network.">Zero Trust</abbr> architecture and risk governance, and AI security risk and governance advisory. Client names stay out of this page.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-ubalt" data-go="ubalt">M.S. Cyber Forensics</a> by <span class="tech">risk assessment</span></li><li><span class="dir">out</span> to <a href="#n-homelab" data-go="homelab">Security lab</a> by <span class="tech">test first</span></li></ul>
+  </div></li>
+<li class="rn t-pivot" id="n-lawson" data-id="lawson" data-i="13" data-tick="2025" data-kind="Pivot">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-14</span><span class="rn__type">Pivot</span><span class="rn__date">June 2025 to now</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Lawson State</h3>
+    <p class="rn__where">Lawson State Community College, Birmingham</p>
+    <p class="rn__story">Computer science instructor. I helped redesign the CIS curriculum into one stackable pathway.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-syracuse" data-go="syracuse">Syracuse CSD</a> by <span class="tech">curriculum</span></li><li><span class="dir">out</span> to <a href="#n-uagc" data-go="uagc">UAGC faculty</a> by <span class="tech">pen testing</span></li></ul>
+  </div></li>
+<li class="rn t-asset" id="n-appacademy" data-id="appacademy" data-i="14" data-tick="2025" data-kind="Asset">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-15</span><span class="rn__type">Asset</span><span class="rn__date">July 2025</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">AI engineering cert</h3>
+    <p class="rn__where">App Academy</p>
+    <p class="rn__story">AI-Powered Software Development and Generative AI Engineering certificate. Building with models, so I know where they break.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-genai" data-go="genai">Intro to GenAI</a> by <span class="tech">building with models</span></li><li><span class="dir">out</span> to <a href="#n-howz" data-go="howz">HoWz + local model</a> by <span class="tech"><abbr title="Large language model: the kind of AI behind chat assistants, which reads and writes text.">LLM</abbr> guardrails</span></li></ul>
+    <p class="rn__links"><a href="credentials.html">Credentials</a></p>
+  </div></li>
+<li class="rn t-pivot" id="n-uagc" data-id="uagc" data-i="15" data-tick="2026" data-kind="Pivot">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-16</span><span class="rn__type">Pivot</span><span class="rn__date">March 2026 to now</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">UAGC faculty</h3>
+    <p class="rn__where">University of Arizona Global Campus</p>
+    <p class="rn__story">Online faculty for CYB102, Network <abbr title="Authorized, simulated attacks that find weaknesses before criminals do.">Penetration Testing</abbr>.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-lawson" data-go="lawson">Lawson State</a> by <span class="tech">pen testing</span></li><li><span class="dir">out</span> to <a href="#n-adrian" data-go="adrian">Adrian College</a> by <span class="tech">hacking</span></li></ul>
+  </div></li>
+<li class="rn t-pivot on-path" id="n-gwu" data-id="gwu" data-i="16" data-tick="2027" data-kind="Pivot . path 5/7">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-17</span><span class="rn__type">Pivot . path 5/7</span><span class="rn__date">Expected September 2027</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">GWU D.Eng.</h3>
+    <p class="rn__where">The George Washington University</p>
+    <p class="rn__story">D.Eng. candidate in Cybersecurity Analytics. Coursework is done; praxis research began in fall 2026, on <abbr title="AI whose decisions can be explained to a person, so they can be checked.">explainable AI</abbr>, AI and ML <abbr title="A structured list of what could go wrong in a system, how, and what stops it.">threat modeling</abbr>, <abbr title="Attacks that trick or corrupt AI models, and the defenses against those attacks.">adversarial machine learning</abbr> and AI-enabled security governance. The degree is pending, not awarded.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-ubalt" data-go="ubalt">M.S. Cyber Forensics</a> by <span class="tech">evidence rules</span></li><li><span class="dir">out</span> to <a href="#n-breakwater" data-go="breakwater">Breakwater</a> by <span class="tech">attack-graph research</span></li></ul>
+    <p class="rn__links"><a href="research.html">Research</a></p>
+  </div></li>
+<li class="rn t-pivot on-path" id="n-breakwater" data-id="breakwater" data-i="17" data-tick="2026" data-kind="Pivot . path 6/7">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-18</span><span class="rn__type">Pivot . path 6/7</span><span class="rn__date">May 2026 onward</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Breakwater</h3>
+    <p class="rn__where">GWU, SEAS 8414, Analytical Tools for Cyber</p>
+    <p class="rn__story">An end-to-end security-analytics pipeline for a simulated OT/<abbr title="Internet of Things: everyday devices on a network, such as cameras, speakers and thermostats.">IoT</abbr> network: discovery, device identity, vulnerability triage, attack paths, a digital twin and post-quantum readiness. Phase 1 admitted 20 hosts, 77% of the declared 26, with 0 phantom hosts and 248 <abbr title="The U.S. National Vulnerability Database, the public record of known security flaws.">NVD</abbr> <abbr title="Common Vulnerabilities and Exposures: the public ID number given to each known security flaw.">CVEs</abbr> matched. Later phases: a <abbr title="Training one AI model across several sites without sending their raw data to one place.">federated</abbr> intrusion-detection model with poisoning and privacy defenses, and <abbr title="Training an AI by trial and reward, the way a game-playing AI learns.">reinforcement-learning</abbr> agents kept behind safety controllers. An ACM-format paper is in preparation. Simulated network only.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-gwu" data-go="gwu">GWU D.Eng.</a> by <span class="tech">attack-graph research</span></li><li><span class="dir">in</span> from <a href="#n-ssrn" data-go="ssrn">SSRN preprints</a> by <span class="tech">ACM paper draft</span></li><li><span class="dir">out</span> to <a href="#n-objective" data-go="objective">Securing AI-era systems</a> by <span class="tech">AI threat modeling</span></li></ul>
+    <p class="rn__links"><a href="evidence.html#exhibit-c">Exhibit C</a><a href="homelab.html#breakwater">Breakwater in full</a></p>
+  </div></li>
+<li class="rn t-asset" id="n-homelab" data-id="homelab" data-i="18" data-tick="Now" data-kind="Asset">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-19</span><span class="rn__type">Asset</span><span class="rn__date">Running now</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Security lab</h3>
+    <p class="rn__where">My own hardware, at home</p>
+    <p class="rn__story">Two small <abbr title="Software that runs many virtual computers on one physical machine.">Proxmox VE</abbr> machines, deliberately unclustered, and one log pipeline: 304,708 events in 24 hours from 5 log sources, and about 3,700 <abbr title="Software on each computer that watches for signs of an attack on that machine.">host-based detection</abbr> alerts over 7 days. Before I recommend <abbr title="Security information and event management: software that gathers activity records from many systems in one place and raises alerts.">SIEM</abbr> or detection tooling to a Cyntraix client, I run it here. It caught a VPN container that had never worked, crash-looping more than 12,000 times and writing about 361 GB to disk.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-cyntraix" data-go="cyntraix">Cyntraix</a> by <span class="tech">test first</span></li><li><span class="dir">out</span> to <a href="#n-objective" data-go="objective">Securing AI-era systems</a> by <span class="tech">run what I recommend</span></li></ul>
+    <p class="rn__links"><a href="evidence.html#exhibit-b">Exhibit B</a><a href="homelab.html">Full lab write-up</a></p>
+  </div></li>
+<li class="rn t-asset" id="n-howz" data-id="howz" data-i="19" data-tick="Now" data-kind="Asset">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-20</span><span class="rn__type">Asset</span><span class="rn__date">Daily use</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">HoWz + local model</h3>
+    <p class="rn__where">HoWz, my private operations platform, and the lab</p>
+    <p class="rn__story">Two of my own systems use a <abbr title="An AI system that reads and writes text, such as a chat assistant.">language model</abbr>. HoWz has a question pane where a model may suggest changes; the lab runs a small language model on a CPU that listens only on the lab network. The model can only propose: code validates every proposal and nothing is written until I approve it. The runtime was installed only after its release checksum was verified.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-appacademy" data-go="appacademy">AI engineering cert</a> by <span class="tech">LLM guardrails</span></li><li><span class="dir">out</span> to <a href="#n-objective" data-go="objective">Securing AI-era systems</a> by <span class="tech">human approval</span></li></ul>
+    <p class="rn__links"><a href="ai.html#exhibit-d">Exhibit D</a><a href="built.html">Built</a></p>
+  </div></li>
+<li class="rn t-pivot" id="n-adrian" data-id="adrian" data-i="20" data-tick="2026" data-kind="Pivot">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-21</span><span class="rn__type">Pivot</span><span class="rn__date">Fall 2026</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Adrian College</h3>
+    <p class="rn__where">Adrian College, via Rize Education</p>
+    <p class="rn__story"><abbr title="Hacking with permission, to find and fix weaknesses.">Ethical hacking</abbr> instructor. With Lawson State and UAGC, that makes three institutions where I teach security now.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-uagc" data-go="uagc">UAGC faculty</a> by <span class="tech">hacking</span></li><li><span class="dir">out</span> to <a href="#n-objective" data-go="objective">Securing AI-era systems</a> by <span class="tech">training defenders</span></li></ul>
+  </div></li>
+<li class="rn t-objective on-path" id="n-objective" data-id="objective" data-i="21" data-tick="Next" data-kind="Objective . path 7/7">
+  <div class="rn__meta"><span class="rn__mark" aria-hidden="true"></span><span class="rn__id">N-22</span><span class="rn__type">Objective . path 7/7</span><span class="rn__date">Now and next</span></div>
+  <div class="rn__body">
+    <h3 class="rn__title">Securing AI-era systems</h3>
+    <p class="rn__where">Open to work: Birmingham, Alabama, remote available</p>
+    <p class="rn__story">Where the route points: security engineering, AI security and governance, GRC, detection and cybersecurity education roles. The rule I carry from forensics into AI: AI proposes, evidence decides. A model can suggest and rank; a finding needs measured evidence, and a change needs validation and a human approval.</p>
+    <ul class="rn__edges" aria-label="Edges"><li><span class="dir">in</span> from <a href="#n-breakwater" data-go="breakwater">Breakwater</a> by <span class="tech">AI threat modeling</span></li><li><span class="dir">in</span> from <a href="#n-howz" data-go="howz">HoWz + local model</a> by <span class="tech">human approval</span></li><li><span class="dir">in</span> from <a href="#n-homelab" data-go="homelab">Security lab</a> by <span class="tech">run what I recommend</span></li><li><span class="dir">in</span> from <a href="#n-adrian" data-go="adrian">Adrian College</a> by <span class="tech">training defenders</span></li></ul>
+    <p class="rn__links"><a href="mailto:ologundeomotola@gmail.com">Write to me</a><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+  </div></li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+
+</main>
+<nav class="continue" aria-label="Previous and next scene">
+  <div class="wrap continue__in">
+    <a class="prev" href="index.html"><span class="continue__k">&larr; Scene 01</span><span class="continue__t">Case opens</span></a>
+    <a class="next" href="evidence.html"><span class="continue__k">Scene 03 &rarr;</span><span class="continue__t">Evidence room</span></a>
+  </div>
+</nav>
+<footer class="site-foot">
+  <div class="wrap site-foot__in">
+    <div>
+      <p class="site-foot__name">Ezekiel Ologunde</p>
+      <p class="site-foot__meta">Security consultant, cybersecurity instructor and doctoral researcher. Birmingham, Alabama.</p>
+    </div>
+    <ul class="site-foot__links">
+      <li><a href="mailto:ologundeomotola@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+      <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="about.html">Model card</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="credentials.html">Credentials</a></li>
+      <li><a href="Resourcehub.html">Resource hub</a></li>
+    </ul>
+    <p class="site-foot__legal"><span>End of file. &copy; <span data-year>2026</span> Ezekiel Ologunde.</span><span>No trackers, no analytics, no cookies.</span></p>
+  </div>
+</footer>
+</body>
+</html>

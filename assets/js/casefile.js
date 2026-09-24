@@ -78,7 +78,7 @@
       e.preventDefault();
       var val = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
       var body = 'From: ' + val('name') + '\nEmail: ' + val('email') + '\n\n' + val('message');
-      window.location.href = 'mailto:ezekiel@cyntraix.io?subject=' +
+      window.location.href = 'mailto:ologundeomotola@gmail.com?subject=' +
         encodeURIComponent(val('subject')) + '&body=' + encodeURIComponent(body);
     });
   }

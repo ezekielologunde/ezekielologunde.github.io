@@ -16,13 +16,59 @@
   var jump = function (y) {
     try { window.scrollTo({ top: y, left: 0, behavior: 'instant' }); } catch (e) { window.scrollTo(0, y); }
   };
+  /* Run fn once when el is reached, including when a jump (anchor link, Page Down)
+     carries the reader straight past it, so no counter is ever left at zero. */
   var once = function (el, fn, margin) {
     if (!HAS_IO) { fn(); return; }
+    var done = false, ticking = false;
+    var fire = function () {
+      if (done) return;
+      done = true; io.disconnect();
+      window.removeEventListener('scroll', check);
+      fn();
+    };
+    var check = function () {
+      if (ticking || done) return;
+      ticking = true;
+      window.requestAnimationFrame(function () {
+        ticking = false;
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.85) fire();
+      });
+    };
     var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); fn(); } });
+      es.forEach(function (e) { if (e.isIntersecting || e.boundingClientRect.bottom < 0) fire(); });
     }, { rootMargin: margin || '0px 0px -15% 0px' });
     io.observe(el);
+    window.addEventListener('scroll', check, { passive: true });
   };
+
+  /* ---------- Old one-page anchors now live on their own scene pages ---------- */
+  (function oldAnchors() {
+    if (!document.body.classList.contains('home') || !location.hash) return;
+    var h = location.hash.slice(1);
+    var to = null;
+    if (/^(route|route-text|timeline)$/.test(h) || /^n-[a-z]+$/.test(h)) to = 'route.html' + (h === 'route' || h === 'timeline' ? '' : '#' + h);
+    else if (/^(evidence|exhibit-b|exhibit-c|exhibit-e|exhibit-f)$/.test(h)) to = 'evidence.html' + (h === 'evidence' ? '' : '#' + h);
+    else if (/^(ai|exhibit-d)$/.test(h)) to = 'ai.html' + (h === 'ai' ? '' : '#' + h);
+    else if (h === 'card' || h === 'custody' || /^mc-/.test(h)) to = 'about.html' + (h === 'custody' ? '#data' : /^mc-/.test(h) ? '#' + h.slice(3) : '');
+    else if (h === 'report' || h === 'next') to = 'contact.html';
+    if (to) location.replace(to);
+  })();
+
+  /* ---------- Page transition: a short fade out before moving to another scene ---------- */
+  (function fadeOut() {
+    if (!MOTION || ('onpagereveal' in window)) return; /* browsers with view transitions use CSS */
+    document.addEventListener('click', function (ev) {
+      var a = ev.target.closest && ev.target.closest('a[href]');
+      if (!a || ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+      var href = a.getAttribute('href');
+      if (!/^[A-Za-z0-9_-]+\.html(#.*)?$/.test(href) || a.target) return;
+      ev.preventDefault();
+      document.body.classList.add('is-leaving');
+      window.setTimeout(function () { location.href = href; }, 160);
+    });
+    window.addEventListener('pageshow', function () { document.body.classList.remove('is-leaving'); });
+  })();
 
   /* ---------- Scene rail ---------- */
   (function rail() {

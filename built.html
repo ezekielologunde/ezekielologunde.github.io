@@ -34,13 +34,13 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Case file</a></li>
-        <li><a href="index.html#route">Graph</a></li>
-        <li><a href="index.html#evidence">Evidence</a></li>
+        <li><a href="route.html">Route</a></li>
+        <li><a href="evidence.html">Evidence</a></li>
+        <li><a href="ai.html">AI thread</a></li>
         <li><a href="about.html">Model card</a></li>
         <li><a href="homelab.html">Lab</a></li>
         <li><a href="built.html" aria-current="page">Built</a></li>
         <li><a href="research.html">Research</a></li>
-        <li><a href="writing.html">Writing</a></li>
         <li><a href="Resourcehub.html">Resources</a></li>
         <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
       </ul>
@@ -64,6 +64,7 @@
 <section class="section" aria-labelledby="cases-title">
   <div class="wrap">
     <div class="section__head rv"><span class="section__num">01</span><h2 class="section__title" id="cases-title">Case studies</h2></div>
+    <p class="plain"><b>In plain English:</b> software I built myself, with the safeguards in each, described without exposing private code or client data.</p>
     <p class="section__lede rv">I design the architecture and the security model before writing code, then review what I built with a red-team pass. Every claim below comes from the project&rsquo;s own code, migrations and documentation.</p>
 
     <div class="studies">
@@ -72,11 +73,11 @@
         <div>
           <span class="badge badge--progress">Pre-launch</span>
           <h3 class="study__title" id="c1">Preppa: a two-sided home-cooked food marketplace</h3>
-          <p class="study__desc">Preppa lets home cooks sell meals, run subscription meal plans and take bookings, while customers browse, order and pay in one app. I built the customer app, the cook workspace and an admin console as one Expo and React Native codebase that also ships to the web, on a Supabase backend with 225 versioned SQL migrations and 41 Edge Functions. Payments and cook payouts run through Stripe Connect, with automated payout reconciliation and a weekly payout sweep. Cook onboarding includes document review, and in-home cooking bookings sit behind a separate, stricter vetting step. CI type-checks every push, then replays the full migration history on a fresh Postgres and runs database regression tests. An earlier browser-only prototype, PrepDash, is where I first worked out the operator console.</p>
+          <p class="study__desc">Preppa lets home cooks sell meals, run subscription meal plans and take bookings, while customers browse, order and pay in one app. I built the customer app, the cook workspace and an admin console as one Expo and React Native codebase that also ships to the web, on a Supabase backend with 225 versioned SQL migrations and 41 Edge Functions. Payments and cook payouts run through Stripe Connect, with automated payout reconciliation and a weekly payout sweep. Cook onboarding includes document review, and in-home cooking bookings sit behind a separate, stricter vetting step. <abbr title="Continuous integration: automated checks that run every time the code changes.">CI</abbr> type-checks every push, then replays the full migration history on a fresh Postgres and runs database regression tests. An earlier browser-only prototype, PrepDash, is where I first worked out the operator console.</p>
           <dl class="facts">
             <dt>Stack</dt><dd>Expo, React Native, TypeScript, Supabase (Postgres, Auth, Edge Functions, Storage), Stripe Connect, GitHub Actions</dd>
             <dt>Status</dt><dd>Deployed, in pre-launch acceptance testing. Built since July 2026.</dd>
-            <dt>Security</dt><dd>Row Level Security on data tables, checked by regression tests; privileged actions re-verified server-side and a trigger blocks role self-escalation; Stripe and Mux webhooks are signature-verified; uploads are validated by their real file bytes, not the declared type; native sessions live in the OS keychain; CI scans the production web bundle for secret keys.</dd>
+            <dt>Security</dt><dd><abbr title="Database rules that decide which rows of data each user is allowed to see.">Row Level Security</abbr> on data tables, checked by regression tests; privileged actions re-verified server-side and a trigger blocks role self-escalation; Stripe and Mux webhooks are signature-verified; uploads are validated by their real file bytes, not the declared type; native sessions live in the OS keychain; CI scans the production web bundle for secret keys.</dd>
           </dl>
           <p class="study__links"><a href="https://preppa.live" target="_blank" rel="noopener noreferrer">preppa.live</a></p>
         </div>
@@ -132,7 +133,7 @@
         <div>
           <span class="badge badge--live">In daily use</span>
           <h3 class="study__title" id="c5">HoWz: a private automation and operations platform</h3>
-          <p class="study__desc">A personal operations platform that runs on my own hardware. A React and Vite dashboard, served by a Node server with no runtime dependencies, brings together a scheduled job-search pipeline, a Routines page showing whether each scheduled task and backup really ran, a monitor for my sites&rsquo; availability, TLS certificates and domain expiry, and a question pane where a language model may propose changes but code validates them and nothing is written until I approve it. The job-search runs are read-only by design: they find and track postings and draft materials only from a verified profile, and they never submit a form or create an account. Real personal data stays local and out of version control.</p>
+          <p class="study__desc">A personal operations platform that runs on my own hardware. A React and Vite dashboard, served by a Node server with no runtime dependencies, brings together a scheduled job-search pipeline, a Routines page showing whether each scheduled task and backup really ran, a monitor for my sites&rsquo; availability, TLS certificates and domain expiry, and a question pane where a <abbr title="An AI system that reads and writes text, such as a chat assistant.">language model</abbr> may propose changes but code validates them and nothing is written until I approve it. The job-search runs are read-only by design: they find and track postings and draft materials only from a verified profile, and they never submit a form or create an account. Real personal data stays local and out of version control.</p>
           <dl class="facts">
             <dt>Stack</dt><dd>Node.js, React 19, Vite, Vitest, GnuPG, Git hooks, Windows Task Scheduler</dd>
             <dt>Status</dt><dd>In daily use since August 2026. Private, local-only.</dd>
@@ -178,15 +179,15 @@
       <p class="site-foot__meta">Security consultant, cybersecurity instructor and doctoral researcher. Birmingham, Alabama.</p>
     </div>
     <ul class="site-foot__links">
-      <li><a href="mailto:ezekiel@cyntraix.io">Email</a></li>
+      <li><a href="mailto:ologundeomotola@gmail.com">Email</a></li>
       <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
       <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
       <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       <li><a href="about.html">Model card</a></li>
+      <li><a href="writing.html">Writing</a></li>
       <li><a href="education.html">Education</a></li>
       <li><a href="credentials.html">Credentials</a></li>
       <li><a href="Resourcehub.html">Resource hub</a></li>
-      <li><a href="contact.html">Contact</a></li>
     </ul>
     <p class="site-foot__legal"><span>End of file. &copy; <span data-year>2026</span> Ezekiel Ologunde.</span><span>No trackers, no analytics, no cookies.</span></p>
   </div>

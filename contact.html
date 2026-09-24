@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Contact | Ezekiel Ologunde</title>
-  <meta name="description" content="Contact Ezekiel Ologunde about security engineering, GRC, detection or teaching roles, research collaboration, consulting through Cyntraix, or speaking.">
+  <title>Report to: contact Ezekiel Ologunde</title>
+  <meta name="description" content="Contact Ezekiel Ologunde about security engineering, AI security and governance, GRC, detection or teaching roles, research collaboration or a Cyntraix engagement.">
   <meta name="theme-color" content="#15171a">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Contact | Ezekiel Ologunde">
-  <meta property="og:description" content="Contact Ezekiel Ologunde about security engineering, GRC, detection or teaching roles, research collaboration, consulting through Cyntraix, or speaking.">
+  <meta property="og:title" content="Report to | E. Ologunde">
+  <meta property="og:description" content="Contact Ezekiel Ologunde about security engineering, AI security and governance, GRC, detection or teaching roles, research collaboration or a Cyntraix engagement.">
   <meta property="og:url" content="https://ezekielologunde.github.io/contact.html">
   <meta property="og:image" content="https://ezekielologunde.github.io/assets/img/ezekiel-800.jpg">
   <link rel="canonical" href="https://ezekielologunde.github.io/contact.html">
@@ -19,10 +19,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400..600&amp;display=swap">
   <link rel="stylesheet" href="assets/css/casefile.css">
+  <link rel="stylesheet" href="assets/css/investigation.css">
+  <script src="assets/js/motion.js"></script>
   <script src="assets/js/casefile.js" defer></script>
+  <script src="assets/js/investigation.js" defer></script>
+  <script src="assets/js/ambient.js" defer></script>
 </head>
-<body>
+<body class="scene-page page-contact" data-ambient="drones">
 <a class="skip" href="#main">Skip to content</a>
+<canvas class="ambient" aria-hidden="true"></canvas>
 <header class="site-head">
   <div class="wrap site-head__in">
     <a class="brand" href="index.html">
@@ -34,61 +39,64 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Case file</a></li>
-        <li><a href="index.html#route">Graph</a></li>
-        <li><a href="index.html#evidence">Evidence</a></li>
+        <li><a href="route.html">Route</a></li>
+        <li><a href="evidence.html">Evidence</a></li>
+        <li><a href="ai.html">AI thread</a></li>
         <li><a href="about.html">Model card</a></li>
         <li><a href="homelab.html">Lab</a></li>
         <li><a href="built.html">Built</a></li>
         <li><a href="research.html">Research</a></li>
-        <li><a href="writing.html">Writing</a></li>
         <li><a href="Resourcehub.html">Resources</a></li>
-        <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
+        <li><a href="contact.html" aria-current="page" class="site-nav__cta">Contact</a></li>
       </ul>
     </nav>
   </div>
   <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
 </header>
+<nav class="rail" aria-label="Scenes">
+  <ol>
+    <li><a href="index.html" aria-label="Scene 1: Case opens"><span class="rail__n" aria-hidden="true">01</span><span class="rail__t">Case opens</span></a></li>
+    <li><a href="route.html" aria-label="Scene 2: The route"><span class="rail__n" aria-hidden="true">02</span><span class="rail__t">The route</span></a></li>
+    <li><a href="evidence.html" aria-label="Scene 3: Evidence room"><span class="rail__n" aria-hidden="true">03</span><span class="rail__t">Evidence room</span></a></li>
+    <li><a href="ai.html" aria-label="Scene 4: The AI thread"><span class="rail__n" aria-hidden="true">04</span><span class="rail__t">The AI thread</span></a></li>
+    <li><a href="about.html" aria-label="Scene 5: Model card"><span class="rail__n" aria-hidden="true">05</span><span class="rail__t">Model card</span></a></li>
+    <li><a href="contact.html" aria-current="page" aria-label="Scene 6: Report to"><span class="rail__n" aria-hidden="true">06</span><span class="rail__t">Report to</span></a></li>
+  </ol>
+</nav>
 <main id="main">
-<header class="subfile">
-  <div class="wrap">
-    <p class="subfile__ref"><b>Case file EO</b><span>Section: Contact</span><span>Ref. EO-CNT</span><span><a href="index.html">Back to the case file</a></span></p>
-    <div class="subfile__grid">
-      <div class="subfile__main">
-        <h1 class="subfile__title">Get in touch</h1>
-        <p class="subfile__lede">Reach out about a role in security engineering, GRC, detection or cybersecurity education, research collaboration, consulting or speaking.</p>
-      </div>
-      <div class="subfile__aside">
-        <figure class="subfile__photo">
-          <img src="assets/img/ezekiel-400.jpg" width="400" height="400" decoding="async" alt="Portrait of Ezekiel Ologunde in a blue suit and burgundy tie against a warm peach backdrop.">
-          <figcaption><b>Exhibit A</b> Subject photograph</figcaption>
-        </figure>
-      </div>
+<p class="scene-ref wrap"><b>Scene 06 of 06</b><span>Report to</span><span>Case file: E. Ologunde</span></p>
+<section class="sec report scene" id="report" aria-labelledby="report-title">
+  <div class="wrap g12">
+    <header class="part">
+      <p class="part__no">Scene 06</p>
+      <h1 class="part__title" id="report-title">Report to</h1>
+      <p class="part__note">Case status: open. The subject is cooperative.</p>
+    </header>
+    <div class="body--mid">
+      <p class="plain"><b>In plain English:</b> the fastest way to reach me is email. The form below only opens your own email app; nothing is sent anywhere else.</p>
+      <p class="report__status"><span class="stamp stamp--land">Open to work</span></p>
+      <a class="report__mail" href="mailto:ologundeomotola@gmail.com">ologundeomotola@gmail.com</a>
+      <p>Write about a security engineering, AI security, <abbr title="Governance, risk and compliance: making sure an organization manages its risks and follows the rules it must follow.">GRC</abbr>, detection or teaching role, a research collaboration, or a Cyntraix engagement. Or use the form below.</p>
     </div>
+    <ul class="linkrows" style="grid-column: 1 / -1; margin-top: 28px">
+      <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn <span>in/ezekiel-ologunde</span></a></li>
+      <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <span>profile</span></a></li>
+      <li><a href="https://orcid.org/0009-0005-7207-8506" target="_blank" rel="noopener noreferrer">ORCID <span>0009-0005-7207-8506</span></a></li>
+      <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub <span>ezekielologunde</span></a></li>
+      <li><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">Medium <span>@ezekielologunde</span></a></li>
+    </ul>
   </div>
-</header>
+</section>
 
-<section class="section" aria-labelledby="direct-title">
-  <div class="wrap cols">
-    <div class="rv">
-      <div class="section__head"><span class="section__num">01</span><h2 class="section__title" id="direct-title">Direct contact</h2></div>
-      <ul class="linklist">
-        <li><a href="mailto:ezekiel@cyntraix.io">Email <span>ezekiel@cyntraix.io</span></a></li>
-        <li><a href="mailto:ologundeomotola@gmail.com">Academic <span>ologundeomotola@gmail.com</span></a></li>
-        <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn <span>in/ezekiel-ologunde</span></a></li>
-        <li><a href="https://medium.com/@ezekielologunde" target="_blank" rel="noopener noreferrer">Medium <span>@ezekielologunde</span></a></li>
-        <li><a href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">ResearchGate <span>profile</span></a></li>
-        <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <span>profile</span></a></li>
-        <li><a href="https://orcid.org/0009-0005-7207-8506" target="_blank" rel="noopener noreferrer">ORCID <span>0009-0005-7207-8506</span></a></li>
-        <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub <span>ezekielologunde</span></a></li>
-      </ul>
-      <dl class="facts" style="border-top:0">
-        <dt>Location</dt><dd>Birmingham, Alabama. Remote available.</dd>
-        <dt>Roles</dt><dd>Founder, Cyntraix. Computer Science Instructor, Lawson State Community College. Faculty, University of Arizona Global Campus. Ethical Hacking Instructor, Adrian College. D.Eng. candidate, The George Washington University.</dd>
-      </dl>
-    </div>
-    <div class="rv">
-      <div class="section__head"><span class="section__num">02</span><h2 class="section__title">Send a message</h2></div>
-      <p class="note" style="margin-top:0">This form does not send anything to a server. It opens your own email app with the message filled in.</p>
+<section class="sec" id="message" aria-labelledby="message-title">
+  <div class="wrap g12">
+    <header class="part">
+      <p class="part__no">Form</p>
+      <h2 class="part__title" id="message-title">Send a message</h2>
+      <p class="part__note">Birmingham, Alabama. Remote available.</p>
+    </header>
+    <div class="body--mid">
+      <p class="plain"><b>In plain English:</b> fill this in and press the button; your own email app opens with the message ready to send. This site never receives or stores what you type.</p>
       <form class="form" id="contactForm" aria-label="Contact form">
         <div class="form__row">
           <div><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
@@ -98,14 +106,18 @@
         <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
         <div><button class="btn btn--solid" type="submit">Open in my email app</button></div>
       </form>
+      <dl class="facts" style="margin-top:36px">
+        <dt>Roles now</dt><dd>Founder, Cyntraix. Computer Science Instructor, Lawson State Community College. Faculty, University of Arizona Global Campus. <abbr title="Hacking with permission, to find and fix weaknesses.">Ethical Hacking</abbr> Instructor, Adrian College. <abbr title="Doctor of Engineering, a doctoral degree focused on applied research. His is expected in September 2027.">D.Eng.</abbr> candidate, The George Washington University, expected September 2027.</dd>
+        <dt>Also on</dt><dd><a href="https://www.researchgate.net/profile/Ezekiel-Ologunde" target="_blank" rel="noopener noreferrer">ResearchGate</a></dd>
+      </dl>
     </div>
   </div>
 </section>
+
 </main>
-<nav class="continue" aria-label="Previous and next section">
+<nav class="continue" aria-label="Previous and next scene">
   <div class="wrap continue__in">
-    <a class="prev" href="credentials.html"><span class="continue__k">&larr; Previous</span><span class="continue__t">Credentials</span></a>
-    <a class="next" href="index.html"><span class="continue__k">Next &rarr;</span><span class="continue__t">Back to the story</span></a>
+    <a class="prev" href="about.html"><span class="continue__k">&larr; Scene 05</span><span class="continue__t">Model card</span></a>
   </div>
 </nav>
 <footer class="site-foot">
@@ -115,15 +127,15 @@
       <p class="site-foot__meta">Security consultant, cybersecurity instructor and doctoral researcher. Birmingham, Alabama.</p>
     </div>
     <ul class="site-foot__links">
-      <li><a href="mailto:ezekiel@cyntraix.io">Email</a></li>
+      <li><a href="mailto:ologundeomotola@gmail.com">Email</a></li>
       <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
       <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
       <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       <li><a href="about.html">Model card</a></li>
+      <li><a href="writing.html">Writing</a></li>
       <li><a href="education.html">Education</a></li>
       <li><a href="credentials.html">Credentials</a></li>
       <li><a href="Resourcehub.html">Resource hub</a></li>
-      <li><a href="contact.html">Contact</a></li>
     </ul>
     <p class="site-foot__legal"><span>End of file. &copy; <span data-year>2026</span> Ezekiel Ologunde.</span><span>No trackers, no analytics, no cookies.</span></p>
   </div>

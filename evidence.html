@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Evidence room: lab, Breakwater, software, writing | E. Ologunde</title>
+  <meta name="description" content="The evidence behind Ezekiel Ologunde's case file: real numbers from his security monitoring lab, the Breakwater doctoral project, six software builds and his written record.">
+  <meta name="theme-color" content="#15171a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Evidence room | E. Ologunde">
+  <meta property="og:description" content="The evidence behind Ezekiel Ologunde's case file: real numbers from his security monitoring lab, the Breakwater doctoral project, six software builds and his written record.">
+  <meta property="og:url" content="https://ezekielologunde.github.io/evidence.html">
+  <meta property="og:image" content="https://ezekielologunde.github.io/assets/img/ezekiel-800.jpg">
+  <link rel="canonical" href="https://ezekielologunde.github.io/evidence.html">
+  <link rel="icon" type="image/jpeg" href="assets/img/ezekiel-96.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400..600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/casefile.css">
+  <link rel="stylesheet" href="assets/css/investigation.css">
+  <script src="assets/js/motion.js"></script>
+  <script src="assets/js/casefile.js" defer></script>
+  <script src="assets/js/investigation.js" defer></script>
+  <script src="assets/js/ambient.js" defer></script>
+</head>
+<body class="scene-page page-evidence" data-ambient="scan">
+<a class="skip" href="#main">Skip to content</a>
+<canvas class="ambient" aria-hidden="true"></canvas>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html">
+      <img class="brand__avatar" src="assets/img/ezekiel-96.jpg" width="32" height="32" alt="">
+      <span class="brand__name">E. Ologunde</span>
+      <span class="brand__file">Case file</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Case file</a></li>
+        <li><a href="route.html">Route</a></li>
+        <li><a href="evidence.html" aria-current="page">Evidence</a></li>
+        <li><a href="ai.html">AI thread</a></li>
+        <li><a href="about.html">Model card</a></li>
+        <li><a href="homelab.html">Lab</a></li>
+        <li><a href="built.html">Built</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="Resourcehub.html">Resources</a></li>
+        <li><a href="contact.html" class="site-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+</header>
+<nav class="rail" aria-label="Scenes">
+  <ol>
+    <li><a href="index.html" aria-label="Scene 1: Case opens"><span class="rail__n" aria-hidden="true">01</span><span class="rail__t">Case opens</span></a></li>
+    <li><a href="route.html" aria-label="Scene 2: The route"><span class="rail__n" aria-hidden="true">02</span><span class="rail__t">The route</span></a></li>
+    <li><a href="evidence.html" aria-current="page" aria-label="Scene 3: Evidence room"><span class="rail__n" aria-hidden="true">03</span><span class="rail__t">Evidence room</span></a></li>
+    <li><a href="ai.html" aria-label="Scene 4: The AI thread"><span class="rail__n" aria-hidden="true">04</span><span class="rail__t">The AI thread</span></a></li>
+    <li><a href="about.html" aria-label="Scene 5: Model card"><span class="rail__n" aria-hidden="true">05</span><span class="rail__t">Model card</span></a></li>
+    <li><a href="contact.html" aria-label="Scene 6: Report to"><span class="rail__n" aria-hidden="true">06</span><span class="rail__t">Report to</span></a></li>
+  </ol>
+</nav>
+<main id="main">
+<p class="scene-ref wrap"><b>Scene 03 of 06</b><span>Evidence room</span><span>Case file: E. Ologunde</span></p>
+<section class="sec scene" id="evidence" aria-labelledby="evidence-title">
+  <div class="wrap">
+    <div class="g12">
+      <header class="part">
+        <p class="part__no">Scene 03</p>
+        <h1 class="part__title" id="evidence-title">Evidence room</h1>
+        <p class="part__note">Exhibit A is the photograph on the first page. B, C, E and F are the work; D, the AI thread, has its own page next.</p>
+      </header>
+      <div class="body prose rv">
+        <p class="plain"><b>In plain English:</b> this page is the proof behind the claims on the first page: real numbers from real systems, a doctoral project, software and writing.</p>
+        <p class="lede">A route is a set of claims. These are the artifacts behind mine: numbers from a lab that is running right now, figures from doctoral coursework, software with its security design written down, and a public written record.</p>
+      </div>
+    </div>
+
+    <article class="exhibit" id="exhibit-b" aria-labelledby="xb-title">
+      <p class="xtag"><span class="xtag__id">Exhibit B</span><span class="xtag__what">Security monitoring lab</span></p>
+      <h3 class="exhibit__title" id="xb-title">Two small machines, one log pipeline, and the numbers it produced</h3>
+      <p class="plain"><b>In plain English:</b> I built a small version of a company&rsquo;s security monitoring center at home. It collects records of what every device does and flags anything suspicious, so I can test tools before I recommend them to clients.</p>
+      <p class="meta-row"><span><b>Collected:</b> live searches over the lab&rsquo;s <abbr title="Security information and event management: software that gathers activity records from many systems in one place and raises alerts.">SIEM</abbr> index</span><span><b>Handling:</b> redrawn as sanitized excerpts</span><span><b>Addresses and hostnames:</b> <span class="redact" tabindex="0" role="img" aria-label="Redacted: addresses and hostnames withheld" data-label="no addresses here">withheld</span> <span class="redact__why">on purpose</span></span></p>
+      <dl class="figures figures--4">
+        <div><dt data-count="304708">304,708</dt><dd>events in 24 hours, one index</dd></div>
+        <div><dt data-count="5">5</dt><dd>log sources: firewall, DNS, proxy, containers, host agents</dd></div>
+        <div><dt data-count="3700" data-prefix="~">~3,700</dt><dd><abbr title="Software on each computer that watches for signs of an attack on that machine.">host-based detection</abbr> alerts over 7 days</dd></div>
+        <div><dt data-count="2">2</dt><dd><abbr title="Software that runs many virtual computers on one physical machine.">Proxmox VE</abbr> nodes, deliberately unclustered</dd></div>
+      </dl>
+      <div class="split">
+        <figure class="fig rv">
+          <img src="assets/img/homelab-siem-search.svg" width="920" height="470" loading="lazy" decoding="async" alt="A SIEM search over the homelab index returning 304,708 events in 24 hours from five sources: docker 167,841, pihole 62,462, linux syslog 38,297, opnsense 35,477 and wazuh 631, with a stacked bar chart of volume every two hours by source.">
+          <figcaption><b>B.1</b> Real results from a live search, redrawn: source names and counts only.</figcaption>
+        </figure>
+        <div class="rv">
+          <p class="sub">Why it exists</p>
+          <p>Before I recommend SIEM, host-based detection or monitoring tooling to a Cyntraix client, I run it here. Scheduled searches produce a daily digest and a critical-event watch under a search-only service account that can read one index and nothing else.</p>
+          <p class="sub">What it caught</p>
+          <p>A VPN container that had never worked, crash-looping more than 12,000 times and writing about 361 GB to disk. It is gone now, and so is its agent.</p>
+          <p><a class="arrow-link" href="homelab.html">Full lab write-up</a></p>
+        </div>
+      </div>
+      <div class="pair">
+        <figure class="fig rv">
+          <img src="assets/img/homelab-architecture.svg" width="920" height="470" loading="lazy" decoding="async" alt="Diagram of the security monitoring lab: firewall, DNS sinkhole, reverse proxy, containers and Linux hosts, and host-based detection forward over syslog into one SIEM index, which feeds scheduled detection searches and alerting, with uptime checks, reachability and device discovery alongside.">
+          <figcaption><b>B.2</b> Architecture, by role. No addresses, by design.</figcaption>
+        </figure>
+        <figure class="fig rv">
+          <img src="assets/img/homelab-wazuh-alerts.svg" width="920" height="430" loading="lazy" decoding="async" alt="Top host-based detection alerts over 7 days by rule and level, about 3,700 in total, dominated by one rootcheck rule.">
+          <figcaption><b>B.3</b> Host-based alerts over 7 days by rule and level. One noisy rootcheck rule dominates, which is itself a finding.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="exhibit" id="exhibit-c" aria-labelledby="xc-title">
+      <p class="xtag"><span class="xtag__id">Exhibit C</span><span class="xtag__what">Breakwater, doctoral coursework</span></p>
+      <h3 class="exhibit__title" id="xc-title">Evidence-bounded vulnerability intelligence for a simulated OT/IoT network</h3>
+      <p class="plain"><b>In plain English:</b> for my doctorate I built software that finds the devices on a simulated network of cameras, routers and other connected equipment, looks up their known security flaws, and ranks which ones to fix first. It only counts what it can prove.</p>
+      <p class="meta-row"><span><b>Course:</b> SEAS 8414, Analytical Tools for Cyber, George Washington University</span><span><b>Network:</b> simulated containers only</span><span><b>Subnet:</b> <span class="redact" tabindex="0" role="img" aria-label="Redacted: subnet withheld" data-label="fake, still withheld">withheld</span> <span class="redact__why">even though it is fake</span></span></p>
+      <div class="prose rv">
+        <p>Breakwater is an end-to-end security-analytics pipeline I built one phase at a time: asset discovery, device identity, vulnerability triage, attack paths, a digital twin for testing fixes, and post-quantum readiness. The rule running through it is the one forensics taught me: nothing counts until something independent backs it. A device is only admitted when it answers; an identity is only trusted when separate witnesses agree; a <abbr title="Common Vulnerabilities and Exposures: the public ID number given to each known security flaw.">CVE</abbr> is only scored for an identity that passed that gate. An ACM-format paper is in preparation.</p>
+      </div>
+
+      <h4 class="sub" style="margin-top:12px">C.1 Discovery ledger: what was declared, what answered</h4>
+      <div class="tally-wrap" data-tally>
+        <dl class="tally">
+          <div class="tally__d"><dt>Declared</dt><dd data-tally-n="declared">26</dd></div>
+          <div class="tally__f"><dt>Found</dt><dd data-tally-n="found">19</dd></div>
+          <div class="tally__i"><dt>Infrastructure</dt><dd data-tally-n="infra">1</dd></div>
+          <div class="tally__a"><dt>Admitted</dt><dd data-tally-n="admitted">20</dd></div>
+          <div class="tally__m"><dt>Missed</dt><dd data-tally-n="missed">7</dd></div>
+          <div class="tally__p"><dt>Phantom</dt><dd data-tally-n="phantom">0</dd></div>
+        </dl>
+        <ul class="ledger-cells" aria-label="26 declared devices plus one infrastructure host">
+          <li class="f">Hikvision camera<span>found</span></li>
+          <li class="f">Dahua NVR<span>found</span></li>
+          <li class="f">Axis camera<span>found</span></li>
+          <li class="f">Reolink camera<span>found</span></li>
+          <li class="f">Dahua camera<span>found</span></li>
+          <li class="f">Chromecast<span>found</span></li>
+          <li class="f">Hue bridge<span>found</span></li>
+          <li class="f">Sonos speaker<span>found</span></li>
+          <li class="f">Apple TV<span>found</span></li>
+          <li class="f">Synology NAS<span>found</span></li>
+          <li class="f">QNAP NAS<span>found</span></li>
+          <li class="f">TP-Link router<span>found</span></li>
+          <li class="f">TP-Link router<span>found</span></li>
+          <li class="f">HP printer<span>found</span></li>
+          <li class="f">Raspberry Pi<span>found</span></li>
+          <li class="f">Unnamed web host<span>found</span></li>
+          <li class="f">Ring doorbell<span>found</span></li>
+          <li class="f">Samsung TV<span>found</span></li>
+          <li class="f">Nest thermostat<span>found</span></li>
+          <li class="m">Nest camera<span>no port</span></li>
+          <li class="m">Echo Dot<span>no port</span></li>
+          <li class="m">Cloud endpoint<span>no port</span></li>
+          <li class="m">Cloud endpoint<span>no port</span></li>
+          <li class="m">Cloud endpoint<span>no port</span></li>
+          <li class="m">Cloud endpoint<span>no port</span></li>
+          <li class="m">Cloud endpoint<span>no port</span></li>
+          <li class="i"><abbr title="A lightweight messaging system many smart devices use to talk to each other.">MQTT</abbr> broker<span>infra</span></li>
+        </ul>
+        <ul class="ledger-key">
+          <li><i class="kf"></i>19 declared devices found</li>
+          <li><i class="km"></i>7 missed: cloud-style, no local listening port</li>
+          <li><i class="ki"></i>1 extra: the MQTT broker, which ground truth lists as infrastructure. 19 + 1 = 20 admitted, 77% of the declared 26, 0 phantom hosts</li>
+        </ul>
+      </div>
+      <dl class="figures figures--2" style="margin-top:28px">
+        <div><dt data-count="248">248</dt><dd><abbr title="The U.S. National Vulnerability Database, the public record of known security flaws.">NVD</abbr> CVEs matched: 60 critical, 76 high, 107 medium, 5 low</dd></div>
+        <div><dt data-count="19">19</dt><dd>default-credential findings, proven on the simulation only</dd></div>
+      </dl>
+      <p class="note" style="margin-top:0">The seven misses are the ceiling for every later phase: no amount of triage can assess a device that never answered, so the report names them instead of scoping them out.</p>
+
+      <h4 class="sub" style="margin-top:44px">C.2 Evidence graph and fused triage</h4>
+      <div class="split">
+        <figure class="fig egraph-fig rv">
+<svg class="egraph" viewBox="0 0 920 600" role="group" aria-labelledby="egt egd">
+<title id="egt">Breakwater evidence graph, OpenSSH 8.4p1 on a simulated lab router</title>
+<desc id="egd">Directed graph with 23 nodes and 22 edges from a doctoral coursework notebook run. A simulated lab router exposes SSH on TCP port 22, identified as OpenSSH 8.4p1. The CPE is affected by ten CVEs, each linked to one patch or mitigate action. Ranked by fused triage score: CVE-2023-38408 score 16.24 (CVSS 9.8, EPSS 0.64); CVE-2025-26465 score 13.05 (CVSS 6.8, EPSS 0.62); CVE-2023-48795 score 11.32 (CVSS 5.9, EPSS 0.54); CVE-2008-3844 score 9.57 (CVSS 9.3, EPSS 0.03); CVE-2023-51385 score 8.22 (CVSS 6.5, EPSS 0.17); CVE-2026-35385 score 7.51 (CVSS 7.5, EPSS 0.00); CVE-2021-28041 score 7.13 (CVSS 7.1, EPSS 0.00); CVE-2021-41617 score 7.03 (CVSS 7.0, EPSS 0.00); CVE-2023-51767 score 7.00 (CVSS 7.0, EPSS 0.00); CVE-2016-20012 score 6.76 (CVSS 5.3, EPSS 0.15). None of the ten is in the CISA KEV catalog.</desc>
+<defs><marker id="eg-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="eg-ah" d="M0 0L10 5L0 10z"/></marker><marker id="eg-ahs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="eg-ahs" d="M0 0L10 5L0 10z"/></marker></defs>
+<rect class="eg-bg" width="920" height="600"/>
+<text class="eg-hd" x="24" y="44">ASSET</text>
+<text class="eg-hd" x="170" y="44">SERVICE</text>
+<text class="eg-hd" x="316" y="44">CPE</text>
+<text class="eg-hd" x="474" y="44">CVE  (CVSS / EPSS)</text>
+<text class="eg-hd" x="716" y="44">ACTION, BY FUSED SCORE</text>
+<line x1="24" y1="56" x2="896" y2="56" stroke="rgba(235,229,216,.18)"/>
+<g class="eg-chain"><rect class="eg-nd" x="24" y="273.0" width="120" height="52" rx="2"/>
+<text class="eg-lb" x="36" y="294.0">Lab router</text><text class="eg-sm" x="36" y="312.0">simulated</text>
+<rect class="eg-nd" x="170" y="273.0" width="120" height="52" rx="2"/>
+<text class="eg-lb" x="182" y="294.0">SSH</text><text class="eg-sm" x="182" y="312.0">TCP 22</text>
+<rect class="eg-nd" x="316" y="273.0" width="128" height="52" rx="2"/>
+<text class="eg-lb" x="328" y="294.0">OpenSSH 8.4p1</text><text class="eg-sm" x="328" y="312.0">cpe:2.3:a:openbsd</text>
+<path class="eg-e" d="M144 299.0 H168"/><path class="eg-e" d="M290 299.0 H314"/>
+<text class="eg-rel" x="146" y="267.0">exposes</text><text class="eg-rel" x="283" y="341.0">identified as</text></g>
+<g class="eg-row" data-cve="CVE-2023-38408" tabindex="0" role="img" aria-label="CVE-2023-38408, CVSS 9.8, EPSS 0.644, fused score 16.24">
+<path class="eg-es" d="M444 299.0 C 458 299.0, 458 92, 472 92"/>
+<rect class="eg-hot" x="474" y="75" width="206" height="34" rx="2"/>
+<text class="eg-id" x="484" y="96.5">CVE-2023-38408</text>
+<text class="eg-sm" x="592" y="96.5">9.8 / 0.644</text>
+<path class="eg-es" d="M680 92 H714"/>
+<rect class="eg-barh" x="716" y="83" width="150.0" height="18"/>
+<text class="eg-sc" x="874.0" y="96.5">16.24</text>
+</g>
+<g class="eg-row" data-cve="CVE-2025-26465" tabindex="0" role="img" aria-label="CVE-2025-26465, CVSS 6.8, EPSS 0.625, fused score 13.05">
+<path class="eg-es" d="M444 299.0 C 458 299.0, 458 138, 472 138"/>
+<rect class="eg-hot" x="474" y="121" width="206" height="34" rx="2"/>
+<text class="eg-id" x="484" y="142.5">CVE-2025-26465</text>
+<text class="eg-sm" x="592" y="142.5">6.8 / 0.625</text>
+<path class="eg-es" d="M680 138 H714"/>
+<rect class="eg-barh" x="716" y="129" width="120.5" height="18"/>
+<text class="eg-sc" x="844.5" y="142.5">13.05</text>
+</g>
+<g class="eg-row" data-cve="CVE-2023-48795" tabindex="0" role="img" aria-label="CVE-2023-48795, CVSS 5.9, EPSS 0.542, fused score 11.32">
+<path class="eg-es" d="M444 299.0 C 458 299.0, 458 184, 472 184"/>
+<rect class="eg-hot" x="474" y="167" width="206" height="34" rx="2"/>
+<text class="eg-id" x="484" y="188.5">CVE-2023-48795</text>
+<text class="eg-sm" x="592" y="188.5">5.9 / 0.542</text>
+<path class="eg-es" d="M680 184 H714"/>
+<rect class="eg-barh" x="716" y="175" width="104.6" height="18"/>
+<text class="eg-sc" x="828.6" y="188.5">11.32</text>
+</g>
+<g class="eg-row" data-cve="CVE-2008-3844" tabindex="0" role="img" aria-label="CVE-2008-3844, CVSS 9.3, EPSS 0.027, fused score 9.57">
+<path class="eg-e" d="M444 299.0 C 458 299.0, 458 230, 472 230"/>
+<rect class="eg-nd" x="474" y="213" width="206" height="34" rx="2"/>
+<text class="eg-id" x="484" y="234.5">CVE-2008-3844</text>
+<text class="eg-sm" x="592" y="234.5">9.3 / 0.027</text>
+<path class="eg-e" d="M680 230 H714"/>
+<rect class="eg-bar" x="716" y="221" width="88.5" height="18"/>
+<text class="eg-sc" x="812.5" y="234.5">9.57</text>
+</g>
+<g class="eg-row" data-cve="CVE-2023-51385" tabindex="0" role="img" aria-label="CVE-2023-51385, CVSS 6.5, EPSS 0.172, fused score 8.22">
+<path class="eg-e" d="M444 299.0 C 458 299.0, 458 276, 472 276"/>
+<rect class="eg-nd" x="474" y="259" width="206" height="34" rx="2"/>
+<text class="eg-id" x="484" y="280.5">CVE-2023-51385</text>
+<text class="eg-sm" x="592" y="280.5">6.5 / 0.172</text>
+<path class="eg-e" d="M680 276 H714"/>
+<rect class="eg-bar" x="716" y="267" width="76.0" height="18"/>
+<text class="eg-sc" x="800.0" y="280.5">8.22</text>
+</g>
+<g class="eg-row" data-cve="CVE-2026-35385" tabindex="0" role="img" aria-label="CVE-2026-35385, CVSS 7.5, EPSS &lt;0.001, fused score 7.51">
+<path class="eg-e" d="M444 299.0 C 458 299.0, 458 322, 472 322"/>
+<rect class="eg-nd" x="474" y="305" width="206" height="34" rx="2"/>
+<text class="eg-id" x="484" y="326.5">CVE-2026-35385</text>
+<text class="eg-sm" x="592" y="326.5">7.5 / &lt;0.001</text>
+<path class="eg-e" d="M680 322 H714"/>
+<rect class="eg-bar" x="716" y="313" width="69.3" height="18"/>
+<text class="eg-sc" x="793.3" y="326.5">7.51</text>
+</g>
+<g class="eg-row" data-cve="CVE-2021-28041" tabindex="0" role="img" aria-label="CVE-2021-28041, CVSS 7.1, EPSS 0.003, fused score 7.13">
+<path class="eg-e" d="M444 299.0 C 458 299.0, 458 368, 472 368"/>
+<rect class="eg-nd" x="474" y="351" width="206" height="34" rx="2"/>
+<text class="eg-id" x="484" y="372.5">CVE-2021-28041</text>
+<text class="eg-sm" x="592" y="372.5">7.1 / 0.003</text>
+<path class="eg-e" d="M680 368 H714"/>
+<rect class="eg-bar" x="716" y="359" width="65.8" height="18"/>
+<text class="eg-sc" x="789.8" y="372.5">7.13</text>
+</g>
+<g class="eg-row" data-cve="CVE-2021-41617" tabindex="0" role="img" aria-label="CVE-2021-41617, CVSS 7.0, EPSS 0.003, fused score 7.03">
+<path class="eg-e" d="M444 299.0 C 458 299.0, 458 414, 472 414"/>
+<rect class="eg-nd" x="474" y="397" width="206" height="34" rx="2"/>
+<text class="eg-id" x="484" y="418.5">CVE-2021-41617</text>
+<text class="eg-sm" x="592" y="418.5">7.0 / 0.003</text>
+<path class="eg-e" d="M680 414 H714"/>
+<rect class="eg-bar" x="716" y="405" width="64.9" height="18"/>
+<text class="eg-sc" x="788.9" y="418.5">7.03</text>
+</g>
+<g class="eg-row" data-cve="CVE-2023-51767" tabindex="0" role="img" aria-label="CVE-2023-51767, CVSS 7.0, EPSS &lt;0.001, fused score 7.00">
+<path class="eg-e" d="M444 299.0 C 458 299.0, 458 460, 472 460"/>
+<rect class="eg-nd" x="474" y="443" width="206" height="34" rx="2"/>
+<text class="eg-id" x="484" y="464.5">CVE-2023-51767</text>
+<text class="eg-sm" x="592" y="464.5">7.0 / &lt;0.001</text>
+<path class="eg-e" d="M680 460 H714"/>
+<rect class="eg-bar" x="716" y="451" width="64.7" height="18"/>
+<text class="eg-sc" x="788.7" y="464.5">7.00</text>
+</g>
+<g class="eg-row" data-cve="CVE-2016-20012" tabindex="0" role="img" aria-label="CVE-2016-20012, CVSS 5.3, EPSS 0.146, fused score 6.76">
+<path class="eg-e" d="M444 299.0 C 458 299.0, 458 506, 472 506"/>
+<rect class="eg-nd" x="474" y="489" width="206" height="34" rx="2"/>
+<text class="eg-id" x="484" y="510.5">CVE-2016-20012</text>
+<text class="eg-sm" x="592" y="510.5">5.3 / 0.146</text>
+<path class="eg-e" d="M680 506 H714"/>
+<rect class="eg-bar" x="716" y="497" width="62.5" height="18"/>
+<text class="eg-sc" x="786.5" y="510.5">6.76</text>
+</g>
+<text class="eg-rel" x="474" y="550">affected by</text>
+<text class="eg-rel" x="716" y="550">drives one patch action each</text>
+<line x1="24" y1="542" x2="896" y2="542" stroke="rgba(235,229,216,.18)"/>
+<text class="eg-sm" x="24" y="566">23 nodes, 22 edges. Score = CVSS + 10 x EPSS + 5 x KEV + 2 x ransomware. No CVE here is in CISA KEV,</text>
+<text class="eg-sm" x="24" y="584">so the graph has no KEV node. Highlighted: the top three by fused score. Simulated network, doctoral coursework.</text>
+</svg>
+          <figcaption><b>C.2</b> Redrawn from the Phase 3 notebook run: 23 nodes, 22 edges. Hover or focus a CVE to trace its chain; the matching table row lights up too.</figcaption>
+        </figure>
+        <div class="rv">
+          <p class="sub">How to read it</p>
+          <p>Each CVE is scored with a formula a defender can check by hand:</p>
+          <p><code>CVSS + 10&middot;EPSS + 5&middot;[KEV] + 2&middot;[ransomware]</code></p>
+          <p>Severity says how bad a flaw could be. <abbr title="A 0 to 1 estimate of how likely a security flaw is to be used by attackers soon.">EPSS</abbr> says how likely anyone is to use it. Weighting them equally lets a moderate flaw that attackers actually exploit outrank a critical one that nobody touches. The table below lets you watch that happen.</p>
+        </div>
+      </div>
+
+      <p class="plain rv"><b>In plain English:</b> the flaw that sounds worst is not always the most urgent. Ranking by how likely attackers are to actually use a flaw changes the order. Press the two buttons to watch the list re-sort.</p>
+      <div class="triage rv" data-triage>
+        <div class="triage__bar" hidden>
+          <span class="triage__label" id="triage-label">Rank these ten by</span>
+          <span class="seg" role="group" aria-labelledby="triage-label">
+            <button type="button" data-sort="cvss" aria-pressed="false">CVSS only</button>
+            <button type="button" data-sort="score" aria-pressed="true">Fused score</button>
+          </span>
+          <span class="visually-hidden" aria-live="polite" data-triage-status></span>
+        </div>
+        <div class="table-scroll" role="region" aria-labelledby="triage-cap" tabindex="0">
+          <table class="data">
+            <caption id="triage-cap">OpenSSH 8.4p1, top ten CVEs by fused score. Phase 3 notebook run, doctoral coursework. KEV: none listed.</caption>
+            <thead><tr><th scope="col" class="num">#</th><th scope="col">CVE</th><th scope="col" class="num">CVSS</th><th scope="col" class="num">EPSS</th><th scope="col">KEV</th><th scope="col">Fused score</th></tr></thead>
+            <tbody>
+              <tr class="hi" data-cve="CVE-2023-38408" data-cvss="9.8" data-score="16.2352"><td class="num" data-rank>1</td><th scope="row">CVE-2023-38408</th><td class="num">9.8</td><td class="num">0.644</td><td>no</td><td><span class="bar" style="width:96px"></span>16.24</td></tr>
+              <tr class="hi" data-cve="CVE-2025-26465" data-cvss="6.8" data-score="13.0453"><td class="num" data-rank>2</td><th scope="row">CVE-2025-26465</th><td class="num">6.8</td><td class="num">0.625</td><td>no</td><td><span class="bar" style="width:77px"></span>13.05</td></tr>
+              <tr class="hi" data-cve="CVE-2023-48795" data-cvss="5.9" data-score="11.3214"><td class="num" data-rank>3</td><th scope="row">CVE-2023-48795</th><td class="num">5.9</td><td class="num">0.542</td><td>no</td><td><span class="bar" style="width:67px"></span>11.32</td></tr>
+              <tr data-cve="CVE-2008-3844" data-cvss="9.3" data-score="9.5746"><td class="num" data-rank>4</td><th scope="row">CVE-2008-3844</th><td class="num">9.3</td><td class="num">0.027</td><td>no</td><td><span class="bar" style="width:57px"></span>9.57</td></tr>
+              <tr data-cve="CVE-2023-51385" data-cvss="6.5" data-score="8.2234"><td class="num" data-rank>5</td><th scope="row">CVE-2023-51385</th><td class="num">6.5</td><td class="num">0.172</td><td>no</td><td><span class="bar" style="width:49px"></span>8.22</td></tr>
+              <tr data-cve="CVE-2026-35385" data-cvss="7.5" data-score="7.5058"><td class="num" data-rank>6</td><th scope="row">CVE-2026-35385</th><td class="num">7.5</td><td class="num">0.001</td><td>no</td><td><span class="bar" style="width:44px"></span>7.51</td></tr>
+              <tr data-cve="CVE-2021-28041" data-cvss="7.1" data-score="7.1256"><td class="num" data-rank>7</td><th scope="row">CVE-2021-28041</th><td class="num">7.1</td><td class="num">0.003</td><td>no</td><td><span class="bar" style="width:42px"></span>7.13</td></tr>
+              <tr data-cve="CVE-2021-41617" data-cvss="7.0" data-score="7.0274"><td class="num" data-rank>8</td><th scope="row">CVE-2021-41617</th><td class="num">7.0</td><td class="num">0.003</td><td>no</td><td><span class="bar" style="width:42px"></span>7.03</td></tr>
+              <tr data-cve="CVE-2023-51767" data-cvss="7.0" data-score="7.0007"><td class="num" data-rank>9</td><th scope="row">CVE-2023-51767</th><td class="num">7.0</td><td class="num">&lt;0.001</td><td>no</td><td><span class="bar" style="width:41px"></span>7.00</td></tr>
+              <tr data-cve="CVE-2016-20012" data-cvss="5.3" data-score="6.7603"><td class="num" data-rank>10</td><th scope="row">CVE-2016-20012</th><td class="num">5.3</td><td class="num">0.146</td><td>no</td><td><span class="bar" style="width:40px"></span>6.76</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Sorted by <abbr title="A 0 to 10 score of how severe a security flaw could be.">CVSS</abbr> alone, CVE-2008-3844 (9.3) sits second and CVE-2025-26465 (6.8) sits seventh. Fused, they swap order, because one has an EPSS of 0.62 and the other 0.03. That swap is the whole argument.</p>
+      </div>
+      <p style="margin-top:20px"><a class="arrow-link" href="homelab.html#breakwater">Breakwater in full</a></p>
+    </article>
+
+    <article class="exhibit" id="exhibit-e" aria-labelledby="xe-title">
+      <p class="xtag"><span class="xtag__id">Exhibit E</span><span class="xtag__what">Software I built</span></p>
+      <h3 class="exhibit__title" id="xe-title">Six builds, each with the security design written down before the code</h3>
+      <p class="plain"><b>In plain English:</b> software I wrote, with one safety feature in each that you could check.</p>
+      <div class="table-scroll">
+        <table class="sheet sheet--stack">
+          <caption class="visually-hidden">Inventory of software builds with status and one security control each</caption>
+          <thead><tr><th scope="col">Item</th><th scope="col">What it is</th><th scope="col">State</th><th scope="col">One control worth checking</th></tr></thead>
+          <tbody>
+            <tr><td class="k">Preppa</td><td data-l="What">A two-sided home-cooked food marketplace on Expo, Supabase and Stripe Connect, with 225 versioned migrations and 41 Edge Functions.</td><td class="s" data-l="State">Pre-launch</td><td class="s" data-l="Control"><abbr title="Database rules that decide which rows of data each user is allowed to see.">Row Level Security</abbr> checked by regression tests in <abbr title="Continuous integration: automated checks that run every time the code changes.">CI</abbr></td></tr>
+            <tr><td class="k">CAC North America</td><td data-l="What">Organization site and admin console for a regional church body.</td><td class="s" data-l="State">Live</td><td class="s" data-l="Control">Admin checked on the server, not just in middleware</td></tr>
+            <tr><td class="k">Church websites</td><td data-l="What">Two congregation sites with staff admin panels, giving and a small store.</td><td class="s" data-l="State">Live</td><td class="s" data-l="Control">Signature-verified Stripe webhooks; honeypot on public forms</td></tr>
+            <tr><td class="k">Bagsly</td><td data-l="What">A fintech savings app with typed vaults and bank linking.</td><td class="s" data-l="State">In development, private</td><td class="s" data-l="Control">Money moves only inside 42 server functions that verify the session first</td></tr>
+            <tr><td class="k">HoWz</td><td data-l="What">A private automation and operations platform on my own hardware.</td><td class="s" data-l="State">Daily use, private</td><td class="s" data-l="Control">Encrypted, signed backups and a leak guard on every commit</td></tr>
+            <tr><td class="k">Brand sites</td><td data-l="What">Hand-written static sites for Cyntraix, HoWz Studios and WealthDJ.</td><td class="s" data-l="State">Live</td><td class="s" data-l="Control">No backend and no stored form data</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Client engagements are not listed. Repositories that hold private data or move money stay private; for those, the case studies describe the design instead of linking code. <a class="arrow-link" href="built.html">Case studies</a></p>
+    </article>
+
+    <article class="exhibit" id="exhibit-f" aria-labelledby="xf-title">
+      <p class="xtag"><span class="xtag__id">Exhibit F</span><span class="xtag__what">The written record</span></p>
+      <div class="split split--rev">
+        <div>
+          <h3 class="exhibit__title" id="xf-title">Preprints, essays and a paper in preparation</h3>
+          <p class="plain"><b>In plain English:</b> what I have written and posted publicly.</p>
+          <dl class="figures figures--2">
+            <div><dt data-count="24">24</dt><dd><abbr title="An online library where researchers post papers, often before or without formal peer review.">SSRN</abbr> <abbr title="A research paper shared publicly before, or without, formal peer review.">preprints</abbr>, 2024 to 2026, listed on ORCID</dd></div>
+            <div><dt data-count="1">1</dt><dd>ACM-format paper in preparation, on Breakwater</dd></div>
+          </dl>
+          <p class="note" style="margin-top:0">SSRN is a preprint repository, not a peer-reviewed journal. The count says I write; it does not say anyone refereed it.</p>
+        </div>
+        <ol class="entries">
+          <li class="entry"><div class="entry__meta">SSRN<br>Oct 2025</div><div><p class="entry__title"><a href="research.html">BootKitty: A Critical Analysis of Modern Bootkit-Rootkit Threats and Defense Limitations</a></p></div></li>
+          <li class="entry"><div class="entry__meta">SSRN<br>Sep 2025</div><div><p class="entry__title"><a href="research.html">The Thin Line Between Strategic Risk Acceptance and Negligence</a></p></div></li>
+          <li class="entry"><div class="entry__meta">SSRN<br>2026</div><div><p class="entry__title"><a href="research.html">Adversarial Machine Learning on Automotive Attack Surfaces</a></p></div></li>
+          <li class="entry"><div class="entry__meta">Medium<br>Dec 2025</div><div><p class="entry__title"><a href="writing.html">Why Risk Management Matters More Than Ever in the Age of AI</a></p></div></li>
+          <li class="entry"><div class="entry__meta">Medium<br>Dec 2025</div><div><p class="entry__title"><a href="writing.html">Compliance vs. Reality: When Cybersecurity Controls Are Recommended but Not Practicable</a></p></div></li>
+        </ol>
+      </div>
+    </article>
+
+    <p class="limits rv"><b>Limits of this report.</b> The lab is two small machines at home, not an enterprise. Breakwater is a simulated network. Both are labeled that way wherever they appear, and neither is presented as client work. The six key findings these exhibits support are on the <a href="index.html#findings">first page</a>.</p>
+  </div>
+</section>
+
+
+</main>
+<nav class="continue" aria-label="Previous and next scene">
+  <div class="wrap continue__in">
+    <a class="prev" href="route.html"><span class="continue__k">&larr; Scene 02</span><span class="continue__t">The route</span></a>
+    <a class="next" href="ai.html"><span class="continue__k">Scene 04 &rarr;</span><span class="continue__t">The AI thread</span></a>
+  </div>
+</nav>
+<footer class="site-foot">
+  <div class="wrap site-foot__in">
+    <div>
+      <p class="site-foot__name">Ezekiel Ologunde</p>
+      <p class="site-foot__meta">Security consultant, cybersecurity instructor and doctoral researcher. Birmingham, Alabama.</p>
+    </div>
+    <ul class="site-foot__links">
+      <li><a href="mailto:ologundeomotola@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/ezekiel-ologunde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=KgPm1jsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+      <li><a href="https://github.com/ezekielologunde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="about.html">Model card</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="credentials.html">Credentials</a></li>
+      <li><a href="Resourcehub.html">Resource hub</a></li>
+    </ul>
+    <p class="site-foot__legal"><span>End of file. &copy; <span data-year>2026</span> Ezekiel Ologunde.</span><span>No trackers, no analytics, no cookies.</span></p>
+  </div>
+</footer>
+</body>
+</html>
