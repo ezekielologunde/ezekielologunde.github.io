@@ -2,11 +2,18 @@
 project: ezekielologunde-github-io
 type: changelog
 status: active
-last_updated: 2026-09-24
+last_updated: 2026-10-05
 tags: [project/ezekielologunde-github-io]
 ---
 
 # Changelog
+
+## 2026-10-05: Public remediation research project
+
+- Added the standalone digital-twin-remediation repository to Built and Research, with links to code, synthetic evidence, manuscript source, and provenance.
+- Kept the manuscript draft, PDF verification, and bounded experimental claims explicit.
+- Uses the existing static study and entry components. See [[Frontend]] and [[Features]].
+
 
 Git history available in this working copy contains a single commit
 (the repo may be shallow-cloned or history was squashed at some point).
