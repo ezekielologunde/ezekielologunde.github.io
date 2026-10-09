@@ -2,11 +2,16 @@
 project: ezekielologunde-github-io
 type: changelog
 status: active
-last_updated: 2026-10-05
+last_updated: 2026-10-09
 tags: [project/ezekielologunde-github-io]
 ---
 
 # Changelog
+
+## 2026-10-09: SOC Review case study
+
+- Added the soc-review / ai-soc-triage project to Built: an interactive, evidence-first SOC triage demo (deterministic rules engine, six synthetic alerts, human review, no live model or SIEM in the public interface), plus a separately documented, non-public pipeline against a real Wazuh SIEM in a private home lab. The two are documented side by side, not technically combined; the public demo does not reach the homelab deployment.
+- Uses the existing static study and entry components. See [[Frontend]] and [[Features]].
 
 ## 2026-10-05: Public remediation research project
 
