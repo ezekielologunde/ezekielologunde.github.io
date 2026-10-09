@@ -8,6 +8,13 @@ tags: [project/ezekielologunde-github-io]
 
 # Changelog
 
+## 2026-10-09: Agent Security Eval case study
+
+- Added the agent-security-eval project to Built: a sandboxed tool-using agent (qwen2.5-3b-cpu4 over local Ollama) run for real against 5 hand-authored prompt-injection cases under 3 policies, with a deterministic code oracle over the mock-tool call log. Public demo replays the committed real report; no live model call from the page.
+- Two real findings surfaced and written up in the repo: tool-authorization doesn't stop an attack that uses an in-scope tool, and the model's final-answer text once claimed an action the tool-call log shows it never took.
+- Third of the four-project applied-AI portfolio set (SOC triage, agent security eval, Rowmio mastery, Cyntraix GRC copilot) tracked in independent-research-portfolio/engineering/.
+- Uses the existing static study and entry components. See [[Frontend]] and [[Features]].
+
 ## 2026-10-09: Rowmio Mastery Diagnosis case study
 
 - Added the rowmio-mastery-demo project to Built: a client-side walkthrough of Rowmio's bank-mode diagnose-remediate-verify-recheck loop on one synthetic learning objective, running the real `nextMasteryStatus` state machine ported from the private rowmio monorepo. Deployed via GitHub Pages (not Vercel, unlike SOC Review).

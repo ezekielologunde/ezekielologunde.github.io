@@ -203,6 +203,21 @@
           <p class="study__links"><a href="https://ezekielologunde.github.io/rowmio-mastery-demo/" target="_blank" rel="noopener noreferrer">Try the demo</a> &nbsp;&middot;&nbsp; <a href="https://github.com/ezekielologunde/rowmio-mastery-demo" target="_blank" rel="noopener noreferrer">Code and design notes on GitHub</a></p>
         </div>
       </article>
+
+      <article class="study rv" aria-labelledby="agent-security-eval-title" id="agent-security-eval">
+        <span class="study__num" aria-hidden="true">10</span>
+        <div>
+          <span class="badge badge--live">Live</span>
+          <h3 class="study__title" id="agent-security-eval-title">Agent Security Eval: a sandboxed agent against five real prompt-injection cases</h3>
+          <p class="study__desc">A tool-using agent run for real against five hand-authored adversarial cases &mdash; a retrieved ticket, a status note, a security-policy doc, a runbook, each trying to redirect the agent toward an unauthorized tool effect &mdash; compared across three policies (no defense, an input-boundary marker, and code-level tool authorization). A deterministic oracle reads the actual mock-tool call log, never the model's own account of what it did. The real run surfaced two concrete findings: tool authorization gives no protection once an attack can do its damage through a tool the task already needed, and the model's final-answer text once claimed an action (creating a ticket with a leaked secret) that the tool-call log shows it never took.</p>
+          <dl class="facts">
+            <dt>Stack</dt><dd>Vanilla HTML/CSS/JS (no framework), Node.js test runner, Ollama (qwen2.5-3b-cpu4 over the home-lab instance used elsewhere in this set), GitHub Pages</dd>
+            <dt>Evidence</dt><dd>13 Node unit tests; a committed, reproducible JSON report from a real 5-case &times; 3-policy run, replayed turn by turn in the public demo.</dd>
+            <dt>Status</dt><dd>Public demo live on GitHub Pages, replaying the committed report; no live model call from the page. Development-scale run, not a published benchmark or a general model-safety claim.</dd>
+          </dl>
+          <p class="study__links"><a href="https://ezekielologunde.github.io/agent-security-eval/" target="_blank" rel="noopener noreferrer">Try the demo</a> &nbsp;&middot;&nbsp; <a href="https://github.com/ezekielologunde/agent-security-eval" target="_blank" rel="noopener noreferrer">Code and evaluation on GitHub</a></p>
+        </div>
+      </article>
     </div>
     <p class="note rv">Client engagements are not shown here. Repositories that hold private data or move money stay private; for those, this page describes the design rather than linking the code.</p>
     <div class="btn-row rv" style="margin-top:32px">
