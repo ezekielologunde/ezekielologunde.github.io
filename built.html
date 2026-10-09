@@ -188,6 +188,21 @@
           <p class="study__links"><a href="https://soc-review.vercel.app" target="_blank" rel="noopener noreferrer">soc-review.vercel.app</a> &nbsp;&middot;&nbsp; <a href="https://github.com/ezekielologunde/ai-soc-triage" target="_blank" rel="noopener noreferrer">Code and evaluation on GitHub</a></p>
         </div>
       </article>
+
+      <article class="study rv" aria-labelledby="rowmio-mastery-title" id="rowmio-mastery">
+        <span class="study__num" aria-hidden="true">09</span>
+        <div>
+          <span class="badge badge--live">Live</span>
+          <h3 class="study__title" id="rowmio-mastery-title">Rowmio Mastery: a diagnose&ndash;remediate&ndash;verify loop you can inspect</h3>
+          <p class="study__desc">An interactive walkthrough of one learning objective through Rowmio's bank-mode mastery loop: a diagnostic question whose wrong answers are each tagged with a specific misconception, targeted remediation, an independent transfer check with no hint available, and a delayed recheck gated behind a simulated clock. The state transitions are not scripted for the demo &mdash; it runs the real <code>nextMasteryStatus</code> function ported verbatim from the private Rowmio monorepo, and a visible trace panel shows every call and the exact state change it produced. The real D1 sub-project (migration, authorization policy, API routes) is built and reviewed in that private repo; this public demo shares only the pure state-machine logic with it, not any student data.</p>
+          <dl class="facts">
+            <dt>Stack</dt><dd>Vanilla HTML/CSS/JS (no framework, no build step), GitHub Pages; shares one dependency-free module with the private Rowmio monorepo</dd>
+            <dt>Evidence</dt><dd>Every on-screen state transition is a live call into the ported function, logged in a visible trace panel, not an animation.</dd>
+            <dt>Status</dt><dd>Public demo live on GitHub Pages. Synthetic content only; no real course, student, or instructor data.</dd>
+          </dl>
+          <p class="study__links"><a href="https://ezekielologunde.github.io/rowmio-mastery-demo/" target="_blank" rel="noopener noreferrer">Try the demo</a> &nbsp;&middot;&nbsp; <a href="https://github.com/ezekielologunde/rowmio-mastery-demo" target="_blank" rel="noopener noreferrer">Code and design notes on GitHub</a></p>
+        </div>
+      </article>
     </div>
     <p class="note rv">Client engagements are not shown here. Repositories that hold private data or move money stay private; for those, this page describes the design rather than linking the code.</p>
     <div class="btn-row rv" style="margin-top:32px">
