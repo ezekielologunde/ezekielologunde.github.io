@@ -8,6 +8,13 @@ tags: [project/ezekielologunde-github-io]
 
 # Changelog
 
+## 2026-10-09: Cyntraix GRC Copilot case study
+
+- Added the cyntraix-grc-copilot-demo project to Built: three policy-to-control mapping methods (keyword, embedding retrieval, model-assisted) compared on one synthetic policy and an 8-control NIST SP 800-53 subset. A code check verifies every model-assisted citation against the real clause text.
+- Real finding: on 2/8 clauses the model picked the correct control but cited text from the control catalog itself instead of the policy clause -- caught only because citations are verified, not trusted.
+- Completes the four-project applied-AI portfolio build queue (SOC triage, agent security eval, Rowmio mastery, Cyntraix GRC copilot) tracked in independent-research-portfolio/engineering/.
+- Uses the existing static study and entry components. See [[Frontend]] and [[Features]].
+
 ## 2026-10-09: Agent Security Eval case study
 
 - Added the agent-security-eval project to Built: a sandboxed tool-using agent (qwen2.5-3b-cpu4 over local Ollama) run for real against 5 hand-authored prompt-injection cases under 3 policies, with a deterministic code oracle over the mock-tool call log. Public demo replays the committed real report; no live model call from the page.

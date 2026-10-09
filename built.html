@@ -218,6 +218,21 @@
           <p class="study__links"><a href="https://ezekielologunde.github.io/agent-security-eval/" target="_blank" rel="noopener noreferrer">Try the demo</a> &nbsp;&middot;&nbsp; <a href="https://github.com/ezekielologunde/agent-security-eval" target="_blank" rel="noopener noreferrer">Code and evaluation on GitHub</a></p>
         </div>
       </article>
+
+      <article class="study rv" aria-labelledby="grc-copilot-title" id="grc-copilot">
+        <span class="study__num" aria-hidden="true">11</span>
+        <div>
+          <span class="badge badge--live">Live</span>
+          <h3 class="study__title" id="grc-copilot-title">Cyntraix GRC Copilot: three mapping methods, every citation checked</h3>
+          <p class="study__desc">A policy-to-control mapping comparison run for real against one synthetic access-control policy and an eight-control NIST SP 800-53 subset: keyword overlap, embedding-based retrieval, and a model-assisted method that quotes its supporting passage. A code check verifies every model-assisted citation against the real clause text rather than trusting the model's account of its own reasoning. The real run caught exactly that failure twice: on two clauses the model picked the objectively correct control, then quoted text from the control catalog itself as its supporting citation instead of the policy clause.</p>
+          <dl class="facts">
+            <dt>Stack</dt><dd>Vanilla HTML/CSS/JS (no framework), Node.js test runner, Ollama (qwen2.5-3b-cpu4 and nomic-embed-text over the home-lab instance used elsewhere in this set), GitHub Pages</dd>
+            <dt>Evidence</dt><dd>8 Node unit tests; a committed, reproducible JSON report from a real 8-clause &times; 3-method run, reviewable clause by clause with local accept/edit/reject decisions.</dd>
+            <dt>Status</dt><dd>Public demo live on GitHub Pages, replaying the committed report; no live model call from the page. Not a compliance certification, not an adjudicated accuracy claim, not connected to any real customer policy.</dd>
+          </dl>
+          <p class="study__links"><a href="https://ezekielologunde.github.io/cyntraix-grc-copilot-demo/" target="_blank" rel="noopener noreferrer">Try the demo</a> &nbsp;&middot;&nbsp; <a href="https://github.com/ezekielologunde/cyntraix-grc-copilot-demo" target="_blank" rel="noopener noreferrer">Code and evaluation on GitHub</a></p>
+        </div>
+      </article>
     </div>
     <p class="note rv">Client engagements are not shown here. Repositories that hold private data or move money stay private; for those, this page describes the design rather than linking the code.</p>
     <div class="btn-row rv" style="margin-top:32px">
