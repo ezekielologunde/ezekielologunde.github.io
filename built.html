@@ -173,6 +173,21 @@
           <p class="study__links"><a href="https://github.com/ezekielologunde/digital-twin-remediation" target="_blank" rel="noopener noreferrer">Code, data and manuscript on GitHub</a> &nbsp;&middot;&nbsp; <a href="research.html#remediation-paper">Research summary</a></p>
         </div>
       </article>
+
+      <article class="study rv" aria-labelledby="soc-review-title" id="soc-review">
+        <span class="study__num" aria-hidden="true">08</span>
+        <div>
+          <span class="badge badge--live">Live</span>
+          <h3 class="study__title" id="soc-review-title">SOC Review: an evidence-first SOC triage interface</h3>
+          <p class="study__desc">An interactive SOC triage and human-review workbench. A deterministic rules engine triages six synthetic alerts; every verdict cites the specific evidence it came from, and nothing in the public demo executes a response action &mdash; review decisions stay in the browser. A local-only lab page adds an Ollama triage-drafting adapter for development use, kept off the public deployment. Separately, I built and run a second, non-public pipeline against a real Wazuh SIEM in a private home lab: a read-only connector, local-LLM triage drafting, and a human review queue, each a systemd service. That deployment is documented with evidence rather than linked live, for the same reason the local Ollama lab stays loopback-only.</p>
+          <dl class="facts">
+            <dt>Stack</dt><dd>Vanilla HTML/CSS/JS (no framework), Node.js test runner, Ollama, Vercel; the homelab deployment adds Wazuh, systemd and a dedicated read-only SIEM account</dd>
+            <dt>Evidence</dt><dd>11 Node tests and 14/14 development fixture checks run live in the browser. The homelab deployment's prompt-tuning pass is recorded as a before/after on 20 real alerts, explicitly scoped as a development result, not a benchmark.</dd>
+            <dt>Status</dt><dd>Public demo live on Vercel. Homelab deployment running, LAN-only by design and not publicly reachable.</dd>
+          </dl>
+          <p class="study__links"><a href="https://soc-review.vercel.app" target="_blank" rel="noopener noreferrer">soc-review.vercel.app</a> &nbsp;&middot;&nbsp; <a href="https://github.com/ezekielologunde/ai-soc-triage" target="_blank" rel="noopener noreferrer">Code and evaluation on GitHub</a></p>
+        </div>
+      </article>
     </div>
     <p class="note rv">Client engagements are not shown here. Repositories that hold private data or move money stay private; for those, this page describes the design rather than linking the code.</p>
     <div class="btn-row rv" style="margin-top:32px">
