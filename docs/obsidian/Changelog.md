@@ -8,6 +8,12 @@ tags: [project/ezekielologunde-github-io]
 
 # Changelog
 
+## 2026-10-09: Rowmio Mastery Diagnosis case study
+
+- Added the rowmio-mastery-demo project to Built: a client-side walkthrough of Rowmio's bank-mode diagnose-remediate-verify-recheck loop on one synthetic learning objective, running the real `nextMasteryStatus` state machine ported from the private rowmio monorepo. Deployed via GitHub Pages (not Vercel, unlike SOC Review).
+- Part of a planned four-project applied-AI portfolio set (SOC triage, agent security eval, Rowmio mastery, Cyntraix GRC copilot) tracked in independent-research-portfolio/engineering/.
+- Uses the existing static study and entry components. See [[Frontend]] and [[Features]].
+
 ## 2026-10-09: SOC Review case study
 
 - Added the soc-review / ai-soc-triage project to Built: an interactive, evidence-first SOC triage demo (deterministic rules engine, six synthetic alerts, human review, no live model or SIEM in the public interface), plus a separately documented, non-public pipeline against a real Wazuh SIEM in a private home lab. The two are documented side by side, not technically combined; the public demo does not reach the homelab deployment.
