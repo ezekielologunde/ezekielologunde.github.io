@@ -2,11 +2,14 @@
 project: ezekielologunde-github-io
 type: changelog
 status: active
-last_updated: 2026-10-09
+last_updated: 2026-10-14
 tags: [project/ezekielologunde-github-io]
 ---
 
 # Changelog
+
+## 2026-10-14: Two newer manuscripts added to Research
+Added 'When Verification Helps' and 'Where Revocation Takes Effect' to the Selected papers list on research.html, with GitHub and ResearchGate links. Claims limited to what each repository README states: not peer reviewed, no submission or acceptance. Local edit only until approved for push. See [[Frontend]].
 
 ## 2026-10-09: Cyntraix GRC Copilot case study
 
